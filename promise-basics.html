@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Promise</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="promise-basics.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Promise"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Promise"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="callbacks.html"> 
+  <link rel="next" href="promise-chaining.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <script>
+function loadScript(src) {
+  return new Promise(function(resolve, reject) {
+    let script = document.createElement('script');
+    script.src = src;
+
+    script.onload = () => resolve(script);
+    script.onerror = () => reject(new Error("Script load error: " + src));
+
+    document.head.append(script);
+  });
+}
+</script> 
+  <meta property="og:title" content="Promise"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-basics" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpromise-basics" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="76" max="92" data-tooltip="Pelajaran 76 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="async.html"><span>Promises, async/await</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Promises, async/await","item":"https://id.javascript.info/async"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Promise</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Promise"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Bayangkan kamu adalah seorang penyanyi top, dan penggemarmu bertanya siang dan malam untuk <em>single</em> terbarumu.</p> 
+         <p>Untuk mendapatkan kelegaan, kamu berjanji untuk mengirimkan <em>single</em> tersebut kepada mereka ketika diterbitkan. Kamu memberikan sebuah daftar kepada penggemarmu. Mereka dapat mengisi alamat surel mereka, sehingga saat lagu sudah tersedia, semua pihak yang berlangganan langsung menerimanya. Dan bahkan jika ada yang salah, katakanlah, ada kebakaran di dalam studio, sehingga kamu tidak dapat menerbitkan lagu, mereka masih akan diberitahu.</p> 
+         <p>Semua orang senang: kamu, karena orang-orang tidak memadati kamu lagi, dan penggemar, karena mereka tidak ketinggalan <em>single</em>nya.</p> 
+         <ol> 
+          <li>???Kode produksi??? itu melakukan sesuatu dan membutuhkan waktu. Sebagai contoh, sebuah kode yang memuat data melalui jaringan. Itu adalah seorang ???penyanyi???.</li> 
+          <li>???Kode pengkonsumsi??? yang menginginkan hasil dari ???kode produksi??? setelah siap. Banyak fungsi yang mungkin membutuhkan hasil itu. Ini adalah ???penggemar???.</li> 
+          <li><em>Promise</em> adalah objek Javascript khusus yang menghubungkan ???kode produksi??? dan ???kode pengkonsumi??? secara bersamaan. Dalam analogi kami: ini adalah ???daftar berlangganan???. ???Kode produksi??? membutuhkan waktu berapa pun untuk menghasilkan hasil yang dijanjikan, dan ???<em>Promise</em>??? membuat hasil tersebut tersedia untuk semua kode yang berlangganan ketika hasilnya sudah siap.</li> 
+         </ol> 
+         <p>Analogi ini tidak terlalu akurat, karena <em>promise</em> JavaScript lebih kompleks dari daftar berlangganan sederhana: daftar tersebut memiliki fitur dan batasan tambahan. Tetapi untuk awal tidak apa-apa.</p> 
+         <p><em>Syntax constructor</em> untuk objek <em>promise</em> adalah:</p> 
+         <div id="ha3qzeysuj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise(function(resolve, reject) {
+  // eksekutor (kode produksi, "penyanyi")
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fungsi yang dilewatkan ke <code>new Promise</code> disebut sebagai <em>exekutor</em>. Ketika <code>new Promise</code> dibuat, exekutor tersebut berjalan secara otomatis. Exekutor itu berisi kode produksi, yang pada akhirnya harus memproduksi hasil. Dalam analogi di atas: exekutor adalah ???penyanyi???.</p> 
+         <p>Argumen <code>resolve</code> dan <code>reject</code> adalah <em>callback</em> yang disediakan oleh JavaScript itu sendiri. Kode kita hanya ada di dalam eksekutor.</p> 
+         <p>Ketika eksekutor mendapatkan hasilnya, baik itu cepat atau lambat ??? tidak masalah, eksekutor harus memanggil salah satu dari <em>callback</em> ini:</p> 
+         <ul> 
+          <li><code>resolve(value)</code> ??? jika pekerjaan selesai dengan sukses, dengan hasil <code>value</code>.</li> 
+          <li><code>reject(error)</code> ??? jika terjadi kesalahan, <code>error</code> adalah objek kesalahan.</li> 
+         </ul> 
+         <p>Jadi untuk meringkas: eksekutor berjalan secara otomatis, eksekutor harus melakukan pekerjaan dan kemudian memanggil salah satu dari <code>resolve</code> atau <code>reject</code>.</p> 
+         <p>Objek <code>promise</code> yang dikembalikan oleh <em>constructor</em> <code>new Promise</code> memiliki properti internal:</p> 
+         <ul> 
+          <li><code>state</code> ??? pada awalnya <code>"pending"</code>, kemudian berubah menjadi <code>"fulfilled"</code> saat <code>resolve</code> dipanggil atau <code>"rejected"</code> ketika <code>reject</code> dipanggil.</li> 
+          <li><code>result</code> ??? pada awalnya <code>undefined</code>, kemudian berubah menjadi <code>value</code> ketika <code>resolve(value)</code> dipanggil atau <code>error</code> ketika <code>reject(error)</code> dipanggil.</li> 
+         </ul> 
+         <p>Jadi eksekutor akhirnya memindahkan <code>promise</code> ke salah satu dari kondisi ini:</p> 
+         <figure> 
+          <div class="image" style="width:512px"> 
+           <div class="image__ratio" style="padding-top:48.046875%"></div> 
+           <object type="image/svg+xml" data="article/promise-basics/promise-resolve-reject.svg" width="512" height="246" class="image__image" data-use-theme> <img src="article/promise-basics/promise-resolve-reject.svg" alt="" width="512" height="246"> </object> 
+          </div> 
+         </figure> 
+         <p>Nanti kita akan melihat bagaimana ???penggemar??? dapat berlangganan kepada perubahan ini.</p> 
+         <p>Berikut ini contoh <em>constructor promise</em> dan fungsi eksekutor sederhana dengan ???kode produksi??? yang membutuhkan waktu (melalui <code>setTimeout</code>):</p> 
+         <div id="vxy2475tog" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;cols&quot;:[{&quot;start&quot;:19,&quot;end&quot;:34}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise(function(resolve, reject) {
+  // fungsi tersebut dieksekusi secara otomatis ketika "promise" dibangun
+
+  // setelah 1 detik menandakan bahwa pekerjaan selesai dengan hasil "done"
+  setTimeout(() =&gt; resolve("done"), 1000);
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita dapat melihat dua hal dengan menjalankan kode di atas:</p> 
+         <ol> 
+          <li> <p>Exekutor dipanggil secara langsung dan otomatis (oleh <code>new Promise</code>).</p> </li> 
+          <li> <p>Exekutor menerima dua argumen: <code>resolve</code> dan <code>reject</code> ??? fungsi ini sudah ditentukan sebelumnya oleh mesin JavaScript. Jadi kita tak perlu membuatnya. Kita hanya harus memanggil salah satu dari dua argumen tersebut ketika siap.</p> <p>Setelah satu detik ???memproses??? eksekutor memanggil <code>resolve("done")</code> untuk memproduksi hasilnya. Ini mengubah status objek <code>promise</code>:</p> 
+           <figure> 
+            <div class="image" style="width:538px"> 
+             <div class="image__ratio" style="padding-top:19.702602230483272%"></div> 
+             <object type="image/svg+xml" data="article/promise-basics/promise-resolve-1.svg" width="538" height="106" class="image__image" data-use-theme> <img src="article/promise-basics/promise-resolve-1.svg" alt="" width="538" height="106"> </object> 
+            </div> 
+           </figure></li> 
+         </ol> 
+         <p>Itu adalah contoh penyelesaian pekerjaan yang sukses, sebuah ???<em>promise fulfilled</em>???.</p> 
+         <p>Dan sekarang adalah contoh eksekutor menolak <em>promise</em> dengan sebuah <em>error</em>:</p> 
+         <div id="zy3hhxhaet" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:19,&quot;end&quot;:47}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise(function(resolve, reject) {
+  // setelah 1 detik menandakan bahwa pekerjaan selesai dengan sebuah "error"
+  setTimeout(() =&gt; reject(new Error("Whoops!")), 1000);
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Panggilan untuk <code>reject(...)</code> memindahkan objek <em>promise</em> ke status <code>"rejected"</code>:</p> 
+         <figure> 
+          <div class="image" style="width:535px"> 
+           <div class="image__ratio" style="padding-top:19.813084112149532%"></div> 
+           <object type="image/svg+xml" data="article/promise-basics/promise-reject-1.svg" width="535" height="106" class="image__image" data-use-theme> <img src="article/promise-basics/promise-reject-1.svg" alt="" width="535" height="106"> </object> 
+          </div> 
+         </figure> 
+         <p>Untuk meringkas, eksekutor harus melakukan pekerjaan (sesuatu yang biasanya membutuhkan waktu) dan kemudian memanggil <code>resolve</code> atau <code>reject</code> untuk mengubah state objek <em>promise</em> yang sesuai.</p> 
+         <p><em>Promise</em> yang diputuskan atau ditolak disebut ???diselesaikan???, sebagai lawan dari <em>promise</em> ???pending??? awalnya.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Hanya ada satu hasil atau sebuah ???error???</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Eksekutor harus memanggil hanya satu <code>resolve</code> atau satu <code>reject</code>. Setiap perubahan status adalah final.</p> 
+           <p>Semua panggilan <code>resolve</code> dan <code>reject</code> lebih lanjut diabaikan:</p> 
+           <div id="atfmicdg3o" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let promise = new Promise(function(resolve, reject) {
+  resolve("done");
+
+  reject(new Error("???")); // diabaikan
+  setTimeout(() =&gt; resolve("???")); // diabaikan
+});</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Idenya adalah bahwa pekerjaan yang dilakukan oleh eksekutor mungkin hanya memiliki satu hasil atau <em>error</em>.</p> 
+           <p>Juga, <code>resolve</code>/<code>reject</code> hanya berharap satu argumen (atau tidak ada) dan akan mengabaikan argumen tambahan.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Reject dengan objek <code>Error</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Seandainya terjadi kesalahan, eksekutor harus memanggil <code>reject</code>. Itu bisa dilakukan dengan segala jenis argumen (seperti <code>resolve</code>). Tetapi direkomendasikan untuk menggunakan objek <code>Error</code> (atau objek yang mewarisi dari <code>Error</code>). Alasannya akan segera menjadi jelas.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Memanggil langsung <code>resolve</code>/<code>reject</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Dalam praktiknya, eksekutor biasanya melakukan sesuatu secara <em>asynchronous</em> dan memanggil <code>resolve</code>/<code>reject</code> setelah beberapa waktu, tetapi tidak harus. Kita juga bisa memanggil <code>resolve</code> atau <code>reject</code> secara langsung, seperti ini:</p> 
+           <div id="ep7biuc0ek" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let promise = new Promise(function(resolve, reject) {
+  // tidak mengambil waktu kita untuk melakukan pekerjaan itu
+  resolve(123); // secara langsung memberikan hasil: 123
+});</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Misalnya, ini mungkin terjadi ketika kita memulai suatu pekerjaan tetapi kemudian melihat segalanya sudah selesai dan di-<em>cache</em>.</p> 
+           <p>Tidak apa-apa. Kita segera menyelesaikan <em>promise</em>.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>State</code> dan <code>result</code> bersifat internal</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Properti <code>state</code> dan <code>result</code> objek Promise bersifat internal. Kita tidak bisa mengakses properti tersebut secara langsung. Kita bisa menggunakan <em>method</em> <code>.then</code>/<code>.catch</code>/<code>.finally</code> untuk melakukannya. Penjelasan method-method tersebut ada di bawah ini.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="konsumen-then-catch-finally" href="promise-basics.html#konsumen-then-catch-finally">Konsumen: then, catch, finally</a></h2> 
+         <p>Objek <em>Promise</em> berfungsi sebagai tautan antara eksekutor (???kode produksi??? atau ???penyanyi???) dan fungsi konsumsi (???penggemar???), yang akan menerima hasil atau <em>error</em>. Fungsi konsumsi bisa didaftarkan (berlangganan) menggunakan <em>method</em> <code>.then</code>, <code>.catch</code> and <code>.finally</code>.</p> 
+         <h3><a class="main__anchor" name="then" href="promise-basics.html#then">then</a></h3> 
+         <p>Yang paling penting, yang mendasar adalah <code>.then</code>.</p> 
+         <p><em>Syntax</em>nya adalah:</p> 
+         <div id="d9r7n7qfzu" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:20,&quot;end&quot;:50}]},{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:21,&quot;end&quot;:54}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>promise.then(
+  function(result) { /* menangani hasil yang sukses */ },
+  function(error) { /* menangani sebuah "error" */ }
+);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Argumen pertama dari <code>.then</code> adalah fungsi yang berjalan ketika <em>promise</em> terselesaikan, dan menerima hasil.</p> 
+         <p>Argumen kedua dari <code>.then</code> adalah fungsi yang berjalan ketika <em>promise</em> ditolak, dan menerima <em>error</em>.</p> 
+         <p>Sebagai contoh, disini reaksi ketika <em>promise</em> berhasil diselesaikan:</p> 
+         <div id="re4vnibndq" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise(function(resolve, reject) {
+  setTimeout(() =&gt; resolve("done!"), 1000);
+});
+
+// resolve menjalankan fungsi pertama di .then
+promise.then(
+  result =&gt; alert(result), // menampilkan "done!" setelah satu detik
+  error =&gt; alert(error) // tidak dijalankan
+);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fungsi pertama dijalankan.</p> 
+         <p>Dan dalam hal penolakan ??? yang kedua:</p> 
+         <div id="81zj0f3u4j" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise(function(resolve, reject) {
+  setTimeout(() =&gt; reject(new Error("Whoops!")), 1000);
+});
+
+// reject menjalankan fungsi kedua di .then
+promise.then(
+  result =&gt; alert(result), // tidak dijalankan
+  error =&gt; alert(error) // menampilkan "Error: Whoops!" setelah satu detik
+);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita hanya tertarik pada penyelesaian yang berhasil, maka kita hanya dapat menyediakan satu argumen fungsi <code>.then</code>:</p> 
+         <div id="bzugkthsk4" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise(resolve =&gt; {
+  setTimeout(() =&gt; resolve("done!"), 1000);
+});
+
+promise.then(alert); // menampilkan "done!" setelah satu detik</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="catch" href="promise-basics.html#catch">catch</a></h3> 
+         <p>Jika kita hanya tertarik pada <em>error</em>, maka kita dapat menggunakan <code>null</code> sebagai argumen pertama: <code>.then(null, errorHandlingFunction)</code>. Atau kita dapat menggunakan <code>.catch(errorHandlingFunction)</code>, yang mana keduanya sama persis:</p> 
+         <div id="ibfz43il5n" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; reject(new Error("Whoops!")), 1000);
+});
+
+// .catch(f) sama seperti promise.then(null, f)
+promise.catch(alert); // menampilkan "Error: Whoops!" setelah satu detik</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Panggilan <code>.catch(f)</code> adalah analog lengkap dari <code>.then(null, f)</code>, itu hanya sebuah singkatan.</p> 
+         <h3><a class="main__anchor" name="finally" href="promise-basics.html#finally">finally</a></h3> 
+         <p>Sama seperti ada klausa <code>finally</code> dalam <code>try {...} catch {...}</code>, ada <code>finally</code> dalam <em>promises</em>.</p> 
+         <p>Panggilan <code>.finally(f)</code> mirip dengan <code>.then(f, f)</code> dalam arti bahwa <code>f</code> selalu berjalan ketika <em>promise</em> diselesaikan: apakah itu <em>resolve</em> atau <em>reject</em>.</p> 
+         <p><code>finally</code> adalah penanganan yang baik untuk melakukan pembersihan, mis. menghentikan indikator pemuatan kita, karena tidak diperlukan lagi, apa pun hasilnya.</p> 
+         <p>Seperti ini:</p> 
+         <div id="jkz0jtnbqd" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>new Promise((resolve, reject) =&gt; {
+  /* lakukan sesuatu yang membutuhkan waktu, dan kemudian panggil resolve/reject */
+})
+
+  // berjalan ketika "promise" diselesaikan, tidak peduli sukses atau tidak
+  .finally(() =&gt; hentikan indikator pemuatan)
+  .then(result =&gt; munculkan hasil, err =&gt; munculkan "error")</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tapi ini bukan alias dari <code>then(f,f)</code>. Ada beberapa perbedaan penting:</p> 
+         <ol> 
+          <li> <p><em>Handler</em> <code>finally</code> tidak memiliki argumen. Didalam <code>finally</code> kita tidak tahu apakah <em>promise</em> sukses atau tidak. Tidak apa-apa, karena tugas kita biasanya melakukan prosedur penyelesaian ???umum???.</p> </li> 
+          <li> <p><em>Handler</em> <code>finally</code> melewatkan hasil dan <em>error</em> ke <em>handler</em> selanjutnya.</p> <p>Misalnya, di sini hasilnya dilewatkan melalui <code>finally</code> ke <code>then</code>:</p> 
+           <div id="zpaeqghvtw" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>new Promise((resolve, reject) =&gt; {
+  setTimeout(() =&gt; resolve("result"), 2000)
+})
+  .finally(() =&gt; alert("Promise ready"))
+  .then(result =&gt; alert(result)); // &lt;-- .then menangani hasilnya</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Dan di sini ada <em>error</em> di dalam <em>promise</em>, dilewatkan melalui <code>finally</code> ke <code>catch</code>:</p> 
+           <div id="mvvogd0bwk" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>new Promise((resolve, reject) =&gt; {
+  throw new Error("error");
+})
+  .finally(() =&gt; alert("Promise ready"))
+  .catch(err =&gt; alert(err));  // &lt;-- .catch menangani objek galat</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Itu sangat nyaman, karena <code>finally</code> tidak dimaksudkan untuk memproses hasil dari <em>promise</em>. Jadi itu melewatinya.</p> <p>Kita akan berbicara lebih banyak tentang <em>chaining promise</em> dan <em>passing-result</em> antara <em>handler</em> di bab selanjutnya.</p> </li> 
+          <li> <p>Terakhir, namun tidak kalah pentingnya, <em>syntax</em> <code>.finally(f)</code> lebih nyaman daripada <code>.then(f, f)</code>: tidak perlu menduplikasi fungsi <code>f</code>.</p> </li> 
+         </ol> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Dengan promise yang sudah ditentukan handler segera menjalankannya</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika <em>promise</em> tertunda, <em>handler</em> <code>.then/catch/finally</code> akan menunggu <em>promise</em> tersebut. Jika tidak, jika <em>promise</em> sudah selesai, handler langsung menjalankan:</p> 
+           <div id="nrkdliko4t" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// "promise" diselesaikan segera setelah dibuat
+let promise = new Promise(resolve =&gt; resolve("done!"));
+
+promise.then(alert); // done! (muncul sekarang)</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Perhatikan bahwa ini membuat Promise lebih efektif daripada skenario ???daftar berlangganan??? di kehidupan nyata. Jika penyanyi sudah merilis lagu mereka dan kemudian seseorang mendaftar di daftar berlangganan, mereka mungkin tidak akan menerima lagu itu. Berlangganan dalam kehidupan nyata harus dilakukan sebelum acara tersebut.</p> 
+           <p>Promise lebih fleksibel. Kita bisa menambahkan handlers kapan saja: jika hasilnya sudah ada, mereka langsung mengeksekusi.</p> 
+          </div> 
+         </div> 
+         <p>Selanjutnya, mari kita lihat contoh-contoh yang lebih praktis tentang bagaimana <em>promise</em> dapat membantu kita menulis kode <em>asynchronous</em>.</p> 
+         <h2><a class="main__anchor" name="loadscript" href="promise-basics.html#loadscript">Contoh: loadScript</a></h2> 
+         <p>Kita punya fungsi <code>loadScript</code> untuk memuat skrip dari bab sebelumnya.</p> 
+         <p>Inilah varian berbasis <em>callback</em>, hanya untuk mengingatkan kita tentang itu:</p> 
+         <div id="uaruzk1vjq" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+
+  script.onload = () =&gt; callback(null, script);
+  script.onerror = () =&gt; callback(new Error(`Script load error for ${src}`));
+
+  document.head.append(script);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mari tulis ulang menggunakan <em>Promise</em>.</p> 
+         <p>Fungsi baru <code>loadScript</code> tidak akan memerlukan <em>callback</em>. Sebagai gantinya, fungsi tersebut akan membuat dan mengembalikkan sebuah objek <em>Promise</em> yang diselesaikan ketika pemuatan sudah selesai. Kode yang paling luar dapat menambah <em>handler</em> (fungsi berlangganan) dengan menggunakan <code>.then</code>:</p> 
+         <div id="w2b3t0sm38" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function loadScript(src) {
+  return new Promise(function(resolve, reject) {
+    let script = document.createElement('script');
+    script.src = src;
+
+    script.onload = () =&gt; resolve(script);
+    script.onerror = () =&gt; reject(new Error(`Script load error for ${src}`));
+
+    document.head.append(script);
+  });
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pemakaian:</p> 
+         <div id="393kzuy2ak" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = loadScript("https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js");
+
+promise.then(
+  script =&gt; alert(`${script.src} is loaded!`),
+  error =&gt; alert(`Error: ${error.message}`)
+);
+
+promise.then(script =&gt; alert('Another handler...'));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita dapat segera melihat beberapa manfaat melalui pola berbasis <em>callback</em>:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Promise</th> 
+            <th>Callback</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><em>Promise</em> memungkinkan kita melakukan hal-hal dalam urutan alami. Pertama, kita menjalankan <code>loadScript(script)</code>, dan <code>.then</code> kita menulis apa yang harus dilakukan dengan hasilnya.</td> 
+            <td>Kita harus punya fungsi <code>callback</code> yang kita miliki saat memanggil <code>loadScript(script, callback)</code>. Dengan kata lain, kita harus tau apa yang harus dilakukan dengan hasil <em>sebelum</em> <code>loadScript</code> dipanggil.</td> 
+           </tr> 
+           <tr> 
+            <td>Kita dapat memanggil <code>.then</code> pada <em>Promise</em> sebanyak yang kita inginkan. Setiap kali, kita tambahkan ???fan??? baru, fungsi berlangganan baru, ke ???daftar berlangganan???. Lebih lanjut tentang ini di bab selanjutnya: <a href="promise-chaining.html">Promises chaining</a>.</td> 
+            <td>Hanya ada satu <em>callback</em>.</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Jadi <em>promise</em> memberikan kita aliran kode dan fleksibilitas yang lebih baik. Tetapi masih ada lagi. Kita akan melihatnya di bab-bab selanjutnya.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="promise-basics.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="promise-basics.html#selesaikan-ulang-sebuah-promise" name="selesaikan-ulang-sebuah-promise">Selesaikan ulang sebuah promise?</a></h3> 
+           <a class="task__open-link" href="task/re-resolve.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apa keluaran dari kode di bawah ini?</p> 
+            <div id="q2uizyhb1x" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let promise = new Promise(function(resolve, reject) {
+  resolve(1);
+
+  setTimeout(() =&gt; resolve(2), 1000);
+});
+
+promise.then(alert);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Keluarannya adalah: <code>1</code>.</p> 
+              <p>Panggilan kedua untuk <code>resolve</code> diabaikan, karena hanya panggilan pertama <code>reject/resolve</code> yang diperhitungkan. Panggilan lebih lanjut diabaikan.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="promise-basics.html#tunda-dengan-promise" name="tunda-dengan-promise">Tunda dengan promise</a></h3> 
+           <a class="task__open-link" href="task/delay-promise.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Fungsi bawaan <code>setTimeout</code> menggunakan <em>callbacks</em>. Buat alternatif berbasis <em>promise</em>.</p> 
+            <p>Fungsi <code>delay(ms)</code> harus mengembalikkan sebuah <em>promise</em>. <em>Promise</em> itu harus diselesaikan setelah <code>ms</code> milidetik, sehingga kita bisa menambahkan <code>.then</code> ke fungsi tersebut, seperti ini:</p> 
+            <div id="l70m62153b" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function delay(ms) {
+  // kode kamu
+}
+
+delay(3000).then(() =&gt; alert('runs after 3 seconds'));</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="6uoae963x2" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="promise-basics.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="promise-basics.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function delay(ms) {
+  return new Promise(resolve =&gt; setTimeout(resolve, ms));
+}
+
+delay(3000).then(() =&gt; alert('berjalan setelah 3 detik'));</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Harap dicatat bahwa penyelesaian tugas ini, <code>resolve</code> dipanggil tanpa argumen. Kita tidak mengembalikkan nilai apapun dari <code>delay</code>, hanya memastikan penundaan tersebut.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="promise-basics.html#lingkaran-animasi-dengan-promise" name="lingkaran-animasi-dengan-promise">Lingkaran animasi dengan promise</a></h3> 
+           <a class="task__open-link" href="task/animate-circle-promise.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis ulang fungsi <code>showCircle</code> di dalam solusi tugas <a href="task/animate-circle-callback.html">Lingkaran animasi dengan callback</a> sehingga fungsi tersebut mengembalikan sebuah <em>promise</em> daripada menerima sebuah <em>callback</em>.</p> 
+            <p>Penggunaan baru:</p> 
+            <div id="0st7n4jy5i" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>showCircle(150, 150, 100).then(div =&gt; {
+  div.classList.add('message-ball');
+  div.append("Hello, world!");
+});</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Ambil solusi pada tugas <a href="task/animate-circle-callback.html">Lingkaran animasi dengan callback</a> sebagai dasar.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><a href="https://plnkr.co/edit/HNNCSC5DvgrHO10A?p=preview" target="_blank" data-plunk-id="HNNCSC5DvgrHO10A">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="callbacks.html" data-tooltip="Pengenalan: callback"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="promise-chaining.html" data-tooltip="Promises chaining"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-basics" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpromise-basics" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async.html">Promises, async/await</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-basics.html#konsumen-then-catch-finally">Konsumen: then, catch, finally</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-basics.html#loadscript">Contoh: loadScript</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-basics.html#tasks">Tugas (3)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-basics.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-basics" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fpromise-basics" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

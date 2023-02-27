@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">BigInt</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="bigint.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="BigInt"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="BigInt"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="reference-type.html"> 
+  <link rel="next" href="ui.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="BigInt"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbigint" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fbigint" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="92" max="92" data-tooltip="Pelajaran 92 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="js-misc.html"><span>Miscellaneous</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Miscellaneous","item":"https://id.javascript.info/js-misc"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 21 September 2020"> 
+          <div class="updated-at__content">
+            21 September 2020 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://ar.javascript.info/bigint">????????</a>, 
+          <a href="https://javascript.info/bigint">English</a>, 
+          <a href="https://es.javascript.info/bigint">Espa??ol</a>, 
+          <a href="https://fa.javascript.info/bigint">??????????</a>, 
+          <a href="https://fr.javascript.info/bigint">Fran??ais</a>, 
+          <a href="https://it.javascript.info/bigint">Italiano</a>, 
+          <a href="https://ja.javascript.info/bigint">?????????</a>, 
+          <a href="https://ko.javascript.info/bigint">?????????</a>, 
+          <a href="https://learn.javascript.ru/bigint">??????????????</a>, 
+          <a href="https://uk.javascript.info/bigint">????????????????????</a>, 
+          <a href="https://zh.javascript.info/bigint">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">BigInt</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="BigInt"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tambahan baru-baru ini</span> 
+          </div> 
+          <div class="important__content">
+            Ini adalah tambahan terbaru untuk bahasa ini. Anda dapat menemukan status dukungan saat ini di 
+           <a href="https://caniuse.com/#feat=bigint">https://caniuse.com/#feat=bigint&lt; /a&gt;. </a> 
+          </div> 
+         </div> 
+         <a href="https://caniuse.com/#feat=bigint"> <p><code>BigInt</code> is a special numeric type that provides support for integers of arbitrary length.</p> <p>A bigint is created by appending <code>n</code> to the end of an integer literal or by calling the function <code>BigInt</code> that creates bigints from strings, numbers etc.</p> 
+          <div id="ils78tx0jd" data-trusted="1" class="code-example"> 
+           <div class="codebox code-example__codebox"> 
+            <div class="codebox__code" data-code="1"> 
+             <pre class="line-numbers language-javascript"><code>const bigint = 1234567890123456789012345678901234567890n;
+
+const sameBigint = BigInt("1234567890123456789012345678901234567890");
+
+const bigintFromNumber = BigInt(10); // same as 10n</code></pre> 
+            </div> 
+           </div> 
+          </div></a> 
+         <h2><a href="https://caniuse.com/#feat=bigint"></a><a class="main__anchor" name="math-operators" href="bigint.html#math-operators">Math operators</a></h2> 
+         <p><code>BigInt</code> can mostly be used like a regular number, for example:</p> 
+         <div id="y3ydoxy7wb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert(1n + 2n); // 3
+
+alert(5n / 2n); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Please note: the division <code>5/2</code> returns the result rounded towards zero, without the decimal part. All operations on bigints return bigints.</p> 
+         <p>We can???t mix bigints and regular numbers:</p> 
+         <div id="aiyuzuifht" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert(1n + 2); // Error: Cannot mix BigInt and other types</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>We should explicitly convert them if needed: using either <code>BigInt()</code> or <code>Number()</code>, like this:</p> 
+         <div id="3fjbi2u04e" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let bigint = 1n;
+let number = 2;
+
+// number to bigint
+alert(bigint + BigInt(number)); // 3
+
+// bigint to number
+alert(Number(bigint) + number); // 3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The conversion operations are always silent, never give errors, but if the bigint is too huge and won???t fit the number type, then extra bits will be cut off, so we should be careful doing such conversion.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">The unary plus is not supported on bigints</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>The unary plus operator <code>+value</code> is a well-known way to convert <code>value</code> to a number.</p> 
+           <p>In order to avoid confusion, it???s not supported on bigints:</p> 
+           <div id="qzsfvmh9vo" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="bigint.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="bigint.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let bigint = 1n;
+
+alert( +bigint ); // error</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>So we should use <code>Number()</code> to convert a bigint to a number.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="comparisons" href="bigint.html#comparisons">Comparisons</a></h2> 
+         <p>Comparisons, such as <code>&lt;</code>, <code>&gt;</code> work with bigints and numbers just fine:</p> 
+         <div id="0fcrkmfpwk" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 2n &gt; 1n ); // true
+
+alert( 2n &gt; 1 ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Please note though, as numbers and bigints belong to different types, they can be equal <code>==</code>, but not strictly equal <code>===</code>:</p> 
+         <div id="i653miz9tl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 1 == 1n ); // true
+
+alert( 1 === 1n ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="boolean-operations" href="bigint.html#boolean-operations">Boolean operations</a></h2> 
+         <p>When inside <code>if</code> or other boolean operations, bigints behave like numbers.</p> 
+         <p>For instance, in <code>if</code>, bigint <code>0n</code> is falsy, other values are truthy:</p> 
+         <div id="9qbm15e2j4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (0n) {
+  // never executes
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Boolean operators, such as <code>||</code>, <code>&amp;&amp;</code> and others also work with bigints similar to numbers:</p> 
+         <div id="9gauqfa11n" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bigint.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 1n || 2 ); // 1 (1n is considered truthy)
+
+alert( 0n || 2 ); // 2 (0n is considered falsy)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="polyfills" href="bigint.html#polyfills">Polyfills</a></h2> 
+         <p>Polyfilling bigints is tricky. The reason is that many JavaScript operators, such as <code>+</code>, <code>-</code> and so on behave differently with bigints compared to regular numbers.</p> 
+         <p>For example, division of bigints always returns a bigint (rounded if necessary).</p> 
+         <p>To emulate such behavior, a polyfill would need to analyze the code and replace all such operators with its functions. But doing so is cumbersome and would cost a lot of performance.</p> 
+         <p>So, there???s no well-known good polyfill.</p> 
+         <p>Although, the other way around is proposed by the developers of library.</p> 
+         <p>This library implements big numbers using its own methods. We can use them instead of native bigints:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Operation</th> 
+            <th>native <code>BigInt</code></th> 
+            <th>JSBI</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td>Creation from Number</td> 
+            <td><code>a = BigInt(789)</code></td> 
+            <td><code>a = JSBI.BigInt(789)</code></td> 
+           </tr> 
+           <tr> 
+            <td>Addition</td> 
+            <td><code>c = a + b</code></td> 
+            <td><code>c = JSBI.add(a, b)</code></td> 
+           </tr> 
+           <tr> 
+            <td>Subtraction</td> 
+            <td><code>c = a - b</code></td> 
+            <td><code>c = JSBI.subtract(a, b)</code></td> 
+           </tr> 
+           <tr> 
+            <td>???</td> 
+            <td>???</td> 
+            <td>???</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>???And then use the polyfill (Babel plugin) to convert JSBI calls to native bigints for those browsers that support them.</p> 
+         <p>In other words, this approach suggests that we write code in JSBI instead of native bigints. But JSBI works with numbers as with bigints internally, emulates them closely following the specification, so the code will be ???bigint-ready???.</p> 
+         <p>We can use such JSBI code ???as is??? for engines that don???t support bigints and for those that do support ??? the polyfill will convert the calls to native bigints.</p> 
+         <h2><a class="main__anchor" name="references" href="bigint.html#references">References</a></h2> 
+         <ul> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/BigInt">MDN docs on BigInt</a>.</li> 
+          <li><a href="https://tc39.es/ecma262/#sec-bigint-objects">Specification</a>.</li> 
+         </ul> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="reference-type.html" data-tooltip="Reference Type"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="ui.html" data-tooltip="Browser: Document, Events, Interfaces"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbigint" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fbigint" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="js-misc.html">Miscellaneous</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bigint.html#math-operators">Math operators</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bigint.html#comparisons">Comparisons</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bigint.html#boolean-operations">Boolean operations</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bigint.html#polyfills">Polyfills</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bigint.html#references">References</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bigint.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbigint" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fbigint" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

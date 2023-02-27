@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">_Browser default actions_</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="default-browser-action.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="_Browser default actions_"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="_Browser default actions_"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="event-delegation.html"> 
+  <link rel="next" href="dispatch-events.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="_Browser default actions_"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdefault-browser-action" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdefault-browser-action" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="15" max="32" data-tooltip="Pelajaran 15 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="events.html"><span>Pengenalan ke Peristiwa</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Pengenalan ke Peristiwa","item":"https://id.javascript.info/events"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 31 Desember 2021"> 
+          <div class="updated-at__content">
+            31 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">_Browser default actions_</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="_Browser default actions_"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Banyak peristiwa yang otomatis menjalankan sebuah aksi oleh <em>browser</em>.</p> 
+         <p>Contohnya:</p> 
+         <ul> 
+          <li>Sebuah klik pada link ??? akan mengarahkan ke URL tersebut.</li> 
+          <li>Sebuah klik pada tombol formulir ??? akan melakukan proses pengiriman data formulir ke <em>server</em>.</li> 
+          <li>Menekan tombol <em>mouse</em> pada sebuah teks dan mengerakannya ??? akan memilih teks tersebut.</li> 
+         </ul> 
+         <p>Jika ke menanggani sebuah peristiwa di JavaScript, kita mungkin tidak mau aksi bawaan dari <em>browser</em> terjadi, dan kita mau membuat sebuah aksi baru.</p> 
+         <h2><a class="main__anchor" name="mencegah-aksi-browser" href="default-browser-action.html#mencegah-aksi-browser">Mencegah aksi <em>browser</em></a></h2> 
+         <p>Ada 2 cara untuk memberitahukan <em>browser</em> bahwa kita tidak mau peristiwa itu terjadi:</p> 
+         <ul> 
+          <li>Cara utama dengan menggunakan objek <code>event</code>. Ada sebuah metode dengan nama <code>event.preventDefault()</code>.</li> 
+          <li>Jika penangan (<em>handler</em>) di atur menggunakan <code>on&lt;event&gt;</code> (bukan <code>addEventListener</code>), maka mengembalikan <code>false</code> juga bisa befungsi.</li> 
+         </ul> 
+         <p>Pada HTML dibawah, sebuah klik pada link tidak akan memindahkan halaman, <em>browser</em> tidak melakukan apapun:</p> 
+         <div id="sokq9maiwq" data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;a href="/" onclick="return false"&gt;Klik disini&lt;/a&gt;
+atau
+&lt;a href="/" onclick="event.preventDefault()"&gt;disini&lt;/a&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-sokq9maiwq" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Pada contoh selanjutnya kita akan menggunakan teknik untuk menu yang dibuat oleh JavaScript.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Returning <code>false</code> dari sebuah penangan adalah sebuah pengecualian</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Nilai yang di kembalikan oleh penangan (<em>handler</em>) bisanya dibiar.</p> 
+           <p>Hanya pada <code>return false</code> terdapat pengecualian jika tejadi pada sebuah penangan (<em>handler</em>) yang diatur menggunakan <code>on&lt;event&gt;</code>.</p> 
+           <p>Pada semua kasus yang lain, nilai <code>return</code> akan dibiarkan. Khusunya, tidak masuk akal untuk mengembalikan <code>true</code>.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="contoh-menu" href="default-browser-action.html#contoh-menu">Contoh: menu</a></h3> 
+         <p>Bayangkan menu situs, seperti ini:</p> 
+         <div id="5i03ycyp4w" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;ul id="menu" class="menu"&gt;
+  &lt;li&gt;&lt;a href="/html"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/javascript"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="/css"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan begini tampilannya jika ditambahkan CSS:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://id.js.cx/article/default-browser-action/menu/" target="_blank" title="buka pada jendela baru" class="toolbar__button toolbar__button_external"></a> 
+           </div> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/v2ykWkA6La3RcJb2?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="v2ykWkA6La3RcJb2" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:70px" src="https://id.js.cx/article/default-browser-action/menu/"></iframe> 
+         </div> 
+         <p>Item menu diimplementasikan sebagai HTML-link <code>&lt;a&gt;</code>, bukan tombol <code>&lt;button&gt;</code>. Ada beberapa alasan untuk melakukannya, misalnya:</p> 
+         <ul> 
+          <li>Banyak orang suka menggunakan ???klik kanan??? ??? ???buka di jendela baru???. Jika kita menggunakan <code>&lt;button&gt;</code> atau <code>&lt;span&gt;</code>, itu tidak akan berhasil.</li> 
+          <li>Mesin pencari mengikuti tautan <code>&lt;a href="..."&gt;</code> saat mengindeks.</li> 
+         </ul> 
+         <p>Jadi kami menggunakan <code>&lt;a&gt;</code> di markup. Tetapi biasanya kami bermaksud menangani klik dalam JavaScript. Jadi kita harus mencegah tindakan bawaan <em>browser</em>.</p> 
+         <p>Seperti ini:</p> 
+         <div id="m1fgnzf27p" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>menu.onclick = function(event) {
+  if (event.target.nodeName != 'A') return;
+
+  let href = event.target.getAttribute('href');
+  alert( href ); // ...bisa memuat dari server, membuat UI dll
+
+  return false; // mencegah bawaan browser (tidak pergi ke URL)
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita menghilangkan <code>return false</code>, maka setelah kode kita dijalankan, browser akan melakukan ???tindakan bawaan??? ??? menavigasi ke URL di <code>href</code>. Dan kami tidak membutuhkannya di sini, karena kami menangani klik sendiri.</p> 
+         <p>Dan juga, menggunakan delegasi peristiwa di sini membuat menu kami sangat fleksibel. Kita dapat menambahkan daftar bersarang dan menatanya menggunakan CSS ke ???slide down???.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Peristiwa lanjutan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Peristiwa tertentu mengalir satu ke yang lain. Jika kita mencegah peristiwa pertama, tidak akan ada yang kedua.</p> 
+           <p>Contohnya, <code>mousedown</code> pada sebuah <code>&lt;input&gt;</code> mengarah ke fokus di dalamnya, dan peristiwa <code>focus</code>. Jika kita mencegah peristiwa <code>mousedown</code>, tidak ada fokus.</p> 
+           <p>Coba klik pada <code>&lt;input&gt;</code>dibawah ??? peristiwa <code>focus</code> terjadi. Tapi jika kita klik pada yang kedua, tidak ada fokus.</p> 
+           <div id="9cb66tlh9l" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:7,&quot;end&quot;:33}]}]" data-autorun="true"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="default-browser-action.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="default-browser-action.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;input value="Ada fokus" onfocus="this.value=''"&gt;
+&lt;input onmousedown="return false" onfocus="this.value=''" value="Klik saya"&gt;</code></pre> 
+             </div> 
+            </div> 
+            <div class="code-result code-example__result"> 
+             <iframe class="code-result__iframe" name="test-9cb66tlh9l" style="height:200px" src="about:blank"></iframe> 
+            </div> 
+           </div> 
+           <p>Itu karena tindakan browser dibatalkan pada <code>mousedown</code>. Pemfokusan masih dimungkinkan jika kita menggunakan cara lain untuk memasukkan input. Misalnya, tombol <kbd class="shortcut">Tab</kbd> untuk beralih dari input pertama ke input kedua. Tapi tidak dengan klik mouse lagi.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="pilihan-penangan-passive" href="default-browser-action.html#pilihan-penangan-passive">Pilihan penangan ???passive???</a></h2> 
+         <p>Pilihan <code>passive: true</code> opsional dari <code>addEventListener</code> memberi sinyal kepada <em>browser</em> bahwa penangan tidak akan memanggil <code>preventDefault()</code>.</p> 
+         <p>Mengapa itu mungkin diperlukan?</p> 
+         <p>Ada beberapa peristiwa seperti <code>touchmove</code> pada perangkat seluler (ketika pengguna menggerakkan jari mereka melintasi layar), yang menyebabkan pengguliran secara bawaan, tetapi pengguliran tersebut dapat dicegah menggunakan <code>preventDefault()</code> di pengendali.</p> 
+         <p>Jadi, ketika <em>browser</em> mendeteksi peristiwa seperti itu, <em>browser</em> harus terlebih dahulu memproses semua penangan (<em>handler</em>), dan kemudian jika <code>preventDefault</code> tidak dipanggil di mana pun, <em>browser</em> dapat melanjutkan dengan menggulir. Itu dapat menyebabkan penundaan dan ???kegelisahan??? yang tidak perlu di UI.</p> 
+         <p>Pilihan <code>passive: true</code> memberi tahu <em>browser</em> bahwa penangan (<em>handler</em>) tidak akan membatalkan pengguliran. Kemudian <em>browser</em> segera menggulir memberikan pengalaman lancar maksimal, dan peristiwa ditangani dengan cara.</p> 
+         <p>Untuk beberapa <em>browser</em> (Firefox, Chrome), <code>passive</code> atur menjadi <code>true</code> secara bawaan untuk peristiwa <code>touchstart</code> dan <code>touchmove</code>.</p> 
+         <h2><a class="main__anchor" name="event-defaultprevented" href="default-browser-action.html#event-defaultprevented">event.defaultPrevented</a></h2> 
+         <p>Properti <code>event.defaultPrevented</code> adalah <code>true</code> jika tindakan default dicegah, dan <code>false</code> jika sebaliknya.</p> 
+         <p>Ada kasus penggunaan yang menarik untuk itu.</p> 
+         <p>Anda ingat di bab <a href="bubbling-and-capturing.html">Menggelembung (_bubbling_) dan menangkap (_capturing_)</a> kita berbicara tentang <code>event.stopPropagation()</code> dan mengapa menghentikan pengelembungan itu buruk?</p> 
+         <p>Terkadang kita dapat menggunakan <code>event.defaultPrevented</code> sebagai gantinya, untuk memberi sinyal pada penangan peristiwa lain bahwa peristiwa tersebut ditangani.</p> 
+         <p>Mari kita lihat contoh praktisnya.</p> 
+         <p>Secara bawaan, <em>browser</em> pada peristiwa <code>contextmenu</code> (klik kanan mouse) menampilkan menu konteks dengan pilihan standar. Kita bisa mencegahnya dan menunjukkannya sendiri, seperti ini:</p> 
+         <div id="iq93idz9zb" data-trusted="1" class="code-example" data-demo-height="50" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:8,&quot;end&quot;:61}]}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="default-browser-action.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="default-browser-action.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button&gt;Klik kanan menampilkan menu konteks browser&lt;/button&gt;
+
+&lt;button oncontextmenu="alert('Buat menu baru'); return false"&gt;
+  Klik kanan menampilkan menu konteks browser
+&lt;/button&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-iq93idz9zb" style="height:50px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Sekarang, selain menu konteks itu, kami ingin menerapkan menu konteks seluruh dokumen.</p> 
+         <p>Setelah klik kanan, menu konteks terdekat akan muncul.</p> 
+         <div id="xqlufecc0u" data-trusted="1" class="code-example" data-demo-height="80" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="default-browser-action.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="default-browser-action.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;p&gt;Klik kanan menampilkan menu konteks browser&lt;/p&gt;
+&lt;button id="elem"&gt;Klik kanan menampilkan menu konteks browser&lt;/button&gt;
+
+&lt;script&gt;
+  elem.oncontextmenu = function(event) {
+    event.preventDefault();
+    alert("Tombol konteks menu");
+  };
+
+  document.oncontextmenu = function(event) {
+    event.preventDefault();
+    alert("Dokumen konteks menu");
+  };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-xqlufecc0u" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Masalahnya adalah ketika kita mengklik <code>elem</code>, kita mendapatkan dua menu: level tombol dan (peristiwa muncul) menu level dokumen.</p> 
+         <p>Bagaimana memperbaikinya? Salah satu solusinya adalah dengan berpikir seperti: ???Ketika kita menangani klik kanan pada pengendali tombol, mari hentikan gelembungnya??? dan gunakan <code>event.stopPropagation()</code>:</p> 
+         <div id="lhjhwa9qxm" data-trusted="1" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="default-browser-action.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="default-browser-action.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;p&gt;Klik kanan menampilkan menu konteks browser&lt;/p&gt;
+&lt;button id="elem"&gt;Klik kanan menampilkan menu konteks browser (diperbaiki dengan event.stopPropagation)&lt;/button&gt;
+
+&lt;script&gt;
+  elem.oncontextmenu = function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    alert("Tombol konteks menu");
+  };
+
+  document.oncontextmenu = function(event) {
+    event.preventDefault();
+    alert("Dokumen konteks menu");
+  };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-lhjhwa9qxm" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Sekarang menu tingkat tombol berfungsi sebagaimana dimaksud. Tapi bayarannya tinggi. Kami selamanya menolak akses ke informasi dari klik kanan untuk kode yang lain, termasuk penghitung yang mengumpulkan statistik dan sebagainya. Hal ini sangat tidak bijaksana.</p> 
+         <p>Solusi alternatif adalah dengan memeriksa penangan (<em>handler</em>) <code>document</code> jika tindakan bawaan dicegah? Jika demikian, maka peristiwa itu ditangani, dan kita tidak perlu bereaksi.</p> 
+         <div id="vx5e287hk2" data-trusted="1" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="default-browser-action.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="default-browser-action.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;p&gt;Klik kanan menampilkan menu konteks browser (Menambah pemeriksa untuk event.defaultPrevented)&lt;/p&gt;
+&lt;button id="elem"&gt;Klik kanan menampilkan menu konteks browser&lt;/button&gt;
+
+&lt;script&gt;
+  elem.oncontextmenu = function(event) {
+    event.preventDefault();
+    alert("Tombol konteks menu");
+  };
+
+  document.oncontextmenu = function(event) {
+    if (event.defaultPrevented) return;
+
+    event.preventDefault();
+    alert("Dokumen konteks menu");
+  };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-vx5e287hk2" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Sekarang semuanya berfungsi dengan benar. Jika kita memiliki elemen bersarang, dan masing-masing elemen memiliki menu konteksnya sendiri, itu juga akan berfungsi. Pastikan untuk memeriksa <code>event.defaultPrevented</code> di setiap penangan (<em>handler</em>) <code>contextmenu</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">event.stopPropagation() dan event.preventDefault()</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Seperti yang bisa kita lihat dengan jelas, <code>event.stopPropagation()</code> dan <code>event.preventDefault()</code> (juga dikenal dengan <code>return false</code>) adalah dua hal yang berbeda. Dan mereka tidak terkait satu dengan yang lain.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Arsitektur menu konteks bersarang</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ada juga cara alternatif untuk mengimplementasikan menu konteks bersarang. Salah satunya adalah memiliki satu objek global dengan penangan (<em>handler</em>) untuk <code>document.oncontextmenu</code>, dan juga metode yang memungkinkan kita untuk menyimpan penangan (<em>handler</em>) lain di dalamnya.</p> 
+           <p>Objek akan menangkap klik kanan apa pun, melihat melalui penangan (<em>handler</em>) yang tersimpan dan menjalankan yang sesuai.</p> 
+           <p>Tapi kemudian setiap bagian kode yang menginginkan menu konteks harus tahu tentang objek itu dan menggunakan bantuannya alih-alih penangan (<em>handler</em>) <code>contextmenu</code> sendiri.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="rincian" href="default-browser-action.html#rincian">Rincian</a></h2> 
+         <p>Ada banyak aksi bawaan <em>browser</em>:</p> 
+         <ul> 
+          <li><code>mousedown</code> ??? memulai pemilihan (gerakkan mouse untuk memilih).</li> 
+          <li><code>click</code> pada <code>&lt;input type="checkbox"&gt;</code> ??? centang/hapus centang pada <code>input</code>.</li> 
+          <li><code>submit</code> ??? mengklik <code>&lt;input type="submit"&gt;</code> atau menekan <kbd class="shortcut">Enter</kbd> di dalam bidang formulir menyebabkan peristiwa ini terjadi, dan browser mengirimkan formulir setelahnya.</li> 
+          <li><code>keydown</code> ??? menekan tombol dapat menyebabkan penambahan karakter ke dalam bidang, atau tindakan lainnya.</li> 
+          <li><code>contextmenu</code> ??? peristiwa terjadi dengan klik kanan, tindakannya adalah menampilkan menu konteks browser.</li> 
+          <li>???ada lagi???</li> 
+         </ul> 
+         <p>Semua tindakan bawaan dapat dicegah jika kita ingin menangani peristiwa (<em>event</em>) secara eksklusif dengan JavaScript.</p> 
+         <p>Untuk mencegah peristiwa (<em>event</em>) bawaan ??? gunakan <code>event.preventDefault()</code> atau <code>return false</code>. Metode kedua hanya berfungsi untuk penangan (<em>handler</em>) yang ditetapkan dengan <code>on&lt;event&gt;</code>.</p> 
+         <p>Pilihan <code>passive: true</code> dari <code>addEventListener</code> memberi tahu <em>browser</em> bahwa tindakan tersebut tidak akan dicegah. Itu berguna untuk beberapa aktivitas seluler, seperti <code>touchstart</code> dan <code>touchmove</code>, untuk memberi tahu <em>browser</em> bahwa <em>browser</em> tidak boleh menunggu semua penangan (<em>handler</em>) selesai sebelum menggulir.</p> 
+         <p>Jika tindakan bawaan dicegah, nilai <code>event.defaultPrevented</code> menjadi <code>true</code>, jika tidak maka <code>false</code>.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tetap semantik, jangan menyalahgunakan elemen</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Secara teknis, dengan mencegah tindakan bawaan dan menambahkan JavaScript, kita dapat menyesuaikan perilaku elemen apa pun. Misalnya, kita dapat membuat tautan <code>&lt;a&gt;</code> berfungsi seperti tombol, dan tombol <code>&lt;button&gt;</code> berfungsi sebagai tautan (mengalihkan ke URL lain atau lebih).</p> 
+           <p>Tapi secara umum kita harus menjaga makna semantik dari elemen HTML. Misalnya, <code>&lt;a&gt;</code> harus melakukan navigasi, bukan tombol.</p> 
+           <p>Selain menjadi ???hal yang baik???, itu membuat HTML Anda lebih baik dalam hal aksesibilitas.</p> 
+           <p>Juga jika kita mempertimbangkan contoh dengan <code>&lt;a&gt;</code>, maka harap dicatat: <em>browser</em> memungkinkan kita untuk membuka link tersebut di jendela baru (dengan mengklik kanan link tersebut dan cara lain). Dan penggunan menyukai hal tersebut. Tetapi jika kita membuat tombol berperilaku sebagai tautan dengan menggunakan JavaScript dan bahkan terlihat seperti tautan menggunakan CSS, maka fitur browser khusus <code>&lt;a&gt;</code> tetap tidak akan berfungsi pada tombol itu.</p> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="default-browser-action.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="default-browser-action.html#mengapa-return-false-tidak-berfungsi" name="mengapa-return-false-tidak-berfungsi">Mengapa "return false" tidak berfungsi?</a></h3> 
+           <a class="task__open-link" href="task/why-return-false-fails.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 3</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kenapa pada kode dibawah <code>return false</code> tidak berfungsi sama sekali?</p> 
+            <div id="vgckg1oq8k" data-trusted="1" class="code-example" data-autorun="true"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="default-browser-action.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="default-browser-action.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-markup"><code>&lt;script&gt;
+  function handler() {
+    alert( "..." );
+    return false;
+  }
+&lt;/script&gt;
+
+&lt;a href="https://w3.org" onclick="handler()"&gt;browser akan membuka w3.org&lt;/a&gt;</code></pre> 
+              </div> 
+             </div> 
+             <div class="code-result code-example__result"> 
+              <iframe class="code-result__iframe" name="test-vgckg1oq8k" style="height:200px" src="about:blank"></iframe> 
+             </div> 
+            </div> 
+            <p><em>browser</em> akan mengikuti URL yang di klik, tapi kita tidak mau hal itu terjadi.</p> 
+            <p>Bagaimana cara memperbaikinya?</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Pada saat <em>browser</em> membaca atribut <code>on*</code> seperti <code>onclick</code>, <em>browser</em> akan membuat sebuah penangan (<em>handler</em>) dari kontennya.</p> 
+              <p>Untuk <code>onclick"handler()"</code> fungsinya akan menjadi:</p> 
+              <div id="az0m6sjkre" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function(event) {
+  handler() // konten dari onclick
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Sekarang kita bisa melihat bahwa nilai yang dikembalikan oleh <code>handler()</code> tidak digunakan dan tidak mempengaruhi hasilnya.</p> 
+              <p>Cara memperbaikinnya mudah:</p> 
+              <div id="dn4l2zdfrw" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;cols&quot;:[{&quot;start&quot;:34,&quot;end&quot;:50}]}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="default-browser-action.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="default-browser-action.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-markup"><code>&lt;script&gt;
+  function handler() {
+    alert("...");
+    return false;
+  }
+&lt;/script&gt;
+
+&lt;a href="https://w3.org" onclick="return handler()"&gt;w3.org&lt;/a&gt;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kita juga bisa menggunakan <code>event.preventDefault()</code>, seperti ini:</p> 
+              <div id="x438v5rq1t" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;cols&quot;:[{&quot;start&quot;:34,&quot;end&quot;:48}]},{&quot;start&quot;:1,&quot;end&quot;:4}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="default-browser-action.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="default-browser-action.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-markup"><code>&lt;script&gt;
+  function handler(event) {
+    alert("...");
+    event.preventDefault();
+  }
+&lt;/script&gt;
+
+&lt;a href="https://w3.org" onclick="handler(event)"&gt;w3.org&lt;/a&gt;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="default-browser-action.html#tangkap-link-pada-elemen" name="tangkap-link-pada-elemen">Tangkap link pada elemen</a></h3> 
+           <a class="task__open-link" href="task/catch-link-navigation.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat semua link yang ada didalam elemen dengan <code>id="contents"</code> akan menanyakan kepada pengguna jika mereka mau meninggalkan website. Dan jika mereka tidak mau maka halaman tidak akan berpindah.</p> 
+            <p>Seperti ini:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:100px" src="https://id.js.cx/task/catch-link-navigation/solution/"></iframe> 
+            </div> 
+            <p>Rincian:</p> 
+            <ul> 
+             <li>HTML didalam elemen bisa di muat dan di buat kembali secara dinamis secara acak, jadi kita tidak bisa menemukan semua link dan memberikan penangan (<em>handler</em>). Gunakan delegasi peristiwa.</li> 
+             <li>Kontent bisa saja merupakan tag bersarang. Di dalam link juga, seperti <code>&lt;a href=".."&gt;&lt;i&gt;...&lt;/i&gt;&lt;/a&gt;</code>.</li> 
+            </ul> 
+            <p><a href="https://plnkr.co/edit/1Pv7joyvxUJBQ2Zy?p=preview" target="_blank" data-plunk-id="1Pv7joyvxUJBQ2Zy">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Itu merupakan salah satu cara yang bagus dalam pemanfaatan pola delegasi peristiwa.</p> 
+              <p>Pada kehidupan nyata kita bisa mengirim permintaan ???logging??? ke server yang menyimpan informasi tentang dari mana pengujung meninggalkan website daripada menanyakannya secara langsung. Atau kita bisa memuat konten dan menunjukannya tepat pada halaman (jika diizinkan).</p> 
+              <p>Yang kita butuhkan hanyalah menangkap <code>contents.onclick</code> dan menggunakan <code>confim</code> untuk menanyakan pengguna. Sebuah ide bagus adalah dengan menggunakan <code>link.getAttribute('href')</code> dari pada menggunakan <code>link.href</code> untuk URL. Lihat solusinya untuk rincian.</p> 
+              <p><a href="https://plnkr.co/edit/58nalRXG4eCh7Zfx?p=preview" target="_blank" data-plunk-id="58nalRXG4eCh7Zfx">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="default-browser-action.html#image-gallery" name="image-gallery">Image gallery</a></h3> 
+           <a class="task__open-link" href="task/image-gallery.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Create an image gallery where the main image changes by the click on a thumbnail.</p> 
+            <p>Like this:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:600px" src="https://id.js.cx/task/image-gallery/solution/"></iframe> 
+            </div> 
+            <p>P.S. Use event delegation.</p> 
+            <p><a href="https://plnkr.co/edit/cUmrrbaSifUnEQJ1?p=preview" target="_blank" data-plunk-id="cUmrrbaSifUnEQJ1">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>The solution is to assign the handler to the container and track clicks. If a click is on the <code>&lt;a&gt;</code> link, then change <code>src</code> of <code>#largeImg</code> to the <code>href</code> of the thumbnail.</p> 
+              <p><a href="https://plnkr.co/edit/q76yqRCrUDm37v09?p=preview" target="_blank" data-plunk-id="q76yqRCrUDm37v09">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="event-delegation.html" data-tooltip="Delegasi Peristiwa"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="dispatch-events.html" data-tooltip="Dispatching custom events"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdefault-browser-action" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdefault-browser-action" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="events.html">Pengenalan ke Peristiwa</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="default-browser-action.html#mencegah-aksi-browser">Mencegah aksi <em>browser</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="default-browser-action.html#pilihan-penangan-passive">Pilihan penangan ???passive???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="default-browser-action.html#event-defaultprevented">event.defaultPrevented</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="default-browser-action.html#rincian">Rincian</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="default-browser-action.html#tasks">Tugas (3)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="default-browser-action.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdefault-browser-action" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fdefault-browser-action" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

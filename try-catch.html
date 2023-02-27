@@ -1,0 +1,1191 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Penanganan eror, "try..catch"</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="try-catch.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Penanganan eror, &quot;try..catch&quot;"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Penanganan eror, &quot;try..catch&quot;"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="error-handling.html"> 
+  <link rel="next" href="custom-errors.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Penanganan eror, &quot;try..catch&quot;"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ftry-catch" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ftry-catch" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="73" max="92" data-tooltip="Pelajaran 73 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="error-handling.html"><span>Penanganan kesalahan</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Penanganan kesalahan","item":"https://id.javascript.info/error-handling"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Penanganan eror, "try..catch"</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Penanganan eror, &quot;try..catch&quot;"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Tidak peduli seberapa hebatnya kita dalam pemograman, terkadang kodingan kita memiliki banyak eror. Mereka mungkin muncul dikarenakan kesalahan kita, input dari user yang tidak terduga, eror respon dari server, dan juga berbagai macam alasan lainnya.</p> 
+         <p>Biasanya, sebuah kodingan/scrip ???terhenti??? (tiba-tiba berhenti) dikarenakan adanya eror, menampilkan erornya pada console.</p> 
+         <p>Tapi terdapat sebuah sintaks <code>try..catch</code> yang memperbolehkan kita untuk ???menangkap??? hasil eror sehingga skrip bisa berjalan sesuai dengan arahan kita, dibanding hanya berhenti saja.</p> 
+         <h2><a class="main__anchor" name="sintaks-try-catch" href="try-catch.html#sintaks-try-catch">Sintaks ???try???catch???</a></h2> 
+         <p>Sintaks <code>try..catch</code> membentuk dua bagian utama: pertama <code>try</code>, dan kemudian <code>catch</code>:</p> 
+         <div id="q2ca0xixui" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+
+  // kodingan disini
+
+} catch (err) {
+
+  // Penanganan jika eror
+
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mereka akan bekerja seperti ini:</p> 
+         <ol> 
+          <li>Pertama, kodingan pada <code>try {...}</code> akan dijalankan.</li> 
+          <li>Jika tidak terdapat eror, maka <code>catch(err)</code> akan dihiraukan: prosesnya akan mencapai ujung bagian <code>try</code> dan kemudian berlanjut, melewati bagian <code>catch</code>.</li> 
+          <li>Jika terdapat eror, maka bagian <code>try</code> akan berhenti berjalan, dan alur prosesnya akan berlanjut pada awal bagian <code>catch(err)</code>. Variabel <code>err</code> (yang mana kita bisa ganti dengan nama apapun) akan mengandung eror objek dengan keterangan eror didalamnya.</li> 
+         </ol> 
+         <figure> 
+          <div class="image" style="width:514px"> 
+           <div class="image__ratio" style="padding-top:79.96108949416343%"></div> 
+           <object type="image/svg+xml" data="article/try-catch/try-catch-flow.svg" width="514" height="411" class="image__image" data-use-theme> <img src="article/try-catch/try-catch-flow.svg" alt="" width="514" height="411"> </object> 
+          </div> 
+         </figure> 
+         <p>Jadi, sebuah eror didalam bagian <code>try {???}</code> tidak akan memberhentikan kodingan tersebut ??? kita memiliki sebuah kesempatan untuk menanganinya pada bagian <code>catch</code>.</p> 
+         <p>Mari kita lihat contoh lainnya.</p> 
+         <ul> 
+          <li> <p>Sebuah contoh tanpa eror: menampilkan <code>alert</code> <code>(1)</code> dan <code>(2)</code>:</p> 
+           <div id="qzq99x8svx" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;cols&quot;:[{&quot;start&quot;:33,&quot;end&quot;:40}]},{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:34,&quot;end&quot;:41}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>try {
+
+  alert('Start of try runs');  // (1) &lt;--
+
+  // ...tidak ada eror disini
+
+  alert('End of try runs');   // (2) &lt;--
+
+} catch (err) {
+
+  alert('Catch is ignored, because there are no errors'); // (3)
+
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Sebuah contoh dengan eror: shows <code>(1)</code> dan <code>(3)</code>:</p> 
+           <div id="p66wciyi3w" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;cols&quot;:[{&quot;start&quot;:35,&quot;end&quot;:42}]},{&quot;start&quot;:4,&quot;end&quot;:4},{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:34,&quot;end&quot;:41}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>try {
+
+  alert('Start of try runs');  // (1) &lt;--
+
+  lalala; // error, variable is not defined!
+
+  alert('End of try (never reached)');  // (2)
+
+} catch (err) {
+
+  alert(`Error has occurred!`); // (3) &lt;--
+
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ul> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>try..catch</code> hanya akan bekerja pada eror runtime</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Untuk <code>try..catch</code> agar bekerja, kodingan tersebut harus bisa dijalankan. Dengan artian lain, itu harus dalam bahasa javascript yang valid.</p> 
+           <p>Mereka tidak akan bekerja jika kodingan tersebut secara sintaks salah, sebagai contoh jika mereka memiliki kurung kurawal yang tidak sama:</p> 
+           <div id="wc3pdu32yd" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>try {
+  {{{{{{{{{{{{
+} catch (err) {
+  alert("The engine can't understand this code, it's invalid");
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Mesin Javascript pertama membaca kodingan tersebut, dan menjalankannya. eror yang terjadi pada saat proses pembacaan disebut sebagai eror ???parse-time??? dan tidak dapat dipulihkan (dari dalam kodingan tersebut). Itu dikarenakan mesin javascript tidak mengerti kodingan .</p> 
+           <p>Jadi, <code>try..catch</code> hanya dapat menangani eror yang terjadi pada kodingan yang valid. eror demikian biasanya dinamakan sebagai ???eror runtime??? atau terkadang, ???exceptions???.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>try..catch</code> bekerja secara sinkronis</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika sebuah exception terjadi pada kodingan yang ???terjadwal???, seperti pada <code>setTimeout</code>, maka <code>try..catch</code> tidak akan menangkapnya:</p> 
+           <div id="272a8ly9fp" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>try {
+  setTimeout(function() {
+    noSuchVariable; // kodingan akan berhenti disini
+  }, 1000);
+} catch (err) {
+  alert( "won't work" );
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Itu dikarenakan fungsi tersebut dijalankan nanti, ketika mesin javascript telah meninggalkan bagian pada <code>try..catch</code>.</p> 
+           <p>Untuk menangkap sebuah exception didalam sebuah fungsi yang terjadwal, <code>try..catch</code> harus terjadi didalam fungsi tersebut:</p> 
+           <div id="r5ddootrfw" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>setTimeout(function() {
+  try {
+    noSuchVariable; // try..catch menangani eror tersebut!
+  } catch {
+    alert( "error is caught here!" );
+  }
+}, 1000);</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="eror-objek" href="try-catch.html#eror-objek">Eror Objek</a></h2> 
+         <p>Ketika sebuah eror terjadi, Javascript menghasilkan sebuah ojek yang berisikan keterangan terkait eror tersebut. Objek itu kemudian dilewatkan sebagai sebuah argumen pada bagian <code>catch</code>:</p> 
+         <div id="39xcy38gzp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+  // ...
+} catch(err) { // &lt;-- "error object", bisa menggunakan kata lain selain err
+  // ...
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk semua eror bawaan, eror objek memiliki dua properti utama:</p> 
+         <dl> 
+          <dt> 
+           <code>name</code> 
+          </dt> 
+          <dd>
+            Nama error. sebagai contoh, untuk variable yang belum terdefinisikan maka itu disebut 
+           <code>"ReferenceError"</code>. 
+          </dd> 
+          <dt> 
+           <code>message</code> 
+          </dt> 
+          <dd>
+            Pesan yang ada didalam eror tersebut. 
+          </dd> 
+         </dl> 
+         <p>Terdapat properti non-standard lainnya pada kebanyakan Ada properti non-standar lain yang tersedia di sebagian besar lingkungan. Salah satu yang paling banyak digunakan dan didukung ialah:</p> 
+         <dl> 
+          <dt> 
+           <code>stack</code> 
+          </dt> 
+          <dd>
+            Call stack saat ini: string dengan informasi tentang urutan panggilan bertingkat yang menyebabkan kesalahan. Digunakan untuk tujuan debugging. 
+          </dd> 
+         </dl> 
+         <p>Sebagai contoh:</p> 
+         <div id="5d8n937fmr" data-trusted="0" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+  lalala; // error, variable is not defined!
+} catch (err) {
+  alert(err.name); // ReferenceError
+  alert(err.message); // lalala is not defined
+  alert(err.stack); // ReferenceError: lalala is not defined at (...call stack)
+
+  // Can also show an error as a whole
+  // The error is converted to string as "name: message"
+  alert(err); // ReferenceError: lalala is not defined
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="catch-binding-opsional" href="try-catch.html#catch-binding-opsional">???Catch??? binding Opsional</a></h2> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tambahan baru-baru ini</span> 
+          </div> 
+          <div class="important__content">
+            Ini adalah tambahan terbaru untuk bahasa ini. Browser lama mungkin memerlukan polyfill. 
+          </div> 
+         </div> 
+         <p>Jika kita tidak butuh detail tentang eror, <code>catch</code> mungkin bisa menghilangkannya:</p> 
+         <div id="fhkfoq8au1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+  // ...
+} catch { // &lt;-- tanpa (err)
+  // ...
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="menggunakan-try-catch" href="try-catch.html#menggunakan-try-catch">Menggunakan ???try???catch???</a></h2> 
+         <p>Mari kita telusuri contoh penggunaan nyata dari <code>try..catch</code>.</p> 
+         <p>Seperti yang telah kita ketahui, Javascript mendukung method <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse(str)</a> yang membaca dari nilai JSON-encoded.</p> 
+         <p>Biasanya digunakan untuk memecahkan kode data yang diterima melalui jaringan, dari server atau sumber lain.</p> 
+         <p>Kita menerimanya dan memanggil <code>JSON.parse</code> seperti ini:</p> 
+         <div id="1nihn8tuqm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let json = '{"name":"John", "age": 30}'; // data dari server
+
+let user = JSON.parse(json); // mengonversi representasi teks ke objek JS
+
+// sekarang pengguna adalah objek dengan properti dari string
+alert( user.name ); // John
+alert( user.age );  // 30</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kalian dapat menemukan informasi lebih detail tentang JSON di bab &lt;info: json&gt;.</p> 
+         <p><strong>Jika format <code>json</code> salah,<code>JSON.parse</code> menghasilkan error, sehingga skrip ???mati???.</strong></p> 
+         <p>Cukupkah kita puas dengan itu? Tentu saja tidak!</p> 
+         <p>Dengan cara ini, jika ada yang salah dengan datanya, pengunjung tidak akan pernah mengetahuinya (kecuali mereka membuka konsol pengembang). Dan orang biasanya tidak suka ketika sesuatu ???berhenti begitu saja??? tanpa ada pesan kesalahan.</p> 
+         <p>Mari gunakan <code>try..catch</code> untuk menangani kesalahan:</p> 
+         <div id="83fd9bx1kl" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:11},{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let json = "{ bad json }";
+
+try {
+
+  let user = JSON.parse(json); // &lt;-- ketika terjadi sebuah eror...
+  alert( user.name ); // tidak berjalan
+
+} catch (err) {
+  // ...proses eksekusinya akan lompat kesini
+  alert( "Our apologies, the data has errors, we'll try to request it one more time." );
+  alert( err.name );
+  alert( err.message );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini kita menggunakan blok <code>catch</code> hanya untuk menampilkan pesan, tetapi kita dapat melakukan lebih banyak lagi: mengirim permintaan jaringan baru, menyarankan alternatif kepada pengunjung, mengirim informasi tentang kesalahan ke fasilitas logging, ???. Semuanya jauh lebih baik daripada sekedar mati.</p> 
+         <h2><a class="main__anchor" name="melontarkan-eror-kita-sendiri" href="try-catch.html#melontarkan-eror-kita-sendiri">Melontarkan eror kita sendiri</a></h2> 
+         <p>Bagaimana jika <code>json</code> secara sintaksis benar, tetapi tidak memiliki properti<code>name</code> yang diperlukan?</p> 
+         <p>Seperti ini:</p> 
+         <div id="u7apb89svc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let json = '{ "age": 30 }'; // data tidak lengkap
+
+try {
+
+  let user = JSON.parse(json); // &lt;-- tidak ada eror
+  alert( user.name ); // tidak ada nama!
+
+} catch (err) {
+  alert( "doesn't execute" );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini <code>JSON.parse</code> berjalan normal, tetapi tidak adanya<code>nama</code> sebenarnya merupakan eror bagi kita.</p> 
+         <p>Untuk menyatukan penanganan error, kita akan menggunakan operator <code>throw</code>.</p> 
+         <h3><a class="main__anchor" name="operator-throw" href="try-catch.html#operator-throw">Operator ???Throw???</a></h3> 
+         <p>Operator <code>throw</code> menghasilkan sebuah eror.</p> 
+         <p>Sintaksnya adalah:</p> 
+         <div id="c28coaswih" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>throw &lt;error object&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Secara teknis, kita dapat menggunakan apapun sebagai eror objek. Technically, we can use anything as an error object. Itu bahkan mungkin dengan data primitif, seperti angka atau string, lebih disarankan menggunakan objek, dan juga dengan properti <code>name</code> dan<code>message</code> (agar tetap kompatibel dengan error bawaan).</p> 
+         <p>JavaScript memiliki banyak konstruktor bawaan untuk standar eror: <code>Error</code>, <code>SyntaxError</code>,<code>ReferenceError</code>, <code>TypeError</code> dan lain-lain. Kita bisa menggunakannya untuk membuat eror objek juga.</p> 
+         <p>Sintaksnya adalah:</p> 
+         <div id="nne955sk6w" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let error = new Error(message);
+// or
+let error = new SyntaxError(message);
+let error = new ReferenceError(message);
+// ...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk eror bawaan (bukan untuk objek lainnya, hanya untuk eror), properti <code>name</code> persis dengan nama konstruktornya. Dan <code>pesan</code> diambil dari argumennya.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="lksvmyc8o2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let error = new Error("Things happen o_O");
+
+alert(error.name); // Error
+alert(error.message); // Things happen o_O</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mari kita lihat jenis kesalahan apa yang dihasilkan <code>JSON.parse</code>:</p> 
+         <div id="ckdavmzl8t" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+  JSON.parse("{ bad json o_O }");
+} catch (err) {
+  alert(err.name); // SyntaxError
+  alert(err.message); // Unexpected token b in JSON at position 2
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang bisa kita lihat, itu adalah <code>SyntaxError</code>.</p> 
+         <p>Dan dalam kasus ini, tidak adanya <code>nama</code> adalah sebuah eror, karena pengguna harus memiliki<code>nama</code>.</p> 
+         <p>Jadi mari kita tampung pada bagian throw:</p> 
+         <div id="c82j6iqtau" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let json = '{ "age": 30 }'; // data tidak lengkap
+
+try {
+
+  let user = JSON.parse(json); // &lt;-- tidak ada eror
+
+  if (!user.name) {
+    throw new SyntaxError("Incomplete data: no name"); // (*)
+  }
+
+  alert( user.name );
+
+} catch (err) {
+  alert( "JSON Error: " + err.message ); // JSON Error: Incomplete data: no name
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di baris <code>(*)</code>, operator <code>throw</code> menghasilkan<code>SyntaxError</code> dengan <code>message</code> yang diberikan, sama seperti JavaScript akan menjalankannya sendiri. Proses eksekusi <code>try</code> langsung berhenti dan alur kontrol melompat ke bagian <code>catch</code>.</p> 
+         <p>Sekarang <code>catch</code> menjadi satu tempat untuk semua penanganan error: baik untuk<code>JSON.parse</code> dan kasus lainnya.</p> 
+         <h2><a class="main__anchor" name="rethrowing" href="try-catch.html#rethrowing">Rethrowing</a></h2> 
+         <p>Pada contoh di atas kami menggunakan <code>try..catch</code> untuk menangani data yang salah. Tetapi apakah mungkin terjadi kesalahan tak terduga lainnya dalam blok <code>try {...}</code>? Seperti kesalahan pemrograman (variabel tidak terdefinisi) atau sesuatu yang lain, bukan hanya hal terkait "data yang salah " ini.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="pxu2cuk4ok" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let json = '{ "age": 30 }'; // data tidak lengkap
+
+try {
+  user = JSON.parse(json); // &lt;-- lupa meletakkan "let" sebelum user
+
+  // ...
+} catch (err) {
+  alert("JSON Error: " + err); // JSON Error: ReferenceError: user is not defined
+  // (no JSON Error actually)
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tentu saja, semuanya bisa! Pemrogram memang membuat kesalahan. Bahkan dalam projek pembantu pada sumber terbuka(open source) yang digunakan oleh jutaan orang selama beberapa dekade ??? tiba-tiba bug dapat ditemukan yang mengarah ke peretasan yang mengerikan.</p> 
+         <p>Dalam kasus kita, <code>try..catch</code> ditempatkan untuk menangkap eror <code>"data yang tidak valid "</code>. Tetapi pada dasarnya, <code>catch</code> mendapatkan <em>semua</em> error dari<code>try</code>. Di sini ia mendapat eror yang tak terduga, tetapi masih menampilkan pesan <code>"JSON Error"</code> yang sama. Itu salah dan juga membuat kode lebih sulit untuk di-debug.</p> 
+         <p>Untuk menghindari masalah seperti itu, kita dapat menggunakan teknik ???rethrowing???. Aturannya sederhana:</p> 
+         <p><strong>Proses throwing hanya akan memproses kesalahan yang diketahui dan ???melempar ulang / rethrowing??? yang lainnya.</strong></p> 
+         <p>Teknik ???rethrowing??? dapat dijelaskan lebih detail sebagai:</p> 
+         <ol> 
+          <li>Catch mendapatkan semua eror.</li> 
+          <li>Dalam blok <code>catch (err) {...}</code> kita menganalisis eror objek <code>err</code>.</li> 
+          <li>Jika kita tidak tahu bagaimana menanganinya, kita melakukan <code>throw err</code>.</li> 
+         </ol> 
+         <p>Biasanya, kita dapat memeriksa jenis erornya menggunakan operator <code>instanceof</code>:</p> 
+         <div id="lq9or7cvg4" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+  user = { /*...*/ };
+} catch (err) {
+  if (err instanceof ReferenceError) {
+    alert('ReferenceError'); // "ReferenceError" for accessing an undefined variable
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa mendapatkan nama kelas eror dari properti <code>err.name</code>. Semua eror bawaan memilikinya. Pilihan lainnya adalah membaca <code>err.constructor.name</code>.</p> 
+         <p>Pada kode di bawah ini, kita menggunakan teknik rethrowing sehingga <code>catch</code> hanya menangani<code>SyntaxError</code>:</p> 
+         <div id="32wtrktdcv" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:19},{&quot;start&quot;:9,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let json = '{ "age": 30 }'; // incomplete data
+try {
+
+  let user = JSON.parse(json);
+
+  if (!user.name) {
+    throw new SyntaxError("Incomplete data: no name");
+  }
+
+  blabla(); // unexpected error
+
+  alert( user.name );
+
+} catch (err) {
+
+  if (err instanceof SyntaxError) {
+    alert( "JSON Error: " + err.message );
+  } else {
+    throw err; // rethrow (*)
+  }
+
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Eror saat yang dilempar pada baris <code>(*)</code> dari dalam blok <code>catch</code> ???jatuh??? dari<code>try..catch</code> dan dapat ditangkap oleh bagian luar <code>try..catch</code>(jika ada), atau itu memberhentikan kodingannya.</p> 
+         <p>Jadi, blok <code>catch</code> sebenarnya hanya menangani error yang tahu cara penanganannya dan ???melewatkan??? semua error lainnya.</p> 
+         <p>Contoh di bawah ini menunjukkan bagaimana eror tersebut dapat ditangkap oleh satu level lagi dari blok <code>try..catch</code>:</p> 
+         <div id="bw5ktgafcc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:17,&quot;end&quot;:17},{&quot;start&quot;:9,&quot;end&quot;:9},{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function readData() {
+  let json = '{ "age": 30 }';
+
+  try {
+    // ...
+    blabla(); // error!
+  } catch (err) {
+    // ...
+    if (!(err instanceof SyntaxError)) {
+      throw e; // rethrow (tidak tahu bagaimana cara menanganinya)
+    }
+  }
+}
+
+try {
+  readData();
+} catch (err) {
+  alert( "External catch got: " + e ); // menangkapnya!
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini <code>readData</code> hanya mengetahui cara menangani<code>SyntaxError</code>, sedangkan bagian <code>try..catch</code> luar mengetahui cara menangani semuanya.</p> 
+         <h2><a class="main__anchor" name="try-catch-finally" href="try-catch.html#try-catch-finally">try???catch???finally</a></h2> 
+         <p>Tunggu, itu belum semuanya.</p> 
+         <p>Blok <code>try..catch</code> mungkin memiliki satu klausa kode lagi yaitu:<code>finally</code>.</p> 
+         <p>Jika ada, maka itu akan berjalan di semua kasus:</p> 
+         <ul> 
+          <li>setelah <code>try</code>, jika tidak ada eror,</li> 
+          <li>setelah <code>catch</code>, jika ada error.</li> 
+         </ul> 
+         <p>Contoh sintaks lengkapnya seperti ini:</p> 
+         <div id="i0tiqzlc82" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;cols&quot;:[{&quot;start&quot;:2,&quot;end&quot;:9}]},{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:2,&quot;end&quot;:7}]},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:3}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+   ... try to execute the code ...
+} catch (err) {
+   ... handle errors ...
+} finally {
+   ... execute always ...
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Try running this code:</p> 
+         <div id="na5bmsc3az" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+  alert( 'try' );
+  if (confirm('Make an error?')) BAD_CODE();
+} catch (err) {
+  alert( 'catch' );
+} finally {
+  alert( 'finally' );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kode tersebut memiliki dua cara eksekusi:</p> 
+         <ol> 
+          <li>Jika kalian menjawab ???Ya??? untuk ???Membuat eror????, maka proses eksekusinya akan jadi seperti ini <code>try -&gt; catch -&gt; finally</code>.</li> 
+          <li>Jika kalian mengatakan ???Tidak???, maka proses nya akan seperti ini <code>try -&gt; finally</code>.</li> 
+         </ol> 
+         <p>Klausa <code>finally</code> sering digunakan ketika kita mulai melakukan sesuatu dan ingin menyelesaikannya dalam kasus apa pun hasilnya.</p> 
+         <p>Misalnya, kami ingin mengukur waktu yang dibutuhkan oleh fungsi bilangan Fibonacci <code>fib (n)</code>. Secara alami, kita dapat mulai mengukur sebelum berlari dan menyelesaikannya setelahnya. Tetapi bagaimana jika ada kesalahan selama pemanggilan fungsi? Secara khusus, implementasi <code>fib (n)</code> dalam kode di bawah ini mengembalikan eror untuk bilangan negatif atau non-integer.</p> 
+         <p>Klausa <code>finally</code> adalah tempat yang tepat untuk menyelesaikan pengukuran apa pun yang terjadi.</p> 
+         <p>Di sini <code>finally</code> menjamin bahwa waktu akan diukur dengan benar dalam kedua situasi ??? jika eksekusi<code>fib</code> berhasil ataupun jika terjadi kesalahan di dalamnya:</p> 
+         <div id="mgw9qdaqie" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:17,&quot;end&quot;:19}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let num = +prompt("Enter a positive integer number?", 35)
+
+let diff, result;
+
+function fib(n) {
+  if (n &lt; 0 || Math.trunc(n) != n) {
+    throw new Error("Must not be negative, and also an integer.");
+  }
+  return n &lt;= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+
+let start = Date.now();
+
+try {
+  result = fib(num);
+} catch (err) {
+  result = 0;
+} finally {
+  diff = Date.now() - start;
+}
+
+alert(result || "error occurred");
+
+alert( `execution took ${diff}ms` );</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kalian dapat memeriksa dengan menjalankan kode dengan memasukkan <code>35</code> ke dalam<code>prompt</code> ??? ini dijalankan secara normal, <code>finally</code> setelah<code>try</code>. Dan kemudian masukkan <code>-1</code> ??? akan ada eror langsung, dan eksekusi akan memakan waktu<code>0ms</code>. Kedua pengukuran tersebut dilakukan dengan benar.</p> 
+         <p>Dengan kata lain, fungsi tersebut mungkin diakhiri dengan <code>return</code> atau <code>throw</code>, itu tidak masalah. Klausa <code>finally</code> dijalankan di kedua kasus.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Variables are local inside <code>try..catch..finally</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Tolong diperhatikan bahwa variabel <code>result</code> dan <code>diff</code> pada kode di atas dideklarasikan <em>sebelum</em> <code>try..catch</code>.</p> 
+           <p>Sebaliknya, jika kita mendeklarasikan <code>let</code> di blok<code>try</code>, itu hanya akan terlihat di dalamnya.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>finally</code> and <code>return</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Klausa <code>finally</code> berfungsi untuk <em>apa saja</em> yang keluar dari<code>try..catch</code>. Itu termasuk <code>return</code> eksplisit.</p> 
+           <p>Pada contoh di bawah ini, terdapat <code>return</code> dalam <code>try</code>. Dalam kasus ini, <code>finally</code> dijalankan tepat sebelum kontrol kembali ke kode luar.</p> 
+           <div id="3nozxcx4ww" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:8},{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function func() {
+
+  try {
+    return 1;
+
+  } catch (err) {
+    /* ... */
+  } finally {
+    alert( 'finally' );
+  }
+}
+
+alert( func() ); //pertama alert bekerja dari finally, dan kemudian yang satu ini</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>try...finally</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Bagian <code>try..finally</code>, tanpa klausa<code>catch</code>, juga berguna. Kita menerapkannya ketika kita tidak ingin menangani eror di sini (biarkan eror itu terjadi), tetapi ingin memastikan bahwa proses yang kita mulai sudah selesai.</p> 
+           <div id="p0mqpwrux" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function func() {
+  // mulai melakukan sesuatu yang perlu diselesaikan (seperti pengukuran)
+  try {
+    // ...
+  } finally {
+    // selesaikan itu bahkan jika semuanya berhenti
+  }
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Pada kode di atas, eror di dalam <code>try</code> selalu terjadi, karena tidak ada <code>catch</code>. Tapi <code>finally</code> berfungsi sebelum aliran eksekusi meninggalkan fungsinya.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="catch-global" href="try-catch.html#catch-global">Catch Global</a></h2> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Environment-specific</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Informasi dari bagian ini bukan merupakan bagian dari inti JavaScript.</p> 
+          </div> 
+         </div> 
+         <p>Bayangkan kita mendapatkan eror yang fatal di luar <code>try..catch</code>, dan kodingannya mati. Seperti eror pemrograman atau hal buruk lainnya.</p> 
+         <p>Adakah cara untuk bereaksi atas kejadian seperti itu? kita mungkin ingin mencatat kesalahan, menunjukkan sesuatu kepada pengguna (biasanya mereka tidak melihat pesan eror), dll.</p> 
+         <p>Tidak ada dalam spesifikasinya, tapi dilingkungan tempat itu bekerja biasanya menyediakannya, karena sangat berguna. Misalnya, Node.js memiliki [<code>process.on (" uncaughtException ")</code>] (https://nodejs.org/api/process.html#process_event_uncaughtexception) untuk itu. Dan pada browser kita dapat menetapkan fungsi ke properti khusus [window.onerror] (mdn: api / GlobalEventHandlers / onerror), yang akan berjalan jika terjadi kesalahan yang tidak tertangkap.</p> 
+         <p>Sintaksnya adalah:</p> 
+         <div id="ue9qezthrt" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>window.onerror = function(message, url, line, col, error) {
+  // ...
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <dl> 
+          <dt> 
+           <code>message</code> 
+          </dt> 
+          <dd>
+            Pesan eror. 
+          </dd> 
+          <dt> 
+           <code>url</code> 
+          </dt> 
+          <dd>
+            URL pada kodingan tempat kesalahan terjadi. 
+          </dd> 
+          <dt> 
+           <code>line</code>, 
+           <code>col</code> 
+          </dt> 
+          <dd>
+            Nomor baris dan kolom ditempat terjadinya kesalahan. 
+          </dd> 
+          <dt> 
+           <code>error</code> 
+          </dt> 
+          <dd>
+            Eror objek 
+          </dd> 
+         </dl> 
+         <p>Sebagai contoh:</p> 
+         <div id="h7g1vkk72d" data-trusted="0" class="code-example" data-demo-height="1" data-refresh="1" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+  window.onerror = function(message, url, line, col, error) {
+    alert(`${message}\n At ${line}:${col} of ${url}`);
+  };
+
+  function readData() {
+    badFunc(); // Whoops, something went wrong!
+  }
+
+  readData();
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Peran dari global handler <code>window.onerror</code> biasanya bukan untuk memulihkan eksekusi dari kodingannya ??? itu biasanya tidak mungkin jika terjadi kesalahan pemrograman, namun tugasnya adalah untuk mengirim pesan eror ke pengembang.</p> 
+         <p>Ada juga layanan web yang menyediakan pencatatan eror untuk kasus seperti itu, seperti <a href="https://errorception.com">https://errorception.com</a> or <a href="http://www.muscula.com">http://www.muscula.com</a>.</p> 
+         <p>Mereka bekerja seperti ini:</p> 
+         <ol> 
+          <li>Kita mendaftarkannya di layanan dan mendapatkan sepotong JS (atau URL skrip) dari mereka untuk disisipkan di halaman.</li> 
+          <li>Skrip JS itu menyetel fungsi <code>window.onerror</code> kustom.</li> 
+          <li>Ketika terjadi kesalahan, itu mengirimkan permintaan jaringan tentangnya pada layanan itu.</li> 
+          <li>Kita dapat masuk ke antarmuka web layanan dan melihat erornya.</li> 
+         </ol> 
+         <h2><a class="main__anchor" name="kesimpulan" href="try-catch.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Bagian <code>try..catch</code> memungkinkan untuk menangani error runtime. Secara harfiah memungkinkan untuk ???mencoba??? menjalankan kode dan ???menangkap??? kesalahan yang mungkin terjadi di dalamnya.</p> 
+         <p>Sintaksnya adalah:</p> 
+         <div id="s4y6qnk6gr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+  // Jalankan kode ini
+} catch(err) {
+  // jika terjadi kesalahan, lompat ke sini
+  // err adalah eror objek
+} finally {
+  // lakukan dalam hal apa pun setelah try / catch
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mungkin tidak ada bagian <code>catch</code> atau <code>finally</code>, jadi bagian yang lebih pendek <code>try..catch</code> dan<code>try..finally</code> juga valid.</p> 
+         <p>Eror objek memiliki properti berikut ini:</p> 
+         <ul> 
+          <li><code>message</code> ??? pesan kesalahan yang bisa dibaca manusia.</li> 
+          <li><code>name</code> ??? string dengan nama eror (nama konstruktor eror).</li> 
+          <li><code>stack</code> (non-standar, tetapi didukung dengan baik) ??? tumpukan/stack pada saat pembuatan eror.</li> 
+         </ul> 
+         <p>Jika eror objek tidak diperlukan, kita bisa menghilangkannya dengan menggunakan <code>catch {</code> daripada <code>catch (err) {</code>.</p> 
+         <p>Kita juga bisa menghasilkan error kita sendiri menggunakan operator <code>throw</code>. Secara teknis, argumen dari <code>throw</code> bisa berupa apa saja, tetapi biasanya itu adalah eror objek yang diturunkan dari kelas ??Error` bawaan. Lebih lanjut tentang memperluas eror objek di bab berikutnya.</p> 
+         <p><em>Rethrowing</em> adalah pola yang sangat penting dari penanganan eror: blok <code>catch</code> biasanya mengharapkan dan mengetahui bagaimana menangani jenis kesalahan tertentu, jadi blok tersebut harus menampilkan kembali kesalahan yang tidak diketahuinya.</p> 
+         <p>Bahkan jika kita tidak memiliki <code>try..catch</code>, sebagian besar lingkungan memungkinkan kita menyiapkan penangan eror ???global??? untuk menangkap eror yang ???terjadi???. Di dalam browser, itu adalah <code>window.onerror</code>.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="try-catch.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="try-catch.html#finally-atau-hanya-kode-biasa" name="finally-atau-hanya-kode-biasa">Finally atau hanya kode biasa?</a></h3> 
+           <a class="task__open-link" href="task/finally-or-code-after.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Bandingkan dua fragmen kode.</p> 
+            <ol> 
+             <li> <p>Yang pertama menggunakan <code>finally</code> untuk mengeksekusi kode setelah<code>try..catch</code>:</p> 
+              <div id="q70ctwi82n" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>try {
+  work work
+} catch (err) {
+  handle errors
+} finally {
+  cleanup the working space
+}</code></pre> 
+                </div> 
+               </div> 
+              </div></li> 
+             <li> <p>Fragmen kedua melakukan pembersihan tepat setelah <code>try..catch</code>:</p> 
+              <div id="6wmk9zgtb2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>try {
+  work work
+} catch (err) {
+  handle errors
+}
+
+cleanup the working space</code></pre> 
+                </div> 
+               </div> 
+              </div></li> 
+            </ol> 
+            <p>Kita pasti membutuhkan pembersihan setelah pekerjaan, tidak masalah apakah ada kesalahan atau tidak.</p> 
+            <p>Apakah ada keuntungan di sini dalam menggunakan <code>finally</code> atau kedua fragmen kode sama? Jika ada keuntungan seperti itu, berikan contoh ketika itu penting.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Perbedaannya menjadi jelas ketika kita melihat kode di dalam suatu fungsi.</p> 
+              <p>Perilakunya berbeda jika ada lompatan keluar dari <code>try..catch</code>.</p> 
+              <p>Misalnya, ketika ada <code>return</code> di dalam<code>try..catch</code>. Klausa <code>finally</code> berfungsi jika <em>ada</em> ya keluar dari<code>try..catch</code>, bahkan melalui pernyataan <code>return</code>: tepat setelah<code>try..catch</code> selesai, tetapi sebelum kode pemanggil mendapatkan kontrol.</p> 
+              <div id="7df24a1c07" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function f() {
+  try {
+    alert('start');
+    return "result";
+  } catch (err) {
+    /// ...
+  } finally {
+    alert('cleanup!');
+  }
+}
+
+f(); // cleanup!</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>??? Atau ketika ada <code>throw</code>, seperti di sini:</p> 
+              <div id="v6rxrgs9cg" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="try-catch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="try-catch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function f() {
+  try {
+    alert('start');
+    throw new Error("an error");
+  } catch (err) {
+    // ...
+    if("can't handle the error") {
+      throw err;
+    }
+
+  } finally {
+    alert('cleanup!')
+  }
+}
+
+f(); // cleanup!</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Bagian <code>finally</code> yang menjamin proses pembersihan di sini. Jika kita hanya meletakkan kode di akhir <code>f</code>, itu tidak akan berjalan dalam situasi ini.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="error-handling.html" data-tooltip="Penanganan kesalahan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="custom-errors.html" data-tooltip="Kesalahan khusus, memperluas Kesalahan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ftry-catch" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ftry-catch" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="error-handling.html">Penanganan kesalahan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#sintaks-try-catch">Sintaks ???try???catch???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#eror-objek">Eror Objek</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#catch-binding-opsional">???Catch??? binding Opsional</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#menggunakan-try-catch">Menggunakan ???try???catch???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#melontarkan-eror-kita-sendiri">Melontarkan eror kita sendiri</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#rethrowing">Rethrowing</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#try-catch-finally">try???catch???finally</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#catch-global">Catch Global</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="try-catch.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ftry-catch" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Ftry-catch" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

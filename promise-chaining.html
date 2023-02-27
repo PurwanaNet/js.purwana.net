@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "gb";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Promises chaining</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="promise-chaining.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Promises chaining"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Promises chaining"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="promise-basics.html"> 
+  <link rel="next" href="promise-error-handling.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <script>
+function loadScript(src) {
+  return new Promise(function(resolve, reject) {
+    let script = document.createElement('script');
+    script.src = src;
+
+    script.onload = () => resolve(script);
+    script.onerror = () => reject(new Error("Script load error: " + src));
+
+    document.head.append(script);
+  });
+}
+</script> 
+  <style>
+.promise-avatar-example {
+  border-radius: 50%;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}
+</style> 
+  <meta property="og:title" content="Promises chaining"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-chaining" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpromise-chaining" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="77" max="92" data-tooltip="Pelajaran 77 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="async.html"><span>Promises, async/await</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Promises, async/await","item":"https://id.javascript.info/async"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Promises chaining</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Promises chaining"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Mari kembali ke masalah yang disebutkan di dalam bab <a href="callbacks.html">Pengenalan: callback</a>: kita memiliki sebuah urutan tugas <em>asynchronous</em> untuk dilakukan satu demi satu. Sebagai contoh, memuat <em>scripts</em>. Bagaimana kita bisa membuat kodenya dengan baik?</p> 
+         <p>Promises menyediakan beberapa resep untuk melakukannya.</p> 
+         <p>Di bab ini kita melibatkan <em>promise chaining</em>.</p> 
+         <p>Itu terlihat seperti ini:</p> 
+         <div id="q17qo1whe" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>new Promise(function (resolve, reject) {
+  setTimeout(() =&gt; resolve(1), 1000); // (*)
+})
+  .then(function (result) {
+    // (**)
+
+    alert(result); // 1
+    return result * 2;
+  })
+  .then(function (result) {
+    // (***)
+
+    alert(result); // 2
+    return result * 2;
+  })
+  .then(function (result) {
+    alert(result); // 4
+    return result * 2;
+  });</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Idenya adalah bahwa <strong>result</strong> diteruskan melalui rantai <em>handlers</em> <code>.then</code>.</p> 
+         <p>Ini alurnya:</p> 
+         <ol> 
+          <li>Promise pertama selesai dalam 1 detik <code>(*)</code>,</li> 
+          <li>Kemudian <em>handler</em> <code>.then</code> dipanggil <code>(**)</code>.</li> 
+          <li>Nilai yang dikembalikan diteruskan ke handler <code>.then</code> selanjutnya <code>(***)</code></li> 
+          <li>???dan seterusnya.</li> 
+         </ol> 
+         <p>Selama <strong>result</strong> diteruskan di sepanjang rantai <em>handlers</em>, kita bisa melihat urutan pemanggilan <code>alert</code>: <code>1</code> ??? <code>2</code> ??? <code>4</code>.</p> 
+         <figure> 
+          <div class="image" style="width:165px"> 
+           <div class="image__ratio" style="padding-top:205.45454545454547%"></div> 
+           <object type="image/svg+xml" data="article/promise-chaining/promise-then-chain.svg" width="165" height="339" class="image__image" data-use-theme> <img src="article/promise-chaining/promise-then-chain.svg" alt="" width="165" height="339"> </object> 
+          </div> 
+         </figure> 
+         <p>Seluruhnya bekerja, karena pemanggilan ke <code>promise.then</code> mengembalikan sebuah <em>promise</em>, jadi kita bisa memanggil <code>.then</code> selanjutnya.</p> 
+         <p>Ketika sebuah <em>handler</em> mengembalikan nilai, <em>handler</em> tersebut menjadi hasil dari promise, jadi <code>.then</code> selanjutnya dipanggil dengan itu.</p> 
+         <p><strong>Kesalahan klasik pemula: secara teknis kita juga dapat menambahkan banyak <code>.then</code> ke satu promise. Ini bukan chaining.</strong></p> 
+         <p>Sebagai contoh:</p> 
+         <div id="uifhfktxrr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise(function (resolve, reject) {
+  setTimeout(() =&gt; resolve(1), 1000);
+});
+
+promise.then(function (result) {
+  alert(result); // 1
+  return result * 2;
+});
+
+promise.then(function (result) {
+  alert(result); // 1
+  return result * 2;
+});
+
+promise.then(function (result) {
+  alert(result); // 1
+  return result * 2;
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Apa yang kita lakukan di sini hanya beberapa <em>handlers</em> untuk satu <em>promise</em>. <em>Handlers</em> tersebut tidak meneruskan result ke satu sama lain, melainkan memprosesnya masing-masing.</p> 
+         <p>Ini gambarnya (bandingkan dengan <em>chaining</em> di atas):</p> 
+         <figure> 
+          <div class="image" style="width:373px"> 
+           <div class="image__ratio" style="padding-top:40.75067024128686%"></div> 
+           <object type="image/svg+xml" data="article/promise-chaining/promise-then-many.svg" width="373" height="152" class="image__image" data-use-theme> <img src="article/promise-chaining/promise-then-many.svg" alt="" width="373" height="152"> </object> 
+          </div> 
+         </figure> 
+         <p>Semua <code>.then</code> pada <em>promise</em> yang sama mendapatkan <em>result</em> yang sama ??? <em>result</em> dari <em>promise</em>. Jadi di dalam kode di atas semua <code>alert</code> menunjukkan yang sama: <code>1</code>.</p> 
+         <p>Dalam prakteknya kita jarang membutuhkan banyak <em>handlers</em> untuk satu <em>promise</em>. Chaining lebih sering digunakan.</p> 
+         <h2><a class="main__anchor" name="mengembalikan-promises" href="promise-chaining.html#mengembalikan-promises">Mengembalikan promises</a></h2> 
+         <p>Sebuah <em>handler</em>, yang digunakan di dalam <code>.then(handler)</code> dapat membuat dan mengambalikan sebuah <em>promise</em>.</p> 
+         <p>Dalam hal ini <em>handlers</em> selanjutnya menunggu sampai mengendap, dan kemudian mendapatkan hasilnya.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="5c1orup9je" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>new Promise(function(resolve, reject) {
+
+  setTimeout(() =&gt; resolve(1), 1000);
+
+}).then(function(result) {
+
+  alert(result); // 1
+
+  return new Promise((resolve, reject) =&gt; { // (*)
+    setTimeout(() =&gt; resolve(result * 2), 1000);
+  });
+
+}).then(function(result) { // (**)
+
+  alert(result); // 2
+
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; resolve(result * 2), 1000);
+  });
+
+}).then(function(result) {
+
+  alert(result); // 4
+
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini <code>.then</code> pertama menunjukan <code>1</code> dan mengembalikan <code>new Promise(???)</code> pada baris <code>(*)</code>. Setelah satu detik selesai, dan hasil (argument <code>resolve</code>, di sini <code>result * 2</code>) diteruskan ke <em>handler</em> <code>.then</code> kedua. Handler pada baris <code>(**)</code>, menunjukan <code>2</code> dan melakukan hal yang sama.</p> 
+         <p>Jadi keluarannya sama dengan contoh sebelumnya: 1 ??? 2 ??? 4, tetapi sekarang dengan menunda 1 detik antara pemanggilan <code>alert</code>.</p> 
+         <p>Mengembalikan <em>promises</em> memperbolehkan kita untuk membangun rantai aksi <em>asynchronous</em>.</p> 
+         <h2><a class="main__anchor" name="contoh-loadscript" href="promise-chaining.html#contoh-loadscript">Contoh: loadScript</a></h2> 
+         <p>Mari menggunakan fitur ini dengan <em>promisified</em> <code>loadScript</code>, didefinisikan di <a href="promise-basics.html#loadscript">bab sebelumnya</a>, untuk memuat <em>scripts</em> satu demi satu, secara berurutan:</p> 
+         <div id="adrga3m6ak" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript("/article/promise-chaining/one.js")
+  .then(function (script) {
+    return loadScript("/article/promise-chaining/two.js");
+  })
+  .then(function (script) {
+    return loadScript("/article/promise-chaining/three.js");
+  })
+  .then(function (script) {
+    // gunakan functions yang dideklarasikan di dalam scripts
+    // untuk menunjukkan bahwa functions memang dimuat
+    one();
+    two();
+    three();
+  });</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kode ini bisa lebih ringkas dengan <em>arrow functions</em>:</p> 
+         <div id="eias9ochiv" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript("/article/promise-chaining/one.js")
+  .then((script) =&gt; loadScript("/article/promise-chaining/two.js"))
+  .then((script) =&gt; loadScript("/article/promise-chaining/three.js"))
+  .then((script) =&gt; {
+    // scripts dimuat, kita dapat menggunakan functions yang dideklarasikan di sini
+    one();
+    two();
+    three();
+  });</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini setiap pemanggilan <code>loadScript</code> mengembalikkan sebuah <em>promise</em>, dan <code>.then</code> selanjutnya berjalan ketika <em>promise</em> selesai. Kemudian memulai pemuatan <em>script</em> selanjutnya. Jadi <em>scripts</em> dimuat satu setelah yang lain.</p> 
+         <p>Kita dapat menambahkan lagi aksi asynchronous ke rantainya. Harap catat bahwa kodenya masih ???flat???, kodenya tumbuh ke bawah bukan ke kanan. Tidak ada tanda-tanda ???pyramid of doom???.</p> 
+         <p>Secara teknis, kita dapat menambahkan <code>.then</code> secara langsung ke setiap <code>loadScript</code>, seperti ini:</p> 
+         <div id="zgyzcm7ytp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript("/article/promise-chaining/one.js").then((script1) =&gt; {
+  loadScript("/article/promise-chaining/two.js").then((script2) =&gt; {
+    loadScript("/article/promise-chaining/three.js").then((script3) =&gt; {
+      // this function has access to variables script1, script2 and script3
+      one();
+      two();
+      three();
+    });
+  });
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kode ini melakukan hal yang sama: muat 3 <em>scripts</em> berurutan. Tetapi ???tumbuh ke kanan???. Jadi kita punya masalah yang sama dengan <em>callbacks</em>.</p> 
+         <p>Orang yang baru memulai untuk menggunakan <em>promises</em> kadang-kadang tidak tahu tentang <em>chaining</em>, jadi mereka menulisnya dengan cara ini. Umumnya, <em>chaining</em> lebih disukai.</p> 
+         <p>Terkadang ok untuk menulis <code>.then</code> secara langsung, karena <em>function</em> bersarang memiliki akses ke luar <em>scope</em>. Pada contoh di atas <em>callback</em> paling bertingkat memiliki akses ke semua variabel <code>script1</code>, <code>script2</code>, <code>script3</code>. Tetapi itu pengecualian bukan aturan.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Thenables</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Tepatnya, sebuah handler mungkin tidak mengembalikkan sebuah promise, tetapi dipanggil objek ???thenable??? ??? sebuah objek sewenang-wenang yang memiliki method <code>.then</code>, dan diperlakukan sama seperti sebuah promise.</p> 
+           <p>Idenya adalah bahwa pustaka 3rd-party dapat menerapkan objek ???promise-compatible??? mereka sendiri. Mereka dapat memiliki serangkaian methods yang luas, tetapi juga kompatibel dengan promises asli, karena mereka menerapkan <code>.then</code>.</p> 
+           <p>Ini contoh dari objek thenable:</p> 
+           <div id="7fy076tv3k" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:13,&quot;end&quot;:13}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>class Thenable {
+  constructor(num) {
+    this.num = num;
+  }
+  then(resolve, reject) {
+    alert(resolve); // function() { native code }
+    // selesai dengan this.num*2 setelah 1 detik
+    setTimeout(() =&gt; resolve(this.num * 2), 1000); // (**)
+  }
+}
+
+new Promise(resolve =&gt; resolve(1))
+  .then(result =&gt; {
+    return new Thenable(result); // (*)
+  })
+  .then(alert); // menunjukkan 2 setelah 1000ms</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>JavaScript memeriksa objek yang dikembalikkan oleh handler <code>.then</code> di baris <code>(*)</code>: jika ada method callable yang bernama <code>then</code>, kemudian method tersebut memanggil method yang menyediakan functions <code>resolve</code>, <code>reject</code> asli sebagai arguments (mirip ke eksekutor) dan menunggu sampai satu dari mereka dipanggil. Pada contoh di atas <code>resolve(2)</code> dipanggil setelah 1 detik <code>(**)</code>. Kemudian result diteruskan ke bawah chain.</p> 
+           <p>Fitur ini memperbolehkan kita untuk untuk mengintegrasikan objek kustom dengan promise chains tanpa memiliki pewarisan dari <code>Promise</code>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="contoh-terbesar-fetch" href="promise-chaining.html#contoh-terbesar-fetch">Contoh Terbesar: fetch</a></h2> 
+         <p>Di dalam pemrograman frontend promises sering digunakan untuk permintaan jaringan. Jadi mari lihat contoh yang lebih luas dari itu.</p> 
+         <p>Kita akan menggunakan methos <a href="fetch.html">fetch</a> untuk memuat informasi tentang pengguna dari server jarak jauh. Banyak sekali pilihan parameter yang dilibatkan di dalam <a href="fetch.html">bab terpisah</a>, tetapi sintaksis dasar cukup sederhana:</p> 
+         <div id="9tbtdonv1t" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = fetch(url);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ini membuat permintaan jaringan ke <code>url</code> dan mengembalikkan sebuah <em>promise</em>. Promise selesai dengan objek <code>response</code> ketika server jarak jauh merespon dengan header, tetapi <em>sebelum response penuh diunduh</em>.</p> 
+         <p>Untuk membaca response penuh, kita harus memanggil sebuah method <code>response.text()</code>: method tersebut mengembalikkan sebuah promise yang selesai ketika teks penuh ull telah diunduh dari server jarak jauh, dengan teks tersebut sebagai hasilnya.</p> 
+         <p>Kode di bawah ini membuat permintaan ke <code>user.json</code> dan memuat teks dari server:</p> 
+         <div id="meo1ik664d" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fetch("/article/promise-chaining/user.json")
+  // .then di bawah berjalan ketika server jarak jauh merespon
+  .then(function (response) {
+    // response.text() mengembalikkan sebuah promise baru yang selesai dengan response teks penuh
+    // ketika dimuat
+    return response.text();
+  })
+
+  .then(function (text) {
+    // ...dan di sini isi dari file remote
+    alert(text); // {"name": "iliakan", isAdmin: true}
+  });</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sana juga ada method <code>response.json()</code> yang membaca data remote dan parsing sebagai JSON. Pada kasus kita lebih sesuai, jadi mari ganti dengan itu.</p> 
+         <p>.then(function(text) { // ???and here???s the content of the remote file alert(text); // {???name???: ???iliakan???, ???isAdmin???: true} });</p> 
+         <div id="dhcykgxctv" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code>Kita juga akan menggunakan arrow functions untuk keringkasan:
+
+```js run
+// sama seperti di atas, tetapi response.json() parsing konten remote sebagai JSON
+fetch("/article/promise-chaining/user.json")
+  .then((response) =&gt; response.json())
+  .then((user) =&gt; alert(user.name)); // iliakan, mendapatkan user name</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang mari lakukan sesuatu dengan memuat pengguna.</p> 
+         <p>Sebagai contoh, kita dapat membuat satu atau lebih permintaan ke GitHub, muat profil pengguna dan tunjukkan avatarnya:</p> 
+         <div id="tu6z71ouyr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// Buat permintaan ke user.json
+fetch("/article/promise-chaining/user.json")
+  // Muat sebagai json
+  .then((response) =&gt; response.json())
+  // Buat permintaan ke GitHub
+  .then((user) =&gt; fetch(`https://api.github.com/users/${user.name}`))
+  // Muat response sebagai json
+  .then((response) =&gt; response.json())
+  // Tunjukkan gambar avatar (githubUser.avatar_url) untuk 3 detik (mungkin hidupkan itu)
+  .then((githubUser) =&gt; {
+    let img = document.createElement("img");
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+
+    setTimeout(() =&gt; img.remove(), 3000); // (*)
+  });</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kodenya bekerja, lihat komentar tentang detail. Meskipun, di sana ada potensi masalah di dalamnya, kesalahan umum dari mereka yang mulai menggunakan promise.</p> 
+         <p>Lihat pada baris <code>(*)</code>: bagaimana kita dapat melakukan sesuatu <em>setelah</em> avatar telah muncul dan dihapus? sebagai contoh, kita ingin menunjukkan form untuk mengubah pengguna atau sesuatu yang lain. Sampai sekarang, tidak mungkin.</p> 
+         <p>Untuk membuat chain bisa diperpanjang, kita butuh untuk mengembalikkan sebuah promise yang selesai ketika avatar selesai muncul.</p> 
+         <p>Seperti ini:</p> 
+         <div id="izn741uhw6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:12},{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fetch('/article/promise-chaining/user.json')
+  .then(response =&gt; response.json())
+  .then(user =&gt; fetch(`https://api.github.com/users/${user.name}`))
+  .then(response =&gt; response.json())
+  .then(githubUser =&gt; new Promise(function(resolve, reject) { // (*)
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+
+    setTimeout(() =&gt; {
+      img.remove();
+      resolve(githubUser); // (**)
+    }, 3000);
+  }))
+  // terpicu setelah 3 detik
+  .then(githubUser =&gt; alert(`Finished showing ${githubUser.name}`));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu adalah, <em>handler</em> <code>.then</code> pada baris <code>(*)</code> sekarang mengembalikkan <code>new Promise</code>, yang menjadi mengendap hanya setelah pemanggilan <code>resolve(githubUser)</code> dalam <code>setTimeout</code> <code>(**)</code>.</p> 
+         <p><code>.then</code> selanjutnya di dalam <em>chain</em> akan menunggu untuk itu.</p> 
+         <p>Seperti peraturan yang bagus, sebuah aksi <em>asynchronous</em> harus selalu mengembalikkan sebuah promise.</p> 
+         <p>Itu membuat kemungkinan untuk rencana aksi setelahnya. Bahkan jika kita tidak berencana memperpanjang <em>chain</em> sekarang, kita mungkin membutuhkannya nanti.</p> 
+         <p>Akhinya, kita dapat memecah kodenya ke dalam <em>function</em> yang dapat digunakan kembali:</p> 
+         <div id="oqq573s0m5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function loadJson(url) {
+  return fetch(url).then((response) =&gt; response.json());
+}
+
+function loadGithubUser(name) {
+  return fetch(`https://api.github.com/users/${name}`).then((response) =&gt;
+    response.json()
+  );
+}
+
+function showAvatar(githubUser) {
+  return new Promise(function (resolve, reject) {
+    let img = document.createElement("img");
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+
+    setTimeout(() =&gt; {
+      img.remove();
+      resolve(githubUser);
+    }, 3000);
+  });
+}
+
+// Gunakan mereka:
+loadJson("/article/promise-chaining/user.json")
+  .then((user) =&gt; loadGithubUser(user.name))
+  .then(showAvatar)
+  .then((githubUser) =&gt; alert(`Finished showing ${githubUser.name}`));
+// ...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="promise-chaining.html#ringkasan">Ringkasan</a></h2> 
+         <p>Jika ada <em>handler</em> <code>.then</code> (atau <code>catch/finally</code>, tidak masalah) mengembalikkan sebuah <em>promise</em>, <em>chain</em> sisanya akan menunggu sampai mengendap. Saat itu terjadi, hasilnya (atau error) diteruskan lebih jauh.</p> 
+         <p>Di sini gambar penuhnya:</p> 
+         <figure> 
+          <div class="image" style="width:659px"> 
+           <div class="image__ratio" style="padding-top:53.110773899848255%"></div> 
+           <object type="image/svg+xml" data="article/promise-chaining/promise-handler-variants.svg" width="659" height="350" class="image__image" data-use-theme> <img src="article/promise-chaining/promise-handler-variants.svg" alt="" width="659" height="350"> </object> 
+          </div> 
+         </figure> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="promise-chaining.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="promise-chaining.html#promise-then-versus-catch" name="promise-then-versus-catch">Promise: then versus catch</a></h3> 
+           <a class="task__open-link" href="task/then-vs-catch.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apakah potongan kode ini sama? Dengan kata lain, apakah mereka berperilaku sama dalam situasai apapun, untuk setiap <em>handler functions</em>?</p> 
+            <div id="88fyj83v6v" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>promise.then(f1).catch(f2);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Versus:</p> 
+            <div id="5mff8gc3a3" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>promise.then(f1, f2);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawaban singkatnya adalah: <strong>tidak, mereka tidak sama</strong>:</p> 
+              <p>Perbedaannya adalah bahwa jika terjadi sebuah <em>error</em> di dalam <code>f1</code>, kemudian ditangani oleh <code>.catch</code> disini:</p> 
+              <div id="2mbivs2ii0" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>promise.then(f1).catch(f2);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>???Tetapi bukan disini:</p> 
+              <div id="2c47l300zw" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="promise-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="promise-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>promise.then(f1, f2);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Itulah kenapa sebuah <em>error</em> diturunkan ke <em>chain</em>, dan didalam bagian kode kedua disana tidak ada <em>chain</em> dibawah <code>f1</code>.</p> 
+              <p>Dengan kata lain, <code>.then</code> meneruskan <em>result</em>/<em>error</em> ke <code>.then/catch</code> selanjutnya. Jadi pada contoh pertama, ada sebuah <code>catch</code> di bawah, dan yang kedua ??? disana tidak ada, jadi <em>error</em> tidak ditangani.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="promise-basics.html" data-tooltip="Promise"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="promise-error-handling.html" data-tooltip="Penanganan error dengan promise"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-chaining" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpromise-chaining" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async.html">Promises, async/await</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-chaining.html#mengembalikan-promises">Mengembalikan promises</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-chaining.html#contoh-loadscript">Contoh: loadScript</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-chaining.html#contoh-terbesar-fetch">Contoh Terbesar: fetch</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-chaining.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-chaining.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-chaining.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-chaining" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fpromise-chaining" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "fr";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Decorators dan forwarding, call/apply</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="call-apply-decorators.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Decorators dan forwarding, call/apply"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Decorators dan forwarding, call/apply"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="settimeout-setinterval.html"> 
+  <link rel="next" href="bind.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Decorators dan forwarding, call/apply"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcall-apply-decorators" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcall-apply-decorators" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="57" max="92" data-tooltip="Pelajaran 57 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="advanced-functions.html"><span>Penggunaan lanjutan fungsi</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Penggunaan lanjutan fungsi","item":"https://id.javascript.info/advanced-functions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Decorators dan forwarding, call/apply</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Decorators dan forwarding, call/apply"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Javascript memberikan fleksibilitas yang istimewa ketika harus berurusan dengan fungsi. Mereka bisa dikirim, digunakan sebagai objek, dan sekarang kita akan melihat bagaimana <em>penerusan/forward</em> panggilan diantara mereka dan <em>mendekorasi/decorate</em> mereka.</p> 
+         <h2><a class="main__anchor" name="cache-transparan" href="call-apply-decorators.html#cache-transparan">Cache transparan</a></h2> 
+         <p>Katakan kita mempunyai sebuah fungsi <code>slow(x)</code> yang mana adalah fungsi berat saat diolah pada CPU, tapi hasil dari fungsi tersebut stabil. Dengan kata lain, untuk <code>x</code> yang sama fungsi itu selalu mengembalikan hasil yang sama.</p> 
+         <p>Jika fungsinya sering dipanggil, kita mungkin ingin meng-cache (mengingat) hasilnya untuk menghindari pembuangan waktu saat kalkulasi-ulang.</p> 
+         <p>Tapi sebagai gantinya daripada menambahkan fungsionalitas lain kedalam <code>slow()</code> kita akan membuat sebuah fungsi pembungkus/wrapper, yang menambahkan cache. Seperti yang akan kita lihat, terdapat beberapa keuntungan untuk melakukan cache.</p> 
+         <p>Ini kodenya, dan penjelasannya:</p> 
+         <div id="nxqkl4whn2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function slow(x) {
+  // disini terdapat task berat yang menggunakan sumberdaya CPU
+  alert(`Called with ${x}`);
+  return x;
+}
+
+function cachingDecorator(func) {
+  let cache = new Map();
+
+  return function(x) {
+    if (cache.has(x)) {    // jika terdapat kunci "x" pada cache
+      return cache.get(x); // baca hasil dari cache
+    }
+
+    let result = func(x);  // jika tidak, panggil fungsi
+
+    cache.set(x, result);  // dan cache (ingat) hasilnya
+    return result;
+  };
+}
+
+slow = cachingDecorator(slow);
+
+alert( slow(1) ); // slow(1) telah dimasukan kedalam cache
+alert( "Again: " + slow(1) ); // sama seperti baris sebelumnya
+
+alert( slow(2) ); // slow(2) telah dimasukan kedalam cache
+alert( "Again: " + slow(2) ); // sama seperti baris sebelumnya</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Didalam kode diatas <code>cachingDecorator</code> adalah sebuah <em>decorator/dekorator</em>: sebuah fungsi spesial yang menerima fungsi dan mengubah tingkah lakunya.</p> 
+         <p>Idenya adalah kita bisa memanggil <code>cachingDecorator</code> dari fungsi manapun, dan itu akan mengembalikan pembungkus caching. Itu bagus, karena kita bisa mempunyai banyak fungsi yang dapat menggunakan fitur itu, dan semua yang kita butuhkan adalah menerapkan <code>cachingDecorator</code> kedalam fungsinya.</p> 
+         <p>Dengan memisahkan caching dari kode fungsi utama kita juga bisa tetap membuat kode utama tetap sederhana.</p> 
+         <p>Hasil dari <code>cachingDecorator(func)</code> adalah sebuah ???pembungkus/wrapper???: <code>function(x)</code> yang ???membungkus??? pemanggilan dari <code>func(x)</code> kedalam logika penyimpanan cache.</p> 
+         <figure> 
+          <div class="image" style="width:458px"> 
+           <div class="image__ratio" style="padding-top:56.76855895196506%"></div> 
+           <object type="image/svg+xml" data="article/call-apply-decorators/decorator-makecaching-wrapper.svg" width="458" height="260" class="image__image" data-use-theme> <img src="article/call-apply-decorators/decorator-makecaching-wrapper.svg" alt="" width="458" height="260"> </object> 
+          </div> 
+         </figure> 
+         <p>Dari kode luar, fungsi yang dibungkus <code>slow</code> akan melakukan tetap hal yang sama. Fungsinya hanya akan menambahkan aspek caching kedalam prilakunya.</p> 
+         <p>Untuk meringkaskan, terdapat beberapa keuntungan untuk menggunakan <code>cachingDecorator</code> secara terpisah daripada dimasukan kedalam kode <code>slow</code> itu sendiri:</p> 
+         <ul> 
+          <li><code>cachingDecorator</code> dapat digunakan lagi. Kita bisa menerapkannya kedalam fungsi lainnnya.</li> 
+          <li>Logika dari penyimpanan kedalam cache dipisahkan, itu tidak akan menambah kompleksitas dari <code>slow</code> sendiri.</li> 
+          <li>Kita bisa menggunakan beberapa dekorator jika dibutuhkan.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="menggunakan-func-call-untuk-konteksnya" href="call-apply-decorators.html#menggunakan-func-call-untuk-konteksnya">Menggunakan ???func.call??? untuk konteksnya</a></h2> 
+         <p>Dekorator penyimpanan kedalam cache diatas tidak cokok untuk bekerja dengan metode objek.</p> 
+         <p>Contoh, didalam kode dibawah <code>worker.slow()</code> akan berhenti bekerja setelah decoration:</p> 
+         <div id="bi328xlx6v" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:30,&quot;end&quot;:30},{&quot;start&quot;:20,&quot;end&quot;:20}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// disini membuat worker.slow menyimpan kedalam cache
+let worker = {
+  someMethod() {
+    return 1;
+  },
+
+  slow(x) {
+    // task yang benar-benar menggunakan banyak sumber daya CPU disini
+    alert("Called with " + x);
+    return x * this.someMethod(); // (*)
+  }
+};
+
+// same code as before
+function cachingDecorator(func) {
+  let cache = new Map();
+  return function(x) {
+    if (cache.has(x)) {
+      return cache.get(x);
+    }
+    let result = func(x); // (**)
+    cache.set(x, result);
+    return result;
+  };
+}
+
+alert( worker.slow(1) ); // metode aslinya bekerja
+
+worker.slow = cachingDecorator(worker.slow); // sekarang simpan kedalam cache
+
+alert( worker.slow(2) ); // Whoops! Error: Cannot read property 'someMethod' of undefined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Errornya muncul pada baris <code>(*)</code> yang mencoba untuk mengakses <code>this.someMethod</code> dan gagal. Apakah kamu bisa lihat kenapa?</p> 
+         <p>Alasannya adalah karena pembungkusnya memanggil fungsi aslinya sebagai <code>func(x)</code> pada baris <code>(**)</code>. Dan, ketika dipanggil seperti itu, fungsinya mendapatkan <code>this = undefined</code>.</p> 
+         <p>Kita harusnya bisa melihat kasus yang serupa jika kita mencoba menjalankan:</p> 
+         <div id="mcybav37ge" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let func = worker.slow;
+func(2);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, pembungkusnya mengirimkan pemanggilan pada metode aslinya, tapi tanpa konteks dari <code>this</code>. Karenanya akan terjadi error.</p> 
+         <p>Coba kita perbaiki.</p> 
+         <p>Terdapat sebuah metode bawaan yang spesial <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Function/call">func.call(context, ???args)</a> yang mengijinkan untuk melakukan pemanggilan fungsi menyetel nilai dari <code>this</code>.</p> 
+         <p>Sintaksnya adalah:</p> 
+         <div id="wexarbggo6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>func.call(context, arg1, arg2, ...)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu akan menjalankan <code>func</code> yang menyediakan argumen pertama sebagai <code>this</code>, dan sisanya sebagai argumen-argumennya.</p> 
+         <p>Untuk menyederhanakannya, kedua pemanggilan dibawah hampir melakukan hal yang serupa:</p> 
+         <div id="rtthj8tj70" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>func(1, 2, 3);
+func.call(obj, 1, 2, 3)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Keduanya memanggil <code>func</code> dengan argumen <code>1</code>, <code>2</code>, dan <code>3</code>. Perbedaannya adalah <code>func.call</code> juga menyetel <code>this</code> menjadi <code>obj</code>.</p> 
+         <p>Sebagai sebuah contoh, didalam kode dibawah kita memanggil <code>sayHi</code> didalam konteks pada objek yang berbeda: <code>sayHi.call(user)</code> menjalankan <code>sayHi</code> menyediakan <code>this=user</code>, dan baris selanjutnya menyetel <code>this=admin</code>:</p> 
+         <div id="vz6hv2ob2f" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi() {
+  alert(this.name);
+}
+
+let user = { name: "John" };
+let admin = { name: "Admin" };
+
+// lakukan pemanggilan untuk memberikan objek yang berbeda sebagai "this"
+sayHi.call( user ); // John
+sayHi.call( admin ); // Admin</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan disini kita menggunakan <code>call</code> untuk memanggil <code>say</code> dengan konteks dan <em>phrase</em> yang diberikan:</p> 
+         <div id="ymwt0bbcld" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function say(phrase) {
+  alert(this.name + ': ' + phrase);
+}
+
+let user = { name: "John" };
+
+// user menjadi this, dan "Hello" menjadi argumen pertama
+say.call( user, "Hello" ); // John: Hello</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Didalam kasus kita, kita bisa menggunakan <code>call</code> didalam pembungkus untuk memberikan konteks kedalam fungsi aslinya:</p> 
+         <div id="8193udewli" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:17,&quot;end&quot;:17}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let worker = {
+  someMethod() {
+    return 1;
+  },
+
+  slow(x) {
+    alert("Called with " + x);
+    return x * this.someMethod(); // (*)
+  }
+};
+
+function cachingDecorator(func) {
+  let cache = new Map();
+  return function(x) {
+    if (cache.has(x)) {
+      return cache.get(x);
+    }
+    let result = func.call(this, x); // "this" diberikan dengan benar sekarang
+    cache.set(x, result);
+    return result;
+  };
+}
+
+worker.slow = cachingDecorator(worker.slow); // sekarang disimpan kedalam cache
+
+alert( worker.slow(2) ); // bekerja
+alert( worker.slow(2) ); // bekerja, tidak memanggil yang aslinya (dari cache)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang semuanya berjalan.</p> 
+         <p>Untuk memperjelas, kita akan melihat lebih dalam bagaimana <code>this</code> diberikan:</p> 
+         <ol> 
+          <li>Setelah dekorasi dari <code>worker.slow</code> sekarang menjadi pembungkusnya <code>function (x) { ... }</code>.</li> 
+          <li>Jadi ketika <code>worker.slow(2)</code> dieksekusi, pembungkusnya mendapatkan <code>2</code> sebagai sebuah argumen dan <code>this=worker</code> (sebuah objek sebelum titik).</li> 
+          <li>Didalam pembungkusnya, asumsikan hasilnya belum disimpan didalam cache, <code>func.call(this, x)</code> diberikan kepada <code>this</code> (<code>=worker</code>) dan argumennya (<code>=2</code>) kepada metode aslinya.</li> 
+         </ol> 
+         <h2><a class="main__anchor" name="menjadi-multi-argument" href="call-apply-decorators.html#menjadi-multi-argument">Menjadi multi-argument</a></h2> 
+         <p>Sekarang kita buat <code>cachingDecorator</code> menjadi lebih universal. Sampai sekarang fungsi itu hanya bekerja dengan satu-argumen.</p> 
+         <p>Sekarang bagaimana untuk menyimpan multi-argumen metode <code>worker.slow</code> kedalam cache?</p> 
+         <div id="806q1l7mjk" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let worker = {
+  slow(min, max) {
+    return min + max; // asumsikan sebuah fungsi yang sangat berat
+  }
+};
+
+// harus mengingat pemanggilan dengan argument-yang-sama
+worker.slow = cachingDecorator(worker.slow);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebelumnya, untuk argumen tunggal <code>x</code> kita bisa dengan melakukan <code>cache.set(x, result)</code> untuk menyimpan result-nya dan <code>cache.get(x)</code> untuk mengambilnya. Tapi kita harus mengingat hasil dari sebuah <em>kombinasi dari argumen-argumen</em> <code>(min, max)</code>. <code>Map</code> yang asli mengambil nilai tunggal sebagai kuncinya.</p> 
+         <p>Terdapat beberapa solusi yang bisa dilakukan:</p> 
+         <ol> 
+          <li>Implementasikan struktur data seperti-map baru yang lebih serba guna dan mengijinkan menggunakan banyak-kunci (atau gunakan third-party).</li> 
+          <li>Gunakan maps bercabang: <code>cache.set(min)</code> akan menjadi sebuah <code>Map</code> yang menyimpan pasangan <code>(max, result)</code>. Jadi kita bisa mendapatkan <code>result</code> sebagai <code>cache.get(min).get(max)</code>.</li> 
+          <li>Gabungkan kedua nilai menjadi satu. Didalam kasus tertentu kita bisa menggunakna sebuah string <code>"min,max"</code> sebagai kunci <code>Map</code>. Untuk fleksibilitas, kita bisa mengijinkan untuk menyediakan sebuah <em>fungsi hashing</em> untuk dekoratornya, yang mengetahui bagaimana cara membuat nilai tunggal dari banyak nilai.</li> 
+         </ol> 
+         <p>Untuk kebanykan penggunaan yang praktikal, varian ketiga sudahlah cukup, jadi kita akan menggunakannya.</p> 
+         <p>Juga kita harus memberikan bukan hanya <code>x</code>, tapi seluruh argumen-argumen didalam <code>func.call</code>. Kita panggil ulang didalam sebuah <code>function()</code> kita bisa mendapatkan pseudo-array dari argumennya sebagai <code>arguments</code>, jadi <code>func.call(this, x)</code> harus diganti dengan <code>func.call(this, ...arguments)</code>.</p> 
+         <p>Ini adalah <code>cachingDecorator</code> yang lebih powerful:</p> 
+         <div id="66ft6fk0xl" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:15},{&quot;start&quot;:10,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let worker = {
+  slow(min, max) {
+    alert(`Called with ${min},${max}`);
+    return min + max;
+  }
+};
+
+function cachingDecorator(func, hash) {
+  let cache = new Map();
+  return function() {
+    let key = hash(arguments); // (*)
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+
+    let result = func.call(this, ...arguments); // (**)
+
+    cache.set(key, result);
+    return result;
+  };
+}
+
+function hash(args) {
+  return args[0] + ',' + args[1];
+}
+
+worker.slow = cachingDecorator(worker.slow, hash);
+
+alert( worker.slow(3, 5) ); // bekerja
+alert( "Again " + worker.slow(3, 5) ); // sama (dari cache)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang itu bekerja dengan berapapun jumlah argumen (walaupun fungsi hash harusnya disesuaikan untuk menerima argumen dengan jumlah berapapun. Cara yang menarik untuk menangani ini akan dijelaskan dibawah).</p> 
+         <p>Terdapat dua perubahan:</p> 
+         <ul> 
+          <li>Didalam baris <code>(*)</code> memanggil <code>hash</code> untuk membuat sebuah kunci tunggal dari <code>arguments</code>. Disini kita menggunakan fungsi ???joining??? yang sederhana yang mengubah argument <code>(3, 5)</code> menjadi kunci <code>"3,5"</code>. Kasus kompleks yang lain mungkin membutuhkan fungsi-fungsi hashing lainnya.</li> 
+          <li>Lalu <code>(**)</code> menggunakan <code>func.call(this, ...arguments)</code> untuk memberikan konteks dan seluruh argumen yang pembungkusnya dapatkan (tidak hanya yang pertama) dari fungsi aslinya.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="func-apply" href="call-apply-decorators.html#func-apply">func.apply</a></h2> 
+         <p>Daripada <code>func.call(this, ...arguments)</code> kita bisa gunakan <code>func.apply(this, arguments)</code>.</p> 
+         <p>Sintaks dari metode bawaannya <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">func.apply</a> adalah:</p> 
+         <div id="4j2llv187a" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>func.apply(context, args)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kode diatas menjalankan <code>func</code> dan menyetel <code>this=context</code> dan menggunakan objek yang seperti array <code>args</code> sebagai daftar dari argumen-argumen.</p> 
+         <p>Perbedaan sintaks antara <code>call</code> dan <code>apply</code> adalah bahwa <code>call</code> mengharapkan sebuah daftar dari argumen-argumen, sementara <code>apply</code> menerima objek yang seperti-array didalamnya.</p> 
+         <p>Jadi kedua pemanggilan dibawah hampir sama:</p> 
+         <div id="x2ajuzplx7" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>func.call(context, ...args); // mengirimkan sebuah array sebagai daftar dengan sintaks spread
+func.apply(context, args);   // sama seperti pemanggilan call</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hanya terdapat perbedaan yang tipis:</p> 
+         <ul> 
+          <li>Sintaks spread <code>...</code> mengijinkan untuk mengirimkan <em>iterable</em> <code>args</code> sebagai list untuk <code>call</code>.</li> 
+          <li><code>apply</code> hanya menerima <code>args</code> yang <em>seperti-array</em>.</li> 
+         </ul> 
+         <p>Jadi, dimana kita mengharapkan sebuah iterasi, gunakan <code>call</code>, dan dimana kita menggunakan seperti-array, gunakan <code>apply</code>.</p> 
+         <p>Dan untuk objek yang bisa diiterasi dan seperti-array, seperti array yang asli, kita bisa gunakan keduanya, tapi <code>apply</code> akan lebih cepat, karena kebanyakan mesin Javascript secara internal mengoptimasi <code>apply</code> lebih baik.</p> 
+         <p>Mengirimkan seluruh argumen bersamaan dengan konteks ke fungsi lainnya dipanggil dengan <em>call forwarding</em>.</p> 
+         <p>Ini adalah contoh paling sederhana dari <em>call forwarding</em>:</p> 
+         <div id="8c7e0885iv" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let wrapper = function() {
+  return func.apply(this, arguments);
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ketika sebuah kode eksternal memanggil <code>wrapper</code> yang seperti diatas, pemanggilan itu tidak bisa dibedakan dengan pemanggilan dari fungsi asli <code>func</code>.</p> 
+         <h2><a class="main__anchor" name="method-borrowing" href="call-apply-decorators.html#method-borrowing">Meminjam sebuah metode</a></h2> 
+         <p>Sekarang kita buat satu perubahan minor didalam fungsi hashing:</p> 
+         <div id="0lqljiey48" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function hash(args) {
+  return args[0] + ',' + args[1];
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang sekarang, fungsi diatas hanya akan bekerja dengan dua argumen. Fungsi diatas akan lebih baik jika dapat menerima berapapun jumlah dari <code>args</code>.</p> 
+         <p>Solusi naturalnya harusnya dengan menggunakan metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/join">arr.join</a>:</p> 
+         <div id="4kouygxw5e" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function hash(args) {
+  return args.join();
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Sayangnya, hal diatas tidak akan bekerja. karena kita memanggil <code>hash(arguments)</code>, dan objek <code>arguments</code> adalah hal yang bisa diiterasi dan hal yang seperti array, tapi bukanlah array asli.</p> 
+         <p>jadi memanggil <code>join</code> tentu tidak akan bekerja, seperti yang bisa kita lihat dibawah:</p> 
+         <div id="r5kfx21gny" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function hash() {
+  alert( arguments.join() ); // Error: arguments.join is not a function
+}
+
+hash(1, 2);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tetap, terdapat sebuah cara yang mudah untuk menggunakan array join:</p> 
+         <div id="ulmlbo03ds" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="call-apply-decorators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function hash() {
+  alert( [].join.call(arguments) ); // 1,2
+}
+
+hash(1, 2);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Caranya bernama <em>method borrowing</em>.</p> 
+         <p>Kita menggunakan (borrow/meminjam) metode join dari array biasa (<code>[].join</code>) dan gunakan <code>[].join.call</code> untuk menjalankannya didalam konteks dari <code>arguments</code>.</p> 
+         <p>Kenapa hal itu bisa bekerja?</p> 
+         <p>Itu karena algoritma internal dari metode native <code>arr.join(glue)</code> sangatlah sederhana.</p> 
+         <p>Diambil dari spesifikasi hampir ???as-is(apa adanya)???:</p> 
+         <ol> 
+          <li>Biarkan <code>glue</code> menjadi argumen pertama atau, jika tidak ada argumen, maka sebuah koma <code>","</code>.</li> 
+          <li>Biarkan <code>result</code> menjadi sebuah string kosong.</li> 
+          <li>Masukan <code>this[0]</code> kedalam <code>result</code>.</li> 
+          <li>Masukan <code>glue</code> dan <code>this[1]</code>.</li> 
+          <li>Masukan <code>glue</code> dan <code>this[2]</code>.</li> 
+          <li>???lakukan terus sampai item dari <code>this.length</code> ditempel.</li> 
+          <li>Kembalikan <code>result</code>.</li> 
+         </ol> 
+         <p>Jadi, secara tekniks itu akan menggunakan <code>this</code> dan menggabungkan <code>this[0]</code>, <code>this[1]</code> ???lainnya bersama. Itu secara sengaja ditulis dengan cara yang mengijinkan hal yang seperti array <code>this</code> (bukan kebetulan, banyak metode lainnya mengikuti cara ini). Itulah kenapa hal ini bekerja juga dengan <code>this=arguments</code>.</p> 
+         <h2><a class="main__anchor" name="decorators-and-properti-fungsi" href="call-apply-decorators.html#decorators-and-properti-fungsi">Decorators and properti fungsi</a></h2> 
+         <p>Secara umum mengganti sebuah fungsi atau metode dengan yang telah diubah adalah hal yang aman, kecuali untuk satu hal kecil. Jika fungsi aslinya memiliki properti didalamnya <code>func.calledCount</code> atau apapun, maka fungsi yang telah diubah tidak akan memilikinya. Karena itu adalah sebuah pembungkus. Jadi haruslah hati-hati saat menggunakannya.</p> 
+         <p>Contoh, didalam contoh diatas jika fungsi <code>slow</code> memiliki properti apapun didalamnya, maka <code>cachingDecorator(slow)</code> adalah sebuah pembungkus tanpa properti itu.</p> 
+         <p>Beberapa dekorator mungkin menyediakan propertinya sendiri. Misalnya sebuah dekorator mungkin menghitung berapa kali fungsinya dipanggil dan berapa lama pemanggilannya, dan mengetahui informasi ini lewat pembungkus properti.</p> 
+         <p>Terdapat sebuah cara untuk membuat dekorator yang tetap menyimpan akses kepada properti fungsi, tapi hal ini membutuhkan objek spesial <code>Proxy</code> untuk membungkus fungsinya. Kita akan pelajari nanti dalam artikel <a href="proxy.html#proxy-apply">Proxy and Reflect</a>.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="call-apply-decorators.html#ringkasan">Ringkasan</a></h2> 
+         <p><em>Dekorator</em> adalah sebuah pembungkus fungsi yang mengubah prilaku fungsi tersebut. Pekerjaan utamanya tetap untuk membawa fungsinya.</p> 
+         <p>Dekorator bisa dilihat sebagai ???fitur??? atau ???aspek??? yang bisa ditambahkan kedalam fungsi. Kita bisa menambahkan satu atau banyak. Dan semuanya tanpa mengubah kode dari fungsinya sendiri.</p> 
+         <p>Untuk mengimplementasikan <code>cachingDecorator</code>, kita telah mempelajari metode:</p> 
+         <ul> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Function/call">func.call(context, arg1, arg2???)</a> ??? memanggil <code>func</code> dengan konteks dan argumen yang diberikan.</li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">func.apply(context, args)</a> ??? memanggil <code>func</code> mengirimkan <code>context</code> sebagai this dan hal yang seperti array <code>args</code> kedalam sebuah daftar dari argumen.</li> 
+         </ul> 
+         <p><em>call forwarding</em> biasanya digunakan dengan <code>apply</code>:</p> 
+         <div id="736wus0lkp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let wrapper = function() {
+  return original.apply(this, arguments);
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga melihat contoh dari <em>method borrowing</em> ketika kita mengambil metode dari sebuah objek dan <code>call/memanggil</code>nya didalam konteks dari objek lain. Hal itu cukup umum untuk mengambil metode array dan mengaplikasikannya kepada <code>arguments</code>. Alternatif lainnya adalah untuk menggukanan objek parameter rest yang mana adalah sebuah array asli.</p> 
+         <p>Terdapat beberapa dekorator yang tersedia. Pecahkan seluruh task untuk mengetahui seberapa paham kamu tentang dekorator tersebut didalam bab ini.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="call-apply-decorators.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="call-apply-decorators.html#spy-decorator" name="spy-decorator">Spy decorator</a></h3> 
+           <a class="task__open-link" href="task/spy-decorator.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah dekorator <code>spy(func)</code> yang harus mengembalikan pembungkus yang menyimpan semua pemanggilan kepada fungsinya didalam propertinya sendiri bernama <code>calls</code>.</p> 
+            <p>Setiap pemanggilan disimpan sebagai sebuah array dari argumen.</p> 
+            <p>Contoh:</p> 
+            <div id="4hqh04vutt" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function work(a, b) {
+  alert( a + b ); // bayangkan work adalah sebuah fungsi yang panjang
+}
+
+work = spy(work);
+
+work(1, 2); // 3
+work(4, 5); // 9
+
+for (let args of work.calls) {
+  alert( 'call:' + args.join() ); // "call:1,2", "call:4,5"
+}</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Catatan. Dekoratornya harus berguna untuk unit-testing. Bentuk lanjutannya adalah <code>sinon.spy</code> didalam librari <a href="http://sinonjs.org/">Sinon.JS</a>.</p> 
+            <p><a href="https://plnkr.co/edit/ta2VlZnF3I61bDVP?p=preview" target="_blank" data-plunk-id="ta2VlZnF3I61bDVP">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Pembungkus yang dikembalikan oleh <code>spy(f)</code> harus menyimpan semua argumen dan lalu menggunakan <code>f.apply</code> untuk melanjutkan pemanggilannya.</p> 
+              <div id="hpi3bgpznh" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function spy(func) {
+
+  function wrapper(...args) {
+    // gunakan ...args daripada argumen untuk menyimpan "array asli" didalam wrapper.calls
+    wrapper.calls.push(args);
+    return func.apply(this, args);
+  }
+
+  wrapper.calls = [];
+
+  return wrapper;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/aU5Bxjrnvm1XKKcC?p=preview" target="_blank" data-plunk-id="aU5Bxjrnvm1XKKcC">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="call-apply-decorators.html#dekorator-penunda" name="dekorator-penunda">Dekorator penunda</a></h3> 
+           <a class="task__open-link" href="task/delay.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah dekorator <code>delay(f, ms)</code> yang menunda setiap pemanggilan dari <code>f</code> selama <code>ms</code> milidetik.</p> 
+            <p>Contoh:</p> 
+            <div id="3iyuoszue6" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function f(x) {
+  alert(x);
+}
+
+// create wrappers
+let f1000 = delay(f, 1000);
+let f1500 = delay(f, 1500);
+
+f1000("test"); // tampilkan "test" setelah 1000ms
+f1500("test"); // tampilkan "test" setelah 1500ms</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Dengan kata lain, <code>delay(f, ms)</code> mengembalikan sebuah "varian dari <code>f</code> yang telah ditunda selama <code>ms</code>".</p> 
+            <p>Didalam kode diatas, <code>f</code> adalah sebuah fungsi dari sebuah argumen tunggal, tapi solusimu harus bisa melewati seluruh argumen dan konteks dari <code>this</code>.</p> 
+            <p><a href="https://plnkr.co/edit/pRLOXlQiadWzovkY?p=preview" target="_blank" data-plunk-id="pRLOXlQiadWzovkY">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Solusi:</p> 
+              <div id="fo4v7z25k4" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="call-apply-decorators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="call-apply-decorators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function delay(f, ms) {
+
+  return function() {
+    setTimeout(() =&gt; f.apply(this, arguments), ms);
+  };
+
+}
+
+let f1000 = delay(alert, 1000);
+
+f1000("test"); // tampilkan "test" setelah 1000ms</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Perhatikan bagaimana fungsi arrow digunakan disini. Seperti yang kita tahu, fungsi panah tidak memiliki <code>this</code> dan <code>argumen</code>nya sendiri, jadi <code>f.apply(this, arguments)</code> akan mengambil <code>this</code> dan <code>arguments</code> dari pembungkusnya.</p> 
+              <p>Jika kita memasukan fungsi yang biasa, <code>setTimeout</code> akan memanggil fungsinya tanpa argumen dan <code>this=window</code> (asumsikan kita berada didalam peramban).</p> 
+              <p>Kita masih bisa memberikan <code>this</code> yang benar dengan menggunakan variabel tambahan, tapi kodenya akan sedikit menjadi lebih rumit:</p> 
+              <div id="3wedies7ky" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function delay(f, ms) {
+
+  return function(...args) {
+    let savedThis = this; // simpan this kedalam variabel tambahan
+    setTimeout(function() {
+      f.apply(savedThis, args); // gunakan disini
+    }, ms);
+  };
+
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/DqK7YJntpHlNvaDN?p=preview" target="_blank" data-plunk-id="DqK7YJntpHlNvaDN">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="call-apply-decorators.html#debounce-decorator" name="debounce-decorator">Debounce decorator</a></h3> 
+           <a class="task__open-link" href="task/debounce.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Hasil dari dekorator <code>debounce(f, ms)</code> adalah sebuah pembungkus yang menghentikan pemanggilan <code>f</code> selama <code>ms</code> milidetik dari ketidakaktifan (tidak ada pemanggilan, ???masa menunggu???), lalu memanggil <code>f</code> sekali dengan argumen terakhir.</p> 
+            <p>Dengan kata lain, <code>debounce</code> seperti seorang sekertaris yang menerima ???telefon???, dan menunggu selama <code>ms</code> milidetik dari ketidakaktifan. Dan lalu menyampaikan pemanggilan terakhir kepada ???boss??? (melakukan pemanggilan <code>f</code>).</p> 
+            <p>Contoh, jika kita mempunyai sebuah fungsi <code>f</code> dan lalu memasukan <code>f = debounce(f, 1000)</code>.</p> 
+            <p>Maka jika fungsi pembungkus dipanggil pada 0ms, 200ms, dan 500ms, dan lalu tidak ada pemanggilan lainnya, maka fungsi <code>f</code> akan dipanggil sekali, pada 1500ms. Itulah: setelah beberapa saat fungsi tidak dipanggil maka fungsinya akan benar-benar dipanggil dengan rentang waktu 1000ms setelah pemanggilan terakhir.</p> 
+            <figure> 
+             <div class="image" style="width:500px"> 
+              <div class="image__ratio" style="padding-top:36.6%"></div> 
+              <object type="image/svg+xml" data="task/debounce/debounce.svg" width="500" height="183" class="image__image" data-use-theme> <img src="task/debounce/debounce.svg" alt="" width="500" height="183"> </object> 
+             </div> 
+            </figure> 
+            <p>???Dan itu akan mendapatkan argumen dari pemanggilan yang paling terakhir, pemanggilan lainnya akan diabaikan.</p> 
+            <p>Ini adalah kodenya (digunakan untuk dekorator debounce dari <a href="https://lodash.com/docs/4.17.15#debounce">Lodash library</a>):</p> 
+            <div id="lf07l3fww0" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let f = _.debounce(alert, 1000);
+
+f("a");
+setTimeout( () =&gt; f("b"), 200);
+setTimeout( () =&gt; f("c"), 500);
+// fungsi debounce menunggu 1000ms setelah pemanggilan terakhir dan lalu menjalankan: alert("c")</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Sekarang contoh yang lebih praktikal. Katakan, penggunakan mengetik sesuatu, dan kita ingin mengirim request kepada server ketika pengguna telah selesai mengetik.</p> 
+            <p>Pada hal ini, sangat tidak berguna untuk mengirim request kepada server untuk setiap huruf yang diketik. Lagipula kita ingin menunggu, dan lalu memproses hasil ketikan pengguna.</p> 
+            <p>Didalam peramban, kita bisa menyetel sebuah event handler(penangan event) ??? sebuah fungsi yang dipanggi untuk setiap perubahan pada kotak inputan, sebuah penangan event dipanggil sangat sering untuk setiap huruf yang diketik. Tapi jika kita ingin men<code>debounce</code>nya selama 1000ms, maka fungsinya akan dipanggil sekali, 1000ms setelah penginputan huruf terakhir.</p> 
+            <p>Didalam contoh ini, handlernya memasukan hasilnya kedalam kotak dibawah, cobalah:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:200px" src="https://id.js.cx/task/debounce/debounce/"></iframe> 
+            </div> 
+            <p>Lihat? inputan kedua memanggil fungsi debounce, jadi kontennya diproses setelah 1000ms dari inputan terakhir.</p> 
+            <p>Jadi, <code>debounce</code> adalah cara terbaik untuk memproses event yang terjadi berurutan: bisa tombol yang dipencet berulang-ulang, pergerakan mouse atau lainnya.</p> 
+            <p>Fungsinya akan menunggu hingga pemanggilan terakhir, dan lalu menjalankan fungsi aslinya, lalu hasilnya akan diolah.</p> 
+            <p>Tugasnya adalah untuk mengimplementasikan dekorator <code>debounce</code>.</p> 
+            <p>Petunjuk: jika kamu perhatikan, perubahan fungsinya hanya dengan menambahkan beberapa baris :)</p> 
+            <p><a href="https://plnkr.co/edit/5ExhGfBAp3hjb0Iy?p=preview" target="_blank" data-plunk-id="5ExhGfBAp3hjb0Iy">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="ex9gwyagv1" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function debounce(func, ms) {
+  let timeout;
+  return function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(() =&gt; func.apply(this, arguments), ms);
+  };
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Pemanggilan kepada <code>debounce</code> mengembalikan sebuah pembungkus. Ketika dipanggil, <code>debounce</code> akan menunggu lalu memanggil fungsi aslinya setelah <code>ms</code> milidetik dan membatal kan timeout sebelumnya.</p> 
+              <p><a href="https://plnkr.co/edit/BkCO0w6DgjkHvD3J?p=preview" target="_blank" data-plunk-id="BkCO0w6DgjkHvD3J">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="call-apply-decorators.html#dekorator-penutup" name="dekorator-penutup">Dekorator penutup</a></h3> 
+           <a class="task__open-link" href="task/throttle.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah dekorator ???penutup??? <code>throttle(f, ms)</code> ??? yang mengembalikan sebuah pembungkus.</p> 
+            <p>Ketika fungsinya dipanggil beberapa kali, fungsinya akan melakukan pemanggilan kepada <code>f</code> maksimal sekali per <code>ms</code> milidetik.</p> 
+            <p>Perbedaannya dengan dekorator debounce adalah keduanya benar-benar dekorator berbeda:</p> 
+            <ul> 
+             <li><code>debounce</code> menjalankan fungsinya sekali setelah masa ???tidak aktif???. Bagus untuk memproses hasil akhir.</li> 
+             <li><code>throttle</code> menjalankan fungsinya tidak lebih banyak dari waktu <code>ms</code> yang diberikan. Bagus untuk update tersusun yang tidak terlalu sering dipanggil.</li> 
+            </ul> 
+            <p>Dengan kata lain, <code>throttle</code> seperti seorang sekertaris yang menerima panggilan telefon, tapi menggangu bos nya (memanggil fungsi <code>f</code> asli) tidak lebih sering dari sekali per <code>ms</code> milidetik.</p> 
+            <p>Ayo kita lihat contoh pengaplikasiannya langsung untuk mengerti lebih dalam tentang kebutuhannya dan dimana digunakannya.</p> 
+            <p><strong>Contoh, kita ingin mengetahui posisis dari pergerakan mouse.</strong></p> 
+            <p>Didalam peramban kita bisa menyetel sebuah fungsi yang berjalan untuk setiap pergerakan mouse dan mendapatkan lokasi pointernya selama mouse-nya bergerak. Selama mouse-nya bergerak terus-menerus, fungsi ini biasanya berjalan sangat sering, bisa menjadi seperti 100 kali per-detik (setiap 10ms). <strong>Kota ingin meng-update beberapa informasi didalam halaman webnya ketika pointernya bergerak.</strong></p> 
+            <p>???Akan tetapi meng-update fungsi <code>update()</code> terlalu berat dilakukan untuk dijalankan terus menerus mengikuti pergerakan mouse. Tidak ada alasan yang bagus untuk meng-update lebih sering daripada sekali per 100ms.</p> 
+            <p>Jadi kita akan membungkusnya dengan dekorator: gunakan <code>throttle(update, 100)</code> sebagai fungsi untuk berjalan setiap pergerakan mouse daripada secara langsung menggunakan <code>update()</code>. Dekoratornya akan sering dipanggil, tapi untuk pemanggilan kepada <code>update</code> akan dilakukan maksimal sekali per 100ms.</p> 
+            <p>Secara visual, langkah-langkahnya akan seperti ini:</p> 
+            <ol> 
+             <li>Untuk pergerakan mouse pertama dekoratornya langsung memanggil fungsi <code>update</code>. Itu penting, untuk penggunanya melihat reaksi sistemnya ketika mereka baru saja bergerak.</li> 
+             <li>Lalu selama mousenya bergerak, sampai <code>100ms</code> tidak akan terjadi apa-apa. Dekoratornya akan mengabaikan pemanggilannya.</li> 
+             <li>Setelah melewati <code>100ms</code> ??? satu pemanggilan fungsi <code>update</code>terjadi dengan kondisi paling terakhir.</li> 
+             <li>Lalu, pada akhirnya, mousenya berhenti disuatu tempat. Dekoratornya menunggu sampai melewati <code>100ms</code> dan lalu menjalankan <code>update</code> dengan kondisi terakhir. Jadi, cukup penting, pergerakan mouse terakhir akan diproses.</li> 
+            </ol> 
+            <p>Contoh kode:</p> 
+            <div id="na2xikt5ce" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function f(a) {
+  console.log(a);
+}
+
+// f1000 mengirimkan pemanggilan kepada f maksimal sekali per 1000ms
+let f1000 = throttle(f, 1000);
+
+f1000(1); // tampilkan 1
+f1000(2); // (ditahan, belum melewati 1000ms)
+f1000(3); // (ditahan, belum melewati 1000ms)
+
+// ketika 1000ms terlewati...
+// ...menampilkan 3, nilai sebelum tiga yaitu 2 akan diabaikan</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Catatan. Argumen dan konteks <code>this</code> yang dikirimkan kepada <code>f1000</code> harus bisa dikirimkan kepada fungsi asli <code>f</code>.</p> 
+            <p><a href="https://plnkr.co/edit/3wf8ge7UN3znYHcz?p=preview" target="_blank" data-plunk-id="3wf8ge7UN3znYHcz">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="wbb9vptg2q" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function throttle(func, ms) {
+
+  let isThrottled = false,
+    savedArgs,
+    savedThis;
+
+  function wrapper() {
+
+    if (isThrottled) { // (2)
+      savedArgs = arguments;
+      savedThis = this;
+      return;
+    }
+    isThrottled = true;
+
+    func.apply(this, arguments); // (1)
+
+    setTimeout(function() {
+      isThrottled = false; // (3)
+      if (savedArgs) {
+        wrapper.apply(savedThis, savedArgs);
+        savedArgs = savedThis = null;
+      }
+    }, ms);
+  }
+
+  return wrapper;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Pemanggilan kepada <code>throttle(func, ms)</code> mengembalikan <code>wrapper</code>.</p> 
+              <ol> 
+               <li>Selama pemanggilan pertama, <code>wrapper</code>nya hanya menjalankan <code>func</code> dan menyetel kondisi tidak aktif (<code>isThrottled = true</code>).</li> 
+               <li>Didalam kondisi ini semua pemanggilan akan diingat/disimpan didalam <code>savedArgs/savedThis</code>. Ingat baik-baik bahwa konteks dan argumennya sama-sama penting dan harus diingat/disimpan. Kita akan membutuhkannya untuk membuat panggilannya.</li> 
+               <li>Setelah <code>ms</code> milidetik berlalu, <code>setTimeout</code> akan berjalan. Kondisi tidak aktif dihilangkan (<code>isThrottled = false</code>) dan, jika kita memiliki daftar panggilan yang diabaikan, <code>wrapper</code> akan dieksekusi dengan argumen dan konteks yang terakhir diingat/disimpan.</li> 
+              </ol> 
+              <p>Langkah ketika yang berjalan bukanlah <code>func</code>, tapi <code>wrapper</code>, karena kita tidak hanya perlu mengeksekusi <code>func</code>, tapi sekali-lagi kita memasuki kondisi tidak aktif dan perlu menyetel ulang timeout.</p> 
+              <p><a href="https://plnkr.co/edit/8tIPsgwGfy1Dr5de?p=preview" target="_blank" data-plunk-id="8tIPsgwGfy1Dr5de">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="settimeout-setinterval.html" data-tooltip="Pendadwalan: setTimeout dan setInterval"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="bind.html" data-tooltip="Function binding"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcall-apply-decorators" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcall-apply-decorators" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="advanced-functions.html">Penggunaan lanjutan fungsi</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="call-apply-decorators.html#cache-transparan">Cache transparan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="call-apply-decorators.html#menggunakan-func-call-untuk-konteksnya">Menggunakan ???func.call??? untuk konteksnya</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="call-apply-decorators.html#menjadi-multi-argument">Menjadi multi-argument</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="call-apply-decorators.html#func-apply">func.apply</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="call-apply-decorators.html#method-borrowing">Meminjam sebuah metode</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="call-apply-decorators.html#decorators-and-properti-fungsi">Decorators and properti fungsi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="call-apply-decorators.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="call-apply-decorators.html#tasks">Tugas (4)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="call-apply-decorators.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcall-apply-decorators" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fcall-apply-decorators" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

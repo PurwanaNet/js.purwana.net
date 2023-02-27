@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Menggelembung (_bubbling_) dan menangkap (_capturing_)</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="bubbling-and-capturing.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Menggelembung (_bubbling_) dan menangkap (_capturing_)"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Menggelembung (_bubbling_) dan menangkap (_capturing_)"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="introduction-browser-events.html"> 
+  <link rel="next" href="event-delegation.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Menggelembung (_bubbling_) dan menangkap (_capturing_)"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbubbling-and-capturing" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fbubbling-and-capturing" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="13" max="32" data-tooltip="Pelajaran 13 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="events.html"><span>Pengenalan ke Peristiwa</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Pengenalan ke Peristiwa","item":"https://id.javascript.info/events"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Menggelembung (_bubbling_) dan menangkap (_capturing_)</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Menggelembung (_bubbling_) dan menangkap (_capturing_)"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Ayo mulai dengan sebuah contoh.</p> 
+         <p>Sebuah penangan (<em>handler</em>) di atur ke <code>&lt;div&gt;</code>, tapi juga dijalankan jika kita klik salah satu tag bawaan seperti <code>&lt;em&gt;</code> or <code>&lt;code&gt;</code>:</p> 
+         <div id="1fmnslxwpw" data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;div onclick="alert('Penangan (handler)!')"&gt;
+  &lt;em&gt;Jika kamu menekan pada &lt;code&gt;EM&lt;/code&gt;, penangan pada &lt;code&gt;DIV&lt;/code&gt; akan berjalan.&lt;/em&gt;
+&lt;/div&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-1fmnslxwpw" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Bukan kah itu sedikit aneh? kenapa penangan (<em>handler</em>) pada <code>&lt;div&gt;</code> berjalan padahal elemen yang di klik adalah <code>&lt;em&gt;</code>?</p> 
+         <h2><a class="main__anchor" name="menggelembung-bubbling" href="bubbling-and-capturing.html#menggelembung-bubbling">Menggelembung (<em>bubbling</em>)</a></h2> 
+         <p>Prinsip menggelembung (<em>bubbling</em>) itu sederhana.</p> 
+         <p><strong>Pada saat sebuah peristiwa terjadi ke sebuah elemen, peristiwa itu akan menjalankan penangan (<em>handler</em>) yang ada pada elemen itu, kemudian pada elemen orang tua (<em>parent</em>), dan seterusnya hingga sampai ke elemen yang paling atas (<em>ancestors</em>).</strong></p> 
+         <p>Bayangkan kita memiliki tiga elemen bersarang <code>FORM &gt; DIV &gt; P</code> dengan penagan (<em>handler</em>) pada setiap elemen:</p> 
+         <div id="6hfonjwz9h" data-trusted="1" class="code-example" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bubbling-and-capturing.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bubbling-and-capturing.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+&lt;/style&gt;
+
+&lt;form onclick="alert('form')"&gt;FORM
+  &lt;div onclick="alert('div')"&gt;DIV
+    &lt;p onclick="alert('p')"&gt;P&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-6hfonjwz9h" style="height:200px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Sebuah klik pada bagian dalam <code>&lt;p&gt;</code> akan menjalankan <code>onclick</code>:</p> 
+         <ol> 
+          <li>Yang ada pada <code>&lt;p&gt;</code>.</li> 
+          <li>Kemudian pada <code>&lt;div&gt;</code>.</li> 
+          <li>Kemudian pada <code>&lt;form&gt;</code>.</li> 
+          <li>Dan seterusnya hingga sampai ke objek <code>document</code>.</li> 
+         </ol> 
+         <figure> 
+          <div class="image" style="width:353px"> 
+           <div class="image__ratio" style="padding-top:61.18980169971672%"></div> 
+           <object type="image/svg+xml" data="article/bubbling-and-capturing/event-order-bubbling.svg" width="353" height="216" class="image__image" data-use-theme> <img src="article/bubbling-and-capturing/event-order-bubbling.svg" alt="" width="353" height="216"> </object> 
+          </div> 
+         </figure> 
+         <p>Jadi jika kita klik pada <code>&lt;p&gt;</code>, kemudian kita akan melihat 3 buah peringatan (<em>alerts</em>): <code>p</code> ??? <code>div</code> ??? <code>form</code>.</p> 
+         <p>Proses ini disebut dengan ???menggelembung (<em>bubbling</em>)???, karena peristiwa akan ???mengelembung (<em>bubble</em>)??? dari bagian dalam elemen ke atas melalui elemen orang tua (<em>parents</em>) seperti sebuah gelembung di air.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type"><em>Hampir</em> semua peristiwa bergelembung.</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Kata kunci pada kata tersebut adalah ???hampir???.</p> 
+           <p>Contohnya, peristiwa <code>focus</code> tidak bergelembung. Masih ada contoh lain, kita akan membahas mereka. Tapi tetap itu hanya pengecualian, dan bukan aturan baku, hampir semua peristiwa mengelembung.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="event-target" href="bubbling-and-capturing.html#event-target">event.target</a></h2> 
+         <p>Sebuah penangan (<em>handler</em>) pada elemen orang tua bisa selalu mendapat detail tentang dimana kejadian itu terjadi.</p> 
+         <p><strong>elemen bersarang yang mengakibatkan peristiwa (<em>event</em>) di panggil di sebut sebuah <em>target</em> elemen, diakses dengan menggunakan <code>event.target</code>.</strong></p> 
+         <p>Catat perbedaan dari <code>this</code> (=<code>event.currentTarget</code>):</p> 
+         <ul> 
+          <li><code>event.target</code> ??? adalah ???target??? elemen yang menginisialisasi peristiwa (<em>event</em>), dan tidak berubah pada proses pengelembungan.</li> 
+          <li><code>this</code> ??? adalah elemen tersebut, elemen yang sedang menjalankan penangan (<em>handler</em>).</li> 
+         </ul> 
+         <p>Contohnya, jika sebuah penangan (<em>handler</em>) <code>form.onclick</code>, kemudian form itu akan ???menangkap??? semua klik yang terjadi didalam form. Tidak peduli dimana klik itu terjadi, klik itu akan mengelembung ke <code>&lt;form&gt;</code> dan akan menjalankan penangan (<em>handler</em>).</p> 
+         <p>Pada penangan (<em>handler</em>) <code>form.onclick</code>:</p> 
+         <ul> 
+          <li><code>this</code> (=<code>event.currentTarget</code>) adalah elemen <code>&lt;form&gt;</code>, karena penangan (<em>handler</em>) dijalankan pada <code>&lt;form&gt;</code>.</li> 
+          <li><code>event.target</code> adalah elemen didalam <code>&lt;form&gt;</code> dimana peristiwa klik terjadi.</li> 
+         </ul> 
+         <p>Contohnya:</p> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                script.js 
+              </div> 
+              <div class="code-tabs__switch">
+                example.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/bubbling-and-capturing/bubble-target/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/LEHu6uOeMVLWoOV1?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:220px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/bubbling-and-capturing/bubble-target/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-javascript line-numbers"><code>form.onclick = function(event) {
+  event.target.style.backgroundColor = 'yellow';
+
+  // chrome membutuhkan waktu untuk mewarnai warna kuning.
+  setTimeout(() =&gt; {
+    alert("target = " + event.target.tagName + ", this=" + this.tagName);
+    event.target.style.backgroundColor = ''
+  }, 0);
+};</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>form {
+  background-color: green;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  cursor: pointer;
+}
+
+div {
+  background-color: blue;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 100px;
+  height: 100px;
+}
+
+p {
+  background-color: red;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0;
+}
+
+body {
+  line-height: 25px;
+  font-size: 16px;
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;link rel="stylesheet" href="example.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  Sebuah klik untuk menunjukan kedua &lt;code&gt;event.target&lt;/code&gt; dan &lt;code&gt;this&lt;/code&gt; untuk dibandingkan:
+
+  &lt;form id="form"&gt;FORM
+    &lt;div&gt;DIV
+      &lt;p&gt;P&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>this</code> dan <code>event.target</code> bisa merupakan elemen yang sama ??? itu terjadi pada saat klik terjadi tepat di elemen <code>&lt;form&gt;</code>.</p> 
+         <h2><a class="main__anchor" name="menghentikan-menggelembung-bubbling" href="bubbling-and-capturing.html#menghentikan-menggelembung-bubbling">Menghentikan Menggelembung (<em>bubbling</em>)</a></h2> 
+         <p>Sebuah proses menggelembung berasal dari <code>target</code> elemen akan naik keatas. Biasanya proses itu akan terjadi sampai mencapai elemen <code>&lt;html&gt;</code>, dan kemudian ke objek <code>document</code>, dan ada beberapa peristiwa (<em>event</em>) yang bahkan bisa mencapai jendela (<em><code>window</code></em>), sambil menjalankan semua penangan (<em>handler</em>) yang ada di setiap elemen.</p> 
+         <p>Tapi salah satu penangan (<em>handler</em>) dapat menghentikan peristiwa (<em>event</em>) jika penangan (<em>handler</em>) beranggapan bahwa proses tersebut telah berhasil di proses.</p> 
+         <p>Metode untuk melakukan perhentian adalah <code>event.stpoPropagation()</code>.</p> 
+         <p>Contohnya, <code>body.onclick</code> tidak akan dijalankan jika kamu mengklik pada <code>&lt;button&gt;</code>:</p> 
+         <div id="bwzuka1daf" data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bubbling-and-capturing.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bubbling-and-capturing.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;body onclick="alert(`Proses menggelembung tidak mencapai penangan ini`)"&gt;
+  &lt;button onclick="event.stopPropagation()"&gt;Klik saya&lt;/button&gt;
+&lt;/body&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-bwzuka1daf" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">event.stopImmediatePropagation()</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika sebuah elemen memiliki beberapa penangan (handler) untuk satu peristiwa (event), maka bahkan jika salah satu dari penangan menghentikan proses pengelembungan, penagan yang lain akan tetap di jalankan.</p> 
+           <p>Dengan kata lain, <code>event.stopPropagation()</code> menghentikan proses yang keatas, tapi pada elemen yang sama penangan (handler) lain akan tetap di jalankan.</p> 
+           <p>Untuk menghentukan pengelembungan (handler) dan mencegah penangan (handler) lain yang ada pada elemen tersebut untuk dijalankan, harus menggunakan metode <code>event.stopImmediatePropagation()</code>. Setelah itu tidak akan ada penangan (handler) yang dijalankan.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Jangan menghentikan proses mengelembung jika tidak perlu!</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Proses mengelembung cukup berguna. Jangan menghentikan proses ini jika tidak ada perlu: tentu saja harus di pikir dengan baik-baik.</p> 
+           <p>Terkadang <code>event.stopPropagation()</code> akan menyebabkan jebakan tersembunyi yang mungkin akan menjadi masalah.</p> 
+           <p>Contoh:</p> 
+           <ol> 
+            <li>Kita membuat sebuah menu yang bersarang. Pada setiap submenu penangan (<em>handles</em>) klik pada elemen itu dan menjalankan <code>stopPropagation</code> jadi bagian luar menu tidak akan dijalankan.</li> 
+            <li>Kemudian kita memutuskan untuk menangkap klik pada keseluruhan jendela (<em>window</em>), untuk melacak kebiasaan pengguna (dimana biasa pengguna mengklik). Beberapa sistem analisa menggunakan metode ini. Biasanya code yang digunakan <code>document.addEventListener('click'???)</code> untuk menangkap semua klik.</li> 
+            <li>Analisis kita tidak akan bekerja pada area dimana kita telah menghentikan peristiwa klik dengan menggunakan <code>stopPropagation</code>. Dengan kata lain kita telah membuat daerah mati (<em>dead zone</em>).</li> 
+           </ol> 
+           <p>Biasanya tidak ada keperluan utama yang membuat kita harus menghentikan proses mengelembung. Sebuah fungsi yang kelihatannya membutuhkan penggunaan metode itu bisa di selesaikan dengan menggunakan cara lain. Salah satunya dengan menggunakan peristiwa khusus, kita akan membahasnya nanti. Dan juga kita dapat menulis data kedalam objek <code>event</code> pada sebuah penangan (handler) dan membacanya pada penangan (handler) lainnya, jadi kita dapat meneruskan data tentang proses yang terjadi dibawah ke penangan (handler) elemen atas.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="penangkapan-capturing" href="bubbling-and-capturing.html#penangkapan-capturing">Penangkapan (<em>Capturing</em>)</a></h2> 
+         <p>Ada juga sebuah fase pada proses peristiwa yang disebut dengan Penangkapan (<em>capturing</em>). proses ini jarang digunakan, tapi akan berguna pada saat dibutuhkan.</p> 
+         <p>Standar sebuah <a href="http://www.w3.org/TR/DOM-Level-3-Events/">Peristiwa DOM</a> terbagi menjadi 3 fase, yaitu:</p> 
+         <ol> 
+          <li>fase penangkapan (<em>capturing phase</em>) ??? peristiwa mulai mencari elemen.</li> 
+          <li>fase target (<em>target phase</em>) ??? peristiwa menemukan elemen.</li> 
+          <li>fase mengelembung (<em>bubbling phase</em>) ??? peristiwa mulai naik ke atas dari elemen dasar.</li> 
+         </ol> 
+         <p>Berikut ini sebuah gambar tentang klik yang terjadi pada <code>&lt;td&gt;</code> didalam sebuah tabel, yang diambil dari spesifikasi:</p> 
+         <figure> 
+          <div class="image" style="width:641px"> 
+           <div class="image__ratio" style="padding-top:98.75195007800312%"></div> 
+           <object type="image/svg+xml" data="article/bubbling-and-capturing/eventflow.svg" width="641" height="633" class="image__image" data-use-theme> <img src="article/bubbling-and-capturing/eventflow.svg" alt="" width="641" height="633"> </object> 
+          </div> 
+         </figure> 
+         <p>Maka: untuk klik pada <code>&lt;td&gt;</code> peristiwa (<em>event</em>) akan pertama melewati elemen paling atas dan turun ke elemen yang bawaha (fase penangkapan), kemudian pada saat mencapai elemen yang di target akan di jalankan pada elemen tersebut (fase target), dan kemudia peristiwa itu akan naik ke atas (fase mengelembung), sambil memanggil penangan (<em>handler</em>) yang ada.</p> 
+         <p><strong>Sebelumnya kita hanya membahas tentang proses pengelembungan, karena proses penangkapan jarang digunakan, biasanya proses ini tidak terlihat oleh kita.</strong></p> 
+         <p>Penangan (<em>Handlers</em>) yang di tambahkan menggunakan <code>on&lt;event&gt;</code>-properti atau menggunakan atribut HTML atau menggunakan dua argumen <code>addEventListener(event, handler)</code> tidak mengetahui tentang proses penangkapan, mereka hanya menjalankan fase ke 2 dan fase ke 3.</p> 
+         <p>Untuk menangkap sebuah peristiwa pada fase penangkapan, kita perlu mengatur penangan (<em>handler</em>) pilihan <code>capture</code> menjadi <code>true</code>:</p> 
+         <div id="s4c944hukm" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>elem.addEventListener(..., {capture: true})
+// atau, hanya "true" karena merupakan alias dari {capture: true}
+elem.addEventListener(..., true)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hanya ada 2 kemungkinan nilai dari pilihan <code>capture</code>:</p> 
+         <ul> 
+          <li>Jika <code>false</code> (bawaan (<em>default</em>) ), maka penangan (<em>handler</em>) di atur pada fase pengelembungan atau fase ke 3.</li> 
+          <li>Jika <code>true</code>, aka penangan (<em>handler</em>) di atur pada fase penangkapan atau fase pertama.</li> 
+         </ul> 
+         <p>Catatan, sementara secara umum hanya ada 3 fase, dan fase ke dua (???fase target???: peristiwa mencapai elemen yang di target) tidak di tangani secara terpisah: penangan (<em>handler</em>) pada kedua fase penangkapan dan pengelembungan di jalankan pada fase tersebut.</p> 
+         <p>Mari lihat kedua fase penangkapan dan pengelembungan:</p> 
+         <div id="2flrcspfly" data-trusted="1" class="code-example" data-demo-height="140" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bubbling-and-capturing.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bubbling-and-capturing.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+&lt;/style&gt;
+
+&lt;form&gt;FORM
+  &lt;div&gt;DIV
+    &lt;p&gt;P&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  for(let elem of document.querySelectorAll('*')) {
+    elem.addEventListener("click", e =&gt; alert(`Penangkapan: ${elem.tagName}`), true);
+    elem.addEventListener("click", e =&gt; alert(`Pengelembungan: ${elem.tagName}`));
+  }
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-2flrcspfly" style="height:140px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Kode mengatur penangan(<em>handler</em>) klik pada <em>setiap</em> elemen yang ada di dalam dokumen untuk melihat elemen mana yang berfungsi.</p> 
+         <p>Jika kamu klik pada <code>&lt;p&gt;</code>, maka rangkaian peristiwa sebagai berikut:</p> 
+         <ol> 
+          <li><code>HTML</code> ??? <code>BODY</code> ??? <code>FORM</code> ??? <code>DIV</code> (fase penangkapan, pendengar pertama),</li> 
+          <li><code>P</code> (fase target, dijalankan 2 kali, karena kita mengatur 2 pendengar: penangkapan dan pengelembungan),</li> 
+          <li><code>DIV</code> ??? <code>FORM</code> ??? <code>BODY</code> ??? <code>HTML</code> (fase pengelembungan, pendengar kedua).</li> 
+         </ol> 
+         <p>Ada sebuah properti <code>event.eventPhase</code> yang akan memberikan kita nomor dari fase yang dimana peristiwa tersebut di tangkap. Tapi properti ini jarang digunakan, karena kita biasanya mendapat info itu dari penangan(<em>handler</em>) itu sendiri.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Untuk menghapus penangan, <code>removeEventListener</code> membutuhkan fase yang sama</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika kita menggunakan <code>addEventListener(..., true)</code>, maka kita harus menggunakan fase yang sama pada <code>removeEventListener(..., true)</code> untuk menghapus penangan secara benar.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Pendengar pada elemen dan fase yang sama akan dijalankan berdasarkan urutan mereka</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika kita memiliki beberapa penangan pada fase yang sama, dan di atur pada elemen yang sama dengan menggunakan <code>addEventListener</code>, mereka akan berjalan sesuai dengan urutan mereka di buat:</p> 
+           <div id="wwsa2yexvy" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>elem.addEventListener("click", e =&gt; alert(1)); // akan selalu berjalan duluan
+elem.addEventListener("click", e =&gt; alert(2));</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="bubbling-and-capturing.html#ringkasan">Ringkasan</a></h2> 
+         <p>Pada saat sebuah peristiwa (<em>event</em>) terjadi ??? elemen yang paling dalam dimana peristiwa itu terjadi akan di tandai dengan label ???target elemen??? (<code>event.target</code>).</p> 
+         <ul> 
+          <li>Kemudian peristiwa akan turun kebawah dari akar dokumen ke <code>event.target</code>, memanggil penangan yang di atur dengan <code>addEventListener(...,true)</code> (<code>true</code> kependekan dari <code>{capture: true}</code>).</li> 
+          <li>Kemudian penangan akan di panggil pada target elemen itu sendiri.</li> 
+          <li>Kemudian peristiwa akan naik ekatas dari <code>event.target</code> ke akar dokumen, memanggil penangan yang di ataur menggunakan <code>on&lt;event&gt;</code>, atribut HTML dan <code>addEventListener</code> tanpa argumen ke tiga atau dengan `false/{capture:false}.</li> 
+         </ul> 
+         <p>Setiap penangan(<em>handler</em>) memiliki akses ke properti objek <code>event</code>:</p> 
+         <ul> 
+          <li><code>event.target</code> ??? elemen paling bawah dimana peristiwa itu terjadi.</li> 
+          <li><code>event.currentTarget</code> (=<code>this</code>) ??? merupakan elemen yang menangani peristiwa (elemen yang memiliki penangan (<em>handler</em>)).</li> 
+          <li><code>event.eventPhase</code> ??? fase yang sedang terjadi (penangkapan=1, target=2, pengelembungan=3).</li> 
+         </ul> 
+         <p>Penangan dapat menghentikan peristiwa dengan memanggil <code>event.stopPropagation()</code>, tapi tidak direkomendasikan, karena kita tidak belum tentu tidak memerlukan peristiwa itu pada elemen di atas, mungkin untuk hal yang berbeda.</p> 
+         <p>Fase penangkapan jarang digunakan, biasanya kita menangani peristiwa yang mengelembung. Dan ada logika dibaliknya.</p> 
+         <p>Pada dunianya, pada saat kecelakaan terjadi, petugas setempat akan bereaksi duluan. Mereka lebih mengetahui daerah dimana kejadian itu terjadi. Kemudian petugas yang bertingkat tinggil jika dibutuhkan.</p> 
+         <p>Hal yang sama juga untuk penanganan peristiwa. Kode yang mengatur penangan (<em>handler</em>) pada elemen tertentu mengetahui dengan maksimum rincian tentang elemen tersebut dan apa yang harus dilakukan. Sebuah penangan (<em>handler</em>) pada <code>&lt;td&gt;</code> mungkin lebih cocok untuk <code>&lt;td&gt;</code>, penangan itu mengetahui segalanya, jadi penangan itu harus dijalankan duluan. Kemudian elemen yang diatasnya mengetahui tentang konteksnya, mungkin lebih sedikit, dan seterusnya sampai pada elemen yang paling atas, yang mengatur tentang konsep secara umum dan dijalankan paling akhir.</p> 
+         <p>Pengelembungan dan Penangkapan menyediakan sebuah fondasi untuk ???event delegation??? ??? sebuah pola penanganan peristiwa yang cukup penting yang akan kita pelajari pada bab selanjutnya.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="introduction-browser-events.html" data-tooltip="Pengenalan ke peristiwa peramban (_browser events_)"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="event-delegation.html" data-tooltip="Delegasi Peristiwa"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbubbling-and-capturing" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fbubbling-and-capturing" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="events.html">Pengenalan ke Peristiwa</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bubbling-and-capturing.html#menggelembung-bubbling">Menggelembung (<em>bubbling</em>)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bubbling-and-capturing.html#event-target">event.target</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bubbling-and-capturing.html#menghentikan-menggelembung-bubbling">Menghentikan Menggelembung (<em>bubbling</em>)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bubbling-and-capturing.html#penangkapan-capturing">Penangkapan (<em>Capturing</em>)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bubbling-and-capturing.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bubbling-and-capturing.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbubbling-and-capturing" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fbubbling-and-capturing" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

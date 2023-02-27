@@ -1,0 +1,1423 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Rekursi dan tumpukan (Recursion and stack)</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="recursion.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Rekursi dan tumpukan (Recursion and stack)"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Rekursi dan tumpukan (Recursion and stack)"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="advanced-functions.html"> 
+  <link rel="next" href="rest-parameters-spread.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <style>
+.function-execution-context-list {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.function-execution-context {
+  border: 1px solid black;
+  font-family: 'DejaVu Sans Mono', 'Lucida Console', 'Menlo', 'Monaco', monospace;
+  padding: 4px 6px;
+  margin: 0 4px;
+}
+
+.function-execution-context-call {
+  color: gray;
+}
+
+.function-execution-context-call::before {
+  content: ' call: ';
+}
+
+.function-execution-context-list li:first-child {
+  font-weight: bold;
+}
+</style> 
+  <meta property="og:title" content="Rekursi dan tumpukan (Recursion and stack)"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Frecursion" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Frecursion" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="49" max="92" data-tooltip="Pelajaran 49 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="advanced-functions.html"><span>Penggunaan lanjutan fungsi</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Penggunaan lanjutan fungsi","item":"https://id.javascript.info/advanced-functions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Rekursi dan tumpukan (Recursion and stack)</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Rekursi dan tumpukan (Recursion and stack)"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Ayo kita kembali ke fungsi dan belajar tentanya lebih dalam lagi.</p> 
+         <p>Topik pertama kita adalah <em>rekursi</em>.</p> 
+         <p>Jika programming bukanlah hal baru untukmu, maka kamu mungkin familiar dan kamu bisa melewatkan bab ini.</p> 
+         <p>Rekursi adalah pola programming yang sangat berguna didalam situasi dimana sebuah task bisa secara natural dibagi menjadi beberapa task yang memiliki jenis yang sama, tapi lebih sederhana. Atau ketika task bisa dibuat lebih sederhana menjadi sebuah aksi ditambah varian yang lebih sederhana dari beberapa task yang serupa.</p> 
+         <p>ketika sebuah fungsi menyelesaikan sebuah task, didalam proses itu bisa memanggila beberapa fungsi lainnya. Sebagian kasus dari ini ketika sebuah fungsi memanggil <em>dirinya sendiri</em>. Itulah yang disebut rekursi.</p> 
+         <h2><a class="main__anchor" name="cara-berfikir-dua-arah" href="recursion.html#cara-berfikir-dua-arah">Cara berfikir dua arah</a></h2> 
+         <p>Untuk sesuatu yang sederhana dimulai dengan ??? ayo kita buat sebuah fungsi <code>pow(x, n)</code> yang menaikan <code>x</code> dengan pangkat dari <code>n</code>. Dengan kata lain, mengkalikan <code>x</code> dengan dirinya sendiri sebanyak <code>n</code> kali.</p> 
+         <div id="rk68my9xyw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>pow(2, 2) = 4
+pow(2, 3) = 8
+pow(2, 4) = 16</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Terdapat dua cara untuk mengimplementasikan hal itu.</p> 
+         <ol> 
+          <li> <p>Pemikiran interaktif: perulangan <code>for</code>:</p> 
+           <div id="u4kk4d6e0r" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  let result = 1;
+
+  // kalikan hasil dari x n kali didalam perulangan
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+alert( pow(2, 3) ); // 8</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Pemikiran rekursif: sederhanakan tugasnya dan panggil diri-sendiri:</p> 
+           <div id="2w9k0bep3t" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  if (n == 1) {
+    return x;
+  } else {
+    return x * pow(x, n - 1);
+  }
+}
+
+alert( pow(2, 3) ); // 8</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <p>Ingat baik-baik bagaimana varian rekursif secara dasar berbeda.</p> 
+         <p>Ketika <code>pow(x, n)</code> dipanggil, eksekusinya dibagi menjadi dua cabang:</p> 
+         <div id="7flxrj66dl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>              if n==1  = x
+             /
+pow(x, n) =
+             \
+              else     = x * pow(x, n - 1)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <ol> 
+          <li>Jika <code>n == 1</code>, maka semuanya menjadi tidak penting. Itulah yang dipanggil dengan <em>dasar</em> dari rekursi, karena itu langsung menghasilkan nilai yang jelas <code>pow(x, 1)</code> sama dengan <code>x</code>.</li> 
+          <li>Sebaliknya, kita bisa merepresentasikan <code>pow(x, n)</code> sebagai <code>x * pow(x, n - 1)</code>. Didalam matematika, satu akan ditulis <code>x<sup>n</sup> = x * x<sup>n-1</sup></code>. Ini yang dipanggil dengan <em>Langkah rekursif</em>: kita mengubah tugas/task menjadi aksi yang lebih sederhana (perkalian dengan <code>x</code>) dan sebuah pemanggilan yang lebih sederhana dari tugas/task yang sama (<code>pow</code> dengan menurunkan <code>n</code>). Langkah selanjutnya menyederhanakan itu lebih jauh sampai <code>n</code> mencapai <code>1</code>.</li> 
+         </ol> 
+         <p>Kita bisa berkata bahwa <code>pow</code> *secara rekursif memanggil dirinya sendiri sampai <code>n == 1</code>.</p> 
+         <figure> 
+          <div class="image" style="width:502px"> 
+           <div class="image__ratio" style="padding-top:44.820717131474105%"></div> 
+           <object type="image/svg+xml" data="article/recursion/recursion-pow.svg" width="502" height="225" class="image__image" data-use-theme> <img src="article/recursion/recursion-pow.svg" alt="" width="502" height="225"> </object> 
+          </div> 
+         </figure> 
+         <p>Contoh, untuk mengkalkulasi <code>pow(2, 4)</code> varian rekursi melakukan langkah-langkah ini:</p> 
+         <ol> 
+          <li><code>pow(2, 4) = 2 * pow(2, 3)</code></li> 
+          <li><code>pow(2, 3) = 2 * pow(2, 2)</code></li> 
+          <li><code>pow(2, 2) = 2 * pow(2, 1)</code></li> 
+          <li><code>pow(2, 1) = 2</code></li> 
+         </ol> 
+         <p>Jadi, rekursi mengurangi sebuah pemanggilan fungsi menjadi yang lebih sederhana, dan lalu ??? bahkan lebih sederhana, dan seterusnya, sampai hasilnya menjadi jelas.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Rekursi biasanya lebih pendek</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Solusi rekursi biasanya lebih pendek daripada sebuah iterasi.</p> 
+           <p>Disini kita bisa menulis ulang menggunakan operator konsional <code>?</code> daripada <code>if</code> untuk membuat <code>pow(x, n)</code> lebih pendek dan tetap mudah dibaca:</p> 
+           <div id="h3rv5xdmaw" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  return (n == 1) ? x : (x * pow(x, n - 1));
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Angka maksimal dari pemanggilan bercabang (termasuk yang pertama) dipanggil dengan <em>kedalaman rekursi/recursion depth</em>. Di kasus kita, itu akan persis <code>n</code>.</p> 
+         <p>Maksimal kedalaman rekursi dibatasi oleh mesin Javascript. Kita bisa berkata bahwa itu mungkin 10000, beberapa mesin bisa lebih tapi 100000 mungkin sudah diluar batas dari kebanyakan mesin. Terdapat optimasi otomatis yang membantu meringankan ini(???optimasi tail calls???), tapi mereka belum sepenuhnya didukung di semuanya dan hanya bekerja pada kasus yang sederhana.</p> 
+         <p>Itu membatasi aplikasi dari rekursi, tapi itu tetaplah cukup besar. Disana terdapat task dimana cara berfikir rekursif membuat kode lebih sederhana, dan lebih mudah diperlihara.</p> 
+         <h2><a class="main__anchor" name="konteks-eksekusi-dan-tumpukan" href="recursion.html#konteks-eksekusi-dan-tumpukan">Konteks eksekusi dan tumpukan</a></h2> 
+         <p>Sekarang ayo kita membahas bagaimana pemanggilan rekursi bekerja. Untuk itu kita akan melihat isi dari fungsi.</p> 
+         <p>Informasi tentang proses dari eksekusi dari sebuah fungsi yang berjalan disimpan didalam <em>konteks eksekusi</em>nya.</p> 
+         <p><a href="https://tc39.github.io/ecma262/#sec-execution-contexts">Execution context</a> adalah sebuah struktur data internal yang mengandung detail tentang eksekusinya dari sebuah fungsi: dimana alur kontrolnya adalah sekarang, variabel yang sekarang, nilai dari <code>this</code> (kita tidak akan mengunakan ini disini) dan beberapa detail internal lainnya.</p> 
+         <p>Satu pemanggilan fungsi mempunyai tepat satu konteks eksekusi yang terkait dengannya.</p> 
+         <p>Ketika sebuah fungsi melakukan pemanggilan bercabang, Hal berikut terjadi:</p> 
+         <ul> 
+          <li>Fungsi yang sekarang dihentikan sementara ??? paused.</li> 
+          <li>Konteks eksekusi yang terkait dengannya diingat dalam sebuah struktur data spesial dipanggil dengan <em>tumpukan konteks eksekusi</em>.</li> 
+          <li>Pemanggilan bercabang dieksekusi.</li> 
+          <li>Setelah itu selesai, eksekusi konteks yang lama diterima dari tumpukan, dan fungsi terluar dilanjutkan dari mana itu berhenti.</li> 
+         </ul> 
+         <p>Ayo kita lihat apa yang terjadi selama pemanggilan <code>pow(2, 3)</code>.</p> 
+         <h3><a class="main__anchor" name="pow-2-3" href="recursion.html#pow-2-3">pow(2, 3)</a></h3> 
+         <p>Di awal pemanggilan <code>pow(2, 3)</code> konteks eksekusi akan menyimpan variabel: <code>x = 2, n = 3</code>, alur eksekusi berada pada baris <code>1</code> dari fungsi.</p> 
+         <p>Kita bisa menggambarkannya seperti:</p> 
+         <ul class="function-execution-context-list"> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 3, at line 1 }</span> <span class="function-execution-context-call">pow(2, 3)</span> </li> 
+         </ul> 
+         <p>Itu ketika fungsi mulai dieksekusi. Kondisinya <code>n == 1</code> adalah false, jadi alurnya berlanjut ke cabang kedua dari <code>if</code>:</p> 
+         <div id="5oa0vmq5vt" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  if (n == 1) {
+    return x;
+  } else {
+    return x * pow(x, n - 1);
+  }
+}
+
+alert( pow(2, 3) );</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Variabelnya juga sama, tapi barisnya berubah, jadi konteksnya sekarang:</p> 
+         <ul class="function-execution-context-list"> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span> </li> 
+         </ul> 
+         <p>Untuk mengkalkulasikan <code>x * pow(x, n -1)</code>, kita perlu membuat subcall dari <code>pow</code> dengan argumen baru <code>pow(2, 2)</code>.</p> 
+         <h3><a class="main__anchor" name="pow-2-2" href="recursion.html#pow-2-2">pow(2, 2)</a></h3> 
+         <p>Untuk melakukan pemanggilan bercabang, javascript mengingat konteks eksekusi yang sekarang didalam <em>tumpukan konteks eksekusi</em>.</p> 
+         <p>Disini kita memanggil fungsi yang sama <code>pow</code>, tapi itu tidaklah penting. Prosesnya sama untuk semua fungsi:</p> 
+         <ol> 
+          <li>Konteks yang sekarang telah ???mengingat??? tumpukan teratas.</li> 
+          <li>Konteks baru dibuat untuk subcall.</li> 
+          <li>Ketika subcall telah selesai ??? konteks sebelumnya dikeluarkan dari tumpukan, dan eksekusinya dilanjutkan.</li> 
+         </ol> 
+         <p>Here???s the context stack when we entered the subcall <code>pow(2, 2)</code>: Disini tumpukan konteks ketika kita memasuki subcallnya <code>pow(2, 2)</code>;</p> 
+         <ul class="function-execution-context-list"> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 2, at line 1 }</span> <span class="function-execution-context-call">pow(2, 2)</span> </li> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span> </li> 
+         </ul> 
+         <p>Konteks eksekusi baru yang sekarang berada di atas (dan jelas), dan konteks yang sebelumnya berada dibawah.</p> 
+         <p>Ketika kita menyelesaikan subcall ??? itu akan mudah untuk melanjutkan konteks sebelumnya, karena itu tetap menyimpan kedua variabel dan tempat yang tepat dimana kode itu berhenti.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tolong dicatat:</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Disini dialam gambar kita gunakan kata ???line???, sebagai contoh disana terdapat satu subcall didalam baris, tapi secara umum sebuah baris dari kode mungkin mengandung subcall ganda, seperti <code>pow(???) + pow(???) + somethingElse(???)</code>.</p> 
+           <p>Jadi itu harus menjadi lebih presisi untuk dikatakan eksekusi berlanjut ???langsung seterlah subcall???.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="pow-2-1" href="recursion.html#pow-2-1">pow(2, 1)</a></h3> 
+         <p>Prosesnya diulangi: subcall baru dibuat pada baris <code>5</code>, sekarang dengan argumen <code>x=2</code>, <code>n=1</code>.</p> 
+         <p>Sebuah konteks eksekusi baru dibuat, yang sebelumnya didorong dari atas tumpukan:</p> 
+         <ul class="function-execution-context-list"> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 1, at line 1 }</span> <span class="function-execution-context-call">pow(2, 1)</span> </li> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 2, at line 5 }</span> <span class="function-execution-context-call">pow(2, 2)</span> </li> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span> </li> 
+         </ul> 
+         <p>Disana terdapat 2 konteks lama sekarang dan 1 sedang berjalan untuk <code>pow(2, 1)</code>.</p> 
+         <h3><a class="main__anchor" name="keluar" href="recursion.html#keluar">Keluar</a></h3> 
+         <p>Selama eksekusi dari <code>pow(2, 1)</code>, tidak seperti sebelumnya, kondisi <code>n == 1</code> sekarang bernilai true, jadi cabang pertama dari <code>if</code> bekerja:</p> 
+         <div id="2grblb03mc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  if (n == 1) {
+    return x;
+  } else {
+    return x * pow(x, n - 1);
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disana sekarang tidak ada lagi pemanggilan bercabang, jadi fungsinya selesai, mengembalikan <code>2</code>.</p> 
+         <p>Setelah fungsinya selesai, konteks eksekusinya tidak dibutuhkan lagi, jadi itu akan dihilangkan dari memori. Satu yang sebelumnya dikembalikan dari atas tumpukan:</p> 
+         <ul class="function-execution-context-list"> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 2, at line 5 }</span> <span class="function-execution-context-call">pow(2, 2)</span> </li> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span> </li> 
+         </ul> 
+         <p>Eksekusi dari <code>pow(2, 2)</code> dilanjutkan. Itu telah mempunyai hasil dari subcall <code>pow(2, 1)</code>, jadi itu bisa menyelesaikan evaluasi dari <code>x * pow(x, n - 1)</code>, mengembalikan <code>4</code>.</p> 
+         <p>Konteks sebelumnya dikembalikan:</p> 
+         <ul class="function-execution-context-list"> 
+          <li> <span class="function-execution-context">Context: { x: 2, n: 3, at line 5 }</span> <span class="function-execution-context-call">pow(2, 3)</span> </li> 
+         </ul> 
+         <p>Ketika itu selesai, kita mempunyai hasil dari <code>pow(2, 3) = 8</code>.</p> 
+         <p>Dalam kasus ini kedalaman rekursinya adalah: <strong>3</strong>.</p> 
+         <p>Seperti yang bisa kita lihat dari ilustrasi diatas, kedalaman rekursi sama dengan nilai maksimal dari konteks didalam tumpukan.</p> 
+         <p>Catatan kebutuhan memori. Konteks memakan memori. Didalam kasus ini, menaikan dengan pangkat dari <code>n</code> sebenarnya membutuhkan memori sebanyak <code>n</code> konteks, untuk semua nilai terendah dari <code>n</code>.</p> 
+         <p>Algoritma berbasis perulangan lebih menghemat memori:</p> 
+         <div id="lz1xu2ihaj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  let result = 1;
+
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Interatif <code>pow</code> menggunakan konteks tunggal mengganti <code>i</code> dan <code>result</code> didalam prosesnya. Kebutuhan memorinya kecil, tidak berubah-ubah dan tidak tergantung kepada <code>n</code>.</p> 
+         <p><strong>Rekursi apapun bisa ditulis ulang sebagai perulangan. Varian perulangan biasanya bisa dibuat lebih efektif.</strong></p> 
+         <p>???Tapi terkadang menulis ulang bukanlah hal yang sepele, terutama ketika fungsi menggunakan pemanggilan rekursif yang berbeda tergantung dari kondisi dan menyatukan hasil mereka atau cabangnya lebih rumit. Dan optimasinya mungkin tidak dibutuhkan dan benar-benar menghabiskan tenaga.</p> 
+         <p>Rekursi bisa memberikan kode yang lebih pendek, lebih mudah dimengerti dan didukung. Optimasi tidak dibutuhkan di setiap tempat, kebanyakan kita butuh kode yang bagus, itulah kenapa itu digunakan.</p> 
+         <h2><a class="main__anchor" name="rekursif-traversal" href="recursion.html#rekursif-traversal">Rekursif traversal</a></h2> 
+         <p>Penerapan bagus lainnya dari rekursi adalah rekursif traversal.</p> 
+         <p>Bayangkan, kita punya sebuah perusahaan. Struktur karyawannya bisa dipresentasikan sebagai sebuah objek:</p> 
+         <div id="1btjlrhrnr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let company = {
+  sales: [{
+    name: 'John',
+    salary: 1000
+  }, {
+    name: 'Alice',
+    salary: 1600
+  }],
+
+  development: {
+    sites: [{
+      name: 'Peter',
+      salary: 2000
+    }, {
+      name: 'Alex',
+      salary: 1800
+    }],
+
+    internals: [{
+      name: 'Jack',
+      salary: 1300
+    }]
+  }
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dengan kata lain, perusahaannya mempunyai departemen.</p> 
+         <ul> 
+          <li> <p>Sebuah departemen mungkin mempunyai sebuah array untuk staf. Contoh, departemen <code>sales</code> mempunyai dua karyawan John dan Alice.</p> </li> 
+          <li> <p>Atau sebuah departemen mungkin dibagi menjadi sub-departemen, like <code>development</code> mempunyai dua cabang: <code>sites</code> dan <code>internals</code>. Untuk masin-masing memiliki stafnya masing-masing.</p> </li> 
+          <li> <p>Hal yang mungkin terjadi adalah ketika sub-departemennya berkembang, itu akan terbagi menjadi sub-sub-departemen (tau tim).</p> <p>Contoh, departemen <code>sites</code> di masa depan mungkin akan terbagi menjadi tim <code>siteA</code> dan <code>siteB</code>. Dan mereka, memiliki kemungkinan, terbagi lagi. Itu bukanlah sebuah gambaran, hanya sesuatu yang bisa terfikirkan.</p> </li> 
+         </ul> 
+         <p>Sekarang kita ingin sebuah fungsi untuk mendapatkan jumlah dari seluruh gaji. Bagaiman kita melakukannya?</p> 
+         <p>Sebuah pendekatan iteratif tidaklah mudah, karena strukturnya tidak sederhana. Pertama mungkin untuk membuat perulangan <code>for</code>didalam <code>company</code> dengan sub-perulangan bercabang didalam departemen level 1. Tapi kita butuh lebih banyak sub-perulangan untuk mengiterasi staf didalam departemen level 2 seperti <code>sites</code>??? Dan lalu sub-perulangan lainnya didalam departemen level 3 yang mungkin muncul di masa mendatang? Jika kita menggunakan 3-4 sub-perulangan didalam kode untuk menjelajahi objek tunggal, itu akan terlihat jelek.</p> 
+         <p>Ayo kita coba rekursi.</p> 
+         <p>Seperti yang bisa kita lihat, ketika fungsi mendapatkan departemen untuk dijumlahkan, disana terdapat dua kemungkinan:</p> 
+         <ol> 
+          <li>Antara itu adalah sebuah departemen ???simpel??? dengan sebuah array dari orang ??? lalu kita bisa menjumlahkan gajinya dengan perulangan yang sederhana.</li> 
+          <li>Atau itu adalah <em>sebuah objek</em> dengan <code>N</code> sub-departemen ??? maka kita bisa membuat pemanggilan rekursif <code>N</code> untuk mendapatkan jumlah untuk setiap sub-departemen dan menjumlahkan hasilnya.</li> 
+         </ol> 
+         <p>Dalam kasus pertama adalah dasar dari rekursi, kasus biasa, ketika kita mendapatkan sebuah array.</p> 
+         <p>Kasus kedua ketika kita mendapatkan sebuah objek adalah langkah rekursif. Sebuah task yang kompleks dibagi menjadi sub-task untuk departemen yang lebih kecil. Mereka mungkin nanti akan terbagi lagi, tapi cepat atau lambat pembagiannya akan selesai pada (1).</p> 
+         <p>x Algoritmanya mungkin lebih mudah untuk dibaca dari kodenya:</p> 
+         <div id="5iwvp2y3yj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:19}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let company = { // objek yang sama, dikompresi untuk keringkasan
+  sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 1600 }],
+  development: {
+    sites: [{name: 'Peter', salary: 2000}, {name: 'Alex', salary: 1800 }],
+    internals: [{name: 'Jack', salary: 1300}]
+  }
+};
+
+// Fungsinya melakukan pekerjaannya
+function sumSalaries(department) {
+  if (Array.isArray(department)) { // kasus (1)
+    return department.reduce((prev, current) =&gt; prev + current.salary, 0); // jumlahkan arraynya
+  } else { // kasus (2)
+    let sum = 0;
+    for (let subdep of Object.values(department)) {
+      sum += sumSalaries(subdep); // secara rekursif memanggil sub-departemen, jumlahkan hasilnya
+    }
+    return sum;
+  }
+}
+
+alert(sumSalaries(company)); // 7700</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kodenya pendek dan mudah untuk dimengerti (semoga?). Itulah kemampuan dari rekursi. Itu juga bekerja untuk level apapun dari sub-departemen bercabang.</p> 
+         <p>Ini adalah diagram dari pemanggilannya:</p> 
+         <figure> 
+          <div class="image" style="width:293px"> 
+           <div class="image__ratio" style="padding-top:149.1467576791809%"></div> 
+           <object type="image/svg+xml" data="article/recursion/recursive-salaries.svg" width="293" height="437" class="image__image" data-use-theme> <img src="article/recursion/recursive-salaries.svg" alt="" width="293" height="437"> </object> 
+          </div> 
+         </figure> 
+         <p>Kita bisa dengan mudah melihat prinsipnya: untuk sebuah objek sub-pemanggilan <code>{...}</code> dibuat, semerata array <code>[...]</code> adalah daun dari pohon rekursi, mereka memberikan hasil secara langsung.</p> 
+         <p>Ingat bahwa kodenya menggunakan fitur pintar yang sudah kita bahas sebelumnya:</p> 
+         <ul> 
+          <li>Metode <code>arr.reduce</code> menjelaskan didalam bab <a href="array-methods.html">Metode *array*</a> untuk mendapatkan jumlah dari array.</li> 
+          <li>Perulangan <code>for(val of Object.values(obj))</code> untuk mengiterasi nilai didalam objek: <code>Object.values</code> mengembalikan sebuah array darinya.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="struktur-rekursif" href="recursion.html#struktur-rekursif">Struktur rekursif</a></h2> 
+         <p>Sebuah struktur data rekursif (ditetapkan secara rekursif) adalah sebuah struktur yang mengulangi dirinya-sendiri dalam beberapa bagian.</p> 
+         <p>Kita juga telah melihatnya didalam contoh struktur perusahaan diatas.</p> 
+         <p>Sebuah <em>departemen</em> perusahaan adalah:</p> 
+         <ul> 
+          <li>Diantara sebuah array dari orang-orang</li> 
+          <li>Atau sebuah objek dengan <em>departemen</em>.</li> 
+         </ul> 
+         <p>Untuk seorang pengembang-web disana terdapat contoh yang lebih baik: HTML dan dokumen XML.</p> 
+         <p>Didalam dokumen HTML, sebuah <em>tag-HTML</em> mungkin mengandung daftar dari:</p> 
+         <ul> 
+          <li>Potongan-potongan text.</li> 
+          <li>Komentar-komentar HTML.</li> 
+          <li><em>Tag-HTML</em> Lainnya (itu mungkin saja mengandung potongan text/komentar atau tag lainnya).</li> 
+         </ul> 
+         <p>Itu sekali lagi adalah definisi rekursif.</p> 
+         <p>Untuk pemahaman lebih baik, kita akan memperlajari satu lagi struktur rekursif bernama ???Linked list??? itu mungkin sebuah alternatif yang bagus untuk array dalam beberapa kasus.</p> 
+         <h3><a class="main__anchor" name="linked-list" href="recursion.html#linked-list">Linked list</a></h3> 
+         <p>Bayangkan, kita ingin menyimpan sebuah daftar terstruktur didalam sebuah objek.</p> 
+         <p>Pilihan naturalnya mungkin sebuah array:</p> 
+         <div id="chrrc3kvvi" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [obj1, obj2, obj3];</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Tapi disana terdapat sebuah masalah dengan array. Operasi ???delete element??? dan ???insert elemen??? sangatlah mahal. Contoh, operasi <code>arr.unshift(obj)</code> harus memberikan nomor baru untuk membuat ruang untuk <code>obj</code> baru, dan jika arraynya sangat besar, itu akan memakan waktu. Sama dengan <code>arr.shift()</code>.</p> 
+         <p>Satu-satunya modifikasi struktural yang tidak membutuhkan penomoran secara besar-besaran adalah itu yang beroperasi dengan akhiran dari array: <code>arr.push/pop</code>. Jadi sebuah array bisa menjadi cukup lambat untuk antrian yang panjang, ketika kita harus bekerja dengan awalannya.</p> 
+         <p>Alternatifnya, jika kita benar-benar membutuhkan memasukan/menghapus dengan cepat, kiat bisa memilih data struktur lainnya bernama <a href="https://en.wikipedia.org/wiki/Linked_list">linked list</a>.</p> 
+         <p><em>Element linked list</em> didefinisikan secara rekursif sebagai sebuah objek dengan:</p> 
+         <ul> 
+          <li><code>value</code>.</li> 
+          <li><code>next</code> properti yang mereferensi <em>elemen linked list</em> selanjutnya atau <code>null</code> jika sudah mencapai akhir.</li> 
+         </ul> 
+         <p>Contoh:</p> 
+         <div id="ug1uuyxj16" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Representasi grafikal dari sebuah list:</p> 
+         <figure> 
+          <div class="image" style="width:652px"> 
+           <div class="image__ratio" style="padding-top:11.809815950920246%"></div> 
+           <object type="image/svg+xml" data="article/recursion/linked-list.svg" width="652" height="77" class="image__image" data-use-theme> <img src="article/recursion/linked-list.svg" alt="" width="652" height="77"> </object> 
+          </div> 
+         </figure> 
+         <p>Alternatif kode untuk pembuatan:</p> 
+         <div id="qonb1xmo0c" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let list = { value: 1 };
+list.next = { value: 2 };
+list.next.next = { value: 3 };
+list.next.next.next = { value: 4 };
+list.next.next.next.next = null;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini kita bisa melihat lebih jelas bahwa disana terdapat beberapa objek, masing-masing memiliki <code>value</code> dan <code>next</code> mengarah ke objek disisinya. Variabel <code>list</code> adalah objek pertama didalam rantainya, jadi pointer <code>next</code> selanjutnya dari itu bisa kita dapat dari elemen apapun.</p> 
+         <p>List-nya bisa dengan mudah dibagi menjadi beberapa bagian dan lalu disatukan kembali:</p> 
+         <div id="brxzqfn5qr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let secondList = list.next.next;
+list.next.next = null;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:410px"> 
+           <div class="image__ratio" style="padding-top:36.58536585365854%"></div> 
+           <object type="image/svg+xml" data="article/recursion/linked-list-split.svg" width="410" height="150" class="image__image" data-use-theme> <img src="article/recursion/linked-list-split.svg" alt="" width="410" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Untuk menyatukan:</p> 
+         <div id="hts784x3hf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>list.next.next = secondList;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan tentu saja kita bisa memasukan atau menghapus item dari manapun.</p> 
+         <p>Contoh, untuk memasukan nilai baru, kita harus memperbaharui awalan dari list-nya:</p> 
+         <div id="xj2srstwrj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let list = { value: 1 };
+list.next = { value: 2 };
+list.next.next = { value: 3 };
+list.next.next.next = { value: 4 };
+
+// memasukan nilai baru kedalam list-nya
+list = { value: "new item", next: list };</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:816px"> 
+           <div class="image__ratio" style="padding-top:13.23529411764706%"></div> 
+           <object type="image/svg+xml" data="article/recursion/linked-list-0.svg" width="816" height="108" class="image__image" data-use-theme> <img src="article/recursion/linked-list-0.svg" alt="" width="816" height="108"> </object> 
+          </div> 
+         </figure> 
+         <p>Untuk menghapus nilai dari tengah, ganti <code>next</code> dengan yang sebelumnya:</p> 
+         <div id="rwb2hqd70q" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>list.next = list.next.next;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:670px"> 
+           <div class="image__ratio" style="padding-top:21.343283582089555%"></div> 
+           <object type="image/svg+xml" data="article/recursion/linked-list-remove-1.svg" width="670" height="143" class="image__image" data-use-theme> <img src="article/recursion/linked-list-remove-1.svg" alt="" width="670" height="143"> </object> 
+          </div> 
+         </figure> 
+         <p>Kita membuat <code>list.next</code> melompati <code>1</code> menuju nilai <code>2</code>. Nilai <code>1</code> sekarang tidak termasuk dari rentetannya. Jika itu tidak tersimpan dimanapun, itu akan secara otomatis dihapus dari memori.</p> 
+         <p>Tidak seperti array, disana tidak terdapat penomoran urang secara besar-besaran, kita bisa dengan mudah menyusun kembali elemen-elemennya.</p> 
+         <p>Umumnya, list tidak selalu lebih baik daripada array. Sebaliknya semua orang harusnya hanya menggunakan list.</p> 
+         <p>Kekurangannya adalah kita tidak bisa dengan mudah mengakses sebuah elemen dengan nomornya. Didalam sebuah array kita bisa dengan mudah: <code>arr[n]</code> adalah sebuah referensi langsung. Tapi didalam list kita harus memulai dari item pertama dan maju <code>next</code> <code>N</code> kali untuk mendapatkan elemen ke Nth.</p> 
+         <p>???Tapi kita tidak selalu butuh operasi seperti itu. Contoh, ketika kita membutuhkan sebuah antrian atau bahkan <a href="https://en.wikipedia.org/wiki/Double-ended_queue">deque</a> ??? struktur urutannya harus mengijinkan penambahan/penghapusan elemen dengan cepat dari kedua sisi tapi akses kedalam bagian tengah tidak dibutuhkan.</p> 
+         <p>List bisa ditingkatkan:</p> 
+         <ul> 
+          <li>Kita bisa menambahkan properti <code>prev</code> didalam penambahan untuk <code>next</code> untuk mereferensikan elemen sebelumnya, untuk berpindah mundur dengan mudah.</li> 
+          <li>Kita juga bisa menambahkan sebuah variabel bernama <code>tail</code> mereferensi elemen terakhir dari list (dan memperbaharuinya ketika menambahkan/menghapus elemen dari ujung terakhir).</li> 
+          <li>Struktur data mungkin bervariasi tergantung dari kebutuhan kita.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="rangkuman" href="recursion.html#rangkuman">Rangkuman</a></h2> 
+         <p>Istilah:</p> 
+         <ul> 
+          <li> <p><em>Rekursi</em> adalah sebuah istilah programming yang berarti memanggil fungsi dari dirinya sendiri. Fungsi rekursi bisa digunakan untuk memecahkan tugas dengan cara yang elegan.</p> <p>Ketika sebuah fungsi memanggil dirinya sendiri, itulah yang disebut dengan <em>langkah rekursi</em>. <em>Dasar</em> dari rekursi adalah sebuah argumen fungsi yang membuat task menjadi lebih sederhana yang dimana fungsinya tidak membuat pemanggilan lebih jauh.</p> </li> 
+          <li> <p>Sebuah struktur data <a href="https://en.wikipedia.org/wiki/Recursive_data_type">didefinisikan secara rekursif</a> adalah struktur data yang bisa mendefinisikan menggunakan dirinya sendiri.</p> <p>Contoh, linked list bisa didefinisikan sebagai sebuah struktur data yang terdiri dari sebuah objek yang mereferensi sebuah list (atau null).</p> 
+           <div id="iaprsody6p" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>list = { value, next -&gt; list }</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Pohon seperti pohon elemen HTML atau pohon departemen dari bab ini juga secara natural rekursif: cabang mereka dan setuap cabang mempunyai cabang lainnya.</p> <p>Fungsi rekursif bisa digunakan untuk menyusurinya seperti yang telah kita lihat didalam contoh <code>sumSalary</code>.</p> </li> 
+         </ul> 
+         <p>Fungsi rekursif manapun bisa ditulis ulang menggunakan iterasi. Dan itu terkadang membutuhkan hal-hal optimasi. Tapi untuk kebanyakan task sebuah solusi rekursif cukup cepat dan mudah untuk ditulis dan didukung.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="recursion.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="recursion.html#tambahkan-seluruh-angka-sampai-angka-yang-diberikan" name="tambahkan-seluruh-angka-sampai-angka-yang-diberikan">Tambahkan seluruh angka sampai angka yang diberikan</a></h3> 
+           <a class="task__open-link" href="task/sum-to.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis sebuah fungsi <code>sumTo(n)</code> yang mengkalkulasikan penambahan dari angka <code>1 + 2 + ... + n</code>.</p> 
+            <p>Contoh:</p> 
+            <div id="c01gc7hl6d" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>sumTo(1) = 1
+sumTo(2) = 2 + 1 = 3
+sumTo(3) = 3 + 2 + 1 = 6
+sumTo(4) = 4 + 3 + 2 + 1 = 10
+...
+sumTo(100) = 100 + 99 + ... + 2 + 1 = 5050</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Buatlah jawaban dengan 3 varian:</p> 
+            <ol> 
+             <li>Gunakan perulangan</li> 
+             <li>Gunakan rekursi, karena <code>sumTo(n) = n + sumTo(n-1)</code> untuk <code>n &gt; 1</code>.</li> 
+             <li>Gunakan rumus <a href="https://en.wikipedia.org/wiki/Arithmetic_progression">arithmetic progression</a>.</li> 
+            </ol> 
+            <p>Contoh dari hasil:</p> 
+            <div id="q6ydtuyym3" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function sumTo(n) { /*... kodemu ... */ }
+
+alert( sumTo(100) ); // 5050</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Catatan. Varian solusi mana yang lebih cepat? yang lebih lambat? kenapa?</p> 
+            <p>Catatan+. Bisakah kita gunakan rekursi untuk menghitung <code>sumTo(100000)</code>?</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Solusi menggunakan perulangan:</p> 
+              <div id="4g86ea15ma" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function sumTo(n) {
+  let sum = 0;
+  for (let i = 1; i &lt;= n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+alert( sumTo(100) );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Solusi menggunakan rekursi:</p> 
+              <div id="al23znvw6g" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function sumTo(n) {
+  if (n == 1) return 1;
+  return n + sumTo(n - 1);
+}
+
+alert( sumTo(100) );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Solusi menggunakan rumus: <code>sumTo(n) = n*(n+1)/2</code>:</p> 
+              <div id="m42o02bc0l" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function sumTo(n) {
+  return n * (n + 1) / 2;
+}
+
+alert( sumTo(100) );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Catatan. Biasanya, rumus adalah solusi tercepat. Itu hanya menggunakan 3 operasi untuk angka <code>n</code> apapun. Matematika mambantu!</p> 
+              <p>varian perulangan adalah yang kedua dalam hal waktu. Di varian rekusif dan perulangan kita menambahkan angka yang sama. Tapi rekursi melibatkan pemanggilan bercabang dan manajemen tumpukan eksekusi. Itu juga memakan sumberdaya, jadi itu lebih lambat.</p> 
+              <p>Catatan+. Beberapa mesin mendukung optimasi ???tail call???: jika sebuah pemanggilan rekursi adalah yang paling terakhir didalam fungsi (seperti dalam <code>sumTo</code> diatas), maka fungsi terluar tidak butuh untuk melanjutkan eksekusi, jadi mesinnya tidak akan mengingat konteks dari eksekusi. Itu akan menghilangkan beban didalam memori, jadi menghitung <code>sumTo(100000)</code> menjadi mungkin. Tapi jika mesin Javascript tidak mendukung optimasi tail call (kebanyakan tidak), disana akan terdapat error: ???maximum stack size exceeded???, karena disana biasanya terdapat batasan dalam total ukuran stack/penumpukan.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="recursion.html#kalkulasikan-faktorial" name="kalkulasikan-faktorial">Kalkulasikan faktorial</a></h3> 
+           <a class="task__open-link" href="task/factorial.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p><a href="https://en.wikipedia.org/wiki/Factorial">factorial</a> dari sebuah angka natural adalah sebuah angka yang dikalikan dengan <code>"angka minus satu"</code>, lalu dengan <code>"angka minus dua"</code>, dan terus sampai <code>1</code>. Faktorial dari <code>n</code> di notasikan sebagai <code>n!</code>.</p> 
+            <p>Kita bisa menulis definisi dari faktorial seperti ini:</p> 
+            <div id="p84zj3zfje" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>n! = n * (n - 1) * (n - 2) * ...*1</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Nilai dari faktorial untuk <code>n</code> yang berbeda:</p> 
+            <div id="uupqr6ypoh" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>1! = 1
+2! = 2 * 1 = 2
+3! = 3 * 2 * 1 = 6
+4! = 4 * 3 * 2 * 1 = 24
+5! = 5 * 4 * 3 * 2 * 1 = 120</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Tugasnya adalah untuk menulis sebuah fungsi <code>factorial(n)</code> yang mengkalkulasikan <code>n!</code> menggunakan pemanggilan rekursi.</p> 
+            <div id="3jlcztv5o5" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( factorial(5) ); // 120</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Catatan. Petunjuk: <code>n!</code> bisa juga ditulis sebagai <code>n * (n-1)!</code>, Contoh: <code>3! = 3*2! = 3*2*1! = 6</code></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Secara definisi, sebuah faktorial adalah <code>n!</code> bisa ditulis juga sebagai <code>n * (n-1)</code>.</p> 
+              <p>Dengan kata lain, hasil dari <code>factorial(n)</code> bisa juga dikalkulasikan sebagai <code>n</code> dikalikan dengan hasil dari <code>factorial(n-1)</code>. Dan pemanggilan untuk <code>n-1</code> bisa secara rekursi menurun, dan terus menurun sampai <code>1</code>.</p> 
+              <div id="3uvlrrv26p" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function factorial(n) {
+  return (n != 1) ? n * factorial(n - 1) : 1;
+}
+
+alert( factorial(5) ); // 120</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Basis dari rekursi adalah nilai <code>1</code>. Kita jika bisa membuat basis <code>0</code> disini, tidak akan berpengaruh banyak, tapi memberikan satu lagi tingkat rekursi:</p> 
+              <div id="9fvx2mq5sd" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function factorial(n) {
+  return n ? n * factorial(n - 1) : 1;
+}
+
+alert( factorial(5) ); // 120</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="recursion.html#angka-fibonacci" name="angka-fibonacci">Angka fibonacci</a></h3> 
+           <a class="task__open-link" href="task/fibonacci-numbers.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Urutan dari <a href="https://en.wikipedia.org/wiki/Fibonacci_number">Fibonacci numbers</a> mempunyai rumus <code>F<sub>n</sub> = F<sub>n-1</sub> + F<sub>n-2</sub></code>. Dengan kata lain, angka selanjutnya adalah penambahan dari dua angka sebelumnya.</p> 
+            <p>Dua angka pertama adalah <code>1</code>, lalu <code>2(1+1)</code>, lalu <code>3(1+2)</code>, <code>5(2+3)</code> dan seterusnya: <code>1, 1, 2, 3, 5, 8, 13, 21...</code>.</p> 
+            <p>Angka fibonnaci adalah angka yang terkait kedalam <a href="https://en.wikipedia.org/wiki/Golden_ratio">Golden ratio</a> dan fenomena natural lainnya disekitar kita.</p> 
+            <p>Buat sebuah fungsi <code>fib(n)</code> yang mengembalikan angka fibonacci ke-<code>n-th</code>.</p> 
+            <p>Contoh hasil:</p> 
+            <div id="33lylrpaio" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function fib(n) { /* kodemu */ }
+
+alert(fib(3)); // 2
+alert(fib(7)); // 13
+alert(fib(77)); // 5527939700884757</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Catatan. Fungsinya haruslah cepat. Pemanggilan ke <code>fib(77)</code> haruslah tidak memakan lebih dari beberapa detik.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Solusi pertama kita harus coba adalah rekursi.</p> 
+              <p>Angka fibonacci adalah rekursi dari definisinya:</p> 
+              <div id="hgb7ganri1" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function fib(n) {
+  return n &lt;= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+
+alert( fib(3) ); // 2
+alert( fib(7) ); // 13
+// fib(77); // akan sangat lambat!</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>???Tapi untuk nilai besar dari <code>n</code> akanlah sangat lambat. Contoh, <code>fib(77)</code> mungkin akan memberatkan mesinnya dan untuk beberapa saat akan menggunakan seluruh sumberdaya CPU.</p> 
+              <p>Itu karena fungsinya memanggil terlalu banyak pemanggilan. Nilai yang sama akan terus di evaluasi lagi dan lagi.</p> 
+              <p>Contoh, kita lihat satu potongan dari kalkulasi untuk <code>fib(5)</code>:</p> 
+              <div id="9yrnnn4kr3" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>...
+fib(5) = fib(4) + fib(3)
+fib(4) = fib(3) + fib(2)
+...</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Disini kita bisa melihat nilai dari <code>fib(3)</code> dibutuhkan untuk <code>fib(5)</code> dan <code>fib(4)</code>. Jadi <code>fib(3)</code> akan dipanggil dan dievaluasi dua kali secara bergantian.</p> 
+              <p>Ini adalah pohon rekursi penuh:</p> 
+              <figure> 
+               <div class="image" style="width:640px"> 
+                <div class="image__ratio" style="padding-top:35.15625%"></div> 
+                <object type="image/svg+xml" data="task/fibonacci-numbers/fibonacci-recursion-tree.svg" width="640" height="225" class="image__image" data-use-theme> <img src="task/fibonacci-numbers/fibonacci-recursion-tree.svg" alt="" width="640" height="225"> </object> 
+               </div> 
+              </figure> 
+              <p>Kita dengan jelas bisa memperhatikan bahwa <code>fib(3)</code> dievaluasi dua kali dan <code>fib(2)</code> di evaluasi tiga kali. Total dari komputasi akan terus membesar secara cepat lebih dari <code>n</code>, membuatnya besar sekali bahkan untuk <code>n=77</code>.</p> 
+              <p>Kita bisa mengoptimasinya dengan mengingat nilai yang telah dievaluasi: jika sebuah nilai katakan <code>fib(3)</code> dikalkulasi sekali, lalu kita bisa menggunakan nilainya lagi di komputasi selanjutnya.</p> 
+              <p>Varian lainnya haruslah menyerah dengan rekursi dan menggunakan algoritma lain yang benar-benar berbeda.</p> 
+              <p>Daripada memulai dari <code>n</code> ke nilai yang dibawahnya, kota bisa membuat perulangan dimulai dari <code>1</code> dan <code>2</code>, lalu mendapatkan <code>fib(3)</code> sebagai nilai penambahan mereka, lalu <code>fib(4)</code> sebagai nilai penambahan dua bilangan sebelumnya, lalu <code>fib(5)</code> dan terus naik, sampai itu mencapai nilai yang dibutuhkan. Untuk setiap langkah kita hanya membutuhkan nilai dari kedua bilangan sebelumnya.</p> 
+              <p>Ini adalah detail langkah dari algoritma baru.</p> 
+              <p>Mulai:</p> 
+              <div id="r5co0piwi8" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// a = fib(1), b = fib(2), nilai-nilai ini adalah definisi dari 1
+let a = 1, b = 1;
+
+// get c = fib(3) sebagai penambahan mereka
+let c = a + b;
+
+/* sekarang kita punya fib(1), fib(2), fib(3)
+a  b  c
+1, 1, 2
+*/</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>sekarang kita ingin mendapatkan <code>fib(4) = fib(2) + fib(3)</code>.</p> 
+              <p>Lalu kita ubah variabelnya: <code>a,b</code> akan mendapatkan <code>fib(2),fib(3)</code>, dan <code>c</code> akan mendapatkan penambahan mereka:</p> 
+              <div id="vq6hmxw8ao" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>a = b; // now a = fib(2)
+b = c; // now b = fib(3)
+c = a + b; // c = fib(4)
+
+/* sekarang kita punya urutannya:
+   a  b  c
+1, 1, 2, 3
+*/</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Langkah selanjutnya akan memberikan urutan angka lainnya:</p> 
+              <div id="b4e2cl29gk" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>a = b; // now a = fib(3)
+b = c; // now b = fib(4)
+c = a + b; // c = fib(5)
+
+/* sekarang urutannya adalah (satu angka lagi):
+      a  b  c
+1, 1, 2, 3, 5
+*/</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>???Dan seterusnya sampai kita mendapatkan nilai yang dibutuhkan. Itu lebih cepat daripada rekursi dan tidak melibatkan duplikasi komputasi</p> 
+              <p>Semua kodenya:</p> 
+              <div id="jyqjfcgngx" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function fib(n) {
+  let a = 1;
+  let b = 1;
+  for (let i = 3; i &lt;= n; i++) {
+    let c = a + b;
+    a = b;
+    b = c;
+  }
+  return b;
+}
+
+alert( fib(3) ); // 2
+alert( fib(7) ); // 13
+alert( fib(77) ); // 5527939700884757</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Perulangak dimulai dari <code>i=3</code>, karena yang urutan nilai pertama dan kedua sudah dikode (hard-coded) kedalam variabel <code>a=1</code>, <code>b=1</code>.</p> 
+              <p>Pendekatan ini dipanggil dengan <a href="https://en.wikipedia.org/wiki/Dynamic_programming">dynamic programming bottom-up</a>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="recursion.html#keluarkan-sebuah-daftar-single-linked" name="keluarkan-sebuah-daftar-single-linked">Keluarkan sebuah daftar single-linked</a></h3> 
+           <a class="task__open-link" href="task/output-single-linked-list.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Katakan kita punya sebuah daftar single-linked (seperti yang dideskripsikan pada bab <a href="recursion.html">Rekursi dan tumpukan (Recursion and stack)</a>);</p> 
+            <div id="96ja983w2e" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Tulis sebuah fungsi <code>printList(list)</code> yang mengeluarkan item dalam daftar satu per satu.</p> 
+            <p>Buatlah dua varian dari solusinya: gunakan perulangan dan gunakan rekursi.</p> 
+            <p>Mana yang lebih baik: dengan rekursi atau tanpa rekursi?</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">solusi berbasis perulangan</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">solusi berbasis perulangan</h4> 
+              <div class="formatted"> 
+               <p>Varian solusi berbasis perulangan:</p> 
+               <div id="bnddj48t6f" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};
+
+function printList(list) {
+  let tmp = list;
+
+  while (tmp) {
+    alert(tmp.value);
+    tmp = tmp.next;
+  }
+
+}
+
+printList(list);</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Perhatikan bahwa kita menggunakan variabel semebtara <code>tmp</code> untuk menyusuri daftarnya. Secara teknis, malah kita bisa menggunakan parameter fungsi <code>list</code>:</p> 
+               <div id="eawfjcnv43" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:8,&quot;end&quot;:12}]}]"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>function printList(list) {
+
+  while(list) {
+    alert(list.value);
+    list = list.next;
+  }
+
+}</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>???Tapi itu kurang tepat. Nanti mungkin kita ingin memperbesar fungsinya, melakukan sesuatu dengan daftarnya. Jika kita merubah <code>list</code>, maka kita akan kehilangan kemampuannya.</p> 
+               <p>Berbicara tentang nama variabel yang bagus, <code>list</code> disini adalah menandakan bahwa dirinya sendiri adalah list/daftar. Elemen pertama dari itu. Dan itu harus tetap seperti itu. Itu jelas dan dapat diandalkan.</p> 
+               <p>Dari sisi lainnya, peran dari <code>tmp</code> sendiri secara eksklusif adalah daftar traversal, seperti <code>i</code> didalam perulangan <code>for</code>.</p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Solusi rekursif</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Solusi rekursif</h4> 
+              <div class="formatted"> 
+               <p>Varian rekursif dari <code>printList(list)</code> mengikuti logika yang sederhana: untuk mengeluarkan sebuah daftar kita harus mengeluatkan elemen saat ini dari <code>list</code>, lalu lakukan hal yang sama untuk <code>list.next</code>:</p> 
+               <div id="usntjq34wa" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};
+
+function printList(list) {
+
+  alert(list.value); // keluarkan item yang sekarang
+
+  if (list.next) {
+    printList(list.next); // lakukan hal yang sama dengan sisa item dalam list
+  }
+
+}
+
+printList(list);</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Sekarang mana yang lebih baik?</p> 
+               <p>Secara teknis, perulanganlah yang lebih efektif. Kedua varian itu melakukan hal yang sama, tapi perulangan tidak menghabiskan sumberdaya untuk pemanggilan fungsi yang bercabang.</p> 
+               <p>Disisi lainnya, varian rekursi lebih pendek dan terkadang lebih mudah untuk dimengerti.</p> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="recursion.html#keluarkan-item-single-linked-dari-list-dengan-urutan-terbalik" name="keluarkan-item-single-linked-dari-list-dengan-urutan-terbalik">keluarkan item single-linked dari list dengan urutan terbalik</a></h3> 
+           <a class="task__open-link" href="task/output-single-linked-list-reverse.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Keluarkan item single-linked dari daftar seperti tugas sebelumnya <a href="task/output-single-linked-list.html">Keluarkan sebuah daftar single-linked</a> namun secara terbalik.</p> 
+            <p>Buatlah dua solusi: menggunakan perulangan dan menggunakan rekursi.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Menggunakan rekursi</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Menggunakan rekursi</h4> 
+              <div class="formatted"> 
+               <p>Logika rekursi sedikit lebih rumit disini.</p> 
+               <p>Pertama kita harus mengeluarkan sisa item di daftarnya dan <em>lalu</em> mengeluarkan item yang sekarang dipilih.</p> 
+               <div id="553hvsx6es" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};
+
+function printReverseList(list) {
+
+  if (list.next) {
+    printReverseList(list.next);
+  }
+
+  alert(list.value);
+}
+
+printReverseList(list);</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Menggunakan perulangan</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Menggunakan perulangan</h4> 
+              <div class="formatted"> 
+               <p>Varian perulangan juga sedikit lebih rumit daripada mengeluarkannya secara langsung.</p> 
+               <p>Tidak ada cara untuk mendapatkan nilai terakhir didalam <code>list</code> kita. Kita juga tidak bisa ???berjalan mundur???.</p> 
+               <p>Jadi apa yang kita bisa lakukan adalah pertama susuri seluruh item secara langsung dan mengingat mereka didalam array, dan lalu mengeluarkan apa yang diingat dengan urutan terbalik:</p> 
+               <div id="88k1ft3qn8" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="recursion.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="recursion.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>let list = {
+  value: 1,
+  next: {
+    value: 2,
+    next: {
+      value: 3,
+      next: {
+        value: 4,
+        next: null
+      }
+    }
+  }
+};
+
+function printReverseList(list) {
+  let arr = [];
+  let tmp = list;
+
+  while (tmp) {
+    arr.push(tmp.value);
+    tmp = tmp.next;
+  }
+
+  for (let i = arr.length - 1; i &gt;= 0; i--) {
+    alert( arr[i] );
+  }
+}
+
+printReverseList(list);</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Perhatikan baik-baik bahwa solusi rekursi melakukan hal yang sama persis: itu akan menyusuri daftar, mengingat item-itemnya didalam rantai dari pemanggulan bercabang (dalam konteks penumpukan eksekusi), dan lalu mengeluarkan hasilnya.</p> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="advanced-functions.html" data-tooltip="Penggunaan lanjutan fungsi"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="rest-parameters-spread.html" data-tooltip="Parameter rest dan sintaks spread"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Frecursion" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Frecursion" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="advanced-functions.html">Penggunaan lanjutan fungsi</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="recursion.html#cara-berfikir-dua-arah">Cara berfikir dua arah</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="recursion.html#konteks-eksekusi-dan-tumpukan">Konteks eksekusi dan tumpukan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="recursion.html#rekursif-traversal">Rekursif traversal</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="recursion.html#struktur-rekursif">Struktur rekursif</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="recursion.html#rangkuman">Rangkuman</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="recursion.html#tasks">Tugas (5)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="recursion.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Frecursion" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Frecursion" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

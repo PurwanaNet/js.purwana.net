@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">API Promise</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="promise-api.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="API Promise"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="API Promise"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="promise-error-handling.html"> 
+  <link rel="next" href="promisify.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <script>
+function loadScript(src) {
+  return new Promise(function(resolve, reject) {
+    let script = document.createElement('script');
+    script.src = src;
+
+    script.onload = () => resolve(script);
+    script.onerror = () => reject(new Error("Script load error: " + src));
+
+    document.head.append(script);
+  });
+}
+</script> 
+  <meta property="og:title" content="API Promise"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-api" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpromise-api" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="79" max="92" data-tooltip="Pelajaran 79 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="async.html"><span>Promises, async/await</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Promises, async/await","item":"https://id.javascript.info/async"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">API Promise</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="API Promise"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Ada 6 method static di dalam class <code>Promise</code>. Kita akan segera membahas kasus penggunaan method-method tersebut di sini.</p> 
+         <h2><a class="main__anchor" name="promise-all" href="promise-api.html#promise-all">Promise.all</a></h2> 
+         <p>Katakanlah kita ingin menjalankan banyak promise untuk dieksekusi secara paralel, dan menunggu sampai semua promise tersebut siap.</p> 
+         <p>Sebagai contoh, unduh beberapa URL secara paralel dan proses isinya ketika semuanya selesai.</p> 
+         <p>Itulah gunanya <code>Promise.all</code>.</p> 
+         <p>Sintaksis nya adalah:</p> 
+         <div id="201de837w4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = Promise.all([...promises...]);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>Promise.all</code> mengambil sebuah array promise (secara teknis bisa menjadi iterable, tetapi biasanya sebuah array) dan mengembalikkan promise baru.</p> 
+         <p>Promise baru resolve ketika semua promise yang terdaftar diselesaikan dan array dari hasil promise menjadi hasilnya itu sendiri.</p> 
+         <p>Sebagai contoh, <code>Promise.all</code> di bawah selesai setelah 3 detik, dan kemudian hasilnya adalah sebuah array <code>[1, 2, 3]</code>:</p> 
+         <div id="2pf5uyohv5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>Promise.all([
+  new Promise((resolve) =&gt; setTimeout(() =&gt; resolve(1), 3000)), // 1
+  new Promise((resolve) =&gt; setTimeout(() =&gt; resolve(2), 2000)), // 2
+  new Promise((resolve) =&gt; setTimeout(() =&gt; resolve(3), 1000)), // 3
+]).then(alert); // 1,2,3 ketika promise sudah siap: setiap promise menyumbangkan sebuah member array</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Harap dicatat bahwa urutan member array yang dihasilkan adalah sama dengan sumber promise. Meskipun promise pertama membutuhkan waktu yang lama untuk resolve, promise tersebut masih yang pertama di dalam hasil array.</p> 
+         <p>Sebuah trik umum adalah untuk memetakan sebuah array dari data pekerjaan kedalam array promise, dan kemudian membungkusnya kedalam <code>Promise.all</code>.</p> 
+         <p>Sebagai contoh, jika kita memiliki array URL, kita dapat mengambil array-array tersebut seperti ini:</p> 
+         <div id="j8be3fvxnq" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let urls = [
+  "https://api.github.com/users/iliakan",
+  "https://api.github.com/users/remy",
+  "https://api.github.com/users/jeresig",
+];
+
+// memetakan setiap url ke pengambilan promise
+let requests = urls.map((url) =&gt; fetch(url));
+
+// Promise.all menunggu sampai semua pekerjaan telah diresolve
+Promise.all(requests).then((responses) =&gt;
+  responses.forEach((response) =&gt; alert(`${response.url}: ${response.status}`))
+);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Contoh terbesar dengan mengambil informasi pengguna untuk sebuah array pengguna GitHub dengan nama mereka (kita dapat mengambil array dengan id mereka, logika nya sama):</p> 
+         <div id="tap5xxnn6g" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let names = ["iliakan", "remy", "jeresig"];
+
+let requests = names.map((name) =&gt;
+  fetch(`https://api.github.com/users/${name}`)
+);
+
+Promise.all(requests)
+  .then((responses) =&gt; {
+    // semua response telah sukses diresolve
+    for (let response of responses) {
+      alert(`${response.url}: ${response.status}`); // menunjukkan 200 untuk setiap url
+    }
+
+    return responses;
+  })
+
+  // memetakan array response kedalam array response.json() untuk membaca isinya
+  .then((responses) =&gt; Promise.all(responses.map((r) =&gt; r.json())))
+  // semua jawaban JSON diuraikan: "users" adalah array dari jawaban tersebut
+  .then((users) =&gt; users.forEach((user) =&gt; alert(user.name)));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><strong>Jika ada promise yang direject, promise tersebut dikembalikkan oleh <code>Promise.all</code> secara langsung me-reject nya dengan error itu.</strong></p> 
+         <p>Sebagai contoh:</p> 
+         <div id="rtl8rx5vaw" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>Promise.all([
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; resolve(1), 1000)),
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; reject(new Error("Whoops!")), 2000)),
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; resolve(3), 3000))
+]).catch(alert); // Error: Whoops!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini promise kedua reject dalam dua detik. Itu langsung mengarah pada rejection <code>Promise.all</code>, jadi eksekusi <code>.catch</code>: error rejection menjadi hasil keseluruhan <code>Promise.all</code>.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Jika terjadi sebuah error, promise lain diabaikan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika satu promise reject, <code>Promise.all</code> langsung reject, benar-benar melupakan yang lainnya yang ada di dalam daftar. Hasil dari promise-promise tersebut diabaikan.</p> 
+           <p>Sebagai contoh, jika disana ada banyak pemanggilan <code>fetch</code>, seperti contoh di atas, dan satu gagal, yang lainnya akan terus mengeksekusi, tetapi <code>Promise.all</code> tidak akan memperhatikan promise-promisenya lagi. Promise-promise tersebut mungkin selesai, tetapi hasilnya akan diabaikan.</p> 
+           <p><code>Promise.all</code> tidak melakukan apapun untuk membatalkan promise-promise tersebut, karena tidak ada konsep ???pembatalan??? di dalam promise. Di <a href="fetch-abort.html">bab lainnya</a> kita akan membahas <code>AbortController</code> yang bisa membantu, tetapi <code>AbortController</code> tersebut bukan bagian dari API Promise.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>Promise.all(iterable)</code>memungkinkan nilai ???regular??? non-promise di dalam <code>iterable</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Sebagai contoh, berikut hasilnya <code>[1, 2, 3]</code>:</p> 
+           <div id="0dx6d8izww" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="promise-api.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="promise-api.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>Promise.all([
+  new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; resolve(1), 1000);
+  }),
+  2,
+  3,
+]).then(alert); // 1, 2, 3</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Jadi kita dapat meneruskan nilai yang sudah siap ke <code>Promise.all</code> jika nyaman.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="promise-allsettled" href="promise-api.html#promise-allsettled">Promise.allSettled</a></h2> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tambahan baru-baru ini</span> 
+          </div> 
+          <div class="important__content">
+            Ini adalah tambahan terbaru untuk bahasa ini. Browser lama mungkin memerlukan polyfill. 
+          </div> 
+         </div> 
+         <p><code>Promise.all</code> reject seluruhnya jika ada promise yang reject. Itu bagus untuk kasus ???semua atau tidak sama sekali???, ketika kita membutuhkan <em>semua</em> hasil untuk melanjutkan:</p> 
+         <div id="ehic136k4r" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>Promise.all([
+  fetch('/template.html'),
+  fetch('/style.css'),
+  fetch('/data.json')
+]).then(render); // method render butuh hasil dari semua pengambilan</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>Promise.allSettled</code> menunggu semua promise selesai. Array yang dihasilkan memiliki:</p> 
+         <ul> 
+          <li><code>{status:"fulfilled", value:result}</code> untuk response sukses,</li> 
+          <li><code>{status:"rejected", reason:error}</code> untuk error.</li> 
+         </ul> 
+         <p>Sebagai contoh, kita ingin mengambil informasi tentang banyak pengguna. Bahkan jika satu request gagal, kita masih tertarik pada yang request yang lain.</p> 
+         <p>Mari gunakan <code>Promise.allSettled</code>:</p> 
+         <div id="s3ighez0i4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let urls = [
+  "https://api.github.com/users/iliakan",
+  "https://api.github.com/users/remy",
+  "https://no-such-url",
+];
+
+Promise.allSettled(urls.map((url) =&gt; fetch(url))).then((results) =&gt; {
+  // (*)
+  results.forEach((result, num) =&gt; {
+    if (result.status == "fulfilled") {
+      alert(`${urls[num]}: ${result.value.status}`);
+    }
+    if (result.status == "rejected") {
+      alert(`${urls[num]}: ${result.reason}`);
+    }
+  });
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>results</code> pada baris <code>(*)</code> di atas akan:</p> 
+         <div id="d631zbqlqg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>[
+  {status: 'fulfilled', value: ...response...},
+  {status: 'fulfilled', value: ...response...},
+  {status: 'rejected', reason: ...error object...}
+]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, untuk setiap promise kita mendapatkan status-nya dan <code>value/error</code>.</p> 
+         <h3><a class="main__anchor" name="polyfill" href="promise-api.html#polyfill">Polyfill</a></h3> 
+         <p>Jika peramban tidak mendukung <code>Promise.allSettled</code>, mudah untuk melakukan polyfill:</p> 
+         <div id="xt3nydt9wf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (!Promise.allSettled) {
+  const rejectHandler = reason =&gt; ({ status: 'rejected', reason });
+
+  const resolveHandler = value =&gt; ({ status: 'fulfilled', value });
+
+  Promise.allSettled = function (promises) {
+    const convertedPromises = promises.map(p =&gt; Promise.resolve(p).then(resolveHandler, rejectHandler));
+    return Promise.all(convertedPromises);
+  };
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam kode ini, <code>promises.map</code> mengambil nilai input, berubah menjadi promises (untuk berjaga-jaga jika non-promise yang diteruskan) dengan <code>p =&gt; Promise.resolve(p)</code>, dan kemudian menambahkan handler <code>.then</code> handler ke semuanya.</p> 
+         <p>Handler tersebut mengubah hasil <code>v</code> yang sukses menjadi <code>{state:'fulfilled', value:v}</code>, dan sebuah error <code>r</code> menjadi <code>{state:'rejected', reason:r}</code>. Itu persis dengan format <code>Promise.allSettled</code>.</p> 
+         <p>Kita bisa menggunakan <code>Promise.allSettled</code> untuk mendapatkan hasilnya atau <em>semua</em> promise diberikan, bahkan jika beberapa dari promise itu reject.</p> 
+         <h2><a class="main__anchor" name="promise-race" href="promise-api.html#promise-race">Promise.race</a></h2> 
+         <p>Mirip dengan <code>Promise.all</code>, tetapi hanya menunggu promise pertama diselesaikan, dan mendapatkan hasilnya (atau error).</p> 
+         <p>Sintaksisnya adalah:</p> 
+         <div id="0ua1shjpb0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = Promise.race(iterable);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebagai contoh, hasil di sini akan menjadi <code>1</code>:</p> 
+         <div id="dzfesjpvsg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>Promise.race([
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; resolve(1), 1000)),
+  new Promise((resolve, reject) =&gt;
+    setTimeout(() =&gt; reject(new Error("Whoops!")), 2000)
+  ),
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; resolve(3), 3000)),
+]).then(alert); // 1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Promise pertama di sini adalah yang tercepat, jadi promise tersebut menjadi hasilnya. Setelah promise pertama yang selesai ???memenangkan balapan???, semua hasil/errors lebih lanjut akan diabaikan.</p> 
+         <h2><a class="main__anchor" name="promise-any" href="promise-api.html#promise-any">Promise.any</a></h2> 
+         <p>Similar to <code>Promise.race</code>, but waits only for the first fulfilled promise and gets its result. If all of the given promises are rejected, then the returned promise is rejected with <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/AggregateError"><code>AggregateError</code></a> ??? a special error object that stores all promise errors in its <code>errors</code> property.</p> 
+         <p>The syntax is:</p> 
+         <div id="axng8tvqce" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = Promise.any(iterable);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>For instance, here the result will be <code>1</code>:</p> 
+         <div id="jo86rjvfjh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>Promise.any([
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; reject(new Error("Whoops!")), 1000)),
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; resolve(1), 2000)),
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; resolve(3), 3000))
+]).then(alert); // 1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The first promise here was fastest, but it was rejected, so the second promise became the result. After the first fulfilled promise ???wins the race???, all further results are ignored.</p> 
+         <p>Here???s an example when all promises fail:</p> 
+         <div id="a1lonyffj4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-api.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>Promise.any([
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; reject(new Error("Ouch!")), 1000)),
+  new Promise((resolve, reject) =&gt; setTimeout(() =&gt; reject(new Error("Error!")), 2000))
+]).catch(error =&gt; {
+  console.log(error.constructor.name); // AggregateError
+  console.log(error.errors[0]); // Error: Ouch!
+  console.log(error.errors[1]); // Error: Error
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>As you can see, error objects for failed promises are available in the <code>errors</code> property of the <code>AggregateError</code> object.</p> 
+         <h2><a class="main__anchor" name="promise-resolve-reject" href="promise-api.html#promise-resolve-reject">Promise.resolve/reject</a></h2> 
+         <p>Method <code>Promise.resolve</code> dan <code>Promise.reject</code> jarang dibutuhkan dalam kode modern, karena sintaksis <code>async/await</code> (kita akan membahasnya <a href="async-await.html">nanti</a>) membuat method-method tersebut usang.</p> 
+         <p>Kita membahas method-method tersebut di sini sebagai pelengkap, dan bagi mereka yang tidak bisa menggunakan <code>async/await</code> untuk beberapa alasan.</p> 
+         <ul> 
+          <li><code>Promise.resolve(value)</code> membuat promise yang diresolve dengan hasil <code>value</code>.</li> 
+         </ul> 
+         <p>Sama dengan:</p> 
+         <div id="srju3e8d3o" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise((resolve) =&gt; resolve(value));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Method ini digunakan untuk kompatibilitas, ketika function diharapkan untuk mengembalikkan promise.</p> 
+         <p>Sebagai contoh, function <code>loadCached</code> di bawah mengambil URL dan mengingat (cache) isinya. Untuk panggilan di masa mendatang dengan URL yang sama itu segera mendapatkan isi sebelumnya dari cache, tetapi menggunakan <code>Promise.resolve</code> untuk membuat promise tentang itu, jadi hasil yang dikembalikkan selalu sebuah promise:</p> 
+         <div id="1p3w89tonm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let cache = new Map();
+
+function loadCached(url) {
+  if (cache.has(url)) {
+    return Promise.resolve(cache.get(url)); // (*)
+  }
+
+  return fetch(url)
+    .then(response =&gt; response.text())
+    .then(text =&gt; {
+      cache.set(url,text);
+      return text;
+    });
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita dapat menulis <code>loadCached(url).then(???)</code>, karena function tersebut dijamin untuk mengembalikan promise. Kita selalu dapat menggunakan <code>.then</code> setelah <code>loadCached</code>. Itulah tujuan dari <code>Promise.resolve</code> pada baris <code>(*)</code>.</p> 
+         <h3><a class="main__anchor" name="promise-reject" href="promise-api.html#promise-reject">Promise.reject</a></h3> 
+         <ul> 
+          <li><code>Promise.reject(error)</code> membuat promise yang direjecet dengan <code>error</code>.</li> 
+         </ul> 
+         <p>Sama dengan:</p> 
+         <div id="7zmq16cs3q" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = new Promise((resolve, reject) =&gt; reject(error));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam praktiknya, method ini hampir tidak pernah digunakan.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="promise-api.html#ringkasan">Ringkasan</a></h2> 
+         <p>Ada 6 method static dari class <code>Promise</code>:</p> 
+         <ol> 
+          <li><code>Promise.all(promises)</code> ??? menunggu semua promise selesai dan mengambalikan sebuah array sebagai hasilnya. Jika salah satu promises yang diberikan reject, maka menjadi error of <code>Promise.all</code>, dan semua hasil lainnya akan diabaikan.</li> 
+          <li><code>Promise.allSettled(promises)</code> (method yang baru ditambahkan) ??? menunggu semua promise selesai dan mengembalikan hasilnya sebagai objek array dengan: 
+           <ul> 
+            <li><code>state</code>: <code>"fulfilled"</code> or <code>"rejected"</code></li> 
+            <li><code>value</code> (jika fulfilled) atau <code>reason</code> (jika rejected).</li> 
+           </ul> </li> 
+          <li><code>Promise.race(promises)</code> ??? menunggu promise pertama selesai, dan hasil/error menjadi hasilnya.</li> 
+          <li><code>Promise.any(promises)</code> (metode baru yang ditambahkan) ??? menunggu promise pertama terpenuhi, dan hasilnya menjadi hasil keseluruhan. Jika semua janji yang diberikan ditolak, [<code>AggregateError</code>] (mdn: js / AggregateError) menjadi eror<code>Promise.any</code>.</li> 
+          <li><code>Promise.resolve(value)</code> ??? membuat promise yang resolved dengan nilai yang diberikan.</li> 
+          <li><code>Promise.reject(error)</code> ??? membuat promise rejected dengan error yang diberikan.</li> 
+         </ol> 
+         <p>Dari semua ini, <code>Promise.all</code> mungkin yang paling umum dalam praktiknya.</p> 
+         <div id="qaf248e8mr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code></code></pre> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="promise-error-handling.html" data-tooltip="Penanganan error dengan promise"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="promisify.html" data-tooltip="Promisifikasi"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-api" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpromise-api" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async.html">Promises, async/await</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-api.html#promise-all">Promise.all</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-api.html#promise-allsettled">Promise.allSettled</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-api.html#promise-race">Promise.race</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-api.html#promise-any">Promise.any</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-api.html#promise-resolve-reject">Promise.resolve/reject</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-api.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-api.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-api" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fpromise-api" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

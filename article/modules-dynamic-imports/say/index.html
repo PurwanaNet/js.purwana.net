@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+ <head> 
+  <script>
+  async function load() {
+    let say = await import("./say.js");
+    say.hi(); // Halo
+    say.bye(); // Selamat tinggal
+    say.default(); // Modul dimuat (ekspor default)!
+  }
+</script> 
+   
+   
+ </head> 
+ <body> 
+  <button onclick="load()">Klik aku</button>  
+ </body>
+</html>

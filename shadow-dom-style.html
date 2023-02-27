@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "gb";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Menata gaya shadow DOM</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="shadow-dom-style.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Menata gaya shadow DOM"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Menata gaya shadow DOM"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="slots-composition.html"> 
+  <link rel="next" href="shadow-dom-events.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Menata gaya shadow DOM"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom-style" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom-style" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="6" max="7" data-tooltip="Pelajaran 6 dari 7"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="web-components.html"><span>Web components</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Web components","item":"https://id.javascript.info/web-components"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 3 Oktober 2021"> 
+          <div class="updated-at__content">
+            3 Oktober 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Menata gaya shadow DOM</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Menata gaya shadow DOM"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Shadow DOM dapat memuat tag <code>&lt;style&gt;</code> dan <code>&lt;link rel="stylesheet" href="???"&gt;</code>. Dalam kasus terakhir, stylesheet di-cache HTTP, sehingga tidak diunduh ulang untuk beberapa komponen yang menggunakan template yang sama.</p> 
+         <p>Sebagai sebuah aturan umum, gaya lokal hanya berfungsi di dalam <em>shadow tree</em>, dan gaya dokumen bekerja di luarnya. Tapi ada beberapa pengecualian.</p> 
+         <h2><a class="main__anchor" name="host" href="shadow-dom-style.html#host">:host</a></h2> 
+         <p><em>Selector</em> <code>:host</code> memungkinkan untuk memilih <em>shadow host</em> (elemen yang berisi <em>shadow tree</em>).</p> 
+         <p>Sebagai contoh, kita membuat elemen <code>&lt;custom-dialog&gt;</code> yang harus berada di bagian tengah. Untuk itu kita perlu menata elemen <code>&lt;custom-dialog&gt;</code> itu sendiri.</p> 
+         <p>Itulah tepatnya yang dilakukan <code>:host</code>:</p> 
+         <div id="jbiyh7w83x" data-trusted="0" class="code-example" data-demo-height="80" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;template id="tmpl"&gt;
+  &lt;style&gt;
+    /* the style will be applied from inside to the custom-dialog element */
+    :host {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      border: 1px solid red;
+      padding: 10px;
+    }
+  &lt;/style&gt;
+  &lt;slot&gt;&lt;/slot&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+customElements.define('custom-dialog', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'}).append(tmpl.content.cloneNode(true));
+  }
+});
+&lt;/script&gt;
+
+&lt;custom-dialog&gt;
+  Hello!
+&lt;/custom-dialog&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-jbiyh7w83x" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="cascading" href="shadow-dom-style.html#cascading">Cascading</a></h2> 
+         <p>Shadow host (<code>&lt;custom-dialog&gt;</code> itu sendiri) berada di light DOM, sehingga dipengaruhi oleh aturan CSS dokumen.</p> 
+         <p>Jika ada properti yang diberikan gaya baik di <code>:host</code> secara lokal, dan di dokumen, maka gaya dokumen akan diutamakan.</p> 
+         <p>Sebagai contoh, jika dalam dokumen kita memiliki:</p> 
+         <div id="tm1dqtlywy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+custom-dialog {
+  padding: 0;
+}
+&lt;/style&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Maka <code>&lt;custom-dialog&gt;</code> tidak akan memiliki padding.</p> 
+         <p>Ini sangat memudahkan, karena kita dapat mengatur gaya komponen ???default??? dalam aturan <code>:host</code>-nya, dan kemudian dengan mudah menimpanya dalam dokumen.</p> 
+         <p>Pengecualiannya adalah ketika properti lokal diberi label <code>!important</code>, untuk properti seperti itu, gaya lokal diutamakan.</p> 
+         <h2><a class="main__anchor" name="host-selector" href="shadow-dom-style.html#host-selector">:host(selector)</a></h2> 
+         <p>Sama seperti <code>:host</code>, tetapi hanya diterapkan jika shadow host cocok dengan <code>selector</code>.</p> 
+         <p>Sebagai contoh, kita ingin membuat <code>&lt;custom-dialog&gt;</code> berada di tengah jika hanya memiliki atribut <code>centered</code>:</p> 
+         <div id="60gdvxnvar" data-trusted="0" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;template id="tmpl"&gt;
+  &lt;style&gt;
+    :host([centered]) {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-color: blue;
+    }
+
+    :host {
+      display: inline-block;
+      border: 1px solid red;
+      padding: 10px;
+    }
+  &lt;/style&gt;
+  &lt;slot&gt;&lt;/slot&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+customElements.define('custom-dialog', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'}).append(tmpl.content.cloneNode(true));
+  }
+});
+&lt;/script&gt;
+
+
+&lt;custom-dialog centered&gt;
+  Centered!
+&lt;/custom-dialog&gt;
+
+&lt;custom-dialog&gt;
+  Not centered.
+&lt;/custom-dialog&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-60gdvxnvar" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Sekarang gaya penengah tambahan hanya diterapkan pada dialog pertama: <code>&lt;custom-dialog centered&gt;</code>.</p> 
+         <p>Ringkasnya, kita dapat menggunakan <em>selector</em> <code>:host</code> untuk menata elemen utama komponen. Gaya ini (kecuali <code>!important</code>) dapat ditimpa oleh dokumen.</p> 
+         <h2><a class="main__anchor" name="menata-gaya-konten-yang-ber-slot" href="shadow-dom-style.html#menata-gaya-konten-yang-ber-slot">Menata gaya konten yang ber-slot</a></h2> 
+         <p>Sekarang mari kita pertimbangkan situasi ketika menggunakan slot.</p> 
+         <p>Elemen yang ber-slot berasal dari light DOM, jadi mereka menggunakan gaya dokumen. Gaya lokal tidak memengaruhi konten yang menggunakan slot.</p> 
+         <p>Pada contoh dibawah, <code>&lt;span&gt;</code> yang berada di slot dicetak tebal, sesuai dengan gaya dokumen, tetapi tidak mengambil <code>background</code> dari gaya lokal:</p> 
+         <div id="hs6iobnoj9" data-trusted="0" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:14,&quot;end&quot;:14},{&quot;start&quot;:5,&quot;cols&quot;:[{&quot;start&quot;:23,&quot;end&quot;:46}]},{&quot;start&quot;:1,&quot;end&quot;:1}]" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+  span { font-weight: bold }
+&lt;/style&gt;
+
+&lt;user-card&gt;
+  &lt;div slot="username"&gt;&lt;span&gt;John Smith&lt;/span&gt;&lt;/div&gt;
+&lt;/user-card&gt;
+
+&lt;script&gt;
+customElements.define('user-card', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.innerHTML = `
+      &lt;style&gt;
+      span { background: red; }
+      &lt;/style&gt;
+      Name: &lt;slot name="username"&gt;&lt;/slot&gt;
+    `;
+  }
+});
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-hs6iobnoj9" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Hasilnya dicetak tebal, tapi tidak memiliki latar belakang merah.</p> 
+         <p>Jika kita ingin menata gaya pada elemen ber-slot pada komponen kita, ada dua pilihan.</p> 
+         <p>Pertama, kita dapat menata gaya <code>&lt;slot&gt;</code> itu sendiri dan mengandalkan pewarisan CSS:</p> 
+         <div id="b30go334ez" data-trusted="0" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10},{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:23,&quot;end&quot;:46}]}]" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;user-card&gt;
+  &lt;div slot="username"&gt;&lt;span&gt;John Smith&lt;/span&gt;&lt;/div&gt;
+&lt;/user-card&gt;
+
+&lt;script&gt;
+customElements.define('user-card', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.innerHTML = `
+      &lt;style&gt;
+      slot[name="username"] { font-weight: bold; }
+      &lt;/style&gt;
+      Name: &lt;slot name="username"&gt;&lt;/slot&gt;
+    `;
+  }
+});
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-b30go334ez" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Di sini <code>&lt;p&gt;John Smith&lt;/p&gt;</code> menjadi tebal, karena pewarisan CSS berlaku di antara <code>&lt;slot&gt;</code> dan isinya. Tetapi dalam CSS itu sendiri tidak semua properti diwariskan.</p> 
+         <p>Pilihan lainnya adalah menggunakan pseudo-class <code>::slotted(selector)</code>. Pseudo-class ini cocok dengan elemen berdasarkan dua kondisi:</p> 
+         <ol> 
+          <li>Elemen itu adalah elemen yang ber-slot, yang berasal dari light DOM. Nama slot tidak masalah. apapun elemen yang ber-slot, tetapi hanya elemen itu sendiri, bukan anak-anaknya.</li> 
+          <li>Elemen cocok dengan <code>selector</code>.</li> 
+         </ol> 
+         <p>Dalam contoh kita, <code>::slotted(div)</code> memilih dengan tepat <code>&lt;div slot="username"&gt;</code>, tetapi bukan turunannya:</p> 
+         <div id="2yl0mjb43w" data-trusted="0" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:12}]" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;user-card&gt;
+  &lt;div slot="username"&gt;
+    &lt;div&gt;John Smith&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/user-card&gt;
+
+&lt;script&gt;
+customElements.define('user-card', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.innerHTML = `
+      &lt;style&gt;
+      ::slotted(div) { border: 1px solid red; }
+      &lt;/style&gt;
+      Name: &lt;slot name="username"&gt;&lt;/slot&gt;
+    `;
+  }
+});
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-2yl0mjb43w" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Harap perhatikan, <em>selector</em> <code>::slotted</code> tidak dapat turun lebih jauh ke dalam slot. <em>selector</em> ini tidak valid:</p> 
+         <div id="tkuc7uzis3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-css"><code>::slotted(div span) {
+  /* &lt;div&gt; kita yang ber-slot tidak cocok dengan ini */
+}
+
+::slotted(div) p {
+  /* tidak bisa masuk ke dalam light DOM */
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Juga, <code>::slotted</code> hanya dapat digunakan di CSS. Kita tidak dapat menggunakannya di <code>querySelector</code>.</p> 
+         <h2><a class="main__anchor" name="css-hooks-dengan-properti-kustom" href="shadow-dom-style.html#css-hooks-dengan-properti-kustom">CSS hooks dengan properti kustom</a></h2> 
+         <p>Bagaimana kita menata gaya elemen internal komponen dari dokumen utama?</p> 
+         <p><em>Selector</em> seperti <code>:host</code> menerapkan aturan ke elemen <code>&lt;custom-dialog&gt;</code> atau <code>&lt;user-card&gt;</code>, tetapi bagaimana cara menata elemen shadow DOM di dalamnya?</p> 
+         <p>Tidak ada <em>selector</em> yang dapat secara langsung memengaruhi gaya shadow DOM dari dokumen. Tapi seperti kita mengekspos <em>method</em> untuk berinteraksi dengan komponen kita, kita bisa mengekspos variabel CSS (Properti kustom CSS) untuk menatanya.</p> 
+         <p><strong>Properti kustom CSS ada di semua tingkatan, baik dalam light DOM maupun shadow DOM</strong></p> 
+         <p>Misalnya, dalam shadow DOM kita dapat menggunakan variabel CSS <code>--user-card-field-color</code> untuk menata <em>field</em>, dan dokumen luar dapat mengatur nilainya:</p> 
+         <div id="iutxx2jd0a" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+  .field {
+    color: var(--user-card-field-color, black);
+    /* jika --user-card-field-color tidak didefinisikan, gunakan warna hitam */
+  }
+&lt;/style&gt;
+&lt;div class="field"&gt;Name: &lt;slot name="username"&gt;&lt;/slot&gt;&lt;/div&gt;
+&lt;div class="field"&gt;Birthday: &lt;slot name="birthday"&gt;&lt;/slot&gt;&lt;/div&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kemudian, kita dapat mendeklarasikan properti ini di dokumen luar untuk <code>&lt;user-card&gt;</code>:</p> 
+         <div id="ew33ns1701" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-css"><code>user-card {
+  --user-card-field-color: green;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Properti kustom CSS menembus shadow DOM, artinya mereka bisa dilihat di mana-mana, sehingga aturan <code>.field</code> yang berada di dalam akan memanfaatkannya.</p> 
+         <p>Berikut contoh lengkapnya:</p> 
+         <div id="zu9d81iwmb" data-trusted="0" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:10},{&quot;start&quot;:1,&quot;end&quot;:3}]" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom-style.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+  user-card {
+    --user-card-field-color: green;
+  }
+&lt;/style&gt;
+
+&lt;template id="tmpl"&gt;
+  &lt;style&gt;
+    .field {
+      color: var(--user-card-field-color, black);
+    }
+  &lt;/style&gt;
+  &lt;div class="field"&gt;Name: &lt;slot name="username"&gt;&lt;/slot&gt;&lt;/div&gt;
+  &lt;div class="field"&gt;Birthday: &lt;slot name="birthday"&gt;&lt;/slot&gt;&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+customElements.define('user-card', class extends HTMLElement {
+  connectedCallback() {
+    this.attachShadow({mode: 'open'});
+    this.shadowRoot.append(document.getElementById('tmpl').content.cloneNode(true));
+  }
+});
+&lt;/script&gt;
+
+&lt;user-card&gt;
+  &lt;span slot="username"&gt;John Smith&lt;/span&gt;
+  &lt;span slot="birthday"&gt;01.01.2001&lt;/span&gt;
+&lt;/user-card&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-zu9d81iwmb" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="shadow-dom-style.html#ringkasan">Ringkasan</a></h2> 
+         <p>Shadow DOM dapat menyertakan gaya, seperti <code>&lt;style&gt;</code> atau <code>&lt;link rel="stylesheet"&gt;</code>.</p> 
+         <p>Gaya lokal dapat memengaruhi:</p> 
+         <ul> 
+          <li>shadow tree,</li> 
+          <li>shadow host dengan pseudoclass <code>:host</code> dan <code>:host()</code>,</li> 
+          <li>elemen yang ber-slot (berasal dari light DOM), <code>::slotted(selector)</code> memungkinkan untuk memilih elemen yang ber-slot, tetapi bukan anaknya.</li> 
+         </ul> 
+         <p>Gaya dokumen dapat memengaruhi:</p> 
+         <ul> 
+          <li>shadow host (karena berada di dokumen luar)</li> 
+          <li>elemen ber-slot dan isinya (yang juga karena berada di dokumen luar)</li> 
+         </ul> 
+         <p>Saat properti CSS bertentangan, biasanya gaya dokumen didahulukan, kecuali jika properti diberi label sebagai <code>!important</code>. Maka gaya lokal diutamakan.</p> 
+         <p>Properti kustom CSS menembus shadow DOM. Mereka digunakan sebagai ???hooks??? untuk menata gaya komponen:</p> 
+         <ol> 
+          <li>Komponen menggunakan properti CSS kustom untuk menata gaya <em>key</em> elemen, seperti <code>var(--component-name-title, &lt;default value&gt;)</code>.</li> 
+          <li>Penulis komponen mempublikasikan properti ini untuk para pengembang, mereka sama pentingnya dengan <em>method</em> komponen publik lainnya.</li> 
+          <li>Saat pengembang ingin memberi gaya pada <em>title</em>, mereka menetapkan properti CSS <code>--component-name-title</code> untuk shadow host atau di atasnya.</li> 
+          <li>Profit!</li> 
+         </ol> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="slots-composition.html" data-tooltip="Slot shadow DOM, komposisi"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="shadow-dom-events.html" data-tooltip="Shadow DOM dan events"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom-style" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom-style" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="web-components.html">Web components</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom-style.html#host">:host</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom-style.html#cascading">Cascading</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom-style.html#host-selector">:host(selector)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom-style.html#menata-gaya-konten-yang-ber-slot">Menata gaya konten yang ber-slot</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom-style.html#css-hooks-dengan-properti-kustom">CSS hooks dengan properti kustom</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom-style.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom-style.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom-style" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom-style" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

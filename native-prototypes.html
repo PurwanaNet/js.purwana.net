@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "fr";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">*Prototype* asli</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="native-prototypes.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="*Prototype* asli"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="*Prototype* asli"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="function-prototype.html"> 
+  <link rel="next" href="prototype-methods.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="*Prototype* asli"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fnative-prototypes" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fnative-prototypes" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="64" max="92" data-tooltip="Pelajaran 64 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="prototypes.html"><span>Prototypes, inheritance</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Prototypes, inheritance","item":"https://id.javascript.info/prototypes"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">*Prototype* asli</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="*Prototype* asli"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Properti <code>"prototype"</code> adalah properti yang banyak digunakan oleh Javascript itu sendiri. Semua konstruktor fungsi menggunakannya.</p> 
+         <p>Pertama kita akan melihat lebih lengkapnya dan bagaimana cara menggunakannya untuk menambah kemampuan dari objek-objek bawaan.</p> 
+         <h2><a class="main__anchor" name="object-prototype" href="native-prototypes.html#object-prototype">Object.prototype</a></h2> 
+         <p>katakan kita mengeluarkan sebuah objek kosong:</p> 
+         <div id="tsgvoxizfs" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let obj = {};
+alert( obj ); // "[object Object]" ?</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dimanakah kode yang menghasilkan <em>string</em> <code>"[object Object]"</code>? Itu adalah metode bawaan <code>toString</code>, tapi diamanakah itu berara? <code>obj</code> tidak berisi apapun!</p> 
+         <p>???Tapi notasi pendek dari <code>obj = {}</code> sama seperti <code>obj = new Object()</code>, dimana <code>Object</code> adalah fungsi konstruktor objek bawaan, dengan properti <code>prototype</code>nya sendiri yang mereferensi sebuah objek besar <code>toString</code> dan metode lainnya.</p> 
+         <p>Inilah yang terjadi:</p> 
+         <figure> 
+          <div class="image" style="width:453px"> 
+           <div class="image__ratio" style="padding-top:20.750551876379692%"></div> 
+           <object type="image/svg+xml" data="article/native-prototypes/object-prototype.svg" width="453" height="94" class="image__image" data-use-theme> <img src="article/native-prototypes/object-prototype.svg" alt="" width="453" height="94"> </object> 
+          </div> 
+         </figure> 
+         <p>Ketika <code>new Object()</code> dipanggil (atau sebuah objek literal <code>{...}</code> dibuat), <code>[[Prototype]]</code>nya disetel ke <code>Object.prototype</code> mengikuti aturan yang telah kita bahas di bab sebelumnya:</p> 
+         <figure> 
+          <div class="image" style="width:453px"> 
+           <div class="image__ratio" style="padding-top:43.92935982339956%"></div> 
+           <object type="image/svg+xml" data="article/native-prototypes/object-prototype-1.svg" width="453" height="199" class="image__image" data-use-theme> <img src="article/native-prototypes/object-prototype-1.svg" alt="" width="453" height="199"> </object> 
+          </div> 
+         </figure> 
+         <p>Jadi ketika <code>obj.toString()</code> dipanggil metodenya dibawa dari <code>Object.prototype</code>.</p> 
+         <p>Kita bisa periksa seperti ini:</p> 
+         <div id="g0nqx8urmf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let obj = {};
+
+alert(obj.__proto__ === Object.prototype); // true
+
+alert(obj.toString === obj.__proto__.toString); //true
+alert(obj.toString === Object.prototype.toString); //true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ingat bahwa disana sudah tidak ada lagi <code>[[Prototype]]</code> didalam rantai diatas <code>Object.prototype</code>:</p> 
+         <div id="azxuca976g" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert(Object.prototype.__proto__); // null</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="prototype-bawaan-lainnya" href="native-prototypes.html#prototype-bawaan-lainnya"><em>prototype</em> bawaan lainnya</a></h2> 
+         <p>Objek bawaan lainnya seperti <code>Array</code>, <code>Date</code>, <code>Function</code> dan lainnya juga tetap menyimpan metode didalam <em>prototype</em>.</p> 
+         <p>Contoh, ketika kita membuat sebuah <em>array</em> <code>[1, 2, 3]</code>, konstruktor bawaan <code>new Array()</code> digunakan secara internal. Jadi <code>Array.prototype</code> menjadi <em>prototype</em> miliknya dan menyediakan metode-metode. Itu akan membuatnya menjadi efisien dalam penggunaan memori.</p> 
+         <p>Sebagaimana spesifikasinya, semua <em>prototype</em> bawaan memiliki <code>Object.prototype</code> diatasnya. Itulah kenapa beberapa orang berkata bahwa ???semuanya diwarisi dari objek???.</p> 
+         <p>Ini adalah gambar keseluruhan (memasangkan 3 fungsi):</p> 
+         <figure> 
+          <div class="image" style="width:692px"> 
+           <div class="image__ratio" style="padding-top:59.39306358381503%"></div> 
+           <object type="image/svg+xml" data="article/native-prototypes/native-prototypes-classes.svg" width="692" height="411" class="image__image" data-use-theme> <img src="article/native-prototypes/native-prototypes-classes.svg" alt="" width="692" height="411"> </object> 
+          </div> 
+         </figure> 
+         <p>Sekarang kita cek <em>prototype</em>nya secara manual:</p> 
+         <div id="zo7bwpuvqx" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3];
+
+// apakah diwarisi dari Array.prototype?
+alert( arr.__proto__ === Array.prototype ); // true
+
+// maka dari Object.prototype?
+alert( arr.__proto__.__proto__ === Object.prototype ); // true
+
+// dan null diatasnya.
+alert( arr.__proto__.__proto__.__proto__ ); // null</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Beberapa metode didalam <em>prototype</em> mungkin tumpang tindih, contoh, <code>Array.prototype</code> memiliki <code>toString</code>nya sendiri yang menyusun elemen yang dipisahkan dengan koma:</p> 
+         <div id="u6q0klwax6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3]
+alert(arr); // 1,2,3 &lt;-- hasil dari Array.prototype.toString</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang telah kita lihat, <code>Object.prototype</code> memiliki <code>toString</code> juga, tapi <code>Array.prototype</code> lebih dekat dengan rantainya, jadi varian dari <em>array</em> mungkin akan digunakan.</p> 
+         <figure> 
+          <div class="image" style="width:209px"> 
+           <div class="image__ratio" style="padding-top:151.1961722488038%"></div> 
+           <object type="image/svg+xml" data="article/native-prototypes/native-prototypes-array-tostring.svg" width="209" height="316" class="image__image" data-use-theme> <img src="article/native-prototypes/native-prototypes-array-tostring.svg" alt="" width="209" height="316"> </object> 
+          </div> 
+         </figure> 
+         <p>Dialam alat <em>browser</em> seperti <em>Chrome Developer Conolse</em> juga menunjukan pewarisannya (<code>console.dir</code> mungkin butuh untuk digunakan seperti objek bawaan):</p> 
+         <figure> 
+          <div class="image" style="width:567px"> 
+           <div class="image__ratio" style="padding-top:51.49911816578483%"></div> 
+           <img src="article/native-prototypes/console_dir_array.png" alt="" width="567" height="292" class="image__image"> 
+          </div> 
+         </figure> 
+         <p>Objek bawaan lainnya juga mungkin bekerja mirip seperti itu. Bahkan fungsi ??? mereka adalah objek dari konstruktor bawaan <code>Function</code>, dan metode mereka (<code>call</code>/<code>apply</code> dan lainnya) juga diambil dari <code>Function.prototype</code>. Fungsi juga memiliki <code>toString</code> mereka masing-masing.</p> 
+         <div id="zacb9bo7rz" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function f() {}
+
+alert(f.__proto__ == Function.prototype); // true
+alert(f.__proto__.__proto__ == Object.prototype); // true, warisan dari objek</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="primitif-primitif" href="native-prototypes.html#primitif-primitif">Primitif-primitif</a></h2> 
+         <p>Hal yang paling rumit terjadi dengan <em>string</em>, <em>number</em> dan <em>boolean</em>.</p> 
+         <p>Seperti yang kita ingat, mereka bukanlah objek. Tapi jika kita mencoba untuk mengakses propertinya, objek pembungkus sementara menggunakan konstruktor bawaan <code>String</code>, <code>Number</code> dan <code>Boolean</code>. Mereka menyediakan metodenya dan menghilang.</p> 
+         <p>Objek-objek ini dibuat tak terlihat untuk kita dan kebanyakan mesin mengoptimalkan mereka, tapi spesifikasinya menjelaskannya juga seperti itu. Metode dari objek ini juga tinggal didalam <em>prototype</em>, tersedia sebagai <code>String.prototype</code>, <code>Number.prototype</code> dan <code>Boolean.prototype</code>.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Nilai <code>null</code> dan <code>undefined</code> tidak memiliki objek pembungkus</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Nilai spesial <code>null</code> dan <code>undefined</code> memiliki pendiriannya sendiri. Mereka tidak memiliki objek pembungkus, jadi metode dan properti tidak tersedia untuk mereka. Dan juga tidak terdapat prototypenya.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="native-prototype-change" href="native-prototypes.html#native-prototype-change">Changing native prototypes</a></h2> 
+         <p>Prototipe asli bisa dimodifikasi. Contoh, jika kita menambahkan metode kepada <code>String.prototype</code>, itu akan menjadi tersedia untuk selurung <em>string</em>.</p> 
+         <div id="fouy4h81xh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>String.prototype.show = function() {
+  alert(this);
+};
+
+"BOOM!".show(); // BOOM!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Selama proses pembangunan, kita mungkin memiliki ide untuk metode bawaan baru yang kita ingin punya, dan kita mungkin tergoda untuk menambahkannya sebagai <em>prototype</em> asli. Tapi itu sebenarnya bukan ide yang bagus.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Penting:</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Prototype terlihat di global, jadi akan mudah membuat konflik. Jika dua library menambahkan sebuah metode <code>String</code>prototype.show`, maka salah satu dari mereka akan menimpah yang lainnya.</p> 
+           <p>Jadi, umumnya, memodifikasi prototype asli bisa dikatakan bukan ide bagus.</p> 
+          </div> 
+         </div> 
+         <p><strong>Didalam <em>programming</em> modern, terdapat satu kasus dimana memodifikasi <em>prototype</em> asli dapat diterima. Disebut dengan <em>polyfilling</em>.</strong></p> 
+         <p><em>Polyfilling</em> adalah sebuah istilah untuk membuat sebuah metode pengganti yang ada didalam spesifikasi Javascript, tapi itu tidak didukung oleh mesin Javascript tertentu.</p> 
+         <p>Kita mungkin mengimplementasi manual dan mengisi prototype bawaan dengan itu.</p> 
+         <p>Contoh:</p> 
+         <div id="f1g5nfd90d" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (!String.prototype.repeat) { // Jika tidak terdapat metode
+  // tambahkan kedalam prototype
+
+  String.prototype.repeat = function(n) {
+    // ulangi stringnya n kali
+
+    // sebenarnya, kodenya haruslah lebih rumit dari itu
+    // (algoritma lengkapnya ada didalam spesifikasinya)
+    // bahkan sebuah polyfill tidak sempurna kadang bisa dikatakan cukup bagus
+    return new Array(n + 1).join(this);
+  };
+}
+
+alert( "La".repeat(3) ); // LaLaLa</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="meminjam-dari-prototype" href="native-prototypes.html#meminjam-dari-prototype">meminjam dari <em>prototype</em></a></h2> 
+         <p>Didalam bab <a href="call-apply-decorators.html#method-borrowing">Decorators dan forwarding, call/apply</a> kita berbicara tentang peminjaman metode.</p> 
+         <p>Itulah ketika kita mengambil metode dari satu objek dan menyalinnya ke objek lain.</p> 
+         <p>Beberapa metode dari <em>prototype</em> asli sering dipinjam.</p> 
+         <p>Contoh, jika kita membuat objek yang mirip array, kita mungkin ingin menyalin beberapa metode <code>Array</code> darinya.</p> 
+         <p>E.g.</p> 
+         <div id="pokdekfvit" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let obj = {
+  0: "Hello",
+  1: "world!",
+  length: 2,
+};
+
+obj.join = Array.prototype.join;
+
+alert( obj.join(',') ); // Hello,world!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Contoh diatas bekerja karena algoritma internal bawaan <code>join</code> yang memperhatikan tentang indeks yang benar dan <code>length</code> dari properti. Itu tidak akan memeriksa apakah objeknya adalah array. Beberapa metode bawaan memang seperti itu.</p> 
+         <p>Kemungkinan lainnya adalah pewarisan dari <code>obj.__proto__</code> ke <code>Array.prototype</code>, jadi seluruh metode <code>Array</code> secara otomatis tersedia didalam <code>obj</code>.</p> 
+         <p>Tapi itu menjadi tidak mungkin jika <code>obj</code> sudah mewarisi dari objek lainnya. Ingat, kita hanya bisa mewarisi dari satu objek pada satu waktu.</p> 
+         <p>Meminjam metode sebenarnya cukup fleksibel, hal itu memperbolehkan kita untuk mencampur fungsionalitas dari objek yang berbeda-beda jika dibutuhkan.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="native-prototypes.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li>Seluruh objek bawaan mengikuti alur yang sama: 
+           <ul> 
+            <li>Metode disimpan didalam prototype (<code>Array.prototype</code>, <code>Object.prototype</code>, <code>Date.prototype</code>, etc.)</li> 
+            <li>Objeknya sendiri hanya menyimpan data (item array, properti objek, tanggal)</li> 
+           </ul> </li> 
+          <li>Prototype Asli menyimpan metode didalam prototype dari objek pembungkus: <code>Number.prototype</code>, <code>String.prototype</code> dan <code>Boolean.prototype</code>. Only <code>undefined</code> dan <code>null</code> tidak memiliki objek pembungkus.</li> 
+          <li><em>Prototype</em> bawaan bisa dimodifikasi atau diisi ulang dengan metode baru. Tapi tidak direkomendasikan untuk mengubahnya. Hal yang diperbolehkan dalam beberapa kasus mungkun ketika kita menambahkan peraturan baru, tapi itu belum sepenuhnya didukung oleh mesin Javascript.</li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="native-prototypes.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="native-prototypes.html#menambahkan-metode-f-defer-ms-ke-fungsi" name="menambahkan-metode-f-defer-ms-ke-fungsi">Menambahkan metode "f.defer(ms)" ke fungsi</a></h3> 
+           <a class="task__open-link" href="task/defer-to-prototype.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tambahkan kepada <em>prototype</em> dari semua fungsi metode <code>defer(ms)</code>, yang menjalankan fungsinya setelah milidetik <code>ms</code>.</p> 
+            <p>Setelah kamu melakukannya, kodenya harus berjalan:</p> 
+            <div id="shy3o9sk8d" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function f() {
+  alert("Hello!");
+}
+
+f.defer(1000); // menampilkan "Hello!" setelah 1 detik</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="b40trj74ee" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>Function.prototype.defer = function(ms) {
+  setTimeout(this, ms);
+};
+
+function f() {
+  alert("Hello!");
+}
+
+f.defer(1000); // menampilkan "Hello!" setelah 1 detik</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="native-prototypes.html#menambah-dekorasi-defer-ke-fungsi" name="menambah-dekorasi-defer-ke-fungsi">Menambah dekorasi "defer()" ke fungsi.</a></h3> 
+           <a class="task__open-link" href="task/defer-to-prototype-extended.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tambahkan prototype dari semua fungsi metode<code>defer(ms)</code>, yang mengembalikan pembungkus, menunda pemanggilan dengan <code>ms</code> milidetik.</p> 
+            <p>Contoh:</p> 
+            <div id="yksqn7oix8" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function f(a, b) {
+  alert( a + b );
+}
+
+f.defer(1000)(1, 2); // tampilkan 3 setelah 1 detik</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Perhatikan bahwa argumennya harus diberikan ke fungsi aslinya.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="lh4tc6ip3g" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>Function.prototype.defer = function(ms) {
+  let f = this;
+  return function(...args) {
+    setTimeout(() =&gt; f.apply(this, args), ms);
+  }
+};
+
+// check it
+function f(a, b) {
+  alert( a + b );
+}
+
+f.defer(1000)(1, 2); // menampilkan 3 setelah 1 detik</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Ingatlah: kita menggunakan <code>this</code> didalam <code>f.apply</code> untuk membuat dekorasi kita bekerja untuk metode objek.</p> 
+              <p>Jadi jika pembungkus fungsinya dipanggil sebagai metode objek, maka <code>this</code> diberikan kepada metode asli <code>f</code>.</p> 
+              <div id="v9ivf6q5ww" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="native-prototypes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="native-prototypes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>Function.prototype.defer = function(ms) {
+  let f = this;
+  return function(...args) {
+    setTimeout(() =&gt; f.apply(this, args), ms);
+  }
+};
+
+let user = {
+  name: "John",
+  sayHi() {
+    alert(this.name);
+  }
+}
+
+user.sayHi = user.sayHi.defer(1000);
+
+user.sayHi();</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="function-prototype.html" data-tooltip="F.prototype"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="prototype-methods.html" data-tooltip="Prototype methods, objects without __proto__"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fnative-prototypes" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fnative-prototypes" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototypes.html">Prototypes, inheritance</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="native-prototypes.html#object-prototype">Object.prototype</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="native-prototypes.html#prototype-bawaan-lainnya"><em>prototype</em> bawaan lainnya</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="native-prototypes.html#primitif-primitif">Primitif-primitif</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="native-prototypes.html#native-prototype-change">Changing native prototypes</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="native-prototypes.html#meminjam-dari-prototype">meminjam dari <em>prototype</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="native-prototypes.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="native-prototypes.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="native-prototypes.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fnative-prototypes" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fnative-prototypes" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

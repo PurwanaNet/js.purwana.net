@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Mendebug di Chrome</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="debugging-chrome.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Mendebug di Chrome"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Mendebug di Chrome"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="code-quality.html"> 
+  <link rel="next" href="coding-style.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <style>
+span.devtools {
+  display: inline-block;
+  background-image: url(article/debugging-chrome/largeIcons.svg);
+  height:18px;
+  width:18px;
+}
+</style> 
+  <meta property="og:title" content="Mendebug di Chrome"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdebugging-chrome" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdebugging-chrome" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="23" max="92" data-tooltip="Pelajaran 23 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="code-quality.html"><span>Kualitas Kode</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Kualitas Kode","item":"https://id.javascript.info/code-quality"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Mendebug di Chrome</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Mendebug di Chrome"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Sebelum menulis kode lebih komplex, ayo kita bahas tentang mendebug.</p> 
+         <p><a href="https://en.wikipedia.org/wiki/Debugging">Mendebug</a> ialah proses mencari dan membetulkan galat di dalam script. Semua peramban modern dan kebanyakan lingkungan lain mendukung debugging tools ??? UI spesial di developer tools yang membuat debugging jauh lebih mudah. Ia juga membolehkan menjejak kode pelan-pelan untuk melihat apa yang sebenarnya terjadi.</p> 
+         <p>Kita akan menggunakan Chrome di sini, karena ia punya cukup fitur, kebanyakan peramban lain punya proses serupa`.</p> 
+         <h2><a class="main__anchor" name="panel-sources" href="debugging-chrome.html#panel-sources">Panel ???Sources???</a></h2> 
+         <p>Versi Chrome kamu mungkin terlihat berbeda, tapi tetap kelihatan jelas bedanya.</p> 
+         <ul> 
+          <li>Buka <a href="article/debugging-chrome/debugging/index.html">laman contoh</a> di Chrome.</li> 
+          <li>Nyalakan developer tools dengan <kbd class="shortcut">F12</kbd> (Mac: <kbd class="shortcut">Cmd<span class="shortcut__plus">+</span>Opt<span class="shortcut__plus">+</span>I</kbd>).</li> 
+          <li>Pilih panel <code>Sources</code>.</li> 
+         </ul> 
+         <p>Inilah apa yang mesti kamu lihat jika kamu baru melakukannya pertama kali:</p> 
+         <figure> 
+          <div class="image" style="width:697px"> 
+           <div class="image__ratio" style="padding-top:32.7116212338594%"></div> 
+           <object type="image/svg+xml" data="article/debugging-chrome/chrome-open-sources.svg" width="697" height="228" class="image__image" data-use-theme> <img src="article/debugging-chrome/chrome-open-sources.svg" alt="" width="697" height="228"> </object> 
+          </div> 
+         </figure> 
+         <p>Tombol toggler <span class="devtools" style="background-position:-168px -76px"></span> membuka tab dengan file.</p> 
+         <p>Klik itu dan pilih <code>hello.js</code> di tree view. Inilah yang mestinya muncul:</p> 
+         <figure> 
+          <div class="image" style="width:694px"> 
+           <div class="image__ratio" style="padding-top:32.42074927953891%"></div> 
+           <object type="image/svg+xml" data="article/debugging-chrome/chrome-tabs.svg" width="694" height="225" class="image__image" data-use-theme> <img src="article/debugging-chrome/chrome-tabs.svg" alt="" width="694" height="225"> </object> 
+          </div> 
+         </figure> 
+         <p>Panel Sources punya 3 bagian:</p> 
+         <ol> 
+          <li>Pane <strong>File Navigator</strong> melist HTML, JavaScript, CSS, dan file lainnya, termasuk image yang dilampirkan ke laman. Extensi Chrome bisa muncul juga di sini.</li> 
+          <li>Pane <strong>Editor Kode</strong> menampilkan kode sumber.</li> 
+          <li>Pane <strong>Javascript Debugging</strong> untuk debugging, kita akan mengexplorasi itu segera.</li> 
+         </ol> 
+         <p>Sekarang kamu bisa mengklik toggler yang sama <span class="devtools" style="background-position:-200px -76px"></span> lagi untuk menyembunyikan daftar sumber daya dan memberi spasi ke kode.</p> 
+         <h2><a class="main__anchor" name="konsol" href="debugging-chrome.html#konsol">Konsol</a></h2> 
+         <p>Jika kita menekan <kbd class="shortcut">Esc</kbd>, maka konsol terbuka di bawah. Kita bisa mengetik command di sana dan menekan <kbd class="shortcut">Enter</kbd> untuk exekusi.</p> 
+         <p>Setelah pernyataan diexekusi, hasilnya ditampilkan di bawah.</p> 
+         <p>Misalnya, <code>1+2</code> menghasilkan <code>3</code>, dan <code>hello("debugger")</code> tak mengembalikan apa-apa, jadi hasilnya <code>undefined</code>:</p> 
+         <figure> 
+          <div class="image" style="width:693px"> 
+           <div class="image__ratio" style="padding-top:22.51082251082251%"></div> 
+           <object type="image/svg+xml" data="article/debugging-chrome/chrome-sources-console.svg" width="693" height="156" class="image__image" data-use-theme> <img src="article/debugging-chrome/chrome-sources-console.svg" alt="" width="693" height="156"> </object> 
+          </div> 
+         </figure> 
+         <h2><a class="main__anchor" name="breakpoint" href="debugging-chrome.html#breakpoint">Breakpoint</a></h2> 
+         <p>Mari periksa apa yang terjadi di dalam kode <a href="article/debugging-chrome/debugging/index.html">laman contoh</a>. Di <code>hello.js</code>, klik nomor baris <code>4</code>. Ya, tepat di digit <code>4</code>, bukan di kode.</p> 
+         <p>Selamat! Kamu mengeset breakpoint. Silakan klik juga angka untuk baris <code>8</code>.</p> 
+         <p>Rupanya mesti seperti ini (biru adalah tempat di mana kamu klik):</p> 
+         <figure> 
+          <div class="image" style="width:697px"> 
+           <div class="image__ratio" style="padding-top:35.00717360114778%"></div> 
+           <object type="image/svg+xml" data="article/debugging-chrome/chrome-sources-breakpoint.svg" width="697" height="244" class="image__image" data-use-theme> <img src="article/debugging-chrome/chrome-sources-breakpoint.svg" alt="" width="697" height="244"> </object> 
+          </div> 
+         </figure> 
+         <p><em>Breakpoint</em> ialah poin kode di mana debugger akan otomatis menjeda exekusi JavaScript.</p> 
+         <p>Ketika kode dijeda, kita bisa periksa variabel kini, mengexekusi command di konsol dsb. Dengan kata lain, kita bisa mendebug itu.</p> 
+         <p>Kita selalu bisa menemukan daftar breakpoint di panel kanan. Ini berguna ketika kita punya banyak breakpoint di berbagai file. Ia membolehkan kita untuk:</p> 
+         <ul> 
+          <li>Lompak cepat ke breakpoint di kode (dengan mengklik itu di panel kanan).</li> 
+          <li>Mematikan sementara breakpoint dengan meng-uncheck itu.</li> 
+          <li>Buang breakpoint dengan mengklik-kanan dan memilik Remove.</li> 
+          <li>???Dan banyak lagi.</li> 
+         </ul> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Breakpoint kondisional</span> 
+          </div> 
+          <div class="important__content"> 
+           <p><em>Klik kanan</em> di nomor baris bisa membuat breakpoint <em>kondisional</em>. Ia hanya terpicu saat expresi yang diberikan truthy.</p> 
+           <p>Ini praktis saat kita harus berhenti cuma untuk nilai variabel tertentu atau untuk parameter fungsi tertentu.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="command-debugger" href="debugging-chrome.html#command-debugger">Command debugger</a></h2> 
+         <p>Kita juga bisa menjeda kode menggunakan command <code>debugger</code> di dalamnya, seperti ini:</p> 
+         <div id="zvj6l3xmc7" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function hello(name) {
+  let phrase = `Hello, ${name}!`;
+
+  debugger;  // &lt;-- debugger berhenti di sini
+
+  say(phrase);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ini sangat nyaman saat kita di dalam editor kode dan tak ingin berubah ke peramban dan mencari script di developer tools untuk mengeset breakpoint.</p> 
+         <h2><a class="main__anchor" name="jeda-dan-lihat-sekitar" href="debugging-chrome.html#jeda-dan-lihat-sekitar">Jeda dan lihat sekitar</a></h2> 
+         <p>Di contoh kita, <code>hello()</code> dipanggil selama page load, jadi cara termudah untuk mengaktivasi debugger (setelah kita set breakpoint) ialah memuat-ulang laman. Jadi mari tekan <kbd class="shortcut">F5</kbd> (Windows, Linux) atau <kbd class="shortcut">Cmd<span class="shortcut__plus">+</span>R</kbd> (Mac).</p> 
+         <p>Ketika breakpoint diset, exekusi terjeda di baris ke-4:</p> 
+         <figure> 
+          <div class="image" style="width:700px"> 
+           <div class="image__ratio" style="padding-top:43.42857142857143%"></div> 
+           <object type="image/svg+xml" data="article/debugging-chrome/chrome-sources-debugger-pause.svg" width="700" height="304" class="image__image" data-use-theme> <img src="article/debugging-chrome/chrome-sources-debugger-pause.svg" alt="" width="700" height="304"> </object> 
+          </div> 
+         </figure> 
+         <p>Silakan buka dropdown informasional ke kanan (dilabeli panah). Mereka membolehkan kamu memeriksa code state sekarang:</p> 
+         <ol> 
+          <li> <p><strong><code>Watch</code> ??? menampilkan nilai sekarang untuk expresi apapun.</strong></p> <p>Kamu bisa mengklik <code>+</code> dan menginput expresi. Debugger akan menampilkan nilainya kapan saja, otomatis merekalkulasi itu di proses exekusi.</p> </li> 
+          <li> <p><strong><code>Call Stack</code> ??? menampilkan rantai panggilan bersarang.</strong></p> <p>Di momen sekarang debugger berada di dalam panggilan <code>hello()</code>, dipanggil script di <code>index.html</code> (tak ada fungsi di sana, jadi ia disebut ???anonymous???).</p> <p>If you click on a stack item (e.g. ???anonymous???), the debugger jumps to the corresponding code, and all its variables can be examined as well.</p> </li> 
+          <li> <p><strong><code>Scope</code> ??? current variables.</strong></p> <p><code>Local</code> menampilkan variabel fungsi lokal. Kita juga bisa melihat nilai mereka yang dihighlight tepat di sebelah kanan kode.</p> <p><code>Global</code> has global variables (out of any functions).</p> <p>Ada juta katakunci <code>this</code> di sana yang tidak kita pelajari sekarang, tapi nanti kemudian.</p> </li> 
+         </ol> 
+         <h2><a class="main__anchor" name="menjejak-exekusi" href="debugging-chrome.html#menjejak-exekusi">Menjejak exekusi</a></h2> 
+         <p>Sekarang waktunya <em>menjejak</em> script.</p> 
+         <p>Ada tombol untuk itu di ujung atas panel kanan. Ayo kita ikuti mereka.</p> 
+         <!-- https://github.com/ChromeDevTools/devtools-frontend/blob/master/front_end/Images/src/largeIcons.svg --> 
+         <dl> 
+          <dt> 
+           <span class="devtools" style="background-position:-7px -76px"></span> ??? melanjutkan exekusi, hotkey 
+           <kbd class="shortcut">F8</kbd>. 
+          </dt> 
+          <dd> 
+           <p>Melanjutkan exekusi. Jika tak ada breakpoint tambahan, maka exekusi berlanjut dan debugger hilang kontrol.</p> 
+           <p>Inilah apa yang bisa kita lihat setelah satu klik ke dia:</p> 
+           <figure> 
+            <div class="image" style="width:698px"> 
+             <div class="image__ratio" style="padding-top:44.412607449856736%"></div> 
+             <object type="image/svg+xml" data="article/debugging-chrome/chrome-sources-debugger-trace-1.svg" width="698" height="310" class="image__image" data-use-theme> <img src="article/debugging-chrome/chrome-sources-debugger-trace-1.svg" alt="" width="698" height="310"> </object> 
+            </div> 
+           </figure> 
+           <p>Exekusi dilanjutkan, mencapai breakpoint lain di dalam <code>say()</code> dan terjeda di sana. Perhatikan ???Call Stack??? di kanan. Ia meningkat satu panggilan lagi. Kita di dalam <code>say()</code> sekarang.</p> 
+          </dd> 
+          <dt> 
+           <span class="devtools" style="background-position:-200px -190px"></span> ??? ???Langkahi???: jalankan command berikutnya, hotkey 
+           <kbd class="shortcut">F9</kbd>. 
+          </dt> 
+          <dd> 
+           <p>Jalankan pernyataan berikutnya. Jika kita klik itu sekarang, <code>alert</code> akan muncul.</p> 
+           <p>Mengklik ini akan melangkahi semua aksi script satu-satu.</p> 
+          </dd> 
+          <dt> 
+           <span class="devtools" style="background-position:-62px -192px"></span> ??? ???Langkahi atas???: jalankan command berikutnya, tapi 
+           <em>jangan masuk ke fungsi</em>, hotkey 
+           <kbd class="shortcut">F10</kbd>. 
+          </dt> 
+          <dd> 
+           <p>Serupa dengan command ???Step??? sebelumnya, tapi berbeda jika pernyataan berikutnya berupa panggilan fungsi. Yaitu: bukan built-in, seperti <code>alert</code>, tapi fungsi kita sendiri.</p> 
+           <p>Command ???Langkahi??? masuk ke dalam dan menjeda exekusi di baris pertama, sedangkan ???Kangkangi??? mengexekusi panggilan fungsi bersarang secara tak terlihat, mengabaikan internal fungsi.</p> 
+           <p>Exekusi kemudian segera dijeda setelah fungsi itu.</p> 
+           <p>Itu baik jika kita tak tertarik mencaritahu ada apa di dalam panggilan fungsi.</p> 
+          </dd> 
+          <dt> 
+           <span class="devtools" style="background-position:-4px -194px"></span> ??? ???Langkahi masuk???, hotkey 
+           <kbd class="shortcut">F11</kbd>. 
+          </dt> 
+          <dd> 
+           <p>Serupa dengan ???Langkahi???, tapi berbeda dalam hal panggilan fungsi asynchronous. Jika kamu baru mulai belajar JavaScript, maka kamu bisa abaikan perbedaan, karena kita tak punya panggilan asynchronous sekarang.</p> 
+           <p>Untuk masa depan, perhatikan bahwa command ???Langkahi??? mengabaikan aksi async, seperti <code>setTimeout</code> (panggilan fungsi terjadwal), itu diexekusi nanti. ???Langkahi masuk??? masuk ke dalam kode mereka, menunggu mereka jika perlu. Lihat <a href="https://developers.google.com/web/updates/2018/01/devtools#async">DevTools manual</a> untuk detil lebih.</p> 
+          </dd> 
+          <dt> 
+           <span class="devtools" style="background-position:-32px -194px"></span> ??? ???Langkahi keluar???: lanjutkan exekusi hingga akhir fungsi sekarang, hotkey 
+           <kbd class="shortcut">Shift<span class="shortcut__plus">+</span>F11</kbd>. 
+          </dt> 
+          <dd> 
+           <p>Lanjutkan exekusi dan berhenti di baris terakhir dari fungsi sekarang. Ini praktis saat kita tak sengaja masuk ke panggilan bersarang memakai <span class="devtools" style="background-position:-200px -190px"></span>, tapi itu tak menarik bagi kita, dan kita mau lanjut ke ujungnya sesegera mungkin.</p> 
+          </dd> 
+          <dt> 
+           <span class="devtools" style="background-position:-61px -74px"></span> ??? nyalakan/matikan semua breakpoint. 
+          </dt> 
+          <dd> 
+           <p>Tombol itu tidak menggerakkan exekusi. Cuma on/off massal untuk breakpoint.</p> 
+          </dd> 
+          <dt> 
+           <span class="devtools" style="background-position:-90px -146px"></span> ??? nyalakan/matikan jeda otomatis jika ada galat. 
+          </dt> 
+          <dd> 
+           <p>Ketika menyala, dan developer tools terbuka, galat script otomatis menjeda exekusi. Lalu kita bisa menganalisa variabel untuk melihat apa yang salah. Jadi jika script kita mati karena galat, kita bisa buka debugger, menyalakan opsi ini dan memuat-ulang laman untuk melihat di mana ia mati dan apa kontexnya saat itu.</p> 
+          </dd> 
+         </dl> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Lanjut ke sini</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Klilk kanan di satu baris kode membuka context menu dengan opsi hebat yang disebut ???Lanjut ke sini???.</p> 
+           <p>Ini praktis saat kita mau pindah beberpaa langkah maju ke baris itu, tapi kita terlalu malas mengeset breakpoint.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="logging" href="debugging-chrome.html#logging">Logging</a></h2> 
+         <p>Untuk mengoutput sesuatu ke konsol dari kode kita, ada fungsi <code>console.log</code>.</p> 
+         <p>Misalnya, ini mengoutput nilai dari <code>0</code> ke <code>4</code> ke konsol:</p> 
+         <div id="rmljeh0fe4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="debugging-chrome.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="debugging-chrome.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// buka konsol untuk melihat
+for (let i = 0; i &lt; 5; i++) {
+  console.log("value,", i);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pengguna reguler tak melihat output itu, itu di dalam konsol. Untuk melihat itu, buka panel Console developer tool atau tekan <kbd class="shortcut">Esc</kbd> ketika di panel lain: yang membukakan konsol di bawah.</p> 
+         <p>Jika kita punya cukup logging di kode kita, maka kita bisa melihat apa yang terjadi dari record, tanpa debugger.</p> 
+         <h2><a class="main__anchor" name="kesimpulan" href="debugging-chrome.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Seperti yang kita lihat, ada tiga cara utama untuk menjeda script:</p> 
+         <ol> 
+          <li>Breakpoint.</li> 
+          <li>Pernyataan <code>debugger</code>.</li> 
+          <li>Galat (jika dev tools terbuka dan tombol <span class="devtools" style="background-position:-90px -146px"></span> ???menyala???).</li> 
+         </ol> 
+         <p>Ketika terjeda, kita bisa mendebug ??? periksa variabel dan menjejak kode untuk melihat di mana terjadi kesalahan exekusi.</p> 
+         <p>Ada banyak lebih opsi di developer tool dari yang diliput di sini. Manual lengkap ada di <a href="https://developers.google.com/web/tools/chrome-devtools">https://developers.google.com/web/tools/chrome-devtools</a>.</p> 
+         <p>Informasi dari bab ini cukup untuk memulai debugging, tapi nanti, terutama jika kamu melakukan banyak hal-hal berkaitan dengan peramban, silakan masuk ke sana dan mencari kemampuan canggih lainnya dari developer tool.</p> 
+         <p>Oh, dan juga kamu bisa mengklik di berbagai tempat dev tools dan cuma melihat apa yang muncul. Itu mungkin rute tercepat untuk mempelajari dev tools. Jangan lupa tentang klik kanan dan context menu!</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="code-quality.html" data-tooltip="Kualitas Kode"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="coding-style.html" data-tooltip="Gaya Mengkode"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdebugging-chrome" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdebugging-chrome" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="code-quality.html">Kualitas Kode</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="debugging-chrome.html#panel-sources">Panel ???Sources???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="debugging-chrome.html#konsol">Konsol</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="debugging-chrome.html#breakpoint">Breakpoint</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="debugging-chrome.html#command-debugger">Command debugger</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="debugging-chrome.html#jeda-dan-lihat-sekitar">Jeda dan lihat sekitar</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="debugging-chrome.html#menjejak-exekusi">Menjejak exekusi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="debugging-chrome.html#logging">Logging</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="debugging-chrome.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="debugging-chrome.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdebugging-chrome" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fdebugging-chrome" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

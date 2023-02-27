@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pendadwalan: setTimeout dan setInterval</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="settimeout-setinterval.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pendadwalan: setTimeout dan setInterval"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pendadwalan: setTimeout dan setInterval"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="new-function.html"> 
+  <link rel="next" href="call-apply-decorators.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pendadwalan: setTimeout dan setInterval"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fsettimeout-setinterval" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fsettimeout-setinterval" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="56" max="92" data-tooltip="Pelajaran 56 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="advanced-functions.html"><span>Penggunaan lanjutan fungsi</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Penggunaan lanjutan fungsi","item":"https://id.javascript.info/advanced-functions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pendadwalan: setTimeout dan setInterval</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pendadwalan: setTimeout dan setInterval"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Kita mungkin memutuskan untuk mengeksekusi fungsinya bukanlah sekarang, tapi pada waktu-waktu tertentu nanti. Itu dipanggil dengan ???penjadwalan pemanggilan???.</p> 
+         <p>Terdapat dua metode untuk itu:</p> 
+         <ul> 
+          <li><code>setTimeout</code> mengijinkan kita untuk menjalankan fungsinya setelah interval dari waktu.</li> 
+          <li><code>setInterval</code> mengijinkan kita untuk menjalankan fungsinya berulang-ulang, dimulai seterlah interval dari waktu yang diberikan, lalu akan terus berulang pada interval waktu yang diberikan.</li> 
+         </ul> 
+         <p>Metode-metode ini bukanlah bagian dari spesifikasi Javascript. Tapi kebanyakan lingkungan memiliki penjadwalan internal dan menyediakan metode-metode ini. Khususnya, mereka didukung didalam semua peramban dan Node.js.</p> 
+         <h2><a class="main__anchor" name="settimeout" href="settimeout-setinterval.html#settimeout">setTimeout</a></h2> 
+         <p>Sintaksnya:</p> 
+         <div id="ilmgi8osh2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let timerId = setTimeout(func|code, [delay], [arg1], [arg2], ...)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Parameters:</p> 
+         <dl> 
+          <dt> 
+           <code>func|code</code> 
+          </dt> 
+          <dd>
+            Fungsi atau sebuah string dari kode untuk dieksekusi. Biasanya, adalah sebuah fungsi. Untuk beberapa alasan, sebuah string dari kode bisa diberikan, tapi hal itu tidak direkomendasikan. 
+          </dd> 
+          <dt> 
+           <code>delay</code> 
+          </dt> 
+          <dd>
+            Penundaannya sebelum berjalan, didalam milidetik (1000 milidetik = 1 detik), secara default 0. 
+          </dd> 
+          <dt> 
+           <code>arg1</code>, 
+           <code>arg2</code>??? 
+          </dt> 
+          <dd>
+            Argumen-argumen untuk fungsinya (tidak didukung didalam IE9-). 
+          </dd> 
+         </dl> 
+         <p>Contoh, kode ini memanggil <code>sayHi()</code> setelah satu detik:</p> 
+         <div id="8kdktszohn" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi() {
+  alert('Hello');
+}
+
+setTimeout(sayHi, 1000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dengan argumen:</p> 
+         <div id="qet6mo2bmg" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi(phrase, who) {
+  alert( phrase + ', ' + who );
+}
+
+setTimeout(sayHi, 1000, "Hello", "John"); // Hello, John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika argumen pertama adalah sebuah string, maka Javascript akan membuatkan fungsi untuk itu.</p> 
+         <p>Jadi, seperti ini juga akan bekerja:</p> 
+         <div id="5t06uffihh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>setTimeout("alert('Hello')", 1000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tapi menggunakan string tidak direkomendasikan, lebih baik gunakan fungsi arrow, seperti ini:</p> 
+         <div id="eefp052xur" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>setTimeout(() =&gt; alert('Hello'), 1000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Berikan sebuah fungsi, tapi jangan dijalankan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Developer pemula terkadang membuat sebuah kesalahan dengan menambahkan kurung <code>()</code> setelah fungsinya:</p> 
+           <div id="xj3jdj4bfk" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// wrong!
+setTimeout(sayHi(), 1000);</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Itu tidak akan bekerja, karena <code>setTimeout</code> mengharapkan sebuah referensi kepada fungsi. Dan disini <code>sayHi()</code> akan menjalankan fungsinya, dan <em>hasil dari eksekusinya</em> akan diberikan kepada <code>setTimeout</code>. Didalam kasus kita hasil dari <code>sayHi()</code> adalah <code>undefined</code> (fungsinya tidak mengembalikan apapun), jadi tidak ada hal yang dijadwalkan.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="pembatalan-menggunakan-cleartimeout" href="settimeout-setinterval.html#pembatalan-menggunakan-cleartimeout">Pembatalan menggunakan clearTimeout</a></h3> 
+         <p>Pemanggilan <code>setTimeout</code> mengembalikan sebuah ???identifier waktu??? <code>timerId</code> yang bisa kita gunakan untuk membatalkan eksekusinya.</p> 
+         <p>Sintaks untuk membatalkan:</p> 
+         <div id="ayk33a7ex3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let timerId = setTimeout(...);
+clearTimeout(timerId);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di kode dibawah, kita menjadwalkan fungsinya dan membatalkannya (berubah pikiran). Sebagai hasilnya, tidak ada yang terjadi:</p> 
+         <div id="dewzoumk97" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let timerId = setTimeout(() =&gt; alert("never happens"), 1000);
+alert(timerId); // identifier waktu
+
+clearTimeout(timerId);
+alert(timerId); // identifier yang sama (tidak akan menjadi null setelah dibatalkan)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang bisa kita lihat dari keluaran <code>alert</code>, didalam peramban identifier timernya adalah sebuah angka. Didalam lingkungan pengembangan lainnya, identifiernya bisa saja sesuatu yang lain. Contoh, Node.js mengembalikan objek timer dengan metode tambahan.</p> 
+         <p>Lainnya, tidak terdapat spesifikasi universal untuk metode-metode ini, jadi tidak ada masalah.</p> 
+         <p>Untuk peramban, timer dideskripsikan didalam <a href="https://www.w3.org/TR/html5/webappapis.html#timers">bagian timer</a> dari standar HTML5.</p> 
+         <h2><a class="main__anchor" name="setinterval" href="settimeout-setinterval.html#setinterval">setInterval</a></h2> 
+         <p>Metode <code>setInterval</code> mempunyai sintaks yang sama seperti <code>setTimeout</code>:</p> 
+         <div id="ee7ldhwfus" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let timerId = setInterval(func|code, [delay], [arg1], [arg2], ...)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seluruh argumennya mempunyai arti yang sama. Tapi tidak seperti <code>setTimeout</code> fungsinya akan berjalan tidak sekali, tapi akan berjalan secara teratur dengan interval waktu yang diberikan.</p> 
+         <p>Untuk menghentikan pemanggilan selanjutnya, kita harus memanggil <code>clearInterval(timerId)</code>.</p> 
+         <p>Contoh berikut akan memperlihatkan pesan setiap 2 detik. Setelah 5 detik, keluarannya akan dihentikan:</p> 
+         <div id="qepgs0o3i" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// Ulangi dengan interval 2 detik
+let timerId = setInterval(() =&gt; alert('tick'), 2000);
+
+// setelah 5 detik berhenti
+setTimeout(() =&gt; { clearInterval(timerId); alert('stop'); }, 5000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Waktu terus berjalan sementara <code>alert</code> ditampilkan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Di kebanyakan peramban, termasuk Chrome dan Firefox penghitung waktu internal berlanjut ???berdetik??? selagi menampilkan <code>alert/confirm/prompt</code>.</p> 
+           <p>Jadi jika kamu menjalankan kode diatas dan tidak menyingkirkan jendela <code>alert</code> untuk beberapa saat, maka <code>alert</code> selanjutnya akan langsung muncul. Interval sebenarnya diantara alert lebih pendek dari 2 detik.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="settimeout-bercabang" href="settimeout-setinterval.html#settimeout-bercabang">setTimeout bercabang</a></h2> 
+         <p>Terdapat dua cara untuk menjalankan sesuatu secara terus-menerus.</p> 
+         <p>Satu adalah <code>setInterval</code>. Dan satunya lagi adalah <code>setTimeout</code> bercabang, seperti ini:</p> 
+         <div id="obxno0ays2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>/** daripada menggunakan:
+let timerId = setInterval(() =&gt; alert('tick'), 2000);
+*/
+
+let timerId = setTimeout(function tick() {
+  alert('tick');
+  timerId = setTimeout(tick, 2000); // (*)
+}, 2000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>setTimeout</code> diatas menjadwalkan pemanggilan selanjutnya tepat setelah akhir <code>(*)</code>.</p> 
+         <p><code>setTimeout</code> bercabang metode yang lebih fleksibel daripada <code>setInterval</code>. Dengan cara ini pemanggilan mungkun dapat dijadwalkan dengan interval yang berbeda, tergantung dari hasil sebelumnya.</p> 
+         <p>Contoh, kita perlu menulis sebuah service yang mengirim sebuah request kepada server setiap 5 detik untuk menanyakan data, tapi di kasus ini servernya sedang sibuk, maka intervalnya harus dinaikan menjadi 10, 20, 40 detik???</p> 
+         <p>Ini adalah pseukodenya:</p> 
+         <div id="u9n0b34ocy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let delay = 5000;
+
+let timerId = setTimeout(function request() {
+  ...send request...
+
+  if (request failed due to server overload) {
+    // interval dinaikan untuk pemanggilan selanjutnya
+    delay *= 2;
+  }
+
+  timerId = setTimeout(request, delay);
+
+}, delay);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan jika fungsi yang sudah kita jadwalkan ternyata membutuhkan sumber-daya yang besar, maka kita bisa mengukur waktu yang diabmbil oleh eksekusinya dan mengatur ulang eksekusi selanjutnya agar lebih cepat atau lebih lambat.</p> 
+         <p><strong><code>setTimeout</code> membolehkan untuk menyetel penundaan eksekusi-eksekusinya lebih presisi daripada <code>setInterval</code>.</strong></p> 
+         <p>Ayo kita bandingkan dua pecahan kode berikut. Yang pertama menggunakan <code>setInterval</code>:</p> 
+         <div id="alxvj64vdz" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let i = 1;
+setInterval(function() {
+  func(i++);
+}, 100);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Yang kedua menggunakan <code>setTimeout</code> bercabang:</p> 
+         <div id="2pqfkm535w" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let i = 1;
+setTimeout(function run() {
+  func(i++);
+  setTimeout(run, 100);
+}, 100);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk <code>setInterval</code> penjadwal internalnya akan berjalan <code>func(i++)</code> setiap 100ms:</p> 
+         <figure> 
+          <div class="image" style="width:566px"> 
+           <div class="image__ratio" style="padding-top:30.565371024734983%"></div> 
+           <object type="image/svg+xml" data="article/settimeout-setinterval/setinterval-interval.svg" width="566" height="173" class="image__image" data-use-theme> <img src="article/settimeout-setinterval/setinterval-interval.svg" alt="" width="566" height="173"> </object> 
+          </div> 
+         </figure> 
+         <p>Apakah kamu memperhatikannya?</p> 
+         <p><strong>penundaan sebenarnya diantara pemanggilan <code>func</code> pada <code>setInterval</code> lebih cepat daripada apa yang ada pada kodenya!</strong></p> 
+         <p>Itu adalah hal yang normal, karena waktu yang diambil oleh eksekusi <code>func</code> ???mengambil??? bagian dari intervalnya.</p> 
+         <p>Adalah hal yang mungkin jika eksekusi <code>func</code> ternyata lebih lama daripada yang kita harapkan dan memakan lebih dari 100ms.</p> 
+         <p>Didalam kasus ini mesinnya menunggu <code>func</code> untuk selesai, lalu memeriksa penjadwalnya dan jika waktunya sudah berakhir, maka akan <em>langsung</em> dieksekusi lagi.</p> 
+         <p>Didalam kasus yang jarang, jika fungsinya selalu mengeksekusi lebih lama daripada <code>penundaan</code> ms, maka pemanggilannya akan terjadi tanpa berhenti sama sekali.</p> 
+         <p>Dan ini adalah gambaran dari <code>setTimeoute</code> bercabang:</p> 
+         <figure> 
+          <div class="image" style="width:566px"> 
+           <div class="image__ratio" style="padding-top:32.332155477031804%"></div> 
+           <object type="image/svg+xml" data="article/settimeout-setinterval/settimeout-interval.svg" width="566" height="183" class="image__image" data-use-theme> <img src="article/settimeout-setinterval/settimeout-interval.svg" alt="" width="566" height="183"> </object> 
+          </div> 
+         </figure> 
+         <p><strong><code>setTimeout</code> bercabang menjamin penundaan yang tepar (disini 100ms).</strong></p> 
+         <p>Itu karena pemanggilan baru sudah direncanakan pada akhir dari pemanggilan sebelumnya.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Garbage collection and callback pada setInterval/setTimeout</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ketika sebuah fungsi dimasukan kedalam <code>setInterval/setTimeout</code>, sebuah referensi interval dibuat kedalamnya dan disimpan didalam penjadwal. Itu akan mencegah fungsinya dari pembuangan (dihilangkan dari memori), bahkan jika disana sudah tidak ada yang mereferensi kedalam fungsinya lagi.</p> 
+           <div id="44wjpm4kzu" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// fungsinya tetap berada di memori sampai penjadwalnya memanggil lagi
+setTimeout(function() {...}, 100);</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Untuk <code>setInterval</code> fungsinya akan tetap didalam memori sampai <code>clearInterval</code> dipanggil.</p> 
+           <p>Tidak terdapat efek-samping pada hal itu. Sebuah fungsi mereferensi lingkungan leksikal luar, jadi, selama itu masih ada, variabel luar pun akan tetap ada. Hal itu mungkin akan memakan memori daripada fungsinya sendiri. Jadi ketika kita tidak butuh fungsi yang sudah dijadwalkan lagi, akan lebih baik untuk dibatalkan/diberhentikan, bahkan jika itu sebuah kode yang sangat pendek/kecil.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="settimeout-dengan-penundaan-nol" href="settimeout-setinterval.html#settimeout-dengan-penundaan-nol">setTimeout dengan penundaan nol</a></h2> 
+         <p>Terdapat sebuah kasus spesial: <code>setTimeout(func, 0)</code>, atau hanya <code>setTimeout(func)</code>.</p> 
+         <p>Penjadwalan eksekusi dari <code>func</code> akan dilakukan secepat mungkin. Tapi penjadwal akan memanggilnya hanya setelah skrip yang sedang berjalan selesai dieksekusi.</p> 
+         <p>Jadi fungsinya dijadwalkan untuk berjalan ???tepat setelah??? skrip yang sedang berjalan.</p> 
+         <p>Contoh, dibawah akan mengeluarkan ???Hello???, lalu langsung ???World???:</p> 
+         <div id="2wpcqg084p" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>setTimeout(() =&gt; alert("World"));
+
+alert("Hello");</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada baris pertama ???akan memasukan pemanggilan kedalam urutan pemanggilan setelah 0ms???. Tapi penjadwal hanya akan ???memeriksa urutanya??? setelah skrip yang sedang berjalan selesai, jadi <code>"Hello"</code> adalah pertama, dan <code>"World"</code> ??? setelahnya.</p> 
+         <p>Juga terdapat kasus yang berhubungan dengan peramban, kita akan membahasnya didalam bab <a href="event-loop.html">Event loop: microtasks and macrotasks</a>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Penundaan dengan nol faktanya tidaklah nol (didalam peramban)</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Didalam peramban, terdapat sebuah batasan seberapa seringnya timer bercabang bisa berjalan. <a href="https://html.spec.whatwg.org/multipage/timers-and-user-prompts.html#timers">standar HTML5</a> mengatakan: ???setelah lima timer bercabang, intervalnya dipaksa untuk berjalan setidaknya 4 milidetik.???.</p> 
+           <p>Let???s demonstrate what it means with the example below. The <code>setTimeout</code> call in it re-schedules itself with zero delay. Each call remembers the real time from the previous one in the <code>times</code> array. What do the real delays look like? Let???s see: Ayo kita prakterkan apa artinya itu dengan contoh dibawah. Pemanggilan <code>setTimeout</code> menjadwalkan ulang dengan penundaan 0. Setiap pemanggilan mengingat waktu yang asli dari pemanggilan sebelumnya didalam array <code>times</code>. Seperti apa penundaan sesungguhnya terlihat? Lihat dibawah:</p> 
+           <div id="g6p1y5d0uy" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let start = Date.now();
+let times = [];
+
+setTimeout(function run() {
+  times.push(Date.now() - start); // mengingat penundaan dari pemanggilan sebelumnya
+
+  if (start + 100 &lt; Date.now()) alert(times); // tampilkan penundaanya setelah 100ms
+  else setTimeout(run); // atau akan dijadwalkan ulang
+});
+
+// contoh dari keluarannya:
+// 1,1,1,1,9,15,20,24,30,35,40,45,50,55,59,64,70,75,80,85,90,95,100</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Pertama timer akan berjalan secara langsung (seperti yang tertulis dalam spesifikasinya), dan lalu kita melihat <code>9, 15, 20, 24...</code>. Penundaan wajib 4+ms diantara pemanggilan akan berjalan.</p> 
+           <p>Hal yang sama akan terjadi jika kita menggunakan <code>setInterval</code> daripada <code>setTimeout</code>: <code>setInterval(f)</code> menjalankan <code>f</code> beberapa kali dengan tanpa delay, dan setelahnya dengan 4+ms delay.</p> 
+           <p>Batasan itu sudah ada sejak lama dan beberapa skrip mengandalkan hal itu, jadi itu ada untuk beberapa alasan.</p> 
+           <p>Untuk Javascript dibagian server, batasan itu tidaklah ada, dan disana terdapat cara lain untuk menjadwalkan sebuah pekerjaan yang asinkronus, seperti <a href="https://nodejs.org/api/timers.html">setImmediate</a> untuk Node.js. Jadi hal ini merupakan hal yang berada pada peramban.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="settimeout-setinterval.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li>Metode <code>setTimeout(func,delay, ...args)</code> dan <code>setInterval(func, delay, ...args)</code> mengijinkan kita untuk menjalankan fungsinya sekali atau terus menerus setelah <code>delay</code> milidetik.</li> 
+          <li>Untuk membatalkan eksekusinya, kita harus memanggil <code>clearTimeout/clearInterval</code> dengan nilai yang dikembalikan oleh <code>setTimeout/setInterval</code>.</li> 
+          <li>Pemanggilan <code>setTimeout</code> bercabang adalah alternatif yang lebih fleksibel dari <code>setInterval</code>, mengijinkan kita untuk menyetel waktu <em>diantara</em> eksekusinya dengan lebih presisi.</li> 
+          <li>Penjadwalan dengan delay 0 dengan <code>setTimeout(func, 0)</code> (sama seperti <code>setTimeout(func)</code>) digunakan untuk menjadwalkan pemanggilan ???secepat mungkin, tapi setelah skrip yang sedang berjalan selesai???.</li> 
+          <li>Peramban membatasi delay dengan minimal 5 atau lebih pada pemanggilan bercabang dari <code>setTimeout</code> atau dari <code>setInterval</code> (setelah pemanggilan kelima) menjadi 4ms. Hanyalah untuk alasan-alasan yang sudah lama.</li> 
+         </ul> 
+         <p>Perhatikan bahwa seluruh metode penjadwalan tidak <em>menjamin</em> delay yang tepat.</p> 
+         <p>Contoh, didalam peramban timer mungkin lebih lambat untuk beberapa alasan:</p> 
+         <ul> 
+          <li>CPU-nya sedang melakukan banyak pekerjaan.</li> 
+          <li>Ada tab peramban yang sedang berjalan dalam mode background.</li> 
+          <li>Laptopnya sedang menggunakan mode batre.</li> 
+         </ul> 
+         <p>Semua itu mungkin menaikan resolusi timernya (delay minimalnya) menjadi 300ms atau bahkan 1000ms tergantung perambannya dan performasi pada OS-nya.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="settimeout-setinterval.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="settimeout-setinterval.html#membuat-keluaran-setiap-detik" name="membuat-keluaran-setiap-detik">Membuat keluaran setiap detik</a></h3> 
+           <a class="task__open-link" href="task/output-numbers-100ms.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis sebuah fungsi <code>printNumbers(from, to)</code> yang mengeluarkan angka setiap detik, dimulai dari <code>from</code> dan berakhir sampai <code>to</code>.</p> 
+            <p>Buatlah dua varian solusinya.</p> 
+            <ol> 
+             <li>Menggunakan <code>setInterval</code>.</li> 
+             <li>Gunakan <code>setTimeout</code> bercabang.</li> 
+            </ol> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Using <code>setInterval</code>:</p> 
+              <div id="0fnj5rej1x" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function printNumbers(from, to) {
+  let current = from;
+
+  let timerId = setInterval(function() {
+    alert(current);
+    if (current == to) {
+      clearInterval(timerId);
+    }
+    current++;
+  }, 1000);
+}
+
+// penggunaan:
+printNumbers(5, 10);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Using nested <code>setTimeout</code>:</p> 
+              <div id="v97g2zjmha" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function printNumbers(from, to) {
+  let current = from;
+
+  setTimeout(function go() {
+    alert(current);
+    if (current &lt; to) {
+      setTimeout(go, 1000);
+    }
+    current++;
+  }, 1000);
+}
+
+// penggunaan:
+printNumbers(5, 10);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Perhatikan dikedua solusinya, disana terdapat penundaan awal sebelum keluaran pertamanya. Fungsinya dipanggil setelah <code>1000ms</code> saat pertama kali.</p> 
+              <p>Jika kita juga ingin fungsinya untuk berjalan langsung, maka kita bisa menambahkan pemanggilan di baris yang berbeda, seperti ini:</p> 
+              <div id="xb7552zva5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:11,&quot;end&quot;:11}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function printNumbers(from, to) {
+  let current = from;
+
+  function go() {
+    alert(current);
+    if (current == to) {
+      clearInterval(timerId);
+    }
+    current++;
+  }
+
+  go();
+  let timerId = setInterval(go, 1000);
+}
+
+printNumbers(5, 10);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="settimeout-setinterval.html#apa-yang-akan-ditampilkan-settimeout" name="apa-yang-akan-ditampilkan-settimeout">Apa yang akan ditampilkan setTimeout?</a></h3> 
+           <a class="task__open-link" href="task/settimeout-result.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Di kode dibawah disana terdapat pemanggilan <code>setTimeout</code> yang sudah terjadwal, lalu kalkulasi yang cukup berat berjalan, yang memakan waktu lebih dari 100ms untuk selesai.</p> 
+            <p>Kapankan fungsi yang sudah dijadwal akan berjalan?</p> 
+            <ol> 
+             <li>Setelah perulangannya.</li> 
+             <li>Sebelum perulangannya.</li> 
+             <li>Di awal dari perulangannya.</li> 
+            </ol> 
+            <p>Apakan yang akan <code>alert</code> tampilkan?</p> 
+            <div id="wcsqzh1gqr" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let i = 0;
+
+setTimeout(() =&gt; alert(i), 100); // ?
+
+// asumsikan waktu untuk mengeksekusi fungsi ini lebih dari 100ms
+for(let j = 0; j &lt; 100000000; j++) {
+  i++;
+}</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><code>setTimeout</code> apapun akan berjalan hanya setelah kode yang sedang berjalan saat ini telah selesai.</p> 
+              <p><code>i</code>nya akan menjadi yang terakhir: <code>100000000</code>.</p> 
+              <div id="l5zdj7z81i" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="settimeout-setinterval.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="settimeout-setinterval.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let i = 0;
+
+setTimeout(() =&gt; alert(i), 100); // 100000000
+
+// asumsikan waktu untuk mengeksekusi fungsi ini lebih dari 100ms
+for(let j = 0; j &lt; 100000000; j++) {
+  i++;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="new-function.html" data-tooltip="Sintaks &quot;new Function&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="call-apply-decorators.html" data-tooltip="Decorators dan forwarding, call/apply"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fsettimeout-setinterval" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fsettimeout-setinterval" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="advanced-functions.html">Penggunaan lanjutan fungsi</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="settimeout-setinterval.html#settimeout">setTimeout</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="settimeout-setinterval.html#setinterval">setInterval</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="settimeout-setinterval.html#settimeout-bercabang">setTimeout bercabang</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="settimeout-setinterval.html#settimeout-dengan-penundaan-nol">setTimeout dengan penundaan nol</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="settimeout-setinterval.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="settimeout-setinterval.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="settimeout-setinterval.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fsettimeout-setinterval" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fsettimeout-setinterval" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

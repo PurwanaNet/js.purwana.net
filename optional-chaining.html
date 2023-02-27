@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Optional chaining '?.'</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="optional-chaining.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Optional chaining '?.'"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Optional chaining '?.'"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="constructor-new.html"> 
+  <link rel="next" href="symbol.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Optional chaining '?.'"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Foptional-chaining" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Foptional-chaining" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="34" max="92" data-tooltip="Pelajaran 34 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="object-basics.html"><span>Objects: dasar-dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Objects: dasar-dasar","item":"https://id.javascript.info/object-basics"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 19 April 2021"> 
+          <div class="updated-at__content">
+            19 April 2021 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://ar.javascript.info/optional-chaining">????????</a>, 
+          <a href="https://javascript.info/optional-chaining">English</a>, 
+          <a href="https://es.javascript.info/optional-chaining">Espa??ol</a>, 
+          <a href="https://fa.javascript.info/optional-chaining">??????????</a>, 
+          <a href="https://fr.javascript.info/optional-chaining">Fran??ais</a>, 
+          <a href="https://it.javascript.info/optional-chaining">Italiano</a>, 
+          <a href="https://ja.javascript.info/optional-chaining">?????????</a>, 
+          <a href="https://ko.javascript.info/optional-chaining">?????????</a>, 
+          <a href="https://learn.javascript.ru/optional-chaining">??????????????</a>, 
+          <a href="https://uk.javascript.info/optional-chaining">????????????????????</a>, 
+          <a href="https://zh.javascript.info/optional-chaining">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Optional chaining '?.'</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Optional chaining '?.'"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tambahan baru-baru ini</span> 
+          </div> 
+          <div class="important__content">
+            Ini adalah tambahan terbaru untuk bahasa ini. Browser lama mungkin memerlukan polyfill. 
+          </div> 
+         </div> 
+         <p>The optional chaining <code>?.</code> is a safe way to access nested object properties, even if an intermediate property doesn???t exist.</p> 
+         <h2><a class="main__anchor" name="the-non-existing-property-problem" href="optional-chaining.html#the-non-existing-property-problem">The ???non-existing property??? problem</a></h2> 
+         <p>If you???ve just started to read the tutorial and learn JavaScript, maybe the problem hasn???t touched you yet, but it???s quite common.</p> 
+         <p>As an example, let???s say we have <code>user</code> objects that hold the information about our users.</p> 
+         <p>Most of our users have addresses in <code>user.address</code> property, with the street <code>user.address.street</code>, but some did not provide them.</p> 
+         <p>In such case, when we attempt to get <code>user.address.street</code>, and the user happens to be without an address, we get an error:</p> 
+         <div id="2auvrja2pe" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {}; // a user without "address" property
+
+alert(user.address.street); // Error!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>That???s the expected result. JavaScript works like this. As <code>user.address</code> is <code>undefined</code>, an attempt to get <code>user.address.street</code> fails with an error.</p> 
+         <p>In many practical cases we???d prefer to get <code>undefined</code> instead of an error here (meaning ???no street???).</p> 
+         <p>???And another example. In the web development, we can get an object that corresponds to a web page element using a special method call, such as <code>document.querySelector('.elem')</code>, and it returns <code>null</code> when there???s no such element.</p> 
+         <div id="gg7edyhuil" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// document.querySelector('.elem') is null if there's no element
+let html = document.querySelector('.elem').innerHTML; // error if it's null</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Once again, if the element doesn???t exist, we???ll get an error accessing <code>.innerHTML</code> of <code>null</code>. And in some cases, when the absence of the element is normal, we???d like to avoid the error and just accept <code>html = null</code> as the result.</p> 
+         <p>How can we do this?</p> 
+         <p>The obvious solution would be to check the value using <code>if</code> or the conditional operator <code>?</code>, before accessing its property, like this:</p> 
+         <div id="qykp364bj0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {};
+
+alert(user.address ? user.address.street : undefined);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>It works, there???s no error??? But it???s quite inelegant. As you can see, the <code>"user.address"</code> appears twice in the code. For more deeply nested properties, that becomes a problem as more repetitions are required.</p> 
+         <p>E.g. let???s try getting <code>user.address.street.name</code>.</p> 
+         <p>We need to check both <code>user.address</code> and <code>user.address.street</code>:</p> 
+         <div id="7en1yeo2pb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {}; // user has no address
+
+alert(user.address ? user.address.street ? user.address.street.name : null : null);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>That???s just awful, one may even have problems understanding such code.</p> 
+         <p>Don???t even care to, as there???s a better way to write it, using the <code>&amp;&amp;</code> operator:</p> 
+         <div id="0ugr8q8gsw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {}; // user has no address
+
+alert( user.address &amp;&amp; user.address.street &amp;&amp; user.address.street.name ); // undefined (no error)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>AND???ing the whole path to the property ensures that all components exist (if not, the evaluation stops), but also isn???t ideal.</p> 
+         <p>As you can see, property names are still duplicated in the code. E.g. in the code above, <code>user.address</code> appears three times.</p> 
+         <p>That???s why the optional chaining <code>?.</code> was added to the language. To solve this problem once and for all!</p> 
+         <h2><a class="main__anchor" name="optional-chaining" href="optional-chaining.html#optional-chaining">Optional chaining</a></h2> 
+         <p>The optional chaining <code>?.</code> stops the evaluation if the value before <code>?.</code> is <code>undefined</code> or <code>null</code> and returns <code>undefined</code>.</p> 
+         <p><strong>Further in this article, for brevity, we???ll be saying that something ???exists??? if it???s not <code>null</code> and not <code>undefined</code>.</strong></p> 
+         <p>In other words, <code>value?.prop</code>:</p> 
+         <ul> 
+          <li>works as <code>value.prop</code>, if <code>value</code> exists,</li> 
+          <li>otherwise (when <code>value</code> is <code>undefined/null</code>) it returns <code>undefined</code>.</li> 
+         </ul> 
+         <p>Here???s the safe way to access <code>user.address.street</code> using <code>?.</code>:</p> 
+         <div id="lr8vfapl6v" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {}; // user has no address
+
+alert( user?.address?.street ); // undefined (no error)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The code is short and clean, there???s no duplication at all.</p> 
+         <p>Reading the address with <code>user?.address</code> works even if <code>user</code> object doesn???t exist:</p> 
+         <div id="4m621fuldm" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = null;
+
+alert( user?.address ); // undefined
+alert( user?.address.street ); // undefined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Please note: the <code>?.</code> syntax makes optional the value before it, but not any further.</p> 
+         <p>E.g. in <code>user?.address.street.name</code> the <code>?.</code> allows <code>user</code> to safely be <code>null/undefined</code> (and returns <code>undefined</code> in that case), but that???s only for <code>user</code>. Further properties are accessed in a regular way. If we want some of them to be optional, then we???ll need to replace more <code>.</code> with <code>?.</code>.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Don???t overuse the optional chaining</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>We should use <code>?.</code> only where it???s ok that something doesn???t exist.</p> 
+           <p>For example, if according to our coding logic <code>user</code> object must exist, but <code>address</code> is optional, then we should write <code>user.address?.street</code>, but not <code>user?.address?.street</code>.</p> 
+           <p>So, if <code>user</code> happens to be undefined due to a mistake, we???ll see a programming error about it and fix it. Otherwise, coding errors can be silenced where not appropriate, and become more difficult to debug.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">The variable before <code>?.</code> must be declared</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>If there???s no variable <code>user</code> at all, then <code>user?.anything</code> triggers an error:</p> 
+           <div id="tcdxmu737x" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// ReferenceError: user is not defined
+user?.address;</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>The variable must be declared (e.g. <code>let/const/var user</code> or as a function parameter). The optional chaining works only for declared variables.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="short-circuiting" href="optional-chaining.html#short-circuiting">Short-circuiting</a></h2> 
+         <p>As it was said before, the <code>?.</code> immediately stops (???short-circuits???) the evaluation if the left part doesn???t exist.</p> 
+         <p>So, if there are any further function calls or side effects, they don???t occur.</p> 
+         <p>For instance:</p> 
+         <div id="qf3i3s4nqf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = null;
+let x = 0;
+
+user?.sayHi(x++); // no "sayHi", so the execution doesn't reach x++
+
+alert(x); // 0, value not incremented</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="other-variants" href="optional-chaining.html#other-variants">Other variants: ?.(), ?.[]</a></h2> 
+         <p>The optional chaining <code>?.</code> is not an operator, but a special syntax construct, that also works with functions and square brackets.</p> 
+         <p>For example, <code>?.()</code> is used to call a function that may not exist.</p> 
+         <p>In the code below, some of our users have <code>admin</code> method, and some don???t:</p> 
+         <div id="t6jzcs3w1j" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10},{&quot;start&quot;:8,&quot;end&quot;:8}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let userAdmin = {
+  admin() {
+    alert("I am admin");
+  }
+};
+
+let userGuest = {};
+
+userAdmin.admin?.(); // I am admin
+
+userGuest.admin?.(); // nothing (no such method)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Here, in both lines we first use the dot (<code>userAdmin.admin</code>) to get <code>admin</code> property, because we assume that the user object exists, so it???s safe read from it.</p> 
+         <p>Then <code>?.()</code> checks the left part: if the admin function exists, then it runs (that???s so for <code>userAdmin</code>). Otherwise (for <code>userGuest</code>) the evaluation stops without errors.</p> 
+         <p>The <code>?.[]</code> syntax also works, if we???d like to use brackets <code>[]</code> to access properties instead of dot <code>.</code>. Similar to previous cases, it allows to safely read a property from an object that may not exist.</p> 
+         <div id="l49i9yepp8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let key = "firstName";
+
+let user1 = {
+  firstName: "John"
+};
+
+let user2 = null;
+
+alert( user1?.[key] ); // John
+alert( user2?.[key] ); // undefined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Also we can use <code>?.</code> with <code>delete</code>:</p> 
+         <div id="xkm17ef3up" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>delete user?.name; // delete user.name if user exists</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">We can use <code>?.</code> for safe reading and deleting, but not writing</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>The optional chaining <code>?.</code> has no use at the left side of an assignment.</p> 
+           <p>For example:</p> 
+           <div id="5koj0kq1rf" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="optional-chaining.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="optional-chaining.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let user = null;
+
+user?.name = "John"; // Error, doesn't work
+// because it evaluates to undefined = "John"</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>It???s just not that smart.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="summary" href="optional-chaining.html#summary">Summary</a></h2> 
+         <p>The optional chaining <code>?.</code> syntax has three forms:</p> 
+         <ol> 
+          <li><code>obj?.prop</code> ??? returns <code>obj.prop</code> if <code>obj</code> exists, otherwise <code>undefined</code>.</li> 
+          <li><code>obj?.[prop]</code> ??? returns <code>obj[prop]</code> if <code>obj</code> exists, otherwise <code>undefined</code>.</li> 
+          <li><code>obj.method?.()</code> ??? calls <code>obj.method()</code> if <code>obj.method</code> exists, otherwise returns <code>undefined</code>.</li> 
+         </ol> 
+         <p>As we can see, all of them are straightforward and simple to use. The <code>?.</code> checks the left part for <code>null/undefined</code> and allows the evaluation to proceed if it???s not so.</p> 
+         <p>A chain of <code>?.</code> allows to safely access nested properties.</p> 
+         <p>Still, we should apply <code>?.</code> carefully, only where it???s acceptable that the left part doesn???t exist. So that it won???t hide programming errors from us, if they occur.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="constructor-new.html" data-tooltip="Konstruktor, operator &quot;new&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="symbol.html" data-tooltip="Tipe simbol"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Foptional-chaining" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Foptional-chaining" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-basics.html">Objects: dasar-dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="optional-chaining.html#the-non-existing-property-problem">The ???non-existing property??? problem</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="optional-chaining.html#optional-chaining">Optional chaining</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="optional-chaining.html#short-circuiting">Short-circuiting</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="optional-chaining.html#other-variants">Other variants: ?.(), ?.[]</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="optional-chaining.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="optional-chaining.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Foptional-chaining" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Foptional-chaining" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

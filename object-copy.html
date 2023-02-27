@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "de";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Referensi objek dan menyalinnya</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="object-copy.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Referensi objek dan menyalinnya"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Referensi objek dan menyalinnya"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="object.html"> 
+  <link rel="next" href="garbage-collection.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Referensi objek dan menyalinnya"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fobject-copy" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fobject-copy" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="30" max="92" data-tooltip="Pelajaran 30 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="object-basics.html"><span>Objects: dasar-dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Objects: dasar-dasar","item":"https://id.javascript.info/object-basics"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Referensi objek dan menyalinnya</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Referensi objek dan menyalinnya"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Salah satu perbedaan mendasar dari objek versus primitif adalah bahwa objek disimpan dan disalin ???dengan referensi???, sedangkan nilai primitif: string, angka, boolean, dll ??? selalu disalin ???sebagai nilai keseluruhan???.</p> 
+         <p>Itu mudah dipahami jika kita melihat sedikit ke belakang tentang apa yang terjadi saat kita menyalin sebuah nilai.</p> 
+         <p>Mari kita mulai dengan yang primitif, seperti string.</p> 
+         <p>Di sini kami memasukkan salinan <code>pesan</code> ke dalam<code>frase</code>:</p> 
+         <div id="owf5cdatw0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let message = "Hello!";
+let phrase = message;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebagai hasilnya kita punya dua variabel yang berdiri sendiri, dan keduanya menyimpan nilai string <code>"Hello!"</code>.</p> 
+         <figure> 
+          <div class="image" style="width:359px"> 
+           <div class="image__ratio" style="padding-top:39.83286908077994%"></div> 
+           <object type="image/svg+xml" data="article/object-copy/variable-copy-value.svg" width="359" height="143" class="image__image" data-use-theme> <img src="article/object-copy/variable-copy-value.svg" alt="" width="359" height="143"> </object> 
+          </div> 
+         </figure> 
+         <p>Hasil yang cukup jelas, bukan?</p> 
+         <p>Objek tidak seperti itu.</p> 
+         <p><strong>Sebuah variabel tidak menyimpan objek itu sendiri, akan tetapi ???disimpan didalam memori???, dengan kata lain ???mereferensi??? kepadanya (ke data didalam memori).</strong></p> 
+         <p>Mari kita lihat contoh variabel tersebut:</p> 
+         <div id="skdql60h68" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John"
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan ini bagaimana kita menyimpannya di dalam memory:</p> 
+         <figure> 
+          <div class="image" style="width:370px"> 
+           <div class="image__ratio" style="padding-top:67.29729729729729%"></div> 
+           <object type="image/svg+xml" data="article/object-copy/variable-contains-reference.svg" width="370" height="249" class="image__image" data-use-theme> <img src="article/object-copy/variable-contains-reference.svg" alt="" width="370" height="249"> </object> 
+          </div> 
+         </figure> 
+         <p>Objek disimpan di suatu tempat di memori (di sebelah kanan gambar), sedangkan variabel <code>user</code> (di sebelah kiri) memiliki" referensi "padanya.</p> 
+         <p>Kita mungkin menganggap variabel objek, seperti <code>pengguna</code>, seperti selembar kertas dengan alamat objek di atasnya.</p> 
+         <p>Saat kita melakukan tindakan dengan objek, misalnya: mengambil properti <code>user.name</code>, mesin JavaScript melihat apa yang ada di alamat itu dan melakukan operasi pada objek sebenarnya.</p> 
+         <p>Sekarang inilah mengapa itu penting.</p> 
+         <p><strong>Ketika sebuah variabel objek disalin ??? referensinya akan tersalin, objeknya tidak terduplikasi.</strong></p> 
+         <p>Contoh:</p> 
+         <div id="phvpuryw58" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = { name: "John" };
+
+let admin = user; // menyalin referensinya</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita sekarang punya dua variabel, masing-masing mereferensi ke objek yang sama:</p> 
+         <figure> 
+          <div class="image" style="width:599px"> 
+           <div class="image__ratio" style="padding-top:43.40567612687813%"></div> 
+           <object type="image/svg+xml" data="article/object-copy/variable-copy-reference.svg" width="599" height="260" class="image__image" data-use-theme> <img src="article/object-copy/variable-copy-reference.svg" alt="" width="599" height="260"> </object> 
+          </div> 
+         </figure> 
+         <p>Seperti yang Anda lihat, masih ada satu objek, sekarang dengan dua variabel yang mereferensikannya.</p> 
+         <p>Kita dapat menggunakan variabel apa saja untuk mengakses objek dan mengubah isinya:</p> 
+         <div id="k1kdis426v" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;cols&quot;:[{&quot;start&quot;:6,&quot;end&quot;:15}]},{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = { name: 'John' };
+
+let admin = user;
+
+admin.name = 'Pete'; // mengganti admin dengan menggunakan "referensi"
+
+alert(user.name); // 'Pete', perubahan akan terlihat pada "user"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seolah-olah kita memiliki lemari dengan dua kunci dan menggunakan salah satunya (admin) untuk masuk ke dalamnya dan membuat perubahan. Kemudian, jika nanti kita menggunakan kunci lain (pengguna), kita masih membuka lemari yang sama dan dapat mengakses konten yang diubah.</p> 
+         <h2><a class="main__anchor" name="perbandingan-dengan-referensi" href="object-copy.html#perbandingan-dengan-referensi">Perbandingan dengan referensi</a></h2> 
+         <p><strong>Dua objek adalah sama jika mereka objek yang sama.</strong></p> 
+         <p>Dibawah adalah dua variabel yang mereferensi ke objek yang sama, dengan demikian mereka sama:</p> 
+         <p>Contohnya, di sini a dan b mereferensikan objek yang sama, sehingga keduanya sama:</p> 
+         <div id="sr2n6txlyp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let a = {};
+let b = a; // menyalin referensi
+
+alert( a == b ); // true, kedua variabel mereferensi ke objek yang sama
+alert( a === b ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan dibawah adalah dua objek yang berdiri sendiri, tidaklah sama, walaupun keduanya kosong:</p> 
+         <div id="3gws20d84o" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let a = {};
+let b = {}; // dua objek yang berdiri sendiri
+
+alert( a == b ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk perbandingan seperti <code>obj1 &gt; obj2</code> atau untuk perbandingan dengan sebuah nilai primitif <code>obj == 5</code>, objek akan diubah dahulu menjadi primitif. Kita akan belajar bagaimana perubahan objek sebentar lagi, akan tetapi sebenarnya, perbandingan seperti itu muncul sangat jarang, biasanya hanya sebuah hasil dari kesalahan koding.</p> 
+         <h2><a class="main__anchor" name="cloning-and-merging-object-assign" href="object-copy.html#cloning-and-merging-object-assign">Penggandaan dan penggabungan, Object.assign</a></h2> 
+         <p>Jadi, menyalin sebuah variabel objek akan menciptakan satu lagi referensi kepada objek yang sama.</p> 
+         <p>Tapi bagaimana jika kita butuh untuk menduplikasi objek? Membuat salinan yang berdiri sendiri, menggandakan atau meng-klon?</p> 
+         <p>Hal itu juga bisa dilakukan, tapi sedikit lebih sulit, karena tidak ada method bawaan untuk hal itu di javascript. Sebenarnya, hal itu juga jarang dibutuhkan. Di kebanyakan waktu, menyalin referensinya sudah cukup.</p> 
+         <p>Tapi bagaimana jika kita benar-benar ingin hal itu, lalu kita membutuhkan untuk menciptakan sebuah objek dan mengulangi struktur dari objek yang sama dengan meng-iterasi propertinya dan menyalin mereka didalam level primitif.</p> 
+         <p>Seperti ini:</p> 
+         <div id="vfgbhijhce" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30
+};
+
+let clone = {}; // objek kosong baru
+
+// salin semua properti user kedalamnya
+for (let key in user) {
+  clone[key] = user[key];
+}
+
+// sekarang clone adalah sebuah objek yang berdiri sendiri dengan konten yang sama
+clone.name = "Pete"; // ubah data didalamnya
+
+alert( user.name ); // masih John didalam objek yang asli</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Juga kita bisa menggunakan method <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign</a> untuk itu.</p> 
+         <p>sintaksnya adalah:</p> 
+         <div id="53ugidyiqm" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>Object.assign(dest, [src1, src2, src3...])</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <ul> 
+          <li>Argumen pertama <code>dest</code> adalah sebuah objek target.</li> 
+          <li>Argumen selanjutnya <code>src1, ..., srcN</code> (bisa sebanyak yang dibutuhkan) adalah objek sumber.</li> 
+          <li>Itu akan menyalin properti dari seluruh objek sumber <code>src1, ..., srcN</code> kedalam target <code>dest</code>. Dengan kata lain, properti dari semua argumen dimulai dari argumen kedua akan disalin kedalam object pertama.</li> 
+          <li>Setelah pemanggilan akan mengembalikan <code>dest</code>.</li> 
+         </ul> 
+         <p>Contoh, kita bisa menggunakan untuk menggabungkan beberapa objek menjadi satu:</p> 
+         <div id="lqwgv6ivcs" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = { name: "John" };
+
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+
+// menyalin seluruh properti dari permission1 dan permission2 kedalam user
+Object.assign(user, permissions1, permissions2);
+
+// sekarang user = { name: "John", canView: true, canEdit: true }</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika nama dari properti yang disali sudah ada, propertinya akan ditimpa:</p> 
+         <div id="s4cegtkvbo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = { name: "John" };
+
+Object.assign(user, { name: "Pete" });
+
+alert(user.name); // sekarang user = { name: "Pete" }</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa menggunakan <code>Object.assign</code> untuk mengganti perulangan <code>for...in</code> untuk penggandaan yang sederhana.</p> 
+         <div id="y76as2hs0g" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30
+};
+
+let clone = Object.assign({}, user);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kode diatas akan menyalin seluruh properti dari <code>user</code> kedalam objek yang kosong dan mengembalikan/me-return hasilnya.</p> 
+         <p>Ada juga metode lain untuk mengkloning objek, mis. menggunakan <a href="rest-parameters-spread.html">sintaksis spread</a> <code>clone = {...user}</code>, dibahas nanti dalam tutorial.</p> 
+         <h2><a class="main__anchor" name="nested-cloning" href="object-copy.html#nested-cloning">Nested cloning</a></h2> 
+         <p>Sampai sekarang kita telah berasumsi bahwa seluruh properti dari <code>user</code> adalah primitif. Tapi properti bisa di referensi ke objek lainnya. Apa yang harus dilakukan dengan mereka?</p> 
+         <p>Like this:</p> 
+         <div id="ai518ikik4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+alert( user.sizes.height ); // 182</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Now it???s not enough to copy <code>clone.sizes = user.sizes</code>, because the <code>user.sizes</code> is an object, it will be copied by reference. So <code>clone</code> and <code>user</code> will share the same sizes: Sekarang hal itu tidak cukup untuk menyalin <code>clone.sizes = user.sizes</code>, karena <code>user.sizes</code> adalah sebuah objek, itu akan tersalin secara referensi. Jadi <code>clone</code> dan <code>user</code> akan berbagi objek yang sama:</p> 
+         <p>Like this:</p> 
+         <div id="vxf6m2oet2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-copy.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+let clone = Object.assign({}, user);
+
+alert( user.sizes === clone.sizes ); // true, objek yang sama
+
+// user dan clone akan berbagi objek yang sama
+user.sizes.width++;       // ganti properti dari satu tempat
+alert(clone.sizes.width); // 51, melihat hasilnya ditempat yang lain</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk membenarkan hal itu, kita harus menggunakan perulangan kloning yang memeriksa setip nilai dari <code>user[key]</code> dan, jika itu adalah sebuah objek, lalu duplikasi strukturnya juga. Hal itu dinamakan dengan ???deep cloning???.</p> 
+         <p>We can use recursion to implement it. Or, to not reinvent the wheel, take an existing implementation, for instance <a href="https://lodash.com/docs#cloneDeep">_.cloneDeep(obj)</a> from the JavaScript library <a href="https://lodash.com">lodash</a>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Const objects can be modified</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>An important side effect of storing objects as references is that an object declared as <code>const</code> <em>can</em> be modified.</p> 
+           <p>For instance:</p> 
+           <div id="l14f5kspqz" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="object-copy.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="object-copy.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>const user = {
+  name: "John"
+};
+
+user.name = "Pete"; // (*)
+
+alert(user.name); // Pete</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Sepertinya baris <code>(*)</code> akan menyebabkan kesalahan, tetapi sebenarnya tidak. Nilai dari <code>user</code> adalah konstan, itu harus selalu mereferensikan objek yang sama, tetapi properti dari objek tersebut bebas untuk berubah.</p> 
+           <p>Dengan kata lain, <code>const user</code> memberikan kesalahan hanya jika kita mencoba menyetel<code>user = ...</code>secara keseluruhan.</p> 
+           <p>yang berarti, jika kita benar-benar perlu membuat properti objek konstan, itu juga mungkin, tetapi menggunakan metode yang sama sekali berbeda. Kita akan membahasnya di bab &lt;info: property-descriptors&gt;.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="object-copy.html#ringkasan">Ringkasan</a></h2> 
+         <p>objek dibuat dan disalin dengan menggunakan referensi. Dengan kata lain, sebuah variable menyimpan bukanlah ???nilai objek???, tapi sebuah ???referensi??? (address/alamat di memori) untuk nilainya. Jadi menyalin sebuah variabel atau memindahkannya sebagai fungsi argumen akan menyalin referensinya, bukan objeknya.</p> 
+         <p>Semua operasi yang disalin dengan menggunakan referensi (seperti menambah/menghapus properti) dilakukan didalam satu objek yang sama.</p> 
+         <p>Untuk membuat ???salinan asli??? (kloning) kita dapat menggunakan <code>Object.assign</code> untuk apa yang disebut ???shallow copy???(objek bersarang disalin dengan referensi) atau fungsi"deep cloning", seperti <a href="https://lodash.com/docs#cloneDeep">_.cloneDeep (obj)</a>.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="object.html" data-tooltip="Objek"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="garbage-collection.html" data-tooltip="Pengumpulan sampah (_Garbage collection_)"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fobject-copy" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fobject-copy" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-basics.html">Objects: dasar-dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-copy.html#perbandingan-dengan-referensi">Perbandingan dengan referensi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-copy.html#cloning-and-merging-object-assign">Penggandaan dan penggabungan, Object.assign</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-copy.html#nested-cloning">Nested cloning</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-copy.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-copy.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fobject-copy" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fobject-copy" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

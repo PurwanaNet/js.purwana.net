@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pengumpulan sampah (_Garbage collection_)</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="garbage-collection.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pengumpulan sampah (_Garbage collection_)"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pengumpulan sampah (_Garbage collection_)"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="object-copy.html"> 
+  <link rel="next" href="object-methods.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pengumpulan sampah (_Garbage collection_)"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fgarbage-collection" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fgarbage-collection" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="31" max="92" data-tooltip="Pelajaran 31 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="object-basics.html"><span>Objects: dasar-dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Objects: dasar-dasar","item":"https://id.javascript.info/object-basics"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pengumpulan sampah (_Garbage collection_)</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pengumpulan sampah (_Garbage collection_)"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Manajemen memori di JavaScript dilakukan secara otomatis dan tak terlihat oleh kita. Kita membuat <em>primitive</em>, objek, fungsi??? Semua yang membutuhkan memori.</p> 
+         <p>Apa yang terjadi ketika sesuatu yang telah kita buat tersebut sudah tidak diperlukan? Bagaimana <em>engine</em> JavaScript menemukan dan membersihkannya?</p> 
+         <h2><a class="main__anchor" name="keterjangkauan-reachability" href="garbage-collection.html#keterjangkauan-reachability">Keterjangkauan (<em>Reachability</em>)</a></h2> 
+         <p>Konsep utama manajemen memori di JavaScript ialah <em>keterjangkauan</em>.</p> 
+         <p>Sederhananya, sebuah nilai yang ???terjangkau??? adalah mereka yang masih dapat diakses atau dapat digunakan. Mereka dapat dipastikan tersimpan di memori.</p> 
+         <ol> 
+          <li> <p>Ada sekumpulan nilai-nilai yang terjangkau secara inheren, yang tak dapat dihapus untuk alasan yang jelas.</p> <p>Contohnya:</p> 
+           <ul> 
+            <li>Variabel lokal dan parameter-parameter dari fungsi (yang di eksekusi) saat ini.</li> 
+            <li>Variabel-variabel dan parameter-parameter dari fungsi-fungsi lain yang terkait dengan rantai panggilan bersarang saat ini.</li> 
+            <li>Variabel-variabel global.</li> 
+            <li>(ada beberapa hal lain, yang internal juga)</li> 
+           </ul> <p>Nilai-nilai tadi disebut <em>roots</em>.</p> </li> 
+          <li> <p>Nilai lainnya dianggap terjangkau jika dapat dijangkau dari sebuah <em>root</em> melalui sebuah rujukkan atau rantai rujukkan.</p> <p>Contoh, jika terdapat sebuah objek didalam global variabel, dan objek tersebut memiliki sebuah properti yang mereferensi objek lain, objek itu dianggap dapat dijangkau. Dan referensinya juga bisa dijangkau. Contoh lengkap dibawah ini.</p> </li> 
+         </ol> 
+         <p>Ada sebuah <em>background process</em> di <em>engine</em> JavaScript yang disebut <a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">garbage collector</a>. Ia mengamati seluruh objek dan menyingkirkan semua yang sudah tak terjangkau.</p> 
+         <h2><a class="main__anchor" name="contoh-sederhana" href="garbage-collection.html#contoh-sederhana">Contoh Sederhana</a></h2> 
+         <p>Berikut adalah contoh paling sederhana:</p> 
+         <div id="yzie0c1ciy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// user memiliki rujukkan terhadap objek
+let user = {
+  name: "John"
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:144px"> 
+           <div class="image__ratio" style="padding-top:104.16666666666667%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/memory-user-john.svg" width="144" height="150" class="image__image" data-use-theme> <img src="article/garbage-collection/memory-user-john.svg" alt="" width="144" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Tanda panah disini menggambarkan sebuah rujukkan objek. Variabel global <code>"user"</code> merujuk objek <code>{name: "John"}</code> (kita sebut John supaya singkat). <em>Property</em> <code>"name"</code> dari objek John menyimpan sebuah <em>primitive</em>, jadi itu disematkan di dalam objek.</p> 
+         <p>Jika nilai dari <code>user</code> ditimpa, maka rujukkannya hilang:</p> 
+         <div id="uo48a9fh90" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>user = null;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:225px"> 
+           <div class="image__ratio" style="padding-top:70.66666666666667%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/memory-user-john-lost.svg" width="225" height="159" class="image__image" data-use-theme> <img src="article/garbage-collection/memory-user-john-lost.svg" alt="" width="225" height="159"> </object> 
+          </div> 
+         </figure> 
+         <p>Sekarang John menjadi tak terjangkau. Tak ada cara untuk mengaksesnya, tak ada rujukkan terhadapnya. <em>Garbage collector</em> akan membuang data tersebut and membebaskan memori.</p> 
+         <h2><a class="main__anchor" name="dua-rujukkan" href="garbage-collection.html#dua-rujukkan">Dua rujukkan</a></h2> 
+         <p>Sekarang bayangkan kita menyalin rujukkan dari <code>user</code> ke <code>admin</code>:</p> 
+         <div id="e0pslxyv21" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// user memiliki rujukkan terhadap objek
+let user = {
+  name: "John"
+};
+
+let admin = user;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:144px"> 
+           <div class="image__ratio" style="padding-top:110.41666666666667%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/memory-user-john-admin.svg" width="144" height="159" class="image__image" data-use-theme> <img src="article/garbage-collection/memory-user-john-admin.svg" alt="" width="144" height="159"> </object> 
+          </div> 
+         </figure> 
+         <p>Sekarang jika kita melakukan hal yang sama:</p> 
+         <div id="1vtjh5l0ci" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>user = null;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Maka objek ???John??? tersebut masih bisa dijangkau lewat variabel global <code>admin</code>, jadi masih ada di memori. Jika kita menimpa <code>admin</code> juga, barulah dapat dihilangkan.</p> 
+         <h2><a class="main__anchor" name="objek-objek-yang-saling-terkait" href="garbage-collection.html#objek-objek-yang-saling-terkait">Objek-objek yang saling terkait</a></h2> 
+         <p>Sekarang contoh yang lebih kompleks. Keluarga:</p> 
+         <div id="4zs897sc16" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function marry(man, woman) {
+  woman.husband = man;
+  man.wife = woman;
+
+  return {
+    father: man,
+    mother: woman
+  }
+}
+
+let family = marry({
+  name: "John"
+}, {
+  name: "Ann"
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fungsi <code>marry</code> ???mengawinkan??? dua objek dengan memberikan keduanya rujukkan satu sama lain dan mengembalikan sebuah objek baru yang berisikan kedua objek tersebut.</p> 
+         <p>Hasil struktur memorinya ialah :</p> 
+         <figure> 
+          <div class="image" style="width:337px"> 
+           <div class="image__ratio" style="padding-top:60.534124629080125%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/family.svg" width="337" height="204" class="image__image" data-use-theme> <img src="article/garbage-collection/family.svg" alt="" width="337" height="204"> </object> 
+          </div> 
+         </figure> 
+         <p>Disini, semua objek terjangkau.</p> 
+         <p>Sekarang mari hapus dua rujukkan:</p> 
+         <div id="ufzlmphfmg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>delete family.father;
+delete family.mother.husband;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:337px"> 
+           <div class="image__ratio" style="padding-top:60.534124629080125%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/family-delete-refs.svg" width="337" height="204" class="image__image" data-use-theme> <img src="article/garbage-collection/family-delete-refs.svg" alt="" width="337" height="204"> </object> 
+          </div> 
+         </figure> 
+         <p>Tak cukup hanya dengan menghapus salah satu dari dua rujukkan tersebut, karena semua objek masih bisa dijangkau.</p> 
+         <p>Tetapi jika kita menghapus keduanya, maka dapat kita lihat bahwa John tak lagi memiliki objek yang merujukkannya:</p> 
+         <figure> 
+          <div class="image" style="width:399px"> 
+           <div class="image__ratio" style="padding-top:56.390977443609025%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/family-no-father.svg" width="399" height="225" class="image__image" data-use-theme> <img src="article/garbage-collection/family-no-father.svg" alt="" width="399" height="225"> </object> 
+          </div> 
+         </figure> 
+         <p>Rujukkan keluar (<em>outgoing reference</em>) tidak masalah. Hanya rujukkan masuk (<em>incoming reference</em>) yang dapat membuat sebuah objek terjangkau. Jadi, sekarang John tak terjangkau dan akan dihapus dari memori bersama semua datanya yang juga tak dapat diakses.</p> 
+         <p>Setelah <em>garbage collection</em>:</p> 
+         <figure> 
+          <div class="image" style="width:144px"> 
+           <div class="image__ratio" style="padding-top:156.25%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/family-no-father-2.svg" width="144" height="225" class="image__image" data-use-theme> <img src="article/garbage-collection/family-no-father-2.svg" alt="" width="144" height="225"> </object> 
+          </div> 
+         </figure> 
+         <h2><a class="main__anchor" name="pulau-tak-terjangkau" href="garbage-collection.html#pulau-tak-terjangkau">Pulau tak terjangkau</a></h2> 
+         <p>Mungkin saja satu kumpulan (pulau) objek yang saling tertaut menjadi tak terjangkau dan dihapus dari memori.</p> 
+         <p>Objeknya sama seperti diatas. Kemudian:</p> 
+         <div id="1fyixyssan" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>family = null;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Gambaran <em>in-memory</em>-nya menjadi:</p> 
+         <figure> 
+          <div class="image" style="width:420px"> 
+           <div class="image__ratio" style="padding-top:66.42857142857143%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/family-no-family.svg" width="420" height="279" class="image__image" data-use-theme> <img src="article/garbage-collection/family-no-family.svg" alt="" width="420" height="279"> </object> 
+          </div> 
+         </figure> 
+         <p>Contoh ini menunjukkan bagaimana pentingnya konsep keterjangkauan (<em>reachability</em>).</p> 
+         <p>Sudah jelas bahwa John dan Ann masih tertaut, keduanya memiliki rujukkan masuk. Tapi itu saja tak cukup.</p> 
+         <p>Objek <code>"family"</code> diatas telah menjadi tak terhubung dengan <em>root</em>, tak ada lagi rujukkan terhadapnya, sehingga keseluruhan pulau kumpulan objek tersebut menjadi tak terjangkau dan akan dihapus.</p> 
+         <h2><a class="main__anchor" name="algoritma-internal" href="garbage-collection.html#algoritma-internal">Algoritma internal</a></h2> 
+         <p>Algoritma <em>garbage collection</em> dasar disebut <em>???mark-and-sweep???</em>.</p> 
+         <p>Langkah <em>???garbage collection???</em> berikut dilakukan secara teratur:</p> 
+         <ul> 
+          <li><em>Garbage collector</em> mengambil objek <em>roots</em> dan ???menandai??? (<em>marks</em> / mengingat) mereka.</li> 
+          <li>Kemudian ia mendatangi dan ???menandai??? semua rujukkannya.</li> 
+          <li>Kemudian ia mendatangi objek yang telah ditandai tersebut dan menandai rujukkan <em>mereka</em>. Semua objek yang telah dikunjungi akan diingat, agar nantinya tidak mengunjungi objek yang sama dua kali.</li> 
+          <li>???Dan seterusnya sampai semua rujukkan yang dapat dijangkau (dari <em>roots</em>) telah dikunjungi.</li> 
+          <li>Semua objek kecuali yang ditandai akan dihapus.</li> 
+         </ul> 
+         <p>Contohnya, semisal kita memiliki struktur objek seperti berikut:</p> 
+         <figure> 
+          <div class="image" style="width:463px"> 
+           <div class="image__ratio" style="padding-top:44.06047516198704%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/garbage-collection-1.svg" width="463" height="204" class="image__image" data-use-theme> <img src="article/garbage-collection/garbage-collection-1.svg" alt="" width="463" height="204"> </object> 
+          </div> 
+         </figure> 
+         <p>Dapat kita lihat dengan jelas ???pulau tak terjangkau??? di sisi kanan. Sekarang mari kita lihat bagaimana <em>???mark-and-sweep??? garbage collector</em> berurusan dengannya.</p> 
+         <p>Langkah pertama menandai <em>roots</em>-nya:</p> 
+         <figure> 
+          <div class="image" style="width:463px"> 
+           <div class="image__ratio" style="padding-top:44.06047516198704%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/garbage-collection-2.svg" width="463" height="204" class="image__image" data-use-theme> <img src="article/garbage-collection/garbage-collection-2.svg" alt="" width="463" height="204"> </object> 
+          </div> 
+         </figure> 
+         <p>Kemudian rujukkannya ditandai:</p> 
+         <figure> 
+          <div class="image" style="width:463px"> 
+           <div class="image__ratio" style="padding-top:44.06047516198704%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/garbage-collection-3.svg" width="463" height="204" class="image__image" data-use-theme> <img src="article/garbage-collection/garbage-collection-3.svg" alt="" width="463" height="204"> </object> 
+          </div> 
+         </figure> 
+         <p>???Dan kemudian rujukkan dalamnya juga, jika masih ada:</p> 
+         <figure> 
+          <div class="image" style="width:463px"> 
+           <div class="image__ratio" style="padding-top:44.06047516198704%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/garbage-collection-4.svg" width="463" height="204" class="image__image" data-use-theme> <img src="article/garbage-collection/garbage-collection-4.svg" alt="" width="463" height="204"> </object> 
+          </div> 
+         </figure> 
+         <p>Sekarang objek-objek yang tak dapat dikunjungi selama proses berlangsung dianggap tak terjangkau (<em>unreachable</em>) dan akan dihapus:</p> 
+         <figure> 
+          <div class="image" style="width:463px"> 
+           <div class="image__ratio" style="padding-top:44.06047516198704%"></div> 
+           <object type="image/svg+xml" data="article/garbage-collection/garbage-collection-5.svg" width="463" height="204" class="image__image" data-use-theme> <img src="article/garbage-collection/garbage-collection-5.svg" alt="" width="463" height="204"> </object> 
+          </div> 
+         </figure> 
+         <p>Kita juga bisa membayangkan proses tersebut sebagai menumpahkan ember cat dari <em>roots</em>, yang mengalir ke semua rujukkan dan menandai semua objek yang terjangkau. Yang tidak tertandai akan dihapus.</p> 
+         <p>Itu merupakan konsep dari bagaimana cara kerja <em>garbage collection</em>. <em>Engines</em> JavaScript menerapkan banyak optimisasi untuk membuatnya berjalan lebih cepat dan tanpa mempengaruhi eksekusi.</p> 
+         <p>Beberapa optimisasi:</p> 
+         <ul> 
+          <li><strong>Generational collection</strong> ??? objek-objek dibagi kedalam dua set: ???yang baru??? dan ???yang lama???. Kebanyakan objek muncul, melakukan tugasnya dan mati dengan cepat, mereka dapat dibersihkan secara agresif. Mereka yang bertahan cukup lama, akan menjadi ???yang lama??? dan tak akan sering diperiksa.</li> 
+          <li><strong>Incremental collection</strong> ??? Jika terdapat banyak objek-objek, dan kita mencoba menapaki sambil menandai keseluruhan set objek sekaligus, itu dapat memakan waktu dan menimbulkan keterlambatan yang terlihat dalam eksekusi. Jadi <em>engine</em> akan mencoba untuk memecah proses <em>garbage collection</em> menjadi bagian-bagian kecil. Kemudian bagian-bagian kecil tersebut akan dieksekusi satu-persatu, secara terpisah. Itu memerlukan pencatatan ekstra diantara mereka untuk melacak perubahan, tetapi jadinya kta hanya mengalami keterlambatan kecil yang banyak daripada satuan yang besar.</li> 
+          <li><strong>Idle-time collection</strong> ??? <em>garbage collector</em> akan mencoba untuk jalan hanya ketika <em>CPU</em> sedang <em>idle</em>, untuk mengurangi kemungkinan efek pada eksekusi.</li> 
+         </ul> 
+         <p>Terdapat optimisasi-optimisasi dan tipe-tipe lain dari algoritma <em>garbage collection</em>. Sebesar apapun keinginan untuk menjelaskannya disini, harus kutahan, karena <em>engines</em> yang berbeda mengimplementasikan teknik dan <em>tweaks</em> yang berbeda pula. Dan, yang lebih penting, hal-hal tersebut akan berubah seiring dengan pengembangan <em>engine</em>, jadi mempelajarinya lebih dalam ???di awal???, tanpa kebutuhan yang berarti mungkin akan sia-sia. Kecuali, tentu saja, jika itu merupakan murni masalah ketertarikan, maka ada beberapa tautan untukmu dibawah.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="garbage-collection.html#ringkasan">Ringkasan</a></h2> 
+         <p>Hal utama yang perlu diketahui:</p> 
+         <ul> 
+          <li>Pengumpulan sampah (<em>Garbage collection</em>) dilakukan secara otomatis. Kita tidak bisa memaksa ataupun mencegahnya.</li> 
+          <li>Objek-objek dipertahankan dalam memori selagi mereka terjangkau (<em>reachable</em>).</li> 
+          <li>Menjadi yang dirujuk tidak sama dengan menjadi terjangkau (dari sebuah <em>root</em>): sekumpulan objek yang saling terkait dapat menjadi tak terjangkau sebagai keseluruhan.</li> 
+         </ul> 
+         <p><em>Engine</em> modern mengimplementasikan algoritma <em>garbage collection</em> canggih (<em>advance</em>).</p> 
+         <p>Buku ???The Garbage Collection Handbook: The Art of Automatic Memory Management??? (R. Jones et al) mencakup beberapanya.</p> 
+         <p>Jika kamu familiar dengan pemrograman <em>low-level</em>, informasi mendalam tentang <em>garbage collector</em> V8 terdapat pada artikel <a href="http://jayconrod.com/posts/55/a-tour-of-v8-garbage-collection">A tour of V8: Garbage Collection</a>.</p> 
+         <p><a href="https://v8.dev/">V8 blog</a> juga mempublikasikan artikel-artikel tentang ubahan-ubahan dalam manajemen memori dari waktu ke waktu. Tentu saja, untuk belajar proses <em>garbage collection</em>, kamu lebih baik mempersiapkan diri dengan belajar tentang <em>internals</em> V8 secara umum dan membaca blog <a href="http://mrale.ph">Vyacheslav Egorov</a> yang merupakan salah seorang <em>engineer</em> V8. Saya bilang: ???V8???, karena merupakan yang paling komprehensif di <em>cover</em> oleh artikel-artikel di internet. Untuk <em>engine</em> lainnya, pendekatannya kebanyakan mirip-mirip, tetapi <em>garbage collection</em> berbeda dalam banyak aspek.</p> 
+         <p>Pengetahuan mendalam mengenai <em>engines</em> itu bagus ketika membutuhkan optimisasi <em>low-level</em>. Tapi akan lebih bijak untuk merencanakan itu sebagai langkah selanjutnya setelah kamu akrab dengan bahasanya (JavaScript).</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="object-copy.html" data-tooltip="Referensi objek dan menyalinnya"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="object-methods.html" data-tooltip="Metode objek, &quot;this&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fgarbage-collection" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fgarbage-collection" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-basics.html">Objects: dasar-dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="garbage-collection.html#keterjangkauan-reachability">Keterjangkauan (<em>Reachability</em>)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="garbage-collection.html#contoh-sederhana">Contoh Sederhana</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="garbage-collection.html#dua-rujukkan">Dua rujukkan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="garbage-collection.html#objek-objek-yang-saling-terkait">Objek-objek yang saling terkait</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="garbage-collection.html#pulau-tak-terjangkau">Pulau tak terjangkau</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="garbage-collection.html#algoritma-internal">Algoritma internal</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="garbage-collection.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="garbage-collection.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fgarbage-collection" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fgarbage-collection" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

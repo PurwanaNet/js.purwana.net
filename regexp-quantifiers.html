@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Quantifiers +, *, ? and {n}</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="regexp-quantifiers.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Quantifiers +, *, ? and {n}"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Quantifiers +, *, ? and {n}"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="regexp-character-sets-and-ranges.html"> 
+  <link rel="next" href="regexp-greedy-and-lazy.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Quantifiers +, *, ? and {n}"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-quantifiers" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-quantifiers" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="9" max="17" data-tooltip="Pelajaran 9 dari 17"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="regular-expressions.html"><span>Regular expressions</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Regular expressions","item":"https://id.javascript.info/regular-expressions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 29 Februari 2020"> 
+          <div class="updated-at__content">
+            29 Februari 2020 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://javascript.info/regexp-quantifiers">English</a>, 
+          <a href="https://es.javascript.info/regexp-quantifiers">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/regexp-quantifiers">Fran??ais</a>, 
+          <a href="https://it.javascript.info/regexp-quantifiers">Italiano</a>, 
+          <a href="https://ja.javascript.info/regexp-quantifiers">?????????</a>, 
+          <a href="https://learn.javascript.ru/regexp-quantifiers">??????????????</a>, 
+          <a href="https://uk.javascript.info/regexp-quantifiers">????????????????????</a>, 
+          <a href="https://zh.javascript.info/regexp-quantifiers">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Quantifiers +, *, ? and {n}</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Quantifiers +, *, ? and {n}"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Let???s say we have a string like <code>+7(903)-123-45-67</code> and want to find all numbers in it. But unlike before, we are interested not in single digits, but full numbers: <code>7, 903, 123, 45, 67</code>.</p> 
+         <p>A number is a sequence of 1 or more digits <code class="pattern">\d</code>. To mark how many we need, we can append a <em>quantifier</em>.</p> 
+         <h2><a class="main__anchor" name="quantity-n" href="regexp-quantifiers.html#quantity-n">Quantity {n}</a></h2> 
+         <p>The simplest quantifier is a number in curly braces: <code class="pattern">{n}</code>.</p> 
+         <p>A quantifier is appended to a character (or a character class, or a <code>[...]</code> set etc) and specifies how many we need.</p> 
+         <p>It has a few advanced forms, let???s see examples:</p> 
+         <dl> 
+          <dt>
+            The exact count: 
+           <code class="pattern">{5}</code> 
+          </dt> 
+          <dd> 
+           <p><code class="pattern">\d{5}</code> denotes exactly 5 digits, the same as <code class="pattern">\d\d\d\d\d</code>.</p> 
+           <p>The example below looks for a 5-digit number:</p> 
+           <div id="luaf0f172g" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "I'm 12345 years old".match(/\d{5}/) ); //  "12345"</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>We can add <code>\b</code> to exclude longer numbers: <code class="pattern">\b\d{5}\b</code>.</p> 
+          </dd> 
+          <dt>
+            The range: 
+           <code class="pattern">{3,5}</code>, match 3-5 times 
+          </dt> 
+          <dd> 
+           <p>To find numbers from 3 to 5 digits we can put the limits into curly braces: <code class="pattern">\d{3,5}</code></p> 
+           <div id="9bs7q87yya" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "I'm not 12, but 1234 years old".match(/\d{3,5}/) ); // "1234"</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>We can omit the upper limit.</p> 
+           <p>Then a regexp <code class="pattern">\d{3,}</code> looks for sequences of digits of length <code>3</code> or more:</p> 
+           <div id="k0kicfoy7x" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "I'm not 12, but 345678 years old".match(/\d{3,}/) ); // "345678"</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+         </dl> 
+         <p>Let???s return to the string <code>+7(903)-123-45-67</code>.</p> 
+         <p>A number is a sequence of one or more digits in a row. So the regexp is <code class="pattern">\d{1,}</code>:</p> 
+         <div id="44fcblpcyj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "+7(903)-123-45-67";
+
+let numbers = str.match(/\d{1,}/g);
+
+alert(numbers); // 7,903,123,45,67</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="shorthands" href="regexp-quantifiers.html#shorthands">Shorthands</a></h2> 
+         <p>There are shorthands for most used quantifiers:</p> 
+         <dl> 
+          <dt> 
+           <code class="pattern">+</code> 
+          </dt> 
+          <dd> 
+           <p>Means ???one or more???, the same as <code class="pattern">{1,}</code>.</p> 
+           <p>For instance, <code class="pattern">\d+</code> looks for numbers:</p> 
+           <div id="oxul8m3xz3" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "+7(903)-123-45-67";
+
+alert( str.match(/\d+/g) ); // 7,903,123,45,67</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code class="pattern">?</code> 
+          </dt> 
+          <dd> 
+           <p>Means ???zero or one???, the same as <code class="pattern">{0,1}</code>. In other words, it makes the symbol optional.</p> 
+           <p>For instance, the pattern <code class="pattern">ou?r</code> looks for <code class="match">o</code> followed by zero or one <code class="match">u</code>, and then <code class="match">r</code>.</p> 
+           <p>So, <code class="pattern">colou?r</code> finds both <code class="match">color</code> and <code class="match">colour</code>:</p> 
+           <div id="s6n8m4kawf" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "Should I write color or colour?";
+
+alert( str.match(/colou?r/g) ); // color, colour</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code class="pattern">*</code> 
+          </dt> 
+          <dd> 
+           <p>Means ???zero or more???, the same as <code class="pattern">{0,}</code>. That is, the character may repeat any times or be absent.</p> 
+           <p>For example, <code class="pattern">\d0*</code> looks for a digit followed by any number of zeroes (may be many or none):</p> 
+           <div id="144m042yx6" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "100 10 1".match(/\d0*/g) ); // 100, 10, 1</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Compare it with <code class="pattern">+</code> (one or more):</p> 
+           <div id="p58ply9tgz" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "100 10 1".match(/\d0+/g) ); // 100, 10
+// 1 not matched, as 0+ requires at least one zero</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+         </dl> 
+         <h2><a class="main__anchor" name="more-examples" href="regexp-quantifiers.html#more-examples">More examples</a></h2> 
+         <p>Quantifiers are used very often. They serve as the main ???building block??? of complex regular expressions, so let???s see more examples.</p> 
+         <p><strong>Regexp for decimal fractions (a number with a floating point): <code class="pattern">\d+\.\d+</code></strong></p> 
+         <p>In action:</p> 
+         <div id="fq2l0if5q3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "0 1 12.345 7890".match(/\d+\.\d+/g) ); // 12.345</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><strong>Regexp for an ???opening HTML-tag without attributes???, such as <code>&lt;span&gt;</code> or <code>&lt;p&gt;</code>.</strong></p> 
+         <ol> 
+          <li> <p>The simplest one: <code class="pattern">/&lt;[a-z]+&gt;/i</code></p> 
+           <div id="wior9trrai" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "&lt;body&gt; ... &lt;/body&gt;".match(/&lt;[a-z]+&gt;/gi) ); // &lt;body&gt;</code></pre> 
+             </div> 
+            </div> 
+           </div><p>The regexp looks for character <code class="pattern">'&lt;'</code> followed by one or more Latin letters, and then <code class="pattern">'&gt;'</code>.</p> </li> 
+          <li> <p>Improved: <code class="pattern">/&lt;[a-z][a-z0-9]*&gt;/i</code></p> <p>According to the standard, HTML tag name may have a digit at any position except the first one, like <code>&lt;h1&gt;</code>.</p> 
+           <div id="prgmchoo1d" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "&lt;h1&gt;Hi!&lt;/h1&gt;".match(/&lt;[a-z][a-z0-9]*&gt;/gi) ); // &lt;h1&gt;</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <p><strong>Regexp ???opening or closing HTML-tag without attributes???: <code class="pattern">/&lt;\/?[a-z][a-z0-9]*&gt;/i</code></strong></p> 
+         <p>We added an optional slash <code class="pattern">/?</code> near the beginning of the pattern. Had to escape it with a backslash, otherwise JavaScript would think it is the pattern end.</p> 
+         <div id="amm1aocngj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "&lt;h1&gt;Hi!&lt;/h1&gt;".match(/&lt;\/?[a-z][a-z0-9]*&gt;/gi) ); // &lt;h1&gt;, &lt;/h1&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">To make a regexp more precise, we often need make it more complex</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>We can see one common rule in these examples: the more precise is the regular expression ??? the longer and more complex it is.</p> 
+           <p>For instance, for HTML tags we could use a simpler regexp: <code class="pattern">&lt;\w+&gt;</code>. But as HTML has stricter restrictions for a tag name, <code class="pattern">&lt;[a-z][a-z0-9]*&gt;</code> is more reliable.</p> 
+           <p>Can we use <code class="pattern">&lt;\w+&gt;</code> or we need <code class="pattern">&lt;[a-z][a-z0-9]*&gt;</code>?</p> 
+           <p>In real life both variants are acceptable. Depends on how tolerant we can be to ???extra??? matches and whether it???s difficult or not to remove them from the result by other means.</p> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="regexp-quantifiers.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="regexp-quantifiers.html#how-to-find-an-ellipsis" name="how-to-find-an-ellipsis">How to find an ellipsis "..." ?</a></h3> 
+           <a class="task__open-link" href="task/find-text-manydots.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Create a regexp to find ellipsis: 3 (or more?) dots in a row.</p> 
+            <p>Check it:</p> 
+            <div id="00ckphl8qg" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let regexp = /your regexp/g;
+alert( "Hello!... How goes?.....".match(regexp) ); // ..., .....</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Solution:</p> 
+              <div id="spjd9a574j" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let regexp = /\.{3,}/g;
+alert( "Hello!... How goes?.....".match(regexp) ); // ..., .....</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Please note that the dot is a special character, so we have to escape it and insert as <code>\.</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="regexp-quantifiers.html#regexp-for-html-colors" name="regexp-for-html-colors">Regexp for HTML colors</a></h3> 
+           <a class="task__open-link" href="task/find-html-colors-6hex.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Create a regexp to search HTML-colors written as <code>#ABCDEF</code>: first <code>#</code> and then 6 hexadecimal characters.</p> 
+            <p>An example of use:</p> 
+            <div id="k49q4zsqxe" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let regexp = /...your regexp.../
+
+let str = "color:#121212; background-color:#AA00ef bad-colors:f#fddee #fd2 #12345678";
+
+alert( str.match(regexp) )  // #121212,#AA00ef</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>P.S. In this task we do not need other color formats like <code>#123</code> or <code>rgb(1,2,3)</code> etc.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>We need to look for <code>#</code> followed by 6 hexadecimal characters.</p> 
+              <p>A hexadecimal character can be described as <code class="pattern">[0-9a-fA-F]</code>. Or if we use the <code class="pattern">i</code> flag, then just <code class="pattern">[0-9a-f]</code>.</p> 
+              <p>Then we can look for 6 of them using the quantifier <code class="pattern">{6}</code>.</p> 
+              <p>As a result, we have the regexp: <code class="pattern">/#[a-f0-9]{6}/gi</code>.</p> 
+              <div id="ygy8h4b8d2" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let regexp = /#[a-f0-9]{6}/gi;
+
+let str = "color:#121212; background-color:#AA00ef bad-colors:f#fddee #fd2"
+
+alert( str.match(regexp) );  // #121212,#AA00ef</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>The problem is that it finds the color in longer sequences:</p> 
+              <div id="wgasuyj84r" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( "#12345678".match( /#[a-f0-9]{6}/gi ) ) // #123456</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>To fix that, we can add <code class="pattern">\b</code> to the end:</p> 
+              <div id="ucsuqd0xx2" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-quantifiers.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-quantifiers.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// color
+alert( "#123456".match( /#[a-f0-9]{6}\b/gi ) ); // #123456
+
+// not a color
+alert( "#12345678".match( /#[a-f0-9]{6}\b/gi ) ); // null</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="regexp-character-sets-and-ranges.html" data-tooltip="Sets and ranges [...]"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="regexp-greedy-and-lazy.html" data-tooltip="Greedy and lazy quantifiers"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-quantifiers" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-quantifiers" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regular-expressions.html">Regular expressions</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-quantifiers.html#quantity-n">Quantity {n}</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-quantifiers.html#shorthands">Shorthands</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-quantifiers.html#more-examples">More examples</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-quantifiers.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-quantifiers.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-quantifiers" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fregexp-quantifiers" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

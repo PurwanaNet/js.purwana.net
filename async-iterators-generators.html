@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "fr";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Iterasi dan generator asinkron</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="async-iterators-generators.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Iterasi dan generator asinkron"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Iterasi dan generator asinkron"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="generators.html"> 
+  <link rel="next" href="modules.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <script>
+  async function* fetchCommits(repo) {
+    let url = `https://api.github.com/repos/${repo}/commits`;
+
+    while (url) {
+      const response = await fetch(url, {
+        headers: { 'User-Agent': 'Our script' }, // github membutuhkan header user-agent
+      });
+
+      const body = await response.json(); // mem-parsing respons sebagai JSON (senarai commits)
+
+      // URL halaman berikutnya ada di header, ekstrak itu
+      let nextPage = response.headers.get('Link').match(/<(.*?)>; rel="next"/);
+      nextPage = nextPage?.[1];
+
+      url = nextPage;
+
+      // menghasilkan commit satu per satu, setelah selesai - ambil url halaman baru
+      for (let commit of body) {
+        yield commit;
+      }
+    }
+  }
+</script> 
+  <meta property="og:title" content="Iterasi dan generator asinkron"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fasync-iterators-generators" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fasync-iterators-generators" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="84" max="92" data-tooltip="Pelajaran 84 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="generators-iterators.html"><span>Generator, iterasi lanjutan</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Generator, iterasi lanjutan","item":"https://id.javascript.info/generators-iterators"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 19 April 2021"> 
+          <div class="updated-at__content">
+            19 April 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Iterasi dan generator asinkron</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Iterasi dan generator asinkron"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Iterasi asinkron memungkinkan kita melakukan iterasi atas data yang datang secara asinkron, sesuai permintaan. Seperti, misalnya, ketika kita mengunduh sesuatu yang sepotong demi sepotong melalui jaringan. Dan generator asinkron membuatnya lebih nyaman.</p> 
+         <p>Mari kita lihat contoh sederhana terlebih dahulu, untuk memahami sintaksnya, lalu meninjau kasus penggunaan kehidupan nyata.</p> 
+         <h2><a class="main__anchor" name="ingat-iterable" href="async-iterators-generators.html#ingat-iterable">Ingat <em>iterable</em></a></h2> 
+         <p>Mari kita ingat topik tentang <em>iterable</em>.</p> 
+         <p>Idenya adalah kita memiliki objek, seperti <code>range</code> di sini:</p> 
+         <div id="9ibwkemz6k" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5,
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Dan kita ingin menggunakan perulangan <code>for..of</code> di atasnya, seperti <code>for(value of range)</code>, untuk mendapatkan nilai dari <code>1</code> hingga <code>5</code>.</p> 
+         <p>Dengan kata lain, kita ingin menambahkan kemampuan iterasi ke objek.</p> 
+         <p>Itu bisa diimplementasikan menggunakan metode khusus dengan nama <code>Symbol.iterator</code>:</p> 
+         <ul> 
+          <li>Metode ini dipanggil oleh konstruksi <code>for..of</code> ketika perulangan dimulai, dan harus mengembalikan objek dengan metode <code>next</code>.</li> 
+          <li>Untuk setiap iterasi, metode <code>next()</code> dipanggil untuk nilai berikutnya.</li> 
+          <li><code>next()</code> harus mengembalikan nilai dalam bentuk <code>{done: true/false, value:&lt;loop value&gt;}</code>, di mana <code>done:true</code> berarti akhir dari perulangan.</li> 
+         </ul> 
+         <p>Berikut implementasi untuk <code>range</code> <em>iterable</em>:</p> 
+         <div id="hr86jitu2f" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:9},{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5,
+
+  [Symbol.iterator]() { // dipanggil sekali, di awal for..of
+    return {
+      current: this.from,
+      last: this.to,
+
+      next() { // memanggil setiap iterasi, untuk mendapatkan nilai berikutnya
+        if (this.current &lt;= this.last) {
+          return { done: false, value: this.current++ };
+        } else {
+          return { done: true };
+        }
+      }
+    };
+  }
+};
+
+for(let value of range) {
+  alert(value); // 1 lalu 2, lalu 3, lalu 4, lalu 5
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika ada yang tidak jelas, silakan kunjungi bab <a href="iterable.html">Iterables / Bisa di iterasi</a>, ini memberikan semua detail tentang iterable biasa.</p> 
+         <h2><a class="main__anchor" name="iterable-asinkron" href="async-iterators-generators.html#iterable-asinkron"><em>Iterable</em> asinkron</a></h2> 
+         <p>Iterasi asinkron diperlukan jika nilai muncul secara asinkron: setelah <code>setTimeout</code> atau jenis penundaan lainnya.</p> 
+         <p>Kasus yang paling umum adalah objek perlu membuat permintaan jaringan untuk memberikan nilai berikutnya, kita akan melihat contoh kehidupan nyata nanti.</p> 
+         <p>Untuk membuat sebuah objek dapat diulang secara asinkron:</p> 
+         <ol> 
+          <li>Gunakan <code>Symbol.asyncIterator</code> sebagai ganti <code>Symbol.iterator</code>.</li> 
+          <li>Metode <code>next()</code> harus mengembalikan sebuah <em>promise</em> (untuk dipenuhi dengan nilai berikutnya). 
+           <ul> 
+            <li>Kata kunci <code>async</code> menanganinya, kita cukup membuat <code>async next()</code>.</li> 
+           </ul> </li> 
+          <li>Untuk melakukan iterasi pada objek seperti itu, kita harus menggunakan perulangan <code>for await (let item of iterable)</code>. 
+           <ul> 
+            <li>Perhatikan kata <code>await</code>.</li> 
+           </ul> </li> 
+         </ol> 
+         <p>Sebagai contoh awal, mari kita buat objek <code>range</code> yang dapat diulang, serupa seperti sebelumnya, tetapi sekarang akan mengembalikan nilai secara asinkron, satu per detik.</p> 
+         <p>Yang perlu kita lakukan adalah melakukan beberapa penggantian pada kode di atas:</p> 
+         <div id="p2lt9ytj0f" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:26,&quot;end&quot;:28},{&quot;start&quot;:11,&quot;end&quot;:12},{&quot;start&quot;:9,&quot;end&quot;:9},{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5,
+
+  [Symbol.asyncIterator]() { // (1)
+    return {
+      current: this.from,
+      last: this.to,
+
+      async next() { // (2)
+
+        // catatan: kita bisa menggunakan "await" di dalam async next:
+        await new Promise(resolve =&gt; setTimeout(resolve, 1000)); // (3)
+
+        if (this.current &lt;= this.last) {
+          return { done: false, value: this.current++ };
+        } else {
+          return { done: true };
+        }
+      }
+    };
+  }
+};
+
+(async () =&gt; {
+
+  for await (let value of range) { // (4)
+    alert(value); // 1,2,3,4,5
+  }
+
+})()</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang bisa kita lihat, strukturnya mirip dengan iterator biasa:</p> 
+         <ol> 
+          <li>Untuk membuat sebuah objek asinkron <em>iterable</em>, itu harus memiliki metode <code>Symbol.asyncIterator</code> <code>(1)</code>.</li> 
+          <li>Metode ini harus mengembalikan objek dengan metode <code>next()</code> mengembalikan <em>promise</em> <code>(2)</code>.</li> 
+          <li>Metode <code>next()</code> tidak harus menjadi <code>async</code>, ini mungkin metode biasa yang mengembalikan sebuah <em>promise</em>, tetapi <code>async</code> memungkinkan kita untuk menggunakan <code>await</code>, jadi itu mudah. Disini kita hanya menunda sebentar <code>(3)</code>.</li> 
+          <li>Untuk iterasi, kita menggunakan <code>for await(let value of range)</code> <code>(4)</code>, yaitu menambahkan ???await??? setelah ???for???. Ini memanggil <code>range[Symbol.asyncIterator]()</code> sekali, dan kemudian <code>next()</code> untuk nilai.</li> 
+         </ol> 
+         <p>Berikut tabel kecil dengan perbedaannya:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th></th> 
+            <th>Iterator</th> 
+            <th>Iterator Asinkron</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td>Metode objek untuk menyediakan iterator</td> 
+            <td><code>Symbol.iterator</code></td> 
+            <td><code>Symbol.asyncIterator</code></td> 
+           </tr> 
+           <tr> 
+            <td>Nilai kembali <code>next()</code> adalah</td> 
+            <td>nilai apapun</td> 
+            <td><code>Promise</code></td> 
+           </tr> 
+           <tr> 
+            <td>Untuk mengulang, gunakan</td> 
+            <td><code>for..of</code></td> 
+            <td><code>for await..of</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Sintaks <em>spread</em> <code>...</code> tidak bekerja secara asinkron</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Fitur yang membutuhkan iterator sinkron dan reguler, tidak berfungsi dengan yang asinkron.</p> 
+           <p>Misalnya, sintaks <em>spread</em> tidak akan berfungsi:</p> 
+           <div id="e6d0cangdy" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert([...range]); // Error, no Symbol.iterator (tidak ada Symbol.iterator)</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Itu wajar, karena mengharapkan untuk menemukan <code>Symbol.iterator</code>, bukan <code>Symbol.asyncIterator</code>.</p> 
+           <p>Ini juga kasus untuk <code>for..of</code>: sintaks tanpa <code>await</code> membutuhkan<code>Symbol.iterator</code>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ingat-generator" href="async-iterators-generators.html#ingat-generator">Ingat generator</a></h2> 
+         <p>Sekarang mari kita ingat generator, karena memungkinkan untuk membuat kode iterasi jauh lebih pendek. Seringkali, ketika kita ingin membuat <em>iterable</em>, kita akan menggunakan generator.</p> 
+         <p>Untuk kesederhanaan semata, menghilangkan beberapa hal penting, mereka adalah ???fungsi yang menghasilkan nilai???. Mereka dijelaskan secara rinci di bab [] (info:generators).</p> 
+         <p>Generator diberi label dengan <code>function*</code> (catat permulaannya) dan gunakan <code>yield</code> untuk menghasilkan nilai, kemudian kita dapat menggunakan <code>for..of</code> untuk mengulanginya.</p> 
+         <p>Contoh ini menghasilkan urutan nilai dari <code>start</code> hingga <code>end</code>:</p> 
+         <div id="kyyd6w4mbl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence(start, end) {
+  for (let i = start; i &lt;= end; i++) {
+    yield i;
+  }
+}
+
+for(let value of generateSequence(1, 5)) {
+  alert(value); // 1, lalu 2, lalu 3, lalu 4, lalu 5
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang telah kita ketahui, untuk membuat sebuah objek menjadi <em>iterable</em>, kita harus menambahkan <code>Symbol.iterator</code> padanya.</p> 
+         <div id="cp3vwgossb" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5,
+  [Symbol.iterator]() {
+    return &lt;objek dengan next untuk membuat range iterable&gt;
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Praktik umum untuk <code>Symbol.iterator</code> adalah mengembalikan generator, ini membuat kode lebih pendek, seperti yang kamu lihat:</p> 
+         <div id="qw0o9nmzp4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5,
+
+  *[Symbol.iterator]() { // singkatan untuk [Symbol.iterator]: function*()
+    for(let value = this.from; value &lt;= this.to; value++) {
+      yield value;
+    }
+  }
+};
+
+for(let value of range) {
+  alert(value); // 1, lalu 2, lalu 3, lalu 4, lalu 5
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Silakan lihat bab <a href="generators.html">Generators</a> jika kamu ingin lebih jelasnya.</p> 
+         <p>Di generator biasa kita tidak bisa menggunakan <code>await</code>. Semua nilai harus datang secara sinkron, seperti yang diharuskan oleh konstruksi <code>for..of</code>.</p> 
+         <p>Bagaimana jika kita ingin menghasilkan nilai secara asinkron? Dari permintaan jaringan, misalnya.</p> 
+         <p>Mari beralih ke generator asinkron untuk memungkinkannya.</p> 
+         <h2><a class="main__anchor" name="generator-asinkron-akhirnya" href="async-iterators-generators.html#generator-asinkron-akhirnya">Generator asinkron (akhirnya)</a></h2> 
+         <p>Untuk sebagian besar aplikasi praktis, ketika kita ingin membuat objek yang menghasilkan urutan nilai secara asinkron, kita dapat menggunakan generator asinkron.</p> 
+         <p>Sintaksnya sederhana: tambahkan <code>function*</code> dengan <code>async</code>. Itu membuat generator asinkron.</p> 
+         <p>Dan kemudian gunakan <code>for await (...)</code> untuk mengulanginya, seperti ini:</p> 
+         <div id="45ezlmgkie" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;cols&quot;:[{&quot;start&quot;:6,&quot;end&quot;:11}]},{&quot;start&quot;:4,&quot;end&quot;:5},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:5}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function* generateSequence(start, end) {
+
+  for (let i = start; i &lt;= end; i++) {
+
+    // Wow, can use await!
+    await new Promise(resolve =&gt; setTimeout(resolve, 1000));
+
+    yield i;
+  }
+
+}
+
+(async () =&gt; {
+
+  let generator = generateSequence(1, 5);
+  for await (let value of generator) {
+    alert(value); // 1, lalu 2, lalu 3, lalu 4, lalu 5 (dengan penundaan antaranya)
+  }
+
+})();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Karena generatornya asinkron, kita bisa menggunakan <code>await</code> di dalamnya, mengandalkan <em>promise</em>, melakukan permintaan jaringan, dan sebagainya.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Perbedaan didalamnya</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Secara teknis, jika kamu adalah pembaca tingkat lanjut yang mengingat detail tentang generator, ada perbedaan internal.</p> 
+           <p>Untuk generator asinkron, metode <code>generator.next()</code> adalah asinkron, yang mengembalikan <em>promise</em>.</p> 
+           <p>Dalam generator biasa kita akan menggunakan <code>result = generator.next()</code> untuk mendapatkan nilai. Dalam generator asinkron, kita harus menambahkan <code>await</code>, seperti ini:</p> 
+           <div id="j566extmrt" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>result = await generator.next(); // result = {value: ..., done: true/false}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Itulah mengapa generator asinkron bekerja dengan <code>for await...of</code>.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="rentang-iterable-asinkron" href="async-iterators-generators.html#rentang-iterable-asinkron">Rentang <em>iterable</em> asinkron</a></h3> 
+         <p>Generator biasa dapat digunakan sebagai <code>Symbol.iterator</code> untuk mempersingkat kode iterasi.</p> 
+         <p>Serupa dengan itu, generator asinkron dapat digunakan sebagai <code>Symbol.asyncIterator</code> untuk mengimplementasikan iterasi asinkron.</p> 
+         <p>Misalnya, kita dapat membuat objek <code>range</code> menghasilkan nilai secara asinkron, sekali per detik, dengan mengganti <code>Symbol.iterator</code> sinkron dengan <code>Symbol.asyncIterator</code> asinkron:</p> 
+         <div id="rx8lunk1wv" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:18,&quot;cols&quot;:[{&quot;start&quot;:6,&quot;end&quot;:11}]},{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5,
+
+  // baris ini sama dengan [Symbol.asyncIterator]: async function*() {
+  async *[Symbol.asyncIterator]() {
+    for(let value = this.from; value &lt;= this.to; value++) {
+
+      // buat jeda di antara value, tunggu sesuatu
+      await new Promise(resolve =&gt; setTimeout(resolve, 1000));
+
+      yield value;
+    }
+  }
+};
+
+(async () =&gt; {
+
+  for await (let value of range) {
+    alert(value); // 1, lalu 2, lalu 3, lalu 4, lalu 5
+  }
+
+})();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang <em>value</em> datang dengan jeda 1 detik di antara mereka.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tolong dicatat:</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Secara teknis, kita bisa menambahkan <code>Symbol.iterator</code> dan <code>Symbol.asyncIterator</code> ke objek, jadi keduanya secara sinkron (<code>for..of</code>) dan asinkron (<code>for await..of</code>) <em>iterable</em>.</p> 
+           <p>Namun dalam praktiknya, itu akan menjadi hal yang aneh untuk dilakukan.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="contoh-kehidupan-nyata-paginated-data" href="async-iterators-generators.html#contoh-kehidupan-nyata-paginated-data">Contoh kehidupan nyata: <em>paginated</em> data</a></h2> 
+         <p>Sejauh ini kita telah melihat contoh-contoh dasar, untuk mendapatkan pemahaman. Sekarang mari kita tinjau kasus penggunaan kehidupan nyata.</p> 
+         <p>Ada banyak layanan daring yang memberikan <em>paginated</em> data. Misalnya, saat kita membutuhkan daftar pengguna, permintaan mengembalikan jumlah yang telah ditentukan sebelumnya (misalnya 100 pengguna) ??? ???satu halaman???, dan memberikan URL ke halaman berikutnya.</p> 
+         <p>Pola ini sangat umum. Ini bukan tentang pengguna, tetapi tentang apa saja.</p> 
+         <p>Misalnya, GitHub memungkinkan kita untuk mengambil <em>commits</em> dengan cara yang sama, <em>paginated</em>:</p> 
+         <ul> 
+          <li>Kita harus membuat permintaan untuk <code>fetch</code> dalam formulir <code>https://api.github.com/repos/&lt;repo&gt;/commits</code>.</li> 
+          <li>Ini merespons dengan JSON 30 <em>commits</em>, dan juga menyediakan tautan ke halaman berikutnya di tajuk <code>Link</code>.</li> 
+          <li>Lalu kita bisa menggunakan tautan itu untuk permintaan berikutnya, untuk mendapatkan lebih banyak <em>commits</em>, dan seterusnya.</li> 
+         </ul> 
+         <p>Untuk kode kita, kita ingin memiliki cara yang lebih sederhana untuk mendapatkan <em>commits</em>.</p> 
+         <p>Mari buat fungsi <code>fetchCommits(repo)</code> yang mendapatkan <em>commits</em> untuk kita, membuat permintaan kapan pun diperlukan. Dan biarkan peduli tentang semua hal penomoran halaman. Bagi kita ini akan menjadi iterasi asinkron sederhana <code>for await..of</code>.</p> 
+         <p>Jadi penggunaannya akan seperti ini:</p> 
+         <div id="fugnpkb2g8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>for await (let commit of fetchCommits('username/repository')) {
+  // proses commit
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Berikut fungsi tersebut, diimplementasikan sebagai generator asinkron:</p> 
+         <div id="r8vwolcvxh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function* fetchCommits(repo) {
+  let url = `https://api.github.com/repos/${repo}/commits`;
+
+  while (url) {
+    const response = await fetch(url, {
+      // (1)
+      headers: { 'User-Agent': 'Our script' }, // github membutuhkan header user-agent
+    });
+
+    const body = await response.json(); // (2) respon adalah JSON (senarai commits)
+
+    // (3) URL halaman berikutnya ada di header, ekstrak itu
+    let nextPage = response.headers.get('Link').match(/&lt;(.*?)&gt;; rel="next"/);
+    nextPage = nextPage?.[1];
+
+    url = nextPage;
+
+    for (let commit of body) {
+      // (4) menghasilkan commit satu per satu, sampai halaman berakhir
+      yield commit;
+    }
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Penjelasan lebih lanjut tentang cara kerjanya:</p> 
+         <ol> 
+          <li> <p>Kita menggunakan metode peramban <a href="fetch.html">fetch</a> untuk mengunduh <em>commits</em>.</p> 
+           <ul> 
+            <li>URL awalnya adalah <code>https://api.github.com/repos/&lt;repo&gt;/commits</code>, dan halaman berikutnya akan berada di <code>Link</code> header tanggapan.</li> 
+            <li>Metode <code>fetch</code> memungkinkan kita untuk memberikan otorisasi dan tajuk lainnya jika diperlukan ??? di sini GitHub memerlukan <code>User-Agent</code>.</li> 
+           </ul> </li> 
+          <li> <p><em>commits</em> dikembalikan dalam format JSON.</p> </li> 
+          <li> <p>Kita harus mendapatkan URL halaman berikutnya dari tajuk <code>Link</code> dari respon. Ini memiliki format khusus, jadi kita menggunakan ekspresi reguler untuk itu.</p> 
+           <ul> 
+            <li>URL halaman berikutnya mungkin terlihat seperti ini <code>https://api.github.com/repositories/93253246/commits?page=2</code>. Ini dihasilkan oleh GitHub itu sendiri.</li> 
+           </ul> </li> 
+          <li> <p>Kemudian kita menghasilkan <em>commits</em> yang diterima satu per satu, dan ketika mereka selesai, iterasi <code>while(url)</code> berikutnya akan terpicu, membuat satu permintaan lagi.</p> </li> 
+         </ol> 
+         <p>Contoh penggunaan (menunjukkan penulis <em>commit</em> di konsol):</p> 
+         <div id="jf4ekn77nj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-iterators-generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>(async () =&gt; {
+  let count = 0;
+
+  for await (const commit of fetchCommits(
+    'javascript-tutorial/en.javascript.info'
+  )) {
+    console.log(commit.author.login);
+
+    if (++count == 100) {
+      // mari berhenti di 100 commits
+      break;
+    }
+  }
+})();
+
+// Note: If you are running this in an external sandbox, you'll need to paste here the function fetchCommits described above</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itulah yang kita inginkan.</p> 
+         <p>Mekanisme internal permintaan <em>paginated</em> tidak terlihat dari luar. Bagi kita, ini hanyalah generator asinkron yang mengembalikan <em>commits</em>.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="async-iterators-generators.html#ringkasan">Ringkasan</a></h2> 
+         <p>Iterator dan generator reguler berfungsi dengan baik dengan data yang tidak membutuhkan waktu untuk dibuat.</p> 
+         <p>Saat kita mengharapkan data datang secara asinkron, dengan penundaan, pasangan asinkronnya dapat digunakan, dan <code>for await..of</code> daripada <code>for..of</code>.</p> 
+         <p>Perbedaan sintaks antara asinkron dan iterator biasa:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th></th> 
+            <th><em>Iterable</em></th> 
+            <th>Asinkron <em>Iterable</em></th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td>Metode untuk menyediakan iterator</td> 
+            <td><code>Symbol.iterator</code></td> 
+            <td><code>Symbol.asyncIterator</code></td> 
+           </tr> 
+           <tr> 
+            <td>Nilai kembali <code>next()</code> adalah</td> 
+            <td><code>{value:???, done: true/false}</code></td> 
+            <td><code>Promise</code> yang memutuskan untuk <code>{value:???, done: true/false}</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Perbedaan sintaks antara generator asinkron dan biasa:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th></th> 
+            <th>Generator</th> 
+            <th>Generator asinkron</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td>Deklarasi</td> 
+            <td><code>function*</code></td> 
+            <td><code>async function*</code></td> 
+           </tr> 
+           <tr> 
+            <td>Nilai kembali <code>next()</code> adalah</td> 
+            <td><code>{value:???, done: true/false}</code></td> 
+            <td><code>Promise</code> yang memutuskan untuk <code>{value:???, done: true/false}</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Dalam pengembangan web, kita sering menemui aliran data, ketika mengalir potongan demi potongan. Misalnya, mengunduh atau mengunggah file besar.</p> 
+         <p>Kita dapat menggunakan generator asinkron untuk memproses data tersebut. Perlu juga dicatat bahwa di beberapa lingkungan, seperti di peramban, ada juga Antarmuka Pemrograman Aplikasi (APA) lain yang disebut <em>Streams</em>, yang menyediakan antarmuka khusus untuk bekerja dengan aliran semacam itu, untuk mengubah data dan meneruskannya dari satu aliran ke aliran lain (misalnya mengunduh dari satu tempat dan segera kirim ke tempat lain).</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="generators.html" data-tooltip="Generators"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="modules.html" data-tooltip="Modules"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fasync-iterators-generators" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fasync-iterators-generators" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators-iterators.html">Generator, iterasi lanjutan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-iterators-generators.html#ingat-iterable">Ingat <em>iterable</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-iterators-generators.html#iterable-asinkron"><em>Iterable</em> asinkron</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-iterators-generators.html#ingat-generator">Ingat generator</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-iterators-generators.html#generator-asinkron-akhirnya">Generator asinkron (akhirnya)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-iterators-generators.html#contoh-kehidupan-nyata-paginated-data">Contoh kehidupan nyata: <em>paginated</em> data</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-iterators-generators.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-iterators-generators.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fasync-iterators-generators" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fasync-iterators-generators" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

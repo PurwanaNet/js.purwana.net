@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">*Array*</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="array.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="*Array*"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="*Array*"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="string.html"> 
+  <link rel="next" href="array-methods.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="*Array*"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Farray" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Farray" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="40" max="92" data-tooltip="Pelajaran 40 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">*Array*</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="*Array*"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Objek mengizinkanmu untuk menyimpan koleksi-koleksi tertulis dari nilai. Itu bagus.</p> 
+         <p>Namun seringkali kita menemukan bahwa kita butuh sebuah <em>koleksi yang tertata</em>, dimana kita memiliki elemen ke-1, ke-2, ke-3 dan seterusnya. Sebagai contohnya, kita butuh menyimpan sebuah daftat sesuatu: pengguna, barang, elemen HTML, dan lain-lain.</p> 
+         <p>Tidaklah nyaman untuk menggunakan sebuah objek di kasus ini, karena objek tidak menyediakan metode untuk mengelola elemen. Kita tidak bisa memasukkan sebuah properti baru ???di antara??? properti yang sudah dulu ada. Objek memang tidak tujukan untuk penggunaan yang demikian.</p> 
+         <p>ADa sebuah struktur data spesial yang dinamakan <code>Array</code>, untuk menyimpan koleksi-koleksi yang tertata.</p> 
+         <h2><a class="main__anchor" name="deklarasi" href="array.html#deklarasi">Deklarasi</a></h2> 
+         <p>Terdapat dua sintaks untuk membuat sebuah <em>array</em> kosong:</p> 
+         <div id="ncfoia6y4u" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = new Array();
+let arr = [];</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hampir tiap waktu, sintaks kedua lah yang digunakan. Kita bisa menyediakan elemen-elemen awal dalam tanda:</p> 
+         <div id="0ajp7p1m2l" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let fruits = ["Apple", "Orange", "Plum"];</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Elemen-elemen <em>array</em> itu diberi (urutan) nomor, mulai dari nol.</p> 
+         <p>Kita bisa mendapatkan sebuah elemen menggunakan nomor elemen itu dalam tanda kurung siku:</p> 
+         <div id="6bauykizxd" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let fruits = ["Apple", "Orange", "Plum"];
+
+alert( fruits[0] ); // Apple
+alert( fruits[1] ); // Orange
+alert( fruits[2] ); // Plum</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita bisa mengganti sebuah elemen:</p> 
+         <div id="126rni55n5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fruits[2] = 'Pear'; // kini ["Apple", "Orange", "Pear"]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Atau menambakan elemen baru ke <em>array</em>:</p> 
+         <div id="7l664jo0al" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fruits[3] = 'Lemon'; // kini ["Apple", "Orange", "Pear", "Lemon"]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jumlah elemen di dalam sebuah <em>array</em> adalah <code>length</code> (panjang) dari <em>array</em> tersebut:</p> 
+         <div id="w4xshxg869" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let fruits = ["Apple", "Orange", "Plum"];
+
+alert( fruits.length ); // 3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa menggunakan <code>alert</code> untuk menampilkan keseluruhan <em>array</em>.</p> 
+         <div id="08i4lcl1jq" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let fruits = ["Apple", "Orange", "Plum"];
+
+alert( fruits ); // Apple,Orange,Plum</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebuah <em>array</em> dapat menyimpan elemen dari tipe (data) apapun.</p> 
+         <p>Contohnya:</p> 
+         <div id="k7daarsgni" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// nilai-nilai campuran
+let arr = [ 'Apple', { name: 'John' }, true, function() { alert('hello'); } ];
+
+// mendapatkan objek pada indeks 1 dan menampilkan namanya
+alert( arr[1].name ); // John
+
+// mendapatkan fungsi pada indeks 3 dan menjalankannya
+arr[3](); // hello</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tanda koma yang membuntuti</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Sebuah array, seperti halnya sebuh objek, diakhir dengan tanda koma:</p> 
+           <div id="dobo8bosvq" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:8,&quot;end&quot;:9}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let fruits = [
+  "Apple",
+  "Orange",
+  "Plum",
+];</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Gaya ???tanda koma yang membuntuti??? membuat lebih mudah untuk memasukkan/menghilangkan item dari sebuah array, karena semua baris serupa.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="metode-pop-push-shift-unshift" href="array.html#metode-pop-push-shift-unshift">Metode <em>pop</em>/<em>push</em>, <em>shift</em>/<em>unshift</em></a></h2> 
+         <p>Sebuah <a href="https://en.wikipedia.org/wiki/Queue_(abstract_data_type)">antrian (<em>queue</em>)</a> adalah bentuk penggunaan paling umum sebuah <em>array</em>. Dalam <em>computer science</em>, hal ini berarti sebuah koleksi elemen yang tertata yang mendukung dua operasi:</p> 
+         <ul> 
+          <li><code>push</code> menambahkan sebuah elemen di akhir antrian.</li> 
+          <li><code>shift</code> mengambil sebuah elemen di awal antrian, memajukan antrian elemen, jadi elemen urutan ke-2 menjadi urutan pertama1.</li> 
+         </ul> 
+         <figure> 
+          <div class="image" style="width:187px"> 
+           <div class="image__ratio" style="padding-top:57.75401069518716%"></div> 
+           <object type="image/svg+xml" data="article/array/queue.svg" width="187" height="108" class="image__image" data-use-theme> <img src="article/array/queue.svg" alt="" width="187" height="108"> </object> 
+          </div> 
+         </figure> 
+         <p><em>Array</em> sudah mendukung kedua operasi tersebut.</p> 
+         <p>Dalam latihan yang kita sering kali memerlukannya. Contohnya, sebuah antrian pesan yang perlu ditampilkan di layar.</p> 
+         <p>Ada kasus kegunaan lain untuk <em>array</em> ??? struktur data yang dinamakan <a href="https://en.wikipedia.org/wiki/Stack_(abstract_data_type)">tumpukan <em>(stack)</em></a>.</p> 
+         <p><em>Stack</em> mendukung dua operasi, yakni:</p> 
+         <ul> 
+          <li><code>push</code> menambahkan sebuah elemen di akhir tumpukan.</li> 
+          <li><code>pop</code> mengambil sebuah elemen di akhir tumpukan.</li> 
+         </ul> 
+         <p>Jadi elemen-elemen baru ditambahkan atau diambil selalu dari ???akhir??? tumpukan.</p> 
+         <p>Sebuah <em>stack</em> biasanya diilustrasikan sebagai sebuah <em>pack</em> kartu: kartu-kartu baru ditambahkan di atas tumpukan atau diambil dari atas tumpukan <em>pack</em> kartu tersebut:</p> 
+         <figure> 
+          <div class="image" style="width:145px"> 
+           <div class="image__ratio" style="padding-top:102.75862068965517%"></div> 
+           <object type="image/svg+xml" data="article/array/stack.svg" width="145" height="149" class="image__image" data-use-theme> <img src="article/array/stack.svg" alt="" width="145" height="149"> </object> 
+          </div> 
+         </figure> 
+         <p>Untuk <em>stack</em>, elemen terakhir yang di-<em>push</em> diterima lebih dulu, hal itu juga disebut sebagai prinsip LIFO (<em>Last-In-First-Out</em>) atau ???terakhir masuk, pertama keluar???. Sedangkan untuk <em>queue</em>, kita memiliki prinsip (<em>First-In-First-Out</em>) atau ???pertama masuk, pertama keluar???.</p> 
+         <p><em>Array</em> dalam JavaScript dapat bekerja baik sebagai sebuah <em>queue</em> maupun <em>stack</em>. Keduanya membuat kamu bisa menambahkan/menghilangkan elemen baik dari/ke awal ataupun akhir.</p> 
+         <p>Dalam <em>computer science</em> struktur data yang memungkinkan kita bisa melakukan hal-hal demikian disebut sebagai <a href="https://en.wikipedia.org/wiki/Double-ended_queue"><em>deque</em> (<em>double-ended queue</em>)</a>.</p> 
+         <p><strong>Metode yang berfungsi dengan bagian akhir dari <em>array</em>:</strong></p> 
+         <dl> 
+          <dt> 
+           <code>pop</code> 
+          </dt> 
+          <dd> 
+           <p>Mengekstrak elemen terakhir dari <em>array</em> dan mengembalikan hasilnya:</p> 
+           <div id="pzhcvz94g3" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let fruits = ["Apple", "Orange", "Pear"];
+
+alert( fruits.pop() ); // menghilangkan "Pear" dan memberi alert
+
+alert( fruits ); // Apple, Orange</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>push</code> 
+          </dt> 
+          <dd> 
+           <p>Mendorong elemen ke bagian akhir <em>array</em>:</p> 
+           <div id="opoj5xx6lj" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let fruits = ["Apple", "Orange"];
+
+fruits.push("Pear");
+
+alert( fruits ); // Apple, Orange, Pear</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Panggilan <code>fruits.push(...)</code> sama dengan <code>fruits[fruits.length] = ...</code>.</p> 
+          </dd> 
+         </dl> 
+         <p><strong>Metode yang berfungsi dengan bagian awal dari <em>array</em>:</strong></p> 
+         <dl> 
+          <dt> 
+           <code>shift</code> 
+          </dt> 
+          <dd> 
+           <p>Mengekstrak elemen pertama dari <em>array</em> dan mengembalikannya:</p> 
+           <div id="7mlp7y1d63" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let fruits = ["Apple", "Orange", "Pear"];
+
+alert( fruits.shift() ); // menghilangkan Apple dan memberi alert
+
+alert( fruits ); // Orange, Pear</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>unshift</code> 
+          </dt> 
+          <dd> 
+           <p>Menambahkan elemen ke bagian awal <em>array</em>:</p> 
+           <div id="vpxlw23pmd" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let fruits = ["Orange", "Pear"];
+
+fruits.unshift('Apple');
+
+alert( fruits ); // Apple, Orange, Pear</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+         </dl> 
+         <p>Metode <code>push</code> dan <code>unshift</code> dapat menambahkan beberapa elemen sekaligus:</p> 
+         <div id="q11ksfws09" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let fruits = ["Apple"];
+
+fruits.push("Orange", "Peach");
+fruits.unshift("Pineapple", "Lemon");
+
+// ["Pineapple", "Lemon", "Apple", "Orange", "Peach"]
+alert( fruits );</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="internal-array" href="array.html#internal-array">Internal <em>array</em></a></h2> 
+         <p>Sebuah <em>array</em> adalah objek yang spesial. Tanda kurung siku digunakan untuk mengakses sebuah properti <code>arr[0]</code> sebenarnya berasal dari sintaks objek. Hal itu secara mendasar sama seperti <code>obj[key]</code>, dimana <code>arr</code> adalah objek, sedangkan angka-angka digunakan selayaknya kunci.</p> 
+         <p>Sintaks tersebut memperpanjang objek yang menyediakan metode khusus untuk berfungsi dengan koleksi-koleksi data yang tertata serta properti <code>length</code>. Tetapi pada intinya, <em>array</em> tetaplah sebuah objek.</p> 
+         <p>Ingat, ada 7 tipe (data) dasar dalamJavaScript. <em>Array</em> adalah sebuah objek dan oleh karena itu berperilaku selayaknya sebuah objek.</p> 
+         <p>Sebagai contoh, <em>array</em> disalin oleh referensi:</p> 
+         <div id="f3j2xm6s8k" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let fruits = ["Banana"]
+
+let arr = fruits; // salinan dari referensi (dua variabel mereferensikan array yang sama)
+
+alert( arr === fruits ); // true
+
+arr.push("Pear"); // modiikasi array oleh referensi
+
+alert( fruits ); // Banana, Pear - 2 elemen sekarang</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Namun apa yang membuat <em>array</em> benar-benar istimewa adalah representasi internalnya. Mesin berusaha untuk menyimpan elemen <em>array</em> ke dalam area memori yang berdampingan, satu dengan yang lainnya, sepereti yang digambarkan pada ilustrasi di bab ini, serta ada cara optimasi lainnya, untuk membuat <em>array</em> bekerja lebih cepat lagi.</p> 
+         <p>But they all break if we quit working with an array as with an ???ordered collection??? and start working with it as if it were a regular object.</p> 
+         <p>Contohnya, secara teknis kita dapat melakukan hal berikut ini:</p> 
+         <div id="c5nhmrjrvr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let fruits = []; // membuat sebuah array
+
+fruits[99999] = 5; // menugaskan sebuah properti dengan indeks yang jauh lebih panjang dari length/panjang indeks
+
+fruits.age = 25; // membuat sebuah properti dengan nama yang dapat berubah-ubah</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hal itu memungkinkan, karena <em>array</em> adalah objek pada dasarnya. Kita bisa menambahkan properti apapun ke <em>array</em>.</p> 
+         <p>Tetapi mesin akan melihat bahwa kita sedang <em>array</em> sebagai sebuah objek reguler. Optimasi yang khusus untuk <em>array</em> tidaklah cocok untuk kasus demikian dan akan dihentikan serta hilang pula keuntungannya.</p> 
+         <p>Cara-cara penggunaan <em>array</em> yang salah yakni:</p> 
+         <ul> 
+          <li>Menambahkan sebuah properti non-numerik seperti <code>arr.test = 5</code>.</li> 
+          <li>Membuat celah-celah kosong, seperti: menambahkan <code>arr[0]</code> dan kemudian <code>arr[1000]</code> (dan tanpa ada apapun di antara kedua indeks tersebut).</li> 
+          <li>Mengisi sebuah <em>array</em> dalam urutan yang terbalik, seperti <code>arr[1000]</code>, <code>arr[999]</code> dan seterusnya.</li> 
+         </ul> 
+         <p>Tolong pikirkan <em>array</em> sebagai sebuah struktur istimewa untuk bekerja dengan <em>data yang tersusun</em>. <em>Array</em> menyediakan metode khusus untuk hal tersebut. <em>Array</em> dikembangkan secara hati-hati dalam mesin JavaScript untuk bekerja dengan data yang tersusun berdampingan, mohon gunakan <em>array</em> dengan cara demikian. Dan jika kamu membutuhkan kunci-kunci yang dapat diubah-ubah, besar kemungkinan bahwa kamu sebenarnya butuh sebuah objek reguler <code>{}</code>.</p> 
+         <h2><a class="main__anchor" name="performa" href="array.html#performa">Performa</a></h2> 
+         <p>Metode <code>push/pop</code> berjalan cepat, sedangkan <code>shift/unshift</code> lamban.</p> 
+         <figure> 
+          <div class="image" style="width:354px"> 
+           <div class="image__ratio" style="padding-top:48.87005649717514%"></div> 
+           <object type="image/svg+xml" data="article/array/array-speed.svg" width="354" height="173" class="image__image" data-use-theme> <img src="article/array/array-speed.svg" alt="" width="354" height="173"> </object> 
+          </div> 
+         </figure> 
+         <p>Mengapa bekerja dengan bagian akhir sebuah <em>array</em> ketimbang bagian depannya? Mari lihat apa yang terjadi sewaktu eksekusi:</p> 
+         <div id="ioud251wtv" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fruits.shift(); // mengambil 1 elemen dari bagian awal</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tidaklah cukup mengambil dan menghapus elemen dengan angka <code>0</code>. Elemen lainnya juga perlu diberi angka pula.</p> 
+         <p>Operasi <code>shift</code> harus menjalankan 3 hal:</p> 
+         <ol> 
+          <li>Menghapus elemen dengan indeks <code>0</code>.</li> 
+          <li>Memindahkan semua elemen ke kiri, memberi nomor ulang semua elemen dari indeks <code>1</code> ke <code>0</code>, dari <code>2</code> ke <code>1</code> dan seterusnya.</li> 
+          <li>Memperbarui properti <code>length</code>.</li> 
+         </ol> 
+         <figure> 
+          <div class="image" style="width:610px"> 
+           <div class="image__ratio" style="padding-top:28.688524590163933%"></div> 
+           <object type="image/svg+xml" data="article/array/array-shift.svg" width="610" height="175" class="image__image" data-use-theme> <img src="article/array/array-shift.svg" alt="" width="610" height="175"> </object> 
+          </div> 
+         </figure> 
+         <p><strong>Semakin banyak elemen dalam <em>array</em>, semakin banyak waktu yang dibutuhkan untuk memindahkan elemen-elemen tersebut, semakin banyak operasi dalam memori.</strong></p> 
+         <p>Hal serupa terjadi dengan <code>unshift</code>: untuk menambahkan sebuah elemen ke bagian awal <em>array</em>, kita perlu pertama-tama memindahkan elemen yang ada ke kanan, menambah indeksnya.</p> 
+         <p>Dan ada apa dengan <code>push/pop</code>? Metode tersebut tidak perlu untuk memindahkan apapun. Untuk mengekstrak sebuah elemen dari bagian akhir, metode <code>pop</code> membersihkan indeks dan memendekkan <code>length</code>.</p> 
+         <p>Sintaks untuk operasi <code>pop</code> yakni:</p> 
+         <div id="t4beksgc7f" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fruits.pop(); // mengambil 1 elemen dari bagian akhir</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:479px"> 
+           <div class="image__ratio" style="padding-top:30.89770354906054%"></div> 
+           <object type="image/svg+xml" data="article/array/array-pop.svg" width="479" height="148" class="image__image" data-use-theme> <img src="article/array/array-pop.svg" alt="" width="479" height="148"> </object> 
+          </div> 
+         </figure> 
+         <p><strong>Metode <code>pop</code> tidak perlu memindahkan apapun, karena elemen lain tetap pada indeks masing-masing. Itulah mengapa metode tersebut sangat cepat.</strong></p> 
+         <p>Hal serupa juga terjadi dengan metode <code>push</code>.</p> 
+         <h2><a class="main__anchor" name="pengulangan-loop" href="array.html#pengulangan-loop">Pengulangan (<em>loop</em>)</a></h2> 
+         <p>Salah satu cara tertua untuk mensirkulasi elemen-elemen <em>array</em> adalah dengan pengulangan indeks dengan <code>for</code>:</p> 
+         <div id="xfbfgbehep" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = ["Apple", "Orange", "Pear"];
+
+for (let i = 0; i &lt; arr.length; i++) {
+  alert( arr[i] );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tetapi untuk <em>array</em> ada bentuk dari pengulangan lain, <code>for..of</code>:</p> 
+         <div id="7ov4pswmx3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let fruits = ["Apple", "Orange", "Plum"];
+
+// beralih pada elemen array
+for (let fruit of fruits) {
+  alert( fruit );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Metode <code>for..of</code> tidak memberikan akses pada nomor elemen yang sekarang, hanya nilainya saja, tetapi dalam kebanyakan kasus hal tersebut cukup. Dan lebih pendek.</p> 
+         <p>Secara teknis, karena <em>array</em> adalah objek, <em>array</em> juga memungkinkan untuk menggunakan <code>for..in</code>:</p> 
+         <div id="w095q6hc9x" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = ["Apple", "Orange", "Pear"];
+
+for (let key in arr) {
+  alert( arr[key] ); // Apple, Orange, Pear
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Namun sebenernya hal itu adalah ide buruk. Ada beberapa masalah-masalah potensial:</p> 
+         <ol> 
+          <li> <p>Pengulangan <code>for..in</code> beralih pada <em>semua properti</em>, tidak hanya yang numerik saja.</p> <p>Terdapat apa yang disebut sebagai objek ???seperti <em>array</em>??? dalam peramban serta lingkungan lainnya, yang <em>terlihat seperti array</em>. Objek tersebut, memiliki <code>length</code> dan properti yang ber-indeks, namun juga bisa memiliki properti non-numerik lain serta metode-metode, yang mana biasanya tidak kita butuhkan. Pengulangan <code>for..in</code> akan mendaftarkan properti tersebut. Jadi kita perlu bekerja dengan objek-objek yang seperti <em>array</em>, lalu properti-properti ???ekstra??? ini akan menjadi sebuah masalah.</p> </li> 
+          <li> <p>Pengulangan <code>for..in</code> dioptimasi untuk objek-objek umum (<em>generic</em>), bukan <em>array</em>, dan 10-100 kali lebih lambat. Tentu saja, pengulangan tersebut masih begitu cepat. Percepatannya mungkin saja berpengaruh saat kondisi kemacetan saja. Namun tetap kita harus menyadari perbedaannya.</p> </li> 
+         </ol> 
+         <p>Secara umum, kita tidak seharusnya menggunakan <code>for..in</code> <em>array</em>.</p> 
+         <h2><a class="main__anchor" name="sebuah-kata-untuk-length" href="array.html#sebuah-kata-untuk-length">Sebuah kata untuk ???length???</a></h2> 
+         <p>Properti <code>length</code> secara otomatis diperbarui ketika kita memodifikasi <em>array</em>. Lebih tepatnya, <code>length</code> bukanlah jumlah nilai yang ada dalam <em>array</em>, tapi angka indeks terbesar ditambah satu.</p> 
+         <p>Contohnya, sebuah elemen tunggal dengan indeks yang besar juga menghasilkan panjang atau <code>length</code> yang besar:</p> 
+         <div id="2a6sw3x3he" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let fruits = [];
+fruits[123] = "Apple";
+
+alert( fruits.length ); // 124</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Catat bahwa kita biasanya tidak menggunakan <em>array</em> seperti itu.</p> 
+         <p>Hal menarik lain tentang properti <code>length</code> adalah bahwa properti tersebut juga dapat dituliskan.</p> 
+         <p>Jika kita menambahnya secara manual, tidak hal menarik yang terjadi. Tapi jika kita menguranginya, <em>array</em> tersebut terpotong. Prosesnya tidak dapat dibalikkan (seperti semula), berikut ini contohnya:</p> 
+         <div id="hdfyqgdprf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3, 4, 5];
+
+arr.length = 2; // memotong hingga 2 elemen
+alert( arr ); // [1, 2]
+
+arr.length = 5; // mengembalikan length/panjang
+alert( arr[3] ); // undefined: nilai tidak dapat dikembalikan</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, cara paling sederhana untuk membersihkan <em>array</em> adalah yakni dengan: <code>arr.length = 0;</code>.</p> 
+         <h2><a class="main__anchor" name="new-array" href="array.html#new-array">new Array()</a></h2> 
+         <p>Ada satu sintaks lagi untuk membuat sebuah <em>array</em>:</p> 
+         <div id="tgx44e8kly" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:10,&quot;end&quot;:19}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = new Array("Apple", "Pear", "etc");</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sintaks tersebut jarang digunakan, karena tanda kurung siku <code>[]</code> lebih pendek. Juga terdapat sebuah fitur yang sukar di dalamnya.</p> 
+         <p>Jika <code>new Array</code> dipanggil dengan sebuah argumen tunggal yang mana adalah sebuah angka, maka sintaks tersebut akan membuat sebuah <em>array</em> yang <em>tanpa elemen, namun dengan panjang sesuai yang diberikan</em>.</p> 
+         <p>Mari lihat bagaimana orang-orang bisa terjebak dengan hal ini:</p> 
+         <div id="vp8l8mtrma" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = new Array(2); // akankah membuat sebuah array berisi [2] ?
+
+alert( arr[0] ); // undefined! tidak ada elemen.
+
+alert( arr.length ); // length atau panjangnya adalah 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam kode di atas, <code>new Array(number)</code> memiliki semua elemen yang <code>undefined</code>.</p> 
+         <p>Untuk menghindari kejutan-kejutan yang demikian, kita biasanya menggunakan tanda kurung siku, kecuali kita benar-benar tahu kode apa yang sedang kita tulis.</p> 
+         <h2><a class="main__anchor" name="array-multidimensi" href="array.html#array-multidimensi"><em>Array</em> multidimensi</a></h2> 
+         <p><em>Array</em> dapat memiliki isi yang juga merupakan <em>array</em>. Kita bisa menggunakannya untuk <em>array</em> multidimensi, sebagai contoh untuk menyimpan matriks:</p> 
+         <div id="0bfsykmucy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+alert( matrix[1][1] ); // 5, elemen pusat</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="tostring" href="array.html#tostring">toString</a></h2> 
+         <p><em>Array</em> memiliki implementasi metode <code>toString</code>-nya sendiri yang mengembalikan daftar elemen yang dipisahkan oleh tanda koma.</p> 
+         <p>Contoh:</p> 
+         <div id="tnt7ot9ck4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3];
+
+alert( arr ); // 1,2,3
+alert( String(arr) === '1,2,3' ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Coba juga contoh berikut ini:</p> 
+         <div id="vnz76csf0f" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( [] + 1 ); // "1"
+alert( [1] + 1 ); // "11"
+alert( [1,2] + 1 ); // "1,21"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><em>Array</em> tidak memiliki <code>Symbol.toPrimitive</code>, begitu juga <code>valueOf</code> dapat diandalkan, <em>array</em> hanya mengimplentasikan konversi<code>toString</code>, jadi di sini <code>[]</code> menjadi sebuah <em>string</em> kosong, <code>[1]</code> menjadi <code>"1"</code> dan <code>[1,2]</code> menjadi <code>"1,2"</code>.</p> 
+         <p>Ketika operator tanda tambah biner <code>"+"</code> menambahkan sesuatu pada sebuah <em>string</em>, operator tersebut mengonversi hal yang ditambahkan tadi menjadi sebuah <em>string</em> juga, jadi langkah selanjutnya akan terlihat seperti berikut ini:</p> 
+         <div id="x10xehg5v8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "" + 1 ); // "1"
+alert( "1" + 1 ); // "11"
+alert( "1,2" + 1 ); // "1,21"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="jangan-bandingkan-array-dengan" href="array.html#jangan-bandingkan-array-dengan">Jangan bandingkan array dengan ==</a></h2> 
+         <p>Array dalam JavaScript, tidak seperti beberapa bahasa pemrograman lainnya, tidak boleh dibandingkan dengan operator <code>==</code>.</p> 
+         <p>Operator ini tidak memiliki perlakuan khusus untuk array, ia bekerja dengan mereka seperti pada objek lainnya.</p> 
+         <p>Mari kita ingat aturannya:</p> 
+         <ul> 
+          <li>Dua objek sama <code>==</code> hanya jika mereka merujuk ke objek yang sama.</li> 
+          <li>Jika salah satu argumen <code>==</code> adalah objek, dan argumen lainnya primitif, objek tersebut akan diubah menjadi primitif, seperti yang dijelaskan pada bab &lt;info: object-toprimitive&gt;.</li> 
+          <li>??? Dengan pengecualian <code>null</code> dan<code>undefined</code> yang sama <code>==</code> satu sama lain dan tidak ada yang lain.</li> 
+         </ul> 
+         <p>Perbandingan ketat <code>===</code> bahkan lebih sederhana, karena tidak mengonversi jenis.</p> 
+         <p>Jadi, jika kita membandingkan array dengan <code>==</code>, keduanya tidak akan pernah sama, kecuali jika kita membandingkan dua variabel yang mereferensikan array yang sama persis.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="tli6nd66v8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( [] == [] ); // false
+alert( [0] == [0] ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Array ini adalah objek yang secara teknis berbeda. Jadi mereka tidak sama. Operator <code>==</code> tidak melakukan perbandingan item-demi-item.</p> 
+         <p>Perbandingan dengan primitif mungkin memberikan hasil yang tampak aneh juga:</p> 
+         <div id="k5pkqgynjs" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 0 == [] ); // true
+
+alert('0' == [] ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini, dalam kedua kasus, kami membandingkan primitif dengan objek array. Jadi, array <code>[]</code> diubah menjadi primitif untuk tujuan perbandingan dan menjadi string kosong `` ?????? `.</p> 
+         <p>Kemudian proses perbandingan berlanjut dengan primitif, seperti yang dijelaskan dalam bab &lt;info: type-conversion&gt;:</p> 
+         <div id="p53zevqka3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// after [] was converted to ''
+alert( 0 == '' ); // true, karena '' diubah menjadi angka 0
+
+alert('0' == '' ); // false, tidak ada konversi tipe data, string berbeda</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, bagaimana cara membandingkan array?</p> 
+         <p>Sederhana saja: jangan gunakan operator <code>==</code>. Sebaliknya, bandingkan item-by-item dalam satu putaran atau gunakan metode iterasi yang dijelaskan di bab berikutnya.</p> 
+         <h2><a class="main__anchor" name="kesimpulan" href="array.html#kesimpulan">Kesimpulan</a></h2> 
+         <p><em>Array</em> adalah sebuah objek berjenis khusus, cocok untuk menyimpan dan mengelola data yang tersusun.</p> 
+         <ul> 
+          <li> <p>Deklarasinya:</p> 
+           <div id="ecysc39u8y" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// tanda kurung siku (seperti biasa)
+let arr = [item1, item2...];
+
+// new Array (pengecualian yang jarang)
+let arr = new Array(item1, item2...);</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Panggilan <code>new Array(number)</code> membuat sebuah <em>array</em> dengan panjang indeks (<em>length</em>) yang diberikan, tetapi tanpa elemen.</p> </li> 
+          <li> <p>Properti <code>length</code> adalah panjang <em>array</em> atau, lebih tepatnya, angka indeks terakhir plus satu. Hal tersebut secara otomatis diatur dengan metode <em>array</em>.</p> </li> 
+          <li> <p>Jika kita memendekkan <code>length</code> secara manuak, <em>array</em> tersebut akan terpotong.</p> </li> 
+         </ul> 
+         <p>Kita bisa menggunakan sebuah <em>array</em> sebagai sebuah <em>deque</em> dengan operasi sebagai berikut:</p> 
+         <ul> 
+          <li><code>push(...items)</code> menambahkan <code>items</code> ke bagian akhir <em>array</em>.</li> 
+          <li><code>pop()</code> menghilangkan elemen dari bagian akhir <em>array</em> dan mengembalikannya.</li> 
+          <li><code>shift()</code> menghilangkan elemen dari bagian awal <em>array</em> dan mengembalikannya.</li> 
+          <li><code>unshift(...items)</code> menambahkan <code>items</code> ke bagian awal <em>array</em>.</li> 
+         </ul> 
+         <p>Untuk membuat pengulangan (<em>loop</em>) elemen <em>array</em>:</p> 
+         <ul> 
+          <li><code>for (let i=0; i&lt;arr.length; i++)</code> ??? bekerja paling cepat, kompatibel dengan peramban lama.</li> 
+          <li><code>for (let item of arr)</code> ??? sintaks modern untuk <em>item</em> saja,</li> 
+          <li><code>for (let i in arr)</code> ??? tidak pernah digunakan.</li> 
+         </ul> 
+         <p>Untuk membandingkan array, jangan gunakan operator <code>==</code> (serta <code>&gt;</code>, <code>&lt;</code> dan lainnya), karena mereka tidak memiliki perlakuan khusus untuk array. Mereka menanganinya sebagai objek apa pun, dan itu bukan yang biasanya kita inginkan.</p> 
+         <p>Sebagai gantinya kamu bisa menggunakan loop <code>for..of</code> untuk membandingkan array item-by-item.</p> 
+         <p>Kita akan melanjutkan dengan array dan mempelajari lebih banyak metode untuk menambah, menghapus, mengekstrak elemen dan mengurutkan array di bab berikutnya &lt;info: array-methods&gt;.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="array.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array.html#apakah-array-disalin" name="apakah-array-disalin">Apakah *array* disalin?</a></h3> 
+           <a class="task__open-link" href="task/item-value.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 3</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apa yang kode ini akan tunjukkan?</p> 
+            <div id="y23c8tjnsn" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let fruits = ["Apples", "Pear", "Orange"];
+
+// push sebuah nilai baru ke "copy"
+let shoppingCart = fruits;
+shoppingCart.push("Banana");
+
+// apa yang ada di dalam fruits?
+alert( fruits.length ); // ?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>The result is <code>4</code>:</p> 
+              <div id="8fwkra4dmp" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let fruits = ["Apples", "Pear", "Orange"];
+
+let shoppingCart = fruits;
+
+shoppingCart.push("Banana");
+
+alert( fruits.length ); // 4</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Itu karena <em>array</em> adalah objek. Jadi baik <code>shoppingCart</code> dan <code>fruits</code> mereferensi ke <em>array</em> yang sama.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array.html#operasi-array" name="operasi-array">Operasi *array*.</a></h3> 
+           <a class="task__open-link" href="task/create-array.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Mari coba 5 operasi <em>array</em>.</p> 
+            <ol> 
+             <li>Buat sebuah <em>array</em> <code>styles</code> dengan elemen ???Jazz??? dan ???Blues??? di dalamnya.</li> 
+             <li>Tambahkan ???Rock-n-Roll??? pada akhir <em>array</em>.</li> 
+             <li>Ganti nilai yang berada di tengah menjadi ???Classics???. Kodemu untuk menemukan nilai di tengah harus berhasil untuk <em>array</em> sepanjang apapun.</li> 
+             <li>Hilangkan nilai pertama dari <em>array</em> lalu tampilkan <em>array</em>.</li> 
+             <li>Dahulan <em>array</em> dengan <code>Rap</code> and <code>Reggae</code> di depannya.</li> 
+            </ol> 
+            <p><em>Array</em> selama proses:</p> 
+            <div id="tpdh5o6bmz" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>Jazz, Blues
+Jazz, Blues, Rock-n-Roll
+Jazz, Classics, Rock-n-Roll
+Classics, Rock-n-Roll
+Rap, Reggae, Classics, Rock-n-Roll</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="hv72ovwm7e" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let styles = ["Jazz", "Blues"];
+styles.push("Rock-n-Roll");
+styles[Math.floor((styles.length - 1) / 2)] = "Classics";
+alert( styles.shift() );
+styles.unshift("Rap", "Reggae");</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array.html#panggilan-dalam-konteks-array" name="panggilan-dalam-konteks-array">Panggilan dalam konteks *array*</a></h3> 
+           <a class="task__open-link" href="task/call-array-this.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apa hasilnya? Mengapa demikian?</p> 
+            <div id="zb1szxmwca" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let arr = ["a", "b"];
+
+arr.push(function() {
+  alert( this );
+})
+
+arr[2](); // ?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Panggilan <code>arr[2]()</code> secara sintaks adalah <code>obj[method]()</code> yang sudah ada dari lama, dalam peran sebagai <code>obj</code> kita memiliki <code>arr</code>, dan dalam peran sebagai <code>method</code> kita memiliki <code>2</code>.</p> 
+              <p>Jadi kita memiliki sebuah panggilan fungsi <code>arr[2]</code> sebagai sebuah metode objek. Secara alami, fungsi terebut menerima <code>this</code> yang mereferensikan ke <code>arr</code> and menghasilakn <em>array</em> berikut:</p> 
+              <div id="yd1mwu6tpk" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let arr = ["a", "b"];
+
+arr.push(function() {
+  alert( this );
+})
+
+arr[2](); // a,b,function(){...}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><em>Array</em> tersebut memiliki 3 nilai: sejak awal <em>array</em> tersebut memiliki dua nilai, plus fungsi.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array.html#menjumlahkan-angka-yang-di-input" name="menjumlahkan-angka-yang-di-input">Menjumlahkan angka yang di-input</a></h3> 
+           <a class="task__open-link" href="task/array-input-sum.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 4</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tuliskan fungsi <code>sumInput()</code> yang:</p> 
+            <ul> 
+             <li>Meminta nilai dari dengan menggunakan <code>prompt</code> dan menyimpan nilai tersebut dalam <em>array</em>.</li> 
+             <li>Berhenti meminta nilai dari pengguna ketika pengguna memasukkan nilai non-numerik, sebuah <em>string</em> kosong, atau menekan ???Cancel???.</li> 
+             <li>Hitung dan mengembalikan hasil penjumlahan <em>item</em> dalam <em>array</em>.</li> 
+            </ul> 
+            <p>Catatan. Sebuah nol <code>0</code> adalah angka yang valid, mohon tidak menghentikan input pada angka nol.</p> 
+            <p><a href="array.html#" onclick="event.preventDefault(); runDemo(this)">jalankan demonya</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Tolong perhatikan rincian penting dari solusi yang diberikan berikut. Kita tidak mengonversi <code>value</code> menjadi angka secara langsung setelah <code>prompt</code>, karena setelah <code>value = +value</code> kita tidak bisa memberitahukan sebuah string kosong (tanda berhenti) dari angka nol (angka yang valid). Kita melakukannya setelah langkah tersebut.</p> 
+              <div id="sz2qufd02l" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function sumInput() {
+
+  let numbers = [];
+
+  while (true) {
+
+    let value = prompt("A number please?", 0);
+
+    // perlukah kita batalkan?
+    if (value === "" || value === null || !isFinite(value)) break;
+
+    numbers.push(+value);
+  }
+
+  let sum = 0;
+  for (let number of numbers) {
+    sum += number;
+  }
+  return sum;
+}
+
+alert( sumInput() );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array.html#subarray-maksimum" name="subarray-maksimum">*Subarray* maksimum</a></h3> 
+           <a class="task__open-link" href="task/maximal-subarray.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 2</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Input adalah sebuah <em>array</em> angka, e.g. <code>arr = [1, -2, 3, 4, -9, 6]</code>.</p> 
+            <p>Tugasnya adalah: menemukan <em>subarray</em> <code>arr</code> yang berdampingan dengan nilai maksimal penjumlahan <em>item</em> yang ada.</p> 
+            <p>Tulis fungsi <code>getMaxSubSum(arr)</code> yang akan mengembalikan nilai penjumlahan tersebut.</p> 
+            <p>Sebagai contoh:</p> 
+            <div id="ebgsqvvpmp" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;cols&quot;:[{&quot;start&quot;:14,&quot;end&quot;:21}]},{&quot;start&quot;:4,&quot;cols&quot;:[{&quot;start&quot;:14,&quot;end&quot;:17}]},{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:22,&quot;end&quot;:26}]},{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:28,&quot;end&quot;:30}]},{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:14,&quot;end&quot;:25}]},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:18,&quot;end&quot;:22}]}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>getMaxSubSum([-1, 2, 3, -9]) == 5 (the sum of highlighted items)
+getMaxSubSum([2, -1, 2, 3, -9]) == 6
+getMaxSubSum([-1, 2, 3, -9, 11]) == 11
+getMaxSubSum([-2, -1, 1, 2]) == 3
+getMaxSubSum([100, -9, 2, -3, 5]) == 100
+getMaxSubSum([1, 2, 3]) == 6 (take all)</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Jika semua <em>item</em> adalah negatif, hal tersebut berarti kita tidak mengambil apapun (<em>subarray</em> kosong), jadi jumlahnya sama dengan nol:</p> 
+            <div id="l1swy8s07g" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>getMaxSubSum([-1, -2, -3]) = 0</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Mohon coba untuk memikirkan sebuah solusi cepat: <a href="https://en.wikipedia.org/wiki/Big_O_notation">O(n<sup>2</sup>)</a> atau bahkan O(n) jika bisa.</p> 
+            <p><a href="https://plnkr.co/edit/WXjkEIXy53vT0Mlw?p=preview" target="_blank" data-plunk-id="WXjkEIXy53vT0Mlw">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Solusi lamban</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Solusi lamban</h4> 
+              <div class="formatted"> 
+               <p>Kita dapat menghitung semua semua sub-penjumlahan yang memungkinkan.</p> 
+               <p>Cara paling sederhana adalah dengan cara mengambil setiap elemen dan menghitung jumlah semua <em>subarray</em> dimulai dari situ.</p> 
+               <p>Contohnya, untuk <code>[-1, 2, 3, -9, 11]</code>:</p> 
+               <div id="42jolgw9uy" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>// Dimulai dari -1:
+-1
+-1 + 2
+-1 + 2 + 3
+-1 + 2 + 3 + (-9)
+-1 + 2 + 3 + (-9) + 11
+
+// Dimulai dari 2:
+2
+2 + 3
+2 + 3 + (-9)
+2 + 3 + (-9) + 11
+
+// Dimulai dari 3:
+3
+3 + (-9)
+3 + (-9) + 11
+
+// Dimulai dari -9
+-9
+-9 + 11
+
+// Dimulai dari 11
+11</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Kode tersebut sebenarnya adalah sebuah pengulangan <em>nested</em> (atau <em>nested</em> loop): pengulangan eksternal elemen-elemen <em>array</em>, dan yang internal menghitung sub-jumlah dengan elemen yang sekarang.</p> 
+               <div id="byw4f3wbe8" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>function getMaxSubSum(arr) {
+  let maxSum = 0; // jika kita tidak mengambil elemen apapaun, angka nol akan dikembalikan
+
+  for (let i = 0; i &lt; arr.length; i++) {
+    let sumFixedStart = 0;
+    for (let j = i; j &lt; arr.length; j++) {
+      sumFixedStart += arr[j];
+      maxSum = Math.max(maxSum, sumFixedStart);
+    }
+  }
+
+  return maxSum;
+}
+
+alert( getMaxSubSum([-1, 2, 3, -9]) ); // 5
+alert( getMaxSubSum([-1, 2, 3, -9, 11]) ); // 11
+alert( getMaxSubSum([-2, -1, 1, 2]) ); // 3
+alert( getMaxSubSum([1, 2, 3]) ); // 6
+alert( getMaxSubSum([100, -9, 2, -3, 5]) ); // 100</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Solusi tersebut memiliki waktu penyelesaian <a href="https://en.wikipedia.org/wiki/Big_O_notation">O(n<sup>2</sup>)</a>. Dalam kata lain, jika kita menambah ukuran <em>array</em> 2 kali lipat, algoritma akan bekerja 4 kali lipat lebih lama.</p> 
+               <p>Untuk <em>array</em> yang besar (1000, 10000 <em>item</em> atau lebih) algoritma yang demikian akan mengarah pada kelambanan yang parah.</p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Solusi cepat</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Solusi cepat</h4> 
+              <div class="formatted"> 
+               <p>Mari jalankan <em>array</em> tersebut dan simpan hasil penjumlahkan parsial elemen yang sekarang di dalam variabel <code>s</code>. Jika <code>s</code> menjadi negatif pada beberapa titik, maka tugaskan <code>s=0</code>. Nilai maksimum dari semua <code>s</code> tersebut akan menjadi jawabannya.</p> 
+               <p>Jika deskripsi tersebut terlalu samar, mohon perhatikan kodenya, yang ternyata cukup pendek:</p> 
+               <div id="offe293b1a" data-trusted="1" class="code-example" data-demo="1"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="array.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="array.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>function getMaxSubSum(arr) {
+  let maxSum = 0;
+  let partialSum = 0;
+
+  for (let item of arr) { // untuk setiap item arr
+    partialSum += item; // menambahkannya ke partialSum
+    maxSum = Math.max(maxSum, partialSum); // ingat nilai maxksimum
+    if (partialSum &lt; 0) partialSum = 0; // nol jika negatif
+  }
+
+  return maxSum;
+}
+
+alert( getMaxSubSum([-1, 2, 3, -9]) ); // 5
+alert( getMaxSubSum([-1, 2, 3, -9, 11]) ); // 11
+alert( getMaxSubSum([-2, -1, 1, 2]) ); // 3
+alert( getMaxSubSum([100, -9, 2, -3, 5]) ); // 100
+alert( getMaxSubSum([1, 2, 3]) ); // 6
+alert( getMaxSubSum([-1, -2, -3]) ); // 0</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Algoritma tersebut membutuhkan tepat 1 <em>array</em> yang lolos, jadi waktu penyelesaian adalah O(n).</p> 
+               <p>Kamu dapat menemukan informasi yang lebih rinci tentang algoritma di sini: <a href="http://en.wikipedia.org/wiki/Maximum_subarray_problem">Masalah <em>subarray</em> maksimum</a>. Jika masih kurang jelas bagaimana hal tersebut bekerja, maka mohon menelusuri algoritma pada contoh di atas, perhatikan bagaimana algoritmanya bekerja, itulah cara yang paling baik.</p> 
+               <p><a href="https://plnkr.co/edit/vvxhRgNahLaOc68v?p=preview" target="_blank" data-plunk-id="vvxhRgNahLaOc68v">Buka solusi dengan tes di sandbox.</a></p> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="string.html" data-tooltip="String"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="array-methods.html" data-tooltip="Metode *array*"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Farray" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Farray" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#deklarasi">Deklarasi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#metode-pop-push-shift-unshift">Metode <em>pop</em>/<em>push</em>, <em>shift</em>/<em>unshift</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#internal-array">Internal <em>array</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#performa">Performa</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#pengulangan-loop">Pengulangan (<em>loop</em>)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#sebuah-kata-untuk-length">Sebuah kata untuk ???length???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#new-array">new Array()</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#array-multidimensi"><em>Array</em> multidimensi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#tostring">toString</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#jangan-bandingkan-array-dengan">Jangan bandingkan array dengan ==</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#tasks">Tugas (5)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Farray" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Farray" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

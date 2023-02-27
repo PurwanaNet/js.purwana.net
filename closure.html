@@ -1,0 +1,1498 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Lingkup variabel, closure</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="closure.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Lingkup variabel, closure"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Lingkup variabel, closure"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="rest-parameters-spread.html"> 
+  <link rel="next" href="var.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Lingkup variabel, closure"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fclosure" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fclosure" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="51" max="92" data-tooltip="Pelajaran 51 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="advanced-functions.html"><span>Penggunaan lanjutan fungsi</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Penggunaan lanjutan fungsi","item":"https://id.javascript.info/advanced-functions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Lingkup variabel, closure</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Lingkup variabel, closure"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Javascript adalah bahasa yang berorientasi-fungsi. Itu memberikan kita banyak kebebasan. Sebuah fungsi bisa dibuat kapanpun, diberikan sebagai argumen kedalam fungsi lain, dan lalu dipanggil dari kode yang benar-benar berbeda nanti.</p> 
+         <p>Kita sudah tahu bahwa sebuah fungsi bisa mengakses variabel diluar dari fungsi tersebut (variabel ???luar???).</p> 
+         <p>Tapi apa yang terjadi jika variabel luar berubah saat fungsinya dibuat? Akankan fungsinya mendapatkan nilai yang baru atau yang lama?</p> 
+         <p>Dan bagaimana jika sebuah fungsi diberikan sebagai paramter dan dipanggil dibagian kode lain, akankah itu mendapatkan akses ke variabel luar ditempat itu?</p> 
+         <p>Ayo kita peruas pengetahuan kita untuk mengerti skenario ini dan skenario yang lebih kompleks.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Kita akan bahas tentang variabel <code>let/const</code> di sini</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Di JavaScript, ada 3 cara mendeklarasi variabel: <code>let</code>, <code>const</code> (cara-cara modern), dan <code>var</code> (sisa masa lalu).</p> 
+           <ul> 
+            <li>Di artikel ini kita akan memakai variabel <code>let</code> dalam contoh.</li> 
+            <li>Variabel, yang dideklarasi dengan <code>const</code>, bertindak sama, jadi artikel ini juga tentang <code>const</code>.</li> 
+            <li><code>var</code> usang punya perbedaan mencolok, mereka akan dibahas di artikel <a href="var.html">Si Tua "var"</a>.</li> 
+           </ul> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="blok-kode" href="closure.html#blok-kode">Blok kode</a></h2> 
+         <p>Jika variabel dideklarasi di dalam blok kode <code>{...}</code>, ia hanya terlihat di dalam blok itu.</p> 
+         <p>Misalnya:</p> 
+         <div id="pqr1g9sq2g" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>{
+  // lakukan pekerjaan dengan variabel lokal yang harusnya tak terlihat dari luar
+
+  let message = "Hello"; // hanya terlihat dalam blok ini
+
+  alert(message); // Hello
+}
+
+alert(message); // Error: message is not defined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita bisa memakai ini untuk mengisolasi potongan kode yang melakukan tugasnya sendiri, dengan variabel yang dia punya sendiri:</p> 
+         <div id="iac6ptxsp3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>{
+  // tampilkan pesan
+  let message = "Hello";
+  alert(message);
+}
+
+{
+  // tampilkan pesan lain
+  let message = "Goodbye";
+  alert(message);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Akan muncul galat tanpa blok</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Tolong ingat, tanpa blok terpisah akan muncul galat, jika kita memakai <code>let</code> dengan nama variabel yang sudah ada:</p> 
+           <div id="47odcbw0nr" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// tampilkan pesan
+let message = "Hello";
+alert(message);
+
+// tampilkan pesan lain
+let message = "Goodbye"; // Galat: variabel sudah dideklarasi
+alert(message);</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk <code>if</code>, <code>for</code>, <code>while</code> dan lain-lain, variabel yang dideklarasi dalam <code>{...}</code> juga hanya terlihat di situ saja:</p> 
+         <div id="5lzdsd4y1a" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (true) {
+  let phrase = "Hello!";
+
+  alert(phrase); // Hello!
+}
+
+alert(phrase); // Galat, variabel ini tak ada!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini, setelah <code>if</code> selesai, <code>alert</code> di bawah tak akan melihat <code>phrase</code>, sehingga terjadi galat.</p> 
+         <p>Ini keren, karena ia memperbolehkan kita membuat variabel blok-lokal, yang spesifik ke cabang <code>if</code>.</p> 
+         <p>Hal serupa juga berlaku untuk loop <code>for</code> dan <code>while</code>:</p> 
+         <div id="clc6c2dse3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>for (let i = 0; i &lt; 3; i++) {
+  // variabel i hanya terlihat di dalam for ini
+  alert(i); // 0, lalu 1, lalu 2
+}
+
+alert(i); // Galat, variabel ini tak ada</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Visually, <code>let i</code> is outside of <code>{...}</code>. But the <code>for</code> construct is special here: the variable, declared inside it, is considered a part of the block.</p> 
+         <h2><a class="main__anchor" name="fungsi-bersarang" href="closure.html#fungsi-bersarang">Fungsi bersarang</a></h2> 
+         <p>Sebuah fungsi dikatakan ???bersarang??? apabila fungsi tersebut dibuat di dalam fungsi lainnya.</p> 
+         <p>Hal tersebut mudah untuk dilakukan di JavaScript.</p> 
+         <p>Kita dapat melakukannya untuk mengatur kode kita, seperti ini:</p> 
+         <div id="c9pdhg56e3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHiBye(firstName, lastName) {
+
+  // fungsi pembantu untuk digunakan di bawah
+  function getFullName() {
+    return firstName + " " + lastName;
+  }
+
+  alert( "Hello, " + getFullName() );
+  alert( "Bye, " + getFullName() );
+
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini fungsi <em>bersarang</em> dibuat untuk kemudahan. Fungsi tersebut bisa mengakses variabel luar sehingga dapat mengembalikan nama lengkap. Fungsi bersarang cukup sering ditemui di JavaScript.</p> 
+         <p>Yang lebih menarik yaitu, fungsi bersarang dapat dikembalikan: bisa sebagai properti dari objek baru atau sebagai nilai kembalian itu sendiri. Nilai kembalian tersebut bisa dipakai di tempat lain. Tak peduli di mana, ia masih punya akses ke variabel luar yang sama.</p> 
+         <p>Di bawah ini, <code>makeCounter</code> membuat fungsi ???counter??? yang mengembalikan angka berikutnya di tiap invokasi:</p> 
+         <div id="cv7vd7dmku" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function makeCounter() {
+  let count = 0;
+
+  return function() {
+    return count++;
+  };
+}
+
+let counter = makeCounter();
+
+alert( counter() ); // 0
+alert( counter() ); // 1
+alert( counter() ); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Meski sederhana, varian kode itu yang sedikit dimodifikasi punya kegunaan praktis, misalnya, sebagai <a href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">generator angka random</a> untuk menggenerate nilai random untuk tes terotomasi.</p> 
+         <p>How does this work? If we create multiple counters, will they be independent? What???s going on with the variables here?</p> 
+         <p>Memahami hal begini bagus untuk pengetahuan keseluruhan JavaScript dan menguntungkan untuk skenario yang lebih komplex. Jadi ayo kita selami lebih dalam.</p> 
+         <h2><a class="main__anchor" name="lingkungan-lexikal" href="closure.html#lingkungan-lexikal">Lingkungan Lexikal</a></h2> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Sini jadilah naga!</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Penjelasan teknikal mendalam ada di depan.</p> 
+           <p>Semakin jauh aku menghindari detil bahasa level-rendah, pemahaman apapun tanpa mereka akan kekurangan dan tak-lengkap, jadi bersiaplah.</p> 
+          </div> 
+         </div> 
+         <p>Supaya jelas, penjelasan dibagi dalam beberapa langkah.</p> 
+         <h3><a class="main__anchor" name="langkah-1-variabel" href="closure.html#langkah-1-variabel">Langkah 1. Variabel</a></h3> 
+         <p>Di JavaScript, setiap fungsi yang berjalan, blok kode <code>{...}</code>, dan satu script yang menyeluruh punya objek internal (tersembunyi) yang terasosiasi yang dikenal dengan <em>Lingkungan Lexikal</em>.</p> 
+         <p>Objek Lingkungan Lexikal punya dua bagian:</p> 
+         <ol> 
+          <li><em>Rekaman Lingkungan</em> ??? objek yang menyimpan semua variabel lokal sebagai propertinya (dan beberapa informasi lain seperti nilai <code>this</code>).</li> 
+          <li>Referensi ke <em>lingkungan lexikal luar</em>, yang terasosiasi dengan kode luar.</li> 
+         </ol> 
+         <p><strong>"Variabel" cuma suatu properti dari objek internal spesial, <code>Rekaman Lingkungan</code>. ???Untuk memperoleh atau mengganti variabel??? berarti ???memperoleh atau mengganti properti dari objek itu???.</strong></p> 
+         <p>Di kode sederhana tanpa fungsi ini, cuma ada satu Lingkugan Lexikal:</p> 
+         <figure> 
+          <div class="image" style="width:492px"> 
+           <div class="image__ratio" style="padding-top:21.951219512195124%"></div> 
+           <object type="image/svg+xml" data="article/closure/lexical-environment-global.svg" width="492" height="108" class="image__image" data-use-theme> <img src="article/closure/lexical-environment-global.svg" alt="" width="492" height="108"> </object> 
+          </div> 
+         </figure> 
+         <p>Ini yang disebut Lingkungan Lexikal <em>global</em>, terasosiasi dengan script keseluruhan.</p> 
+         <p>Di gambar di atas, kotak persegi panjang artinya Rekaman Lingkungan (simpanan variabel) dan panah artinya referensi luar. Lingkungan Lexikal global tak punya referensi luar, itulah kenapa panahnya menunjuk ke <code>null</code>.</p> 
+         <p>Seiring kodenya mulai bereksekusi dan berjalan, Lingkungan Lexikal berganti.</p> 
+         <p>Ini kode yang sedikit lebih panjang:</p> 
+         <figure> 
+          <div class="image" style="width:550px"> 
+           <div class="image__ratio" style="padding-top:27.27272727272727%"></div> 
+           <object type="image/svg+xml" data="article/closure/closure-variable-phrase.svg" width="550" height="150" class="image__image" data-use-theme> <img src="article/closure/closure-variable-phrase.svg" alt="" width="550" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Kotak persegi panjang di sisi kanan mendemonstrasikan bagaimana Lingkungan Lexikal global berganti selama exekusi:</p> 
+         <ol> 
+          <li>Ketika script berjalan, Lingkungan Lexikal di-pre-populasi dengan semua variabel yang terdeklarasi. 
+           <ul> 
+            <li>Awalnya, mereka di state ???Belum terinisialisir???. Itu state internal spesial, yang berarti bahwa engine tahu tentang variabelnya, tapi tak akan mengijinkan penggunaan itu sebelum <code>let</code>. Ini hampir sama saja dengan variabel itu tak ada.</li> 
+           </ul> </li> 
+          <li>Lalu definisi <code>let phrase</code> muncul. Tak ada penetapan dulu, jadi nilainya <code>undefined</code>. Kita sudah bisa pakai variabel ini di momen ini.</li> 
+          <li><code>phrase</code> diberikan nilai.</li> 
+          <li><code>phrase</code> mengganti nilai.</li> 
+         </ol> 
+         <p>Apapun terlihat simpel untuk sekarang, ya kan?</p> 
+         <ul> 
+          <li>Variabel ialah properti dari objek internal spesial, yang terasosiasi dengan blok/fungsi/script yang sedang berexekusi.</li> 
+          <li>Bekerja dengan variabel sebenarnya bekerja dengan properti objek itu.</li> 
+         </ul> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Lingkungan Lexikal merupakan objek spesifikasi</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>???Lingkungan Lexikal??? ialah objek spesifikasi: ia cuma ada ???secara teori??? di <a href="https://tc39.es/ecma262/#sec-lexical-environments">spesifikasi bahasa</a> untuk menjelaskan bagaimana cara ia bekerja. Kita tak bisa memperoleh objek ini di kode kita dan memanipulasinya langsung.</p> 
+           <p>Engine JavaScript juga bisa mengoptimisasi itu, menghapus variabel yang tak dipakai untuk menghemat memory dan melakukan trik internal lainnya, selama kelakuan yang terlihat sesuai deskripsi.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="langkah-2-deklarasi-fungsi" href="closure.html#langkah-2-deklarasi-fungsi">Langkah 2. Deklarasi Fungsi</a></h3> 
+         <p>Fungsi juga berupa nilai, seperti variabel.</p> 
+         <p><strong>Bedanya ialah Deklarasi Fungsi terinisialisasi penuh secara instan.</strong></p> 
+         <p>Ketika Lingkungan Lexikal dibuat, Deklarasi Fungsi segera menjadi fungsi siap-pakai (tak seperti <code>let</code>, yang tak bisa dipakai hingga deklarasi).</p> 
+         <p>Itulah kenapa kita bisa memakai fungsi, yang dideklarasi sebagai Deklarasi Fungsi, bahkan sebelum deklarasinya itu sendiri.</p> 
+         <p>Misalnya, ini state awal dari Lingkungan Lexikal global ketika kita tambah satu fungsi:</p> 
+         <figure> 
+          <div class="image" style="width:678px"> 
+           <div class="image__ratio" style="padding-top:24.926253687315633%"></div> 
+           <object type="image/svg+xml" data="article/closure/closure-function-declaration.svg" width="678" height="169" class="image__image" data-use-theme> <img src="article/closure/closure-function-declaration.svg" alt="" width="678" height="169"> </object> 
+          </div> 
+         </figure> 
+         <p>Alaminya, kelakukan ini cuma berlaku pada Deklarasi Fungsi, bukan Expresi Fungsi di mana kita menetapkan fungsi ke variabel, seperti <code>let say = function(name)...</code>.</p> 
+         <h3><a class="main__anchor" name="langkah-3-lingkungan-lexikal-dalam-dan-luar" href="closure.html#langkah-3-lingkungan-lexikal-dalam-dan-luar">Langkah 3. Lingkungan Lexikal dalam dan luar</a></h3> 
+         <p>Ketika satu fungsi berjalan, di awal panggilan, Lingkungan Lexikal tercipta otomatis untuk menyimpan variabel lokal dan parameter dari panggilannya.</p> 
+         <p>Misalnya, untuk <code>say("John")</code>, ini seperti (exekusinya ada di baris tersebut, yang diberi label dengan panah):</p> 
+         <!--
+    ```js
+    let phrase = "Hello";
+
+    function say(name) {
+     alert( `${phrase}, ${name}` );
+    }
+
+    say("John"); // Hello, John
+    ```--> 
+         <figure> 
+          <div class="image" style="width:723px"> 
+           <div class="image__ratio" style="padding-top:20.74688796680498%"></div> 
+           <object type="image/svg+xml" data="article/closure/lexical-environment-simple.svg" width="723" height="150" class="image__image" data-use-theme> <img src="article/closure/lexical-environment-simple.svg" alt="" width="723" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Selama panggilan fungsi, kita punya dua Lingkungan Lexikal: dalam (untuk panggilan fungsi) dan luar (global):</p> 
+         <ul> 
+          <li>Lingkungan Lexikal dalam berkorespondensi dengan exekusi <code>say</code> yang sedang berlangsung. Ia punya properti tunggal: <code>name</code>, argumen fungsi. Kita panggil <code>say("John")</code>, jadi nilai <code>name</code> adalah <code>"John"</code>.</li> 
+          <li>Lingkungan Lexikal luar ialah Lingkungan Lexikal global. Ia punya variabel <code>phrase</code> dan fungsinya itu sendiri.</li> 
+         </ul> 
+         <p>Lingkungan Lexikal dalam punya referensi ke <code>outer</code>.</p> 
+         <p><strong>Ketika kode ingin mengakses variabel ??? Lingkungan Lexikal dalam ditelusuri pertama, lalu terluar, lalu yang lebih terluar dan berikutnya.</strong></p> 
+         <p>Jika variabel tak ditemukan di manapun, itu adalah galat dalam mode ketat (tanpa <code>use strict</code>, penetapan ke variabel yang tak pernah ada menciptakan satu variabel global, untuk kompatibilitas dengan kode usang).</p> 
+         <p>Di contoh ini penelusuran terjadi seperti berikut:</p> 
+         <ul> 
+          <li>Untuk variabel <code>name</code>, <code>alert</code> di dalam <code>say</code> mencarinya segera di dalam Lingkungan Lexikal dalam.</li> 
+          <li>Ketika ia ingin mengakses <code>phrase</code>, maka tak ada <code>phrase</code> secara lokal, jadi ia mengikuti referensi ke Lingkungan Lexikal luar dan menemui itu di sana.</li> 
+         </ul> 
+         <figure> 
+          <div class="image" style="width:711px"> 
+           <div class="image__ratio" style="padding-top:21.09704641350211%"></div> 
+           <object type="image/svg+xml" data="article/closure/lexical-environment-simple-lookup.svg" width="711" height="150" class="image__image" data-use-theme> <img src="article/closure/lexical-environment-simple-lookup.svg" alt="" width="711" height="150"> </object> 
+          </div> 
+         </figure> 
+         <h3><a class="main__anchor" name="langkah-4-mengembalikan-fungsi" href="closure.html#langkah-4-mengembalikan-fungsi">Langkah 4. Mengembalikan fungsi</a></h3> 
+         <p>Ayo kembali ke contoh <code>makeCounter</code>.</p> 
+         <div id="ce354gxxs3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function makeCounter() {
+  let count = 0;
+
+  return function() {
+    return count++;
+  };
+}
+
+let counter = makeCounter();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di awal tiap panggilan <code>makeCounter()</code>, objek Lingkungan Lexikal baru dibuat, untuk menyimpan variabel untuk perjalanan <code>makeCounter</code> ini.</p> 
+         <p>Jadi kita punya dua Lingkungan Lexikal bersarang, sama seperti contoh di atas:</p> 
+         <figure> 
+          <div class="image" style="width:711px"> 
+           <div class="image__ratio" style="padding-top:24.331926863572434%"></div> 
+           <object type="image/svg+xml" data="article/closure/closure-makecounter.svg" width="711" height="173" class="image__image" data-use-theme> <img src="article/closure/closure-makecounter.svg" alt="" width="711" height="173"> </object> 
+          </div> 
+         </figure> 
+         <p>Bedanya adalah, selama exekusi dari <code>makeCounter()</code>, fungsi kecil bersarang tercipta dari cuma satu baris: <code>return count++</code>. Kita tak menjalankan itu sekarang, cuma membuat.</p> 
+         <p>Semua fungsi mengingat Lingkungan Lexikal di mana mereka dibuat. Teknisnya, tak ada sihir di sini: semua fungsi punya properti tersembunyi bernama <code>[[Environment]]</code>, yang menyimpan referensi ke Lingkungan Lexikal di mana fungsi itu dibuat:</p> 
+         <figure> 
+          <div class="image" style="width:775px"> 
+           <div class="image__ratio" style="padding-top:22.193548387096772%"></div> 
+           <object type="image/svg+xml" data="article/closure/closure-makecounter-environment.svg" width="775" height="172" class="image__image" data-use-theme> <img src="article/closure/closure-makecounter-environment.svg" alt="" width="775" height="172"> </object> 
+          </div> 
+         </figure> 
+         <p>Jadi, <code>counter.[[Environment]]</code> punya referensi ke <code>{count: 0}</code> Lingkungan Lexikal. Itulah bagaimana fungsi mengingat di mana ia dibuat, tak peduli di mana ia dipanggil. Referensi <code>[[Environment]]</code> diset sekali dan selamanya saat kresi fungsi.</p> 
+         <p>Lalu, saat <code>counter()</code> dipanggil, Lingkungan Lexikal baru dibuat untuk panggilan, dan referensi Lingkungan Lexikal luar-nya diambil dari <code>counter.[[Environment]]</code>:</p> 
+         <figure> 
+          <div class="image" style="width:774px"> 
+           <div class="image__ratio" style="padding-top:27.131782945736433%"></div> 
+           <object type="image/svg+xml" data="article/closure/closure-makecounter-nested-call.svg" width="774" height="210" class="image__image" data-use-theme> <img src="article/closure/closure-makecounter-nested-call.svg" alt="" width="774" height="210"> </object> 
+          </div> 
+         </figure> 
+         <p>Sekarang ketika kode di dalam <code>counter()</code> mencari variabel <code>count</code>, ia pertama memeriksa Lingkungan Lexikal miliknya sendiri (kosong, karena tak ada variabel lokal di sana), lalu Lingkungan Lexikal dari panggilan <code>makeCounter()</code> luar, di mana ia ditemukan dan berubah.</p> 
+         <p><strong>Variabel diperbarui di Lingkungan Lexikal di mana ia tinggal.</strong></p> 
+         <p>Ini state setelah exekusi:</p> 
+         <figure> 
+          <div class="image" style="width:774px"> 
+           <div class="image__ratio" style="padding-top:28.68217054263566%"></div> 
+           <object type="image/svg+xml" data="article/closure/closure-makecounter-nested-call-2.svg" width="774" height="222" class="image__image" data-use-theme> <img src="article/closure/closure-makecounter-nested-call-2.svg" alt="" width="774" height="222"> </object> 
+          </div> 
+         </figure> 
+         <p>Jika kita panggil <code>counter()</code> beberapa kali, variabel <code>count</code> akan meningkat ke <code>2</code>, <code>3</code>, dan seterusnya, at the same place.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Closure</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ada satu istilah pemrograman umum ???closure???, yang sebaiknya diketahui developer secara umum.</p> 
+           <p><a href="https://en.wikipedia.org/wiki/Closure_(computer_programming)">Closure</a> ialah fungsi yang mengingat variabel luarnya dan bisa mengakses mereka. Di beberapa bahasa, itu tak mungkin, atau satu fungsi harus ditulis dalam cara spesial untuk membuat ini terjadi. Tapi seperti yang dijelaskan di atas, di JavaScript, semua fungsi alaminya adalah closure (cuma ada satu pengecualian, akan dibahas di <a href="new-function.html">Sintaks "new Function"</a>).</p> 
+           <p>Yaitu: mereka otomatis mengingat di mana mereka dibuat menggunakan property <code>[[Environment]]</code> tersembunyi, kemudian kdoe mereka bisa mengakses variabel luar.</p> 
+           <p>Ketika dalam interview, frontend developer mendapat pertanyaan tentang ???apa itu closure????, jawaban valid yaitu definisi closure dan penjelesan bahwa semua fungsi di JavaScript adalah closure, dan mungkin sedikit kata-kata tentang detil teknis: properti <code>[[Environment]]</code> dan bagaimana Lingkungan Lexikal bekerja.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="koleksi-sampah" href="closure.html#koleksi-sampah">Koleksi sampah</a></h2> 
+         <p>Biasanya, Lingkungan Lexikal dihapus dengan semua variabel setelah panggilan fungsinya selesai. Ini karena tak ada referensi ke situ. Sebagai objek JavaScript apapun, ia cuma ditahan di memory selama ia dapat digapai.</p> 
+         <p>???Tapi jika ada fungsi bersarang yang masih dapat digapai setelah akhir fungsi, maka ia punya properti <code>[[Environment]]</code> yang mereferensi lingkungan lexikal.</p> 
+         <p>Dalam hal Lingkungan Lexikal masih bisa digapai meski setelah berakhirnya fungsi itu, ia tetap hidup.</p> 
+         <p>Misalnya:</p> 
+         <div id="xyh9x7sxlu" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function f() {
+  let value = 123;
+
+  return function() {
+    alert(value);
+  }
+}
+
+let g = f(); // g.[[Environment]] menyimpan referensi ke Lingkungan Lexikal
+// dari panggilan f() yang sesuai</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tolong diperhatikan apabila <code>f()</code> dipanggil beberapa kali, dan fungsi kembaliannya disimpan, maka seluruh objek lingkungan leksikal akan disimpan di memori. Ketiga-tiganya pada kode di bawah:</p> 
+         <div id="vsj9ux0xjx" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function f() {
+  let value = Math.random();
+
+  return function() { alert(value); };
+}
+
+// 3 fungsi di array, semuanya terhubung ke lingkungan leksikal
+// dari setiap f() yang bersangkutan
+let arr = [f(), f(), f()];</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebuah objek lingkungan leksikal mati apabila sudah tidak dapat dicapai (sperti objek lainnya). Dengan kata lain, objek tersebut hidup selama masih ada setidaknya satu fungsi bersarang yang mengacunya.</p> 
+         <p>Di kode berikut, setelah fungsi bersarang itu dihapus, Lingkungan Lexikal lingkupannya (serta <code>value</code>-nya) dibersihkan dari memori;</p> 
+         <div id="akm0f3nmnl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function f() {
+  let value = 123;
+
+  return function() {
+    alert(value);
+  }
+}
+
+let g = f(); // selama fungsi g tetap ada, nilainya tetap berada di memori
+
+g = null; // ...dan sekarang memori dibersihkan</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="optimalisasi-kehidupan-nyata" href="closure.html#optimalisasi-kehidupan-nyata">Optimalisasi kehidupan nyata</a></h3> 
+         <p>Seperti yang kita lihat, di teori selama sebuah fungsi masih hidup, seluruh variabel luarnya juga disimpan.</p> 
+         <p>Tetapi di praktiknya, mesin JavaScript mencoba untuk mengoptimalkannya. Mereka menganalisis penggunaan variabel dan apabila sudah jelas bahwa variabel luar sudah tidak digunakan ??? mereka dihapus.</p> 
+         <p><strong>Sebuah efek samping yang penting di V8 (Chrome, Opera) adalah variabel akan tak dapat diakses saat debugging</strong></p> 
+         <p>Cobalah jalankan contoh di bawah di Chrome dengan Developer Tools.</p> 
+         <p>Saat dihentikan, pada console coba ketikkan <code>alert(value)</code>.</p> 
+         <div id="sxmo23wdka" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function f() {
+  let value = Math.random();
+
+  function g() {
+    debugger; // di console: ketik alert(value); Variabel tak ditemukan!
+  }
+
+  return g;
+}
+
+let g = f();
+g();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang kita lihat ??? variabel tersebut tak ditemukan! Secara teori, variabel tersebut masih bisa diakses, tetapi mesin mengoptimalkannya.</p> 
+         <p>Hal tersebut mungkin menyebabkan masalah debugging yang aneh (mungkin memakan waktu). Salah satunya ??? apabila kita mendapat variabel luar yang tak diharapkan:</p> 
+         <div id="v5a7heohim" data-trusted="1" data-global="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let value = "Surprise!";
+
+function f() {
+  let value = "the closest value";
+
+  function g() {
+    debugger; // di console: ketik alert(value); Surprise!
+  }
+
+  return g;
+}
+
+let g = f();
+g();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fitur V8 ini baik untuk diketahui. Jika kamu melakukan debug memakai Chrome/Opera, cepat atau lambat kamu akan menemuinya.</p> 
+         <p>Ini bukan bug di debugger, melainkan fitur spesial dari V8. Mungkin ini akan diganti suatu saat. Kamu bisa mengeceknya dengan menjalankan contoh di laman ini.</p> 
+         <div id="alx7c6lwd3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code></code></pre> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="closure.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#apakah-sebuah-fungsi-akan-mengambil-perubahan-terakhir" name="apakah-sebuah-fungsi-akan-mengambil-perubahan-terakhir">Apakah sebuah fungsi akan mengambil perubahan terakhir?</a></h3> 
+           <a class="task__open-link" href="task/closure-latest-changes.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Fungsi sayHi menggunakan nama variabel dari luar. Ketika fungsinya berjalan, nilai manakah yang akan digunakan?</p> 
+            <div id="7j9m8vrdrt" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let name = "John";
+
+function sayHi() {
+  alert("Hi, " + name);
+}
+
+name = "Pete";
+
+sayHi(); // apakah yang akan tampil: "John" atau "Pete"?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Situasi seperti itu adalah hal yang biasa didalam peramban dan pengembangan di bagian server. Sebuah fungsi mungkin sudah dijadwalkan untuk dieksekusi nanti daripada saat dibuat, untuk contoh setelah sebuah aksi user atau setelah me-request ke jaringan.</p> 
+            <p>Jadi, pertanyaannya adalah: apakah nilai terakhir akan diambil?</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya adalah: <strong>Pete</strong>.</p> 
+              <p>Sebuah fungsi mendapatkan variabel yang sekarang, nilai paling terbaru akan digunakan.</p> 
+              <p>Nilai variabel lama tidak akan tersimpan dimanapun. Ketika sebuah fungsi menginginkan sebuah variabel, nilai terbaru akan diambil dari lingkungan leksikalnya atau dari luar.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#variabel-manakah-yang-tersedia" name="variabel-manakah-yang-tersedia">Variabel manakah yang tersedia?</a></h3> 
+           <a class="task__open-link" href="task/closure-variable-access.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Fungsi <code>makeWorker</code> dibawah membuat fungsi lainnya dan mengembalikannya. Fungsi baru itu bisa dipanggil dari manapun.</p> 
+            <p>Akankah itu mempunyai akses ke variabel luar dari tempat pembuatannya, atau dari tempat pemanggilannya, atau keduanya?</p> 
+            <div id="5nrjbekv5b" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function makeWorker() {
+  let name = "Pete";
+
+  return function() {
+    alert(name);
+  };
+}
+
+let name = "John";
+
+// pembuatan fungsi
+let work = makeWorker();
+
+// dipanggil
+work(); // apakah yang akan tampil?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Nilai manakah yang akan muncul? ???Pete??? atau ???John????</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya adalah: <strong>Pete</strong>.</p> 
+              <p>Fungsi <code>work()</code> didalam kode mendapatkan <code>name</code> dari tempat dimana itu dibuat daripada mereferensi dari luar lingkungannya :</p> 
+              <figure> 
+               <div class="image" style="width:762px"> 
+                <div class="image__ratio" style="padding-top:29.527559055118108%"></div> 
+                <object type="image/svg+xml" data="task/closure-variable-access/lexenv-nested-work.svg" width="762" height="225" class="image__image" data-use-theme> <img src="task/closure-variable-access/lexenv-nested-work.svg" alt="" width="762" height="225"> </object> 
+               </div> 
+              </figure> 
+              <p>jadi, hasilnya adalah <code>"Pete"</code> disini.</p> 
+              <p>Tapi jika disana tidak ada <code>let name</code> didalam <code>makeWorker()</code>, maka pencarian akan berlanjut ke luar dan mengambil variabel global seperti yang bisa kita lihat diatas. Di kasus ini hasilnya akan menjadi <code>"John"</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#apakah-para-counter-independen" name="apakah-para-counter-independen">Apakah para counter independen?</a></h3> 
+           <a class="task__open-link" href="task/counter-independent.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Di sini kita membuat dua counter: <code>counter</code> dan <code>counter2</code> menggunakan fungsi <code>makeCounter</code> yang sama.</p> 
+            <p>Apakah mereka independen? Apa yang akan counter kedua munculkan? <code>0,1</code> atau <code>2,3</code> atau yang lainnya?</p> 
+            <div id="fdcu588g3s" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:14,&quot;end&quot;:15}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function makeCounter() {
+  let count = 0;
+
+  return function() {
+    return count++;
+  };
+}
+
+let counter = makeCounter();
+let counter2 = makeCounter();
+
+alert( counter() ); // 0
+alert( counter() ); // 1
+
+alert( counter2() ); // ?
+alert( counter2() ); // ?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawaban: <strong>0,1.</strong></p> 
+              <p>Fungsi <code>counter</code> dan <code>counter2</code> dibuat dengan panggilan fungsi <code>makeCounter</code> yang berbeda.</p> 
+              <p>Jadi mereka memiliki lingkungan leksikal yang berbeda, dengan <code>count</code> mereka masing-masing.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#objek-counter" name="objek-counter">Objek counter</a></h3> 
+           <a class="task__open-link" href="task/counter-object-independent.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Disini kita memiliki objek counter yang dibuat dengan bantuan fungsi konstruktor.</p> 
+            <p>Apakah hal tersebut akan bekerja? Apa yang akan muncul?</p> 
+            <div id="hq75ipci0z" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function Counter() {
+  let count = 0;
+
+  this.up = function() {
+    return ++count;
+  };
+  this.down = function() {
+    return --count;
+  };
+}
+
+let counter = new Counter();
+
+alert( counter.up() ); // ?
+alert( counter.up() ); // ?
+alert( counter.down() ); // ?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Tentu saja hal tersebut akan bekerja.</p> 
+              <p>Kedua fungsi bersarang dibuat dengan lingkungan leksikal yang sama, jadi mereka membagi akses ke variabel <code>count</code> yang sama:</p> 
+              <div id="7e44f21v45" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function Counter() {
+  let count = 0;
+
+  this.up = function() {
+    return ++count;
+  };
+
+  this.down = function() {
+    return --count;
+  };
+}
+
+let counter = new Counter();
+
+alert( counter.up() ); // 1
+alert( counter.up() ); // 2
+alert( counter.down() ); // 1</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#fungsi-di-dalam-if" name="fungsi-di-dalam-if">Fungsi di dalam if</a></h3> 
+           <a class="task__open-link" href="task/function-in-if.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Lihatlah kode di bawah ini. Apa hasil dari panggilan fungsi di baris terakhir?</p> 
+            <div id="5urukk9f7s" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let phrase = "Hello";
+
+if (true) {
+  let user = "John";
+
+  function sayHi() {
+    alert(`${phrase}, ${user}`);
+  }
+}
+
+sayHi();</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Hasilnya yaitu <strong>sebuah error</strong>.</p> 
+              <p>Fungsi <code>sayHi</code> dideklarasikan di dalam <code>if</code>, jadi fungsi tersebut hanya hidup di dalamnya. Tidak ada fungsi <code>sayHi</code> di luar.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#penjumlahan-dengan-closure" name="penjumlahan-dengan-closure">Penjumlahan dengan closure</a></h3> 
+           <a class="task__open-link" href="task/closure-sum.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah fungsi <code>sum</code> yang bekerja seperti ini: <code>sum(a)(b) = a+b</code>.</p> 
+            <p>Ya, seperti ini, dengan kurung ganda (bukan salah ketik).</p> 
+            <p>Sebagai contoh:</p> 
+            <div id="687fkflz3q" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>sum(1)(2) = 3
+sum(5)(-1) = 4</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Agar kurung kedua berhasil, yang pertama harus mengembalikan sebuah fungsi.</p> 
+              <p>Seperti ini:</p> 
+              <div id="w0d5tprzmq" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function sum(a) {
+
+  return function(b) {
+    return a + b; // mengambil "a" dari lingkungan leksikal luar
+  };
+
+}
+
+alert( sum(1)(2) ); // 3
+alert( sum(5)(-1) ); // 4</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#apakah-variabelnya-terlihat" name="apakah-variabelnya-terlihat">Apakah variabelnya terlihat?</a></h3> 
+           <a class="task__open-link" href="task/let-scope.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apakah hasil dari kode ini?</p> 
+            <div id="2obg5vrprv" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let x = 1;
+
+function func() {
+  console.log(x); // ?
+
+  let x = 2;
+}
+
+func();</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>P.S. There???s a pitfall in this task. The solution is not obvious. Catatan. Terdapat jebakan pada task ini. Solusinya menjadi kurang jelas.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Hasilnya adalah: <strong>error</strong>.</p> 
+              <p>Cobalah jalankan ini:</p> 
+              <div id="17sy0u9d71" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let x = 1;
+
+function func() {
+  console.log(x); // ReferenceError: Cannot access 'x' before initialization
+  let x = 2;
+}
+
+func();</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Didalam contoh ini kita bisa mengamati perbedaan aneh diantara variabel yang ???tidak-ada??? dan ???belum diinisialisasi???.</p> 
+              <p>Mungkin seperti yang telah kamu baca didalam artikel <a href="closure.html">Lingkup variabel, closure</a>, sebuah variabel dimulai didalam state ???belum diinisialisasi??? sejak saat eksekusinya memasuki blok kode (atau sebuah fungsi). Dan itu akan tetap belum diinisialisasi sampai statemen <code>let</code> yang bersangkutan.</p> 
+              <p>Dengan kata lain, sebuah variabel secara teknis ada, tapi kita belum bisa menggunakannya sebelum <code>let</code>.</p> 
+              <p>Kode diatas mendemonstrasikan hal itu.</p> 
+              <div id="jm1kyh3sz3" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:3}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function func() {
+  // variabel lokal x dikenal mesinnya di awal dari fungsinya,
+  // tapi "belum diinisialisasi" (tidak dapat digunakan) sampai let ("zona mati")
+  // karenanya terdapat error
+
+  console.log(x); // ReferenceError: Cannot access 'x' before initialization
+
+  let x = 2;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Zona tidak terpakai dari sebuah variabel ini (dari awal blok kode sampai <code>let</code>) terkadang dipanggil dengan ???zona mati???.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#filter-dengan-fungsi" name="filter-dengan-fungsi">Filter dengan fungsi</a></h3> 
+           <a class="task__open-link" href="task/filter-through-function.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita memiliki method bawaan <code>arr.filter(f)</code> untuk array. Method tersebut menyaring seluruh elemen menggunakan fungsi <code>f</code>. Apabila mengembalikan <code>true</code>, maka elemen tersebut dikembalikan di array hasil.</p> 
+            <p>Buatlah filter ???yang siap pakai???:</p> 
+            <ul> 
+             <li><code>inBetween(a, b)</code> ??? antara <code>a</code> dan <code>b</code> atau sama dengan (inklusif).</li> 
+             <li><code>inArray([...])</code> ??? terkandung di dalam array.</li> 
+            </ul> 
+            <p>Penggunaannya harus seperti ini:</p> 
+            <ul> 
+             <li><code>arr.filter(inBetween(3,6))</code> ??? menyimpan hanya nilai di antara 3 dan 6.</li> 
+             <li><code>arr.filter(inArray([1,2,3]))</code> ??? menyimpan elemen apabila sama dengan salah satu dari <code>[1,2,3]</code>.</li> 
+            </ul> 
+            <p>Sebagai contoh:</p> 
+            <div id="97ngxq7wqy" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>/* .. implementasi inBetween dan inArray */
+let arr = [1, 2, 3, 4, 5, 6, 7];
+
+alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6
+
+alert( arr.filter(inArray([1, 2, 10])) ); // 1,2</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/cXVYIVcsBpAnojqg?p=preview" target="_blank" data-plunk-id="cXVYIVcsBpAnojqg">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Filter inBetween</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Filter inBetween</h4> 
+              <div class="formatted"> 
+               <div id="teoabea4rc" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>function inBetween(a, b) {
+  return function(x) {
+    return x &gt;= a &amp;&amp; x &lt;= b;
+  };
+}
+
+let arr = [1, 2, 3, 4, 5, 6, 7];
+alert( arr.filter(inBetween(3, 6)) ); // 3,4,5,6</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Filter inArray</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Filter inArray</h4> 
+              <div class="formatted"> 
+               <div id="nh92yzfwox" data-trusted="1" class="code-example" data-demo="1"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>function inArray(arr) {
+  return function(x) {
+    return arr.includes(x);
+  };
+}
+
+let arr = [1, 2, 3, 4, 5, 6, 7];
+alert( arr.filter(inArray([1, 2, 10])) ); // 1,2</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p><a href="https://plnkr.co/edit/IdeB8esAgkypblAU?p=preview" target="_blank" data-plunk-id="IdeB8esAgkypblAU">Buka solusi dengan tes di sandbox.</a></p> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#urutkan-berdasarkan-field" name="urutkan-berdasarkan-field">Urutkan berdasarkan field</a></h3> 
+           <a class="task__open-link" href="task/sort-by-field.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita memiliki array objek untuk diurutkan:</p> 
+            <div id="ffezosdjid" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let users = [
+  { name: "John", age: 20, surname: "Johnson" },
+  { name: "Pete", age: 18, surname: "Peterson" },
+  { name: "Ann", age: 19, surname: "Hathaway" }
+];</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Cara yang biasa dilakukan yaitu:</p> 
+            <div id="qmcxybtwwy" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>// berdasarkan name (Ann, John, Pete)
+users.sort((a, b) =&gt; a.name &gt; b.name ? 1 : -1);
+
+// berdasarkan age (Pete, Ann, John)
+users.sort((a, b) =&gt; a.age &gt; b.age ? 1 : -1);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Apakah kita dapat membuatnya lebih ringkas, seperti ini?</p> 
+            <div id="47ir8qo82s" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>users.sort(byField('name'));
+users.sort(byField('age'));</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Jadi, daripada menulis sebuah fungsi, cukup tulis <code>byField(fieldName)</code>.</p> 
+            <p>Tulislah fungsi <code>byField</code> yang dapat digunakan untuk itu.</p> 
+            <p><a href="https://plnkr.co/edit/tRAepwMund2920BX?p=preview" target="_blank" data-plunk-id="tRAepwMund2920BX">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="j7ec2fuoza" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function byField(fieldName){
+  return (a, b) =&gt; a[fieldName] &gt; b[fieldName] ? 1 : -1;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/OHTf50XkuhHOIlBU?p=preview" target="_blank" data-plunk-id="OHTf50XkuhHOIlBU">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="closure.html#pasukan-pasukan-fungsi" name="pasukan-pasukan-fungsi">Pasukan-pasukan fungsi</a></h3> 
+           <a class="task__open-link" href="task/make-army.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kode berikut membuat array dari <code>shooters</code>.</p> 
+            <p>Setiap fungsi diinginkan untuk mengeluarkan angkanya sendiri. Tetapi ada yang salah???</p> 
+            <div id="63qaxnug6w" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:18,&quot;end&quot;:21}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function makeArmy() {
+  let shooters = [];
+
+  let i = 0;
+  while (i &lt; 10) {
+    let shooter = function() { // fungsi shooter
+      alert( i ); // seharusnya mengeluarkan angkanya sendiri
+    };
+    shooters.push(shooter); // and add it to the array
+    i++;
+  }
+
+  // ...and return the array of shooters
+  return shooters;
+}
+
+let army = makeArmy();
+
+// semua penembak menunjukkan 10 bukannya angka mereka 0, 1, 2, 3...
+army[0](); // 10 dari nomor penembak 0
+army[1](); // 10 dari penembak nomor 1
+army[2](); // 10 ...dan seterusnya.</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Mengapa semua penembak menunjukkan nilai yang sama?</p> 
+            <p>Perbaiki kode agar berfungsi sebagaimana mestinya.</p> 
+            <p><a href="https://plnkr.co/edit/DTu37B1QXqX9IU3K?p=preview" target="_blank" data-plunk-id="DTu37B1QXqX9IU3K">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Let???s examine what exactly happens inside <code>makeArmy</code>, and the solution will become obvious.</p> 
+              <ol> 
+               <li> <p>It creates an empty array <code>shooters</code>:</p> 
+                <div id="zq32kwt6yu" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>let shooters = [];</code></pre> 
+                  </div> 
+                 </div> 
+                </div></li> 
+               <li> <p>Fills it with functions via <code>shooters.push(function)</code> in the loop.</p> <p>Every element is a function, so the resulting array looks like this:</p> 
+                <div id="opn1wph3f9" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>shooters = [
+  function () { alert(i); },
+  function () { alert(i); },
+  function () { alert(i); },
+  function () { alert(i); },
+  function () { alert(i); },
+  function () { alert(i); },
+  function () { alert(i); },
+  function () { alert(i); },
+  function () { alert(i); },
+  function () { alert(i); }
+];</code></pre> 
+                  </div> 
+                 </div> 
+                </div></li> 
+               <li> <p>The array is returned from the function.</p> <p>Then, later, the call to any member, e.g. <code>army[5]()</code> will get the element <code>army[5]</code> from the array (which is a function) and calls it.</p> <p>Now why do all such functions show the same value, <code>10</code>?</p> <p>That???s because there???s no local variable <code>i</code> inside <code>shooter</code> functions. When such a function is called, it takes <code>i</code> from its outer lexical environment.</p> <p>Then, what will be the value of <code>i</code>?</p> <p>If we look at the source:</p> 
+                <div id="mwn5e6z0pf" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>function makeArmy() {
+  ...
+  let i = 0;
+  while (i &lt; 10) {
+    let shooter = function() { // shooter function
+      alert( i ); // should show its number
+    };
+    shooters.push(shooter); // add function to the array
+    i++;
+  }
+  ...
+}</code></pre> 
+                  </div> 
+                 </div> 
+                </div><p>We can see that all <code>shooter</code> functions are created in the lexical environment of <code>makeArmy()</code> function. But when <code>army[5]()</code> is called, <code>makeArmy</code> has already finished its job, and the final value of <code>i</code> is <code>10</code> (<code>while</code> stops at <code>i=10</code>).</p> <p>As the result, all <code>shooter</code> functions get the same value from the outer lexical environment and that is, the last value, <code>i=10</code>.</p> 
+                <figure> 
+                 <div class="image" style="width:566px"> 
+                  <div class="image__ratio" style="padding-top:32.332155477031804%"></div> 
+                  <object type="image/svg+xml" data="task/make-army/lexenv-makearmy-empty.svg" width="566" height="183" class="image__image" data-use-theme> <img src="task/make-army/lexenv-makearmy-empty.svg" alt="" width="566" height="183"> </object> 
+                 </div> 
+                </figure><p>As you can see above, on each iteration of a <code>while {...}</code> block, a new lexical environment is created. So, to fix this, we can copy the value of <code>i</code> into a variable within the <code>while {...}</code> block, like this:</p> 
+                <div id="ag2gyrmavm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;cols&quot;:[{&quot;start&quot;:15,&quot;end&quot;:16}]},{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="toolbar codebox__toolbar"> 
+                   <div class="toolbar__tool"> 
+                    <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                   </div> 
+                   <div class="toolbar__tool"> 
+                    <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                   </div> 
+                  </div> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>function makeArmy() {
+  let shooters = [];
+
+  let i = 0;
+  while (i &lt; 10) {
+      let j = i;
+      let shooter = function() { // shooter function
+        alert( j ); // should show its number
+      };
+    shooters.push(shooter);
+    i++;
+  }
+
+  return shooters;
+}
+
+let army = makeArmy();
+
+// Now the code works correctly
+army[0](); // 0
+army[5](); // 5</code></pre> 
+                  </div> 
+                 </div> 
+                </div><p>Here <code>let j = i</code> declares an ???iteration-local??? variable <code>j</code> and copies <code>i</code> into it. Primitives are copied ???by value???, so we actually get an independent copy of <code>i</code>, belonging to the current loop iteration.</p> <p>The shooters work correctly, because the value of <code>i</code> now lives a little bit closer. Not in <code>makeArmy()</code> Lexical Environment, but in the Lexical Environment that corresponds to the current loop iteration:</p> 
+                <figure> 
+                 <div class="image" style="width:566px"> 
+                  <div class="image__ratio" style="padding-top:32.332155477031804%"></div> 
+                  <object type="image/svg+xml" data="task/make-army/lexenv-makearmy-while-fixed.svg" width="566" height="183" class="image__image" data-use-theme> <img src="task/make-army/lexenv-makearmy-while-fixed.svg" alt="" width="566" height="183"> </object> 
+                 </div> 
+                </figure><p>Such a problem could also be avoided if we used <code>for</code> in the beginning, like this:</p> 
+                <div id="rm5g0ia3wa" data-trusted="1" class="code-example" data-demo="1" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="toolbar codebox__toolbar"> 
+                   <div class="toolbar__tool"> 
+                    <a href="closure.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                   </div> 
+                   <div class="toolbar__tool"> 
+                    <a href="closure.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                   </div> 
+                  </div> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>function makeArmy() {
+
+  let shooters = [];
+
+  for(let i = 0; i &lt; 10; i++) {
+    let shooter = function() { // shooter function
+      alert( i ); // should show its number
+    };
+    shooters.push(shooter);
+  }
+
+  return shooters;
+}
+
+let army = makeArmy();
+
+army[0](); // 0
+army[5](); // 5</code></pre> 
+                  </div> 
+                 </div> 
+                </div><p>That???s essentially the same, because <code>for</code> on each iteration generates a new lexical environment, with its own variable <code>i</code>. So <code>shooter</code> generated in every iteration references its own <code>i</code>, from that very iteration.</p> 
+                <figure> 
+                 <div class="image" style="width:566px"> 
+                  <div class="image__ratio" style="padding-top:32.332155477031804%"></div> 
+                  <object type="image/svg+xml" data="task/make-army/lexenv-makearmy-for-fixed.svg" width="566" height="183" class="image__image" data-use-theme> <img src="task/make-army/lexenv-makearmy-for-fixed.svg" alt="" width="566" height="183"> </object> 
+                 </div> 
+                </figure></li> 
+              </ol> 
+              <p>Now, as you???ve put so much effort into reading this, and the final recipe is so simple ??? just use <code>for</code>, you may wonder ??? was it worth that?</p> 
+              <p>Well, if you could easily answer the question, you wouldn???t read the solution. So, hopefully this task must have helped you to understand things a bit better.</p> 
+              <p>Besides, there are indeed cases when one prefers <code>while</code> to <code>for</code>, and other scenarios, where such problems are real.</p> 
+              <p><a href="https://plnkr.co/edit/W4opbNbC8GyONaOv?p=preview" target="_blank" data-plunk-id="W4opbNbC8GyONaOv">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="rest-parameters-spread.html" data-tooltip="Parameter rest dan sintaks spread"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="var.html" data-tooltip="Si Tua &quot;var&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fclosure" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fclosure" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="advanced-functions.html">Penggunaan lanjutan fungsi</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="closure.html#blok-kode">Blok kode</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="closure.html#fungsi-bersarang">Fungsi bersarang</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="closure.html#lingkungan-lexikal">Lingkungan Lexikal</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="closure.html#koleksi-sampah">Koleksi sampah</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="closure.html#tasks">Tugas (10)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="closure.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fclosure" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fclosure" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

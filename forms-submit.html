@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Forms: *event* dan *method* submit</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="forms-submit.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Forms: *event* dan *method* submit"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Forms: *event* dan *method* submit"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="events-change-input.html"> 
+  <link rel="next" href="loading.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Forms: *event* dan *method* submit"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fforms-submit" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fforms-submit" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="26" max="32" data-tooltip="Pelajaran 26 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="forms-controls.html"><span>Forms, controls</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Forms, controls","item":"https://id.javascript.info/forms-controls"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 6 Oktober 2021"> 
+          <div class="updated-at__content">
+            6 Oktober 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Forms: *event* dan *method* submit</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Forms: *event* dan *method* submit"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Event <code>submit</code> terpicu saat <em>form</em> dikirimkan, biasanya digunakan untuk memvalidasi <em>form</em> sebelum mengirimkannya ke <em>server</em> atau untuk membatalkan pengiriman dan memprosesnya dalam JavaScript.</p> 
+         <p><em>Method</em> <code>form.submit()</code> memungkinkan untuk memulai pengiriman <em>form</em> dari JavaScript. Kita dapat menggunakannya untuk membuat dan mengirim <em>form</em> kita sendiri secara dinamis ke <em>server</em>.</p> 
+         <p>Mari kita lihat lebih detail</p> 
+         <h2><a class="main__anchor" name="event-submit" href="forms-submit.html#event-submit">Event: submit</a></h2> 
+         <p>Ada dua cara utama untuk mengirimkan <em>form</em>:</p> 
+         <ol> 
+          <li>Pertama ??? untuk mengklik <code>&lt;input type="submit"&gt;</code> atau <code>&lt;input type="image"&gt;</code>.</li> 
+          <li>Kedua ??? tekan <kbd class="shortcut">Enter</kbd> pada kolom input.</li> 
+         </ol> 
+         <p>Kedua tindakan tersebut mengarah ke <em>event</em> <code>submit</code> pada <em>form</em>. <em>Handler</em> dapat memeriksa data, dan jika ada kesalahan, tunjukkan dan panggil <code>event.preventDefault()</code>, maka formulir tidak akan dikirim ke server.</p> 
+         <p>Dalam <em>form</em> di bawah ini:</p> 
+         <ol> 
+          <li>Masuk ke <em>field</em> teks dan tekan <kbd class="shortcut"> Enter</kbd>.</li> 
+          <li>Klik <code>&lt;input type="submit"&gt;</code>.</li> 
+         </ol> 
+         <p>Kedua tindakan menunjukkan <code>alert</code> dan <em>form</em> tidak dikirim ke mana pun karena <code>return false</code>:</p> 
+         <div id="uosu0zr6jh" data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;form onsubmit="alert('submit!');return false"&gt;
+  First: Enter in the input field &lt;input type="text" value="text"&gt;&lt;br&gt;
+  Second: Click "submit": &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-uosu0zr6jh" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Hubungan antara <code>submit</code> dan <code>click</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Saat <em>form</em> dikirim menggunakan <kbd class="shortcut">Enter</kbd> pada <em>field</em> input, <em>event</em> <code>click</code> akan dipicu pada <code>&lt;input type="submit"&gt;</code>.</p> 
+           <p>Itu agak lucu, karena tidak ada klik sama sekali.</p> 
+           <p>Berikut demonya:</p> 
+           <div id="dj8v15h9gu" data-trusted="1" class="code-example" data-demo-height="60" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:37,&quot;end&quot;:61}]}]" data-autorun="true"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;form onsubmit="return false"&gt;
+ &lt;input type="text" size="30" value="Focus here and press enter"&gt;
+ &lt;input type="submit" value="Submit" onclick="alert('click')"&gt;
+&lt;/form&gt;</code></pre> 
+             </div> 
+            </div> 
+            <div class="code-result code-example__result"> 
+             <iframe class="code-result__iframe" name="test-dj8v15h9gu" style="height:60px" src="about:blank"></iframe> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="method-submit" href="forms-submit.html#method-submit">Method: submit</a></h2> 
+         <p>Untuk mengirimkan <em>form</em> ke <em>server</em> secara manual, kita dapat memanggil <code>form.submit()</code>.</p> 
+         <p>Maka <em>event</em> <code>submit</code> tidak dibuat. Diasumsikan bahwa jika programmer memanggil <code>form.submit()</code>, maka skrip telah melakukan semua pemrosesan terkait.</p> 
+         <p>Terkadang itu digunakan untuk membuat dan mengirim formulir secara manual, seperti ini:</p> 
+         <div id="b5rwls6j4m" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="forms-submit.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="forms-submit.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let form = document.createElement('form');
+form.action = 'https://google.com/search';
+form.method = 'GET';
+
+form.innerHTML = '&lt;input name="q" value="test"&gt;';
+
+// form harus berada di dalam dokumen untuk mengirimkannya.
+document.body.append(form);
+
+form.submit();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="forms-submit.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="forms-submit.html#modal-form" name="modal-form">Modal form</a></h3> 
+           <a class="task__open-link" href="task/modal-dialog.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Create a function <code>showPrompt(html, callback)</code> that shows a form with the message <code>html</code>, an input field and buttons <code>OK/CANCEL</code>.</p> 
+            <ul> 
+             <li>A user should type something into a text field and press <kbd class="shortcut">Enter</kbd> or the OK button, then <code>callback(value)</code> is called with the value they entered.</li> 
+             <li>Otherwise if the user presses <kbd class="shortcut">Esc</kbd> or CANCEL, then <code>callback(null)</code> is called.</li> 
+            </ul> 
+            <p>In both cases that ends the input process and removes the form.</p> 
+            <p>Requirements:</p> 
+            <ul> 
+             <li>The form should be in the center of the window.</li> 
+             <li>The form is <em>modal</em>. In other words, no interaction with the rest of the page is possible until the user closes it.</li> 
+             <li>When the form is shown, the focus should be inside the <code>&lt;input&gt;</code> for the user.</li> 
+             <li>Keys <kbd class="shortcut">Tab</kbd>/<kbd class="shortcut">Shift<span class="shortcut__plus">+</span>Tab</kbd> should shift the focus between form fields, don???t allow it to leave for other page elements.</li> 
+            </ul> 
+            <p>Usage example:</p> 
+            <div id="dqx2adnwio" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>showPrompt("Enter something&lt;br&gt;...smart :)", function(value) {
+  alert(value);
+});</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>A demo in the iframe:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:160px" src="https://id.js.cx/task/modal-dialog/solution/"></iframe> 
+            </div> 
+            <p>P.S. The source document has HTML/CSS for the form with fixed positioning, but it???s up to you to make it modal.</p> 
+            <p><a href="https://plnkr.co/edit/S4iFKm7oaj9FQI2Y?p=preview" target="_blank" data-plunk-id="S4iFKm7oaj9FQI2Y">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>A modal window can be implemented using a half-transparent <code>&lt;div id="cover-div"&gt;</code> that covers the whole window, like this:</p> 
+              <div id="yyre42badm" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-css"><code>#cover-div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  opacity: 0.3;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Because the <code>&lt;div&gt;</code> covers everything, it gets all clicks, not the page below it.</p> 
+              <p>Also we can prevent page scroll by setting <code>body.style.overflowY='hidden'</code>.</p> 
+              <p>The form should be not in the <code>&lt;div&gt;</code>, but next to it, because we don???t want it to have <code>opacity</code>.</p> 
+              <p><a href="https://plnkr.co/edit/0Kpc5NvIcZOIyesG?p=preview" target="_blank" data-plunk-id="0Kpc5NvIcZOIyesG">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="events-change-input.html" data-tooltip="Events: change, input, cut, copy, paste"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="loading.html" data-tooltip="Document and resource loading"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fforms-submit" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fforms-submit" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="forms-controls.html">Forms, controls</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="forms-submit.html#event-submit">Event: submit</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="forms-submit.html#method-submit">Method: submit</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="forms-submit.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="forms-submit.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fforms-submit" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fforms-submit" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

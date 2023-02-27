@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "tw";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">WeakMap dan WeakSet</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="weakmap-weakset.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="WeakMap dan WeakSet"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="WeakMap dan WeakSet"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="map-set.html"> 
+  <link rel="next" href="keys-values-entries.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="WeakMap dan WeakSet"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fweakmap-weakset" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fweakmap-weakset" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="44" max="92" data-tooltip="Pelajaran 44 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">WeakMap dan WeakSet</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="WeakMap dan WeakSet"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Seperti yang kita tahu dari bab <a href="garbage-collection.html">Pengumpulan sampah (_Garbage collection_)</a>, Mesin Javascript menyimpan sebuah nilai didalam memori selama itu bisa terjangkau (dan secara potensial bisa digunakan).</p> 
+         <p>Contoh:</p> 
+         <div id="o3aoxjzglu" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let john = { name: "John" };
+
+// Objeknya bisa diakses, john mereferensi kedalamnya.
+
+// tulis urang referensinya
+john = null;
+
+// objeknya akan dihilangkan dari memori</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Biasanya. properti dari sebuah objek atau elemen dari array atau struktur data lainnya bisa dianggap bisa dijangkau dan tetap berada dimemori selama struktur datanya masih didalam memori.</p> 
+         <p>Contoh, jika kita memasukan objek kedalam sebuah array, lalu selama arraynya ada, objeknya akan tetap ada juga, bahkan jika disana sudah tidaka ada yang mereferensi kedalamnya.</p> 
+         <p>Seperti ini:</p> 
+         <div id="gqvbt6imnu" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let john = { name: "John" };
+
+let array = [ john ];
+
+john = null; // tulis ulang referensinya
+
+
+// the object previously referenced by john is stored inside the array
+// therefore it won't be garbage-collected
+// we can get it as array[0]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sama seperti itu, jika kita bisa menggunakan sebuah objek sebagai sebuah kunci/key didalam <code>Map</code> biasa, lalu selama <code>Map</code>nya ada, objeknya akan selalu ada juga. Itu akan menempati memori dan mungkin tidak akan dibuang.</p> 
+         <p>Contoh:</p> 
+         <div id="bbw6qnk9kb" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:8}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let john = { name: "John" };
+
+let map = new Map();
+map.set(john, "...");
+
+john = null; // tulis ulang referensinya
+
+// john disimpan didalam map,
+// kita bisa mendapatkannya dengan menggunakan map.keys()</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>WeakMap</code> secara dasar berbeda didalam aspek ini. Itu tidak akan mencegah pembuangan dari objek kunci.</p> 
+         <p>Ayo kita lihat didalam contoh.</p> 
+         <h2><a class="main__anchor" name="weakmap" href="weakmap-weakset.html#weakmap">WeakMap</a></h2> 
+         <p>Perbedaan pertama dari <code>Map</code> adalah kunci <code>WeakMap</code> haruslah objek, bukan nilai primitif:</p> 
+         <div id="xv4d6xeo07" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="weakmap-weakset.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="weakmap-weakset.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let weakMap = new WeakMap();
+
+let obj = {};
+
+weakMap.set(obj, "ok"); // bekerja dengan benar (object kunci/key)
+
+// tidak bisa menggunakan string sebagai kunci
+weakMap.set("test", "Whoops"); // Error, karena "test" bukanlah sebuah objek</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang, jika kita menggunakan sebuah objek sebagai kunci didalamnya, dan disana tidak terdapat referensi lain ke objeknya ??? itu akan dihilangkan dari memori (dan juga dari map) secara otomatis.</p> 
+         <div id="1b2ujrgx7y" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let john = { name: "John" };
+
+let weakMap = new WeakMap();
+weakMap.set(john, "...");
+
+john = null; // tulis ulang referensinya
+
+// jogn telah dihilangkan dari memori!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Bandingkan itu dengan <code>Map</code> biasa dicontoh diatas. Sekarang jika <code>john</code> hanya ada jika sebagai kunci dari <code>WeakMap</code> ??? itu akan secara otomatis dihapus dari map (dan memori).</p> 
+         <p><code>WeakMap</code> tidak mendukung iterasi dan metode <code>keys()</code>, <code>nilai()</code>, <code>entries()</code>, jadi tidak ada cara untuk mendapatkan semua kunci atau nilai darinya.</p> 
+         <p><code>WeakMap</code> hanya mempunyai metode berikut:</p> 
+         <ul> 
+          <li><code>weakMap.get(key)</code></li> 
+          <li><code>weakMap.set(key, value)</code></li> 
+          <li><code>weakMap.delete(key)</code></li> 
+          <li><code>weakMap.has(key)</code></li> 
+         </ul> 
+         <p>Kenapa terdapat batasan seperti itu? Itu hanyalah untuk alasan teknis. Jika sebuah objek kehilangan semua referensi lainnya (seperti <code>john</code> didalam kode diatas), lalu itu akan dibuang secara otomatis. Tapi secara teknis itu tidak benar-benar di spesifikasikan <em>ketika pembersihan terjadi</em>.</p> 
+         <p>Mesin Javascript yang memilih hal itu. Itu mungkin akan memilih untuk melakukan pembersihan memori seketika atau menunggu dan melakukan pembersihan nanti ketika penghapusan lainnya terjadi. Jadi, secara teknis elemen count yang sekarang dari <code>WeakMap</code> tidak diketahui. Mesinnya mungkin sudah menghapusnya atau belum, atau sudah dihapus sebagian. Untuk alasan itu, metode yang mengakses seluruh key/nilai tidak didukung.</p> 
+         <p>Sekarang dimana kita butuh struktur data seperti itu?</p> 
+         <h2><a class="main__anchor" name="kasus-tambahan-data" href="weakmap-weakset.html#kasus-tambahan-data">Kasus: tambahan data</a></h2> 
+         <p>Bagian utama dari penggunaan <code>WeakMap</code> adalah sebuah <em>penambahan penyimpanan data</em>.</p> 
+         <p>Jika kita bekerja dengan sebuah objek yang ???dimiliki??? kode yang lain, bahkan mungkin sebuah librari pihak-ketiga, dan harus menyimpan beberapa data yang terkait dengannya, itu harus ada selama objeknya ada ??? lalu <code>WeakMap</code> adalah sesuatu yang dibutuhkan.</p> 
+         <p>Kita menyimpan datanya kedalam <code>WeakMap</code>, menggunakan objek sebagai kunci, dan ketika objeknya dihapus, datanya akan secara otomatis menghilang juga.</p> 
+         <div id="ayq9bt9b6e" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>weakMap.set(john, "secret documents");
+// jika john meninggal, secret documents-nya akan dihapus secara otomatis</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita lihat didalam contoh.</p> 
+         <p>Contoh, kita mempunyai kode yang menyimpan hitungan kunjungan untuk pengguna. Informasinya disimpan didalam map: sebuah objek user adalah kunci dan hitungan kunjungan adalah nilainya. Ketika pengguna pergi (objeknya akan dihapus), kita tidak ingin kunjungan mereka dihitung lagi.</p> 
+         <p>Ini adalah contoh dari fungsi penghitung dengan <code>Map</code>:</p> 
+         <div id="ff4399my75" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? visitsCount.js
+let visitsCountMap = new Map(); // map: user =&gt; kunjungan dihitung
+
+// naikan hitungan kunjungan
+function countUser(user) {
+  let count = visitsCountMap.get(user) || 0;
+  visitsCountMap.set(user, count + 1);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan disini bagian kode lainnya, mungkin file lainnya akan menggunakannya:</p> 
+         <div id="64hwbdryeo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? main.js
+let john = { name: "John" };
+
+countUser(john); // hitung kunjungannya
+
+// lalu john pergi
+john = null;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang objek <code>john</code> harusnya dihapus, tapi tetap berada di memori, itu sebagai kunci didalam <code>visitsCountMap</code>.</p> 
+         <p>Kita perlu membersihkan <code>visitsCountMap</code> ketika kita menghapus pengguna, sebaliknya itu akan tetap didalam memori terus-menerus. Pembersihan seperti itu akan menjadi pekerjaan yang membosankan didalam arsitektur yang rumit.</p> 
+         <p>Malahan kita bisa menghindarinya dengan berpindah ke <code>WeakMap</code>:</p> 
+         <div id="ccqb385mte" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? visitsCount.js
+let visitsCountMap = new WeakMap(); // weakmap: user =&gt; kunjungan dihitung
+
+// naikan hitungan kunjungan
+function countUser(user) {
+  let count = visitsCountMap.get(user) || 0;
+  visitsCountMap.set(user, count + 1);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang kita tidak harus membersihkan <code>visitsCountMap</code>. Setelah objek <code>john</code> menjadi tidak terjangkau lagi kecuali sebagai kunci dari <code>WeakMap</code>, itu akan dihilangkan dari memori, bersamaan dengan informasi kuncinya dari <code>WeakMap</code>.</p> 
+         <h2><a class="main__anchor" name="kasus-penyimpanan-cache" href="weakmap-weakset.html#kasus-penyimpanan-cache">Kasus: penyimpanan cache</a></h2> 
+         <p>Contoh biasa lainnya adalah penyimpanan cache: ketika sebuah hasil dari fungsi harus diingat (???di cache???), jadi didalam pemanggilan selanjutnya didalam objek yang sama bisa menggunakannya.</p> 
+         <p>Kita bisa menggunakan <code>Map</code> untuk menyimpan hasil, seperti ini:</p> 
+         <div id="ohlk80ibtn" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:14,&quot;end&quot;:14}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="weakmap-weakset.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="weakmap-weakset.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? cache.js
+let cache = new Map();
+
+// hitung dan ingat hasilnya
+function process(obj) {
+  if (!cache.has(obj)) {
+    let result = /* kalkulasi hasil */ obj;
+
+    cache.set(obj, result);
+  }
+
+  return cache.get(obj);
+}
+
+// sekarang kita gunakan process() didalam file lainnya:
+
+// ???? main.js
+let obj = {/* katakan kita mempunyai objek */};
+
+let result1 = process(obj); // dihitung
+
+// ...selanjutnya, dari bagian kode lainnya...
+let result2 = process(obj); // ingat hasil yang diambil dari cache
+
+// ...nanti, ketika objek tidak dibutuhkan lagi:
+obj = null;
+
+alert(cache.size); // 1 (Ouch! Objeknya masih didalam cache, menggunakan memori)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk banyak pemanggilan dari <code>process(obj)</code> dengan objek yang sama, itu akan mengkalkulasikan hasilnya pertama kali, dan lalu hanya mengambilnya dari <code>cache</code>. kekurangannya adalah kita perlu membersihkan <code>cache</code> ketika objeknya tidak dibutuhkan lagi.</p> 
+         <p>Jika kita mengganti <code>Map</code> dengan <code>WeakMap</code>, kemudian masalah ini menghilang: hasil yang di cache akan dihapus dari memori secara otomatis setelah objeknya dihapus.</p> 
+         <div id="t8ons584vw" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="weakmap-weakset.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="weakmap-weakset.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? cache.js
+let cache = new WeakMap();
+
+// hitung dan ingat hasilnya
+function process(obj) {
+  if (!cache.has(obj)) {
+    let result = /* perhitungan hasil */ obj;
+
+    cache.set(obj, result);
+  }
+
+  return cache.get(obj);
+}
+
+// ???? main.js
+let obj = {/* objek */};
+
+let result1 = process(obj);
+let result2 = process(obj);
+
+// ...nanti, ketika objeknya tidak dibutuhkan lagi:
+obj = null;
+
+// tidak bisa mendapatkan cache.size, karena itu WeakMap,
+// tapi itu 0 atau nanti akan jadi 0
+// Ketika obj dihapus, data cache akan dihapus juga</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="weakset" href="weakmap-weakset.html#weakset">WeakSet</a></h2> 
+         <p><code>WeakSet</code> memiliki perilaku yang sama:</p> 
+         <ul> 
+          <li>Analoginya adalah untuk meng-<code>Set</code>, tapi mungkin kita hanya butuh menambahkan objek kedalam <code>WeakSet</code> (bukan primitif).</li> 
+          <li>Sebuah objek ada didalam set selama itu bisa dijangkau dari tempat lain.</li> 
+          <li>Seperti <code>Set</code>, itu mendukung <code>add</code>, <code>has</code> dan <code>delete</code>, tapi tidak <code>size</code>, <code>keys()</code> dan tidak ada iterasi</li> 
+         </ul> 
+         <p>menjadi ???weak???, itu juga menyediakan penyimpanan tambahan. Tapi tidak untuk data yang asal-asalan, tapi untuk ???yes/no???. Keanggotaan dari <code>WeakSet</code> mungkin berarti sesuatu tentang objeknya.</p> 
+         <p>Contoh, kita bisa menambahkan user kedalam <code>WeakSet</code> untuk mengetahui dari siapa saja yang mengunjungi website kita:</p> 
+         <div id="o8v5uprcju" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="weakmap-weakset.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="weakmap-weakset.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let visitedSet = new WeakSet();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+visitedSet.add(john); // John mengunjungi website
+visitedSet.add(pete); // lalu Pete
+visitedSet.add(john); // John lagi
+
+// visitedSet sekarang memiliki 2 user
+
+// periksa jika John telah berkunjung?
+alert(visitedSet.has(john)); // true
+
+// periksa jika Mary telah berkunjung?
+alert(visitedSet.has(mary)); // false
+
+john = null;
+
+// visitedSet akan dibersihkan secara otomatis</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hal yang paling bisa diingat adalah batasan dari <code>WeakMap</code> dan <code>WeakSet</code> adalah tidak adanya iterasi, dan ketidak mampuan untuk mendapatkan seluruh konten saat ini. Itu mungkin akan merepotkan, tapi tidak mencegah <code>WeakMap/WeakSet</code> untuk melakukan tugas utama mereka ??? menjadi ???tambahan??? penyimpanan data dari objek yang disimpan/dikelola di tempat lain.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="weakmap-weakset.html#ringkasan">Ringkasan</a></h2> 
+         <p><code>WeakMap</code> adalah koleksi seperti-<code>Map</code> yang mengijinkan hanya objek sebagai kunci dan menghapus mereka bersama dengan nilai yang terkait sekalinya mereka menjadi tidak terjangkau.</p> 
+         <p><code>WeakSet</code> adalah koleksi seperti-<code>Set</code> yang hanya menyimpan objek dan menghapus mereka sekalinya mereka menjadi tidak bisa diakses.</p> 
+         <p>Keduanya tidak mendukung metode dan properti yang mengacu pada seluruh kunci atau jumlah mereka. Hanya operasi individual yang diperbolehkan.</p> 
+         <p><code>WeakMap</code> dan <code>WeakSet</code> digunakan sebagai struktur data ???kedua??? sebagai tambahan kepada penyimpanan objek ???utama???. Sekalinya objeknya dihapus dari penyimpanan utama, jika itu hanya ditemukan sebagai kunci dari <code>WeakMap</code> atau didalam <code>WeakSet</code>, itu akan dihapus secara otomatis.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="weakmap-weakset.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="weakmap-weakset.html#menyimpan-tanda-unread" name="menyimpan-tanda-unread">Menyimpan tanda "unread"</a></h3> 
+           <a class="task__open-link" href="task/recipients-read.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Terdapat beberapa pesan dari array"</p> 
+            <div id="60cnaxzvcl" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Kode kamu bisa mengaksesnya, tapi pesannya di kelola oleh kode orang lain. Pesan baru ditambahkan, pesan lama dihilangkan secara secara teratur oleh kode itu, dan kamu tidak tahu persis saat ketika itu terjadi.</p> 
+            <p>Sekarang, struktur data mana yang harus kamu gunakan untuk menyimpan informasi tentang pesannya apakah ???telah dibaca???? Strukturnya haruslah tepat untuk memberikan jawaban ???apakah telah dibaca???? untuk pesan objek yang diberikan.</p> 
+            <p>Catatan. Ketika sebuah pesan dihilangkan dari <code>messages</code>, pesan itu harus menghilang dari strukturnya juga.</p> 
+            <p>Catatan tambahan. Kita seharusnya tidak memodifikasi objek message, tambahkan properti kita kedalamnya. Seperti mereka di kelola oleh kode orang lain, itu mungkin akan mengarah ke hasil akhir yang tidak diinginkan.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Ayo kita simpan pesan yang dibaca didalam <code>WeakSet</code>:</p> 
+              <div id="97vhnzr202" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="weakmap-weakset.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="weakmap-weakset.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];
+
+let readMessages = new WeakSet();
+
+// dua pesan telah dibaca
+readMessages.add(messages[0]);
+readMessages.add(messages[1]);
+// readMessages mempunyai 2 elemen
+
+// ...sekarang baca pesan pertama lagi!
+readMessages.add(messages[0]);
+// readMessages masih memiliki 2 elemen yang unik
+
+// jawaban: apakah message[0] telah dibaca?
+alert("Read message 0: " + readMessages.has(messages[0])); // true
+
+messages.shift();
+// sekarang readMessages mempunyai 1 elemen (secara teknis memory mungkin akan dibersihkan nanti)</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><code>WeakSet</code> membolehkan untuk menyimpan satu set dari messages dan dengan mudah memeriksa apakah sebuah pesan ada didalamnya.</p> 
+              <p>Itu akan membersihkan dirinya sendiri secara otomatis. Timbal baliknya adalah kita tidak bisa melakukan iterasi didalamnya, tidak bisa mendapatkan ???semua pesan yang telah dibaca??? darinya secara langsung. Tapi kita bisa melakukan iterasi kepada seluruh pesan dan memfilter semuanya yang ada didalam set.</p> 
+              <p>Hal lainnya, solusi berbeda bisa saja seperti menambahkan properti seperti <code>message.isRead=true</code> kepada pesan setelah pesannya dibaca. Seperti objek pesan dikelola oleh kode lain, hal itu tidak direkomendasikan, tapi kita bisa menggunakan properti simbol untuk menghindari konflik.</p> 
+              <p>Seperti ini:</p> 
+              <div id="hsnla48hup" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// properti simbol yang hanya diketahui kode kita
+let isRead = Symbol("isRead");
+messages[0][isRead] = true;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Sekarang kode dari pihak-ketiga kemungkinan tidak akan melihat properti tambahan kita.</p> 
+              <p>walaupun simbol membolehkan kita untuk mengecilkan kemunculan dari masalah, menggunakan <code>WeakSet</code> lebih baik dari sisi arsitektural.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="weakmap-weakset.html#menyimpan-tanggal" name="menyimpan-tanggal">Menyimpan tanggal</a></h3> 
+           <a class="task__open-link" href="task/recipients-when-read.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Terdapat sebuah array dari pesan sama seperti di <a href="task/recipients-read.html">previous task</a>.Situasinya sama.</p> 
+            <div id="ezvrttvw6i" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Pertanyaannya: struktur data mana yang kamu gunakan untuk menyimpan informasinya: ???ketika pesannya dibaca????.</p> 
+            <p>Di tugas sebelumnya kita hanya menyimpan ???yes/no???. Sekarang kita butuh untuk menyimpan tanggal, dan itu harus tetap berada di memori simpan sampai pesannya dibuang.</p> 
+            <p>Catatan. Tanggal bisa disimpan sebagai objek dengan kelas bawaan `Date, kita akan mempelajarinya nanti.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Untuk menyimpan tanggal, kita bisa menggunakan <code>WeakMap</code>:</p> 
+              <div id="8vkg5lf0zw" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let messages = [
+  {text: "Hello", from: "John"},
+  {text: "How goes?", from: "John"},
+  {text: "See you soon", from: "Alice"}
+];
+
+let readMap = new WeakMap();
+
+readMap.set(messages[0], new Date(2017, 1, 1));
+// Kita akan belajar objek Date nanti</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="map-set.html" data-tooltip="Map dan Set"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="keys-values-entries.html" data-tooltip="Objek.kunci, nilai, entri"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fweakmap-weakset" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fweakmap-weakset" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="weakmap-weakset.html#weakmap">WeakMap</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="weakmap-weakset.html#kasus-tambahan-data">Kasus: tambahan data</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="weakmap-weakset.html#kasus-penyimpanan-cache">Kasus: penyimpanan cache</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="weakmap-weakset.html#weakset">WeakSet</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="weakmap-weakset.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="weakmap-weakset.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="weakmap-weakset.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fweakmap-weakset" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fweakmap-weakset" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

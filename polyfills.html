@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Polyfill dan transpiler</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="polyfills.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Polyfill dan transpiler"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Polyfill dan transpiler"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="testing-mocha.html"> 
+  <link rel="next" href="object-basics.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Polyfill dan transpiler"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpolyfills" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpolyfills" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="28" max="92" data-tooltip="Pelajaran 28 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="code-quality.html"><span>Kualitas Kode</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Kualitas Kode","item":"https://id.javascript.info/code-quality"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 2 September 2021"> 
+          <div class="updated-at__content">
+            2 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Polyfill dan transpiler</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Polyfill dan transpiler"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>JavaScript secara konsisten terus berevolusi. Proposal-proposal untuk menambah fitur-fitur baru terus bermunculan. Proposal-proposal ini akan didaftarkan pada <a href="https://tc39.github.io/ecma262/">https://tc39.github.io/ecma262/</a> jika memang berpotensi dan layak untuk ditambahkan dalam standard dalam bahasa pemrograman JavaScript. Kemudian proposal-proposal yang telah diterima akan dimasukkan dalam <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm">daftar spesifikasi</a> JavaScript.</p> 
+         <p>Tim yang mengurus JavaScript mengerti dan akan mengusulkan mana dari proposal-proposal ini yang akan diimplementasikan terlebih dahulu. Tim ini boleh saja nanti memasukkan proposal-proposal ini kedalam kategori ???draft / dalam perancangan??? atau ???postpone / tunda??? karena mungkin menurut mereka proposal-proposal ini menarik untuk didiskusikan lebih dalam atau sulit untuk direalisasikan.</p> 
+         <p>Sangat wajar jika kebanyakan dari browser-browser yang ada hanya mengimplementasikan bagian-bagian yang tidak terlalu sulit.</p> 
+         <p>Sebuah halaman yang bagus untuk melihat kondisi terkini dari fitur yang didukung oleh bahasa ini ialah <a href="https://kangax.github.io/compat-table/es6/">https://kangax.github.io/compat-table/es6/</a> (isinya banyak, kita masih banyak yang belum dipelajari)</p> 
+         <p>Sebagai programmer, kita suka untuk menggunakan fitur yang terbaru. lebih banyak fitur bagus ??? lebih baik lagi!</p> 
+         <p>di sisi lain, bagaimana membuat kodingan modern bekerja di mesin yang lama yang tidak mengetahui fitur-fitur terbaru ?</p> 
+         <p>Ada dua cara untuk itu:</p> 
+         <ol> 
+          <li>Transpilers.</li> 
+          <li>Polyfills.</li> 
+         </ol> 
+         <p>di chapter ini, tujuan kita adalah untuk mendapatkan intisari cara kerjanya, dan tempatnya dalam proses pengembangan web.</p> 
+         <h2><a class="main__anchor" name="transpilers" href="polyfills.html#transpilers">Transpilers</a></h2> 
+         <p>Sebuah <a href="https://en.wikipedia.org/wiki/Source-to-source_compiler">transpiler</a> adalah perangkat lunak khusus yang dapat mengurai (???membaca dan memahami???) kode modern, dan menulis ulang menggunakan konstruksi sintaks yang lebih lama, sehingga hasilnya akan sama.</p> 
+         <p>Misalnya. JavaScript sebelum tahun 2020 tidak memiliki ???nullish coalescing operator??? <code>??</code>. Jadi, jika pengunjung menggunakan browser yang sudah ketinggalan zaman, ia mungkin gagal memahami kode seperti <code>height = height ?? 100</code></p> 
+         <p>Sebuah transpiler akan menganalisa kodingan kita dan menulis <code>height ?? 100</code> menjadi <code>(height !== undefined &amp;&amp; height !== null) ? height : 100</code>.</p> 
+         <div id="im0xtowj48" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// sebelum menjalankan transpiler
+height = height ?? 100;
+
+// setelah transpile dijalankan
+height = (height !== undefined &amp;&amp; height !== null) ? height : 100;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang kode yang ditulis ulang cocok untuk mesin JavaScript lama.</p> 
+         <p>Biasanya, pengembang menjalankan transpiler di komputer mereka sendiri, dan kemudian menyebarkan kode yang ditranspilasi ke server.</p> 
+         <p>Berbicara tentang nama, <a href="https://babeljs.io">Babel</a> adalah salah satu transpiler paling terkenal di luar sana.</p> 
+         <p>Sistem pembangunan proyek modern, seperti <a href="http://webpack.github.io/">webpack</a>, menyediakan sarana untuk menjalankan transpiler secara otomatis pada setiap perubahan kode, sehingga sangat mudah untuk diintegrasikan ke dalam proses pengembangan.</p> 
+         <h2><a class="main__anchor" name="polyfills" href="polyfills.html#polyfills">Polyfills</a></h2> 
+         <p>Fitur bahasa baru tidak hanya mencakup konstruksi dan operator sintaks, tetapi juga fungsi bawaan.</p> 
+         <p>Misalnya, <code>Math.trunc (n)</code> adalah fungsi yang ???memotong??? bagian desimal dari sebuah angka, misalnya <code>Math.trunc (1.23) = 1</code>.</p> 
+         <p>Di beberapa mesin JavaScript (sangat usang), tidak ada <code>Math.trunc</code>, jadi kode seperti itu akan gagal.</p> 
+         <p>karena kita berbicara tentang fungsi baru, bukan perubahan sintaks, tidak perlu mentranspilasi apa pun di sini. Kita hanya perlu mendeklarasikan fungsi yang hilang.</p> 
+         <p>Skrip yang memperbarui / menambahkan fungsi baru disebut ???polyfill???. Ini ???mengisi??? celah dan menambahkan implementasi yang hilang.</p> 
+         <p>Untuk kasus khusus ini, polyfill untuk <code>Math.trunc</code> adalah skrip yang mengimplementasikannya, seperti ini:</p> 
+         <div id="zqbh9ivcbb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (!Math.trunc) { // kalo ga ada fungsi seperti ini
+  // implementasikan
+  Math.trunc = function(number) {
+    // Math.ceil dan Math.floor ada bahkan di mesin JavaScript yang lama
+    // mereka akan dibahas nanti di tutorial
+    return number &lt; 0 ? Math.ceil(number) : Math.floor(number);
+  };
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>JavaScript adalah bahasa yang sangat dinamis, skrip dapat menambah / memodifikasi fungsi apa pun, bahkan termasuk yang sudah ada di dalamnya.</p> 
+         <p>Dua library polyfill yang menarik adalah:</p> 
+         <ul> 
+          <li> yang mendukung banyak hal, memungkinkan untuk kita memasukkan hanya fitur yang dibutuhkan.</li> 
+          <li><a href="http://polyfill.io">polyfill.io</a> layanan yang menyediakan skrip dengan polyfills, bergantung pada fitur dan browser pengguna.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="kesimpulan" href="polyfills.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Di bab ini, kami ingin memotivasi Anda untuk mempelajari fitur bahasa modern dan bahkan ???yang paling mutakhir???, meskipun fitur tersebut belum didukung dengan baik oleh mesin JavaScript.</p> 
+         <p>Jangan lupa untuk menggunakan transpiler (jika menggunakan sintaks atau operator modern) dan polyfill (untuk menambahkan fungsi yang mungkin hilang). Dan mereka akan memastikan bahwa kodenya berfungsi.</p> 
+         <p>Misalnya, nanti saat Anda sudah terbiasa dengan JavaScript, Anda dapat menyiapkan sistem pembuatan kode berdasarkan <a href="http://webpack.github.io/">webpack</a> dengan .</p> 
+         <p>Sumber daya bagus yang menunjukkan status dukungan saat ini untuk berbagai fitur:</p> 
+         <ul> 
+          <li><a href="https://kangax.github.io/compat-table/es6/">https://kangax.github.io/compat-table/es6/</a> ??? untuk JavaScript murni.</li> 
+          <li><a href="https://caniuse.com/">https://caniuse.com/</a> ??? untuk fungsi terkait dengan browser.</li> 
+         </ul> 
+         <p>P.S. Google Chrome biasanya paling mutakhir dengan fitur bahasa, coba saja jika demo tutorial gagal. Sebagian besar demo tutorial berfungsi dengan browser modern apa pun.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="testing-mocha.html" data-tooltip="Pengetesan terotomasi dengan Mocha"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="object-basics.html" data-tooltip="Objects: dasar-dasar"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpolyfills" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpolyfills" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="code-quality.html">Kualitas Kode</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="polyfills.html#transpilers">Transpilers</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="polyfills.html#polyfills">Polyfills</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="polyfills.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="polyfills.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpolyfills" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fpolyfills" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

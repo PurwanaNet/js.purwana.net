@@ -1,0 +1,1172 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "tw";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Destrukturisasi Penugasan</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="destructuring-assignment.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Destrukturisasi Penugasan"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Destrukturisasi Penugasan"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="keys-values-entries.html"> 
+  <link rel="next" href="date.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Destrukturisasi Penugasan"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdestructuring-assignment" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdestructuring-assignment" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="46" max="92" data-tooltip="Pelajaran 46 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Destrukturisasi Penugasan</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Destrukturisasi Penugasan"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Dua stuktur data yang paling banyak digunakan di Javascript adalah <code>Object</code> dan <code>Array</code></p> 
+         <p>Objek memungkinkan kita untuk membuat entitas tunggal yang menyimpan data item berdasarkan kunci, dan array memungkinkan kita untuk mengumpulkan data item menjadi koleksi yang terurut.</p> 
+         <p>Tetapi ketika kita meneruskannya ke suatu fungsi, itu mungkin tidak perlu objek / array secara keseluruhan, melainkan potongan individual.</p> 
+         <p><em>Destructuring assignment</em> adalah sebuah sintaks spesial yang memungkinkan kita untuk ???membongkar??? array atau objek menjadi variabel yang banyak, kadang-kadang itu memang lebih nyaman. Destrukturisasi juga berfungsi baik dengan fungsi-fungsi kompleks yang mempunyai banyak parameter, nilai default, dan sebagainya.</p> 
+         <h2><a class="main__anchor" name="destrukturisasi-array" href="destructuring-assignment.html#destrukturisasi-array">Destrukturisasi Array</a></h2> 
+         <p>Contoh bagaimana array di-destrukturisasi menjadi variabel:</p> 
+         <div id="elng04yocs" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// kita mempunyai array dengan nama, dan nama keluarga
+let arr = ["John", "Smith"]
+
+// destructuring assignment
+// atur firstName = arr[0]
+// dan surname = arr[1]
+let [firstName, surname] = arr;
+
+alert(firstName); // John
+alert(surname);  // Smith</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang kita bisa bekerja dengan variabel bukan anggota array.</p> 
+         <p>Ini terlihat hebat ketika dikombinasikan dengan <code>split</code> atau metode pengembalian array lainnya:</p> 
+         <div id="94dlmc06xy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let [firstName, surname] = "John Smith".split(' ');
+alert(firstName); // John
+alert(surname);  // Smith</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">???Destructuring??? bukan berarti ???destructive???.</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ini disebut ???destructuring assignment,??? karena ???destructurizes??? dengan menyalin item kedalam variabel. Tetapi array itu sendiri tidak dimodifikasi.</p> 
+           <p>Ini hanya cara singkat untuk menulis:</p> 
+           <div id="z7p20083gg" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// let [firstName, surname] = arr;
+let firstName = arr[0];
+let surname = arr[1];</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Hindari elemen menggunakan koma</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Elemen yang tidak diinginkan di array juga bisa di buang dengan sebuah koma tambahan:</p> 
+           <div id="902bhn35kb" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:1}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// elemen kedua tidak dibutuhkan
+let [firstName, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+alert( title ); // Consul</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Pada kode diatas, elemen kedua dari array dilewati, yang ketiga ditetapkan untuk <code>title</code>, dan sisa item array juga dilewati (karena tidak ada variabel untuknya).</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Bekerja dengan iterabel apapun di sisi kanan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>??? Sebenarnya, kita bisa mengggunakan itu untuk iterasi apapun, bukan hanya array:</p> 
+           <div id="waj5dpgz4e" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let [a, b, c] = "abc"; // ["a", "b", "c"]
+let [one, two, three] = new Set([1, 2, 3]);</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>That works, because internally a destructuring assignment works by iterating over the right value. It???s kind of syntax sugar for calling <code>for..of</code> over the value to the right of <code>=</code> and assigning the values.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Menetapkan ke apa saja pada sisi kiri</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Kita bisa menggunakan ???penetapan??? apa saja pada sisi kiri.</p> 
+           <p>Misalnya, sebuah properti objek:</p> 
+           <div id="pf46nxtzd4" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let user = {};
+[user.name, user.surname] = "John Smith".split(' ');
+
+alert(user.name); // John
+alert(user.surname); // Smith</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Pengulangan dengan .entries()</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Di bagian sebelumnya kita melihat metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object/entries">Object.entries(obj)</a>.</p> 
+           <p>Kita bisa menggunakan itu untuk destrukturisasi untuk melompati kunci-dan-nilai sebuah objek:</p> 
+           <div id="9iyn4roen3" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30
+};
+
+// loop over keys-and-values
+for (let [key, value] of Object.entries(user)) {
+  alert(`${key}:${value}`); // name:John, then age:30
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Kodingan yang sama untuk sebuah <code>Map</code> lebih sederhana, dan juga bisa diiterasi:</p> 
+           <div id="xvynnrd5af" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:5}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let user = new Map();
+user.set("name", "John");
+user.set("age", "30");
+
+// Map iterates as [key, value] pairs, very convenient for destructuring
+for (let [key, value] of user) {
+  alert(`${key}:${value}`); // name:John, then age:30
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Trik menukar variabel</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Trik yang paling diketahui untuk menukar nilai dari dua variabel:</p> 
+           <div id="hmvcrpwlkd" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let guest = "Jane";
+let admin = "Pete";
+
+// Tukar nilai: buat guest=Pete, admin=Jane
+[guest, admin] = [admin, guest];
+*/!*
+
+alert(`${guest} ${admin}`); // Pete Jane (penukaran berhasil!)</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini kita membuat array sementara untuk dua variabel dan langsung memisahkannya dengan urutan penukaran.</p> 
+         <p>Kita bisa menukar lebih daripada dua variabel dengan cara ini.</p> 
+         <h3><a class="main__anchor" name="sisanya" href="destructuring-assignment.html#sisanya">Sisanya ?????????</a></h3> 
+         <p>Jika kita ingin tidak hanya mendapatkan nilai pertama, tetapi juga untuk mengumpulkan semua yang mengikuti ??? kita dapat menambahkan satu parameter lagi dan mendapat ???the rest??? menggunakan tiga titik <code>"..."</code>:</p> 
+         <div id="87vu8va01g" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let [name1, name2] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+alert(name1); // Julius
+alert(name2); // Caesar
+// Further items aren't assigned anywhere</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If we???d like also to gather all that follows ??? we can add one more parameter that gets ???the rest??? using three dots <code>"..."</code>:</p> 
+         <div id="xmnmzdg8ua" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:5},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:19,&quot;end&quot;:26},{&quot;start&quot;:51,&quot;end&quot;:84}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let [name1, name2, ...rest] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+
+// Catatan bahwa tipe dari `rest` adalah Array.
+alert(rest[0]); // Consul
+alert(rest[1]); // of the Roman Republic
+alert(rest.length); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Nilai dari <code>rest</code> adalah array dari elemen array yang tersisa. Kita bisa menggunakan variabel lain apapun pada <code>rest</code>, hanya pastikan memiliki tiga titik sebelum itu dan pergi terakhir di penetapan destrukturisasi.</p> 
+         <div id="qcnu67lorj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:19,&quot;end&quot;:28}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let [name1, name2, ...titles] = ["Julius", "Caesar", "Consul", "of the Roman Republic"];
+// now titles = ["Consul", "of the Roman Republic"]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="nilai-default" href="destructuring-assignment.html#nilai-default">Nilai default</a></h3> 
+         <p>Jika ada lebih sedikit nilai dalam array daripada variabel dalam penugasan, tidak akan ada kesalahan. Nilai absen dianggap undefined:</p> 
+         <div id="79864gp18q" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let [firstName, surname] = [];
+
+alert(firstName); // undefined
+alert(surname); // undefined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita ingin sebuah nilai ???default??? untuk mengganti yang hilang, kita bisa menyediakan menggunakan <code>=</code>:</p> 
+         <div id="b505ijyz9t" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// nilai default
+let [name = "Guest", surname = "Anonymous"] = ["Julius"];
+
+alert(name);    // Julius (dari array)
+alert(surname); // Anonymous (digunakan default)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Nilai default bisa berupa ekspresi yang lebih kompleks atau bahkan panggilan fungsi Default values can be more complex expressions or even function calls. Mereka dievaluasi hanya jika nilainya tidak diberikan.</p> 
+         <p>Sebagai contoh, di sini kita menggunakan fungsi <code>prompt</code> untuk dua default. Tapi itu hanya akan berjalan untuk yang hilang:</p> 
+         <div id="1uzytmv3hx" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// prompt hanya berjalan untuk nama keluarga (surname)
+let [name = prompt('name?'), surname = prompt('surname?')] = ["Julius"];
+
+alert(name);    // Julius (dari array)
+alert(surname); // apapun yang prompt dapatkan</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Please note: the <code>prompt</code> will run only for the missing value (<code>surname</code>).</p> 
+         <h2><a class="main__anchor" name="destrukturisasi-objek" href="destructuring-assignment.html#destrukturisasi-objek">Destrukturisasi objek</a></h2> 
+         <p>Penugasan destrukturisasi juga bekerja dengan objek.</p> 
+         <p>Sintaks dasarnya adalah:</p> 
+         <div id="4diox89woo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let {var1, var2} = {var1:???, var2:???}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita memiliki objek yang ada di sisi kanan, yang ingin kita pisah menjadi beberapa variabel. Sisi kiri berisi ???pola??? untuk properti yang sesuai. Dalam kasus sederhana, itu adalah daftar nama variabel di <code>{...}</code>.</p> 
+         <p>Contohnya:</p> 
+         <div id="ai5tu7m1en" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let options = {
+  title: "Menu",
+  width: 100,
+  height: 200
+};
+
+let {title, width, height} = options;
+
+alert(title);  // Menu
+alert(width);  // 100
+alert(height); // 200</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Properti <code>options.title</code>, <code>options.width</code> dan <code>options.height</code> ditugaskan ke variabel yang sesuai. Urutannya tidak masalah. Ini juga berfungsi:</p> 
+         <div id="rgjh3gtjc2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// mengganti urutan di let {...}
+let {height, width, title} = { title: "Menu", height: 200, width: 100 }</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pola di sisi kiri mungkin lebih kompleks dan menentukan pemetaan antara properti dan variabel.</p> 
+         <p>Jika kita ingin menetapkan properti ke variabel dengan nama lain, misalnya, <code>options.width</code> untuk masuk ke variabel bernama<code>w</code>, maka kita dapat mengaturnya menggunakan tanda titik dua:</p> 
+         <div id="tu98jltss2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let options = {
+  title: "Menu",
+  width: 100,
+  height: 200
+};
+
+// { sourceProperty: targetVariable }
+let {width: w, height: h, title} = options;
+
+// width -&gt; w
+// height -&gt; h
+// title -&gt; title
+
+alert(title);  // Menu
+alert(w);      // 100
+alert(h);      // 200</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kolon menunjukkan ???apa : pergi kemana???. Dalam contoh di atas properti <code>width</code> pergi ke<code>w</code>, properti <code>height</code> pergi ke<code>h</code>, dan <code>title</code> ditugaskan ke nama yang sama.</p> 
+         <p>Untuk properti yang berpotensi hilang, kita dapat menetapkan nilai default menggunakan <code>" = "</code>, seperti ini:</p> 
+         <div id="gfmshg8nri" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let options = {
+  title: "Menu"
+};
+
+let {width = 100, height = 200, title} = options;
+
+alert(title);  // Menu
+alert(width);  // 100
+alert(height); // 200</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sama seperti dengan array atau parameter fungsi, nilai default dapat berupa ekspresi atau bahkan panggilan fungsi. Mereka akan dievaluasi jika nilainya tidak diberikan.</p> 
+         <p>Dalam kode di bawah ini <code>prompt</code> meminta<code>width</code>, tetapi tidak untuk <code>title</code>:</p> 
+         <div id="p31fevjn99" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let options = {
+  title: "Menu"
+};
+
+let {width = prompt("width?"), title = prompt("title?")} = options;
+
+alert(title);  // Menu
+alert(width);  // (apapun hasil dari prompt)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga dapat menggabungkan titik dua dan persamaan:</p> 
+         <div id="bhr2plohmh" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let options = {
+  title: "Menu"
+};
+
+let {width: w = 100, height: h = 200, title} = options;
+
+alert(title);  // Menu
+alert(w);      // 100
+alert(h);      // 200</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita memiliki objek yang kompleks dengan banyak properti, kita hanya dapat mengekstrak apa yang kita butuhkan:</p> 
+         <div id="mttsjfq8ms" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let options = {
+  title: "Menu",
+  width: 100,
+  height: 200
+};
+
+// hanya ekstrak judul sebagai variabel
+let { title } = options;
+
+alert(title); // Menu</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="pola-sisanya" href="destructuring-assignment.html#pola-sisanya">Pola sisanya ?????????</a></h3> 
+         <p>Bagaimana jika objek memiliki lebih banyak properti daripada variabel yang kita miliki? Bisakah kita mengambil beberapa dan kemudian menetapkan ???sisanya??? di suatu tempat?</p> 
+         <p>Kita bisa menggunakan pola ???rest???, seperti yang kita lakukan dengan array. Itu tidak didukung oleh beberapa browser tua (IE, gunakan Babel untuk mem-polyfill itu) tapi berjalan di yang modern.</p> 
+         <p>Terlihat seperti ini:</p> 
+         <div id="crm4ypszb9" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:8}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let options = {
+  title: "Menu",
+  height: 200,
+  width: 100
+};
+
+// title = properti bernama judul
+// rest = objek dengan sisa properti
+let {title, ...rest} = options;
+
+// sekarang title="Menu", rest={height: 200, width: 100}
+alert(rest.height);  // 200
+alert(rest.width);   // 100</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Gotcha jika tidak ada <code>let</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Dalam contoh-contoh di atas, variabel dinyatakan tepat dalam penugasan: <code>let {...} = {...}</code>. Tentu saja, kita bisa menggunakan variabel yang ada juga, tanpa <code>let</code>. Tapi ada tangkapan.</p> 
+           <p>Ini tidak akan berfungsi:</p> 
+           <div id="nl18qcxvis" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let title, width, height;
+
+// kesalahan di baris ini
+{title, width, height} = {title: "Menu", width: 200, height: 100};</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Masalahnya adalah bahwa JavaScript memperlakukan <code>{...}</code> dalam aliran kode utama (tidak di dalam ekspresi lain) sebagai blok kode. Blok kode seperti itu dapat digunakan untuk pernyataan grup, seperti ini:</p> 
+           <div id="hd3g83ohof" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>{
+  // sebuah kode blok
+  let message = "Hello";
+  // ...
+  alert( message );
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Jadi di sini JavaScript mengasumsikan bahwa kita memiliki blok kode, itu sebabnya ada kesalahan. Kita ingin mendekstukturisasi.</p> 
+           <p>Untuk memperlihatkan JavaScript bahwa itu bukan blok kode, kita dapat membungkus ekspresi dalam tanda kurung <code>(...)</code>:</p> 
+           <div id="d5erhxfioe" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:1},{&quot;start&quot;:66,&quot;end&quot;:67}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let title, width, height;
+
+// oke sekarang
+({title, width, height} = {title: "Menu", width: 200, height: 100});
+
+alert( title ); // Menu</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="destrukturisasi-bersarang" href="destructuring-assignment.html#destrukturisasi-bersarang">Destrukturisasi bersarang</a></h2> 
+         <p>Jika suatu objek atau array berisi objek dan array bersarang lainnya, kita dapat menggunakan pola sisi kiri yang lebih kompleks untuk mengekstraksi bagian yang lebih dalam.</p> 
+         <p>Dalam kode di bawah ini <code>options</code> memiliki objek lain di properti<code>size</code> dan sebuah array di properti <code>items</code>. Pola di sisi kiri penugasan memiliki struktur yang sama untuk mengekstrak nilai dari mereka:</p> 
+         <div id="k32hm0a0py" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let options = {
+  size: {
+    width: 100,
+    height: 200
+  },
+  items: ["Cake", "Donut"],
+  extra: true
+};
+
+// tugas dekstukturisasi dibagi dalam beberapa baris untuk kejelasan
+let {
+  size: { // letakkan ukuran di sini
+    width,
+    height
+  },
+  items: [item1, item2], // tetapkan item di sini
+  title = "Menu" // tidak ada dalam objek (nilai default digunakan)
+} = options;
+
+alert(title);  // Menu
+alert(width);  // 100
+alert(height); // 200
+alert(item1);  // Cake
+alert(item2);  // Donut</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Semua properti objek <code>options</code> kecuali<code>extra</code> yang tidak ada di bagian kiri, ditetapkan ke variabel yang sesuai:</p> 
+         <figure> 
+          <div class="image" style="width:488px"> 
+           <div class="image__ratio" style="padding-top:30.737704918032787%"></div> 
+           <object type="image/svg+xml" data="article/destructuring-assignment/destructuring-complex.svg" width="488" height="150" class="image__image" data-use-theme> <img src="article/destructuring-assignment/destructuring-complex.svg" alt="" width="488" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Akhirnya, kita memiliki <code>width</code>,<code>height</code>, <code>item1</code>,<code>item2</code> dan <code>title</code> dari nilai default.</p> 
+         <p>Perhatikan bahwa tidak ada variabel untuk <code>size</code> dan<code>item</code>, karena kita mengambil kontennya.</p> 
+         <h2><a class="main__anchor" name="parameter-fungsi-cerdas" href="destructuring-assignment.html#parameter-fungsi-cerdas">Parameter fungsi cerdas</a></h2> 
+         <p>Ada kalanya suatu fungsi memiliki banyak parameter, yang sebagian besar bersifat opsional. Itu terutama berlaku untuk antarmuka pengguna. Bayangkan sebuah fungsi yang menciptakan menu. Mungkin memiliki lebar, tinggi, judul, daftar item dan sebagainya.</p> 
+         <p>Berikut cara yang buruk untuk menulis fungsi tersebut:</p> 
+         <div id="bb8lrb8n00" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function showMenu(title = "Untitled", width = 200, height = 100, items = []) {
+  // ...
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam kehidupan nyata, masalahnya adalah bagaimana cara mengingat urutan argumen. Biasanya IDE mencoba membantu kita, terutama jika kodenya didokumentasikan dengan baik, tetapi masih ??? Masalah lain adalah bagaimana memanggil fungsi ketika sebagian besar parameter ok secara default.</p> 
+         <p>Soperti ini?</p> 
+         <div id="8zo23a3hqw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// tidak ditentukan dimana nilai default baik-baik saja
+showMenu("My Menu", undefined, undefined, ["Item1", "Item2"])</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu jelek. Dan menjadi tidak dapat dibaca ketika kita berurusan dengan lebih banyak parameter.</p> 
+         <p>Destrukturisasi datang untuk menyelamatkan!</p> 
+         <p>Kita dapat melewatkan parameter sebagai objek, dan fungsinya segera merusaknya menjadi variabel:</p> 
+         <div id="grsoem9f3c" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;cols&quot;:[{&quot;start&quot;:18,&quot;end&quot;:77}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// kita meneruskan objek ke fungsi
+let options = {
+  title: "My menu",
+  items: ["Item1", "Item2"]
+};
+
+// ...dan segera memperluasnya ke variabel
+function showMenu({title = "Untitled", width = 200, height = 100, items = []}) {
+  // title, items ??? diambil dari options,
+  // width, height ??? standar yang digunakan
+  alert( `${title} ${width} ${height}` ); // My Menu 200 100
+  alert( items ); // Item1, Item2
+}
+
+showMenu(options);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga dapat menggunakan perusakan yang lebih kompleks dengan objek bersarang dan pemetaan titik dua:</p> 
+         <div id="fjiu3mnnxj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let options = {
+  title: "My menu",
+  items: ["Item1", "Item2"]
+};
+
+function showMenu({
+  title = "Untitled",
+  width: w = 100,  // width menjadi w
+  height: h = 200, // height menjadi h
+  items: [item1, item2] // element pertama items menjadi item1, kedua menjadi item2
+}) {
+  alert( `${title} ${w} ${h}` ); // My Menu 100 200
+  alert( item1 ); // Item1
+  alert( item2 ); // Item2
+}
+
+showMenu(options);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sintaks lengkapnya sama dengan untuk tugas penataan:</p> 
+         <div id="oceflnfsk7" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function({
+  incomingProperty: varName = defaultValue
+  ...
+})</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kemudian, untuk objek parameter, akan ada variabel <code>varName</code> untuk properti<code>incomingProperty</code>, dengan <code>defaultValue</code> secara default.</p> 
+         <p>Harap perhatikan bahwa destrukturisasi seperti itu mengasumsikan bahwa <code>showMenu ()</code> memang memiliki argumen. Jika kita menginginkan semua nilai secara default, maka kita harus menentukan objek kosong:</p> 
+         <div id="wps88fn4tb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>showMenu({}); // ok, semua nilai adalah default
+
+showMenu(); // ini akan memberikan kesalahan</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita dapat memperbaikinya dengan menjadikan <code>{}</code> nilai default untuk seluruh objek parameter:</p> 
+         <div id="79753d0lud" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:63,&quot;end&quot;:68}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function showMenu({ title = "Menu", width = 100, height = 200 } = {}) {
+  alert( `${title} ${width} ${height}` );
+}
+
+showMenu(); // Menu 100 200</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam kode di atas, objek argumen keseluruhan adalah <code>{}</code> secara default, jadi selalu ada sesuatu untuk distrukturisasi.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="destructuring-assignment.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li> <p>Penugasan destrukturisasi memungkinkan untuk memetakan objek atau array secara instan ke banyak variabel.</p> </li> 
+          <li> <p>Sintaks lengkap objek:</p> 
+           <div id="nroeghbu0z" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let {prop : varName = default, ...rest} = object</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Ini berarti properti <code>prop</code> harus masuk ke variabel<code>varName</code> dan, jika tidak ada properti seperti itu, maka nilai <code>default</code> harus digunakan.</p> <p>Properti objek yang tidak memiliki pemetaan disalin ke objek <code>rest</code>.</p> </li> 
+          <li> <p>Sintaks lengkap array:</p> 
+           <div id="jxsz1xvrat" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let [item1 = default, item2, ...rest] = array</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Item pertama masuk ke <code>item1</code>; yang kedua masuk ke <code>item2</code>, sisanya membuat array <code>rest</code>.</p> </li> 
+          <li> <p>Dimungkinkan untuk mengekstraksi data dari array / objek bersarang, untuk itu sisi kiri harus memiliki struktur yang sama dengan yang benar.</p> </li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="destructuring-assignment.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="destructuring-assignment.html#destrukturisasi-penugasan" name="destrukturisasi-penugasan">Destrukturisasi penugasan</a></h3> 
+           <a class="task__open-link" href="task/destruct-user.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita mempunyai sebuah objek:</p> 
+            <div id="y02pmr78ju" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  years: 30
+};</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Tulis destrukturisasi penugasan yang terbaca:</p> 
+            <ul> 
+             <li><code>name</code> properti menjadi variabel <code>name</code>.</li> 
+             <li><code>years</code> properti menjadi variabel <code>age</code>.</li> 
+             <li><code>isAdmin</code> properti menjadi variabel <code>isAdmin</code> (false, jika tidak ada properti seperti itu)</li> 
+            </ul> 
+            <p>Berikut adalah contoh nilai setelah penugasan Anda:</p> 
+            <div id="01qlu7l3id" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let user = { name: "John", years: 30 };
+
+// kode Anda ke sisi kiri:
+// ... = user
+
+alert( name ); // John
+alert( age ); // 30
+alert( isAdmin ); // false</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="ib8ibc1gfg" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="destructuring-assignment.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="destructuring-assignment.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  years: 30
+};
+
+let {name, years: age, isAdmin = false} = user;
+
+alert( name ); // John
+alert( age ); // 30
+alert( isAdmin ); // false</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="destructuring-assignment.html#gaji-maksimal" name="gaji-maksimal">Gaji maksimal</a></h3> 
+           <a class="task__open-link" href="task/max-salary.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ada objek <code>salaries</code>:</p> 
+            <div id="4kt517x410" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Buatlah fungsi <code>topSalary(salaries)</code> yang mengembalikan nama orang dengan bayaran tertinggi.</p> 
+            <ul> 
+             <li>Jika <code>gaji</code> kosong, itu harus mengembalikan<code>null</code>.</li> 
+             <li>Jika ada beberapa orang bergaji tinggi, kembalikan salah satu dari mereka.</li> 
+            </ul> 
+            <p>N.B. Gunakan <code>Object.entries</code> dan destrukturisasi untuk meng-iterasi lewat pasangan kunci/nilai.</p> 
+            <p><a href="https://plnkr.co/edit/qY0aX1U1OGxDebdT?p=preview" target="_blank" data-plunk-id="qY0aX1U1OGxDebdT">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="ejapo8xjvs" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function topSalary(salaries) {
+
+  let maxSalary = 0;
+  let maxName = null;
+
+  for(const [name, salary] of Object.entries(salaries)) {
+    if (maxSalary &lt; salary) {
+      maxSalary = salary;
+      maxName = name;
+    }
+  }
+
+  return maxName;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/wxHC3ZaXiduaLDjN?p=preview" target="_blank" data-plunk-id="wxHC3ZaXiduaLDjN">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="keys-values-entries.html" data-tooltip="Objek.kunci, nilai, entri"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="date.html" data-tooltip="Tanggal dan waktu"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdestructuring-assignment" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdestructuring-assignment" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="destructuring-assignment.html#destrukturisasi-array">Destrukturisasi Array</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="destructuring-assignment.html#destrukturisasi-objek">Destrukturisasi objek</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="destructuring-assignment.html#destrukturisasi-bersarang">Destrukturisasi bersarang</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="destructuring-assignment.html#parameter-fungsi-cerdas">Parameter fungsi cerdas</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="destructuring-assignment.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="destructuring-assignment.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="destructuring-assignment.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdestructuring-assignment" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fdestructuring-assignment" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

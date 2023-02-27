@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Scrolling</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="onscroll.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Scrolling"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Scrolling"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="keyboard-events.html"> 
+  <link rel="next" href="forms-controls.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Scrolling"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fonscroll" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fonscroll" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="22" max="32" data-tooltip="Pelajaran 22 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="event-details.html"><span>UI Events</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"UI Events","item":"https://id.javascript.info/event-details"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 27 Agustus 2020"> 
+          <div class="updated-at__content">
+            27 Agustus 2020 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://javascript.info/onscroll">English</a>, 
+          <a href="https://es.javascript.info/onscroll">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/onscroll">Fran??ais</a>, 
+          <a href="https://it.javascript.info/onscroll">Italiano</a>, 
+          <a href="https://ja.javascript.info/onscroll">?????????</a>, 
+          <a href="https://learn.javascript.ru/onscroll">??????????????</a>, 
+          <a href="https://tr.javascript.info/onscroll">T??rk??e</a>, 
+          <a href="https://uk.javascript.info/onscroll">????????????????????</a>, 
+          <a href="https://zh.javascript.info/onscroll">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Scrolling</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Scrolling"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>The <code>scroll</code> event allows reacting to a page or element scrolling. There are quite a few good things we can do here.</p> 
+         <p>For instance:</p> 
+         <ul> 
+          <li>Show/hide additional controls or information depending on where in the document the user is.</li> 
+          <li>Load more data when the user scrolls down till the end of the page.</li> 
+         </ul> 
+         <p>Here???s a small function to show the current scroll:</p> 
+         <div id="vok6ipxfbp" data-trusted="1" class="code-example" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>window.addEventListener('scroll', function() {
+  document.getElementById('showScroll').innerHTML = window.pageYOffset + 'px';
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>In action:</p> 
+         <p>Current scroll = <b id="showScroll">scroll the window</b></p> 
+         <p>The <code>scroll</code> event works both on the <code>window</code> and on scrollable elements.</p> 
+         <h2><a class="main__anchor" name="prevent-scrolling" href="onscroll.html#prevent-scrolling">Prevent scrolling</a></h2> 
+         <p>How do we make something unscrollable?</p> 
+         <p>We can???t prevent scrolling by using <code>event.preventDefault()</code> in <code>onscroll</code> listener, because it triggers <em>after</em> the scroll has already happened.</p> 
+         <p>But we can prevent scrolling by <code>event.preventDefault()</code> on an event that causes the scroll, for instance <code>keydown</code> event for <kbd class="shortcut">pageUp</kbd> and <kbd class="shortcut">pageDown</kbd>.</p> 
+         <p>If we add an event handler to these events and <code>event.preventDefault()</code> in it, then the scroll won???t start.</p> 
+         <p>There are many ways to initiate a scroll, so it???s more reliable to use CSS, <code>overflow</code> property.</p> 
+         <p>Here are few tasks that you can solve or look through to see applications of <code>onscroll</code>.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="onscroll.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="onscroll.html#endless-page" name="endless-page">Endless page</a></h3> 
+           <a class="task__open-link" href="task/endless-page.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Create an endless page. When a visitor scrolls it to the end, it auto-appends current date-time to the text (so that a visitor can scroll more).</p> 
+            <p>Like this:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:200px" src="https://id.js.cx/task/endless-page/solution/"></iframe> 
+            </div> 
+            <p>Please note two important features of the scroll:</p> 
+            <ol> 
+             <li><strong>The scroll is ???elastic???.</strong> We can scroll a little beyond the document start or end in some browsers/devices (empty space below is shown, and then the document will automatically ???bounces back??? to normal).</li> 
+             <li><strong>The scroll is imprecise.</strong> When we scroll to page end, then we may be in fact like 0-50px away from the real document bottom.</li> 
+            </ol> 
+            <p>So, ???scrolling to the end??? should mean that the visitor is no more than 100px away from the document end.</p> 
+            <p>P.S. In real life we may want to show ???more messages??? or ???more goods???.</p> 
+            <p><a href="https://plnkr.co/edit/Bg132CPvqDB4xW4U?p=preview" target="_blank" data-plunk-id="Bg132CPvqDB4xW4U">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>The core of the solution is a function that adds more dates to the page (or loads more stuff in real-life) while we???re at the page end.</p> 
+              <p>We can call it immediately and add as a <code>window.onscroll</code> handler.</p> 
+              <p>The most important question is: ???How do we detect that the page is scrolled to bottom????</p> 
+              <p>Let???s use window-relative coordinates.</p> 
+              <p>The document is represented (and contained) within <code>&lt;html&gt;</code> tag, that is <code>document.documentElement</code>.</p> 
+              <p>We can get window-relative coordinates of the whole document as <code>document.documentElement.getBoundingClientRect()</code>, the <code>bottom</code> property will be window-relative coordinate of the document bottom.</p> 
+              <p>For instance, if the height of the whole HTML document is <code>2000px</code>, then:</p> 
+              <div id="a2bdoqzmky" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// when we're on the top of the page
+// window-relative top = 0
+document.documentElement.getBoundingClientRect().top = 0
+
+// window-relative bottom = 2000
+// the document is long, so that is probably far beyond the window bottom
+document.documentElement.getBoundingClientRect().bottom = 2000</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>If we scroll <code>500px</code> below, then:</p> 
+              <div id="mc3psg3iba" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// document top is above the window 500px
+document.documentElement.getBoundingClientRect().top = -500
+// document bottom is 500px closer
+document.documentElement.getBoundingClientRect().bottom = 1500</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>When we scroll till the end, assuming that the window height is <code>600px</code>:</p> 
+              <div id="gokjt4an6x" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// document top is above the window 1400px
+document.documentElement.getBoundingClientRect().top = -1400
+// document bottom is below the window 600px
+document.documentElement.getBoundingClientRect().bottom = 600</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Please note that the <code>bottom</code> can???t be <code>0</code>, because it never reaches the window top. The lowest limit of the <code>bottom</code> coordinate is the window height (we assumed it to be <code>600</code>), we can???t scroll it any more up.</p> 
+              <p>We can obtain the window height as <code>document.documentElement.clientHeight</code>.</p> 
+              <p>For our task, we need to know when the document bottom is not no more than <code>100px</code> away from it (that is: <code>600-700px</code>, if the height is <code>600</code>).</p> 
+              <p>So here???s the function:</p> 
+              <div id="g1w5udi7oz" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function populate() {
+  while(true) {
+    // document bottom
+    let windowRelativeBottom = document.documentElement.getBoundingClientRect().bottom;
+
+    // if the user hasn't scrolled far enough (&gt;100px to the end)
+    if (windowRelativeBottom &gt; document.documentElement.clientHeight + 100) break;
+
+    // let's add more data
+    document.body.insertAdjacentHTML("beforeend", `&lt;p&gt;Date: ${new Date()}&lt;/p&gt;`);
+  }
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/nIK3Cbv6bBLBFfvn?p=preview" target="_blank" data-plunk-id="nIK3Cbv6bBLBFfvn">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="onscroll.html#up-down-button" name="up-down-button">Up/down button</a></h3> 
+           <a class="task__open-link" href="task/updown-button.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Create a ???to the top??? button to help with page scrolling.</p> 
+            <p>It should work like this:</p> 
+            <ul> 
+             <li>While the page is not scrolled down at least for the window height ??? it???s invisible.</li> 
+             <li>When the page is scrolled down more than the window height ??? there appears an ???upwards??? arrow in the left-top corner. If the page is scrolled back, it disappears.</li> 
+             <li>When the arrow is clicked, the page scrolls to the top.</li> 
+            </ul> 
+            <p>Like this (top-left corner, scroll to see):</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="https://id.js.cx/task/updown-button/solution/" target="_blank" title="buka pada jendela baru" class="toolbar__button toolbar__button_external"></a> 
+              </div> 
+             </div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:200px" src="https://id.js.cx/task/updown-button/solution/"></iframe> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/U8VLQBynwcI3GpDK?p=preview" target="_blank" data-plunk-id="U8VLQBynwcI3GpDK">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><a href="https://plnkr.co/edit/UgMfkNbE647IGqNw?p=preview" target="_blank" data-plunk-id="UgMfkNbE647IGqNw">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="onscroll.html#load-visible-images" name="load-visible-images">Load visible images</a></h3> 
+           <a class="task__open-link" href="task/load-visible-img.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 4</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Let???s say we have a slow-speed client and want to save their mobile traffic.</p> 
+            <p>For that purpose we decide not to show images immediately, but rather replace them with placeholders, like this:</p> 
+            <div id="j6vg6gwcw6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:5,&quot;end&quot;:26},{&quot;start&quot;:52,&quot;end&quot;:71}]}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-markup"><code>&lt;img src="placeholder.svg" width="128" height="128" data-src="real.jpg"&gt;</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>So, initially all images are <code>placeholder.svg</code>. When the page scrolls to the position where the user can see the image ??? we change <code>src</code> to the one in <code>data-src</code>, and so the image loads.</p> 
+            <p>Here???s an example in <code>iframe</code>:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:300px" src="https://id.js.cx/task/load-visible-img/solution/"></iframe> 
+            </div> 
+            <p>Scroll it to see images load ???on-demand???.</p> 
+            <p>Requirements:</p> 
+            <ul> 
+             <li>When the page loads, those images that are on-screen should load immediately, prior to any scrolling.</li> 
+             <li>Some images may be regular, without <code>data-src</code>. The code should not touch them.</li> 
+             <li>Once an image is loaded, it should not reload any more when scrolled in/out.</li> 
+            </ul> 
+            <p>P.S. If you can, make a more advanced solution that would ???preload??? images that are one page below/after the current position.</p> 
+            <p>P.P.S. Only vertical scroll is to be handled, no horizontal scrolling.</p> 
+            <p><a href="https://plnkr.co/edit/4uaXS1SKXeJvgWgV?p=preview" target="_blank" data-plunk-id="4uaXS1SKXeJvgWgV">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>The <code>onscroll</code> handler should check which images are visible and show them.</p> 
+              <p>We also want to run it when the page loads, to detect immediately visible images and load them.</p> 
+              <p>The code should execute when the document is loaded, so that it has access to its content.</p> 
+              <p>Or put it at the <code>&lt;body&gt;</code> bottom:</p> 
+              <div id="nai8xzvco9" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// ...the page content is above...
+
+function isVisible(elem) {
+
+  let coords = elem.getBoundingClientRect();
+
+  let windowHeight = document.documentElement.clientHeight;
+
+  // top elem edge is visible?
+  let topVisible = coords.top &gt; 0 &amp;&amp; coords.top &lt; windowHeight;
+
+  // bottom elem edge is visible?
+  let bottomVisible = coords.bottom &lt; windowHeight &amp;&amp; coords.bottom &gt; 0;
+
+  return topVisible || bottomVisible;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>The <code>showVisible()</code> function uses the visibility check, implemented by <code>isVisible()</code>, to load visible images:</p> 
+              <div id="87gfhu0ow4" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:13}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function showVisible() {
+  for (let img of document.querySelectorAll('img')) {
+    let realSrc = img.dataset.src;
+    if (!realSrc) continue;
+
+    if (isVisible(img)) {
+      img.src = realSrc;
+      img.dataset.src = '';
+    }
+  }
+}
+
+showVisible();
+window.onscroll = showVisible;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>P.S. The solution also has a variant of <code>isVisible</code> that ???preloads??? images that are within 1 page above/below the current document scroll.</p> 
+              <p><a href="https://plnkr.co/edit/xgs0toX1VYUK2pb1?p=preview" target="_blank" data-plunk-id="xgs0toX1VYUK2pb1">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="keyboard-events.html" data-tooltip="Keyboard: keydown and keyup"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="forms-controls.html" data-tooltip="Forms, controls"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fonscroll" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fonscroll" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="event-details.html">UI Events</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="onscroll.html#prevent-scrolling">Prevent scrolling</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="onscroll.html#tasks">Tugas (3)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="onscroll.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fonscroll" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fonscroll" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

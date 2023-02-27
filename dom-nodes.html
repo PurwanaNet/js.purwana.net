@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "fr";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">DOM tree</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="dom-nodes.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="DOM tree"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="DOM tree"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="browser-environment.html"> 
+  <link rel="next" href="dom-navigation.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <link rel="stylesheet" href="https://id.js.cx/libs/domtree.css"> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script> 
+  <script src="https://id.js.cx/libs/domtree.js"></script> 
+  <style>
+span.devtools {
+  display: inline-block;
+  background-image: url(article/dom-nodes/toolbarButtonGlyphs.svg);
+  height:16px;
+  width:16px;
+}
+</style> 
+  <meta property="og:title" content="DOM tree"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdom-nodes" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdom-nodes" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="2" max="32" data-tooltip="Pelajaran 2 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="document.html"><span>Document</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Document","item":"https://id.javascript.info/document"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">DOM tree</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="DOM tree"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Tulang punggung dari dokumen HTML adalah tag.</p> 
+         <p>Berdasarkan Document Object Model (DOM), setiap tag HTML merupakan sebuah objek. Tag berlapis adalah ???anak??? dari tag yang melampirkan. Teks di dalam sebuah tag merupakan sebuah objek juga.</p> 
+         <p>Semua objek ini dapat diakses menggunakan JavaScript, dan kita bisa menggunakannya untuk memodifikasi halaman.</p> 
+         <p>Misalnya, <code>document.body</code> merupakan objek yang merepresentasikan tag <code>&lt;body&gt;</code>.</p> 
+         <p>Menjalankan kode ini akan membuat <code>&lt;body&gt;</code> menjadi merah selama 3 detik.</p> 
+         <div id="hp26sa77y5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dom-nodes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dom-nodes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>document.body.style.background = 'red'; // buat background menjadi merah
+
+setTimeout(() =&gt; document.body.style.background = '', 3000); // kembalikan seperti semula</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini kita menggunakan <code>style.background</code> untuk mengubah warna background <code>document.body</code>, tetapi ada banyak properti lain, seperti:</p> 
+         <ul> 
+          <li><code>innerHTML</code> ??? Konten-konten HTML dari node.</li> 
+          <li><code>offsetWidth</code> ??? lebar node (dalam piksel)</li> 
+          <li>???dan seterusnya.</li> 
+         </ul> 
+         <p>Kita akan segera mempelajari lebih banyak cara untuk memanipulasi DOM, tetapi pertama-tama kita perlu mengetahui tentang strukturnya.</p> 
+         <h2><a class="main__anchor" name="contoh-dari-dom" href="dom-nodes.html#contoh-dari-dom">Contoh dari DOM</a></h2> 
+         <p>Mari kita mulai dengan dokumen sederhana berikut:</p> 
+         <div id="c1p066pv7x" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dom-nodes.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dom-nodes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;About elk&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  The truth about elk.
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>DOM menggambarkan HTML seperti struktur pohon pada tag. Begini tampilannya:</p> 
+         <div class="domtree"></div> 
+         <script>
+let node1 = {"name":"HTML","nodeType":1,"children":[{"name":"HEAD","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"\n  "},{"name":"TITLE","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"About elk"}]},{"name":"#text","nodeType":3,"content":"\n"}]},{"name":"#text","nodeType":3,"content":"\n"},{"name":"BODY","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"\n  The truth about elk.\n\n\n"}]}]}
+
+drawHtmlTree(node1, 'div.domtree', 690, 320);
+</script> 
+         <p>Pada gambar di atas, Anda dapat mengklik node elemen dan anaknya akan membuka/menutup.</p> 
+         <p>Setiap node pohon merupakan sebuah objek.</p> 
+         <p>Tag-tag merupakan <em>node elemen</em> (atau hanya elemen) dan membentuk struktur pohon: <code>&lt;html&gt;</code> merupakan root, kemudian <code>&lt;head&gt;</code> dan <code>&lt;body&gt;</code> adalah anak-anaknya, dll.</p> 
+         <p>Teks di dalam elemen-elemen membentuk <em>node teks</em>, dilabeli sebagai <code>#text</code>. Sebuah node teks hanya berisi string. Ia mungkin tidak memiliki anak dan selalu menjadi daun pohon.</p> 
+         <p>Misalnya, tag <code>&lt;title&gt;</code> memiliki teks <code>"About elk"</code></p> 
+         <p>Harap perhatikan karakter khusus dalam node teks:</p> 
+         <ul> 
+          <li>baris baru: <code>???</code> (di dalam JavaScript seperti <code>\n</code>)</li> 
+          <li>spasi: <code>???</code></li> 
+         </ul> 
+         <p>Spasi dan baris baru adalah karakter yang benar-benar valid, seperti huruf-huruf dan angka-angka. Mereka membentuk node teks dan menjadi bagian dari DOM. Jadi, misalnya, pada contoh di atas, tag <code>&lt;head&gt;</code> berisi beberapa spasi sebelum <code>&lt;title&gt;</code>, dan teks tersebut menjadi node <code>#teks</code> (ini berisi baris baru dan beberapa spasi).</p> 
+         <p>Hanya ada dua pengecualian top-level:</p> 
+         <ol> 
+          <li>Spasi dan baris baru sebelum <code>&lt;head&gt;</code> diabaikan karena alasan historis.</li> 
+          <li>Jika kita meletakkan sesuatu setelah <code>&lt;/body&gt;</code>, maka secara otomatis dipindahkan ke dalam <code>body</code>, di bagian bawah, karena spesifikasi HTML mengharuskan semua konten harus berada di dalam <code>&lt;body&gt;</code>. Jadi tidak boleh ada spasi setelah <code>&lt;/body&gt;</code>.</li> 
+         </ol> 
+         <p>Dalam kasus lain semuanya mudah ??? Jika ada spasi-spasi (seperti karakter lainnya) di dalam dokumen, maka mereka menjadi node teks di DOM tersebut, dan jika kita menghapusnya, maka akan hilang.</p> 
+         <p>Berikut tidak ada node teks khusus spasi:</p> 
+         <div id="pt6fqcp0wa" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;About elk&lt;/title&gt;&lt;/head&gt;&lt;body&gt;The truth about elk.&lt;/body&gt;&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="domtree"></div> 
+         <script>
+let node2 = {"name":"HTML","nodeType":1,"children":[{"name":"HEAD","nodeType":1,"children":[{"name":"TITLE","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"About elk"}]}]},{"name":"BODY","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"The truth about elk."}]}]}
+
+drawHtmlTree(node2, 'div.domtree', 690, 210);
+</script> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Spasi di awal/akhir string dan node teks khusus spasi biasanya disembunyikan di alat</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Alat browser (akan segera dibahas) yang bekerja dengan DOM biasanya tidak menampilkan spasi di awal/akhir teks dan node teks kosong (jeda baris) di antara tag.</p> 
+           <p>Alat pengembang menghemat ruang layar dengan cara ini.</p> 
+           <p>Pada gambar DOM lebih lanjut, kita terkadang mengabaikannya saat mereka tidak relevan. Spasi seperti itu biasanya tidak mempengaruhi bagaimana dokumen ditampilkan.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="autocorrection" href="dom-nodes.html#autocorrection">Autocorrection</a></h2> 
+         <p>Jika browser menemukan HTML yang salah format, browser akan memperbaikinya secara otomatis saat membuat DOM.</p> 
+         <p>Misalnya, tag yang paling atas selalu <code>&lt;html&gt;</code>. Bahkan jika itu tidak ada di dalam dokumen, ia akan ada ada sendiri di dalam DOM, karena browser tersebut akan membuatnya. Hal yang sama berlaku untuk <code>&lt;body&gt;</code>.</p> 
+         <p>Contoh, jika file HTML kata tunggal <code>"Hello"</code>, browser akan membungkusnya ke dalam <code>&lt;html&gt;</code> dan <code>&lt;body&gt;</code>, dan menambahkan <code>&lt;head&gt;</code> yang diperlukan, dan DOM akan menjadi seperti ini:</p> 
+         <div class="domtree"></div> 
+         <script>
+let node3 = {"name":"HTML","nodeType":1,"children":[{"name":"HEAD","nodeType":1,"children":[]},{"name":"BODY","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"Hello"}]}]}
+
+drawHtmlTree(node3, 'div.domtree', 690, 150);
+</script> 
+         <p>Selagi sedang menghasilkan DOM, browser secara otomatis memproses kesalahan-kesalahan di dalam dokumen, tag penutup, dan sebagainya.</p> 
+         <p>dokumen dengan tag yang tidak ditutup:</p> 
+         <div id="9096weaea0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;p&gt;Hello
+&lt;li&gt;Mom
+&lt;li&gt;and
+&lt;li&gt;Dad</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Akan menjadi DOM normal saat browser membaca tag dan memulihkan bagian yang hilang:</p> 
+         <div class="domtree"></div> 
+         <script>
+let node4 = {"name":"HTML","nodeType":1,"children":[{"name":"HEAD","nodeType":1,"children":[]},{"name":"BODY","nodeType":1,"children":[{"name":"P","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"Hello"}]},{"name":"LI","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"Mom"}]},{"name":"LI","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"and"}]},{"name":"LI","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"Dad"}]}]}]}
+
+drawHtmlTree(node4, 'div.domtree', 690, 360);
+</script> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tabel selalu memiliki <code>&lt;tbody&gt;</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>???Kasus khusus??? yang menarik adalah tabel. Berdasarkan spesifikasi DOM, mereka harus memiliki tag , tetapi teks HTML dapat menghilangkannya. Kemudian browser membuat di DOM secara otomatis.</p> 
+           <p>Untuk HTML:</p> 
+           <div id="evra20lkg2" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;table id="table"&gt;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Struktur DOM akan seperti ini:</p> 
+           <div class="domtree"></div> 
+           <script>
+let node5 = {"name":"TABLE","nodeType":1,"children":[{"name":"TBODY","nodeType":1,"children":[{"name":"TR","nodeType":1,"children":[{"name":"TD","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"1"}]}]}]}]};
+
+drawHtmlTree(node5,  'div.domtree', 600, 200);
+</script> 
+           <p>Anda lihat? <code>&lt;tbody&gt;</code> muncul entah dari mana. Kita harus mengingat ini saat bekerja dengan tabel untuk menghindari kejutan.</p> 
+           <h2><a class="main__anchor" name="jenis-jenis-node-lain" href="dom-nodes.html#jenis-jenis-node-lain">Jenis-jenis node lain</a></h2> 
+           <p>Ada beberapa jenis-jenis node lain selain node elemen dan teks.</p> 
+           <p>Contoh, komentar:</p> 
+           <div id="6azrlug7wr" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;body&gt;
+  The truth about elk.
+  &lt;ol&gt;
+    &lt;li&gt;An elk is a smart&lt;/li&gt;
+    &lt;!-- comment --&gt;
+    &lt;li&gt;...and cunning animal!&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="domtree"></div> 
+           <script>
+let node6 = {"name":"HTML","nodeType":1,"children":[{"name":"HEAD","nodeType":1,"children":[]},{"name":"BODY","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"\n  The truth about elk.\n  "},{"name":"OL","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"\n    "},{"name":"LI","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"An elk is a smart"}]},{"name":"#text","nodeType":3,"content":"\n    "},{"name":"#comment","nodeType":8,"content":"comment"},{"name":"#text","nodeType":3,"content":"\n    "},{"name":"LI","nodeType":1,"children":[{"name":"#text","nodeType":3,"content":"...and cunning animal!"}]},{"name":"#text","nodeType":3,"content":"\n  "}]},{"name":"#text","nodeType":3,"content":"\n\n\n"}]}]};
+
+drawHtmlTree(node6, 'div.domtree', 690, 500);
+</script> 
+           <p>Kita bisa lihat disini sebuah jenis node pohon baru ??? <em>comment node</em>, yang dilabeli sebagai <code>#comment</code>, diantar dua node teks.</p> 
+           <p>Kita mungkin berpikir ??? kenapa komentar ditambahkan ke DOM? komentar tersebut tidak mempengaruhi representasi visual dengan cara apa pun. Tapi ada sebuah aturan ??? jika sesuatu ada di dalam HTML, maka ia juga harus di dalam pohon DOM.</p> 
+           <p><strong>Semuanya di dalam HTML, bahkan komentar, akan menjadi bagian dari DOM.</strong></p> 
+           <p>Bahkan direktif <code>&lt;!DOCTYPE ...&gt;</code> di awal HTML juga merupakan node DOM. Letaknya di pohon DOM tepat sebelum <code>&lt;html&gt;</code>. Kita tidak akan menyentuh node itu, Kita bahkan tidak menggambarnya pada diagram karena alasan itu, tetapi node itu ada.</p> 
+           <p>Objek <code>document</code> yang mewakili seluruh dokumen, secara formal, juga merupakan node DOM.</p> 
+           <p>Ada <a href="https://dom.spec.whatwg.org/#node">12 jenis-jenis node</a>. Dalam praktiknya kita biasanya bekerja dengan 4 di antaranya:</p> 
+           <ol> 
+            <li><code>document</code> ??? ???titik masuk??? ke DOM.</li> 
+            <li>node elemen ??? tag-tag HTML, blok bangunan pohon.</li> 
+            <li>node teks ??? berisi teks.</li> 
+            <li>komentar ??? terkadang kita meletakkan informasi disini, ia tidak akan ditampilkan, tetapi JS bisa membacanya dari DOM.</li> 
+           </ol> 
+           <h2><a class="main__anchor" name="melihatnya-untuk-kita-sendiri" href="dom-nodes.html#melihatnya-untuk-kita-sendiri">Melihatnya untuk kita sendiri</a></h2> 
+           <p>Untuk melihat struktur DOM secara real-time, coba <a href="http://software.hixie.ch/utilities/js/live-dom-viewer/">Live DOM Viewer</a>. Cukup ketikkan dokumen, dan itu akan muncul sebagai DOM dalam sekejap.</p> 
+           <p>Cara lain untuk menjelajahi DOM gunakan alat pengembang browser. Sebenarnya itulah yang kita gunakan saat mengembangkan.</p> 
+           <p>Untuk melakukannya, buka halaman web <a href="article/dom-nodes/elk.html">elk.html</a>, aktifkan alat pengembang browser dan beralih ke tab Elemen.</p> 
+           <p>Seharusnya tampil seperti ini:</p> 
+           <figure> 
+            <div class="image" style="width:698px"> 
+             <div class="image__ratio" style="padding-top:35.673352435530084%"></div> 
+             <object type="image/svg+xml" data="article/dom-nodes/elk.svg" width="698" height="249" class="image__image" data-use-theme> <img src="article/dom-nodes/elk.svg" alt="" width="698" height="249"> </object> 
+            </div> 
+           </figure> 
+           <p>Anda bisa melihat DOM tersebut, klik pada elemen-elemen, melihat detailnya, dan sebagainya.</p> 
+           <p>Harap perhatikan bahwa struktur DOM di alat pengembang disederhanakan. Node teks ditampilkan hanya sebagai teks. Dan tidak ada samak sekali node teks ???kosong??? (hanya spasi). Tidak apa-apa, karena sebagian besar waktu kita berkepentingan pada node elemen.</p> 
+           <p>Mengklik tombol <span class="devtools" style="background-position:-328px -124px"></span> di pojok kiri atas memungkinkan kita memilih node dari halaman web menggunakan mouse (atau perangkat penunjuk lain) dan ???memeriksanya??? (gulir ke sana di tab Elemen). Ini berfungsi dengan baik ketika kita memiliki halaman HTML besar (dan DOM besar yang sesuai) dan ingin melihat tempat elemen tertentu di dalamnya.</p> 
+           <p>Cara lain untuk melakukannya adalah dengan mengklik kanan pada halaman web dan memilih ???Inspect??? di menu konteks.</p> 
+           <figure> 
+            <div class="image" style="width:696px"> 
+             <div class="image__ratio" style="padding-top:54.45402298850575%"></div> 
+             <object type="image/svg+xml" data="article/dom-nodes/inspect.svg" width="696" height="379" class="image__image" data-use-theme> <img src="article/dom-nodes/inspect.svg" alt="" width="696" height="379"> </object> 
+            </div> 
+           </figure> 
+           <p>Di bagian kanan alat ada subtabs berikut:</p> 
+           <ul> 
+            <li><strong>Styles</strong> ??? kita bisa melihat CSS diterapkan ke elemen saat ini aturan demi aturan, termasuk aturan bawaan (abu-abu). Hampir semuanya dapat diedit di tempat, termasuk dimensi/margin/padding kotak di bawah ini.</li> 
+            <li><strong>Computed</strong> ??? untuk melihat CSS diterapkan ke elemen berdasarkan properti: untuk setiap properti kita dapat melihat aturan yang memberikannya (termasuk pewarisan CSS dan semacamnya).</li> 
+            <li><strong>Event Listeners</strong> ??? untuk melihat event listener yang dilampirkan ke elemen DOM (kita akan membahasnya di bagian selanjutnya dari tutorial).</li> 
+            <li>???dan seterusnya.</li> 
+           </ul> 
+           <p>Cara terbaik untuk mempelajarinya adalah dengan mengklik. Sebagian besar nilai dapat diedit di tempat.</p> 
+           <h2><a class="main__anchor" name="interaksi-dengan-konsol" href="dom-nodes.html#interaksi-dengan-konsol">Interaksi dengan konsol</a></h2> 
+           <p>Saat kami mengerjakan DOM, kita juga mungkin ingin menerapkan JavaScript padanya. Seperti: mendapatkan node dan jalankan beberapa kode untuk memodifikasinya, Berikut beberapa tip untuk berpindah antara tab Elemen dan konsol.</p> 
+           <p>Sebagai permulaan:</p> 
+           <ol> 
+            <li>Pilih <code>&lt;li&gt;</code> pertama di dalam tab Elements.</li> 
+            <li>Tekan <kbd class="shortcut">Esc</kbd> ??? itu akan membuka konsol tepat di bawah tab Elements.</li> 
+           </ol> 
+           <p>Sekarang elemen yang dipilih terakhir tersedia sebagai <code>$0</code>, yang dipilih sebelumnya adalah <code>$1</code> dll.</p> 
+           <p>Kita bisa menjalankan perintah pada mereka. Misalnya , <code>$0.style.background = 'red'</code> membuat item list yang dipilih bewarna merah, seperti ini:</p> 
+           <figure> 
+            <div class="image" style="width:699px"> 
+             <div class="image__ratio" style="padding-top:64.37768240343348%"></div> 
+             <object type="image/svg+xml" data="article/dom-nodes/domconsole0.svg" width="699" height="450" class="image__image" data-use-theme> <img src="article/dom-nodes/domconsole0.svg" alt="" width="699" height="450"> </object> 
+            </div> 
+           </figure> 
+           <p>Begitulah cara mendapatkan node dari Elements di Console.</p> 
+           <p>Ada juga jalan kembali. Jika ada variabel yang mereferensikan node DOM, maka kita dapat menggunakan perintah <code>inspect (node)</code> di Console untuk melihatnya di panel Elements.</p> 
+           <p>Atau kita bisa mengeluarkan simpul DOM di konsol dan menjelajahi ???di tempat???, seperti <code>document.body</code> di bawah ini:</p> 
+           <figure> 
+            <div class="image" style="width:696px"> 
+             <div class="image__ratio" style="padding-top:73.5632183908046%"></div> 
+             <object type="image/svg+xml" data="article/dom-nodes/domconsole1.svg" width="696" height="512" class="image__image" data-use-theme> <img src="article/dom-nodes/domconsole1.svg" alt="" width="696" height="512"> </object> 
+            </div> 
+           </figure> 
+           <p>Itu tentu saja untuk tujuan debugging. Dari bab selanjutnya kita akan mengakses dan memodifikasi DOM menggunakan JavaScript.</p> 
+           <p>Alat pengembang browser sangat membantu dalam pengembangan: kita dapat menjelajahi DOM, mencoba berbagai hal dan melihat apa yang salah.</p> 
+           <h2><a class="main__anchor" name="summary" href="dom-nodes.html#summary">Summary</a></h2> 
+           <p>Dokumen HTML/XML direpresentasikan di dalam browser sebagai pohon DOM.</p> 
+           <ul> 
+            <li>Tag menjadi node elemen dan membentuk struktur.</li> 
+            <li>Teks menjadi node teks.</li> 
+            <li>???dll, semuanya di dalam HTML mempunyai tempatnya di dalam DOM, bahkan komentar.</li> 
+           </ul> 
+           <p>Kita dapat menggunakan alat pengembang untuk memeriksa DOM dan memodifikasinya secara manual.</p> 
+           <p>Di sini kami membahas dasar-dasar, tindakan yang paling sering digunakan dan penting untuk memulai. Ada dokumentasi lengkap tentang Alat Pengembang Chrome di <a href="https://developers.google.com/web/tools/chrome-devtools">https://developers.google.com/web/tools/chrome-devtools</a>. Cara terbaik untuk mempelajari alat ini adalah dengan mengklik di sana-sini, membaca menu: sebagian besar opsi sudah jelas. Nanti, jika Anda mengenal mereka secara umum, bacalah dokumennya dan pelajari sisanya.</p> 
+           <p>Node DOM memiliki properti dan method yang memungkinkan kita untuk melakukan perjalanan di antara mereka, memodifikasinya, memindahkan halaman, dan banyak lagi. Kami akan membahasnya di bab berikutnya.</p> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="browser-environment.html" data-tooltip="Browser environment, specs"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="dom-navigation.html" data-tooltip="Walking the DOM"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdom-nodes" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdom-nodes" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="document.html">Document</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dom-nodes.html#contoh-dari-dom">Contoh dari DOM</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dom-nodes.html#autocorrection">Autocorrection</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dom-nodes.html#jenis-jenis-node-lain">Jenis-jenis node lain</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dom-nodes.html#melihatnya-untuk-kita-sendiri">Melihatnya untuk kita sendiri</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dom-nodes.html#interaksi-dengan-konsol">Interaksi dengan konsol</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dom-nodes.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dom-nodes.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdom-nodes" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fdom-nodes" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

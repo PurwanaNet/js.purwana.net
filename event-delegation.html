@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Delegasi Peristiwa</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="event-delegation.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Delegasi Peristiwa"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Delegasi Peristiwa"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="bubbling-and-capturing.html"> 
+  <link rel="next" href="default-browser-action.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Delegasi Peristiwa"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fevent-delegation" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fevent-delegation" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="14" max="32" data-tooltip="Pelajaran 14 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="events.html"><span>Pengenalan ke Peristiwa</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Pengenalan ke Peristiwa","item":"https://id.javascript.info/events"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 20 Desember 2021"> 
+          <div class="updated-at__content">
+            20 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Delegasi Peristiwa</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Delegasi Peristiwa"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Menangkap dan pengelembungan mengizinkan kita untuk mengimplementasikan salah satu pola penanganan peristiwa paling kuat yang disebut dengan <em>delegasi peristiwa (<em>event delegation</em>)</em>.</p> 
+         <p>Ide utama yaitu jika kita memiliki banyak elemen yang akan di tangani dengan cara yang sama, maka sebaiknya daripada memberikan sebuah penangan pada setiap elemen tersebut ??? kita buat sebuah penangan (<em>handler</em>) pada elemen atas yang melingkupi semua elemen tersebut.</p> 
+         <p>Pada penangan kita mendapatkan <code>event.target</code> untuk melihat dimanakah kejadian itu terjadi, dan akan menangani kejadian itu.</p> 
+         <p>Mari lihat sebuah contoh ??? <a href="http://en.wikipedia.org/wiki/Ba_gua">Ba-Gua diagram</a> mencerminkan filosofi Cina kuno.</p> 
+         <p>Ini dia:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://id.js.cx/article/event-delegation/bagua/" target="_blank" title="buka pada jendela baru" class="toolbar__button toolbar__button_external"></a> 
+           </div> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/iOeVBl5pQLnEnPri?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="iOeVBl5pQLnEnPri" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:350px" src="https://id.js.cx/article/event-delegation/bagua/"></iframe> 
+         </div> 
+         <p>HTMLnya seperti ini:</p> 
+         <div id="6toaauv0l7" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th colspan="3"&gt;&lt;em&gt;Bagua&lt;/em&gt; Bagan: Arah, Elemen, Warna, Arti&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="nw"&gt;&lt;strong&gt;Barat Laut&lt;/strong&gt;&lt;br&gt;Logam&lt;br&gt;Perak&lt;br&gt;Orang Tua&lt;/td&gt;
+    &lt;td class="n"&gt;...&lt;/td&gt;
+    &lt;td class="ne"&gt;...&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;...2 buah teks seperti di atas...&lt;/tr&gt;
+  &lt;tr&gt;...2 buah teks seperti di atas...&lt;/tr&gt;
+&lt;/table&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tabel memiliki 9 sel, tapi bisa saja memiliki 99 atau 9999 sell, tidaklah penting.</p> 
+         <p><strong>Tugas kita adalah untuk memberikan highlight ke sel <code>&lt;td&gt;</code> yang di klik.</strong></p> 
+         <p>Daripada mengatur sebuah penangan <code>onclick</code> pada setiap <code>&lt;td&gt;</code> (yang bisa sangat banyak) ??? kita akan mengatur sebuah penangan ???penangkap-semua??? pada elemen <code>&lt;table&gt;</code>.</p> 
+         <p>Penangan itu akan menggunakan <code>event.target</code> untuk mendapatkan elemen yang diklik dan menghighlightnya.</p> 
+         <p>Kodenya:</p> 
+         <div id="4rqlo1kub7" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:8}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let selectedTd;
+
+table.onclick = function(event) {
+  let target = event.target; // dimanakah klik terjadi?
+
+  if (target.tagName != 'TD') return; // bukan di TD? kita tidak peduli
+
+  highlight(target); // highlight elemen itu
+};
+
+function highlight(td) {
+  if (selectedTd) { // hapus elemen lain yang sudah di highlight
+    selectedTd.classList.remove('highlight');
+  }
+  selectedTd = td;
+  selectedTd.classList.add('highlight'); // menghighlight elemen yang baru
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kode seperti itu, tidak peduli berapa banyak sel yang ada pada table tersebut. Kita bisa menambahkan/menghapuskan <code>td</code> secara dinamis pada waktu kapanpun dan proses menghighlight akan tetap berfungsi.</p> 
+         <p>Tapi, tetap ada kekurangannya.</p> 
+         <p>Klik mungkin tidak terjadi pada <code>&lt;td&gt;</code>, tapi pada elemen didalamnya.</p> 
+         <p>Pada kasus kita jika dilihat pada HTML, kita memiliki sebuah elemen bersarang pada <code>&lt;td&gt;</code>, seperti <code>&lt;strong&gt;</code>:</p> 
+         <div id="jqaedecfys" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;td&gt;
+  &lt;strong&gt;Barat Laut&lt;/strong&gt;
+  ...
+&lt;/td&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Biasanya, jika klik terjadi pada <code>&lt;strong&gt;</code> maka elemen itu akan menjadi nilai dari <code>event.target</code>.</p> 
+         <figure> 
+          <div class="image" style="width:369px"> 
+           <div class="image__ratio" style="padding-top:58.536585365853654%"></div> 
+           <object type="image/svg+xml" data="article/event-delegation/bagua-bubble.svg" width="369" height="216" class="image__image" data-use-theme> <img src="article/event-delegation/bagua-bubble.svg" alt="" width="369" height="216"> </object> 
+          </div> 
+         </figure> 
+         <p>Pada penangan (<em>handler</em>) <code>table.onclick</code> kita sebaiknya mengambil <code>event.target</code> dan mencari tahu apakah klik terjadi didalam <code>&lt;td&gt;</code> atau tidak.</p> 
+         <p>Ini kode yang sudah diperbaiki:</p> 
+         <div id="s9512780to" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>table.onclick = function(event) {
+  let td = event.target.closest('td'); // (1)
+
+  if (!td) return; // (2)
+
+  if (!table.contains(td)) return; // (3)
+
+  highlight(td); // (4)
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Penjelasan:</p> 
+         <ol> 
+          <li>Metode <code>elem.closest(selector)</code> akan mengembalikan elemen atas terdekat yang sama dengan pemilih (<em>selector</em>). Pada kasus kita yang dicari adalah <code>&lt;td&gt;</code> pada bagian atas dari elemen sumber.</li> 
+          <li>Jika <code>event.target</code> tidak didalam <code>&lt;td&gt;</code>, maka kita akan langsung mengembalikan, karena tidak ada yang bisa dilakukan.</li> 
+          <li>Jika pada kasus elemen bersarang didalam tabel, <code>event.target</code> bisa saja merupakan elemen <code>&lt;td&gt;</code>, tapi berada diluar tabel yang kita atur. Jadi kita memeriksa jika tabel itu adalah <em>tabel yang kita butuh</em> <code>&lt;td&gt;</code>.</li> 
+          <li>Dan, jika benar, maka beri highlight pada elemen itu.</li> 
+         </ol> 
+         <p>Hasilnya, kita memiliki kode yang cepat, efisien dalam memberikan highlight, yang tidak peduli terhadap jumlah dari elemen <code>&lt;td&gt;</code> pada sebuah tabel.</p> 
+         <h2><a class="main__anchor" name="contoh-delegasi-tindakan-dalam-markup" href="event-delegation.html#contoh-delegasi-tindakan-dalam-markup">Contoh Delegasi: tindakan dalam markup</a></h2> 
+         <p>Ada kegunaan lain untuk delegasi acara.</p> 
+         <p>Bayangkan, kita mau membuat sebuah menu dengan tombol ???Simpan???, ???Muat???, ???Cari??? dan seterusnya. Dan ada sebuah objek dengan metode <code>simpan</code>, <code>muat</code>, <code>cari</code>??? Bagaimana cara untuk menyamakan mereka?</p> 
+         <p>Ide pertama yaitu dengan mengatur penangan (<em>handler</em>) berbeda pada setiap tombol, Tapi ada solusi yang lebih elegan. Kita bisa menambahkan sebuah penangan (<em>handler</em>) untuk seseluruhan menu dan menambahkan atribut <code>data-action</code> untuk tombol yang bisa memanggil/memiliki sebuah metode:</p> 
+         <div id="zos3cev6dp" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:8,&quot;end&quot;:26}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button data-action="save"&gt;Klik untuk simpan&lt;/button&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Penangan (<em>handler</em>) membaca atribut dan mengeksekusi metode yang sama dengan atribut. Coba lihat contohnya:</p> 
+         <div id="ygkkxg0uu8" data-trusted="0" class="code-example" data-demo-height="60" data-highlight="[{&quot;start&quot;:26,&quot;end&quot;:29}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="event-delegation.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="event-delegation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;div id="menu"&gt;
+  &lt;button data-action="save"&gt;Simpan&lt;/button&gt;
+  &lt;button data-action="load"&gt;Muat&lt;/button&gt;
+  &lt;button data-action="search"&gt;Cari&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  class Menu {
+    constructor(elem) {
+      this._elem = elem;
+      elem.onclick = this.onClick.bind(this); // (*)
+    }
+
+    save() {
+      alert('Menyimpan');
+    }
+
+    load() {
+      alert('Memuat');
+    }
+
+    search() {
+      alert('Mencari');
+    }
+
+    onClick(event) {
+      let action = event.target.dataset.action;
+      if (action) {
+        this[action]();
+      }
+    };
+  }
+
+  new Menu(menu);
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-ygkkxg0uu8" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Harap dicatat bahwa <code>this.onClick</code> terikat pada <code>this</code> di <code>(*)</code>. Itu penting, karena jika tidak <code>this</code> didalamnya akan menyimpan referensi ke DOM elemen (<code>elem</code>), buka ke objek <code>Menu</code>, dan <code>this[action]</code> tidak akan seperti yang kita inginkan.</p> 
+         <p>Jadi,apakah keuntuk yang diberikan delegasi kepada kita disini?</p> 
+         <div class="balance balance_single"> 
+          <div class="balance__pluses"> 
+           <div class="balance__content"> 
+            <ul class="balance__list"> 
+             <li>Kita teidak perlu lagi menulis kode untuk mengatur penangan (<em>handler</em>) untuk setiap tombol. Kita hanya perlu membuat sebuah metode dan menaruh markup didalamnya.</li> 
+             <li>Struktur HTML menjadi fleksible, dan kita bisa menambah/menghapus tombol kapanpun kita mau.</li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa menggunakan <em>class</em> <code>.action-save</code>, <code>action-load</code>, tapi sebuah atribut <code>data-action</code> lebih baik secara semantik. Dan kita bisa gunakan itu pada aturan CSS juga.</p> 
+         <h2><a class="main__anchor" name="perilaku-pola" href="event-delegation.html#perilaku-pola">Perilaku pola</a></h2> 
+         <p>Kita juga bisa menggunakan delegasi peristiwa untuk menambahkan ???perilaku??? kepada elemen secara deklarasi, dengan atribut khusus dan <em>class</em>.</p> 
+         <p>Pola memiliki 2 bagian:</p> 
+         <ol> 
+          <li>Kita tambahkan sebuah atribut khusus ke sebuah elemen yang menjelaskan perilakunya.</li> 
+          <li>Penangan dokumen secara umum untuk melacak peristiwa, dan jika sebuah peristiwa terjadi pada elemen yang memiliki atribut khusus ??? jalankan sebuah proses.</li> 
+         </ol> 
+         <h3><a class="main__anchor" name="perilaku-menghitung" href="event-delegation.html#perilaku-menghitung">Perilaku: Menghitung</a></h3> 
+         <p>Contohnya, disini atribut <code>data-counter</code> menambahkan sebuah perilaku: ???Menambah nilai pada klik??? ke tombol:</p> 
+         <div id="hwiizyemh4" data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="event-delegation.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="event-delegation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>Penghitung: &lt;input type="button" value="1" data-counter&gt;
+Penghitung lainnya: &lt;input type="button" value="2" data-counter&gt;
+
+&lt;script&gt;
+  document.addEventListener('click', function(event) {
+
+    if (event.target.dataset.counter != undefined) { // Jika ada atributnya...
+      event.target.value++;
+    }
+
+  });
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-hwiizyemh4" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Jika kita mengklik sebuah tombol ??? nilainya akan bertambah. Bukan tombol, tapi pendekatan secara umum penting pada kasus ini.</p> 
+         <p>Bisa ada banyak atribut dengan <code>data-counter</code> sebanyak yang kita mau. Kta bisa menambah atribut baru ke HTML kapanpun kita mau. Menggunakan delegasi peristiwa kita ???memperpanjang??? HTML, menambahkan sebuah atribut baru untuk menjelaskan sebuah perilaku baru.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Untuk penangan tingkat dokumen ??? selalu gunakan <code>addEventListener</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Pada saat kita mengatur sebuah penangan peristiwa (<em>event handler</em>) ke objek <code>dokumen</code>, sebaiknya selalu gunakan <code>addEvenListener</code>, dan bukan <code>document.on&lt;event&gt;</code>, karena yang kedua akan mengakibatkan konflik: penangan baru akan menimpah penangan yang lama.</p> 
+           <p>Untuk projek asli, adalah normal untuk memiliki banyak penangan (<em>handler</em>) yang di atur ke <code>document</code> pada bagian code yang berbeda.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="perilaku-pengalih" href="event-delegation.html#perilaku-pengalih">Perilaku: Pengalih</a></h3> 
+         <p>Satu lagi contoh dari perilaku. Sebuah klik pada elemen dengan atribut <code>data-toggle-id</code> akan menampilkan/menyembunyikan elemen dengan <code>id</code> yang sama:</p> 
+         <div id="zj5y325fub" data-trusted="1" class="code-example" data-demo-height="60" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:16},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:8,&quot;end&quot;:39}]}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="event-delegation.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="event-delegation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button data-toggle-id="subscribe-mail"&gt;
+  Tampilkan formulir berlangganan
+&lt;/button&gt;
+
+&lt;form id="subscribe-mail" hidden&gt;
+  Email kamu: &lt;input type="email"&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  document.addEventListener('click', function(event) {
+    let id = event.target.dataset.toggleId;
+    if (!id) return;
+
+    let elem = document.getElementById(id);
+
+    elem.hidden = !elem.hidden;
+  });
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-zj5y325fub" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Catat lagi apa yang kita lakukan. Sekarang, untuk menambahkan fungsi beralih pada elemen ??? tidak memerlukan pengetahuan tentang JavaScript, hanya perlu menggunakan atribut <code>data-toggle-id</code>.</p> 
+         <p>Hal ini akan sangat menyederhanakan proses ??? tidak perlu menulis JavaScript untuk setiap elemen. Hanya perlu menggunakan perilaku. Penangan (<em>handler</em>) tingkat dokumen akan membuat proses ini berfungsi pada setiap elemen yang ada di dalam halaman tersebut.</p> 
+         <p>Kita juga bisa menggabungkan beberapa perilaku pada sebuah elemen.</p> 
+         <p>???Perilaku??? pola bisa menjadi alternatif terhadap fargmen kecil JavaScript.</p> 
+         <h2><a class="main__anchor" name="ringkisan" href="event-delegation.html#ringkisan">Ringkisan</a></h2> 
+         <p>Delegasi peristiwa sangatlah keren! Itu salah satu pola yang paling berguna untuk peristiwa DOM.</p> 
+         <p>Itu sering digunakan untuk menambahkan penangan untuk elemen yang mirip, tapi bukan hanya untuk itu.</p> 
+         <p>Algoritmanya:</p> 
+         <ol> 
+          <li>Taruh sebuah penangan (<em>handler</em>) pada elemen atas.</li> 
+          <li>Di penangan (<em>handler</em>) ??? periksa sumber elemen dengan menggunakan <code>event.target</code>.</li> 
+          <li>Jika peristiwa terjadi didalam elemen yang kita inginkan, maka tangani peristiwa itu.</li> 
+         </ol> 
+         <p>Keuntungan:</p> 
+         <div class="balance balance_single"> 
+          <div class="balance__pluses"> 
+           <div class="balance__content"> 
+            <ul class="balance__list"> 
+             <li>Menyederhanakan proses inisialisasi dan menghemat memori: tidak perlu membuat banyak penangan (<em>handler</em>).</li> 
+             <li>Sedikit Kode: saat menambahkan dan menghapus elemen, kita tidak perlu tambah/hapus penangan (<em>handler</em>).</li> 
+             <li>Modifikasi DOM: Kita bisa secara banyak menambahkan/menghapuskan elemen dengan <code>innerHTML</code> dan sejenisnya.</li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Delegasi tentu juga memiliki batasannya:</p> 
+         <div class="balance balance_single"> 
+          <div class="balance__minuses"> 
+           <div class="balance__content"> 
+            <ul class="balance__list"> 
+             <li>Pertama, peristiwa harus bisa mengelembung. Bebebrapa peristiwa tidak mengelembung. Juga, penangan (<em>handler</em>) pada level bawah tidak boleh menggunakan <code>event.stopPropagation()</code>.</li> 
+             <li>Kedua, delegasi mungkin menambahkan muatan pada CPU, karena penangan (<em>handler</em>) pada level atas akan bereaksi pada peristiwa yang terjadi didalam elemen itu, tidak peduli jika peristiwa itu yang kita inginkan atau tidak. Tapi biasanya proses muatannya tidak besar dan bisa diabaikan, jadi kita tidak perlu memperhitungkannya.</li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="event-delegation.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="event-delegation.html#menyembunyikan-pesan-menggunakan-delegasi" name="menyembunyikan-pesan-menggunakan-delegasi">Menyembunyikan pesan menggunakan delegasi</a></h3> 
+           <a class="task__open-link" href="task/hide-message-delegate.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ada sebuah daftar dengan tombol <code>[x]</code>. Buat tombol itu berfungsi.</p> 
+            <p>Seperti ini:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:420px" src="https://id.js.cx/task/hide-message-delegate/solution/"></iframe> 
+            </div> 
+            <p>Tambahan: Gunakan 1 event listener pada container, gunakan delegasi peristiwa (<em>event delegation</em>).</p> 
+            <p><a href="https://plnkr.co/edit/hfv6CmKZxwZDshnB?p=preview" target="_blank" data-plunk-id="hfv6CmKZxwZDshnB">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><a href="https://plnkr.co/edit/cvxHsZwIfngq71ce?p=preview" target="_blank" data-plunk-id="cvxHsZwIfngq71ce">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="event-delegation.html#menu-pohon-tree-menu" name="menu-pohon-tree-menu">Menu pohon (_tree menu_)</a></h3> 
+           <a class="task__open-link" href="task/sliding-tree.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah pohon yang akan menampilkan/menyembunyikan elemen bawahan pada saat di klik:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:300px" src="https://id.js.cx/task/sliding-tree/solution/"></iframe> 
+            </div> 
+            <p>Syarat:</p> 
+            <ul> 
+             <li>Hanya satu penangan peristiwa (<em>event handler</em>) gunakan delegasi peristiwa.</li> 
+             <li>Klik di luar judul node (pada ruang kosong) tidak boleh melakukan apa-apa.</li> 
+            </ul> 
+            <p><a href="https://plnkr.co/edit/TtMoM2pggHG7mNkc?p=preview" target="_blank" data-plunk-id="TtMoM2pggHG7mNkc">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Solusi terbagi atas 2 bagian.</p> 
+              <ol> 
+               <li>Bungkus setiap node pada pohon kedalam <code>&lt;span&gt;</code>. Kemudian kita bisa menambahkan <code>:hover</code> dengan CSS-style dan menanggani klik tepat pada teks, karena lebar <code>&lt;span&gt;</code> sama dengan lebar tulisan (lebar tidak sama jika tidak menggunakan <code>&lt;span&gt;</code>);</li> 
+               <li>Atur sebuah penangan (<em>handler</em>) ke <code>tree</code> akar dari node dan tanggani setiap klik pada judul <code>&lt;span&gt;</code>.</li> 
+              </ol> 
+              <p><a href="https://plnkr.co/edit/BSl8YTYcdDcCQ3om?p=preview" target="_blank" data-plunk-id="BSl8YTYcdDcCQ3om">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="event-delegation.html#tabel-yang-bisa-diurutkan" name="tabel-yang-bisa-diurutkan">Tabel yang bisa diurutkan</a></h3> 
+           <a class="task__open-link" href="task/sortable-table.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 4</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah table yang dapat diurutkan: klik pada elemen <code>&lt;th&gt;</code> harus mengurutkan kolom dibawahnya.</p> 
+            <p>Setiap <code>&lt;th&gt;</code> memiliki tipe pada atribut, seperti ini:</p> 
+            <div id="qc9cjiwzwm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:4}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-markup"><code>&lt;table id="grid"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th data-type="number"&gt;Umur&lt;/th&gt;
+      &lt;th data-type="string"&gt;Nama&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;John&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;Ann&lt;/td&gt;
+    &lt;/tr&gt;
+    ...
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Pada contoh diatas kolom memiliki nomor, dan kolom kedua ??? string (teks). Fungsi pengurutan harus menanggani pengurutan berdasarkan tipenya.</p> 
+            <p>Hanya tipe <code>"string"</code> dan <code>"number"</code> yang bisa di urutkan.</p> 
+            <p>Contoh yang sudah jadi:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:190px" src="https://id.js.cx/task/sortable-table/solution/"></iframe> 
+            </div> 
+            <p>Tambahan: Tabel bisa besar, dengan banyak baris dan kolom.</p> 
+            <p><a href="https://plnkr.co/edit/tEB2adUDlUme2Vko?p=preview" target="_blank" data-plunk-id="tEB2adUDlUme2Vko">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><a href="https://plnkr.co/edit/VsxKx1ITdQnsLABj?p=preview" target="_blank" data-plunk-id="VsxKx1ITdQnsLABj">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="event-delegation.html#perilaku-tooltip" name="perilaku-tooltip">Perilaku Tooltip</a></h3> 
+           <a class="task__open-link" href="task/behavior-tooltip.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat Kode JS untuk perilaku tooltip.</p> 
+            <p>Pada saat mouse menghampir sebuah elemen dengan <code>data-tooltip</code>, tooltip harus tampil diatasnya, dan pada saat mouse itu pindah tooltipnya di sembunyikan.</p> 
+            <p>Contoh dari HTML yang beranotasi:</p> 
+            <div id="3oy5eonw4z" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-markup"><code>&lt;button data-tooltip="Tooltip lebih panjang dari elemen tombol"&gt;Tombol pendek&lt;/button&gt;
+&lt;button data-tooltip="HTML&lt;br&gt;tooltip"&gt;Sebuah tombol lainnya&lt;/button&gt;</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Harus berfungsi seperti ini:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:200px" src="https://id.js.cx/task/behavior-tooltip/solution/"></iframe> 
+            </div> 
+            <p>Pada tugas ini kita beranggapan bawah semua elemen dengan <code>data-tooltip</code> memiliki teks didalamnya, Tidak ada elemen bersarang (belum).</p> 
+            <p>Rincian:</p> 
+            <ul> 
+             <li>Jarak antara elemen dan tooltip harusnya <code>5px</code>.</li> 
+             <li>Jika memungkinkan, tooltip harus ditengah relatif pada elemen yang beranotasi.</li> 
+             <li>Tooltip tidak boleh melewati ujung dari jendela (<em>window</em>). Biasanya tooltip harus berada di atas elemen, tapi jika elemen itu berada pada bagian atas halaman, dan tidak ada area untuk tooltip, maka posisi tooltip dibawah elemen.</li> 
+             <li>Konten tooltip diberikan dalam atribut ???data-tooltip???. Ini bisa menjadi HTML asalan.</li> 
+            </ul> 
+            <p>Kamu akan membutuhkan 2 peristiwa:</p> 
+            <ul> 
+             <li><code>mouseover</code> akan dijalankan pada saat pointer berada di atas elemen beranotasi.</li> 
+             <li><code>mouseout</code> akan dijalankan pada saat pointer meninggalkan elemen yang beranotasi.</li> 
+            </ul> 
+            <p>Tolong gunakan delegasi peristiwa: atur 2 buah penangan pada <code>document</code> untuk melacak semua ???masukan??? dan ???keluaran??? dari elemen yang memiliki <code>data-tooltip</code> dan untuk menanggani tooltip dari elemen itu.</p> 
+            <p>Setelah perilaku tooltip dibuat, bahkan orang yang tidak familiar dengan JavaScript bisa menambahkan elemen yang beranotasi.</p> 
+            <p>Tambahan: Tooltip hanya bisa ditujukan satu-satu.</p> 
+            <p><a href="https://plnkr.co/edit/F2Ghuh63nn5n9uhv?p=preview" target="_blank" data-plunk-id="F2Ghuh63nn5n9uhv">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><a href="https://plnkr.co/edit/iFzFm9f1atxyAHuG?p=preview" target="_blank" data-plunk-id="iFzFm9f1atxyAHuG">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="bubbling-and-capturing.html" data-tooltip="Menggelembung (_bubbling_) dan menangkap (_capturing_)"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="default-browser-action.html" data-tooltip="_Browser default actions_"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fevent-delegation" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fevent-delegation" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="events.html">Pengenalan ke Peristiwa</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="event-delegation.html#contoh-delegasi-tindakan-dalam-markup">Contoh Delegasi: tindakan dalam markup</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="event-delegation.html#perilaku-pola">Perilaku pola</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="event-delegation.html#ringkisan">Ringkisan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="event-delegation.html#tasks">Tugas (4)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="event-delegation.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fevent-delegation" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fevent-delegation" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

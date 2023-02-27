@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pengetesan terotomasi dengan Mocha</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="testing-mocha.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pengetesan terotomasi dengan Mocha"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pengetesan terotomasi dengan Mocha"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="ninja-code.html"> 
+  <link rel="next" href="polyfills.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pengetesan terotomasi dengan Mocha"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ftesting-mocha" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ftesting-mocha" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="27" max="92" data-tooltip="Pelajaran 27 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="code-quality.html"><span>Kualitas Kode</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Kualitas Kode","item":"https://id.javascript.info/code-quality"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pengetesan terotomasi dengan Mocha</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pengetesan terotomasi dengan Mocha"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Pengetesan terotomasi akan dipakai di tugas lebih lanjut, dan juga luas dipakai di proyek riil.</p> 
+         <h2><a class="main__anchor" name="kenapa-kita-butuh-tes" href="testing-mocha.html#kenapa-kita-butuh-tes">Kenapa kita butuh tes?</a></h2> 
+         <p>Saat kita menulis fungsi, kita biasanya akan membayangkan apa yang ia harus lakukan: parameter apa memberikan hasil apa.</p> 
+         <p>Selama pengembangan, kita bisa mengecek fungsi dengan menjalankannya dan membandingkan keluaran yang muncul dengan yang keluaran diharapkan. Misalnya, kita bisa melakukannya di konsol.</p> 
+         <p>Jika sesuatu buruk terjadi ??? maka kita membetulkan kode, menjalankan lagi, mengecek hasil ??? dan begitu terus hingga bekerja.</p> 
+         <p>Tapi proses ???jalan-ulang??? manual seperti ini tak sempurna.</p> 
+         <p><strong>Ketika pengetesan kode dengan jalan-ulang manual, sangat rentang untuk kelupaan sesuatu.</strong></p> 
+         <p>Misalnya, kita membuat fungsi <code>f</code>. Membuat beberapa kode, mengetes: <code>f(1)</code> bekerja, tapi <code>f(2)</code> tak bekerja. Kita betulkan kodenya dan sekarang <code>f(2)</code> bekerja. Sudah lengkap? Tapi kita lupa mengetes-ulang <code>f(1)</code>. Di situ mungkin terjadi galat.</p> 
+         <p>Ini sangat tipikal. Saat kita mengembangkan sesuatu, kita menyimpan banyak use case di kepala. Tapi sulit mengharapkan programmer mengecek semuanya secara manual setelah setiap perubahan. Jadi lebih mudah membetulkan satu hal dan merusak hal lainnya.</p> 
+         <p><strong>Pengecekan terotomasi artinya tes itu ditulis terpisah, sebagai tambahan ke kode. Mereka menjalankan kode kita dalam berbagai cara dan membandingkan hasil dengan harapan.</strong></p> 
+         <h2><a class="main__anchor" name="behavior-driven-development-bdd" href="testing-mocha.html#behavior-driven-development-bdd">Behavior Driven Development (BDD)</a></h2> 
+         <p>Ayo mulai dengan teknik bernama <a href="http://en.wikipedia.org/wiki/Behavior-driven_development">Behavior Driven Development</a> atau, singkatnya, BDD.</p> 
+         <p><strong>BDD adalah tiga hal dalam satu: tes DAN dokumentasi DAN contoh.</strong></p> 
+         <p>Untuk memahami BDD, kita akan periksa kasus praktik pengembangan.</p> 
+         <h2><a class="main__anchor" name="pengembangan-pow-spek" href="testing-mocha.html#pengembangan-pow-spek">Pengembangan ???pow???: spek</a></h2> 
+         <p>Katakan kita mau membuat fungsi <code>pow(x, n)</code> yang menaikkan <code>x</code> ke bilangan pangkat <code>n</code>. Kita asumsikan <code>n???0</code>.</p> 
+         <p>Tugas itu cuma contoh: ada operator <code>**</code> di JavaScript yang bisa melakukan itu, tapi di sini kita koncentrasi di alur pengembangan yang bisa ditiru di tugas komplex lainnya juga.</p> 
+         <p>Sebelum membuat kode <code>pow</code>, kita bisa bayangkan apa yang harus dilakukan fungsi itu dan menjelaskannya.</p> 
+         <p>Deskripsi begitu disebut <em>spesifikasi</em> atau, singkatnya, spek, dan berisi deskripsi use case bersama dengan tes untuk mereka, seperti ini:</p> 
+         <div id="1k4ldzdjo0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>describe("pow", function() {
+
+  it("raises to n-th power", function() {
+    assert.equal(pow(2, 3), 8);
+  });
+
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Spek punya tiga blok bangunan utama yang bisa kamu lihat di bawah:</p> 
+         <dl> 
+          <dt> 
+           <code>describe("title", function() { ... })</code> 
+          </dt> 
+          <dd> 
+           <p>Fungsionalitas apa yang kita jelaskan. Di kasus ini kita akan menjelaskan fungsi <code>pow</code>. Dipakai untuk mengelompokkan ???pekerja??? ??? blok <code>it</code>.</p> 
+          </dd> 
+          <dt> 
+           <code>it("use case description", function() { ... })</code> 
+          </dt> 
+          <dd> 
+           <p>Di judul <code>it</code> kita <em>dalam bahasa manusia</em> menjelaskan use case tertentu, dan argumen kedua ialah fungsi yang mengetes itu.</p> 
+          </dd> 
+          <dt> 
+           <code>assert.equal(value1, value2)</code> 
+          </dt> 
+          <dd> 
+           <p>Kode di dalam blok <code>it</code>, jika implementasinya benar, harus berjalan tanpa galat.</p> 
+           <p>Fungsi <code>assert.*</code> dipakai untuk mengecek apakah <code>pow</code> bekerja sesuai harapan. Tepat di sini kita memakai salah satunya ??? <code>assert.equal</code>, ia membandingkan argumen dan menghasilkan galat jika mereka tak sama. Di sini ia mengecek apakah hasil <code>pow(2, 3)</code> sama dengan <code>8</code>. Ada tipe perbandingan dan pengecekan lain, yang akan kita tambah nanti.</p> 
+          </dd> 
+         </dl> 
+         <p>Spesifikasi ini bisa diexekusi, dan ia akan menjalankan tes yang dispesifikasi dalam blok <code>it</code>. Kita akan lihat nanti.</p> 
+         <h2><a class="main__anchor" name="alur-pengembangan" href="testing-mocha.html#alur-pengembangan">Alur pengembangan</a></h2> 
+         <p>Alur pengembangan biasanya seperti ini:</p> 
+         <ol> 
+          <li>Spek inisial ditulis, dengan tes untuk kebanyakan fungsionalitas dasar.</li> 
+          <li>Implementatsi inisial dibuat.</li> 
+          <li>Untuk mengecek apakah ia bekerja, kita jalankan framework pengetesan <a href="http://mochajs.org/">Mocha</a> (detil lebih segera) yang menjalankan spek. Saat fungsionalitas tak lengkap, galat ditampilkan. Kita buat koreksi hingga semuanya bekerja.</li> 
+          <li>Sekarang kita punya implementasi inisial yang bekerja dengan tes.</li> 
+          <li>Kita tambah use case lain ke spek, mungkin belum didukung implementasinya. Tes mulai gagal.</li> 
+          <li>Pergi ke 3, perbaharui implementasinya hingga tes tak memberikan galat.</li> 
+          <li>Ulangi langkah 3-6 hingga fungsionalitasnya siap.</li> 
+         </ol> 
+         <p>Jadi, pengembangannya <em>iteratif</em>. Kita tulis spek, implementasikan, memastikan tes lulus, lalu menulis tes lainnya, memastikan mereka bekerja dll. Akhirnya kita punya implementasi yang bekerja dan tes untuk itu.</p> 
+         <p>Ayo lihat alur pengembangan ini di kasus praktik kita.</p> 
+         <p>Langkap pertama sudah lengkap: kita punya spek inisial untuk <code>pow</code>. Sekarang, sebelum membuat implementasinya, ayo pakai beberapa librari JavaScript untuk menjalankan tes, hanya untuk melihat mereka bekerja (mereka semua akan gagal).</p> 
+         <h2><a class="main__anchor" name="spec-dalam-aksi" href="testing-mocha.html#spec-dalam-aksi">Spec dalam aksi</a></h2> 
+         <p>Di sini di tutorial ini kita akan memakai librari JavaScript untuk tes:</p> 
+         <ul> 
+          <li><a href="http://mochajs.org/">Mocha</a> ??? inti framework: menyediakan fungsi testing umum <code>describe</code> dan <code>it</code> dan fungsi utama yang menjalankan test.</li> 
+          <li><a href="http://chaijs.com">Chai</a> ??? library dengan banyak penambahan. Ini membuatmu bisa untuk menggunakan banyak penambahan yang berbeda, untuk sekarang kita hanya membutuhkan <code>assert.equal</code>.</li> 
+          <li><a href="http://sinonjs.org/">Sinon</a> ??? sebuah library untuk memata-matai fungsi, meniru fungsi bawaan dan lainnya, kita akan butuh ini nanti.</li> 
+         </ul> 
+         <p>Librari ini cocok baik untuk pengetesan in-browser dan server-side. Di sini kita akan mempertimbangkan varian peramban.</p> 
+         <p>Laman HTML lengkap dengan framework ini dan spek <code>pow</code>:</p> 
+         <div id="b1lv4xg5i5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;!-- add mocha css, to show results --&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"&gt;
+  &lt;!-- add mocha framework code --&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    mocha.setup('bdd'); // minimal setup
+  &lt;/script&gt;
+  &lt;!-- add chai --&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;script&gt;
+    function pow(x, n) {
+      /* function code is to be written, empty now */
+    }
+  &lt;/script&gt;
+
+  &lt;!-- the script with tests (describe, it...) --&gt;
+  &lt;script src="test.js"&gt;&lt;/script&gt;
+
+  &lt;!-- the element with id="mocha" will contain test results --&gt;
+  &lt;div id="mocha"&gt;&lt;/div&gt;
+
+  &lt;!-- run tests! --&gt;
+  &lt;script&gt;
+    mocha.run();
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Laman ini bisa dibagi jadi lima bagian:</p> 
+         <ol> 
+          <li><code>&lt;head&gt;</code> ??? menambah libraru dan gaya pihak-ketiga untuk tes.</li> 
+          <li><code>&lt;script&gt;</code> dengan fungsi untuk dites, di kasus kita ??? degngan kode untuk <code>pow</code>.</li> 
+          <li>Tes ??? di kasus kita script external <code>test.js</code> yang punya <code>describe("pow", ...)</code> dari atas.</li> 
+          <li>Elemen HTML <code>&lt;div id="mocha"&gt;</code> akan dipakai untuk mengoutputkan hasil.</li> 
+          <li>Pengetesan dimulai dari command <code>mocha.run()</code>.</li> 
+         </ol> 
+         <p>Hasilnya:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/GoiexnSvUzTE57Z9?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="GoiexnSvUzTE57Z9" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:250px" src="https://id.js.cx/article/testing-mocha/pow-1/"></iframe> 
+         </div> 
+         <p>Untuk sekarang, test gagal, ada error. Disitulah logikanya: kita mempunyai sebuah fungsi kosong didalam kode <code>pow</code>, jadi <code>pow(2,3)</code> mengembalikan <code>undefined</code> daripada <code>8</code>.</p> 
+         <p>Untuk dimasa mendatang, catat baik-baik akan ada penjalan test tingkat tinggi, seperti <a href="https://karma-runner.github.io/">karma</a> dan lainnya, yang akan memudahkan kita untuk mengotomasi berbagai macam test.</p> 
+         <h2><a class="main__anchor" name="implementasi-inisial" href="testing-mocha.html#implementasi-inisial">Implementasi inisial</a></h2> 
+         <p>Ayo buat implementasi sederhana dari <code>pow</code>, supaya tes lulus:</p> 
+         <div id="k50gxhy1tc" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  return 8; // :) we cheat!
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Wow, sekarang itu bekerja!</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/6JFwUEDcEsYDOCn8?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="6JFwUEDcEsYDOCn8" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:250px" src="https://id.js.cx/article/testing-mocha/pow-min/"></iframe> 
+         </div> 
+         <h2><a class="main__anchor" name="mengimprov-spek" href="testing-mocha.html#mengimprov-spek">Mengimprov spek</a></h2> 
+         <p>Apa yang sudah kita lakukan itu pasti curang. Fungsinya tak akan bekerja: percobaan untuk mengkalculasi <code>pow(3,4)</code> akan memberi hasil salah, tapi tes lulus.</p> 
+         <p>???Tapi situasi ini agak tipikal, ia terjadi dalam latihan. Tes lulus, tapi fungsinya salah bekerja. Spek kita tak sempurna. Kita harus menambah use case lagi ke situ.</p> 
+         <p>Ayo tambah satu tes lagi untuk mengecek bahwa <code>pow(3, 4) = 81</code>.</p> 
+         <p>Kita bisa pilih salah satu cara mengorganisasikan tes di sini:</p> 
+         <ol> 
+          <li> <p>Varian pertama ??? tambah satu lagi <code>assert</code> ke dalam <code>it</code> yang sama:</p> 
+           <div id="7wdmh8tvyh" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>describe("pow", function() {
+
+  it("raises to n-th power", function() {
+    assert.equal(pow(2, 3), 8);
+    assert.equal(pow(3, 4), 81);
+  });
+
+});</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Kedua ??? buat dua tes:</p> 
+           <div id="01fatqrrxz" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>describe("pow", function() {
+
+  it("2 raised to power 3 is 8", function() {
+    assert.equal(pow(2, 3), 8);
+  });
+
+  it("3 raised to power 4 is 81", function() {
+    assert.equal(pow(3, 4), 81);
+  });
+
+});</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <p>Perbedaan prinsipal ialah saat <code>assert</code> memicu galat, blok <code>it</code> segera berhenti. Jadi, di varian pertama jika <code>assert</code> pertama gagal, maka kita takkan pernah melihat hasil <code>assert</code> kedua.</p> 
+         <p>Memisahkan tes berguna untuk mendapat informasi lebih tentang apa yang terjadi, jadi varian kedua lebih baik.</p> 
+         <p>Dan selain itu, ada satu lagi aturan yang baik untuk diikuti.</p> 
+         <p><strong>Satu tes mengecek satu hal.</strong></p> 
+         <p>Jika kita lihat dan melihat dua pengecekan independen di dalamnya, lebih baik memecah itu menjadi dua pengecekan yang lebih simpel.</p> 
+         <p>Jadi ayo kita lanjut dengan varian kedua.</p> 
+         <p>Hasilnya:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/hyj8lPehtRCKMAC9?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="hyj8lPehtRCKMAC9" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:250px" src="https://id.js.cx/article/testing-mocha/pow-2/"></iframe> 
+         </div> 
+         <p>Seperti yang kita harapkan, tes kedua gagal. Jelas, fungsi kita selalu mengembalikan <code>8</code>, sedangkan <code>assert</code> mengharapkan <code>81</code>.</p> 
+         <h2><a class="main__anchor" name="mengimprov-implementasi" href="testing-mocha.html#mengimprov-implementasi">Mengimprov implementasi</a></h2> 
+         <p>Ayo tulis sesuatu yang lebih riil supaya tes lulus:</p> 
+         <div id="tmz07ggrth" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  let result = 1;
+
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk yakin bahwa fungsi bekerja dengan baik, ayo kita tes dia dengan lebih banyak nilai. Daripada menulis blok <code>it</code> secara manual, kita bisa menggenerate mereka di <code>for</code>:</p> 
+         <div id="cc8j22zrl5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>describe("pow", function() {
+
+  function makeTest(x) {
+    let expected = x * x * x;
+    it(`${x} in the power 3 is ${expected}`, function() {
+      assert.equal(pow(x, 3), expected);
+    });
+  }
+
+  for (let x = 1; x &lt;= 5; x++) {
+    makeTest(x);
+  }
+
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hasilnya:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/a6KLoyb7m6qYvpPe?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="a6KLoyb7m6qYvpPe" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:250px" src="https://id.js.cx/article/testing-mocha/pow-3/"></iframe> 
+         </div> 
+         <h2><a class="main__anchor" name="deskripsi-bersarang" href="testing-mocha.html#deskripsi-bersarang">Deskripsi bersarang</a></h2> 
+         <p>Kita akan menambah lebih banyak tes. Tapi sebelum itu mari ingat bahwa fungsi pembantu <code>makeTest</code> dan <code>for</code> harus digrup bersama. Kita tak akan butuh <code>makeTest</code> di tes lain, ia dibutuhkan hanya di <code>for</code>: tugas umum mereka ialah mengecek bagaimana <code>pow</code> naik ke pangkat yang diberikan.</p> 
+         <p>Pengelompokkan selesai dengan <code>describe</code> bersarang:</p> 
+         <div id="0y73hmv94d" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:15},{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>describe("pow", function() {
+
+  describe("raises x to power 3", function() {
+
+    function makeTest(x) {
+      let expected = x * x * x;
+      it(`${x} in the power 3 is ${expected}`, function() {
+        assert.equal(pow(x, 3), expected);
+      });
+    }
+
+    for (let x = 1; x &lt;= 5; x++) {
+      makeTest(x);
+    }
+
+  });
+
+  // ... banyak tes untuk diikuti di sini, baik describe dan it bisa ditambah
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>describe</code> bersarang mendefinisikan tes ???subgroup??? baru. Di output baru kita bisa lihat indentasi berjudul:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/8be8CpD4McTILuKj?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="8be8CpD4McTILuKj" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:250px" src="https://id.js.cx/article/testing-mocha/pow-4/"></iframe> 
+         </div> 
+         <p>Di masa depan kita bisa menambah lebih banyak <code>it</code> dan <code>describe</code> di level tertinggi dengan fungsi pembantu mereka sendiri, mereka takkan melihat <code>makeTest</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>before/after</code> dan <code>beforeEach/afterEach</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Kita bisa mengeset fungsi <code>before/after</code> yang berjalan sebelum/setelah menjalankan tes, dan juga fungsi <code>beforeEach/afterEach</code> yang berjalan sebelum/setelah <em>setiap</em> <code>it</code>.</p> 
+           <p>Misalnya:</p> 
+           <div id="4rtxgiwinx" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>describe("test", function() {
+
+  before(() =&gt; alert("Testing started ??? before all tests"));
+  after(() =&gt; alert("Testing finished ??? after all tests"));
+
+  beforeEach(() =&gt; alert("Before a test ??? enter a test"));
+  afterEach(() =&gt; alert("After a test ??? exit a test"));
+
+  it('test 1', () =&gt; alert(1));
+  it('test 2', () =&gt; alert(2));
+
+});</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Sequence yang bekerja akan jadi:</p> 
+           <div id="5hff6rroxo" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-none"><code>Tes dimulai ??? sebelum semua tes (before)
+Sebelum tes ??? masukkan tes (beforeEach)
+1
+Setelah tes ??? keluar tes (afterEach)
+Sebelum tes ??? masukkan tes (beforeEach)
+2
+Setelah tes ??? keluar tes (afterEach)
+Tes selesai ??? setelah semua tes (after)</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <a class="edit" target="_blank" href="https://plnkr.co/edit/qCu7tjUKpxoZjsdq?p=preview">Buka contoh di sandbox.</a> 
+           <p>Biasanya, <code>beforeEach/afterEach</code> dan <code>before/after</code> dipakai untuk melakukan inisialisasi, mengnolkan counter atau melakukan sesuatu di antara tes (atau grup tes).</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengextend-spek" href="testing-mocha.html#mengextend-spek">Mengextend spek</a></h2> 
+         <p>Fungsional dasar <code>pow</code> sudah lengkap. Iterasi pertama pengembangan sudah selesai. Saat kita selesai merayakan dan minum champagne ??? ayo kita lanjut dan mengimprovisasinya.</p> 
+         <p>Seperti yang tadi dikatakan, fungsi <code>pow(x, n)</code> dimaksudkan untuk bekerja dengan nilai integer positif <code>n</code>.</p> 
+         <p>Untuk mengindikasikan galat matematis, fungsi JavaScript biasanya mengembalikan <code>NaN</code>. Ayo lakukan hal serupa untuk nilai invalid <code>n</code>.</p> 
+         <p>Ayo mulai tambah kelakuan tersebut ke spek(!):</p> 
+         <div id="k7p90b4g7n" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:9},{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>describe("pow", function() {
+
+  // ...
+
+  it("untuk n negative hasilnya NaN", function() {
+    assert.isNaN(pow(2, -1));
+  });
+
+  it("untuk n non-integer hasilnya NaN", function() {
+    assert.isNaN(pow(2, 1.5));
+  });
+
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hasilnya dengan tes baru:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/Vil8z6qXQABdvSnv?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="Vil8z6qXQABdvSnv" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:530px" src="https://id.js.cx/article/testing-mocha/pow-nan/"></iframe> 
+         </div> 
+         <p>Tes yang baru ditambahkan gagal, karena implementasi kita tak mendukung mereka. Itu cara BDD selesai: pertama kita tulis tes yang gagal, lalu buat implementasi untuk mereka.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Assersi lain</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Tolong catat assersi <code>assert.isNaN</code>: ia melakukan ecek terhadap <code>NaN</code>.</p> 
+           <p>Ada assersi lain di <a href="http://chaijs.com">Chai</a> juga, misalnya:</p> 
+           <ul> 
+            <li><code>assert.equal(value1, value2)</code> ??? mengecek ekualitas <code>value1 == value2</code>.</li> 
+            <li><code>assert.strictEqual(value1, value2)</code> ??? mengecek ekualitas ketat <code>value1 === value2</code>.</li> 
+            <li><code>assert.notEqual</code>, <code>assert.notStrictEqual</code> ??? menginversi cek salah satu di atas.</li> 
+            <li><code>assert.isTrue(value)</code> ??? mengecek apa <code>value === true</code></li> 
+            <li><code>assert.isFalse(value)</code> ??? mengecek apa <code>value === false</code></li> 
+            <li>???daftar lengkapnya ada di <a href="http://chaijs.com/api/assert/">docs</a></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <p>Jadi kita harus tambah beberapa baris <code>pow</code>:</p> 
+         <div id="1z9bahx59u" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  if (n &lt; 0) return NaN;
+  if (Math.round(n) != n) return NaN;
+
+  let result = 1;
+
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang itu bekerja, semua tes lulus:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/oOBEWH7ba6OkVX5S?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="oOBEWH7ba6OkVX5S" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:300px" src="https://id.js.cx/article/testing-mocha/pow-full/"></iframe> 
+         </div> 
+         <a class="edit" target="_blank" href="https://plnkr.co/edit/oOBEWH7ba6OkVX5S?p=preview">Open the full final example in the sandbox.</a> 
+         <h2><a class="main__anchor" name="kesimpulan" href="testing-mocha.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Dalam BDD, spek mulai pertama, diikuti implementasi. Di akhir kita punya baik spek maupun kode.</p> 
+         <p>Spek bisa dipakai dalam tiga cara:</p> 
+         <ol> 
+          <li>Sebagai <strong>Tes</strong> ??? mereka menjamin kode bekerja dengan benar.</li> 
+          <li>Sebagai <strong>Docs</strong> ??? judul <code>describe</code> dan <code>it</code> menjelaskan apa yang dilakukan fungsi.</li> 
+          <li>Sebagai <strong>Contoh</strong> ??? tes sebenarnya contoh kerja yang menjelaskan bagaimana fungsi bisa dipakai.</li> 
+         </ol> 
+         <p>Dengan spek, kisa bisa secara aman mengimprov, mengubah, bahkan menulis-ulang fungsi dari nol dan memastikan ia masih bekerja dengan baik.</p> 
+         <p>Ini terutama penting di proyek besar saat fungsi dipakai di banyak tempat. Saat kita mengubah fungsi begini, tak ada cara untuk mengecek secara manual jika tiap tempat yang menggunakannya masih bekerja dengan baik.</p> 
+         <p>Tanpa tes, orang punya dua cara:</p> 
+         <ol> 
+          <li>Untuk melakukan perubahan the change, no matter what. And then our users meet bugs, as we probably fail to check something manually.</li> 
+          <li>Atau, jika hukuman untuk galat itu berat, karena tak ada tes, orang menjadi takut memodifikasi fungsi seperti ini, lalu kode menjadi tak mutakhir, tak ada yang mau meneruskannya. Tidak baik untuk pengembangan.</li> 
+         </ol> 
+         <p><strong>Pengetesan otomatis membantu menghindari masalah ini!</strong></p> 
+         <p>Jika proyek ini dibahas dengan tes, harusnya tak masalah. Tiap ada perubahan, kita bisa jalankan tes dan melihat banyak pengecekan yang dibuat dengan cepat.</p> 
+         <p><strong>Selain itu, kode oto-tes punya arsitektur lebih baik.</strong></p> 
+         <p>Alaminya, itu karena kode oto-tes lebih mudah dimodifikasi dan diimprov. Tapi ada juga alasan lain.</p> 
+         <p>Untuk menulis tes, kode harus diorganisir sedemikian rupa di mana tiap fungsi punya tugas jelas, input dan output yang terdefinisi dengan baik. Artinya satu arsitektur yang bagus dari awal.</p> 
+         <p>Di kehidupan riil kadang tak mudah. Kadang sulit menulis spek sebelum kode aktual, karena belum jelas bagaimana ia harus bersikap. Tapi umumnya menulis tes membuat pengembangan lebih cepat dan lebih stabil.</p> 
+         <p>Nanti di tutorial ini kamu akan menemui banyak tugas dengan tes yang matang. Jadi kamu akan melihat banyak contoh praktik.</p> 
+         <p>Menulis tes membutuhkan pengetahuan JavaScript yang baik. Tapi kita baru saja mulai belajar. Jadi, supaya settle semuanya, dari sekarang kamu belum wajib menulis tes, tapi kamu harus sudah bisa membaca mereka meski mereka agak rumit dari yang ada di bab ini.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="testing-mocha.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="testing-mocha.html#apa-yang-salah-dalam-tes-ini" name="apa-yang-salah-dalam-tes-ini">Apa yang salah dalam tes ini?</a></h3> 
+           <a class="task__open-link" href="task/pow-test-wrong.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apa yang salah dalam tes <code>pow</code> di bawah?</p> 
+            <div id="qrfbpsqu84" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>it("Raises x to the power n", function() {
+  let x = 5;
+
+  let result = x;
+  assert.equal(pow(x, 1), result);
+
+  result *= x;
+  assert.equal(pow(x, 2), result);
+
+  result *= x;
+  assert.equal(pow(x, 3), result);
+});</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>P.S. Secara sintaktis tesnya benar dan lulus.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Tes ini mendemonstrasikan satu dari godaan yang pengembang temui dan saat menulis tes.</p> 
+              <p>Apa yang kita punya di sini sebenarnya 3 tes, tapi diletakkan sebagai satu fungsi tunngal dengan 3 assert.</p> 
+              <p>Kadang lebih mudah menulis di cara ini, tapi jika muncul galat, kurang jelas apa yang salah.</p> 
+              <p>Jika galat terjadi di tengah alur exekusi rumit, maka kita harus caritahu data di poin itu. Kita sebenarnya harus <em>mendebug tes</em>.</p> 
+              <p>Akan jauh lebih baik memecah tes jadi beberapa blok <code>it</code> dengan input dan output yang tertulis jelas.</p> 
+              <p>Seperti ini:</p> 
+              <div id="kixgxvdxh0" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>describe("Raises x to power n", function() {
+  it("5 in the power of 1 equals 5", function() {
+    assert.equal(pow(5, 1), 5);
+  });
+
+  it("5 in the power of 2 equals 25", function() {
+    assert.equal(pow(5, 2), 25);
+  });
+
+  it("5 in the power of 3 equals 125", function() {
+    assert.equal(pow(5, 3), 125);
+  });
+});</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kita mengganti <code>it</code> tunggal dengan <code>describe</code> dan grup blok <code>it</code>. Sekarang jika sesuatu gagal kita akan lihat jelas apa datanya.</p> 
+              <p>Juga kita bisa mengisolasi tes tunggal dan menjalankannya dalam mode standalone dengan menulis <code>it.only</code> ketimbang <code>it</code>:</p> 
+              <div id="klprxnzie4" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:8}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>describe("Raises x to power n", function() {
+  it("5 in the power of 1 equals 5", function() {
+    assert.equal(pow(5, 1), 5);
+  });
+
+  // Mocha hanya akan menjalankan blok ini
+  it.only("5 in the power of 2 equals 25", function() {
+    assert.equal(pow(5, 2), 25);
+  });
+
+  it("5 in the power of 3 equals 125", function() {
+    assert.equal(pow(5, 3), 125);
+  });
+});</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="ninja-code.html" data-tooltip="Kode ninja"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="polyfills.html" data-tooltip="Polyfill dan transpiler"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ftesting-mocha" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ftesting-mocha" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="code-quality.html">Kualitas Kode</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#kenapa-kita-butuh-tes">Kenapa kita butuh tes?</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#behavior-driven-development-bdd">Behavior Driven Development (BDD)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#pengembangan-pow-spek">Pengembangan ???pow???: spek</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#alur-pengembangan">Alur pengembangan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#spec-dalam-aksi">Spec dalam aksi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#implementasi-inisial">Implementasi inisial</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#mengimprov-spek">Mengimprov spek</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#mengimprov-implementasi">Mengimprov implementasi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#deskripsi-bersarang">Deskripsi bersarang</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#mengextend-spek">Mengextend spek</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="testing-mocha.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ftesting-mocha" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Ftesting-mocha" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

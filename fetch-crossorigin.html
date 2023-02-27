@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Fetch: *request Cross-Origin*</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="fetch-crossorigin.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Fetch: *request Cross-Origin*"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Fetch: *request Cross-Origin*"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="fetch-abort.html"> 
+  <link rel="next" href="fetch-api.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Fetch: *request Cross-Origin*"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffetch-crossorigin" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffetch-crossorigin" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="5" max="12" data-tooltip="Pelajaran 5 dari 12"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="network.html"><span>Network requests</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Network requests","item":"https://id.javascript.info/network"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Fetch: *request Cross-Origin*</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Fetch: *request Cross-Origin*"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Jika kita mengirim <em>request</em> <em><code>fetch</code></em> dari situs web lain, itu mungkin akan gagal.</p> 
+         <p>Misalnya, mari coba <em>fetch</em> dari <code>http://example.com</code>:</p> 
+         <div id="2ssfzgy9z9" data-trusted="1" class="code-example" data-async="1"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="fetch-crossorigin.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="fetch-crossorigin.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+  await fetch('http://example.com');
+} catch(err) {
+  alert(err); // Failed to fetch (Gagal untuk *fetch*)
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><em>Fetch</em> akan gagal, seperti yang diperkirakan.</p> 
+         <p>Konsep dasarnya dari <em>origin</em> ??? tiga serangkai <em>domain</em>/port/protokol.</p> 
+         <p><em>request cross-origin</em> ??? yang dikirimkan ke <em>domain</em> lain (atau sob<em>domain</em>) atau protokol atau <em>port</em> ??? membutuhkan <em>header</em> khusus dari sisi <em>remote</em>.</p> 
+         <p>Kebijakan yang disebut <em>???CORS???</em>: <em>Cross-Origin Resource Sharing</em>.</p> 
+         <h2><a class="main__anchor" name="kenapa-cors-dibutuhkan-sejarah-singkat" href="fetch-crossorigin.html#kenapa-cors-dibutuhkan-sejarah-singkat">Kenapa <em>CORS</em> dibutuhkan? sejarah singkat</a></h2> 
+         <p><em>CORS</em> ada untuk melindungi internet dari <em>hacker</em> jahat.</p> 
+         <p>Seriously. Let???s make a very brief historical digression. Serius, Mari kita membuat sejarah yang singkat.</p> 
+         <p><strong>Untuk bertahun-tahun skrip dari satu situs tidak bisa mengakses konten dari situs lainnya</strong></p> 
+         <p>Aturan aman yang kuat tersebut adalah dasar dari keamanan internet. Contoh skrip jahat dari situs web <code>hacker.com</code> tidak bisa mengakses pesan dari pengguna di situs web <code>gmail.com</code>. Orang-orang merasa aman.</p> 
+         <p>Javascript juga tidak memiliki metode khusus untuk menampilkan <em>request</em> jaringan pada saat itu. Ini adalah bahasa mainan untuk menghias halaman web.</p> 
+         <p>Tetapi pengembang web menuntut lebih banyak kuasa. Bebagai trik dibuat untuk mengatasi batasan dan membuat <em>request</em> kepada situs web lainnya.</p> 
+         <h3><a class="main__anchor" name="menggunakan-form" href="fetch-crossorigin.html#menggunakan-form">Menggunakan Form</a></h3> 
+         <p>Satu cara untuk berkomunikasi dengan <em>server</em> lain adalah dengan mengirimkan <code>&lt;form&gt;</code>. Orang-orang mengirimkannya pada <code>&lt;iframe&gt;</code>, hanya untuk tetap di halaman saat ini, seperti ini:</p> 
+         <div id="yynxba0ofg" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4},{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;!-- form target --&gt;
+&lt;iframe name="iframe"&gt;&lt;/iframe&gt;
+
+&lt;!-- form bisa dihasilkan secara dinamis dan dikirikan oleh Javascript --&gt;
+&lt;form target="iframe" method="POST" action="http://another.com/???"&gt;
+  ...
+&lt;/form&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, ada kemungkinan untuk membuat <em>request</em> GET/POST dari situs lain, meski tanpa metode jaringan, karena form bisa mengirimkan data dari mana saja. Tetapi dilarang untuk mengakses konten <code>&lt;iframe&gt;</code> dari situs lainnya, tidak ada kemungkinan untuk membaca responnya.</p> 
+         <p>Tepatnya, sebenarnya ada trik untuk melakukannya, mereka membutuhkan skrip khusus dari <em>iframe</em> dan halaman. Jadi komunikasi dengan <em>iframe</em> secara teknis mungkin. Saat ini tidak ada gunanya untuk membahas lebih detail, biarkan dinosaurus ini istirahat dengan tenang.</p> 
+         <h3><a class="main__anchor" name="menggunakan-skrip" href="fetch-crossorigin.html#menggunakan-skrip">Menggunakan Skrip</a></h3> 
+         <p>Trik lainnya adalah menggunakan <em>tag</em> <code>script</code>. Skrip bisa memiliki <code>src</code>, dengan <strong>domain</strong> apapun, contoh <code>&lt;script src="http://another.com/???"&gt;</code>. Ada kemungkinan untuk menjalankan skrip dari situs web apa saja.</p> 
+         <p>Jika sebuah situs web, contoh <code>another.com</code> berniat untuk membuka data untuk akses seperti ini, kemudian protokol yang disebut ???JSONP (JSON with padding)??? akan digunakan.</p> 
+         <p>Begini cara kerjanya.</p> 
+         <p>Mari kita katakan jika, di sisi kita, perlu untuk mengambil data dari <code>http://another.com</code>, seperti cuaca:</p> 
+         <ol> 
+          <li> <p>Pertama, terlebih dahulu, kita mendeklarasikan fungsi global untuk menerima data, contoh <code>gotWeather</code>.</p> 
+           <div id="djbdza848g" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// 1. Deklarasikan fungsi untuk memproses data cuaca
+function gotWeather({ temperature, humidity }) {
+  alert(`temperature: ${temperature}, humidity: ${humidity}`);
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Selanjutnya kita membuat <em>tag</em> <code>&lt;script&gt;</code> dengan <code>src="http://another.com/weather.json?callback=gotWeather"</code>, menggunakan nama fungsi sebagai parameter <em>URL</em> <em><code>callback</code></em>.</p> 
+           <div id="x5avrv1c2k" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let script = document.createElement('script');
+script.src = `http://another.com/weather.json?callback=gotWeather`;
+document.*body*.append(script);</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p><em>server</em> <em>remote</em> <code>another.com</code> menghasilkan skrip dinamis yang memanggil <code>gotWeather(...)</code> dengan data yang ingin kita terima.</p> 
+           <div id="39ub6b9dft" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// Jawaban dari *server* yang diharapkan seperti ini:
+gotWeather({
+  temperature: 25,
+  humidity: 78
+});</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>When the remote script loads and executes, <code>gotWeather</code> runs, and, as it???s our function, we have the data.</p> </li> 
+          <li> <p>Jika skrip <em>remote</em> memuat dan dijalankan, <code>gotWeather</code> dijalankan di fungsi kita, kita memiliki data.</p> </li> 
+         </ol> 
+         <p>Itu berhasil, dan tidak melanggar keamanan, karena kedua sisi setuju untuk meluluskan data dengan cara ini. Dan jika kedua sisi setuju, ini bukanlah peretasan. Masih ada servis yang menyediakan akses seperti ini, karena cara ini bisa berfungsi bahkan untuk browser lama.</p> 
+         <p>Kemudian, metode jaringan muncul di browser Javascript.</p> 
+         <p>Mulanya, <em>request cross-orogin</em> itu dilarang. Tetapi dari hasil diskusi yang panjang, <em>request cross-origin</em> diizinkan, tetapi dengan kemampuan baru yang memerlukan izin tegas dari <em>server</em>, diekpresikan di <em>header</em> khusus.</p> 
+         <h2><a class="main__anchor" name="request-yang-aman" href="fetch-crossorigin.html#request-yang-aman">Request yang aman</a></h2> 
+         <p>Ada dua tipe dari <em>request cross-origin</em>:</p> 
+         <ol> 
+          <li>Safe requests / Permintaan Aman.</li> 
+          <li>All the others.</li> 
+         </ol> 
+         <p>Permintaan Aman lebih mudah dibuat, jadi mari kita mulai dengannya.</p> 
+         <p>Permintaan aman jika memenuhi dua kondisi:</p> 
+         <ol> 
+          <li><a href="https://fetch.spec.whatwg.org/#cors-safelisted-method">Safe method</a>: GET, POST or HEAD</li> 
+          <li><a href="https://fetch.spec.whatwg.org/#cors-safelisted-request-header">Safe headers</a> ??? satu-satunya header khusus yang diizinkan adalah: 
+           <ul> 
+            <li><code>Accept</code>,</li> 
+            <li><code>Accept-Language</code>,</li> 
+            <li><code>Content-Language</code>,</li> 
+            <li><code>Content-Type</code> dengan nilai <code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code> atau <code>text/plain</code>.</li> 
+           </ul> </li> 
+         </ol> 
+         <p><em>request</em> lainnya akan dipertimbangkan ???tidak aman???. Misalnya, <em>request</em> dengan metode <code>PUT</code> atau dengan <code>API-key</code> <em>header</em> HTTP tidak sesuai batasannya.</p> 
+         <p><strong>Perbedaan yang mendasar adalah ???<em>request</em> yang aman??? bisa dibuat menggunakan <code>&lt;form&gt;</code> atau <code>&lt;script&gt;</code>, tanpa menggunakan metode khusus apa saja.</strong></p> 
+         <p>Jadi, meski <em>server</em> sudah lama tetap bisa menerima <em>request</em> yang aman.</p> 
+         <p>Bertentangan dengan itu, <em>request</em> dengan <em>header</em> tidak standar. contoh metode <code>DELETE</code> tidak bisa dibuat seperti ini. Jadi <em>server</em> lama mungkin berasumsi bahwa <em>request</em> ini berasal dari sumber istimewa, ???karena situs web tidak bisa mengirimkan <em>request</em>???.</p> 
+         <p>Saat kita mencoba untuk membuat <em>request</em> tidak aman, browser mengirimkan <em>request</em> khusus <em>???preflight???</em> yang menanyakan <em>server</em> ??? apakah bisa untuk menerima <em>request cross-origin</em> atau tidak?</p> 
+         <p>Dan, kecuali <em>server</em> secara eksplisit mengonfirmasi hal itu dengan <em>header</em>, maka <em>request</em> tidak aman tidak akan dikirimkan.</p> 
+         <p>Sekarang kita akan membahasnya lebih lanjut.</p> 
+         <h2><a class="main__anchor" name="cors-untuk-request-yang-aman" href="fetch-crossorigin.html#cors-untuk-request-yang-aman"><em>CORS</em> untuk <em>request</em> yang aman</a></h2> 
+         <p>Jika <em>request</em> adalah <em>request cross-origin</em>, maka browser akan selalu menambahkan <em>header</em> <code>Origin</code> di dalam <em>request</em>.</p> 
+         <p>Misalnya, jika kita <em>request</em> <code>https://anywhere.com/*request*</code> dari <code>https://javascript.info/page</code>, <em>header</em> akan seperti ini:</p> 
+         <div id="4axznvicb9" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-http"><code>GET /*request*
+Host: anywhere.com
+Origin: https://javascript.info
+...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang kamu lihat, <em>header</em> <code>Origin</code> berisi persis seperti asal (<em>domain</em>/protocol/port), tanpa <em>path</em>.</p> 
+         <p><em>Server</em> bisa memeriksa <code>Origin</code> dan jika setuju untuk menerima <strong>request</strong> tersebut, tambahkan <em>header</em> khusus <code>Access-Control-Allow-Origin</code> di responnya. <em>header</em> tersebut harus berisi asal yang diizinkan (di kasus kita <code>https://javascript.info</code>), atau bintang <code>*</code> . Maka responnya sukses, atau mungkin saja error.</p> 
+         <p>Browser memainkan peran sebagai penengah terpercaya disini:</p> 
+         <ol> 
+          <li>Browser memastikan <code>Origin</code> yang benar dikirimkan dengan <em>request</em> cross-origin.</li> 
+          <li>Browser memeriksa untuk perizinan di responnya, jika ada maka Javascript akan diizinkan untuk mengakses respon, jika tidak maka akan gagal dengan error.</li> 
+         </ol> 
+         <div class="markdown-error">
+           Gambar "/article/fetch-crossorigin/xhr-another-*domain*.svg" tidak ditemukan 
+         </div> 
+         <p>Disini ada contoh dari respon <em>server</em> permisif:</p> 
+         <div id="rq9syo80eg" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-http"><code>200 OK
+Content-Type:text/html; charset=UTF-8
+Access-Control-Allow-Origin: https://javascript.info</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="header-respon" href="fetch-crossorigin.html#header-respon"><em>Header</em> respon</a></h2> 
+         <p>Untuk <strong>request</strong> cross-origin, secara default Javascript hanya dapat mengakses file yang disebut <em>header</em> respon aman:</p> 
+         <ul> 
+          <li><code>*cache*-Control</code></li> 
+          <li><code>Content-Language</code></li> 
+          <li><code>Content-Type</code></li> 
+          <li><code>Expires</code></li> 
+          <li><code>Last-Modified</code></li> 
+          <li><code>Pragma</code></li> 
+         </ul> 
+         <p>Mengakses <em>header</em> respon lainnya akan menghasilkan error.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tolong dicatat:</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Tidak ada <em>header</em> <code>Content-Length</code> di daftar!</p> 
+           <p><em>Header</em> ini berisi panjang respon lengkap. Jadi, jika mengunduh sesuatu dan ingin melacak persentase progres, maka diperlukan izin tambahan untuk mengakses <em>header</em> tersebut (lihat di bawah).</p> 
+          </div> 
+         </div> 
+         <p>Untuk memberikan Javascript akses ke <em>header</em> respon lainnya, <em>server</em> harus mengirimkan <em>header</em> <code>Access-Control-Expose-*header*s</code>. Ini berisi daftar yang dipisahkan dengan koma dari nama <em>header</em> tidak aman yang seharusnya dibuat untuk bisa di akses.</p> 
+         <p>Contoh:</p> 
+         <div id="da4izsz8ah" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-http"><code>200 OK
+Content-Type:text/html; charset=UTF-8
+Content-Length: 12345
+API-Key: 2c9de507f2c54aa1
+Access-Control-Allow-Origin: https://javascript.info
+Access-Control-Expose-*header*s: Content-Length,API-Key</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dengan <em>header</em> <code>Access-Control-Expose-headers</code>, skrip diizinkan untuk membaca <em>header</em> <code>Content-Length</code> dan <code>API-Key</code> dari respon.</p> 
+         <h2><a class="main__anchor" name="request-tidak-aman" href="fetch-crossorigin.html#request-tidak-aman"><em>Request</em> tidak aman</a></h2> 
+         <p>Kita bisa menggunakan metode HTTP apa saja: bukan hanya <code>GET/POST</code>, tetapi juga <code>PATCH</code>, <code>DELETE</code> dan lainnya.</p> 
+         <p>Beberapa waktu yang lalu tidak ada orang yang membayangkan bahwa halaman web bisa membuat <em>request</em> seperti ini. Jadi masih ada servis web yang memperlakukan metode tidak standar sebagai sinyal: ???Itu bukan browser???. Mereka dapat memperhitungkannya saat memeriksa hak akses.</p> 
+         <p>Jadi untuk menghindari kesalah pahaman, <em>request</em> tidak aman ??? yang tidak bisa diselesaikan di waktu yang lama, browser tidak akan membuat <em>request</em> tersebut secara langsung. Sebelum dikirimkan ke pendahuluan yang disebut <em>request</em> ???preflight???, meminta izin.</p> 
+         <p><em>Request</em> preflight menggunakan metode <code>OPTIONS</code>, tidak ada <em>body</em> dan dua <em>header</em>:</p> 
+         <ul> 
+          <li><em>Header</em> <code>Access-Control-request-Method</code> memiliki metode <em>request</em> tidak aman.</li> 
+          <li><em>Header</em> <code>Access-Control-request-headers</code> menyediakan daftar yang dipisahkan dengan koma dari <em>header</em> HTTP tidak aman.</li> 
+         </ul> 
+         <p>Jika <em>server</em> setuju untuk melayani <em>request</em>, maka akan merespon dengan <em>body</em> kosong, status 200 dan <em>header</em>:</p> 
+         <p>-<code>Access-Control-Allow-Origin</code> harus dari <code>*</code> atau dari <em>request</em> asal, misalnya <code>https://javascript.info</code>, untuk mengizinkannya.</p> 
+         <ul> 
+          <li><code>Access-Control-Allow-Methods</code> harus memiliki metode yang diizinkan.</li> 
+          <li><code>Access-Control-Allow-*header*s</code> harus berisi daftar <em>header</em> yang diizinkan.</li> 
+          <li>Sebagai tambahan, <em>header</em> <code>Access-Control-Max-Age</code> dapat menentukan jumlah detik untuk menyimpan izin ke <em>cache</em>. Jadi browser tidak perlu mengirim preflight untuk <em>request</em> selanjutnya yang memenuhi izin yang diberikan.</li> 
+         </ul> 
+         <figure> 
+          <div class="image" style="width:620px"> 
+           <div class="image__ratio" style="padding-top:102.09677419354838%"></div> 
+           <object type="image/svg+xml" data="article/fetch-crossorigin/xhr-preflight.svg" width="620" height="633" class="image__image" data-use-theme> <img src="article/fetch-crossorigin/xhr-preflight.svg" alt="" width="620" height="633"> </object> 
+          </div> 
+         </figure> 
+         <p>Mari kita lihat bagaimana cara kerjanya langkah demi langkah di sebuah contoh, untuk <em>request</em> cross-origin <code>PATCH</code> (metode ini sering digunakan untuk memperbarui data):</p> 
+         <div id="5vp46mgs65" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let response = await fetch('https://site.com/service.json', {
+  method: 'PATCH',
+  *header*s: {
+    'Content-Type': 'application/json',
+    'API-Key': 'secret'
+  }
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ada tiga alasan kenapa <em>request</em> bisa menjadi tidak aman( cukup pilih satu) :</p> 
+         <ul> 
+          <li>Metode <code>PATCH</code>.</li> 
+          <li><code>Content-Type</code> bukan salah satu dari: <em>header</em> <code>application/x-www-form-*URL*encoded</code>, <code>multipart/form-data</code>, <code>text/plain</code>.</li> 
+          <li><code>API-key</code> ???tidak aman???.</li> 
+         </ul> 
+         <h3><a class="main__anchor" name="langkah-1-request-preflight" href="fetch-crossorigin.html#langkah-1-request-preflight">Langkah 1 (<em>request preflight</em>)</a></h3> 
+         <p>Sebelum mengirim permintaan tersebut, browser, dengan sendirinya akan mengirimkan request preflight seperti ini:</p> 
+         <div id="xyus6q4gyi" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-http"><code>OPTIONS /service.json
+Host: site.com
+Origin: https://javascript.info
+Access-Control-*request*-Method: PATCH
+Access-Control-*request*-*header*s: Content-Type,API-Key</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <ul> 
+          <li>Metode: <code>OPTIONS</code>.</li> 
+          <li>Path ??? Sama persis dengan <em>request</em> utama: <code>/service.json</code>.</li> 
+          <li><em>header</em> khusus <em>cross-origin</em>: 
+           <ul> 
+            <li><code>Origin</code> ??? asal sumber.</li> 
+            <li><code>Access-Control-*request*-Method</code> ??? metode <em>request</em>.</li> 
+            <li><code>Access-Control-*request*-*header*s</code> ??? daftar yang dipisahkan dengan koma dari <em>header</em> tidak aman.</li> 
+           </ul> </li> 
+         </ul> 
+         <h3><a class="main__anchor" name="langkah-2-respon-preflight" href="fetch-crossorigin.html#langkah-2-respon-preflight">Langkah 2 (respon <em>preflight</em>)</a></h3> 
+         <p><em>Server</em> harus merespon dengan status 200 dan <em>header</em>:</p> 
+         <ul> 
+          <li><code>Access-Control-Allow-Origin: https://javascript.info</code></li> 
+          <li><code>Access-Control-Allow-Methods: PATCH</code></li> 
+          <li><code>Access-Control-Allow-*header*s: Content-Type,API-Key</code>.</li> 
+         </ul> 
+         <p>Itu memungkinkan komunikasi di masa depan, jika tidak, maka akan di picu error.</p> 
+         <p>Jika <em>server</em> mengharapkan metode dan <em>header</em> lain di masa depan, akan masuk akal jika mengizinkan terlebih dahulu dengan menambahkannya di daftar.</p> 
+         <p>Misalnya, respon ini mengizinkan <em>header</em> <code>PUT</code>, <code>DELETE</code> dan tambahan.</p> 
+         <div id="k0kojun8af" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-http"><code>200 OK
+Access-Control-Allow-Origin: https://javascript.info
+Access-Control-Allow-Methods: PUT,PATCH,DELETE
+Access-Control-Allow-*header*s: API-Key,Content-Type,If-Modified-Since,*cache*-Control
+Access-Control-Max-Age: 86400</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang browser bisa melihat <code>PATCH</code> di dalam <code>Access-Control-Allow-Methods</code> dan <code>Content-Type,API-Key</code> di dalam daftar <code>Access-Control-Allow-headers</code>, sehingga akan mengirimkan permintaan utama.</p> 
+         <p>Jika ada <em>header</em> <code>Access-Control-Max-Age</code> dengan jumlah detik, maka izin <em>preflight</em> akan di simpan dalam <em>cache</em> untuk waktu tertentu. Respon diatas akan di simpan di <em>cache</em> selama 86400 detik (satu hari). Dengan jangka waktu ini, permintaan selanjutnya tidak akan menyebabkan <em>preflight</em>. Dengan asumsi bahwa mereka sesuai dengan <em>cache</em> yang diizinkan, mereka akan dikirim langsung.</p> 
+         <h3><a class="main__anchor" name="langkah-3-request-sebenarnya" href="fetch-crossorigin.html#langkah-3-request-sebenarnya">Langkah 3 (<em>request</em> sebenarnya)</a></h3> 
+         <p>Saat <em>preflight</em> berhasil, browser akan membuat <em>request</em> utama. Algoritmanya sama dengan <em>request</em> yang aman.</p> 
+         <p><em>request</em> yang utama memiliki <em>header</em> <code>Origin</code> (karena <em>request</em> ini memang <em>cross-origin</em>)</p> 
+         <div id="i594vmqfhc" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-http"><code>PATCH /service.json
+Host: site.com
+Content-Type: application/json
+API-Key: secret
+Origin: https://javascript.info</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="langkah-4-respon-sebenarnya" href="fetch-crossorigin.html#langkah-4-respon-sebenarnya">Langkah 4 (Respon sebenarnya)</a></h3> 
+         <p><em>Server</em> tidak boleh lupa untuk menambahkan <code>Access-Control-Allow-Origin</code> pada respon utamanya. <em>preflight</em> yang berhasil tidak membebaskan dari itu:</p> 
+         <div id="ivqfozj1t1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-http"><code>Access-Control-Allow-Origin: https://javascript.info</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Maka Javascript bisa membaca respon dari <em>server</em> utama.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tolong dicatat:</span> 
+          </div> 
+          <div class="important__content"> 
+           <p><em>Request preflight</em> terjadi ???dibelakang layar???, hal ini tidak terlihat oleh Javascript.</p> 
+           <p>Javascript hanya mendapatkan respon dari <em>request</em> utama atau error jika tidak mendapatkan izin dari <em>server</em>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="kredensial" href="fetch-crossorigin.html#kredensial">Kredensial</a></h2> 
+         <p><em>Request cross-origin</em> yang dimulai oleh kode Javascript secara default, tidak membawa kredensial apapun ( <em>cookie</em> atau autentikasi HTTP).</p> 
+         <p>Itu tidak biasa untuk <em>request</em> HTTP. Biasanya, <em>request</em> pada <code>htttp://site.com</code> didampingi oleh semua <em>cookie</em> dari <em>domain</em> tersebut. Tetapi <em>request cross-origin</em> yang dibuat dengan metode Javascript memiliki pengecualian.</p> 
+         <p>Contoh, <code>fetch('http://another.com')</code> tidak mengirim <em>cookie</em> apapun bahkan yang (!) memiliki <em>domain</em> <code>another.com</code>.</p> 
+         <p>Kenapa?</p> 
+         <p>Karena <em>request</em> dengan kredensial lebih kuat daripada tanpa kredensial. Jika diizinkan, kredensial bisa memberikan Javascript kekuatan penuh untuk bertindak atas nama pengguna dan mengakses informasi sensitif menggunakan kredensial mereka.</p> 
+         <p>Apakah <em>server</em> benar-benar mempercayai skrip itu? maka harus secara eksplisit mengizinkan <em>request</em> dengan kredensial dengan <em>header</em> tambahan.</p> 
+         <p>Untuk mengirim kredensial di <code>fetch</code>, kita perlu menambahkan opsi <code>credentials: "include"</code>, seperti ini:</p> 
+         <div id="d1l8a8a2sg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fetch('http://another.com', {
+  credentials: "include"
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang <code>fetch</code> mengirimkan <em>cookie</em> yang berasal dari <code>another.com</code> dengan <em>request</em> dari situs tersebut.</p> 
+         <p>Jika <em>server</em> setuju untuk menerima <em>request dengan credentials</em>, harus ditambahkan <em>header</em> <code>Access-Control-Allow-Credentials: true</code> pada responnya, sebagai tambahan dari <code>Access-Control-Allow-Origin</code>.</p> 
+         <p>Contoh:</p> 
+         <div id="67r197mh1s" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-http"><code>200 OK
+Access-Control-Allow-Origin: https://javascript.info
+Access-Control-Allow-Credentials: true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perlu dicatat: <code>Access-Control-Allow-Origin</code> dilarang untuk menggunakan bintang <code>*</code> untuk <em>request</em> dengan kredensial. Seperti yang ditunjukkan diatas, harus menyediakan asal yang tepat. Itu adalah salah satu ukuran keamanan tambahan, untuk memastikan bahwa <em>server</em> benar-benar mengetahui siapa yang dipercayai untuk membuat <em>request</em> tersebut.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="fetch-crossorigin.html#ringkasan">Ringkasan</a></h2> 
+         <p>Dari sudut pandang browser, ada dua jenis <em>request cross-origin</em>: aman dan lain lainnya.</p> 
+         <p><a href="http://www.w3.org/TR/cors/#terminology"><em>Request</em> yang aman</a> harus memenuhi kondisi dibawah:</p> 
+         <ul> 
+          <li>Metode: GET, POST atau HEAD.</li> 
+          <li><em>header</em> ??? bisa kita atur jika: 
+           <ul> 
+            <li><code>Accept</code></li> 
+            <li><code>Accept-Language</code></li> 
+            <li><code>Content-Language</code></li> 
+            <li><code>Content-Type</code> to the value <code>application/x-www-form-*URL*encoded</code>, <code>multipart/form-data</code> atau <code>text/plain</code>.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>Perbedaan mendasar dari <em>request</em> aman bisa dilakukan sejak zaman kuno menggunakan <em>tag</em> <code>&lt;form&gt;</code> atau <code>&lt;script&gt;</code>, sedangkan yang tidak aman tidak mungkin dijalankan oleh browser untuk waktu yang lama.</p> 
+         <p>Jadi, Perbedaan praktis dari <em>request</em> yang aman di kirimkan segera, dengan <em>header</em> <code>Origin</code>, sedangkan untuk yang lainnya browser membuat awalan <em>request ???preflight???</em> , untuk meminta izin.</p> 
+         <p><strong>Untuk <em>request</em> yang aman</strong></p> 
+         <ul> 
+          <li>??? Browser mengirimkan <em>header</em> <code>Origin</code> dengan asalnya.</li> 
+          <li>??? Untuk <em>request</em> tanpa kredensial (tidak terkirim secara default), <em>server</em> harus diatur: 
+           <ul> 
+            <li><code>Access-Control-Allow-Origin</code> menjadi <code>*</code> atau nilai yang sama dengan <code>Origin</code></li> 
+           </ul> </li> 
+          <li>??? Untuk <em>request</em> dengan kredensial, <em>server</em> harus diatur: 
+           <ul> 
+            <li><code>Access-Control-Allow-Origin</code> menjadi nilai yang sama dengan <code>Origin</code></li> 
+            <li><code>Access-Control-Allow-Credentials</code> menjadi <code>true</code></li> 
+           </ul> </li> 
+         </ul> 
+         <p>Sebagai tambahan, untuk memberikan Javascript akses kepada <em>header</em> respon apapun kecuali <code>*cache*-Control</code>, <code>Content-Language</code>, <code>Content-Type</code>, <code>Expires</code>, <code>Last-Modified</code> or <code>Pragma</code>, <em>server</em> harus mendaftarkan <em>header</em> yang diizinkan di <em>header</em> <code>Access-Control-Expose-headers</code>.</p> 
+         <p><strong>Untuk <em>request</em> tidak aman, awalan <em>request ???preflight???</em> diberikan sebelum <em>request</em> yang diminta:</strong></p> 
+         <ul> 
+          <li> <p>??? Browser mengirimkan <em>request</em> <code>OPTIONS</code> di <em>URL</em> yang sama, dengan <em>header</em>:</p> 
+           <ul> 
+            <li><code>Access-Control-request-Method</code> memiliki metode <em>request</em>.</li> 
+            <li><code>Access-Control-request-headers</code> mendaftarkan <em>header request</em> yang tidak aman.</li> 
+           </ul> </li> 
+          <li> <p>??? <em>Server</em> harus merespon dengan status 200 dan <em>header</em>:</p> 
+           <ul> 
+            <li><code>Access-Control-Allow-Methods</code> dengan daftar metode yang diizinkan,</li> 
+            <li><code>Access-Control-Allow-headers</code> dengan daftar <em>header</em> yang diizinkan,</li> 
+            <li><code>Access-Control-Max-Age</code> dengan jumlah detik untuk izin menyimpan di <em>cache</em>.</li> 
+           </ul> </li> 
+          <li> <p>Lalu <em>request</em> yang sebenarnya di kirimkan, skema yang ???aman??? sebelumnya akan diterapkan.</p> </li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="fetch-crossorigin.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="fetch-crossorigin.html#kenapa-kita-membutuhkan-origin" name="kenapa-kita-membutuhkan-origin">Kenapa kita membutuhkan Origin?</a></h3> 
+           <a class="task__open-link" href="task/do-we-need-origin.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Seperti yang kamu ketahui, Ada pembaca <em>header</em> HTTP <em><code>Referer</code></em>, yang biasanya berisi <em>url</em> dari halaman yang dimulai dari <em>request</em> jaringan.</p> 
+            <p>Misalnya, saat pengambilan <code>http://google.com</code> dari <code>http://javacript.info/some/url</code>, <em>header</em> terlihat seperti ini:</p> 
+            <div id="hjocqyqdd3" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:6}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-none"><code>Accept: */*
+Accept-Charset: utf-8
+Accept-Encoding: gzip,deflate,sdch
+Connection: keep-alive
+Host: google.com
+Origin: http://javascript.info
+Referer: http://javascript.info/some/url</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Seperti yang kamu lihat, baik <em><code>Referer</code></em> dan <em><code>Origin</code></em> ada.</p> 
+            <p>Pertanyaan:</p> 
+            <ol> 
+             <li>Kenapa <em><code>Origin</code></em> dibutuhkan, jika <em><code>Referer</code></em> memiliki lebih banyak informasi?</li> 
+             <li>Apakah mungkin jika <em><code>fetch</code></em> tidak memakai <em><code>Referer</code></em> atau <em><code>Origin</code></em>, atau apakah <em><code>fetch</code></em> itu salah?</li> 
+            </ol> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita membutuhkan <em><code>Origin</code></em>, karena terkadang <em><code>Referer</code></em> tidak digunakan. Misalnya, saat kita <em><code>fetch</code></em> halaman HTTP dari HTTPS(mengakses yang kurang aman dari yang aman), maka tidak memakai <em><code>Referer</code></em>.</p> 
+              <p><a href="http://en.wikipedia.org/wiki/Content_Security_Policy">Kebijakan keamanan konten</a> mungkin akan melarang untuk pengiriman <em><code>Referer</code></em>.</p> 
+              <p>Seperti yang kita lihat, <em><code>fetch</code></em> memiliki opsi untuk mencegah mengirim <code>Referer</code>, dan mengizinkan untuk mengubahnya ( di situs yang sama).</p> 
+              <p>Dari Spesifikasi, <em><code>Referer</code></em> adalah header HTTP opsional.</p> 
+              <p>Tepatnya karena <em><code>Referer</code></em> tidak dapat diandalkan, dibuat lah <code>Origin</code>. Browser menjamin *<code>Origin</code> *yang benar untuk <em>request</em> <em>cross-origin</em>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="fetch-abort.html" data-tooltip="Fetch: Membatalkan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="fetch-api.html" data-tooltip="Fetch API"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffetch-crossorigin" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffetch-crossorigin" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="network.html">Network requests</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch-crossorigin.html#kenapa-cors-dibutuhkan-sejarah-singkat">Kenapa <em>CORS</em> dibutuhkan? sejarah singkat</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch-crossorigin.html#request-yang-aman">Request yang aman</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch-crossorigin.html#cors-untuk-request-yang-aman"><em>CORS</em> untuk <em>request</em> yang aman</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch-crossorigin.html#header-respon"><em>Header</em> respon</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch-crossorigin.html#request-tidak-aman"><em>Request</em> tidak aman</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch-crossorigin.html#kredensial">Kredensial</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch-crossorigin.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch-crossorigin.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch-crossorigin.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffetch-crossorigin" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Ffetch-crossorigin" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,715 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Export dan Import</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="import-export.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Export dan Import"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Export dan Import"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="modules-intro.html"> 
+  <link rel="next" href="modules-dynamic-imports.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Export dan Import"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fimport-export" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fimport-export" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="86" max="92" data-tooltip="Pelajaran 86 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="modules.html"><span>Modules</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Modules","item":"https://id.javascript.info/modules"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Export dan Import</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Export dan Import"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Perintah export dan import memiliki beberapa varian sintaks.</p> 
+         <p>Pada artikel sebelumnya kita melihat cara penggunaan yang sederhana, sekarang mari telusuri lebih banyak contoh.</p> 
+         <h2><a class="main__anchor" name="export-sebelum-deklarasi" href="import-export.html#export-sebelum-deklarasi">Export sebelum deklarasi</a></h2> 
+         <p>Kita dapat memberi label deklarasi apapus untuk diekspor dengan menempatkan <code>export</code> sebelumnya, baik itu variabel, fungsi atau kelas.</p> 
+         <p>Misalnya, dibawah ini semua export valid:</p> 
+         <div id="cw9p7k89ih" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:6}]},{&quot;start&quot;:4,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:6}]},{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:6}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// export sebuah array
+export let months = ['Jan', 'Feb', 'Mar','Apr', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+// export sebuah konstanta
+export const MODULES_BECAME_STANDARD_YEAR = 2015;
+
+// export a class
+export class User {
+  constructor(name) {
+    this.name = name;
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tidak ada titik koma setelah perintah export kelas/fungsi</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Mohon diperhatikan bahwa <code>export</code> sebelum sebuah kelas atau fungsi tidak menjadikannya sebagai <a href="function-expressions.html">ekspresi fungsi</a>. Ini masih sebuah deklarasi fungsi meskipun sudah diekspor.</p> 
+           <p>Kebanyakan panduan gaya penulisan Javascript tidak merekomendasikan titik koma setelah deklarasi fungsi dan kelas.</p> 
+           <p>Itu mengapa tidak perlu menambahkan titik koma di akhir <code>export class</code> dan <code>export function</code>:</p> 
+           <div id="aycqy1mjm3" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:2,&quot;end&quot;:26}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>export function sayHi(user) {
+  alert(`Hello, ${user}!`);
+}  // tidak ada ; diakhir</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="export-selain-dari-deklarasi" href="import-export.html#export-selain-dari-deklarasi">Export selain dari deklarasi</a></h2> 
+         <p>Kita juga dapat meletakkan perintah <code>export</code> secara terpisah.</p> 
+         <p>Di bawah ini kita mendeklarasikan terlebih dahulu, lalu kemudian melakukan ekspor:</p> 
+         <div id="24zxdbguo3" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? say.js
+function sayHi(user) {
+  alert(`Hello, ${user}!`);
+}
+
+function sayBye(user) {
+  alert(`Bye, ${user}!`);
+}
+
+export {sayHi, sayBye}; // daftar variabel yang diekspor</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Atau, secara teknis kita dapat meletakkan <code>export</code> diatas fungsi juga.</p> 
+         <h2><a class="main__anchor" name="import" href="import-export.html#import">Import *</a></h2> 
+         <p>Biasanya, kita membuat daftar apa yang akan kita impor di dalam kurung kurawal <code>import {...}</code>, seperti ini:</p> 
+         <div id="1xuskkj2r4" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? main.js
+import {sayHi, sayBye} from './say.js';
+
+sayHi('John'); // Halo, John!
+sayBye('John'); // Selamat tinggal, John!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tetapi jika ada banyak yang harus diimpor, kita dapat melakukan impor semuanya sebagai sebuah objek menggunakan <code>import * as &lt;obj&gt;</code>. Sebagai contoh:</p> 
+         <div id="7m05czsnjy" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? main.js
+import * as say from './say.js';
+
+say.sayHi('John');
+say.sayBye('John');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kesan pertama terkait ???impor semuanya??? adalah terdengar seperti sesuatu yang keren dan singkat ketika ditulis. Mengapa kita harus secara eksplisit membuat daftar apa yang perlu kita impor?</p> 
+         <p>Jadi, ini adalah beberapa alasannya.</p> 
+         <ol> 
+          <li> <p>Perkakas penggabung yang modern (<a href="http://webpack.github.io">webpack</a> dan lainnya) menggabungkan semua modul sekaligus dan mengoptimalkannya untuk mempercepat proses pemuatan dan menghapus modul yang tidak digunakan.</p> <p>Katakanlah kita menambahkan sebuah pustaka pihak ketiga <code>say.js</code> ke dalam proyek dengan banyak fungsi:</p> 
+           <div id="gpyqki6w7l" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// ???? say.js
+export function sayHi() { ... }
+export function sayBye() { ... }
+export function becomeSilent() { ... }</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Sekarang jika kita hanya menggunakan salah satu dari fungsi <code>say.js</code> di proyek kita:</p> 
+           <div id="0n7ddeqpq8" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// ???? main.js
+import { sayHi } from './say.js';</code></pre> 
+             </div> 
+            </div> 
+           </div><p>???Maka kemudian ketika proses pengoptimalan berjalan akan melihatnya dan menghapus fungsi lainnya (yang tidak digunakan) dari kode yang digabungkan, ini membuat kode hasil penggabungan lebih kecil. Itulah yang disebut <em>???tree-shaking???</em></p> </li> 
+          <li> <p>Mendaftarkan secara eksplisit apa yang akan diimpor dengan nama yang lebih pendek: <code>sayHi()</code> sebagai ganti dari <code>say.sayHi()</code>.</p> </li> 
+          <li> <p>Daftar import eksplisit memberikan gambaran yang lebih baik tentang struktur kode: apa yang digunakan dan dimana. Itu membuat dukungan kode dan proses refactoring lebih mudah.</p> </li> 
+         </ol> 
+         <h2><a class="main__anchor" name="import-as" href="import-export.html#import-as">Import ???as???</a></h2> 
+         <p>Kita juga dapat menggunakan <code>as</code> untuk mengimpor dengan nama yang berbeda.</p> 
+         <p>Sebagai contoh, cobalah impor <code>sayHi</code> ke dalam variabel lokal <code>hi</code> agar lebih singkat, dan impor <code>sayBye</code> sebagai <code>bye</code>:</p> 
+         <div id="4k5stmqbbb" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? main.js
+import {sayHi as hi, sayBye as bye} from './say.js';
+
+hi('John'); // Halo, John!
+bye('John'); // Selamat Tinggal, John!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="export-as" href="import-export.html#export-as">Export ???as???</a></h2> 
+         <p>Sintaks serupa berlaku juga untuk <code>export</code></p> 
+         <p>Mari ekspor fungsi sebagai <code>hi</code> dan <code>bye</code>:</p> 
+         <div id="btpy6cnt7a" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? say.js
+...
+export {sayHi as hi, sayBye as bye};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang <code>hi</code> dan <code>bye</code> adalah nama resmi yang diekspor dan kemudian dapat digunakan dalam impor:</p> 
+         <div id="i0rux70pug" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;cols&quot;:[{&quot;start&quot;:4,&quot;end&quot;:7}]},{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:4,&quot;end&quot;:6}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? main.js
+import * as say from './say.js';
+
+say.hi('John'); // Halo, John!
+say.bye('John'); // Selamat Tinggal, John!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="export-default" href="import-export.html#export-default">Export default</a></h2> 
+         <p>Dalam praktiknya, terdapat dua jenis modul.</p> 
+         <ol> 
+          <li>Modul yang berisi pustaka, paket fungsi, seperti <code>say.js</code> diatas.</li> 
+          <li>Modul yang mendeklarasikan sebuah entitas, misalnya modul <code>user.js</code> hanya mengekspor <code>class User</code>.</li> 
+         </ol> 
+         <p>Kebanyakan pendekatan kedua yang lebih disukai, jadi untuk setiap <code>benda</code> berada dalam modulnya sendiri.</p> 
+         <p>Tentu itu membutuhkan banyak berkas, karena semuanya menginginkan modulnya sendiri. Tetapi itu tidak menjadi masalah sama sekali. Sebenarnya, navigasi kode menjadi lebih mudah jika berkas diberi nama dengan baik dan terstruktur didalam direktori.</p> 
+         <p>Modul menyediakan perintah khusus <code>export default</code> (???ekspor bawaan???) untuk membuat cara ???satu hal per modul??? terlihat lebih baik.</p> 
+         <p>Tambahkan <code>export default</code> sebelum entitas yang akan diekspor:</p> 
+         <div id="wvmes6v3qy" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:7,&quot;end&quot;:14}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? user.js
+export default class User { // tambahkan saja "default"
+  constructor(name) {
+    this.name = name;
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mungkin hanya ada satu <code>export default</code> dalam setiap berkas:</p> 
+         <p>???Dan kemudian impor tanpa menggunakan kurung kurawal:</p> 
+         <div id="rmkm4pdvlg" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:7,&quot;end&quot;:11}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? main.js
+import User from './user.js'; // Bukan {User}, Hanya User
+
+new User('John');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Impor tanpa kurung kurawal terlihat bagus. Kesalahan umum ketika memulai menggunakan modul adalah ketika sepenuhnya melupakan kurung kurawal. Jadi, ingat <code>import</code> memerlukan kurung kurawal untuk ekspor bernama dan tidak memerlukannya untuk ekspor bawaan.</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Ekspor bernama</th> 
+            <th>Ekspor bawaan</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>export class User {...}</code></td> 
+            <td><code>export default class User {...}</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>import {User} from ...</code></td> 
+            <td><code>import User from ...</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Secara teknis, kita dapat memiliki keduanya (ekspor bawaan dan ekspor bernama) dalam satu modul yang sama, tetapi pada praktiknya, orang tidak mencampurnya. Sebuah modul memiliki antara ekspor bernama atau ekspor bawaan.</p> 
+         <p>Karena mungkin hanya ada paling banyak satu ekspor bawaan tiap berkas, entitas yang diekspor mungkin tidak memiliki nama.</p> 
+         <p>Misalnya, dibawah ini adalah ekspor bawaan yang benar-benar valid:</p> 
+         <div id="vqpu3oidzi" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>export default class { // tidak ada nama kelas
+  constructor() { ... }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div id="wzevmyehnw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>export default function (user) {
+    // tidak ada nama fungsi
+    alert(`Hello, ${user}!`);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div id="1qg637xidl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ekspor nilai tunggal tanpa membuat variabel
+export default ['Jan', 'Feb', 'Mar', 'Apr', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tidak memberikan nama tidak masalah, karena hanya ada satu <code>export default</code> setiap berkas, jadi <code>import</code> tanpa tanda kurung kurawal tahu apa yang perlu diimpor.</p> 
+         <p>Tanpa <code>default</code>, ekspor seperti itu akan memberikan sebuh <em>error</em>:</p> 
+         <div id="oupfa9czmz" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>export class { // Error! (selain 'default export' memerlukan sebuah nama)
+  constructor() {}
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="penamaan-default" href="import-export.html#penamaan-default">Penamaan ???default???</a></h3> 
+         <p>Pada situasi tertentu kata kunci <code>default</code> digunakan untuk mereferensikan ekspor bawaan.</p> 
+         <p>Misalnya, untuk mengekspor fungsi yang terpisah dari tempat deklarasinya:</p> 
+         <div id="qyzcbay8cl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi(user) {
+    alert(`Hello, ${user}!`);
+}
+
+// sama seperti jika menambahkan "export default" sebelum fungsi
+export { sayHi as default };</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Atau pada situasi yang lainnya, katakanlah sebuah modul <code>user.js</code> mengekspor satu hal utama ???bawaan???, dan beberapa yang dinamai (jarang terjadi, tetapi bisa saja terjadi):</p> 
+         <div id="7p822k18vt" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? user.js
+export default class User {
+    constructor(name) {
+        this.name = name;
+    }
+}
+
+export function sayHi(user) {
+    alert(`Hello, ${user}!`);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Berikut cara mengimpor ekspor bawaan bersama dengan yang ekspor bernama:</p> 
+         <div id="v3kdd7ld5c" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:8,&quot;end&quot;:23}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? main.js
+import {default as User, sayHi} from './user.js';
+
+new User('John');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan terakhir, jika mengimpor semua <code>*</code> sebagai sebuah objek, maka properti <code>default</code> sama persis dengan ekspor bawaan:</p> 
+         <div id="mr6b2i7k55" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? main.js
+import * as user from './user.js';
+
+let User = user.default; // ekspor bawaan
+new User('John');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="sebuah-kata-yang-menentang-ekspor-bawaan" href="import-export.html#sebuah-kata-yang-menentang-ekspor-bawaan">Sebuah kata yang menentang ekspor bawaan</a></h3> 
+         <p>Ekspor bernama eksplisit. Mereka secara persis menyebutkan apa yang mereka impor, jadi kita bisa mendapatkan informasi itu dari mereka; itu adalah sesuatu yang bagus.</p> 
+         <p>Ekspor bernama memaksa kita untuk menggunakan nama yang tepat untuk melakukan impor:</p> 
+         <div id="7xtsgeph98" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>import { User } from './user.js';
+// impor {MyUser} tidak akan berfungsi, penamaannya haruss {User}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Sedangkan untuk ekspor bawaan, kita selalu dapat memilih nama ketika mengimpor:</p> 
+         <div id="nwfgcnqhw8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>import User from './user.js'; // berfungsi
+import MyUser from './user.js'; // berfungsi juga
+// Dapat melakukan impor apa saja... dan itu tetap berfungsi</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kemungkinan anggota tim menggunakan penamaan yang berbeda untuk mengimpor hal yang sama, dan itu tidak baik.</p> 
+         <p>Biasanya, untuk menghindari hal tersebut dan menjaga konsistensi kode terdapat aturan bahwa variabel yang di impor harus sesuai dengan nama berkas, misalnya:</p> 
+         <div id="bby4nrgxwp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>import User from './user.js';
+import LoginForm from './loginForm.js';
+import func from '/path/to/func.js';
+...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Namun, beberapa tim menganggapnya sebagai kelemahan serius dari ekspor default. Jadi, mereka lebih selalu suka menggunakan ekspor bernama. Meskipun hanya satu hal yang diekspor, itu masih diekspor dengan nama, tanpa <code>default</code>.</p> 
+         <p>Itu juga membuat ekspor ulang (lihat di bawah) sedikit lebih mudah.</p> 
+         <h2><a class="main__anchor" name="ekspor-ulang" href="import-export.html#ekspor-ulang">Ekspor Ulang</a></h2> 
+         <p>???Ekspor ulang??? sintaks <code>export ... from ...</code> memperbolehkann untuk mengimpor sesuatu dan segera mengekspornya kembali (memungkinkan dengan nama yang berbeda) seperti ini:</p> 
+         <div id="2dkxa1iz9v" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>export { sayHi } from './say.js'; // ekspor ulang sayHi
+
+export { default as User } from './user.js'; // ekspor ulang bawaan</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kenapa hal tersebut diperlukan? mari lihat praktik penggunaannya.</p> 
+         <p>Bayangkan kita menulis sebuah ???paket???: sebuah direktori dengan banyak modul, dengan beberapa fungsi yang diekpor ke luar (perkakas seperti NPM memungkinkan kita untuk menerbitkan dan mendistribusikan paket seperti itu), dan kebanyakan modul hanyalah ???pembantu??? untuk penggunaan internal di paket modul lainnya.</p> 
+         <p>Struktur berkas bisa seperti ini:</p> 
+         <div id="x3tcue1zzb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code>auth/
+    index.js
+    user.js
+    helpers.js
+    tests/
+        login.js
+    providers/
+        github.js
+        facebook.js
+        ...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita ingin menunjukkan fungsionalitas paket melalui satu titik masuk, ???Berkas utama??? <code>auth/index.js</code> dapat digunakan seperti ini.</p> 
+         <div id="47kn50fq5y" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>import { login, logout } from 'auth/index.js';</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Idenya adalah bahwa orang luar (pengembang) yang menggunakan paket kita tidak boleh ikut campur dengan struktur internalnya, serta mencari berkas didalam direktori paket kita. Kita hanya mengekspor apa yang penting di dalam <code>auth/index.js</code> dan menyembunyikan sisaya dari pengintaian.</p> 
+         <p>Karena fungsionalitas yang diekspor sebenarnya tersebar diantara paket, kita dapat mengimpornya ke dalam <code>auth/index.js</code> dan kemudian kembali mengekspornya:</p> 
+         <div id="5h66dgvad8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? auth/index.js
+
+// impor login/logout dan kemudian segera mengekspornya kembali
+import {login, logout} from './helpers.js';
+export {login, logout};
+
+// impor default sebagai User kemudian mengekspornya
+import User from './user.js';
+export {User};
+...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang pengguna dari paket kita dapat <code>import { login }</code> dari <code>"auth/index.js"</code>.</p> 
+         <p>Sintaks <code>export ... from ...</code> hanyalah notasi pendek untuk proses impor-ekspor.</p> 
+         <div id="vq215amx36" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? auth/index.js
+// impor login/logout dan kemudian segera mengekspornya kembali
+export {login, logout} from './helpers.js';
+
+// impor default sebagai User kemudian mengekspornya
+export {default as User} from './user.js';
+...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="ekspor-ulang-ekspor-bawaan" href="import-export.html#ekspor-ulang-ekspor-bawaan">Ekspor ulang ekspor bawaan</a></h3> 
+         <p>Ekspor bawaan memerlukan penanganan terpisah ketika melakukan ekspor ulang.</p> 
+         <p>Misalnya kita memiliki <code>user.js</code> dan kita ingin melakukan ekspor ulang kelas <code>User</code> tersebut:</p> 
+         <div id="nmsxbwjw6u" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ???? user.js
+export default class User {
+    // ...
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <ol> 
+          <li> <p><code>export User form './user.js'</code> tidak dapat digunakan. Apa yang salah???? Ini adalah kesalahan sintaks!</p> <p>Untuk melakukan ekspor ulang ekspor bawaan, kita harus menuliskan <code>export { default as User }</code> seperti contoh diatas.</p> </li> 
+          <li> <p><code>export * from './user.js'</code> mengekspor ulang hanya ekspor bernama, tetapi mengabaikan ekspor bawaan.</p> <p>Jika kita ingin melakukan ekspor ulang keduanya (ekspor bernama dan ekspor bawaan), maka diperlukan dua pernyataan seperti berikut:</p> 
+           <div id="7eb0kbubx2" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>export * from './user.js'; // ekspor ulang ekspor bernama
+export { default } from './user.js'; // ekspor ulang ekspor bawaan</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <p>Keanehan dari proses mengekspor ulang ekspor bawaan adalah salah satu alasan mengapa beberapa pengembang tidak menyukainya.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="import-export.html#ringkasan">Ringkasan</a></h2> 
+         <p>Berikut merupakan semua jenis <code>export</code> yang kita bahas di artikel ini dan sebelumnya.</p> 
+         <p>Kamu dapat mengeceknya secara mandiri dengan membacanya dan mengingat apa maksudnya:</p> 
+         <p>Ekspor:</p> 
+         <ul> 
+          <li>Sebelum deklarasi dari sebuah kelas/fungsi/???: 
+           <ul> 
+            <li><code>export [default] class/function/variable ...</code></li> 
+           </ul> </li> 
+          <li>Ekspor mandiri: 
+           <ul> 
+            <li><code>export { x [as y], ... } from "module"</code></li> 
+           </ul> </li> 
+          <li>Ekspor ulang: 
+           <ul> 
+            <li><code>export {x [as y], ...} from "module"</code></li> 
+            <li><code>export * from "module"</code> (tidak mengekspor ulang bawaan).</li> 
+            <li><code>export {default [as y]} from "module"</code> (ekspor ulang bawaan).</li> 
+           </ul> </li> 
+         </ul> 
+         <p>Impor:</p> 
+         <ul> 
+          <li>Ekspor bernama dari modul: 
+           <ul> 
+            <li><code>import {x [as y], ...} from "module"</code></li> 
+           </ul> </li> 
+          <li>Ekspor bawaan: 
+           <ul> 
+            <li><code>import x from "module"</code></li> 
+            <li><code>import {default as x} from "module"</code></li> 
+           </ul> </li> 
+          <li>Semuanya: 
+           <ul> 
+            <li><code>import * as obj from "module"</code></li> 
+           </ul> </li> 
+          <li>Impor modul (ini menjalankan kode), tetapi tidak disimpan kedalam variabel: 
+           <ul> 
+            <li><code>import "module"</code></li> 
+           </ul> </li> 
+         </ul> 
+         <p>Kita dapat meletakkan pernyataan <code>import/export</code> di bagian atas atau bawah dari skrip, itu tidak masalah.</p> 
+         <p>Jadi secara teknis kode ini tidak dipermasalahkan:</p> 
+         <div id="dbi0nfwx4r" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>sayHi();
+
+// ...
+
+import { sayHi } from './say.js'; // impor dibagian bawah berkas</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam praktiknya, impor biasanya dilakukan pada awal sebuah berkas, tetapi itu hanya untuk memberikan kenyamanan lebih.</p> 
+         <p><strong>Harap diperhatikan bahwa pernyataan import/export tidak dapat digunakan jika didalam <code>{...}</code>.</strong></p> 
+         <p>Sebuah impor bersyarat seperti ini tidak akan dapat berfungsi:</p> 
+         <div id="nf3rjsjud4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (something) {
+    import { sayHi } from './say.js'; // Error: import must be at top level (impor harus diluar pernyataan if dann { ... } sehingga kode tersebut tidak akan bekerja)
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Tetapi bagaimana jika kita benar-benar perlu menhimpor sesuatu dengan syarat tertentu? atau pada waktu yang tepat? Seperti memuat modul berdasarkan permintaan, pada saat itu benar-benar dibutuhkan?</p> 
+         <p>Oleh karena itu, kita akan mempelajari impor dinamis di artikel selanjutnya.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="modules-intro.html" data-tooltip="Modul, Pengenalan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="modules-dynamic-imports.html" data-tooltip="Impor dinamis"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fimport-export" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fimport-export" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="modules.html">Modules</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="import-export.html#export-sebelum-deklarasi">Export sebelum deklarasi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="import-export.html#export-selain-dari-deklarasi">Export selain dari deklarasi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="import-export.html#import">Import *</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="import-export.html#import-as">Import ???as???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="import-export.html#export-as">Export ???as???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="import-export.html#export-default">Export default</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="import-export.html#ekspor-ulang">Ekspor Ulang</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="import-export.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="import-export.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fimport-export" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fimport-export" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

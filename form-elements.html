@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Metode dan properti form</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="form-elements.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Metode dan properti form"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Metode dan properti form"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="forms-controls.html"> 
+  <link rel="next" href="focus-blur.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Metode dan properti form"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fform-elements" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fform-elements" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="23" max="32" data-tooltip="Pelajaran 23 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="forms-controls.html"><span>Forms, controls</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Forms, controls","item":"https://id.javascript.info/forms-controls"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Metode dan properti form</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Metode dan properti form"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Form dan elemen kontrol, contohnya seperti <code>&lt;input&gt;</code> memiliki banyak properti khusus dan event.</p> 
+         <p>Bekerja dengan form akan lebih mudah ketika kita mempelajarinya.</p> 
+         <h2><a class="main__anchor" name="navigasi-form-dan-elemen" href="form-elements.html#navigasi-form-dan-elemen">Navigasi: form dan elemen</a></h2> 
+         <p>Form dokumen adalah anggota dari koleksi khusus <code>document.forms</code>.</p> 
+         <p>Itu disebut <em>???named collection???</em>: itu keduanya memiliki nama(name) dan terurut(index). Kita bisa menggunakan keduanya baik dengan nama atau nomor(index) pada dokumen untuk mendapatkan form.</p> 
+         <div id="avc8gi0n0p" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>document.forms.my; // the form with name="my"
+document.forms[0]; // the first form in the document</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ketika kita mempunyai sebuah form, maka elemen apapun tersedia di dalam <em>named collection/koleksi nama</em> <code>form.elements</code>.</p> 
+         <p>Misalnya:</p> 
+         <div id="uc7h9b3lnw" data-trusted="1" class="code-example" data-demo-height="40"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;form name="my"&gt;
+  &lt;input name="one" value="1" /&gt;
+  &lt;input name="two" value="2" /&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  // dapatkan form
+  let form = document.forms.my; // &lt;form name="my"&gt; elemen
+
+  // dapatkan element
+  let elem = form.elements.one; // &lt;input name="one"&gt; elemen
+
+  alert(elem.value); // 1
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ada suatu saat dimana ada beberapa elemen dengan nama yang sama, hal itu sering terjadi dengan <em>radio buttons</em>.</p> 
+         <p>Dalam hal tersebut <code>form.elements[name]</code>adalah sebuah <em>collection/koleksi</em>, misalnya:</p> 
+         <div id="oe6chy7p9y" data-trusted="1" class="code-example" data-demo-height="40" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10},{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:22,&quot;end&quot;:32}]},{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:22,&quot;end&quot;:32}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;form&gt;
+  &lt;input type="radio" name="age" value="10"&gt;
+  &lt;input type="radio" name="age" value="20"&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+let form = document.forms[0];
+
+let ageElems = form.elements.age;
+
+alert(ageElems[0]); // [object HTMLInputElement]
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Navigasi properti ini tidak bergantung pada struktur tag. Semua elemen kontrol, tak peduli seberapa dalam mereka didalam form, mereka tersedia di dalam <code>form.elements</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Fieldsets sebagai </span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Sebuah form mungkin punya satu atau banyak elemen <code>&lt;fieldset&gt;</code> didalamnya. Mereka juga punya <code>elements</code> properti yang mencatumkan form kontrol didalamnya.</p> 
+           <p>Misalnya:</p> 
+           <div id="3m13chctu9" data-trusted="1" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:11,&quot;end&quot;:15}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="form-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="form-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;body&gt;
+  &lt;form id="form"&gt;
+    &lt;fieldset name="userFields"&gt;
+      &lt;legend&gt;info&lt;/legend&gt;
+      &lt;input name="login" type="text"&gt;
+    &lt;/fieldset&gt;
+  &lt;/form&gt;
+
+  &lt;script&gt;
+    alert(form.elements.login); // &lt;input name="login"&gt;
+
+    let fieldset = form.elements.userFields;
+    alert(fieldset); // HTMLFieldSetElement
+
+     // kita bisa mendapatkan input dengan nama baik dari form maupun dari fieldset
+    alert(fieldset.elements.login == form.elements.login); // true
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Shorter notation: <code>form.name</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Dengan kata lain, daripada menulisnya dengan <code>form.elements.login</code> kita bisa menulis <code>form.login</code>.</p> 
+           <p>Itu juga berkeja, tetapi disana ada sebuah kesalahan kecil: jika kita akses sebuah elemen, dan lalu mengubah <code>name</code>, maka elemen tersebut masih tersedia dengan nama lamanya (sama juga dengan nama barunya).</p> 
+           <p>Itu akan lebih mudah saat kita lihat pada sebuah contoh:</p> 
+           <div id="8gee74it9l" data-trusted="1" class="code-example" data-demo-height="40" data-highlight="[{&quot;start&quot;:13,&quot;end&quot;:14}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="form-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="form-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;form id="form"&gt;
+  &lt;input name="login" /&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+    alert(form.elements.login == form.login); // true, &lt;input&gt; yang sama
+
+    form.login.name = "username"; // mengubah nama input
+
+    // form.elements telah mengupdate nama:
+    alert(form.elements.login); // undefined (tidak terdefinisi)
+    alert(form.elements.username); // input
+
+    // form membolehkan kedua nama: yang baru dan yang lama
+    alert(form.username == form.login); // true
+&lt;/script&gt;</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Itu biasanya bukan sebuah masalah, karena kita jarang mengubah nama dari elemen form.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="backreference-element-form" href="form-elements.html#backreference-element-form">Backreference: element.form</a></h2> 
+         <p>Untuk elemen apapun, form tersedia sebagai <code>element.form</code>. Jadi sebuah form mereferensikan semua elemen, dan elemen referensi dari form.</p> 
+         <p>Ini gambarannya:</p> 
+         <figure> 
+          <div class="image" style="width:463px"> 
+           <div class="image__ratio" style="padding-top:32.39740820734342%"></div> 
+           <object type="image/svg+xml" data="article/form-elements/form-navigation.svg" width="463" height="150" class="image__image" data-use-theme> <img src="article/form-elements/form-navigation.svg" alt="" width="463" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Misalnya:</p> 
+         <div id="s9d82gw2ay" data-trusted="1" class="code-example" data-demo-height="40" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;form id="form"&gt;
+  &lt;input type="text" name="login"&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  // form -&gt; elemen
+  let login = form.login;
+
+  // elemen -&gt; form
+  alert(login.form); // HTMLFormElement
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="element-form" href="form-elements.html#element-form">Element Form</a></h2> 
+         <p>Mari bicara tentang kontrol form.</p> 
+         <h3><a class="main__anchor" name="input-dan-textarea" href="form-elements.html#input-dan-textarea">input dan textarea</a></h3> 
+         <p>Kita bisa akses nilai mereka dengan <code>input.value</code> (string) atau <code>input.checked</code> (boolean) untuk checkboxes.</p> 
+         <p>Seperti ini:</p> 
+         <div id="cpauzjeo2t" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>input.value = "New value";
+textarea.value = "New text";
+
+input.checked = true; // untuk checkbox atau radio button</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Use <code>textarea.value</code>, not <code>textarea.innerHTML</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Harap dicatat, meskipun <code>&lt;textarea&gt;...&lt;/textarea&gt;</code> menyimpan nilainya sebagai HTML bersarang(nested), kita tidak boleh menggunakan <code>textarea.innerHTML</code> untuk mengaksesnya.</p> 
+           <p>itu hanya menyimpan HTML yang mulanya ada di halaman, bukan nilai saat ini.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="select-dan-option" href="form-elements.html#select-dan-option">select dan option</a></h3> 
+         <p>Sebuah elemen <code>&lt;select&gt;</code> mempunyai 3 properti penting:</p> 
+         <ol> 
+          <li><code>select.options</code> ??? adalah koleksi dari <code>&lt;option&gt;</code> sub-element,</li> 
+          <li><code>select.value</code> ??? adalah nilai saat ini yang dipilih(selected) <code>&lt;option&gt;</code>,</li> 
+          <li><code>select.selectedIndex</code> ??? adalah nomor yang saat ini dipilih(selected) <code>&lt;option&gt;</code>.</li> 
+         </ol> 
+         <p>Mereka menyediakan 3 cara berbeda untuk mengatur nilai pada <code>&lt;select&gt;</code>:</p> 
+         <ol> 
+          <li>Mencari element <code>&lt;option&gt;</code> yang bersangkutan dan atur <code>option.selected</code> menjadi <code>true</code>.</li> 
+          <li>Atur <code>select.value</code>ke nilai.</li> 
+          <li>Atur <code>select.selectedIndex</code> ke nomor dari option.</li> 
+         </ol> 
+         <p>Cara pertama adalah yang paling jelas, tetapi cara <code>(2)</code> dan <code>(3)</code> biasanya lebih nyaman.</p> 
+         <p>Lihat contoh berikut:</p> 
+         <div id="kv79uwsu19" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;select id="select"&gt;
+  &lt;option value="apple"&gt;Apple&lt;/option&gt;
+  &lt;option value="pear"&gt;Pear&lt;/option&gt;
+  &lt;option value="banana"&gt;Banana&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;script&gt;
+  // semua 3 baris kode melakukan hal yang sama
+  select.options[2].selected = true;
+  select.selectedIndex = 2;
+  select.value = 'banana';
+  // please note: options start from zero, so index 2 means the 3rd option.
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tidak seperti kontrol pada umumnya, <code>&lt;select&gt;</code> membolehkan memilih banyak opsi sekaligus jika memiliki atribut<code>multiple</code>.Fitur itu jarang digunakan.</p> 
+         <p>Jika anda harus, maka gunakan cara pertama: tambah/hapus <code>selected</code>properti dari <code>&lt;option&gt;</code> sub-element.</p> 
+         <p>Kita bisa mendapatkan koleksinya sebagai <code>select.options</code>, misalnya:</p> 
+         <div id="zw9u6vt4b5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:20,&quot;end&quot;:28}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="form-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;select id="select" multiple&gt;
+  &lt;option value="blues" selected&gt;Blues&lt;/option&gt;
+  &lt;option value="rock" selected&gt;Rock&lt;/option&gt;
+  &lt;option value="classic"&gt;Classic&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;script&gt;
+  // mendapatkan semua nilai selected dari multi-select
+  let selected = Array.from(select.options)
+    .filter(option =&gt; option.selected)
+    .map(option =&gt; option.value);
+
+  alert(selected); // blues,rock
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Penjelasan lengkap dari elemen<code>&lt;select&gt;</code> tersedia di <a href="https://html.spec.whatwg.org/multipage/forms.html#the-select-element">https://html.spec.whatwg.org/multipage/forms.html#the-select-element</a>.</p> 
+         <h3><a class="main__anchor" name="new-option" href="form-elements.html#new-option">new Option</a></h3> 
+         <p>Ini jarang digunakan. Namun masih ada hal yang menarik.</p> 
+         <p>Di dalam <a href="https://html.spec.whatwg.org/multipage/forms.html#the-option-element">penjelasan</a> disana ada sintak pendek yang bagus untuk membuat elemen <code>&lt;option&gt;</code>:</p> 
+         <div id="ik7m4ivnkq" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>option = new Option(text, value, defaultSelected, selected);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>This syntax is optional. We can use <code>document.createElement('option')</code> and set attributes manually. Still, it may be shorter, so here are the parameters:</p> 
+         <ul> 
+          <li><code>text</code> ??? adalah teks didalam option,</li> 
+          <li><code>value</code> ??? adalah nilai option,</li> 
+          <li><code>defaultSelected</code> ??? jika <code>true</code>, maka <code>selected</code> HTML-attribute dibuat,</li> 
+          <li><code>selected</code> ??? jika <code>true</code>, maka option nya <em>selected</em>.</li> 
+         </ul> 
+         <p>Disana mungkin sedikit bingung tentang <code>defaultSelected</code> dan <code>selected</code>. That???s simple: <code>defaultSelected</code> <em>set</em> HTML-attribute, dengan itu kita bisa dapat menggunakan <code>option.getAttribute('selected')</code>. Dan <code>selected</code> ??? baik opsi <em>selected</em> atau tidak, itu yang lebih penting. Biasanya kedua nilai baik di <em>set</em> ke <code>true</code> atau tidak di <em>set</em> (sama dengan <code>false</code>).</p> 
+         <p>Misalnya:</p> 
+         <div id="wivz1itf7b" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let option = new Option("Text", "value");
+// creates &lt;option value="value"&gt;Text&lt;/option&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Elemen yang sama yang terpilih/<em>selected</em>:</p> 
+         <div id="efnvlw7fru" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let option = new Option("Text", "value", true, true);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Elemen <em>option</em> memiliki properti:</p> 
+         <dl> 
+          <dt> 
+           <code>option.selected</code> 
+          </dt> 
+          <dd>
+            apakah option 
+           <em>selected</em>. 
+          </dd> 
+          <dt> 
+           <code>option.index</code> 
+          </dt> 
+          <dd>
+            Jumlah option diantara yang lain dalam elemen 
+           <code>&lt;select&gt;</code>. 
+          </dd> 
+          <dt> 
+           <code>option.text</code> 
+          </dt> 
+          <dd>
+            Konten teks option(dilihat oleh pengunjung). 
+          </dd> 
+         </dl> 
+         <h2><a class="main__anchor" name="referensi" href="form-elements.html#referensi">Referensi</a></h2> 
+         <ul> 
+          <li>Spesifikasi: <a href="https://html.spec.whatwg.org/multipage/forms.html">https://html.spec.whatwg.org/multipage/forms.html</a>.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="kesimpulan" href="form-elements.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Navigasi Form:</p> 
+         <dl> 
+          <dt> 
+           <code>document.forms</code> 
+          </dt> 
+          <dd>
+            Sebuah form tersedia sebagai 
+           <code>document.forms[name/index]</code>. 
+          </dd> 
+          <dt> 
+           <code>form.elements</code> 
+          </dt> 
+          <dd>
+            Elemen form tersedia sebagai 
+           <code>form.elements[name/index]</code>, atau kita bisa gunakan 
+           <code>form[name/index]</code>. 
+           <code>elements</code> properti juga dapat berkerja dengan 
+           <code>&lt;fieldset&gt;</code>. 
+          </dd> 
+          <dt> 
+           <code>element.form</code> 
+          </dt> 
+          <dd>
+            Elemen referensi formulirnya dalam 
+           <code>form</code> properti. 
+          </dd> 
+         </dl> 
+         <p>Nilai tersedia sebagai <code>input.value</code>, <code>textarea.value</code>, <code>select.value</code> dll, atau<code>input.checked</code> untuk <em>checkboxes</em> dan <em>radio buttons</em>.</p> 
+         <p>Untuk <code>&lt;select&gt;</code> kita juga bisa mendapatkan nilainya dengan index <code>select.selectedIndex</code> atau lewat koleksi option <code>select.options</code>.</p> 
+         <p>Ini adalah dasar-dasar untuk mulai bekerja dengan form. Kita akan melihat banyak contoh lebih lanjut di tutorial.</p> 
+         <p>Pada bab selanjutnya, kita akan membahas <code>focus</code> dan <code>blur</code> event yang mungkin terjadi pada elemen manapapun, tapi biasanya ditangani pada form.</p> 
+         <div id="f3xno2a7vd" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code></code></pre> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="form-elements.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="form-elements.html#tambahkan-option-pada-select" name="tambahkan-option-pada-select">Tambahkan option pada select</a></h3> 
+           <a class="task__open-link" href="task/add-select-option.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>There???s a <code>&lt;select&gt;</code>:</p> 
+            <div id="iawh8y29on" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-markup"><code>&lt;select id="genres"&gt;
+  &lt;option value="rock"&gt;Rock&lt;/option&gt;
+  &lt;option value="blues" selected&gt;Blues&lt;/option&gt;
+&lt;/select&gt;</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Gunakan Javascript untuk:</p> 
+            <ol> 
+             <li>Tampilkan nilai dan teks dari selected option.</li> 
+             <li>Tambahkan sebuah option: <code>&lt;option value="classic"&gt;Classic&lt;/option&gt;</code>.</li> 
+             <li>Buat menjadi selected.</li> 
+            </ol> 
+            <p>Note, jika semua benar, alert akan menampilkan <code>blues</code>.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>The solution, step by step:</p> 
+              <div id="4mfftxbw45" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="form-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="form-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-markup"><code>&lt;select id="genres"&gt;
+  &lt;option value="rock"&gt;Rock&lt;/option&gt;
+  &lt;option value="blues" selected&gt;Blues&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;script&gt;
+  // 1)
+  let selectedOption = genres.options[genres.selectedIndex];
+  alert( selectedOption.value );
+
+  // 2)
+  let newOption = new Option("Classic", "classic");
+  genres.append(newOption);
+
+  // 3)
+  newOption.selected = true;
+&lt;/script&gt;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="forms-controls.html" data-tooltip="Forms, controls"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="focus-blur.html" data-tooltip="Focusing: focus/blur"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fform-elements" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fform-elements" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="forms-controls.html">Forms, controls</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="form-elements.html#navigasi-form-dan-elemen">Navigasi: form dan elemen</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="form-elements.html#backreference-element-form">Backreference: element.form</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="form-elements.html#element-form">Element Form</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="form-elements.html#referensi">Referensi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="form-elements.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="form-elements.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="form-elements.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fform-elements" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fform-elements" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

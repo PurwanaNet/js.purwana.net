@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Metode objek, "this"</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="object-methods.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Metode objek, &quot;this&quot;"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Metode objek, &quot;this&quot;"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="garbage-collection.html"> 
+  <link rel="next" href="constructor-new.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Metode objek, &quot;this&quot;"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fobject-methods" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fobject-methods" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="32" max="92" data-tooltip="Pelajaran 32 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="object-basics.html"><span>Objects: dasar-dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Objects: dasar-dasar","item":"https://id.javascript.info/object-basics"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Metode objek, "this"</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Metode objek, &quot;this&quot;"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Objek-objek biasanya dibuat untuk merepresentasikan benda di dunia nyata, seperti para pengguna, perintah dan sebagainya:</p> 
+         <div id="dr9zx2wfj0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan, di dunia nyata, seorang pengguna bisa <em>bertindak</em>: memilih sesuatu dari keranjang belanja, <em>login</em>, <em>logout</em> dan lain-lain.</p> 
+         <p>Tindakan-tindakan direpresentasikan dalam JavaScript dengan fungsi-fungsi dalam properti.</p> 
+         <h2><a class="main__anchor" name="contoh-metode" href="object-methods.html#contoh-metode">Contoh metode</a></h2> 
+         <p>Sebagai awalan, mari ajarkan <code>user</code> untuk bilang hello:</p> 
+         <div id="6f0rb6pkkn" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30
+};
+
+user.sayHi = function() {
+  alert("Hello!");
+};
+
+user.sayHi(); // Hello!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini kita hanya menggunakan sebuah fungsi ekspresi untuk membuat fungsi dan menugaskannya ke properti <code>user.sayHi</code> pada objek.</p> 
+         <p>Kemudian kita memanggil fungsi tersebut. Kini ???pengguna??? bisa berbicara!</p> 
+         <p>Sebuah fungsi yang mana merupakan properti dari sebuah objek disebut sebagai <em>metode</em>-nya.</p> 
+         <p>Jadi, di sini kita memiliki sebuah metode <code>sayHi</code> dari objek<code>user</code>.</p> 
+         <p>Tentu saja, kita bisa menggunakan sebuah fungsi sebagai sebuah metode pra-deklarasi (<em>pre-declared</em>), seperti beriktu:</p> 
+         <div id="h8mr1dmsev" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  // ...
+};
+
+// pertama, deklarasi
+function sayHi() {
+  alert("Hello!");
+};
+
+// lalu tambbahkan sebagai sebuah metodes
+user.sayHi = sayHi;
+
+user.sayHi(); // Hello!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Object-oriented programming</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ketika kita menulis kode kita menggunakan objek-objek untuk merepresentasikan benda, itulah yang disebut sebagai <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">object-oriented programming</a>, disingkat menjadi: ???OOP???.</p> 
+           <p>OOP adalah hal besar, sebuah sains yang sangat menarik. Bagaimana cara memilih entitas yang benar? bagaimana cara mengorganisir interaksi diantara mereka? Itulah arsitektur, dan terdapat buku yang bagus untuk topik itu, seperti ???Design Patterns: Elements of Reusable Object-Oriented Software??? oleh E. Gamma, R. Helm, R. Johnson, J. Vissides atau ???Object-Oriented Analysis and Design with Applications??? by G. Booch, and more.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="metode-ringkas" href="object-methods.html#metode-ringkas">Metode ringkas</a></h3> 
+         <p>Terdapat sebuah sintaks yang lebih pendek untuk metode-metode dalams sebuah penulisan (kode) objek:</p> 
+         <div id="z83zkhazrk" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// objek-objek ini sama
+
+user = {
+  sayHi: function() {
+    alert("Hello");
+  }
+};
+
+// metode ringkas terlihat lebih bagus, kan?
+user = {
+  sayHi() { // sama seperti "sayHi: function()"
+    alert("Hello");
+  }
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang didemonstrasikan, kita bisa mengabaikan <code>"function"</code> dan hanya menuliskan <code>sayHi()</code>.</p> 
+         <p>Sebenarnya, notasi-notasi tersebut tidak sepenuhnya sama. Ada beberapa perbedaan kecil yang berhubungan dengan <em>object inheritance</em> atau pewarisan objek (akan dibahas nanti), tetapi untuk sekarang hal-hal tersebut tidak terlalu penting. Dalam hampir kebanyakan kasus sintaks ringkas lebih disukai.</p> 
+         <h2><a class="main__anchor" name="this-dalam-metode" href="object-methods.html#this-dalam-metode">???this??? dalam metode</a></h2> 
+         <p>Sudah umum bahwa sebuah metode objek perlu untuk mengakses informasi yang disimpan dalam objek untuk melakukan tugasnya.</p> 
+         <p>Contohnya, kode di dalam <code>user.sayHi()</code> bisa jadi membutuhkan nama dari <code>user</code>.</p> 
+         <p><strong>Untuk mengakses objek yang bersangkutan, sebuah metode dapat menggunakan kata kunci <code>this</code>.</strong></p> 
+         <p>Nilai dari <code>this</code> adalah objek ???sebelum (tanda) titik???, yang mana sebelumnya memanggil metode tersebut.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="tpyuv9h1lp" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    // "this" adalah "objek yang sekarang"
+    alert(this.name);
+  }
+
+};
+
+user.sayHi(); // John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini selama ekseskusi <code>user.sayHi()</code>, nilai dari <code>this</code> akan menjadi <code>user</code>.</p> 
+         <p>Secara teknis, memungkingkan juga untuk mengakses objek tanpa <code>this</code>, dengan cara mereferensikannya melalui variabel luar:</p> 
+         <div id="qs7eiwefbr" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    alert(user.name); // menggunakan "user" ketimbang "this"
+  }
+
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Namun kode yang demikian tidak dapat diandalkan. Jika kita memilih untuk menyalin <code>user</code> ke sebuah variabel lain, misalnya <code>admin = user</code> dan menimpa <code>user</code> dengan hal lain, akhirnya malah akan mengakses objek yang salah.</p> 
+         <p>Hal tersebut dicontohkan seperti berikut ini:</p> 
+         <div id="nbeojjz5c2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30,
+
+  sayHi() {
+    alert( user.name ); // akan mengarah ke sebuah error
+  }
+
+};
+
+
+let admin = user;
+user = null; // timpa/overwrite agar terlihat lebih jelas
+
+admin.sayHi(); // Uups! dalam sayHi(), nama yang lama sedang digunakan! error!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita menggunakan <code>this.name</code> ketimbang <code>user.name</code> dalam <code>alert</code>, maka kodenya akhirnya berfungsi.</p> 
+         <h2><a class="main__anchor" name="this-tidak-ditemukan" href="object-methods.html#this-tidak-ditemukan">???this??? tidak ditemukan</a></h2> 
+         <p>Dalam JavaScript, kata kunci <code>this</code> berperilaku tidak seperti kebanyak bahasa pemrograman lainnya. ???this??? juga bisa digunakan dalam fungsi apapun.</p> 
+         <p>Tidak ada <em>syntax error</em> dalam contoh berikut ini:</p> 
+         <div id="rizlbpqhyc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:9,&quot;end&quot;:13}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi() {
+  alert( this.name );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Nilai dari <code>this</code> dievaluasi selama proses <em>run-time</em>, tergantung dari konteksnya.</p> 
+         <p>Contohnya, di sini fungsi yang sama ditugaskan pada dua objek yang berbeda dan memiliki ???this??? dalam pemanggilannya:</p> 
+         <div id="g39fjfctsa" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = { name: "John" };
+let admin = { name: "Admin" };
+
+function sayHi() {
+  alert( this.name );
+}
+
+// menggunakan fungsi yang sama dalam dua objek
+user.f = sayHi;
+admin.f = sayHi;
+
+// panggilan-panggilan ini memiliki this yang berbeda
+// "this" dalam fungsi adalah objek "sebelum tanda titik"
+user.f(); // John  (this == user)
+admin.f(); // Admin  (this == admin)
+
+admin['f'](); // Admin (tanda titik atau kurung siku mengakses metode tersebut ??? bukan masalah)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Aturannya sederhana: jika <code>obj.f()</code> dipanggil, maka <code>this</code> adalah <code>obj</code> selama pemanggilan <code>f</code>. Jadi antara <code>user</code> atau <code>admin</code> pada contoh di atas.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Pemanggilan tanpa sebuah objek: <code>this == undefined</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Kita bahkan bisa memanggil fungsi tanpa sebuah objek sama sekali:</p> 
+           <div id="nwrqmu59yz" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function sayHi() {
+  alert(this);
+}
+
+sayHi(); // undefined</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Dalam kasus ini <code>this</code> adalah <code>undefined</code> di mode <em>strict</em>. Jika kita coba untuk mengakses <code>this.name</code>, akan menghasilkan sebuah error.</p> 
+           <p>Dalam mode <em>non-strict</em> nilai dari <code>this</code> dalam kasus demikian akan menjadi <em>objek global</em> (<code>window</code> dalam sebuah peramban, kita akan membahasnya lebih lanjut dalam bab <a href="global-object.html">Objek global</a>). Ini adalah sebuah perilaku historis yang dibenahi oleh <code>"use strict"</code>.</p> 
+           <p>Biasanya panggilan yang demikian adalah sebuah kesalahan <em>programming</em>. Jika terdapat <code>this</code> dalam sebuah fungsi, <code>this</code> tersebut kemungkinan besar akan dipanggil dalam konteks sebuah objek.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Akibat dari <code>this</code> yang tidak terikat</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika kamu berasal dari bahasa pemrograman lain, mungkin saja kamu menggunakan gagasan sebuah "pengikatan (bound) <code>this</code>", dimana metode-metode didefinisikan dalam sebuah objek selalu memiliki <code>this</code> yang merujuk pada objek itu.</p> 
+           <p>Dalam JavaScript <code>this</code> itu ???bebas???, nilainya dieveluasi saat waktu pemanggilan dan tidak tergantung pada dimana metode tersebut di deklarasikan, namun lebih pada objek apa yang berada ???sebelum (tanda) titik???.</p> 
+           <p>Konsep run-time mengeveluasi <code>this</code> memiliki kelebihan dan kekurangan sendiri. Di satu sisi, sebuah fungsi bisa digunakan ulang untuk objek-objek yang berbeda. Pada sisi sebaliknya, fleksibilitas yang besar membuat lebih banyak kemungkinan adanya kesalahan-kesalahan.</p> 
+           <p>Di sini posisi kita tidak untuk menghakimi apakah pilihan rancangan bahasa pemrograman ini baik atau buruk. Kita akan mengerti bagaimana bekerja dengan hal itu, serta bagaimana cara mendapatkan keuntungan dari hal tersebut dan menghindari adanya masalah.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="fungsi-arrow-tidak-memiliki-this" href="object-methods.html#fungsi-arrow-tidak-memiliki-this">Fungsi arrow tidak memiliki ???this???</a></h2> 
+         <p>Fungsi-fungsi <em>arrow</em> itu istimewa: fungsi tersebut tidak memiliki <code>this</code> ???milik fungsi itu sendiri???. Jika kita mereferensikan <code>this</code> dari fungsi demikian, hal itu didapat dari fungsi ???normal??? di luar.</p> 
+         <p>For instance, here <code>arrow()</code> uses <code>this</code> from the outer <code>user.sayHi()</code> method:</p> 
+         <div id="5gcptb0kd2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  firstName: "Ilya",
+  sayHi() {
+    let arrow = () =&gt; alert(this.firstName);
+    arrow();
+  }
+};
+
+user.sayHi(); // Ilya</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itulah fitur istimewa dari fungsi <em>arrow</em>, fitur berguna ketika kita benar-benar tidak ingin memiliki sebuah <code>this</code> yang terpisah, namun kita mengambilnya dari luar lingkung tersebut. Selanjutnya dalam bab <a href="arrow-functions.html">Membahas Kembali Fungsi Arrow</a> kita akan mempelajari lebih dalam mengenai fungsi <em>arrow</em>.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="object-methods.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li>Fungsi-fungsi yang disimpan dalam properti objek disebut sebagai ???metode???.</li> 
+          <li>Metode membuat objek dapat ???bertindak??? seperti <code>object.doSomething()</code>.</li> 
+          <li>Metode bisa mereferensikan ke objek sebagai <code>this</code>.</li> 
+         </ul> 
+         <p>Nilai dari <code>this</code> didefiniskan saat <em>run-time</em>.</p> 
+         <ul> 
+          <li>Ketika sebuah fungsi dideklarasikan, fungsi tersebut bisa menggunakan <code>this</code>, tetapi <code>this</code> tersebut tidak memiliki nilai sampai fungsi tersebut dipanggil.</li> 
+          <li>Sebuah fungsi bisa disalin di antara objek-objek.</li> 
+          <li>Ketika sebuah fungsi dipanggil dalam sintaks ???metode???: <code>object.method()</code>, nilai <code>this</code> selama pemanggilan adalah <code>object</code>.</li> 
+         </ul> 
+         <p>Mohon diingat bahwa fungsi <em>arrow</em> itu istimewa: fungsi tersebut tidak memiliki <code>this</code>. Ketika <code>this</code> diakses di dalam sebuah fungsi <em>arrow</em>, <code>this</code> itu diambil dari luar.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="object-methods.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="object-methods.html#menggunakan-this-dalam-penulisan-objek" name="menggunakan-this-dalam-penulisan-objek">Menggunakan "this" dalam penulisan objek</a></h3> 
+           <a class="task__open-link" href="task/object-property-this.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Berikut ini adalah fungsi <code>makeUser</code> yang mengembalikan sebuah objek.</p> 
+            <p>Apa hasil dari mengakses <code>ref</code>? Mengapa demikian?</p> 
+            <div id="87gy1gkkr3" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+}
+
+let user = makeUser();
+
+alert( user.ref.name ); // Apa hasilnya?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><strong>Jawaban: error.</strong></p> 
+              <p>Coba ini:</p> 
+              <div id="50ord62j2k" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+}
+
+let user = makeUser();
+
+alert( user.ref.name ); // Error: Tidak bisa membaca properti 'name' dari undefined</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Hal itu karena aturan-aturan yang mengatur <code>this</code> tidak melihat definisi objek. Yang penting hanya momen saat panggilan terjadi.</p> 
+              <p>Di sini nilai dari <code>this</code> dalam <code>makeUser()</code> adalah <code>undefined</code>, karena dipanggil sebagai sebuah fungsi, tidak sebagai sebuah metode dengan sintaks ???tanda titik???.</p> 
+              <p>Nilai <code>this</code> adalah satu untuk keseluruhan fungsi, blok kode serta penulisan objek tidak mempengaruhi nilai tersebut.</p> 
+              <p>Jadi <code>ref: this</code> sebenarnya mengambil <code>this</code> yang sekarang dari fungsi tersebut.</p> 
+              <p>Berikut ini contoh kasus kebalikannya:</p> 
+              <div id="fakzw7jzvm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:5}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function makeUser() {
+  return {
+    name: "John",
+    ref() {
+      return this;
+    }
+  };
+}
+
+let user = makeUser();
+
+alert( user.ref().name ); // John</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kini kode itu berfugsi, karena <code>user.ref()</code> adalah sebuah metode. Dan nilai dari <code>this</code> ditentukan ke objek sebelum tanda titik <code>.</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="object-methods.html#membuat-sebuah-kalkulator" name="membuat-sebuah-kalkulator">Membuat sebuah kalkulator</a></h3> 
+           <a class="task__open-link" href="task/calculator.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah objek <code>calculator</code> dengan tiga metode:</p> 
+            <ul> 
+             <li><code>read()</code> mendorong kedua nilai dan menyimpan nilai-nilai tersebut sebagai properti objek.</li> 
+             <li><code>sum()</code> mengembalikan jumlah dari nilai-nilai yang disimpan.</li> 
+             <li><code>mul()</code> mengalikan nilai-nilai yang disimpan dan mengembalikan hasilnya.</li> 
+            </ul> 
+            <div id="j3xvc7tpul" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let calculator = {
+  // ... your code ...
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="object-methods.html#" onclick="event.preventDefault(); runDemo(this)">jalankan demonya</a></p> 
+            <p><a href="https://plnkr.co/edit/rNhVhW9tZhP7rBEf?p=preview" target="_blank" data-plunk-id="rNhVhW9tZhP7rBEf">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="pmc9vujvi6" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let calculator = {
+  sum() {
+    return this.a + this.b;
+  },
+
+  mul() {
+    return this.a * this.b;
+  },
+
+  read() {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
+  }
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/xR4POm2cwjvD9Qtc?p=preview" target="_blank" data-plunk-id="xR4POm2cwjvD9Qtc">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="object-methods.html#chaining-merantaikan" name="chaining-merantaikan">*Chaining* (merantaikan)</a></h3> 
+           <a class="task__open-link" href="task/chain-calls.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 2</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ada sebuah objek layaknya tangga (<code>ladder</code>) yang dapat naik dan turun:</p> 
+            <div id="r2fsr4ua1r" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+  },
+  down() {
+    this.step--;
+  },
+  showStep: function() { // menunjukkan langkah yang sekarang
+    alert( this.step );
+  }
+};</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Kini, jika kita perlu untuk membuat beberapa panggilan secara berurutan, bisa dilakukan dengan cara seperti ini:</p> 
+            <div id="rxmiw18yzi" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>ladder.up();
+ladder.up();
+ladder.down();
+ladder.showStep(); // 1</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Modifikasi kode <code>up</code>, <code>down</code> dan <code>showStep</code> untuk membuat panggilan-panggilan tersebut dapat dirantaikan satu sama lain, seperti ini:</p> 
+            <div id="z4vrihpq7f" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>ladder.up().up().down().showStep(); // 1</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Pendekatan demikian digunakan secara luas di banyak <em>library</em> JavaScript.</p> 
+            <p><a href="https://plnkr.co/edit/rP2X8pfhiqXim0pY?p=preview" target="_blank" data-plunk-id="rP2X8pfhiqXim0pY">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Solusinya adalah untuk mengembalikan objek itu sendiri dari setiap panggilan.</p> 
+              <div id="zj1lkgudhm" data-trusted="1" class="code-example" data-demo="1" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:12},{&quot;start&quot;:8,&quot;end&quot;:8},{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="object-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="object-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    alert( this.step );
+    return this;
+  }
+};
+
+ladder.up().up().down().up().down().showStep(); // 1</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kita juga bisa menuliskan sebuah panggilan di setiap baris. Untuk rantai kode yang panjang jadi lebih mudah dibaca seperti ini:</p> 
+              <div id="93d2kjcx5i" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>ladder
+  .up()
+  .up()
+  .down()
+  .up()
+  .down()
+  .showStep(); // 1</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/RSjbtzp6SmdyPrOj?p=preview" target="_blank" data-plunk-id="RSjbtzp6SmdyPrOj">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="garbage-collection.html" data-tooltip="Pengumpulan sampah (_Garbage collection_)"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="constructor-new.html" data-tooltip="Konstruktor, operator &quot;new&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fobject-methods" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fobject-methods" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-basics.html">Objects: dasar-dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-methods.html#contoh-metode">Contoh metode</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-methods.html#this-dalam-metode">???this??? dalam metode</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-methods.html#this-tidak-ditemukan">???this??? tidak ditemukan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-methods.html#fungsi-arrow-tidak-memiliki-this">Fungsi arrow tidak memiliki ???this???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-methods.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-methods.html#tasks">Tugas (3)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-methods.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fobject-methods" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fobject-methods" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

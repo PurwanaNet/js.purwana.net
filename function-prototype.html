@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">F.prototype</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="function-prototype.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="F.prototype"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="F.prototype"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="prototype-inheritance.html"> 
+  <link rel="next" href="native-prototypes.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="F.prototype"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffunction-prototype" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffunction-prototype" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="63" max="92" data-tooltip="Pelajaran 63 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="prototypes.html"><span>Prototypes, inheritance</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Prototypes, inheritance","item":"https://id.javascript.info/prototypes"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">F.prototype</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="F.prototype"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Ingat ketika objek baru bisa dibuat dengan menggunakan fungsi konstruktor seperti <code>new F()</code>.</p> 
+         <p>Jika <code>F.prototype</code> adalah sebuah objek, maka operator <code>new</code> menggunakannya untuk menyetel <code>[[Prototype]]</code> untuk objek barunya.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tolong dicatat:</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Javascript memiliki pewarisan <em>prototype</em> dari awal. Itu adalah salah satu fitur utama dari bahasanya.</p> 
+           <p>Tapi dimasa lalu, hal itu tidak memiliki akses langsung. Hal yang dapat diandalkan adalah properti <code>"prototype"</code> dari fungsi konstruktor, yang akan dijelaskan didalam bab ini. Jadi masih banyak skrip yang masih menggunakannya.</p> 
+          </div> 
+         </div> 
+         <p>Catat bahwa <code>F.prototype</code> disini berarti properti biasa yang bernama <code>"prototype"</code> didalam <code>F</code>. Terdengar seperti istilah ???prototype???, tapi disini kita menunjuk properti biasa dengan nama itu.</p> 
+         <p>Contohnya:</p> 
+         <div id="qc9wx1d72p" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:8}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  eats: true
+};
+
+function Rabbit(name) {
+  this.name = name;
+}
+
+Rabbit.prototype = animal;
+
+let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
+
+alert( rabbit.eats ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Menyetel <code>Rabbit.prototype = animal</code> secara literal kita mengartikan: "Ketika sebuah <code>new Rabbit</code> dibuat, itu akan memasukan <code>[[Prototype]]</code>nya ke <code>animal</code>".</p> 
+         <p>Hasilnya akan seperti gambar dibawah:</p> 
+         <figure> 
+          <div class="image" style="width:453px"> 
+           <div class="image__ratio" style="padding-top:35.32008830022075%"></div> 
+           <object type="image/svg+xml" data="article/function-prototype/proto-constructor-animal-rabbit.svg" width="453" height="160" class="image__image" data-use-theme> <img src="article/function-prototype/proto-constructor-animal-rabbit.svg" alt="" width="453" height="160"> </object> 
+          </div> 
+         </figure> 
+         <p>Dalam gambar, <code>"prototype"</code> adalah panah <em>horizontal</em>, menandakan properti <em>regular</em>, dan <code>[[Prototype]]</code> adalah panah vertikal, menandakan pewarisan <code>rabbit</code> dari <code>animal</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>F.prototype</code> hanya digunakan pada <code>new F</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Properti <code>F.prototype</code> hanya digunakan ketika <code>new F</code> dipanggil, itu memasukan <code>[[Prototype]]</code> dari objek barunya.</p> 
+           <p>Jika, setelah pembuatan, properti <code>F.prototype</code> berubah (<code>F.prototype = &lt;objek lain&gt;</code>), maka objek baru yang dibuat menggunakan <code>new F</code> akan memiliki objek lain sebagai <code>[[Prototype]]</code>, tapi objek yang sudah ada akan menyimpan yang lama.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="f-prototype-bawaan-properti-konstruktor" href="function-prototype.html#f-prototype-bawaan-properti-konstruktor">F.prototype bawaan, properti konstruktor</a></h2> 
+         <p>Setiap fungsi memiliki properti <code>"prototype"</code> bahkan jika kita tidak memberikannya.</p> 
+         <p><code>"prototype"</code> bawaan adalah sebuah objek dengan properti <code>constructor</code> yang menunjuk balik pada fungsinya sendiri.</p> 
+         <p>Seperti:</p> 
+         <div id="0m0zian6yx" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+
+/* default prototype
+Rabbit.prototype = { constructor: Rabbit };
+*/</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:449px"> 
+           <div class="image__ratio" style="padding-top:16.258351893095767%"></div> 
+           <object type="image/svg+xml" data="article/function-prototype/function-prototype-constructor.svg" width="449" height="73" class="image__image" data-use-theme> <img src="article/function-prototype/function-prototype-constructor.svg" alt="" width="449" height="73"> </object> 
+          </div> 
+         </figure> 
+         <p>Kita bisa periksa:</p> 
+         <div id="y1fcwfs36b" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+// secara *default*:
+// Rabbit.prototype = { constructor: Rabbit }
+
+alert( Rabbit.prototype.constructor == Rabbit ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Secara teknis, jika kita tidak melakukan apapun, properti <code>constructor</code> akan tersedia untuk semua ???rabbits??? melalui <code>[[Prototype]]</code>:</p> 
+         <div id="vgfijeuu5z" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+// secara default:
+// Rabbit.prototype = { constructor: Rabbit }
+
+let rabbit = new Rabbit(); // mewarisi dari {constructor: Rabbit}
+
+alert(rabbit.constructor == Rabbit); // true (from prototype)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:460px"> 
+           <div class="image__ratio" style="padding-top:34.130434782608695%"></div> 
+           <object type="image/svg+xml" data="article/function-prototype/rabbit-prototype-constructor.svg" width="460" height="157" class="image__image" data-use-theme> <img src="article/function-prototype/rabbit-prototype-constructor.svg" alt="" width="460" height="157"> </object> 
+          </div> 
+         </figure> 
+         <p>Kita bisa menggunakan properti <code>constructor</code> untuk membuat objek baru menggunakan konstruktor yang sama seperti yang sudah ada.</p> 
+         <p>Seperti:</p> 
+         <div id="3krq9nvd9h" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function Rabbit(name) {
+  this.name = name;
+  alert(name);
+}
+
+let rabbit = new Rabbit("White Rabbit");
+
+let rabbit2 = new rabbit.constructor("Black Rabbit");</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hal itu akan mudak ketika kita memiliki sebuah objek, tidak tahu konstruktor yang mana yang menggunakannya (mis. ketika datang dari <em>library</em> pihak ketiga), dan kita butuh membuat satu lagi dengan bentuk yang sama.</p> 
+         <p>Tapi mungkin hal yang paling penting tentang <code>"constructor"</code> adalah???</p> 
+         <p><strong>???Javascript sendiri tidak yakin dengan nilai <code>"constructor"</code>.</strong></p> 
+         <p>Ya, terdapat nilai untuk fungsi bawaan <code>"prototype"</code>, tapi hanya itu. Apa yang terjadi setelahnya ??? semuanya bergantung pada kita.</p> 
+         <p>Khususnya, jika kita mengganti seluruh prototype bawaannya, maka disana tidak akan terdapat <code>"constructor"</code>.</p> 
+         <p>Contoh:</p> 
+         <div id="49ivkvtcqj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-prototype.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+Rabbit.prototype = {
+  jumps: true
+};
+
+let rabbit = new Rabbit();
+alert(rabbit.constructor === Rabbit); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, untuk menyimpan <code>"constructor"</code> dengan benar kita bisa memilih untuk menambahkan/menghapus properti menjadi <code>"prototype"</code> bawaan daripada menimpahnya dengan yang baru:</p> 
+         <div id="4kbyftrgji" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+
+// Tidak menimpah Rabbit.prototype selurunya
+// hanya menambahkan
+Rabbit.prototype.jumps = true
+// Rabbit.prototype.constructor bawaan diamankan</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Atau, alternatifnya, membuat ulang properti <code>constructor</code> secara manual:</p> 
+         <div id="9s1n3asnxd" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>Rabbit.prototype = {
+  jumps: true,
+  constructor: Rabbit
+};
+
+// sekarang konstruktor tidak berubah, karena kita menambahkan yang baru</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="function-prototype.html#ringkasan">Ringkasan</a></h2> 
+         <p>Didalam chapter ini kita secara jelas mendeskripsikan cara untuk menyetel <code>[[Prototype]]</code> untuk objek yang dibuat dengan menggunakan fungsi konstruktor. Nanti kita akan melihat lebih banyak alur <em>programming</em> lanjutan yang akan menggunakannya.</p> 
+         <p>Semuanya cukup simpel, hanya tinggal mengingat beberapa langkah untuk membuat lebih jelas:</p> 
+         <ul> 
+          <li>Properti <code>F.prototype</code> (jangan keliru tentang <code>[[Prototype]]</code>) menyetel <code>[[Prototype]]</code> dari objek baru ketika <code>new F()</code> dipanggil.</li> 
+          <li>Nilai dari <code>F.prototype</code> harusnya antara sebuah objek atau <code>null</code>: nilai lainnya tidak akan bekerja.</li> 
+          <li>Properti <code>"prototype"</code> hanya memiliki efek spesial ketika menyetel fungsi konstruktor, dan dipanggil dengan <code>new</code>.</li> 
+         </ul> 
+         <p>Dalam objek biasa <code>prototype</code> tidaklah spesial:</p> 
+         <div id="w60y7yhpkq" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  prototype: "Bla-bla" // tidak ada yang spesial disini
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Secara teknis semua fungsi memiliki <code>F.prototype = { constructor: F }</code>, jadi kita bisa mendapatkan konstruktor dari sebuah objek dengan mengakses properti <code>"constructor"</code> miliknya sendiri.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="function-prototype.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="function-prototype.html#merubah-prototype" name="merubah-prototype">Merubah "prototype"</a></h3> 
+           <a class="task__open-link" href="task/changing-prototype.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Di kode dibawah kita membuat <code>new Rabbit</code>, dan mencoba memodifikasi prototypenya.</p> 
+            <p>Pada awalnya kita memiliki kode ini:</p> 
+            <div id="22q8yyniwx" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="function-prototype.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="function-prototype.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+alert( rabbit.eats ); // true</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <ol> 
+             <li> <p>Kita menambah satu string (ditekankan). What will <code>alert</code> show now?</p> 
+              <div id="qfwq3llimi" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+Rabbit.prototype = {};
+
+alert( rabbit.eats ); // ?</code></pre> 
+                </div> 
+               </div> 
+              </div></li> 
+             <li> <p>???Dan jika kodenya seperti ini (diganti satu baris)?</p> 
+              <div id="lzbzpa9iwl" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+Rabbit.prototype.eats = false;
+
+alert( rabbit.eats ); // ?</code></pre> 
+                </div> 
+               </div> 
+              </div></li> 
+             <li> <p>Dan seperti ini (diganti satu baris)?</p> 
+              <div id="ankaxey40m" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+delete rabbit.eats;
+
+alert( rabbit.eats ); // ?</code></pre> 
+                </div> 
+               </div> 
+              </div></li> 
+             <li> <p>varian terakhir:</p> 
+              <div id="6llrwpntn2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+delete Rabbit.prototype.eats;
+
+alert( rabbit.eats ); // ?</code></pre> 
+                </div> 
+               </div> 
+              </div></li> 
+            </ol> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawaban:</p> 
+              <ol> 
+               <li> <p><code>true</code>.</p> <p>Memasukan ke <code>Rabbit.prototype</code> menyetel <code>[[Prototype]]</code> untuk objek baru, tapi itu tidak memberikan efek pada yang sudah ada.</p> </li> 
+               <li> <p><code>false</code>.</p> <p>Objek yang dimasukan dengan menggunakan referensi. Objek dari <code>Rabbit.prototype</code> bukanlah di duplikasi, itu masih tetap objek tunggal yang direferensikan dari <code>Rabbit.prototype</code> dan dari <code>[[Prototype]]</code> dari <code>rabbit</code>.</p> <p>Jadi ketika kita mengubah kontennya melalui satu referensi, itu masih terlihat melalui yang lainnya.</p> </li> 
+               <li> <p><code>true</code>.</p> <p>Semua operasi <code>delete</code> diterapkan langsung ke objeknya. Disini <code>delete rabbit.eats</code> mencoba untuk menghapus properti <code>eats</code> dari <code>rabbit</code>, tapi itu tidak memilikinya. Jadi operasinya tidak akan menghasilkan efek apapun.</p> </li> 
+               <li> <p><code>undefined</code>.</p> <p>Properti <code>eats</code> dihapus dari <em>prototype</em>, itu tidak akan ada lagi.</p> </li> 
+              </ol> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="function-prototype.html#buat-sebuah-objek-dengan-konstruktor-yang-sama" name="buat-sebuah-objek-dengan-konstruktor-yang-sama">Buat sebuah objek dengan konstruktor yang sama</a></h3> 
+           <a class="task__open-link" href="task/new-object-same-constructor.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Bayangkan, kita memiliki objek yang berubah-ubah, dibuat dengan menggunakan fungsi konstruktor ??? kita tidak tahu yang mana, tapi kita ingin membuat sebuah objek menggunakannya.</p> 
+            <p>Bisakah kita melakukannya?</p> 
+            <div id="22ey248gjb" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let obj2 = new obj.constructor();</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Beri sebuah contoh dari menggunakan fungsi konstruktor untuk <code>obj</code> yang mana membiarkan kode seperti itu bekerja. Dan sebuah contoh yang mana membuat kodenya menjadi tidak bekerja semestinya.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita bisa menggunakan pendekatan jika kita yakin properti <code>"constructor"</code> memiliki nilai yang benar.</p> 
+              <p>Contoh, kita tidak ingin menyentuh <code>"prototype"</code> bawaan, maka kode ini akan berjalan dengan semestinya:</p> 
+              <div id="v8stcnk0av" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="function-prototype.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="function-prototype.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function User(name) {
+  this.name = name;
+}
+
+let user = new User('John');
+let user2 = new user.constructor('Pete');
+
+alert( user2.name ); // Pete (bekerja!)</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kode diatas bekerja karena <code>User.prototype.constructor == User</code>.</p> 
+              <p>Tapi jika seseorang, menimpah <code>User.prototype</code> dan lupa untuk membuat ulang <code>constructor</code> untuk <code>User</code>, maka akan membuat kegagalan.</p> 
+              <p>Contoh:</p> 
+              <div id="hw6m5pycvb" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="function-prototype.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="function-prototype.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function User(name) {
+  this.name = name;
+}
+User.prototype = {}; // (*)
+
+let user = new User('John');
+let user2 = new user.constructor('Pete');
+
+alert( user2.name ); // undefined</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kenapa <code>user2.name</code> menghasilan <code>undefined</code>?</p> 
+              <p>Ini bagaimana <code>new user.constructor('Pete')</code> bekerja:</p> 
+              <ol> 
+               <li>Pertama, mencari <code>constructor</code> di <code>user</code>. Tidak ada.</li> 
+               <li>Kemudian mengikuti rantai prototipe. Prototipe <code>user</code> adalah <code>User.prototype</code>, dan juga tidak memiliki <code>constructor</code> (karena kita ???lupa??? untuk menyetelnya dengan benar!).</li> 
+               <li>Lebih jauh ke atas rantai, <code>User.prototype</code> adalah objek biasa, prototipenya adalah <code>Object.prototype</code> bawaan.</li> 
+               <li>Terakhir, untuk <code>Object.prototype</code> bawaan, ada <code>Object.prototype.constructor == Object</code> bawaan. Jadi itu digunakan.</li> 
+              </ol> 
+              <p>Akhirnya, pada akhirnya, kita memiliki <code>let user2 = new Object('Pete')</code>.</p> 
+              <p>Mungkin, bukan itu yang kita inginkan. Kami ingin membuat <code>Pengguna baru</code>, bukan <code>Objek baru</code>. Itulah hasil dari <code>konstruktor</code> yang hilang.</p> 
+              <p>(Untuk berjaga-jaga jika Anda penasaran, panggilan <code>new Object(...)</code> mengubah argumennya menjadi objek. Itu hal teoretis, dalam praktiknya tidak ada yang memanggil <code>Objek baru</code> dengan nilai, dan umumnya kami tidak??? t gunakan <code>objek baru</code> untuk membuat objek sama sekali).</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="prototype-inheritance.html" data-tooltip="Pewarisan *Prototype* (*Prototypal Inheritance*)"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="native-prototypes.html" data-tooltip="*Prototype* asli"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffunction-prototype" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffunction-prototype" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototypes.html">Prototypes, inheritance</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-prototype.html#f-prototype-bawaan-properti-konstruktor">F.prototype bawaan, properti konstruktor</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-prototype.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-prototype.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-prototype.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffunction-prototype" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Ffunction-prototype" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

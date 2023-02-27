@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pencarian: getElement*, querySelector*</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="searching-elements-dom.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pencarian: getElement*, querySelector*"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pencarian: getElement*, querySelector*"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="dom-navigation.html"> 
+  <link rel="next" href="basic-dom-node-properties.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pencarian: getElement*, querySelector*"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fsearching-elements-dom" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fsearching-elements-dom" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="4" max="32" data-tooltip="Pelajaran 4 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="document.html"><span>Document</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Document","item":"https://id.javascript.info/document"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 13 November 2020"> 
+          <div class="updated-at__content">
+            13 November 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pencarian: getElement*, querySelector*</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pencarian: getElement*, querySelector*"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Properti navigasi DOM akan bekerja saat elemennya dekat dengan satu sama lain. Bagaimana jika tidak? Bagaimana cara mendapatkan elemen sembarang pada halaman?</p> 
+         <p>Terdapat metode pencarian tamabahan untuk hal ini.</p> 
+         <h2><a class="main__anchor" name="document-getelementbyid-atau-hanya-id" href="searching-elements-dom.html#document-getelementbyid-atau-hanya-id">document.getElementById atau hanya id</a></h2> 
+         <p>Jika elemen memiliki attribut <code>id</code>, kita bisa mendapatkan elemen menggunakan metode <code>document.getElementById(id)</code>, dimanapun itu berada.</p> 
+         <p>Contoh:</p> 
+         <div id="xjduav3c9a" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;div id="elem"&gt;
+  &lt;div id="elem-content"&gt;Element&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  // get the element (mendapatkan elemen)
+  let elem = document.getElementById('elem');
+
+  // make its background red (membuat background berwarna merah)
+  elem.style.background = 'red';
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan juga, terdapat variabel global yang dinamakan <code>id</code> untuk mereferensikan elemennya:</p> 
+         <div id="fyj7blemzu" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:11,&quot;end&quot;:23}]},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:9,&quot;end&quot;:13}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;div id="elem"&gt;
+  &lt;div id="elem-content"&gt;Element&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  // elem is a reference to DOM-element with id="elem" (elem adalah referensi dari elemen-DOM dengan id="elem")
+  elem.style.background = 'red';
+
+  // id="elem-content" has a hyphen inside, so it can't be a variable name (id="elem-content" memiliki hypen didalam, jadi bukan nama variabel)
+  // ...but we can access it using square brackets: window['elem-content'] (...tetapi kita bisa mengakses menggunakan kurung kotak: window ['elem-content'])
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Kecuali jika kita mendeklarasikan variabel Javascript dengan nama yang sama, lalu itu yang diutamakan:</p> 
+         <div id="42b0d1ppvc" data-trusted="0" class="code-example" data-demo-height="0"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;div id="elem"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  let elem = 5; // now elem is 5, not a reference to &lt;div id="elem"&gt; (sekarang nilai elem adalah 5, bukan referensi dari &lt;div id="elem"&gt;)
+
+  alert(elem); // 5
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tolong jangan gunakan variabel global dengan nama id untuk mengakses elemen</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Perilaku ini dideskripsikan pada <a href="http://www.whatwg.org/specs/web-apps/current-work/#dom-window-nameditem">di spesifikasi</a>, Jadi ini sudah standar. Tetapi ini didukung terutama untuk kompabilitas.</p> 
+           <p>Browser berusaha membantu kita dengan mencampur namespace dari JS dan DOM. Hal ini baik baik saja untuk kode skrip sederhana, sebaris ke dalam HTML, tetapi umumnya ini tidak bagus. Bisa saja terdapat konflik penamaan. Dan juga, jika seseorang membaca kode JS tanpa melihat tampilan HTML, maka tidak akan kelihatan asal dari variabel tersebut.</p> 
+           <p>Pada tutorial ini kita menggunakan <code>id</code> untuk mengarahkan langsung elemen supaya singkat, ketika sudah jelas darimana elemen berasal.</p> 
+           <p>Di dunia nyata, metode yang paling disukai adalah <code>document.getElementById</code>.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"> <code>id</code> harus unik</span> 
+          </div> 
+          <div class="important__content"> 
+           <p><code>id</code> harus unik. Hanya boleh ada satu elemen pada dokumen yang diberikan <code>id</code>.</p> 
+           <p>Jika ada banyak elemen dengan <code>id</code> yang sama, maka perilaku dari metode yang digunakan tidak akan terduga, contoh <code>document.getElementById</code> akan mengembalikan elemen secara acak. Jadi tetap lakukan sesuai aturan dan buatlah <code>id</code> unik.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Hanya <code>document.getElementById</code>, bukan <code>anyElem.getElementById</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Metode <code>getElementById</code> yang hanya bisa di panggil pada objek <code>document</code>. ini mencari <code>id</code> yang diberikan di seluruh dokumen.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="querySelectorAll" href="searching-elements-dom.html#querySelectorAll">querySelectorAll</a></h2> 
+         <p>Sejauh ini, metode yang paling serba guna, <code>elem.querySelectorAll(css)</code> mengembalikan semua elemen di dalam <code>elem</code> yang sama dengan <em>selector</em> CSS.</p> 
+         <p>Disini kita melihat semua elemen <code>&lt;li&gt;</code> pada anak terakhir:</p> 
+         <div id="5c4lhtml9f" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;ul&gt;
+  &lt;li&gt;The&lt;/li&gt;
+  &lt;li&gt;test&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+  &lt;li&gt;has&lt;/li&gt;
+  &lt;li&gt;passed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+  let elements = document.querySelectorAll('ul &gt; li:last-child');
+
+  for (let elem of elements) {
+    alert(elem.innerHTML); // "test", "passed"
+  }
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Metode ini memang kuat, karena bisa menggunakan <em>selector</em> CSS.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Bisa menggunakan kelas-pseudo</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Juga mendukung kelas-pseudo pada <em>selector</em> CSS seperti <code>:hover</code> dan <code>:active</code>. Contoh, <code>document.querySelectorAll(':hover)</code> akan mengembalikan koleksi dari elemen yang penunjuknya aktif sekarang(pada urutan bersarang: dari luar <code>&lt;html&gt;</code> hingga yang bersarang).</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="querySelector" href="searching-elements-dom.html#querySelector">querySelector</a></h2> 
+         <p>Pemanggilan <code>elem.querySelector(css)</code> mengembalikan elemen pertama yang diberikan <em>selector</em> CSS.</p> 
+         <p>Dengan kata lain, hasilnya sama dengan <code>elem.querySelectorAll(css)[0]</code>, tetapi cara ini mencari semua elemen dan memilih satu, sedangkan <code>elem.querySelector</code> hanya mencari satu. Jadi cara ini lebih cepat dan juga singkat untuk ditulis.</p> 
+         <h2><a class="main__anchor" name="persamaan" href="searching-elements-dom.html#persamaan">Persamaan</a></h2> 
+         <p>Metode sebelumnya digunakan untuk mencari DOM.</p> 
+         <p>metode <a href="http://dom.spec.whatwg.org/#dom-element-matches">elem.matches(css)</a> tidak mencari apapun, metode ini hanya memeriksa apakan <code>elem</code> sama dengan <em>selector</em> CSS yang diberikan. Metode ini mengembalikan <code>true</code> atau <code>false</code>.</p> 
+         <p>Metode ini akan berguna saat kita mengulang elemen yang banyak (seperti <em>array</em> atau yang lain) dan mencoba untuk menyaring apa yang kita inginkan.</p> 
+         <p>Contoh:</p> 
+         <div id="277ru20ltq" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;a href="http://example.com/file.zip"&gt;...&lt;/a&gt;
+&lt;a href="http://ya.ru"&gt;...&lt;/a&gt;
+
+&lt;script&gt;
+  // can be any collection instead of document.body.children (bisa berisi koleksi apa saja daripada document.body.children)
+  for (let elem of document.body.children) {
+    if (elem.matches('a[href$="zip"]')) {
+      alert("The archive reference: " + elem.href );
+    }
+  }
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="closest" href="searching-elements-dom.html#closest">closest</a></h2> 
+         <p><em>Ancestors</em> dari elemen adalah: <em>parent</em>, <em>parent</em> dari <em>parent</em>, <em>parent</em> dan lainnya. Ancestor yang bersama membentuk rantai <em>parent</em> dari elemen dari atas.</p> 
+         <p>Metode <code>elem.closest(css)</code> mencari <em>ancestor</em> terdekat yang cocok dengan <em>selector</em> CSS. <code>elem</code> sendiri juga dimasukkan pada pencarian.</p> 
+         <p>Dengan kata lain, metode <code>closest</code> naik dari elemen dan memeriksa setiap <em>parent</em>. Jika cocok dengan <em>selector</em>, maka pencariaan akan berhenti, dan mengembalikan pada ancestor.</p> 
+         <p>Contoh:</p> 
+         <div id="gwlbv07rk2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;h1&gt;Contents&lt;/h1&gt;
+
+&lt;div class="contents"&gt;
+  &lt;ul class="book"&gt;
+    &lt;li class="chapter"&gt;Chapter 1&lt;/li&gt;
+    &lt;li class="chapter"&gt;Chapter 1&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  let chapter = document.querySelector('.chapter'); // LI
+
+  alert(chapter.closest('.book')); // UL
+  alert(chapter.closest('.contents')); // DIV
+
+  alert(chapter.closest('h1')); // null (because h1 is not an ancestor (karena h1 bukan ancestor))
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="getelementsby" href="searching-elements-dom.html#getelementsby">getElementsBy*</a></h2> 
+         <p>Terdapat juga metode lainnya untuk mencari <em>node</em> dengan <em>tag</em>, kelas, dan lainnya.</p> 
+         <p>Hari ini, kebanyakan dari metode ini menjadi sejarah, karena metode <code>querySelector</code> lebih kuat dan lebih singkat.</p> 
+         <p>Jadi kita menjelaskannya disini untuk lebih lengkap, sementara kamu masih bisa menemukannya di kode skrip lama.</p> 
+         <ul> 
+          <li><code>elem.getElementsByTagName(tag)</code> mencari elemen dengan <em>tag</em> yang diberikan dan mengembalikan koleksi dari mereka. parameter <code>tag</code> juga bisa berupa bintang <code>"*"</code> untuk ???<em>tag</em> apapun???.</li> 
+          <li><code>elem.getElementsByClassName(className)</code> mengembalikan elemen yang diberikan kelas CSS.</li> 
+          <li><code>document.getElementsByName(name)</code> mengembalikan elemen dengan attribut <code>name</code>, lebar dokumen. Sangat jarang digunakan.</li> 
+         </ul> 
+         <p>Contoh:</p> 
+         <div id="o86dbq55vp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// get all divs in the document (mengambil semua div pada dokumen)
+let divs = document.getElementsByTagName('div');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mari kita cari semua <em>tag</em> <code>input</code> pada tabel:</p> 
+         <div id="zr9nyz460f" data-trusted="1" class="code-example" data-demo-height="50" data-highlight="[{&quot;start&quot;:19,&quot;end&quot;:19}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;table id="table"&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Your age:&lt;/td&gt;
+
+    &lt;td&gt;
+      &lt;label&gt;
+        &lt;input type="radio" name="age" value="young" checked&gt; less than 18
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type="radio" name="age" value="mature"&gt; from 18 to 50
+      &lt;/label&gt;
+      &lt;label&gt;
+        &lt;input type="radio" name="age" value="senior"&gt; more than 60
+      &lt;/label&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;script&gt;
+  let inputs = table.getElementsByTagName('input');
+
+  for (let input of inputs) {
+    alert( input.value + ': ' + input.checked );
+  }
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Jangan melupakan huruf <code>"s"</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Pengembang pemula terkadang melupakan huruf <code>"s"</code>. Itu dia, mereka mencoba memanggil <code>getElementByTagName</code> daripada <code>getElement<b>s</b>ByTagName</code>.</p> 
+           <p>Tidak ada huruf <code>"s"</code> pada <code>getElementById</code>, karena ini mengembalikan satu elemen. Tetapi <code>getElementByTagName</code> mengembalikan koleksi dari elemen, jadi harus ada huruf <code>"s"</code> didalamnya.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Ini mengembalikan koleksi, bukan sebuah elemen!</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Kesalahan pemula lain yang tersebar luas adalah dengan menulis:</p> 
+           <div id="q99kaxasff" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// doesn't work (tidak bekerja)
+document.getElementsByTagName('input').value = 5;</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Itu tidak akan bekerja, karena dibutuhkan koleksi dari input dan menetapkan nilai pada koleksi daripada elemen di dalamnya.</p> 
+           <p>Kita harus melakukan iterasi dari koleksi atau mengambil elemen dari index, dan menetapkannya, seperti ini:</p> 
+           <div id="3ahknv1006" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// should work (if there's an input) akan bekerja (jika ada input nya)
+document.getElementsByTagName('input')[0].value = 5;</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mencari elemen <code>.article</code>:</p> 
+         <div id="2lytwk67rc" data-trusted="1" class="code-example" data-demo-height="50"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;form name="my-form"&gt;
+  &lt;div class="article"&gt;Article&lt;/div&gt;
+  &lt;div class="long article"&gt;Long article&lt;/div&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+  // find by name attribute (mencari dari nama attribut)
+  let form = document.getElementsByName('my-form')[0];
+
+  // find by class inside the form (mencari dari kelas di dalam form)
+  let articles = form.getElementsByClassName('article');
+  alert(articles.length); // 2, found two elements with class "article" (2, menemukan dua elemen dengan kelas "article")
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="koleksi-live" href="searching-elements-dom.html#koleksi-live">Koleksi <em>Live</em></a></h2> 
+         <p>Semua metode <code>"getElementsBy*"</code> mengembalikan koleksi <em>live</em> contoh koleksi selalu mencerminkan kondisi dokumen dan ???pembaharuan otomatis??? ketika terjadi perubahan.</p> 
+         <p>Contoh dibawah ini, ada dua kode skrip.</p> 
+         <ol> 
+          <li>Kode skrip pertama membuat referensi pada koleksi dari <code>&lt;div&gt;</code>. Untuk sekarang, panjangnya <code>1</code>.</li> 
+          <li>Kode skrip kedua berjalan setelah browser bertemu dengan satu <code>&lt;div&gt;</code> lagi, jadi panjangnya <code>2</code>.</li> 
+         </ol> 
+         <div id="6jndw0y4mj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;div&gt;First div&lt;/div&gt;
+
+&lt;script&gt;
+  let divs = document.getElementsByTagName('div');
+  alert(divs.length); // 1
+&lt;/script&gt;
+
+&lt;div&gt;Second div&lt;/div&gt;
+
+&lt;script&gt;
+  alert(divs.length); // 2
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebaliknya, <code>querySelectorAll</code> mengembalikan koleksi statis. Ini seperti <em>array</em> dari elemen yang tetap.</p> 
+         <p>Jika kita menggunakannya, maka keluaran kedua kode skrip adalah <code>1</code>:</p> 
+         <div id="r6ordg8cpe" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="searching-elements-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;div&gt;First div&lt;/div&gt;
+
+&lt;script&gt;
+  let divs = document.querySelectorAll('div');
+  alert(divs.length); // 1
+&lt;/script&gt;
+
+&lt;div&gt;Second div&lt;/div&gt;
+
+&lt;script&gt;
+  alert(divs.length); // 1
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang kita bisa lebih mudah melihat perbedaanya. Koleksi statis tidak bertambah setelah muncul <code>div</code> baru di dokumen.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="searching-elements-dom.html#ringkasan">Ringkasan</a></h2> 
+         <p>Terdapat 6 metode utama untuk mencari <em>node</em> pada DOM:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <td>Method</td> 
+            <td>Searches by...</td> 
+            <td>Can call on an element?</td> 
+            <td>Live?</td> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>querySelector</code></td> 
+            <td>CSS-selector</td> 
+            <td>???</td> 
+            <td>-</td> 
+           </tr> 
+           <tr> 
+            <td><code>querySelectorAll</code></td> 
+            <td>CSS-selector</td> 
+            <td>???</td> 
+            <td>-</td> 
+           </tr> 
+           <tr> 
+            <td><code>getElementById</code></td> 
+            <td><code>id</code></td> 
+            <td>-</td> 
+            <td>-</td> 
+           </tr> 
+           <tr> 
+            <td><code>getElementsByName</code></td> 
+            <td><code>name</code></td> 
+            <td>-</td> 
+            <td>???</td> 
+           </tr> 
+           <tr> 
+            <td><code>getElementsByTagName</code></td> 
+            <td>tag or <code>'*'</code></td> 
+            <td>???</td> 
+            <td>???</td> 
+           </tr> 
+           <tr> 
+            <td><code>getElementsByClassName</code></td> 
+            <td>class</td> 
+            <td>???</td> 
+            <td>???</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Sejauh ini yang paling banyak digunakan adalah <code>querySelector</code> dan <code>querySelectorAll</code>, tetapi <code>getElementBy*</code> secara terkadang membantu atau dapat ditemukan pada kode skrip lama.</p> 
+         <p>Selain itu:</p> 
+         <ul> 
+          <li>Terdapat <code>elem.mathes(css)</code> untuk memeriksa jika <code>elem</code> cocok dengan <em>selector</em> CSS.</li> 
+          <li>Terdapat <code>elem.closest(css)</code> untuk mencari ancestor terdekat yang cocok dengan <em>selector</em> CSS yang diberikan. <code>elem</code> juga diperiksa.</li> 
+         </ul> 
+         <p>Dan mari kita sebutkan satu lagi metode untuk memeriksa hubungan child-<em>parent</em>, karena terkadang berguna:</p> 
+         <ul> 
+          <li><code>elemA.contains(elemB)</code> akan mengembalikan true jika <code>elemB</code> di dalam <code>elemA</code> adalah keturunan <code>elemA</code>) dan ketika <code>elemA==elemB</code>.</li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="searching-elements-dom.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="searching-elements-dom.html#pencarian-untuk-elemen" name="pencarian-untuk-elemen">Pencarian untuk elemen</a></h3> 
+           <a class="task__open-link" href="task/find-elements.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 4</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ini adalah dokumen dengan tabel dan formulir.</p> 
+            <p>Bagaimana cara mencarinya????</p> 
+            <ol> 
+             <li>Tabel dengan <code>id="age-table"</code>.</li> 
+             <li>Semua elemen <code>label</code> di dalam tabel (seharusnya ada 3).</li> 
+             <li><code>td</code> pertama di dalam tabel (dengan kata ???Age???).</li> 
+             <li><code>form</code> dengan <code>name="search"</code>.</li> 
+             <li><code>input</code> pertama dalam formulir.</li> 
+             <li><code>input</code> terakhir di dalam formulir.</li> 
+            </ol> 
+            <p>Bukalah halaman <a href="task/find-elements/table.html">table.html</a> di dalam jendela yang berbeda dan gunakan alat browser untuk itu.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Ada banyak cara untuk melakukannya.</p> 
+              <p>Ini adalah salah satu caranya:</p> 
+              <div id="m1pf9tlsc0" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// 1. tabel dengan `id="age-table"`.
+let table = document.getElementById('age-table')
+
+// 2. Semua elemen label di dalam tabel.
+table.getElementsByTagName('label')
+// or
+document.querySelectorAll('#age-table label')
+
+// 3. elemen td pertama pada tabel (dengan kata "Age").
+table.rows[0].cells[0]
+// atau
+table.getElementsByTagName('td')[0]
+// atau
+table.querySelector('td')
+
+// 4. Formulir dengan nama "search".
+// mengasumsikan hanya ada satu elemen dengan nama="search" di dalam dokumen.
+let form = document.getElementsByName('search')[0]
+// atau, khususnya formulir.
+document.querySelector('form[name="search"]')
+
+// 5. Elemen input pertama pada formulir.
+form.getElementsByTagName('input')[0]
+// atau
+form.querySelector('input')
+
+// 6. Elemen input terakhir pada formulir.
+let inputs = form.querySelectorAll('input') // mencari semua elemen input.
+inputs[inputs.length-1] // mengambil elemen input terakhir.</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="dom-navigation.html" data-tooltip="Walking the DOM"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="basic-dom-node-properties.html" data-tooltip="Node properties: type, tag and contents"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fsearching-elements-dom" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fsearching-elements-dom" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="document.html">Document</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#document-getelementbyid-atau-hanya-id">document.getElementById atau hanya id</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#querySelectorAll">querySelectorAll</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#querySelector">querySelector</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#persamaan">Persamaan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#closest">closest</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#getelementsby">getElementsBy*</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#koleksi-live">Koleksi <em>Live</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="searching-elements-dom.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fsearching-elements-dom" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fsearching-elements-dom" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

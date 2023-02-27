@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">_Bezier curve_</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="bezier-curve.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="_Bezier curve_"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="_Bezier curve_"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="animation.html"> 
+  <link rel="next" href="css-animations.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="_Bezier curve_"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbezier-curve" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fbezier-curve" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="1" max="3" data-tooltip="Pelajaran 1 dari 3"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="animation.html"><span>Animation</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Animation","item":"https://id.javascript.info/animation"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 3 Oktober 2022"> 
+          <div class="updated-at__content">
+            3 Oktober 2022 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">_Bezier curve_</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="_Bezier curve_"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p><em>Bezier Curves</em> digunakan didalam grafis komputer untuk menggambar bentuk, untuk animasi <em>CSS</em> dan di bagian lainnya.</p> 
+         <p><em>Bezier Curves</em> merupakan hal yang cukup simple, dan sangat layak untuk dipelajari dan akan terasa kenyamanan penggunaannya didalam grafis vektor dan animasi lanjutan.</p> 
+         <h2><a class="main__anchor" name="titik-kontrol" href="bezier-curve.html#titik-kontrol">Titik Kontrol</a></h2> 
+         <p>Sebuah <a href="https://en.wikipedia.org/wiki/B%C3%A9zier_curve">bezier curve</a> didefinisikan dengan menggunakan titik kontrol.</p> 
+         <p>Kemungkinan akan terdapat 2, 3, 4 atau lebih.</p> 
+         <p>For instance, two points curve: Untuk contoh ini menggunakan dua titik lengkungan.</p> 
+         <figure> 
+          <div class="image" style="width:149px"> 
+           <div class="image__ratio" style="padding-top:125.503355704698%"></div> 
+           <object type="image/svg+xml" data="article/bezier-curve/bezier2.svg" width="149" height="187" class="image__image" data-use-theme> <img src="article/bezier-curve/bezier2.svg" alt="" width="149" height="187"> </object> 
+          </div> 
+         </figure> 
+         <p>Tiga titik lengkungan:</p> 
+         <figure> 
+          <div class="image" style="width:149px"> 
+           <div class="image__ratio" style="padding-top:125.503355704698%"></div> 
+           <object type="image/svg+xml" data="article/bezier-curve/bezier3.svg" width="149" height="187" class="image__image" data-use-theme> <img src="article/bezier-curve/bezier3.svg" alt="" width="149" height="187"> </object> 
+          </div> 
+         </figure> 
+         <p>Empat titik lengkungan:</p> 
+         <figure> 
+          <div class="image" style="width:149px"> 
+           <div class="image__ratio" style="padding-top:125.503355704698%"></div> 
+           <object type="image/svg+xml" data="article/bezier-curve/bezier4.svg" width="149" height="187" class="image__image" data-use-theme> <img src="article/bezier-curve/bezier4.svg" alt="" width="149" height="187"> </object> 
+          </div> 
+         </figure> 
+         <p>Jika kamu perhatikan secara seksama, kamu dapat melihat:</p> 
+         <ol> 
+          <li> <p><strong>Titik tidak selalu sama dengan lengkungan.</strong> Itu merupakan hal yang normal, kita akan lihat nanti bagaimana lengkungan itu diciptakan.</p> </li> 
+          <li> <p><strong>Urutan lengkungan sama dengan titik dikurangi satu.</strong> Untuk dua titik kita mempunyai lengkungan linear (garis lurus), untuk tiga titik kita mempunyai ??? garis kuadratik (parabolik), untuk empat titik ??? <em>cubic curve</em> atau lengkungan kubik.</p> </li> 
+          <li> <p><strong>Sebuah lengkungan selalu didalam <a href="https://en.wikipedia.org/wiki/Convex_hull">convex hull</a> dari titik kontrol.</strong></p> <p><img src="article/bezier-curve/bezier4-e.svg" alt="" width="149" height="187"> <img src="article/bezier-curve/bezier3-e.svg" alt="" width="149" height="187"></p> </li> 
+         </ol> 
+         <p>Karena properti terakhir, didalam komputer grafis memungkinkan untuk mengoptimalkan test titik potong. Jika <em>Convex Hull</em> tidak berpotongan maka lengkungannya juga tidak akan berpotongan. Jadi memeriksa potongan <em>convex hull</em> di awal akan memberikan hasil ???tanpa potongan??? dengan cepat. Memeriksa potongan <em>convex hull</em> lebih mudah dilakukan karena bentuknya kotak, segitiga dan lainnya (lihat contoh diatas), bentuk yang lebih simple daripada lengkungan.</p> 
+         <p><strong>Nilai utaman dari <em>Bezier Curves</em> untuk menggambar ??? dengan memindahkan titik lengkungan dengan cara yang jelas secara intuitif.</strong></p> 
+         <p>Cobalah memindahkan titik kontrol menggunakan <em>mouse</em> di contoh dibawah:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"></div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:370px" src="https://id.js.cx/article/bezier-curve/demo.svg?nocpath=1&amp;p=0,0,0.5,0,0.5,1,1,1"></iframe> 
+         </div> 
+         <p><strong>Seperti yang kamu perhatikan, lengkungannya meregang bersama dengan garis tangen 1 ??? 2 dan 3 ??? 4.</strong></p> 
+         <p>Setelah beberapa latihan nantinya akan jelas bagaimana caranya untuk memasangkan titik agar menjari lengkungan. dan menyambungkan beberapa lengkungan kita dapat membuat apapun.</p> 
+         <p>Ini adalah beberapa contoh:</p> 
+         <p><img src="article/bezier-curve/bezier-car.svg" alt="" width="260" height="130"> <img src="article/bezier-curve/bezier-letter.svg" alt="" width="166" height="173"> <img src="article/bezier-curve/bezier-vase.svg" alt="" width="110" height="170"></p> 
+         <h2><a class="main__anchor" name="algoritma-de-casteljau-s" href="bezier-curve.html#algoritma-de-casteljau-s">Algoritma <em>De Casteljau???s</em></a></h2> 
+         <p>Terdapat sebuah rumus matematika untuk <em>Bezier Curve</em>, tapi kita akan membahasnya nanti karena <a href="https://en.wikipedia.org/wiki/De_Casteljau%27s_algorithm">De Casteljau???s algorithm</a> identik dengan definisinya sendiri dan dapat dilihat jelas bagaimana membangunnya.</p> 
+         <p>Pertama-tama kita lihat contoh 3 titik.</p> 
+         <p>Ini adalah contoh dan penjelasannya akan mengikuti.</p> 
+         <p>Titik kontrol (1, 2 dan 3) bisa dipindahkan dengan <em>mouse</em>. Tekan <em>play</em> untuk menjalankan.</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"></div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:370px" src="https://id.js.cx/article/bezier-curve/demo.svg?p=0,0,0.5,1,1,0&amp;animate=1"></iframe> 
+         </div> 
+         <p><strong>Algoritma <em>De Casteljau???s</em> dengan 3 titik <em>bezier curve</em></strong></p> 
+         <ol> 
+          <li> <p>Letakan titik kontrol. Di dalam contoh diatas dinamai dengan: <code>1</code>, <code>2</code>, <code>3</code>.</p> </li> 
+          <li> <p>Buat bagian diantara titik kontrol 1 ??? 2 ??? 3. Didalam contoh diatas adalah <span style="color:#825E28">coklat</span>.</p> </li> 
+          <li> <p>Parameter <code>t</code> bergerak dari <code>0</code> menuju <code>1</code>. Didalam contoh diatas langkah <code>0.05</code> digunakan: perulangannya bergerak menuju <code>0, 0.05, 0.1, 0.15, ... 0.95, 1</code>.</p> <p>Untuk setiap nilai dari <code>t</code>:</p> 
+           <ul> 
+            <li> <p>Untuk setiap bagian <span style="color:#825E28">coklat</span> kita bisa mengambil titik lokasi yang cocok untuk <code>t</code> dari titik mulainya. Karena terdapat dua bagian, kita memiliki dua titik.</p> <p>Untuk contoh, untuk <code>t=0</code> ??? untuk kedua titik akan berada pada awal bagian, dan untuk <code>t=0.25</code> ??? pada 25% dari panjang bagian dari awal, untuk <code>t=0.5</code> ??? 50%(ditengah), untuk <code>t=1</code> `` diakhir dari bagian.</p> </li> 
+            <li> <p>Sambungkan titiknya. Didalam gambar dibawah bagian yang tersambung di warnai<span style="color:#167490">biru</span>.</p> </li> 
+           </ul> </li> 
+         </ol> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Untuk <code>t=0.25</code></th> 
+            <th>Untuk <code>t=0.5</code></th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><img src="article/bezier-curve/bezier3-draw1.svg" alt="" width="340" height="350"></td> 
+            <td><img src="article/bezier-curve/bezier3-draw2.svg" alt="" width="340" height="350"></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <ol start="4"> 
+          <li> <p>Sekarang pada bagian <span style="color:#167490">biru</span> ambil titik yang proporsional yang sama dengan <code>t</code>. Jadi, untuk <code>t=0.25</code> (gambar kiri) kita mempunyai titik pada bagian akhir dari seperempat bagian, dan untuk <code>t=0.5</code> (gambar kanan) ??? di bagian tengah. Pada gambar atas titik itu berada pada <span style="color:red">merah</span>.</p> </li> 
+          <li> <p>Sebagaimana <code>t</code> bergerak dari <code>0</code> ke <code>1</code>, setiap nilai dari <code>t</code> menambahkan titik pada lengkungannya. Satu kesatuan itu membentuk <em>Bezier Curve</em>. Yang berwarna merah dan parabolik pada gambar diatas.</p> </li> 
+         </ol> 
+         <p>Itu adalah proses dari 3 titik. Tapi sama dengan proses yang menggunakan 4 titik.</p> 
+         <p>Contoh untuk 4 titik (titik dapat dipindahkan menggunakan <em>mouse</em>):</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"></div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:370px" src="https://id.js.cx/article/bezier-curve/demo.svg?p=0,0,0.5,0,0.5,1,1,1&amp;animate=1"></iframe> 
+         </div> 
+         <p>Algoritma untuk 4 titik:</p> 
+         <ul> 
+          <li>Sambungkan titik kontrol pada bagian: 1 ??? 2, 2 ??? 3, 3 ??? 4. Akan terdapat 3 bagian <span style="color:#825E28">coklat</span>.</li> 
+          <li>Untuk setiap <code>t</code> didalam interval dari <code>0</code> menuju <code>1</code>: 
+           <ul> 
+            <li>Kita ambil titik dari bagian yang memiliki cukup jarak dengan <code>t</code> di awal. Titik ini tersambung, jadi kita mempunyai dua <span style="color:#0A0">bagian hijau</span>.</li> 
+            <li>Salah satu dari bagiannya akan mempunyai jarak yang cukup ke <code>t</code>. Kita memiliki <span style="color:#167490">bagian biru</span>.</li> 
+            <li>Di bagian biru kita mengambil sebuah titik yang memiliki jarak proporsional ke <code>t</code>. Di contoh diatas adalah <span style="color:red">merah</span>.</li> 
+           </ul> </li> 
+          <li>Titik-titik ini akan membentuk lengkungan.</li> 
+         </ul> 
+         <p>Algoritmanya adalah perulangan dan bisa digenerelasikan dengan jumlah titik berapapun itu.</p> 
+         <p>Diberikan titik kontrol dengan jumlah N:</p> 
+         <ol> 
+          <li>Kita sambungkan titik-titik nya untuk mendapatkan bagian awal N-1.</li> 
+          <li>Lalu untuk setiap <code>t</code> dari <code>0</code> sampai <code>1</code>, kita bisa mengambil titik dari setiap bagian. Akan terdapat bagian N&amp;#8209;2.</li> 
+          <li>Ulangi langkah 2 sampai hanya tersisa satu titik.</li> 
+         </ol> 
+         <p>Titik-titik ini membangun lengkungannya.</p> 
+         <p><strong>Jalankan dan hentikan sementara untuk melihat bagian dan lengkungannya dibuat</strong></p> 
+         <p>Sebuah lengkungan yang terlihat seperti <code>y=1/t</code>:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"></div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:370px" src="https://id.js.cx/article/bezier-curve/demo.svg?p=0,0,0,0.75,0.25,1,1,1&amp;animate=1"></iframe> 
+         </div> 
+         <p>Kontrol <em>zig-zag</em> pun dapat digunakan:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"></div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:370px" src="https://id.js.cx/article/bezier-curve/demo.svg?p=0,0,1,0.5,0,0.5,1,1&amp;animate=1"></iframe> 
+         </div> 
+         <p>Membuat perulangan juga bisa:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"></div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:370px" src="https://id.js.cx/article/bezier-curve/demo.svg?p=0,0,1,0.5,0,1,0.5,0&amp;animate=1"></iframe> 
+         </div> 
+         <p><em>Bezier Curve</em> yang tidak rapih (bisa dibuat juga):</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"></div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:370px" src="https://id.js.cx/article/bezier-curve/demo.svg?p=0,0,1,1,0,1,1,0&amp;animate=1"></iframe> 
+         </div> 
+         <p>Jika ada sesuatu yang tidak jelas dengan deskripsi algoritmanya, perhatikan contoh yang tersedia untuk mengetahui bagaimana lengkungannya dibuat.</p> 
+         <p>Sebagaimana algoritmanya adalah rekursif(berulang), kita bisa membangun <em>Bezier Curves</em> dengan urutan apapun, maka dari itu: gunakan 5, 6 atau lebih titik kontrol. Tapi pada penggunaannya terlalu banyak titik tidak akan benar-benar berguna. Biasanya kita akan menggunakan 2-3 titik, dan untuk garis yang lebih rumit kita hanya akan menempelkan beberapa lengkungan yang berbeda. Hal itu akan membuat pekerjaan menjadi lebih mudah dilakukan dan dihitung.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Untuk menspesifikasikan <em>Bezier Curve</em>, digunakan titik kontrol. Seperti yang bisa kita lihat, titiknya tidak berapa pada lengkungannya, kecuali yang pertama dan terakhir.</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Terkadang kita memiliki hal lain: untuk menggambar lengkungan <em>melewati beberapa titik</em>, jadi semuanya digambar didalam satu lengkungan. hal tersebut dipanggil dengan <a href="https://en.wikipedia.org/wiki/Interpolation">interpolation</a>,dan disini kita tidak akan mempelajarinya.</p> 
+           <p>Terdapat beberapa rumus matematika seperti lengkungan, untuk contoh <a href="https://en.wikipedia.org/wiki/Lagrange_polynomial">Lagrange polynomial</a>. Didalam grafis komputer <a href="https://en.wikipedia.org/wiki/Spline_interpolation">spline interpolation</a> sering digunakan untuk membangun lengkungan yang halus dengan menyambungkan beberapa titik.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="matematikal" href="bezier-curve.html#matematikal">Matematikal</a></h2> 
+         <p>Sebuah <em>Bezier Curve</em> bisa di buat dengan menggunakan rumus matematika.</p> 
+         <p>Seperti yang kita lihat ??? sebenarnya tidak perlu kita ketahui, kebanyakan orang membangunnya dengan menggerakan titik menggunakan <em>mouse</em>. Tapi jika kamu menyukai matematika, beginilah caranya.</p> 
+         <p>Diberikan koordinat dari titik kontrol <code>P<sub>i</sub></code>: titik kontrol pertama memiliki koordinat <code>P<sub>1</sub> = (x<sub>1</sub>, y<sub>1</sub>)</code>, yang kedua <code>P<sub>2</sub> = (x<sub>2</sub>, y<sub>2</sub>)</code>, dan seterusnya, koordinat lengkungannya dejelaskan dengan persamaan yang bergantung pada parameter <code>t</code> dari bagian <code>[0.1]</code>.</p> 
+         <ul> 
+          <li> <p>Rumus untuk lengkungan dengan 2 titik:</p> <p><code>P = (1-t)P<sub>1</sub> + tP<sub>2</sub></code></p> </li> 
+          <li> <p>Untuk 3 titik:</p> <p><code>P = (1???t)<sup>2</sup>P<sub>1</sub> + 2(1???t)tP<sub>2</sub> + t<sup>2</sup>P<sub>3</sub></code></p> </li> 
+          <li> <p>Untuk 4 titik:</p> <p><code>P = (1???t)<sup>3</sup>P<sub>1</sub> + 3(1???t)<sup>2</sup>tP<sub>2</sub> +3(1???t)t<sup>2</sup>P<sub>3</sub> + t<sup>3</sup>P<sub>4</sub></code></p> </li> 
+         </ul> 
+         <p>Ini adalah persamaan vektor. Dengan kata lain, kita bisa menyimpan <code>x</code> dan <code>y</code> daripada <code>P</code> untuk mendapatkan koordinat tertentu.</p> 
+         <p>Untuk contoh, lengkungan dengan 3 titik dibangun dengan titik <code>(x, y)</code> dihitung dengan:</p> 
+         <ul> 
+          <li><code>x = (1???t)<sup>2</sup>x<sub>1</sub> + 2(1???t)tx<sub>2</sub> + t<sup>2</sup>x<sub>3</sub></code></li> 
+          <li><code>y = (1???t)<sup>2</sup>y<sub>1</sub> + 2(1???t)ty<sub>2</sub> + t<sup>2</sup>y<sub>3</sub></code></li> 
+         </ul> 
+         <p>Daripada <code>x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>, x<sub>3</sub>, y<sub>3</sub></code> kita harus memasukan koordinat dari 3 titik kontrol dan lalu selama <code>t</code> bergerak dari <code>0</code> menuju <code>1</code>, untuk setiap nilai dari <code>t</code> kita harus memiliki <code>(x, y)</code> dari lengkungannya.</p> 
+         <p>Contoh, jika titik kontrol adalah <code>(0,0)</code>, <code>(0,5, 1)</code> dan <code>(1, 0)</code>, persamaannya menjadi:</p> 
+         <ul> 
+          <li><code>x = (1???t)<sup>2</sup> _ 0 + 2(1???t)t _ 0.5 + t<sup>2</sup> * 1 = (1-t)t + t<sup>2</sup> = t</code></li> 
+          <li><code>y = (1???t)<sup>2</sup> _ 0 + 2(1???t)t _ 1 + t<sup>2</sup> * 0 = 2(1-t)t = ???2t<sup>2</sup> + 2t</code></li> 
+         </ul> 
+         <p>Sekarang selama <code>t</code> berjalan dari <code>0</code> menuju <code>1</code>, nilai dari <code>(x, y)</code> untuk setiap <code>t</code> membentuk lengkungan untuk titik kontrolnya.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="bezier-curve.html#ringkasan">Ringkasan</a></h2> 
+         <p><em>Bezier Curves</em> didefinisikan menggunakan titik kontrol.</p> 
+         <p>Kita melihat dua definisi dari <em>Bezier Curves</em>:</p> 
+         <ol> 
+          <li>Menggunakan proses gambar: <em>Algoritma De Casteljau???s</em>.</li> 
+          <li>Menggunakan rumus matematika.</li> 
+         </ol> 
+         <p>Properti yang bagus dari <em>Bezier Curve</em>:</p> 
+         <p>Kita bisa membuat garis halus dengan sebuah <em>mouse</em> dengan menggerakan titik.</p> 
+         <ul> 
+          <li>Bentuk yang rumit bisa dibuat dengan beberapa <em>Bezier Curve</em>.</li> 
+         </ul> 
+         <p>Penggunaan:</p> 
+         <ul> 
+          <li>Didalam grafis komputer, permodelan, vektor dan editor grafis. <em>Fonts</em> di kategorikan sebagai <em>Bezier Curves</em>. -Di dalam pembangunan website ??? untuk grafis didalam kanvas dan didalam format SVG. Untuk informasi, contoh yang ada diatas menggunakan format SVG. Contoh-contoh itu menggunakan satu dokumen SVG yang diberikan beberapa titik sebagai parameter. Kamu bisa melihat <em>source</em> nya di <a href="article/bezier-curve/demo.svg@p=0,0,1,0.5,0,0.5,1,1&amp;animate=1">demo.svg</a>.</li> 
+          <li>Dalam animasi CSS untuk menjelaskan <em>path</em> dan kecepatan dari animasi.</li> 
+         </ul> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="animation.html" data-tooltip="Animation"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="css-animations.html" data-tooltip="CSS-animations"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbezier-curve" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fbezier-curve" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="animation.html">Animation</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bezier-curve.html#titik-kontrol">Titik Kontrol</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bezier-curve.html#algoritma-de-casteljau-s">Algoritma <em>De Casteljau???s</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bezier-curve.html#matematikal">Matematikal</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bezier-curve.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bezier-curve.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbezier-curve" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fbezier-curve" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

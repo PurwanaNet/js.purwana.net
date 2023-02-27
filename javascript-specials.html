@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Spesial JavaScript</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="javascript-specials.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Spesial JavaScript"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Spesial JavaScript"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="arrow-functions-basics.html"> 
+  <link rel="next" href="code-quality.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Spesial JavaScript"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fjavascript-specials" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fjavascript-specials" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="22" max="92" data-tooltip="Pelajaran 22 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="first-steps.html"><span>JavaScript Dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"JavaScript Dasar","item":"https://id.javascript.info/first-steps"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 31 Januari 2021"> 
+          <div class="updated-at__content">
+            31 Januari 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Spesial JavaScript</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Spesial JavaScript"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Bab ini secara singkat merekap fitur JavaScript yang sudah kita pelajari sekarang, membayar perhatian khusus ke momen-momen halus.</p> 
+         <h2><a class="main__anchor" name="struktur-kode" href="javascript-specials.html#struktur-kode">Struktur kode</a></h2> 
+         <p>Pernyataan didelimisi dengan semicolon:</p> 
+         <div id="w62z0v5vb6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert('Hello'); alert('World');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Biasanya, line-break juga diperlakukan sebagai delimiter, jadi itu juga akan bekerja:</p> 
+         <div id="0n1n92ydkh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert('Hello')
+alert('World')</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu disebut ???penyisipan semicolon otomatis???. Kadang ia tidak bekerja, misalnya:</p> 
+         <div id="x89tmvh5dr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert("There will be an error after this message")
+
+[1, 2].forEach(alert)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kebanyakan panduan codestyle setuju bahwa kita sebaiknya menaruh semicolon di tiap akhir pernyataan.</p> 
+         <p>Semicolon tak dibutuhkan setelah blok kode <code>{...}</code> dan konstruksi syntax dengan mereka yang seperti loop:</p> 
+         <div id="9v6linheg3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function f() {
+  // semicolon tak dibutuhkan setelah deklarasi fungsi
+}
+
+for(;;) {
+  // semicolon tak dibutuhkan setelah loop
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Tapi meskipun kita taruh semicolon ???extra??? di suatu tempat, itu bukan galat. Ia akan diabaikan.</p> 
+         <p>Lebih lanjut di: <a href="structure.html">Struktur kode</a>.</p> 
+         <h2><a class="main__anchor" name="mode-ketat" href="javascript-specials.html#mode-ketat">Mode ketat</a></h2> 
+         <p>Untuk mengaktifkan penuh semua fitur modern JavaScript, kita sebaiknya mulai script dengan <code>"use strict"</code>.</p> 
+         <div id="7cop80r77j" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>'use strict';
+
+...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Directive ini harus ada di paling atas script atau di awal badan fungsi.</p> 
+         <p>Tanpa <code>"use strict"</code>, apapun akan bekerja, tapi beberapa fitur bersikap dengan cara kuno, ???kompatibel???. Secara umum kita akan pilih sikap modern.</p> 
+         <p>Beberapa fitur modern bahasa ini (seperti kelas yang akan kita pelajari di kemudian) mengaktifkan mode ketat secara implisit.</p> 
+         <p>Lebih lanjut di: <a href="strict-mode.html">The modern mode, "use strict"</a>.</p> 
+         <h2><a class="main__anchor" name="variabel" href="javascript-specials.html#variabel">Variabel</a></h2> 
+         <p>Bisa dideklarasi menggunakan:</p> 
+         <ul> 
+          <li><code>let</code></li> 
+          <li><code>const</code> (konstan, tak bisa berubah)</li> 
+          <li><code>var</code> (kuno, akan lihat kemudian)</li> 
+         </ul> 
+         <p>Nama variabel bisa mengandung:</p> 
+         <ul> 
+          <li>Huruf dan digit, tapi karakter pertama bisa tak boleh digit.</li> 
+          <li>Karakter <code>$</code> dan <code>_</code> itu normal, setara dengan huruf.</li> 
+          <li>Alfabet non-latin dan hieroglyph juga boleh, tapi jarang dipakai.</li> 
+         </ul> 
+         <p>Variabel adalah tipe dinamis. Mereka bisa menyimpan nilai apapun:</p> 
+         <div id="av2w3ovvai" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let x = 5;
+x = "John";</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Terdapat 8 tipe data:</p> 
+         <ul> 
+          <li><code>number</code> untuk floating-point(bilangan pecahan) dan integer,</li> 
+          <li><code>bigint</code> untuk integer yang sangat panjang,</li> 
+          <li><code>string</code> untuk string,</li> 
+          <li><code>boolean</code> untuk nilai logik: <code>true/false</code>,</li> 
+          <li><code>null</code> tipe data dengan nilai tunggal <code>null</code>, yang sama dengan ???empty/kosong??? atau ???does not exist/tidak ada nilai???,</li> 
+          <li><code>undefined</code> ??? tipe data dengan nilai tunggal <code>undefined</code>, yang sama dengan ???not assigned/belum didefinisikan???,</li> 
+          <li><code>object</code> dan <code>symbol</code> ??? untuk struktur data yang kompleks dan identifier unik, sampai saat ini kita belum belajar ini.</li> 
+         </ul> 
+         <p>Operator <code>typeof</code> mengembalikan tipe untuk satu nilai, dengan dua pengecualian:</p> 
+         <div id="sivjr6a52x" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>typeof null == "object" // galat di bahasa
+typeof function(){} == "function" // fungsi diperlakukan spesial</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Lebih lanjut di: <a href="variables.html">Variabel</a> and <a href="types.html">Tipe data</a>.</p> 
+         <h2><a class="main__anchor" name="interaksi" href="javascript-specials.html#interaksi">Interaksi</a></h2> 
+         <p>Kita menggunakan peramban sebagai lingkungan kerja, jadi fungsi UI dasar akan menjadi:</p> 
+         <dl> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/API/Window/prompt"><code>prompt(question, [default])</code></a> 
+          </dt> 
+          <dd>
+            Menanyakan 
+           <code>question</code>, dan mengembalikan apa yang pengunjung isikan atau 
+           <code>null</code> jika mereka mengklik ???cancel???. 
+          </dd> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/API/Window/confirm"><code>confirm(question)</code></a> 
+          </dt> 
+          <dd>
+            Menanyakan 
+           <code>question</code> dan menyarakan memilih antara Ok dan Cancel. Pilihannya dikembalikan sebagai 
+           <code>true/false</code>. 
+          </dd> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/API/Window/alert"><code>alert(message)</code></a> 
+          </dt> 
+          <dd>
+            Menampilkan a 
+           <code>message</code>. 
+          </dd> 
+         </dl> 
+         <p>Semua fungsi ini adalah <em>modal</em>, mereka menyela exekusi kode dan mencegah pengunjung dari berinteraksi dengan laman hingga mereka menjawab.</p> 
+         <p>Misalnya:</p> 
+         <div id="ji8vi54fji" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let userName = prompt("Your name?", "Alice");
+let isTeaWanted = confirm("Do you want some tea?");
+
+alert( "Visitor: " + userName ); // Alice
+alert( "Tea wanted: " + isTeaWanted ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Lebih lanjut di: <a href="alert-prompt-confirm.html">Interaksi: alert, prompt, confirm</a>.</p> 
+         <h2><a class="main__anchor" name="operator" href="javascript-specials.html#operator">Operator</a></h2> 
+         <p>JavaScript mendukung operator berikut:</p> 
+         <dl> 
+          <dt>
+            Arithmatika 
+          </dt> 
+          <dd> 
+           <p>Regular: <code>* + - /</code>, juga <code>%</code> untuk remainder dan <code>**</code> untuk pangkat bilangan.</p> 
+           <p>Operator biner plus <code>+</code> menggabungkan string. Dan juka ada operan yang string, maka yang lainnya akan diubah menjadi string juga:</p> 
+           <div id="130sp1vhd2" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="javascript-specials.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="javascript-specials.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( '1' + 2 ); // '12', string
+alert( 1 + '2' ); // '12', string</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt>
+            Penetapan 
+          </dt> 
+          <dd> 
+           <p>Ada penetapan simpel: <code>a = b</code> dan penetapan kombinasi seperti <code>a *= 2</code>.</p> 
+          </dd> 
+          <dt>
+            Bitwise 
+          </dt> 
+          <dd> 
+           <p>Operator bitwise bekerja dengan integer 32-bit di bit-level paling kecil: lihat <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">docs</a> ketika mereka dibutuhkan.</p> 
+          </dd> 
+          <dt>
+            Kondisional 
+          </dt> 
+          <dd> 
+           <p>Satu-satunya operator dengan tiga parameter: <code>cond ? resultA : resultB</code>. Jika <code>cond</code> truthy, mengembalikan <code>resultA</code>, jika tidak <code>resultB</code>.</p> 
+          </dd> 
+          <dt>
+            Operator logika 
+          </dt> 
+          <dd> 
+           <p>Logika AND <code>&amp;&amp;</code> dan OR <code>||</code> menyajikan evaluasi sirkuit-pendek dan mengembalikan nilai di mana ia berhenti. Logika NOT <code>!</code> mengkonversi operand ke tipe boolean dan mengembalikan nilai kebalikannya.</p> 
+          </dd> 
+          <dt>
+            Nullish coalescing operator/Operator penggabung nullish 
+          </dt> 
+          <dd> 
+           <p>Operator <code>??</code> menyediakan cara untuk memilih nilai yang terdefinisikan dari sebuah daftar variabel. Hasil dari <code>a ?? b</code> adalah a kecuali jika nilainya <code>null/undefined</code>, lalu <code>b</code>.</p> 
+          </dd> 
+          <dt>
+            Perbandingan 
+          </dt> 
+          <dd> 
+           <p>Persamaan nilai <code>==</code> dari type yang berbeda akan mengubahnya menjadi angka (kecuali <code>null</code> dan <code>undefined</code> yang sama dengan nilai itu sendiri), jadi contoh dibawah adalah sama:</p> 
+           <div id="vlnuu83c2m" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="javascript-specials.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="javascript-specials.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( 0 == false ); // true
+alert( 0 == '' ); // true</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Pembandingan lainnya tentu saja mengubah nilainya menjadi angka.</p> 
+           <p>Operator pembanding <code>===</code> tidak melakukan perubahan tipe: untuk operator pembanding ini, berbeda tipe sama dengan berbeda nilai.</p> 
+           <p>Nilai <code>null</code> dan <code>undefined</code> adalah spesial: mereka sama <code>==</code> satu sama lainnya dan tidak sama dengan nilai lain manapun.</p> 
+           <p>Pembanding lebih/kurang dari membandingkan string karakter-demi-karakter, tipe lain akan diubah menjadi angka.</p> 
+          </dd> 
+          <dt>
+            Operator lainnya 
+          </dt> 
+          <dd> 
+           <p>Ada beberapa operator lainnya, seperti operator koma.</p> 
+          </dd> 
+         </dl> 
+         <p>Lebih lanjut di: <a href="operators.html">Operator dasar, maths</a>, <a href="comparison.html">Perbandingan</a>, <a href="logical-operators.html">Operator logika</a>, <a href="nullish-coalescing-operator.html">Operator penggabungan nullish '??'</a>.</p> 
+         <h2><a class="main__anchor" name="loop" href="javascript-specials.html#loop">Loop</a></h2> 
+         <ul> 
+          <li> <p>Kita meliput 3 tipe loop:</p> 
+           <div id="ppfle8zgfd" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// 1
+while (condition) {
+  ...
+}
+
+// 2
+do {
+  ...
+} while (condition);
+
+// 3
+for(let i = 0; i &lt; 10; i++) {
+  ...
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Variabel yang dideklarasi di loop <code>for(let...)</code> terlihat cuma di dalam loop. Tapi kita juga bisa membuang <code>let</code> dan memakai kembali variabel yang sudah eksis.</p> </li> 
+          <li> <p>Directive <code>break/continue</code> membolehkan untuk keluar iterasi loop/current. Guakan label untuk menghancurkan loop bersarang.</p> </li> 
+         </ul> 
+         <p>Detil di: <a href="while-for.html">Perulangan: while dan for</a>.</p> 
+         <p>Nanti kita akan pelajari tipe loop lainnya untuk berhadapan dengan object.</p> 
+         <h2><a class="main__anchor" name="konstruksi-switch" href="javascript-specials.html#konstruksi-switch">Konstruksi ???switch???</a></h2> 
+         <p>Konstruksi ???switch??? bisa mengganti pengecekan ganda <code>if</code>. Ia memakai <code>===</code> (ekualitas ketat) untuk pembandingan.</p> 
+         <p>Misalnya:</p> 
+         <div id="mtanpamr05" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="javascript-specials.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let age = prompt('Your age?', 18);
+
+switch (age) {
+  case 18:
+    alert("Won't work"); // hasil dari prompt adalah string, bukan angka
+    break;
+
+  case "18":
+    alert("This works!");
+    break;
+
+  default:
+    alert("Any value not equal to one above");
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Detal di: <a href="switch.html">Pernyataan "switch"</a>.</p> 
+         <h2><a class="main__anchor" name="fungsi" href="javascript-specials.html#fungsi">Fungsi</a></h2> 
+         <p>Kita meliput tiga cara membuat fungsi di JavaScript:</p> 
+         <ol> 
+          <li> <p>Deklarasi Fungsi: fungsi di aliran kode utama</p> 
+           <div id="2qwa5z5spa" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function sum(a, b) {
+  let result = a + b;
+
+  return result;
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Expresi Fungsi: fungsi di dalam kontex expresi</p> 
+           <div id="knse8t8ime" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let sum = function(a, b) {
+  let result = a + b;
+
+  return result;
+};</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Fungsi panah:</p> 
+           <div id="1emfpcketx" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// expresi di sisi kanan
+let sum = (a, b) =&gt; a + b;
+
+// atau syntax baris-ganda dengan { ... }, butuh kembalian di sini:
+let sum = (a, b) =&gt; {
+  // ...
+  return a + b;
+}
+
+// tanpa argumen
+let sayHi = () =&gt; alert("Hello");
+
+// dengan argumen tunggal
+let double = n =&gt; n * 2;</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <ul> 
+          <li>Fungsi bisa punya variabel lokal: mereka yang dideklarasi dalam badannya. Variabel macam itu cuma terlihat di dalam fungsi.</li> 
+          <li>Parameter bisa punya nilai default: <code>function sum(a = 1, b = 2) {...}</code>.</li> 
+          <li>Fungsi selalu mengembalikan sesuatu. Jika tak ada pernyataan <code>return</code>, maka kembaliannya <code>undefined</code>.</li> 
+         </ul> 
+         <p>Detil: lihat <a href="function-basics.html">Fungsi</a>, <a href="arrow-functions-basics.html">Dasar-dasar fungsi Arrow</a>.</p> 
+         <h2><a class="main__anchor" name="lebih-banyak-yang-akan-datang" href="javascript-specials.html#lebih-banyak-yang-akan-datang">Lebih banyak yang akan datang</a></h2> 
+         <p>Ini daftar ringkas fitur JavaScript. Untuk sekarang kita belajar hanya dasar. Kemudian di tutorial nanti kamu akan menemui fitur JavaScript yang lebih canggih dan spesial.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="arrow-functions-basics.html" data-tooltip="Dasar-dasar fungsi Arrow"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="code-quality.html" data-tooltip="Kualitas Kode"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fjavascript-specials" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fjavascript-specials" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="first-steps.html">JavaScript Dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#struktur-kode">Struktur kode</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#mode-ketat">Mode ketat</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#variabel">Variabel</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#interaksi">Interaksi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#operator">Operator</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#loop">Loop</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#konstruksi-switch">Konstruksi ???switch???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#fungsi">Fungsi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#lebih-banyak-yang-akan-datang">Lebih banyak yang akan datang</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="javascript-specials.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fjavascript-specials" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fjavascript-specials" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

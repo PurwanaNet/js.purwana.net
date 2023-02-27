@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Reference Type</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="reference-type.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Reference Type"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Reference Type"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="currying-partials.html"> 
+  <link rel="next" href="bigint.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Reference Type"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Freference-type" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Freference-type" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="91" max="92" data-tooltip="Pelajaran 91 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="js-misc.html"><span>Miscellaneous</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Miscellaneous","item":"https://id.javascript.info/js-misc"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://ar.javascript.info/reference-type">????????</a>, 
+          <a href="https://javascript.info/reference-type">English</a>, 
+          <a href="https://es.javascript.info/reference-type">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/reference-type">Fran??ais</a>, 
+          <a href="https://it.javascript.info/reference-type">Italiano</a>, 
+          <a href="https://ja.javascript.info/reference-type">?????????</a>, 
+          <a href="https://ko.javascript.info/reference-type">?????????</a>, 
+          <a href="https://learn.javascript.ru/reference-type">??????????????</a>, 
+          <a href="https://uk.javascript.info/reference-type">????????????????????</a>, 
+          <a href="https://zh.javascript.info/reference-type">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Reference Type</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Reference Type"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">In-depth language feature</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>This article covers an advanced topic, to understand certain edge-cases better.</p> 
+           <p>It???s not important. Many experienced developers live fine without knowing it. Read on if you want to know how things work under the hood.</p> 
+          </div> 
+         </div> 
+         <p>A dynamically evaluated method call can lose <code>this</code>.</p> 
+         <p>For instance:</p> 
+         <div id="27z5fuo2ar" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="reference-type.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="reference-type.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  hi() { alert(this.name); },
+  bye() { alert("Bye"); }
+};
+
+user.hi(); // works
+
+// now let's call user.hi or user.bye depending on the name
+(user.name == "John" ? user.hi : user.bye)(); // Error!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>On the last line there is a conditional operator that chooses either <code>user.hi</code> or <code>user.bye</code>. In this case the result is <code>user.hi</code>.</p> 
+         <p>Then the method is immediately called with parentheses <code>()</code>. But it doesn???t work correctly!</p> 
+         <p>As you can see, the call results in an error, because the value of <code>"this"</code> inside the call becomes <code>undefined</code>.</p> 
+         <p>This works (object dot method):</p> 
+         <div id="fcrpw6i5bf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>user.hi();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>This doesn???t (evaluated method):</p> 
+         <div id="zcy786e6pd" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>(user.name == "John" ? user.hi : user.bye)(); // Error!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Why? If we want to understand why it happens, let???s get under the hood of how <code>obj.method()</code> call works.</p> 
+         <h2><a class="main__anchor" name="reference-type-explained" href="reference-type.html#reference-type-explained">Reference type explained</a></h2> 
+         <p>Looking closely, we may notice two operations in <code>obj.method()</code> statement:</p> 
+         <ol> 
+          <li>First, the dot <code>'.'</code> retrieves the property <code>obj.method</code>.</li> 
+          <li>Then parentheses <code>()</code> execute it.</li> 
+         </ol> 
+         <p>So, how does the information about <code>this</code> get passed from the first part to the second one?</p> 
+         <p>If we put these operations on separate lines, then <code>this</code> will be lost for sure:</p> 
+         <div id="sqcvtjkvs7" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="reference-type.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="reference-type.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  hi() { alert(this.name); }
+}
+
+// split getting and calling the method in two lines
+let hi = user.hi;
+hi(); // Error, because this is undefined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Here <code>hi = user.hi</code> puts the function into the variable, and then on the last line it is completely standalone, and so there???s no <code>this</code>.</p> 
+         <p><strong>To make <code>user.hi()</code> calls work, JavaScript uses a trick ??? the dot <code>'.'</code> returns not a function, but a value of the special <a href="https://tc39.github.io/ecma262/#sec-reference-specification-type">Reference Type</a>.</strong></p> 
+         <p>The Reference Type is a ???specification type???. We can???t explicitly use it, but it is used internally by the language.</p> 
+         <p>The value of Reference Type is a three-value combination <code>(base, name, strict)</code>, where:</p> 
+         <ul> 
+          <li><code>base</code> is the object.</li> 
+          <li><code>name</code> is the property name.</li> 
+          <li><code>strict</code> is true if <code>use strict</code> is in effect.</li> 
+         </ul> 
+         <p>The result of a property access <code>user.hi</code> is not a function, but a value of Reference Type. For <code>user.hi</code> in strict mode it is:</p> 
+         <div id="owr1pm6mz6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// Reference Type value
+(user, "hi", true)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>When parentheses <code>()</code> are called on the Reference Type, they receive the full information about the object and its method, and can set the right <code>this</code> (<code>=user</code> in this case).</p> 
+         <p>Reference type is a special ???intermediary??? internal type, with the purpose to pass information from dot <code>.</code> to calling parentheses <code>()</code>.</p> 
+         <p>Any other operation like assignment <code>hi = user.hi</code> discards the reference type as a whole, takes the value of <code>user.hi</code> (a function) and passes it on. So any further operation ???loses??? <code>this</code>.</p> 
+         <p>So, as the result, the value of <code>this</code> is only passed the right way if the function is called directly using a dot <code>obj.method()</code> or square brackets <code>obj['method']()</code> syntax (they do the same here). There are various ways to solve this problem such as <a href="bind.html#solution-2-bind">func.bind()</a>.</p> 
+         <h2><a class="main__anchor" name="summary" href="reference-type.html#summary">Summary</a></h2> 
+         <p>Reference Type is an internal type of the language.</p> 
+         <p>Reading a property, such as with dot <code>.</code> in <code>obj.method()</code> returns not exactly the property value, but a special ???reference type??? value that stores both the property value and the object it was taken from.</p> 
+         <p>That???s for the subsequent method call <code>()</code> to get the object and set <code>this</code> to it.</p> 
+         <p>For all other operations, the reference type automatically becomes the property value (a function in our case).</p> 
+         <p>The whole mechanics is hidden from our eyes. It only matters in subtle cases, such as when a method is obtained dynamically from the object, using an expression.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="reference-type.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="reference-type.html#cek-sintaks" name="cek-sintaks">Cek sintaks</a></h3> 
+           <a class="task__open-link" href="task/check-syntax.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 2</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apa hasil dari kode berikut ini?</p> 
+            <div id="o9pop1s0m9" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  go: function() { alert(this.name) }
+}
+
+(user.go)()</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>P.S. Ada jebakannya :)</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><strong>Error</strong>!</p> 
+              <p>Coba ini:</p> 
+              <div id="po8cwrjj51" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="reference-type.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="reference-type.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  go: function() { alert(this.name) }
+}
+
+(user.go)() // error!</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Pesan error pada kebanyakan peramban tidak memberitahukan kita cukup petunjuk tentang hal apa yang salah.</p> 
+              <p><strong>Error muncul karena tidak adanya sebuah titik koma setelah <code>user = {...}</code>.</strong></p> 
+              <p>JavaScript tidak secara otomatis menyisipkan sebuah tanda titik koma setelah tanda kurung kurawa <code>(user.go)()</code>, jadi JavaScript membaca kode seperti ini:</p> 
+              <div id="vgdhs1elp3" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let user = { go:... }(user.go)()</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Lalu kita juga bisa melihat bahwa ekspresi gabungan semacam itu adalah sebuah panggilan objek <code>{ go: ... }</code> secara sintaks yang juga sebagai sebuah fungsi dengan argumen <code>(user.go)</code>. Dan hal tersebut juga terjadi pada baris yang sama dengan <code>let user</code>, jadi objek <code>user</code> belum didefinisikan, oleh karena itu terjadi error.</p> 
+              <p>Jika kita menyisipkan tanda titik koma, semuanya akan baik-baik saja:</p> 
+              <div id="dl5wfk9tvf" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:1,&quot;end&quot;:2}]}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="reference-type.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="reference-type.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  go: function() { alert(this.name) }
+};
+
+(user.go)() // John</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Tolong ingat bahwa tanda kurung kurawa yang merangkap <code>(user.go)</code> tidak melakukan apapun di sini. Biasanya Biasanya tanda kurung kurawa mengatur urutan operasi, tapi di sini tanda titik-lah (<code>.</code>) yang berjalan terlebih dulu, jadi tidak ada pengaruh apapun. Hanya tanda titik koma yang berpengaruh.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="reference-type.html#jelaskan-nilai-dari-this" name="jelaskan-nilai-dari-this">Jelaskan nilai dari "this"</a></h3> 
+           <a class="task__open-link" href="task/why-this.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 3</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Dalam kode di bawah ini kita bermaksud untuk memanggil metode <code>obj.go()</code> sebanyak 4 kali sekaligus.</p> 
+            <p>Tapi panggilan <code>(1)</code> dan <code>(2)</code> bekerja berbeda dibanding dengan <code>(3)</code> dan <code>(4)</code>. Mengapa demikian?</p> 
+            <div id="epgo3l4soi" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="reference-type.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="reference-type.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let obj, method;
+
+obj = {
+  go: function() { alert(this); }
+};
+
+obj.go();               // (1) [objek Object]
+
+(obj.go)();             // (2) [objek Object]
+
+(method = obj.go)();    // (3) undefined
+
+(obj.go || obj.stop)(); // (4) undefined</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Ini dia penjelasannya.</p> 
+              <ol> 
+               <li> <p>Itu adalah sebuah panggilan metode objek biasa.</p> </li> 
+               <li> <p>Sama halnya, tanda kurung kurawa tidak merubah urutan operasi di sini, lagi pula tanda titik lah yang pertama di urutan operasi.</p> </li> 
+               <li> <p>Di sini kita memiliki sebuah panggilan yang lebih kompleks lagi yakni <code>(expression).method()</code>. Pagnggilan tersebut bekerja sebagaimana jika panggilan itu dipisah menjadi dua baris kode:</p> 
+                <div id="1t2pixtxun" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>f = obj.go; // mengkalkulasi ekspresi
+f();        // memanggil apa yang kita punya</code></pre> 
+                  </div> 
+                 </div> 
+                </div><p>Di sini <code>f()</code> dieksekusi sebagai sebuah fungsi, tanpa <code>this</code>.</p> </li> 
+               <li> <p>Hal serupa pada panggilan <code>(3)</code>, di sebelah kiri tanda titik <code>.</code> kita memiliki sebuah ekspresi.</p> </li> 
+              </ol> 
+              <p>Untuk menjelaskan perilaku panggilan <code>(3)</code> dan <code>(4)</code> kita perlu memanggil ulang, yang mana properti pengakses (tanda titik atau tanda kurung siku) mengembalikan sebuah nilai dari tipe referensi (<em>Reference Type</em>).</p> 
+              <p>Operasi apapun kecuali sebuah panggilan metode (seperti penugasan <code>=</code> atau <code>||</code>) membuat membuat ekspresi tersebut menjadi sebuah nilai biasa, yang tidak membawa informasi yang memungkinkan untuk menentukan <code>this</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="currying-partials.html" data-tooltip="_Currying_"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="bigint.html" data-tooltip="BigInt"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Freference-type" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Freference-type" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="js-misc.html">Miscellaneous</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="reference-type.html#reference-type-explained">Reference type explained</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="reference-type.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="reference-type.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="reference-type.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Freference-type" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Freference-type" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

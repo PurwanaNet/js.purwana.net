@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pointer events</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="pointer-events.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pointer events"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pointer events"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="mouse-drag-and-drop.html"> 
+  <link rel="next" href="keyboard-events.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pointer events"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpointer-events" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpointer-events" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="20" max="32" data-tooltip="Pelajaran 20 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="event-details.html"><span>UI Events</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"UI Events","item":"https://id.javascript.info/event-details"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 10 September 2020"> 
+          <div class="updated-at__content">
+            10 September 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pointer events</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pointer events"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Pointer events are a modern way to handle input from a variety of pointing devices, such as a mouse, a pen/stylus, a touchscreen, and so on.</p> 
+         <h2><a class="main__anchor" name="the-brief-history" href="pointer-events.html#the-brief-history">The brief history</a></h2> 
+         <p>Let???s make a small overview, so that you understand the general picture and the place of Pointer Events among other event types.</p> 
+         <ul> 
+          <li> <p>Long ago, in the past, there were only mouse events.</p> <p>Then touch devices became widespread, phones and tablets in particular. For the existing scripts to work, they generated (and still generate) mouse events. For instance, tapping a touchscreen generates <code>mousedown</code>. So touch devices worked well with web pages.</p> <p>But touch devices have more capabilities than a mouse. For example, it???s possible to touch multiple points at once (???multi-touch???). Although, mouse events don???t have necessary properties to handle such multi-touches.</p> </li> 
+          <li> <p>So touch events were introduced, such as <code>touchstart</code>, <code>touchend</code>, <code>touchmove</code>, that have touch-specific properties (we don???t cover them in detail here, because pointer events are even better).</p> <p>Still, it wasn???t enough, as there are many other devices, such as pens, that have their own features. Also, writing code that listens for both touch and mouse events was cumbersome.</p> </li> 
+          <li> <p>To solve these issues, the new standard Pointer Events was introduced. It provides a single set of events for all kinds of pointing devices.</p> </li> 
+         </ul> 
+         <p>As of now, <a href="https://www.w3.org/TR/pointerevents2/">Pointer Events Level 2</a> specification is supported in all major browsers, while the newer <a href="https://w3c.github.io/pointerevents/">Pointer Events Level 3</a> is in the works and is mostly compartible with Pointer Events level 2.</p> 
+         <p>Unless you develop for old browsers, such as Internet Explorer 10, or for Safari 12 or below, there???s no point in using mouse or touch events any more ??? we can switch to pointer events.</p> 
+         <p>Then your code will work well with both touch and mouse devices.</p> 
+         <p>That said, there are some important peculiarities that one should know in order to use Pointer Events correctly and avoid surprises. We???ll make note of them in this article.</p> 
+         <h2><a class="main__anchor" name="pointer-event-types" href="pointer-events.html#pointer-event-types">Pointer event types</a></h2> 
+         <p>Pointer events are named similarly to mouse events:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Pointer event</th> 
+            <th>Similar mouse event</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>pointerdown</code></td> 
+            <td><code>mousedown</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>pointerup</code></td> 
+            <td><code>mouseup</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>pointermove</code></td> 
+            <td><code>mousemove</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>pointerover</code></td> 
+            <td><code>mouseover</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>pointerout</code></td> 
+            <td><code>mouseout</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>pointerenter</code></td> 
+            <td><code>mouseenter</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>pointerleave</code></td> 
+            <td><code>mouseleave</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>pointercancel</code></td> 
+            <td>-</td> 
+           </tr> 
+           <tr> 
+            <td><code>gotpointercapture</code></td> 
+            <td>-</td> 
+           </tr> 
+           <tr> 
+            <td><code>lostpointercapture</code></td> 
+            <td>-</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>As we can see, for every <code>mouse&lt;event&gt;</code>, there???s a <code>pointer&lt;event&gt;</code> that plays a similar role. Also there are 3 additional pointer events that don???t have a corresponding <code>mouse...</code> counterpart, we???ll explain them soon.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Replacing <code>mouse&lt;event&gt;</code> with <code>pointer&lt;event&gt;</code> in our code</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>We can replace <code>mouse&lt;event&gt;</code> events with <code>pointer&lt;event&gt;</code> in our code and expect things to continue working fine with mouse.</p> 
+           <p>The support for touch devices will also ???magically??? improve. Although, we may need to add <code>touch-action: none</code> in some places in CSS. We???ll cover it below in the section about <code>pointercancel</code>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="pointer-event-properties" href="pointer-events.html#pointer-event-properties">Pointer event properties</a></h2> 
+         <p>Pointer events have the same properties as mouse events, such as <code>clientX/Y</code>, <code>target</code>, etc., plus some others:</p> 
+         <ul> 
+          <li> <p><code>pointerId</code> ??? the unique identifier of the pointer causing the event.</p> <p>Browser-generated. Allows us to handle multiple pointers, such as a touchscreen with stylus and multi-touch (examples will follow).</p> </li> 
+          <li> <p><code>pointerType</code> ??? the pointing device type. Must be a string, one of: ???mouse???, ???pen??? or ???touch???.</p> <p>We can use this property to react differently on various pointer types.</p> </li> 
+          <li> <p><code>isPrimary</code> ??? is <code>true</code> for the primary pointer (the first finger in multi-touch).</p> </li> 
+         </ul> 
+         <p>Some pointer devices measure contact area and pressure, e.g. for a finger on the touchscreen, there are additional properties for that:</p> 
+         <ul> 
+          <li><code>width</code> ??? the width of the area where the pointer (e.g. a finger) touches the device. Where unsupported, e.g. for a mouse, it???s always <code>1</code>.</li> 
+          <li><code>height</code> ??? the height of the area where the pointer touches the device. Where unsupported, it???s always <code>1</code>.</li> 
+          <li><code>pressure</code> ??? the pressure of the pointer tip, in range from 0 to 1. For devices that don???t support pressure must be either <code>0.5</code> (pressed) or <code>0</code>.</li> 
+          <li><code>tangentialPressure</code> ??? the normalized tangential pressure.</li> 
+          <li><code>tiltX</code>, <code>tiltY</code>, <code>twist</code> ??? pen-specific properties that describe how the pen is positioned relative the surface.</li> 
+         </ul> 
+         <p>These properties aren???t supported by most devices, so they are rarely used. You can find the details about them in the <a href="https://w3c.github.io/pointerevents/#pointerevent-interface">specification</a> if needed.</p> 
+         <h2><a class="main__anchor" name="multi-touch" href="pointer-events.html#multi-touch">Multi-touch</a></h2> 
+         <p>One of the things that mouse events totally don???t support is multi-touch: a user can touch in several places at once on their phone or tablet, or perform special gestures.</p> 
+         <p>Pointer Events allow handling multi-touch with the help of the <code>pointerId</code> and <code>isPrimary</code> properties.</p> 
+         <p>Here???s what happens when a user touches a touchscreen in one place, then puts another finger somewhere else on it:</p> 
+         <ol> 
+          <li>At the first finger touch: 
+           <ul> 
+            <li><code>pointerdown</code> with <code>isPrimary=true</code> and some <code>pointerId</code>.</li> 
+           </ul> </li> 
+          <li>For the second finger and more fingers (assuming the first one is still touching): 
+           <ul> 
+            <li><code>pointerdown</code> with <code>isPrimary=false</code> and a different <code>pointerId</code> for every finger.</li> 
+           </ul> </li> 
+         </ol> 
+         <p>Please note: the <code>pointerId</code> is assigned not to the whole device, but for each touching finger. If we use 5 fingers to simultaneously touch the screen, we have 5 <code>pointerdown</code> events, each with their respective coordinates and a different <code>pointerId</code>.</p> 
+         <p>The events associated with the first finger always have <code>isPrimary=true</code>.</p> 
+         <p>We can track multiple touching fingers using their <code>pointerId</code>. When the user moves and then removes a finger, we get <code>pointermove</code> and <code>pointerup</code> events with the same <code>pointerId</code> as we had in <code>pointerdown</code>.</p> 
+         <p>Here???s the demo that logs <code>pointerdown</code> and <code>pointerup</code> events:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/aSqD7BIvV793DyD1?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="aSqD7BIvV793DyD1" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:200px" src="https://id.js.cx/article/pointer-events/multitouch/"></iframe> 
+         </div> 
+         <p>Please note: you must be using a touchscreen device, such as a phone or a tablet, to actually see the difference in <code>pointerId/isPrimary</code>. For single-touch devices, such as a mouse, there???ll be always same <code>pointerId</code> with <code>isPrimary=true</code>, for all pointer events.</p> 
+         <h2><a class="main__anchor" name="event-pointercancel" href="pointer-events.html#event-pointercancel">Event: pointercancel</a></h2> 
+         <p>The <code>pointercancel</code> event fires when there???s an ongoing pointer interaction, and then something happens that causes it to be aborted, so that no more pointer events are generated.</p> 
+         <p>Such causes are:</p> 
+         <ul> 
+          <li>The pointer device hardware was physically disabled.</li> 
+          <li>The device orientation changed (tablet rotated).</li> 
+          <li>The browser decided to handle the interaction on its own, considering it a mouse gesture or zoom-and-pan action or something else.</li> 
+         </ul> 
+         <p>We???ll demonstrate <code>pointercancel</code> on a practical example to see how it affects us.</p> 
+         <p>Let???s say we???re impelementing drag???n???drop for a ball, just as in the beginning of the article <a href="mouse-drag-and-drop.html">Drag'n'Drop with mouse events</a>.</p> 
+         <p>Here is the flow of user actions and the corresponding events:</p> 
+         <ol> 
+          <li>The user presses on an image, to start dragging 
+           <ul> 
+            <li><code>pointerdown</code> event fires</li> 
+           </ul> </li> 
+          <li>Then they start moving the pointer (thus dragging the image) 
+           <ul> 
+            <li><code>pointermove</code> fires, maybe several times</li> 
+           </ul> </li> 
+          <li>And then the surprise happens! The browser has native drag???n???drop support for images, that kicks in and takes over the drag???n???drop process, thus generating <code>pointercancel</code> event. 
+           <ul> 
+            <li>The browser now handles drag???n???drop of the image on its own. The user may even drag the ball image out of the browser, into their Mail program or a File Manager.</li> 
+            <li>No more <code>pointermove</code> events for us.</li> 
+           </ul> </li> 
+         </ol> 
+         <p>So the issue is that the browser ???hijacks??? the interaction: <code>pointercancel</code> fires in the beginning of the ???drag-and-drop??? process, and no more <code>pointermove</code> events are generated.</p> 
+         <p>Here???s the drag???n???drop demo with loggin of pointer events (only <code>up/down</code>, <code>move</code> and <code>cancel</code>) in the <code>textarea</code>:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/eCQolvpcickRuI0X?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="eCQolvpcickRuI0X" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:240px" src="https://id.js.cx/article/pointer-events/ball/"></iframe> 
+         </div> 
+         <p>We???d like to implement the drag???n???drop on our own, so let???s tell the browser not to take it over.</p> 
+         <p><strong>Prevent the default browser action to avoid <code>pointercancel</code>.</strong></p> 
+         <p>We need to do two things:</p> 
+         <ol> 
+          <li>Prevent native drag???n???drop from happening: 
+           <ul> 
+            <li>We can do this by setting <code>ball.ondragstart = () =&gt; false</code>, just as described in the article <a href="mouse-drag-and-drop.html">Drag'n'Drop with mouse events</a>.</li> 
+            <li>That works well for mouse events.</li> 
+           </ul> </li> 
+          <li>For touch devices, there are other touch-related browser actions (besides drag???n???drop). To avoid problems with them too: 
+           <ul> 
+            <li>Prevent them by setting <code>#ball { touch-action: none }</code> in CSS.</li> 
+            <li>Then our code will start working on touch devices.</li> 
+           </ul> </li> 
+         </ol> 
+         <p>After we do that, the events will work as intended, the browser won???t hijack the process and doesn???t emit <code>pointercancel</code>.</p> 
+         <p>This demo adds these lines:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/yAUfgrmJJQsrBvRr?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="yAUfgrmJJQsrBvRr" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:240px" src="https://id.js.cx/article/pointer-events/ball-2/"></iframe> 
+         </div> 
+         <p>As you can see, there???s no <code>pointercancel</code> any more.</p> 
+         <p>Now we can add the code to actually move the ball, and our drag???n???drop will work for mouse devices and touch devices.</p> 
+         <h2><a class="main__anchor" name="pointer-capturing" href="pointer-events.html#pointer-capturing">Pointer capturing</a></h2> 
+         <p>Pointer capturing is a special feature of pointer events.</p> 
+         <p>The idea is very simple, but may seem quite odd at first, as nothing like that exists for any other event type.</p> 
+         <p>The main method is:</p> 
+         <ul> 
+          <li><code>elem.setPointerCapture(pointerId)</code> ??? binds events with the given <code>pointerId</code> to <code>elem</code>. After the call all pointer events with the same <code>pointerId</code> will have <code>elem</code> as the target (as if happened on <code>elem</code>), no matter where in document they really happened.</li> 
+         </ul> 
+         <p>In other words, <code>elem.setPointerCapture(pointerId)</code> retargets all subsequent events with the given <code>pointerId</code> to <code>elem</code>.</p> 
+         <p>The binding is removed:</p> 
+         <ul> 
+          <li>automatically when <code>pointerup</code> or <code>pointercancel</code> events occur,</li> 
+          <li>automatically when <code>elem</code> is removed from the document,</li> 
+          <li>when <code>elem.releasePointerCapture(pointerId)</code> is called.</li> 
+         </ul> 
+         <p><strong>Pointer capturing can be used to simplify drag???n???drop kind of interactions.</strong></p> 
+         <p>As an example, let???s recall how one can implement a custom slider, described in the <a href="mouse-drag-and-drop.html">Drag'n'Drop with mouse events</a>.</p> 
+         <p>We make a slider element with the strip and the ???runner??? (<code>thumb</code>) inside it.</p> 
+         <p>Then it works like this:</p> 
+         <ol> 
+          <li>The user presses on the slider <code>thumb</code> ??? <code>pointerdown</code> triggers.</li> 
+          <li>Then they move the pointer ??? <code>pointermove</code> triggers, and we move the <code>thumb</code> along. 
+           <ul> 
+            <li>???As the pointer moves, it may leave the slider <code>thumb</code>: go above or below it. The <code>thumb</code> should move strictly horizontally, remaining aligned with the pointer.</li> 
+           </ul> </li> 
+         </ol> 
+         <p>So, to track all pointer movements, including when it goes above/below the <code>thumb</code>, we had to assign <code>pointermove</code> event handler on the whole <code>document</code>.</p> 
+         <p>That solution looks a bit ???dirty???. One of the problems is that pointer movements around the document may cause side effects, trigger other event handlers, totally not related to the slider.</p> 
+         <p>Pointer capturing provides a means to bind <code>pointermove</code> to <code>thumb</code> and avoid any such problems:</p> 
+         <ul> 
+          <li>We can call <code>thumb.setPointerCapture(event.pointerId)</code> in <code>pointerdown</code> handler,</li> 
+          <li>Then future pointer events until <code>pointerup/cancel</code> will be retargeted to <code>thumb</code>.</li> 
+          <li>When <code>pointerup</code> happens (dragging complete), the binding is removed automatically, we don???t need to care about it.</li> 
+         </ul> 
+         <p>So, even if the user moves the pointer around the whole document, events handlers will be called on <code>thumb</code>. Besides, coordinate properties of the event objects, such as <code>clientX/clientY</code> will still be correct ??? the capturing only affects <code>target/currentTarget</code>.</p> 
+         <p>Here???s the essential code:</p> 
+         <div id="scicv6v825" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>thumb.onpointerdown = function(event) {
+  // retarget all pointer events (until pointerup) to thumb
+  thumb.setPointerCapture(event.pointerId);
+};
+
+thumb.onpointermove = function(event) {
+  // moving the slider: listen on the thumb, as all pointer events are retargeted to it
+  let newLeft = event.clientX - slider.getBoundingClientRect().left;
+  thumb.style.left = newLeft + 'px';
+};
+
+// note: no need to call thumb.releasePointerCapture,
+// it happens on pointerup automatically</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The full demo:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/AjSl1iz223rslAUC?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="AjSl1iz223rslAUC" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:100px" src="https://id.js.cx/article/pointer-events/slider/"></iframe> 
+         </div> 
+         <p>At the end, pointer capturing gives us two benefits:</p> 
+         <ol> 
+          <li>The code becomes cleaner as we don???t need to add/remove handlers on the whole <code>document</code> any more. The binding is released automatically.</li> 
+          <li>If there are any <code>pointermove</code> handlers in the document, they won???t be accidentally triggered by the pointer while the user is dragging the slider.</li> 
+         </ol> 
+         <h3><a class="main__anchor" name="pointer-capturing-events" href="pointer-events.html#pointer-capturing-events">Pointer capturing events</a></h3> 
+         <p>There are two associated pointer events:</p> 
+         <ul> 
+          <li><code>gotpointercapture</code> fires when an element uses <code>setPointerCapture</code> to enable capturing.</li> 
+          <li><code>lostpointercapture</code> fires when the capture is released: either explicitly with <code>releasePointerCapture</code> call, or automatically on <code>pointerup</code>/<code>pointercancel</code>.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="summary" href="pointer-events.html#summary">Summary</a></h2> 
+         <p>Pointer events allow handling mouse, touch and pen events simultaneously, with a single piece of code.</p> 
+         <p>Pointer events extend mouse events. We can replace <code>mouse</code> with <code>pointer</code> in event names and expect our code to continue working for mouse, with better support for other device types.</p> 
+         <p>For drag???n???drops and complex touch interactions that the browser may decide to hijack and handle on its own ??? remember to cancel the default action on events and set <code>touch-events: none</code> in CSS for elements that we engage.</p> 
+         <p>Additional abilities of pointer events are:</p> 
+         <ul> 
+          <li>Multi-touch support using <code>pointerId</code> and <code>isPrimary</code>.</li> 
+          <li>Device-specific properties, such as <code>pressure</code>, <code>width/height</code>, and others.</li> 
+          <li>Pointer capturing: we can retarget all pointer events to a specific element until <code>pointerup</code>/<code>pointercancel</code>.</li> 
+         </ul> 
+         <p>As of now, pointer events are supported in all major browsers, so we can safely switch to them, especially if IE10- and Safari 12- are not needed. And even with those browsers, there are polyfills that enable the support of pointer events.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="mouse-drag-and-drop.html" data-tooltip="Drag'n'Drop with mouse events"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="keyboard-events.html" data-tooltip="Keyboard: keydown and keyup"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpointer-events" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpointer-events" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="event-details.html">UI Events</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="pointer-events.html#the-brief-history">The brief history</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="pointer-events.html#pointer-event-types">Pointer event types</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="pointer-events.html#pointer-event-properties">Pointer event properties</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="pointer-events.html#multi-touch">Multi-touch</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="pointer-events.html#event-pointercancel">Event: pointercancel</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="pointer-events.html#pointer-capturing">Pointer capturing</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="pointer-events.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="pointer-events.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpointer-events" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fpointer-events" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

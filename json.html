@@ -1,0 +1,1033 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "tw";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Metode JSON, toJSON</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="json.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Metode JSON, toJSON"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Metode JSON, toJSON"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="date.html"> 
+  <link rel="next" href="advanced-functions.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Metode JSON, toJSON"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fjson" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fjson" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="48" max="92" data-tooltip="Pelajaran 48 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Metode JSON, toJSON</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Metode JSON, toJSON"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Anggap saja kita memiliki sebuah objek yang kompleks, dan kita ingin mengonversinya menjadi sebuah <em>string</em>, mengirimnya melalui sebuah jaringan atau hanya menghasilkan <em>string</em> tersebut untuk tujuan pencatatan.</p> 
+         <p>Secara alami, <em>string</em> seperti contoh di atas seharusnya sudah termasuk semua properti-properti penting di dalamnya.</p> 
+         <p>Kita bisa mengimplementasikan konversi tersebut seperti ini:</p> 
+         <div id="8z5jz03mk" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30,
+
+  toString() {
+    return `{name: "${this.name}", age: ${this.age}}`;
+  }
+};
+
+alert(user); // {name: "John", age: 30}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Tetapi dalam proses pengembangan, properti-properti baru ditambahkan, properti-properti yang lama diganti nama baru dan dipindahkan. Memperbarui seperti <code>toStrong</code> setiap saat bisa jadi sangat menyebalkan. Kita bisa coba untuk memberi properti-properti tersebut perulangan dalam proses pengembangan, tetapi apa yang terjadi jika objeknya kompleks dan memiliki objek yang bersarang (<em>nested</em>) dalam propertinya? Kita pastinya perlu untuk mengimplementasikan konversinya juga.</p> 
+         <p>Untungnya, (kita) tak perlu untuk menulis kode untuk menangani semua hal ini. Tugas tersebut sudah terpecahkan solusinya.</p> 
+         <h2><a class="main__anchor" name="json-stringify" href="json.html#json-stringify">JSON.stringify</a></h2> 
+         <p><a href="http://en.wikipedia.org/wiki/JSON">JSON</a> (<em>JavaScript Object Notation</em>) adalah sebuah format umum yang merepresentasikan nilai-nilai dan objek. JSON dideskripsikan sebagaimana dalam standar <a href="http://tools.ietf.org/html/rfc4627">RFC 4627</a>. Awalnya JSON dibuat untuk JavaScript, tapi banyak bahasa pemrograman lain memiliki <em>library</em> untuk menangani JSON juga. Oleh karena itu, kini jadi mudah untuk menggunakan JSON untuk tujuan pertukaran data ketika klien menggunakan JavaScript dan server ditulis menggunakan bahasa pemrograman Ruby/PHP/Java/apapun itu.</p> 
+         <p>JavaScript menyediakan metode-metode seperti:</p> 
+         <ul> 
+          <li><code>JSON.stringify</code> untuk mengoversi objek menjadi JSON.</li> 
+          <li><code>JSON.parse</code> untuk mengonversi balik JSON menjadi sebuah objek.</li> 
+         </ul> 
+         <p>For instance, here we <code>JSON.stringify</code> a student:</p> 
+         <div id="rhj20mymgw" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:13,&quot;end&quot;:21},{&quot;start&quot;:8,&quot;end&quot;:8}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let student = {
+  name: 'John',
+  age: 30,
+  isAdmin: false,
+  courses: ['html', 'css', 'js'],
+  wife: null
+};
+
+let json = JSON.stringify(student);
+
+alert(typeof json); // we've got a string!
+
+alert(json);
+/* JSON-encoded object:
+{
+  "name": "John",
+  "age": 30,
+  "isAdmin": false,
+  "courses": ["html", "css", "js"],
+  "wife": null
+}
+*/</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Metode <code>JSON.stringify(student)</code> mengambil objek dan mengonversikan objek tersebut menjadi sebuah <em>string</em>.</p> 
+         <p>Hasil <em>string</em> <code>json</code> disebut sebagai sebuah objek <em>JSON-encoded</em> atau <em>serialized</em> atau <em>stringified</em> atau <em>marshalled</em>. Kita kini siap utnuk mengirimnya melalui jaringan atau menyimpannya ke sebuah penyimpanan data.</p> 
+         <p>Mohon diingat bahwa sebuah objek <em>JSON-encoded</em> memiliki beberapa perbedaan penting dari objek secara harfiah:</p> 
+         <ul> 
+          <li><em>String</em> menggunakan tanda kutip. Dalam JSON tidak menggunakan tanda petik atau <em>backtick</em>. Jadi <code>'John'</code> menjadi <code>"John"</code>.</li> 
+          <li>Nama-nama properti objek diberi tanda kutip juga. Hal ini wajib dilakukan. Jadi <code>age:30</code> menjadi <code>"age":30</code>.</li> 
+         </ul> 
+         <p><code>JSON.stringify</code> bisa juga bisa diterapkan ke (tipe data) <em>primitive</em>.</p> 
+         <p>JSON mendukung tipe-tipe data berikut ini:</p> 
+         <ul> 
+          <li>Objek <code>{ ... }</code></li> 
+          <li><em>Array</em> <code>[ ... ]</code></li> 
+          <li><em>Primitive</em>: 
+           <ul> 
+            <li><em>string</em>,</li> 
+            <li>angka (<em>number</em>),</li> 
+            <li>nilai-nilai <em>boolean</em> <code>true/false</code>,</li> 
+            <li><code>null</code>.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>Sebagai contoh:</p> 
+         <div id="dj59zxvzaw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// sebuah number(angka) dalam JSON hanyalah sebuah number
+alert( JSON.stringify(1) ) // 1
+
+// sebuah string dalam JSON tetaplah sebuah string, namun diberi tanda kutip
+alert( JSON.stringify('test') ) // "test"
+
+alert( JSON.stringify(true) ); // true
+
+alert( JSON.stringify([1, 2, 3]) ); // [1,2,3]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>JSON adalah spessifikasi yang hanya terdiri dari data dan tidak terlekat bahasa pemrograman tertentu (<em>data-only language-independent</em>), jadi beberapa properti objek yang spesifik pada JavaScript akan dilewati oleh <code>JSON.stringify</code>.</p> 
+         <p>Properti-properti objek yang spesifik pada JavaScript tersebut yakni:</p> 
+         <ul> 
+          <li>Properti fungsi (metode-metode).</li> 
+          <li>Properti simbolis.</li> 
+          <li>Propert yang menyimpan <code>undefined</code>.</li> 
+         </ul> 
+         <div id="n2x2zetfi3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  sayHi() { // diabaikan
+    alert("Hello");
+  },
+  [Symbol("id")]: 123, // ignored
+  something: undefined // diabaikan
+};
+
+alert( JSON.stringify(user) ); // {} (objek kosong)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Biasanya hal tersebut tidak masalah. Jika itu tidak kita inginkan, kita akan melihat bagaimana cara untuk meng-kustomisasi proses tersebut.</p> 
+         <p>Hal bagusnya adalah objek-objek yang <em>nested</em> secara otomatis didukung dan dikonversikan.</p> 
+         <p>Contohnya:</p> 
+         <div id="pth6bzzj2t" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let meetup = {
+  title: "Conference",
+  room: {
+    number: 23,
+    participants: ["john", "ann"]
+  }
+};
+
+alert( JSON.stringify(meetup) );
+/* Keseluruhan struktur di-stringify:
+{
+  "title":"Conference",
+  "room":{"number":23,"participants":["john","ann"]},
+}
+*/</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Batasan penting: tidak boleh ada rujukan/referensi yang sirkular/berputar-putar.</p> 
+         <p>Contohnya:</p> 
+         <div id="lbillqyyp6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:12}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  participants: ["john", "ann"]
+};
+
+meetup.place = room;       // meetup mereferensikan room
+room.occupiedBy = meetup; // room mereferensikan meetup
+
+JSON.stringify(meetup); // Error: Converting circular structure to JSON</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini, konversi gagal, karena adanya referensi yang memutar/sirkular: <code>room.occupiedBy</code> mereferensikan ke <code>meetup</code>, dan <code>meetup.place</code> mereferensikan ke <code>room</code>:</p> 
+         <figure> 
+          <div class="image" style="width:212px"> 
+           <div class="image__ratio" style="padding-top:90.56603773584906%"></div> 
+           <object type="image/svg+xml" data="article/json/json-meetup.svg" width="212" height="192" class="image__image" data-use-theme> <img src="article/json/json-meetup.svg" alt="" width="212" height="192"> </object> 
+          </div> 
+         </figure> 
+         <h2><a class="main__anchor" name="mengecualikan-dan-mengubah-replacer" href="json.html#mengecualikan-dan-mengubah-replacer">Mengecualikan dan mengubah: <em>replacer</em></a></h2> 
+         <p>Sintaks lengkap dari <code>JSON.stringify</code> adalah:</p> 
+         <div id="2nh97d4w5j" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let json = JSON.stringify(value[, replacer, space])</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <dl> 
+          <dt> 
+           <em>value</em> 
+          </dt> 
+          <dd>
+            Sebuah nilai untuk di- 
+           <em>encode</em>. 
+          </dd> 
+          <dt> 
+           <em>replacer</em> 
+          </dt> 
+          <dd> 
+           <em>Array</em> properti untuk di- 
+           <em>encode</em> atau sebuah fungsi pemetaan 
+           <code>function(key, value)</code>. 
+          </dd> 
+          <dt> 
+           <em>space</em> 
+          </dt> 
+          <dd>
+            Jumlah ruang yang digunakan untuk proses 
+           <em>formatting</em>. 
+          </dd> 
+         </dl> 
+         <p>Seringkali, <code>JSON.stringify</code> digunakan dengan hanya sebuah argumen pertama. Tapi jika kita perlu untuk menyetel dengan baik proses pergantian tersebut, seperti menyaring referensi-referensi sirkular, kita dapat menggunakan argumen kedua dari <code>JSON.stringify</code>.</p> 
+         <p>Jika kita mengoper sebuah <em>array</em> properti ke proses tersebut, hanya properti-properti berikut ini yang akan di-<em>encode</em>.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="x9fi78m0cu" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;cols&quot;:[{&quot;start&quot;:30,&quot;end&quot;:55}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  participants: [{name: "John"}, {name: "Alice"}],
+  place: room // meetup mereferensikan room
+};
+
+room.occupiedBy = meetup; // room mereferensikan meetup
+
+alert( JSON.stringify(meetup, ['title', 'participants']) );
+// {"title":"Conference","participants":[{},{}]}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kini kita bisa jadi terlalu ketat (dalam mendeklarasikan). Daftar properti tersbeut diterapkan ke keseluruhan struktur objek. Jadi objek-objek dalam <code>participants</code> kosong, karena <code>name</code> tidak ada dalam daftar.</p> 
+         <p>Mari memasukkan semua properti ke dalam daftar kecuali properti <code>room.occupiedBy</code> yang dapat menyebabkan referensi sirkular:</p> 
+         <div id="j0no2t82v" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;cols&quot;:[{&quot;start&quot;:30,&quot;end&quot;:82}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  participants: [{name: "John"}, {name: "Alice"}],
+  place: room // meetup mereferensikan room
+};
+
+room.occupiedBy = meetup; // room mereferensikan meetup
+
+alert( JSON.stringify(meetup, ['title', 'participants', 'place', 'name', 'number']) );
+/*
+{
+  "title":"Conference",
+  "participants":[{"name":"John"},{"name":"Alice"}],
+  "place":{"number":23}
+}
+*/</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kini semuanya kecuali <code>occupiedBy</code> sudah di-serialisasi. Tapi daftar propertinya masih cukup panjang.</p> 
+         <p>Untungnya, kita bisa menggunakan sebuah fungsi ketimbang sebuah <em>array</em> sebagai <code>replacer</code>.</p> 
+         <p>Fungsi tersebut akan dipanggil pada setiap pasangan <code>(key, value)</code> dan mengembalikan nilai ???replaced???, yang mana akan digunakan dan bukan nilai aslinya. Atau <code>undefined</code> jika nilai tersebut diatur agar dilewatkan.</p> 
+         <p>Dalam kasus kita, kita bisa mengembalikan <code>value</code> ???as is??? untuk semua hal kecuali <code>occupiedBy</code>. Untuk mengabaikan <code>occupiedBy</code>, kode berikut ini mengembalikan <code>undefined</code>:</p> 
+         <div id="4d13fdfoz9" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  participants: [{name: "John"}, {name: "Alice"}],
+  place: room // meetup mereferensikan room
+};
+
+room.occupiedBy = meetup; // room mereferensikan meetup
+
+alert( JSON.stringify(meetup, function replacer(key, value) {
+  alert(`${key}: ${value}`);
+  return (key == 'occupiedBy') ? undefined : value;
+}));
+
+/* pasangan key:value yang menuju ke replacer:
+:             [object Object]
+title:        Conference
+participants: [object Object],[object Object]
+0:            [object Object]
+name:         John
+1:            [object Object]
+name:         Alice
+place:        [object Object]
+number:       23
+occupiedBy: [object Object]
+*/</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mohon diingat, bahwa fungsi <code>replacer</code> mendapatkan setiap pasang <em>key/value</em> termasuk objek-objek <em>nested</em> dan <em>item</em> dalam <em>array</em>. Hal tersebut dapat diterapakn berulang (<em>recursive</em>). Nilai dari <code>this</code> dalam <code>replacer</code> adalah objek yang mengendung properti yang sekarang.</p> 
+         <p>Panggilan pertama itu khusus. Panggilan pertama tersebut dibuat menggunakan sebuah ???wrapper object??? yang khusus: <code>{"": meetup}</code>. Dengan kata lain, pasangan <code>(key, value)</code> pertama memiliki sebuah kunci kosong, dan nilainya adalah objek sasaran seutuhnya. Itulah mengapa baris pertama dalam contoh di atas adalah <code>":[object Object]"</code>.</p> 
+         <p>Ide tersebut adalah untuk menyediakan sebanyak mungkin kemampuan pada <code>replacer</code>: ide tersebut punya sebuah kesempatan untuk menganalisis dan menggantikan/melewatkan hingga keseluruhan objek jika perlu.</p> 
+         <h2><a class="main__anchor" name="proses-formatting-space" href="json.html#proses-formatting-space">Proses <em>Formatting</em>: <em>space</em></a></h2> 
+         <p>Argumen ke-tiga dari <code>JSON.stringify(value, replacer, space)</code> adalah jumlah ruang (<em>space</em>) yang digunakan untuk <em>formatting</em> yang apik.</p> 
+         <p>Sebelumnya, semua objek yang di-<em>stringify</em> tidak memiliki ruang tambahan. Hal tersebut tidak masalah jika kita ingin mengirim sebuah objek melalui sebuah jaringan. Argumen <code>space</code> digunakan secara ekslusif demi sebuah hasil yang apik.</p> 
+         <p>Di sini <code>space = 2</code> memberitahukan JavaScript untuk menunjukkan objek-objek <em>nested</em> pada beberapa baris, dengan kedalaman (<em>indentation</em>) sebanyak 2 ruang (<em>space</em>) di dalam sebuah objek:</p> 
+         <div id="meo34xg099" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 25,
+  roles: {
+    isAdmin: false,
+    isEditor: true
+  }
+};
+
+alert(JSON.stringify(user, null, 2));
+/* indent dengan dua spasi:
+{
+  "name": "John",
+  "age": 25,
+  "roles": {
+    "isAdmin": false,
+    "isEditor": true
+  }
+}
+*/
+
+/* untuk JSON.stringify(user, null, 4) hasilnya kan lebih menjorok ke dalam:
+{
+    "name": "John",
+    "age": 25,
+    "roles": {
+        "isAdmin": false,
+        "isEditor": true
+    }
+}
+*/</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Parameter <code>space</code> digunakan hanya untuk pencatatan dan tujuan-tujuan yang bertujuan menghasilkan <em>output</em> yang apik.</p> 
+         <h2><a class="main__anchor" name="tojson-khusus" href="json.html#tojson-khusus">???toJSON??? khusus</a></h2> 
+         <p>Seperti <code>toString</code> untuk konversi <em>string</em>, sebuah objek dapat menyediakan metode <code>toJSON</code> untuk konversi ke JSON. <code>JSON.stringify</code> secara otomatis akan memanggil metode tersebut jika tersedia.</p> 
+         <p>Contohnya:</p> 
+         <div id="bhj88l9zyu" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:14,&quot;end&quot;:14}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  date: new Date(Date.UTC(2017, 0, 1)),
+  room
+};
+
+alert( JSON.stringify(meetup) );
+/*
+  {
+    "title":"Conference",
+    "date":"2017-01-01T00:00:00.000Z",  // (1)
+    "room": {"number":23}               // (2)
+  }
+*/</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini kita bisa lihat bahwa <code>date</code> <code>(1)</code> menjadi sebuah <em>string</em>. Itu karena semua tanggal memiliki sebuah metode <code>toJSON</code> yang sudah <em>built-in</em> yang mana mengembalikan <em>string</em> seperti itu.</p> 
+         <p>Kini mari menambahkan sebuah <code>toJSON</code> khusus untuk objek kita <code>room</code> <code>(2)</code>:</p> 
+         <div id="h6r3zn8wws" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:18,&quot;end&quot;:18},{&quot;start&quot;:12,&quot;end&quot;:12},{&quot;start&quot;:2,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let room = {
+  number: 23,
+  toJSON() {
+    return this.number;
+  }
+};
+
+let meetup = {
+  title: "Conference",
+  room
+};
+
+alert( JSON.stringify(room) ); // 23
+
+alert( JSON.stringify(meetup) );
+/*
+  {
+    "title":"Conference",
+    "room": 23
+  }
+*/</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang kita lihat, <code>toJSON</code> digunakan untuk memanggil langsung <code>JSON.stringify(room)</code> serta ketikan <code>room</code> bersarang (<em>nested</em>) dalam objek lain yang ter-<em>encode</em>.</p> 
+         <h2><a class="main__anchor" name="json-parse" href="json.html#json-parse">JSON.parse</a></h2> 
+         <p>Untuk men-<em>decode</em> sebuah <em>string</em> JSON, kita memerlukan sebuah metode lain bernama <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse</a>.</p> 
+         <p>Sintaksnya:</p> 
+         <div id="l463ic6h6z" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let value = JSON.parse(str, [reviver]);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <dl> 
+          <dt> 
+           <em>str</em> 
+          </dt> 
+          <dd> 
+           <em>string</em> JSON untuk di- 
+           <em>parse</em>. 
+          </dd> 
+          <dt> 
+           <em>reviver</em> 
+          </dt> 
+          <dd>
+            Fungsi opsional ( 
+           <em>key,value</em>) yang akan dipanggil setiap pasang 
+           <code>(key, value)</code> dan dapat mengubah nilai. 
+          </dd> 
+         </dl> 
+         <p>Sebagai contoh:</p> 
+         <div id="cv96hvcs5h" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// array yang di-stringify
+let numbers = "[0, 1, 2, 3]";
+
+numbers = JSON.parse(numbers);
+
+alert( numbers[1] ); // 1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Atau untuk objek-objek yang <em>nested</em>:</p> 
+         <div id="n4hxd9pypi" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let userData = '{ "name": "John", "age": 35, "isAdmin": false, "friends": [0,1,2,3] }';
+
+let user = JSON.parse(userData);
+
+alert( user.friends[1] ); // 1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>JSON bisa saja menjadi kompleks seiring jika perlu, objek-objek dan <em>array</em> bisa sudah termasuk objek-objek lain serta <em>array</em> lain. Namun, mereka (objek dan <em>array</em> lain tersebut) harus mematuhi format JSON yang sama.</p> 
+         <p>Berikut ini adalah beberapa kesalahan umum saat penulisan langsung JSON (terkadang kita harus menuliskannya untuk tujuan <em>debugging</em>):</p> 
+         <div id="4empg7y1lm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;cols&quot;:[{&quot;start&quot;:14,&quot;end&quot;:34}]},{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:2,&quot;end&quot;:11}]},{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:13,&quot;end&quot;:20}]},{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:2,&quot;end&quot;:6}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let json = `{
+  name: "John",                     // kesalahan: nama properti tanpa tanda kutip
+  "surname": 'Smith',               // kesalahan: nilai menggunakan tanda petik (harus tanda kutip)
+  'isAdmin': false                  // kesalahan: menggunakan tanda petik pada key (harus tanda kutip)
+  "birthday": new Date(2000, 2, 3), // kesalahan: tidak boleh ada "new", hanya berupa nilai saja
+  "friends": [0,1,2,3]              // tidak ada kesalahan
+}`;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Selaain itu semua, JSON tidak mendukung komentar. Menambahkan sebuah komentar ke JSON akan membuat JSON tersebut tidak valid.</p> 
+         <p>Terdapat format lain yang dinamakan <a href="http://json5.org/">JSON5</a>, yang mengizinkan <em>key</em> tanpa tanda kutip, adanya komentar dan lain-lain. Tapi ini adalah <em>library</em> yang berdiri sendiri, tidak terdapat dalam spesifikasi bahasa pemrograman.</p> 
+         <p>JSON biasa memang seketat itu bukan karena para pengembangnya malas, tetapi agar implementasinya mudah, dapat diandalkan dan cepat saat proses <em>parsing</em> algoritma.</p> 
+         <h2><a class="main__anchor" name="menggunakan-reviver" href="json.html#menggunakan-reviver">Menggunakan <em>reviver</em></a></h2> 
+         <p>Bayangkan, kita mendapat sebuah objek <code>meetup</code> yang telah di-<em>stringify</em> dari server.</p> 
+         <p>Objek tersebut akan terlihat seperti ini:</p> 
+         <div id="76iwee2kas" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// title: (judul meetup), date: (tanggal meetup)
+let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Dan sekarang kita perlu untuk men-deserialisasi (<em>deserialize</em>) objek itu, untuk mengembalikannya menjadi objek JavaScript.</p> 
+         <p>Mari lakukan dengan memamnggil <code>JSON.parse</code>:</p> 
+         <div id="9z6ka9wbch" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+
+let meetup = JSON.parse(str);
+
+alert( meetup.date.getDate() ); // Error!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Upps! Ada error!</p> 
+         <p>Nilai dari <code>meetup.date</code> adalah sebuah <em>string</em>, bukan sebuah objek <code>Date</code>. Bagaimana cara <code>JSON.parse</code> tahu bahwa ia harus mengubah <em>string</em> itu menjadi sebuah <code>Date</code>?</p> 
+         <p>Mari oper ke <code>JSON.parse</code> fungsi yang digunakan lagi sebagai argumen kedua, yang mengembalikan semua nilai ???as is???, tetapi <code>date</code> akan menjadi sebuah objek <code>Date</code> dengan format yang benar:</p> 
+         <div id="s95hka60z0" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+
+let meetup = JSON.parse(str, function(key, value) {
+  if (key == 'date') return new Date(value);
+  return value;
+});
+
+alert( meetup.date.getDate() ); // kini bekerja!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>By the way, that works for nested objects as well:</p> 
+         <div id="uzfj4e7q33" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:12}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let schedule = `{
+  "meetups": [
+    {"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
+    {"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
+  ]
+}`;
+
+schedule = JSON.parse(schedule, function(key, value) {
+  if (key == 'date') return new Date(value);
+  return value;
+});
+
+alert( schedule.meetups[1].date.getDate() ); // berhasil bekerja!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="kesimpulan" href="json.html#kesimpulan">Kesimpulan</a></h2> 
+         <ul> 
+          <li>JSON adalah sebuah format data yang memiliki standar dan <em>library</em>-nya sendiri untuk sebagian besar bahasa-bahasa pemrograman.</li> 
+          <li>JSON mendukung objek-objek polos, <em>array</em>, <em>string</em>, angka, <em>boolean</em>, dan <code>null</code>.</li> 
+          <li>JavaScript menyediakan metode-metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a> untuk men-serialisasi objek menjadi JSON serta <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse</a> untuk menbaca objek dari JSON.</li> 
+          <li>Kedua metode tersebut mendukung fungsi-fungsi pengubah untuk proses pembacaan (<em>reading</em>)/penulisan (<em>writing</em>) yang cerdas.</li> 
+          <li>Jika sebuah objek memiliki <code>toJSON</code>, lalu metode tersebut akan dipanggil oleh <code>JSON.stringify</code>.</li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="json.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="json.html#ubah-objek-menjadi-json-dan-sebaliknya" name="ubah-objek-menjadi-json-dan-sebaliknya">Ubah objek menjadi JSON dan sebaliknya</a></h3> 
+           <a class="task__open-link" href="task/serialize-object.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ubahlah <code>user</code> menjadi JSON dan kemudian baca kembali menjadi variabel lain.</p> 
+            <div id="pv2ip5y3p4" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John Smith",
+  age: 35
+};</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="8c69fp3c2t" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John Smith",
+  age: 35
+};
+
+let user2 = JSON.parse(JSON.stringify(user));</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="json.html#tidak-memasukkan-referensi-balik" name="tidak-memasukkan-referensi-balik">Tidak memasukkan referensi balik</a></h3> 
+           <a class="task__open-link" href="task/serialize-event-circular.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Dalam kasus-kasus sederhana tentang referensi sirkular, kita bisa tidak memasukkan sebuah properti tertentu dari proses serialisasi berdasarkan namanya.</p> 
+            <p>Namun terkadang kita tidak bisa menggunakan nama saja, sebagaimana bisa saja properti tersebut menggunakan referensi sirkular dan (berfungsi sebagai) properti normal. Jadi kita bisa memeriksa properti berdasarkan nilainya.</p> 
+            <p>Tulis fungsi <code>replacer</code> untuk me-<em>stringify</em> semuanya, tetapi menghilangkan propertii yang me-referensi ke <code>meetup</code>:</p> 
+            <div id="l8kiexrg8" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:12}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  occupiedBy: [{name: "John"}, {name: "Alice"}],
+  place: room
+};
+
+// referensi-referensi sirkular
+room.occupiedBy = meetup;
+meetup.self = meetup;
+
+alert( JSON.stringify(meetup, function replacer(key, value) {
+  /* kodemu */
+}));
+
+/* hasil yang diharapkan yakni:
+{
+  "title":"Conference",
+  "occupiedBy":[{"name":"John"},{"name":"Alice"}],
+  "place":{"number":23}
+}
+*/</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="sf7uch3tme" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="json.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="json.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let room = {
+  number: 23
+};
+
+let meetup = {
+  title: "Conference",
+  occupiedBy: [{name: "John"}, {name: "Alice"}],
+  place: room
+};
+
+room.occupiedBy = meetup;
+meetup.self = meetup;
+
+alert( JSON.stringify(meetup, function replacer(key, value) {
+  return (key != "" &amp;&amp; value == meetup) ? undefined : value;
+}));
+
+/*
+{
+  "title":"Conference",
+  "occupiedBy":[{"name":"John"},{"name":"Alice"}],
+  "place":{"number":23}
+}
+*/</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Disini kita juga perlu untuk menguji <code>key==""</code> untuk tidak memasukkan panggilan pertama dimana properti tersebut normal ketika <code>value</code> adalah <code>meetup</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="date.html" data-tooltip="Tanggal dan waktu"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="advanced-functions.html" data-tooltip="Penggunaan lanjutan fungsi"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fjson" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fjson" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="json.html#json-stringify">JSON.stringify</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="json.html#mengecualikan-dan-mengubah-replacer">Mengecualikan dan mengubah: <em>replacer</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="json.html#proses-formatting-space">Proses <em>Formatting</em>: <em>space</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="json.html#tojson-khusus">???toJSON??? khusus</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="json.html#json-parse">JSON.parse</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="json.html#menggunakan-reviver">Menggunakan <em>reviver</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="json.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="json.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="json.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fjson" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fjson" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

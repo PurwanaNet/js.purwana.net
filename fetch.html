@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Fetch</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="fetch.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Fetch"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Fetch"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="network.html"> 
+  <link rel="next" href="formdata.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Fetch"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffetch" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffetch" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="1" max="12" data-tooltip="Pelajaran 1 dari 12"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="network.html"><span>Network requests</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Network requests","item":"https://id.javascript.info/network"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 8 Oktober 2020"> 
+          <div class="updated-at__content">
+            8 Oktober 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Fetch</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Fetch"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Javascript bisa mengirim permintaan jaringan ke server dan memuat informasi baru saat dibutuhkan.</p> 
+         <p>Sebagai contoh, kita bisa menggunakan permintaan jaringan untuk:</p> 
+         <ul> 
+          <li>Mengirimkan sebuah pesanan.</li> 
+          <li>Memuat informasi pengguna.</li> 
+          <li>Menerima pembaharuan terbaru dari server.</li> 
+          <li>Dan lain sebagainya.</li> 
+         </ul> 
+         <p>???Dan semua itu tanpa memuat ulang halaman!</p> 
+         <p>Ada istilah <em>umbrella</em> AJAX(singkatan dari <b>A</b>synchronous <b>J</b>avaScript <b>A</b>nd <b>X</b>ML) untuk permintaan jaringan dari Javascript.</p> 
+         <p>Meskipun kita tidak perlu menggunakan XML : istilah ini berasal dari masa lalu, itulah kenapa kalimat ini ada. Kamu mungkin sudah mendengar istilah ini.</p> 
+         <p>Ada banyak cara untuk mengirimkan sebuah permintaan jaringan dan mendapatkan informasi dari server.</p> 
+         <p>Metode <code>fetch()</code> itu baru dan serba guna, jadi kita bisa mulai dari sini. metode ini tidak di dukung oleh browser lama (bisa memakai polyfill), tetapi sudah didukung oleh browser yang terbaru.</p> 
+         <p>sintaksis dasarnya :</p> 
+         <div id="s67uk4gzof" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let promise = fetch(url, [options])</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <ul> 
+          <li><strong><code>url</code></strong> ??? <em>URL</em> yang diakses.</li> 
+          <li><strong><code>options</code></strong> ??? parameter opsional : metode, <em>headers</em> dll.</li> 
+         </ul> 
+         <p>Jika tidak menggunakan <code>options</code>, dan hanya menggunakan permintaan <em>GET</em> sederhana,sudah bisa mengunduh isi dari <code>url</code>.</p> 
+         <p><em>Browser</em> segera memulai permintaan dan mengembalikan sebuah <em>promise</em> yang memanggil kode yang akan di pakai untuk mendapatkan hasil.</p> 
+         <p>Untuk mendapatkan sebuah tanggapan biasanya ada dua tahap proses.</p> 
+         <p><strong>Pertama, <em><code>promise</code></em>, akan dikembalikan oleh <code>fetch</code>, diselesaikan dengan sebuah objek <em>built-in</em> <a href="https://fetch.spec.whatwg.org/#response-kelas">Response</a> kelas secepat server menanggapi <em>headers</em></strong></p> 
+         <p>Di tahap ini kita bisa memeriksa status HTTP, untuk melihat apakah berhasil atau tidak, untuk memeriksa <em>headers</em>, tetapi belum memakai <em>body</em>.</p> 
+         <p><em>Promise</em> tidak akan dijalankan jika <code>fetch</code> tidak bisa membuat permintaan HTTP, contohnya saat ada masalah jaringan, atau tidak ada situs yang di arahkan. Status HTTP yang tidak normal, seperti 404 atau 500 tidak menimbulkan kesalahan.</p> 
+         <p>Kita bisa melihat status HTTP di properti tanggapan:</p> 
+         <ul> 
+          <li><strong><code>status</code></strong> ??? kode status misalnya 200.</li> 
+          <li><strong><code>ok</code></strong> ??? boolean, ???true??? jika kode status HTTP 200-299.</li> 
+         </ul> 
+         <p>Sebagai contoh :</p> 
+         <div id="drehrch0vr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let response = await fetch(url);
+
+if (response.ok) { // jika kode status 200-299
+  //dapatkan tanggapan *body* (caranya akan di jelaskan di bawah)
+  let json = await response.json();
+} else {
+  alert("HTTP-Error: " + response.status);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><strong>Kedua, untuk mendapatkan tanggapan <em>body</em> , kita perlu menggunakan metode pemanggilan tambahan</strong></p> 
+         <p><code>Response</code> menyediakan banyak metode berbasis <em>promise</em> untuk mengakses <em>body</em> dengan berbagai format:</p> 
+         <ul> 
+          <li><strong><code>response.text()</code></strong> ??? membaca tanggapan dan mengembalikan sebagai teks,</li> 
+          <li><strong><code>response.json()</code></strong> ??? mengurai tanggapan sebagai objek JSON,</li> 
+          <li><strong><code>response.formData()</code></strong> ??? mengembalikan tanggapan sebagai objek <code>FormData</code>(dijelaskan di <a href="formdata.html">bab selanjutnya</a>),</li> 
+          <li><strong><code>response.blob()</code></strong> ??? mengembalikan tanggapan sebagai <a href="blob.html">Blob</a> (tipe untuk data biner),</li> 
+          <li><strong><code>response.ArrayBuffer()</code></strong> ??? mengembalikan tanggapan sebagai <span class="markdown-error">Artikel "Arraybuffer-binary-Arrays" tidak ditemukan</span> (representasi tingkat rendah dari data biner),</li> 
+          <li>Sebagai tambahan, <code>response.body</code> adalah objek <a href="https://streams.spec.whatwg.org/#rs-kelas">ReadableStream</a>, hal ini memungkinkan untuk membaca bagian demi bagian <em>body</em>, kita akan melihat contohnya nanti.</li> 
+         </ul> 
+         <p>Contohnya, mari kita dapatkan objek JSON terbaru dari commit GitHub:</p> 
+         <div id="cazhbmq54n" data-trusted="1" class="code-example" data-async="1" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let url = 'https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits';
+let response = await fetch(url);
+
+let commits = await response.json(); //membaca tanggapan *body* dan menguraikan sebagai JSON
+
+alert(commits[0].author.login);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Atau, sama saja tanpa <code>await</code> , menggunakan sintaksis asli <em>promise</em>:</p> 
+         <div id="4hwkajpz6w" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
+  .then(response =&gt; response.json())
+  .then(commits =&gt; alert(commits[0].author.login));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk mendapatkan data respon dengan format teks, gunakan <code>await response.text()</code> daripada <code>.json()</code>:</p> 
+         <div id="1cxokyb07y" data-trusted="1" class="code-example" data-async="1"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
+
+let text = await response.text(); //membaca tanggapan *body* sebagai teks
+
+alert(text.slice(0, 80) + '...');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebagai contoh kasus untuk membaca dalam format biner, mari kita ambil dan menunjukkan gambar logo <a href="https://fetch.spec.whatwg.org">spesifikasi ???fetch???</a> (lihat bab <a href="blob.html">Blob</a> untuk detail tentang operasi di <code>Blob</code>):</p> 
+         <div id="cnud6g1fes" data-trusted="1" class="code-example" data-async="1" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let response = await fetch('/article/fetch/logo-fetch.svg');
+
+let blob = await response.blob(); //mengunduh sebagai objek Blob
+
+//membuat elemen &lt;img&gt;
+let img = document.createElement('img');
+img.style = 'position:fixed;top:10px;left:10px;width:100px';
+document.body.append(img);
+
+//menampilkan item
+img.src = URL.createObjectURL(blob);
+
+setTimeout(() =&gt; { //menyembunyikan setelah 3 detik
+  img.remove();
+  URL.revokeObjectURL(img.src);
+}, 3000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Penting:</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Kita hanya bisa memilih satu dari beberapa metode untuk membaca <em>body</em>.</p> 
+           <p>Jika kita sudah mendapatkan tanggapan dengan <code>response.text()</code> , maka <code>response.json()</code> tidak akan bekerja, karena isi <em>body</em> sudah di proses lebih awal.</p> 
+           <div id="wj27bby7qh" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let text = await response.text(); //tanggapan *body* sudah di konsumsi
+let parsed = await response.json(); //gagal (sudah di konsumsi)</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="response-headers" href="fetch.html#response-headers">Response headers</a></h2> 
+         <p>Tanggapan headers tersedia seperti objek <em>Map headers</em> di <code>response.headers</code>.</p> 
+         <p>Ini tidak seperti <em>Map</em>, tetapi memiliki metode yang mirip untuk mendapatkan <em>headers</em> individu dengan nama atau mengulangi item:</p> 
+         <div id="u6wf1crby1" data-trusted="1" class="code-example" data-async="1"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits');
+
+//dapatkan satu header
+alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
+
+//mengulangi semua header
+for (let [key, value] of response.headers) {
+  alert(`${key} = ${value}`);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="response-headers-2" href="fetch.html#response-headers-2">Response headers</a></h2> 
+         <p>Untuk mengatur permintaan header di <code>fetch</code> , kita bisa menggunakan <code>headers</code> <em>option</em> yang memiliki sebuah objek dengan <em>headers</em> diluar, seperti ini:</p> 
+         <div id="2yc3go9qog" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let response = fetch(protectedUrl, {
+  headers: {
+    Authentication: 'secret'
+  }
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Tetapi ada daftar <a href="https://fetch.spec.whatwg.org/#forbidden-header-name">headers HTTP yang di larang</a> yang tidak boleh kita gunakan :</p> 
+         <ul> 
+          <li><code>Accept-Charset</code>, <code>Accept-Encoding</code></li> 
+          <li><code>Access-Control-Request-Headers</code></li> 
+          <li><code>Access-Control-Request-Method</code></li> 
+          <li><code>Connection</code></li> 
+          <li><code>Content-Length</code></li> 
+          <li><code>Cookie</code>, <code>Cookie2</code></li> 
+          <li><code>Date</code></li> 
+          <li><code>DNT</code></li> 
+          <li><code>Expect</code></li> 
+          <li><code>Host</code></li> 
+          <li><code>Keep-Alive</code></li> 
+          <li><code>Origin</code></li> 
+          <li><code>Referer</code></li> 
+          <li><code>TE</code></li> 
+          <li><code>Trailer</code></li> 
+          <li><code>Transfer-Encoding</code></li> 
+          <li><code>Upgrade</code></li> 
+          <li><code>Via</code></li> 
+          <li><code>Proxy-*</code></li> 
+          <li><code>Sec-*</code></li> 
+         </ul> 
+         <p>Header ini memastikan HTTP yang tepat dan aman, jadi mereka khusus dikendalikan oleh browser.</p> 
+         <h2><a class="main__anchor" name="post-request" href="fetch.html#post-request">POST Request</a></h2> 
+         <p>Untuk membuat sebuah permintaan <code>POST</code> , atau sebuah permintaan dengan metode lain, kita perlu menggunakan <em>option</em> <code>fetch</code>:</p> 
+         <ul> 
+          <li><strong><code>method</code></strong> ??? metode HTTP, misalnya <code>POST</code>,</li> 
+          <li><strong><code>body</code></strong> ??? permintaan <em>body</em>, satu dari: 
+           <ul> 
+            <li>sebuah string (misalnya dikodekan JSON),</li> 
+            <li>objek <code>FormData</code>, untuk mengirimkan data sebagai <code>form/multipart</code>,</li> 
+            <li><code>Blob</code>/<code>BufferSource</code> untuk mengirimkan data biner,</li> 
+            <li><a href="url.html">URLSearchParams</a>, untuk mengirimkan data di <code>x-www-form-urlencoded</code> pengkodean, jarang digunakan.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>Format JSON adalah yang paling banyak digunakan sepanjang waktu.</p> 
+         <p>Contohnya, kode ini mengirimkan objek <code>user</code> sebagai JSON:</p> 
+         <div id="hmutxq1gsf" data-trusted="1" class="code-example" data-async="1" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:11}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: 'John',
+  surname: 'Smith'
+};
+
+let response = await fetch('/article/fetch/post/user', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json;charset=utf-8'
+  },
+  body: JSON.stringify(user)
+});
+
+let result = await response.json();
+alert(result.message);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perlu dicatat, jika permintaan <em><code>body</code></em> berupa string, maka <em>header</em> <code>Content-Type</code> akan di atur <code>text/plain;charset=UTF-8</code> sebagai default.</p> 
+         <p>Tetapi, karena kita akan mengirim JSON kita menggunakan pilihan <code>headers</code> untuk mengirim <code>application/json</code>, <code>Content-Type</code> sebagai jenis data yang benar untuk data pengkodean JSON.</p> 
+         <h2><a class="main__anchor" name="mengirim-sebuah-gambar" href="fetch.html#mengirim-sebuah-gambar">Mengirim sebuah gambar</a></h2> 
+         <p>Kita juga bisa mengirimkan data biner dengan <code>fetch</code> menggunakan objek <code>Blob</code> atau <code>BufferSource</code>.</p> 
+         <p>Di contoh ini, ada <code>&lt;canvas&gt;</code> dimana kita bisa menggambar dengan memindahkan mouse diatasnya. Setiap klik di tombol ???<em>submit</em>??? mengirimkan gambar ke <em>server</em>:</p> 
+         <div id="u6wsbfbho8" data-trusted="1" class="code-example" data-demo-height="90" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="fetch.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;body style="margin:0"&gt;
+  &lt;canvas id="canvasElem" width="100" height="80" style="border:1px solid"&gt;&lt;/canvas&gt;
+
+  &lt;input type="button" value="Submit" onclick="submit()"&gt;
+
+  &lt;script&gt;
+    canvasElem.onmousemove = function(e) {
+      let ctx = canvasElem.getContext('2d');
+      ctx.lineTo(e.clientX, e.clientY);
+      ctx.stroke();
+    };
+
+    async function submit() {
+      let blob = await new promise(resolve =&gt; canvasElem.toBlob(resolve, 'image/png'));
+      let response = await fetch('/article/fetch/post/image', {
+        method: 'POST',
+        body: blob
+      });
+
+      // *server* menanggapi dengan konfirmasi dan ukuran gambar
+      let result = await response.json();
+      alert(result.message);
+    }
+
+  &lt;/script&gt;
+&lt;/body&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-u6wsbfbho8" style="height:90px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Perlu dicatat, disini kita tidak akan mengatur <em>header</em> <code>Content-Type</code> secara manual, karena sebuah objek <code>Blob</code> memiliki tipe <em>built-in</em> (<code>image/png</code>, di hasilkan menjadi <code>toBlob</code>). Untuk tipe objek <code>Blob</code> menjadi nilai dari <code>Content-Type</code>.</p> 
+         <p>Fungsi <code>submit()</code> bisa ditulis ulang tanpa <code>async/await</code> seperti ini:</p> 
+         <div id="7rh38lcrjz" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function submit() {
+  canvasElem.toBlob(function(blob) {
+    fetch('/article/fetch/post/image', {
+      method: 'POST',
+      body: blob
+    })
+      .then(response =&gt; response.json())
+      .then(result =&gt; alert(JSON.stringify(result, null, 2)))
+  }, 'image/png');
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="fetch.html#ringkasan">Ringkasan</a></h2> 
+         <p>Permintaan fetch biasanya terdiri dari dua pemanggilan <code>await</code>:</p> 
+         <div id="k1hhpb94l5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let response = await fetch(url, options); //menyelesaikan dengan tanggapan header
+let result = await response.json(); // membaca *body* sebagai json</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Atau, tanpa <code>await</code>:</p> 
+         <div id="jui896wdn8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fetch(url, options)
+  .then(response =&gt; response.json())
+  .then(result =&gt; /* hasil proses */)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Properti tanggapan:</p> 
+         <ul> 
+          <li><code>response.status</code> ??? kode dari tanggapan HTTP,</li> 
+          <li><code>response.ok</code> ??? <code>true</code> jika status 200-299.</li> 
+          <li><code>response.headers</code> ??? seperti objek Map dengan headers HTTP.</li> 
+         </ul> 
+         <p>Metode untuk mendapatkan tanggapan <em>body</em>:</p> 
+         <ul> 
+          <li><strong><code>response.text()</code></strong> ??? mengembalikan tanggapan sebagai teks,</li> 
+          <li><strong><code>response.json()</code></strong> ??? menguraikan tanggapan sebagai objek JSON,</li> 
+          <li><strong><code>response.formData()</code></strong> ??? mengembalikan tanggapan sebagai objek <code>FormData</code> ( pengkodean form/multipart , lihat bab selanjutnya),</li> 
+          <li><strong><code>response.blob()</code></strong> ??? mengembalikan tanggapan sebagai <a href="blob.html">Blob</a> (data biner dengan tipe),</li> 
+          <li><strong><code>response.ArrayBuffer()</code></strong> ??? mengembalikan tanggapan sebagai <span class="markdown-error">Artikel "Arraybuffer-binary-Arrays" tidak ditemukan</span> (data biner tingkat rendah),</li> 
+         </ul> 
+         <p>Option Fetch sejauh ini:</p> 
+         <ul> 
+          <li><code>method</code> ??? metode HTTP,</li> 
+          <li><code>headers</code> ??? sebuah objek dengan permintaan <em>headers</em> (tidak semua <em>header</em> di izinkan),</li> 
+          <li><code>body</code> ??? data untuk mengirimkan (permintaan <em>body</em>) sebagai objek <code>string</code>, <code>FormData</code>, <code>BufferSource</code>, <code>Blob</code> atau <code>UrlSearchParams</code>.</li> 
+         </ul> 
+         <p>di bab selanjutnya kita akan melihat lebih banyak option dan kasus penggunaan <code>fetch</code>.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="fetch.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="fetch.html#fetch-pengguna-dari-github" name="fetch-pengguna-dari-github">Fetch pengguna dari GitHub</a></h3> 
+           <a class="task__open-link" href="task/fetch-users.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah fungsi <em>async</em> <code>getUsers(names)</code>, yang akan mendapatkan sebuah senarai dari Github <em>logins</em>, ambil pengguna dari Github dan kembalikan sebuah senarai dari pengguna GitHub.</p> 
+            <p><em>Url</em> Github dengan informasi pengguna yang diberikan nama <code>USERNAME</code> : <code>https://api.github.com/users/USERNAME</code>.</p> 
+            <p>ini adalah contoh tes di sandbox.</p> 
+            <p>Detail Penting:</p> 
+            <ol> 
+             <li>Harus ada satu permintaan <code>fetch</code> untuk setiap pengguna.</li> 
+             <li>Permintaan tidak boleh menunggu satu sama lain. Sehingga datanya sampai secepatnya.</li> 
+             <li>Jika terdapat permintaan yang gagal, atau pengguna tidak ditemukan, fungsi tersebut harus mengembalikan <code>null</code> dalam senarai yang dihasilkan.</li> 
+            </ol> 
+            <p><a href="https://plnkr.co/edit/0Lxiah2ocjBYZQ6t?p=preview" target="_blank" data-plunk-id="0Lxiah2ocjBYZQ6t">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Untuk mengambil pengguna kita membutuhkan : <code>fetch('https://api.github.com/users/USERNAME')</code>.</p> 
+              <p>Jika tanggapan memiliki status <code>200</code> panggil <code>.json()</code> untuk membaca objek JSON.</p> 
+              <p>Sebaliknya, jika sebuah <code>fetch</code> gagal, atau tanggapan tidak memiliki status 200, kita akan mengembalikan <code>null</code> di senarai hasilnya.</p> 
+              <p>Jadi ini kodenya :</p> 
+              <div id="nz42rppr3e" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>async function getUsers(names) {
+  let jobs = [];
+
+  for(let name of names) {
+    let job = fetch(`https://api.github.com/users/${name}`).then(
+      successResponse =&gt; {
+        if (successResponse.status != 200) {
+          return null;
+        } else {
+          return successResponse.json();
+        }
+      },
+      failResponse =&gt; {
+        return null;
+      }
+    );
+    jobs.push(job);
+  }
+
+  let results = await Promise.all(jobs);
+
+  return results;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Perlu dicatat, panggilan <code>.then()</code> terpasang secara langsung dengan <code>fetch</code>, jadi saat kita memiliki tanggapan, tidak akan menunggu untuk <em>fetch</em> lainnya, tetapi segera mulai membaca <code>.json()</code>.</p> 
+              <p>Jika kita menggunakan <code>await Promise.all(names.map(name =&gt; fetch(...)))</code>, dan memanggil <code>.json()</code> di hasilnya, maka akan menunggu semua <em>fetch</em> untuk menanggapi. Dengan menambahkan <code>.json()</code> untuk masing masing <em>fetch</em>, kita dapat memastikan pemanggilan <em>fetch</em> individu mulai membaca data sebagai JSON tanpa menunggu satu sama lain.</p> 
+              <p>Ini adalah contoh bagaimana <em>API Promise</em> tingkat rendah masih bisa digunakan meskipun kita utamanya menggunakan <code>async / await</code>.</p> 
+              <p><a href="https://plnkr.co/edit/4f25gpMjLNZjetzD?p=preview" target="_blank" data-plunk-id="4f25gpMjLNZjetzD">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="network.html" data-tooltip="Network requests"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="formdata.html" data-tooltip="FormData"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffetch" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffetch" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="network.html">Network requests</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch.html#response-headers">Response headers</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch.html#response-headers-2">Response headers</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch.html#post-request">POST Request</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch.html#mengirim-sebuah-gambar">Mengirim sebuah gambar</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="fetch.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffetch" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Ffetch" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

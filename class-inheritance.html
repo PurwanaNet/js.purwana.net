@@ -1,0 +1,1088 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Turunan Kelas</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="class-inheritance.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Turunan Kelas"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Turunan Kelas"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="class.html"> 
+  <link rel="next" href="static-properties-methods.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Turunan Kelas"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fclass-inheritance" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fclass-inheritance" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="67" max="92" data-tooltip="Pelajaran 67 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="classes.html"><span>Kelas</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Kelas","item":"https://id.javascript.info/classes"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Turunan Kelas</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Turunan Kelas"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Turunan Kelas adalah cara satu kelas untuk memperluas kelas lainnya.</p> 
+         <p>Jadi kita bisa membuat fungsionalitas baru di atas yang sudah ada.</p> 
+         <h2><a class="main__anchor" name="kata-kunci-extends" href="class-inheritance.html#kata-kunci-extends">Kata kunci ???extends???</a></h2> 
+         <p>Katakanlah kita mempunyai kelas <code>Animal</code>:</p> 
+         <div id="cd3165t6is" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Animal {
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+  run(speed) {
+    this.speed = speed;
+    alert(`${this.name} runs with speed ${this.speed}.`);
+  }
+  stop() {
+    this.speed = 0;
+    alert(`${this.name} stands still.`);
+  }
+}
+
+let animal = new Animal('My animal');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Inilah cara kita mewakili objek <code>animal</code> dan kelas <code>Animal</code> secara grafis:</p> 
+         <figure> 
+          <div class="image" style="width:449px"> 
+           <div class="image__ratio" style="padding-top:46.99331848552338%"></div> 
+           <object type="image/svg+xml" data="article/class-inheritance/rabbit-animal-independent-animal.svg" width="449" height="211" class="image__image" data-use-theme> <img src="article/class-inheritance/rabbit-animal-independent-animal.svg" alt="" width="449" height="211"> </object> 
+          </div> 
+         </figure> 
+         <p>???Dan kita akan membuat yang lain <code>class Rabbit</code>.</p> 
+         <p>Karena kelinci adalah binatang, kelas <code>Rabbit</code> harus didasarkan pada <code>Animal</code>, memiliki akses ke metode <em>animal</em>, sehingga <em>rabbits</em> dapat melakukan apa yang dapat dilakukan hewan ???pada umumnya???.</p> 
+         <p>Sintaks untuk memperluas kelas lain adalah: <code>class Child extends Parent</code>.</p> 
+         <p>Mari buat <code>class Rabbit</code> yang diwarisi dari <code>Animal</code>:</p> 
+         <div id="dtd6haj210" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Rabbit extends Animal {
+  hide() {
+    alert(`${this.name} hides!`);
+  }
+}
+
+let rabbit = new Rabbit("White Rabbit");
+
+rabbit.run(5); // White Rabbit runs with speed 5.
+rabbit.hide(); // White Rabbit hides!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Objek dari kelas <code>Rabbit</code> mempunyai akses kedua metode <code>Rabbit</code>, seperti <code>rabbit.hide()</code>, dan juga untuk metode <code>Animal</code>, seperti <code>rabbit.run()</code>.</p> 
+         <p>Secara internal, kata kunci <code>extends</code> bekerja menggunakan mekanik prototipe lama yang bagus. Ini mengatur <code>Rabbit.prototype.[[Prototype]]</code> untuk <code>Animal.prototype</code>. Jadi, jika metode tidak ditemukan di <code>Rabbit.prototype</code>, JavaScript mengambilnya dari <code>Animal.prototype</code>.</p> 
+         <figure> 
+          <div class="image" style="width:560px"> 
+           <div class="image__ratio" style="padding-top:56.42857142857143%"></div> 
+           <object type="image/svg+xml" data="article/class-inheritance/animal-rabbit-extends.svg" width="560" height="316" class="image__image" data-use-theme> <img src="article/class-inheritance/animal-rabbit-extends.svg" alt="" width="560" height="316"> </object> 
+          </div> 
+         </figure> 
+         <p>Misalnya, untuk menemukan metode <code>rabbit.run</code>, mesin mengecek (dari bawah ke atas pada gambar):</p> 
+         <ol> 
+          <li>Objek <code>rabbit</code> (tidak punya <code>run</code>).</li> 
+          <li>Prototipenya, yaitu <code>Rabbit.prototype</code> (mempunyai <code>hide</code>, tapi tidak <code>run</code>).</li> 
+          <li>Prototipenya, yaitu (disebabkan oleh <code>extends</code>) <code>Animal.prototype</code>, yang akhirnya mempunyai metode <code>run</code>.</li> 
+         </ol> 
+         <p>Seperti yang bisa kita ingat dari bab <a href="native-prototypes.html">*Prototype* asli</a>, JavaScript sendiri menggunakan pewarisan <em>prototypal</em> untuk objek bawaan. Misalnya. <code>Date.prototype.[[Prototype]]</code> adalah <code>Object.prototype</code>. Itulah mengapa tanggal memiliki akses ke metode objek umum.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Ekspresi apa pun diperbolehkan setelah <code>extends</code> </span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Misalnya, panggilan fungsi yang menghasilkan kelas induk:</p> 
+           <div id="c7j1qzfwbq" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function f(phrase) {
+  return class {
+    sayHi() { alert(phrase); }
+  };
+}
+
+class User extends f("Hello") {}
+
+new User().sayHi(); // Hello</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Di sini <code>class User</code> mewarisi dari hasil <code>f("Hello")</code>.</p> 
+           <p>Itu mungkin berguna untuk pola pemrograman tingkat lanjut saat kita menggunakan fungsi untuk menghasilkan kelas bergantung pada banyak kondisi dan dapat mewarisinya.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengganti-metode" href="class-inheritance.html#mengganti-metode">Mengganti metode</a></h2> 
+         <p>Sekarang mari bergerak maju dan mengganti metode. Secara default, semua metode yang tidak dispesifikasikan dalam <code>class Rabbit</code> diambil secara langsung ???sebagaimana adanya??? dari <code>class Animal</code>.</p> 
+         <p>Tetapi jika kita menentukan metode kita sendiri di <code>Rabbit</code>, seperti <code>stop()</code> maka itu akan digunakan sebagai gantinya:</p> 
+         <div id="902uenac3z" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Rabbit extends Animal {
+  stop() {
+    // ...sekarang ini akan digunakan untuk rabbit.stop()
+    // Bukan stop() dari kelas Animal
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Biasanya kita tidak ingin sepenuhnya mengganti metode induk, melainkan untuk membangun di atasnya untuk mengubah atau memperluas fungsinya. Kita melakukan sesuatu dalam metode kita, tetapi memanggil metode induk sebelum/sesudahnya atau dalam proses.</p> 
+         <p>Kelas menyediakan kata kunci <code>"super"</code> untuk itu.</p> 
+         <ul> 
+          <li><code>super.method(...)</code> untuk memanggil metode induk.</li> 
+          <li><code>super(...)</code> untuk memanggil konstruktor induk (hanya di dalam konstruktor kita).</li> 
+         </ul> 
+         <p>Misalnya, biarkan kelinci kita bersembunyi otomatis saat dihentikan:</p> 
+         <div id="fnzmw82s4g" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:24,&quot;end&quot;:27}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Animal {
+
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+
+  run(speed) {
+    this.speed = speed;
+    alert(`${this.name} runs with speed ${this.speed}.`);
+  }
+
+  stop() {
+    this.speed = 0;
+    alert(`${this.name} stands still.`);
+  }
+
+}
+
+class Rabbit extends Animal {
+  hide() {
+    alert(`${this.name} hides!`);
+  }
+
+  stop() {
+    super.stop(); // memanggil stop induk
+    this.hide(); // dan lalu bersembunyi
+  }
+}
+
+let rabbit = new Rabbit("White Rabbit");
+
+rabbit.run(5); // White Rabbit runs with speed 5.
+rabbit.stop(); // White Rabbit stands still. White Rabbit hides!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang <code>Rabbit</code> mempunyai metode <code>stop</code> yang memanggil induk <code>super.stop()</code> di dalam proses.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><em>Arrow functions</em> tidak mempunyai <code>super</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Seperti yang disebutkan di bab <a href="arrow-functions.html">Membahas Kembali Fungsi Arrow</a>, <em>arrow functions</em> tidak memiliki <code>super</code>.</p> 
+           <p>Jika diakses, itu diambil dari fungsi luar. Misalnya:</p> 
+           <div id="plyzlbrzbf" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>class Rabbit extends Animal {
+  stop() {
+    setTimeout(() =&gt; super.stop(), 1000); // memanggil stop induk setelah 1 detik
+  }
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p><code>super</code> di <em>arrow function</em> sama dengan di <code>stop()</code>, jadi berfungsi seperti yang diinginkan. Jika kita menetapkan fungsi ???biasa??? di sini, akan ada kesalahan:</p> 
+           <div id="1mo8bua2v9" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// Unexpected super
+setTimeout(function() { super.stop() }, 1000);</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengganti-konstruktor" href="class-inheritance.html#mengganti-konstruktor">Mengganti konstruktor</a></h2> 
+         <p>Dengan konstruktor, ini menjadi sedikit rumit.</p> 
+         <p>Sampai sekarang, <code>Rabbit</code> tidak mempunyai <code>constructor</code> sendiri.</p> 
+         <p>Menurut <a href="https://tc39.github.io/ecma262/#sec-runtime-semantics-classdefinitionevaluation">spesifikasi</a>, jika sebuah kelas memperluas kelas lain dan tidak memiliki <code>constructor</code>, maka <code>constructor</code> ???kosong??? berikut akan dibuat:</p> 
+         <div id="0ldksjaj58" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Rabbit extends Animal {
+  // dihasilkan untuk memperluas kelas tanpa konstruktor sendiri
+  constructor(...args) {
+    super(...args);
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang bisa kita lihat, ini pada dasarnya memanggil <code>constructor</code> induk dengan meneruskan semua argumen. Itu terjadi jika kita tidak menulis konstruktor kita sendiri.</p> 
+         <p>Sekarang mari tambahkan konstruktor kustom ke <code>Rabbit</code>. Ini akan menentukan <code>earLength</code> selain <code>name</code>:</p> 
+         <div id="ipyzveolji" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:19,&quot;end&quot;:20},{&quot;start&quot;:10,&quot;end&quot;:14}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Animal {
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+  // ...
+}
+
+class Rabbit extends Animal {
+
+  constructor(name, earLength) {
+    this.speed = 0;
+    this.name = name;
+    this.earLength = earLength;
+  }
+
+  // ...
+}
+
+// Tidak bekerja!
+let rabbit = new Rabbit("White Rabbit", 10); // Error: this is not defined.</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ups! Kita mendapat kesalahan. Sekarang kita tidak bisa membuat <em>rabbits</em>. Apa yang salah?</p> 
+         <p>Jawaban singkatnya adalah:</p> 
+         <ul> 
+          <li><strong>Konstruktor dalam kelas mewarisi harus memanggil <code>super(...)</code>, dan (!) lakukan sebelum menggunakan <code>this</code>.</strong></li> 
+         </ul> 
+         <p>???Tapi kenapa? Apa yang terjadi di sini? Memang, persyaratannya tampak aneh.</p> 
+         <p>Tentu saja ada penjelasannya. Mari kita bahas detailnya, jadi kamu akan benar-benar mengerti apa yang terjadi.</p> 
+         <p>Dalam JavaScript, ada perbedaan antara fungsi konstruktor dari kelas yang mewarisi (disebut ???konstruktor turunan???) dan fungsi lainnya. Konstruktor turunan memiliki properti internal khusus <code>[[ConstructorKind]]:"turunan"</code>. Itu label internal khusus.</p> 
+         <p>Label itu mempengaruhi perilakunya dengan <code>new</code>.</p> 
+         <ul> 
+          <li>Saat fungsi reguler dijalankan dengan <code>new</code>, itu membuat objek kosong dan menugaskannya ke <code>this</code>.</li> 
+          <li>Tetapi ketika konstruktor turunan berjalan, ia tidak melakukan ini. Ia mengharapkan konstruktor induk untuk melakukan pekerjaan ini.</li> 
+         </ul> 
+         <p>Jadi, konstruktor turunan harus memanggil <code>super</code> untuk menjalankan konstruktor induknya, jika tidak, objek untuk <code>this</code> tidak akan dibuat. Dan kita akan mendapatkan kesalahan.</p> 
+         <p>Agar konstruktor <code>Rabbit</code> bekerja, ia perlu memanggil<code>super()</code>sebelum menggunakan <code>this</code>, seperti di sini:</p> 
+         <div id="po0riex3vt" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:20,&quot;end&quot;:23},{&quot;start&quot;:13,&quot;end&quot;:13}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Animal {
+
+  constructor(name) {
+    this.speed = 0;
+    this.name = name;
+  }
+
+  // ...
+}
+
+class Rabbit extends Animal {
+
+  constructor(name, earLength) {
+    super(name);
+    this.earLength = earLength;
+  }
+
+  // ...
+}
+
+// sekarang baik-baik saja
+let rabbit = new Rabbit("White Rabbit", 10);
+alert(rabbit.name); // White Rabbit
+alert(rabbit.earLength); // 10</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="mengganti-bidang-kelas-catatan-rumit" href="class-inheritance.html#mengganti-bidang-kelas-catatan-rumit">Mengganti bidang kelas: catatan rumit</a></h3> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Advanced note</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Catatan ini mengasumsikan kamu memiliki pengalaman tertentu dengan kelas, mungkin dalam bahasa pemrograman lain.</p> 
+           <p>Ini memberikan wawasan yang lebih baik tentang bahasa dan juga menjelaskan perilaku yang mungkin menjadi sumber kesalahan (tetapi tidak terlalu sering).</p> 
+           <p>Jika kamu merasa kesulitan untuk memahaminya, lanjutkan saja, lanjutkan membaca, kemudian kembali lagi nanti.</p> 
+          </div> 
+         </div> 
+         <p>Kita tidak hanya dapat mengganti metode, tetapi juga bidang kelas.</p> 
+         <p>Meskipun, ada perilaku rumit saat kami mengakses kolom yang diganti di konstruktor induk, sangat berbeda dari kebanyakan bahasa pemrograman lainnya.</p> 
+         <p>Pertimbangkan contoh ini:</p> 
+         <div id="l795768tec" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:13,&quot;end&quot;:13}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Animal {
+  name = 'animal';
+
+  constructor() {
+    alert(this.name); // (*)
+  }
+}
+
+class Rabbit extends Animal {
+  name = 'rabbit';
+}
+
+new Animal(); // animal
+new Rabbit(); // animal</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini, kelas <code>Rabbit</code> memperluas <code>Animal</code> dan mengganti bidang <code>nama</code> dengan nilainya sendiri.</p> 
+         <p>Tidak ada konstruktor sendiri dalam <code>Rabbit</code>, jadi konstruktor <code>Animal</code> dipanggil.</p> 
+         <p>Yang menarik adalah dalam kedua kasus: <code>new Animal()</code> dan <code>new Rabbit()</code>, <code>alert</code> di baris <code>(*)</code> menampilkan <code>animal</code>.</p> 
+         <p><strong>Dengan kata lain, konstruktor induk selalu menggunakan nilai bidangnya sendiri, bukan yang diganti.</strong></p> 
+         <p>Apa yang aneh tentang itu?</p> 
+         <p>Jika masih belum jelas silahkan bandingkan dengan metodenya.</p> 
+         <p>Berikut kode yang sama, tetapi alih-alih bidang <code>this.name</code> kita memanggil metode <code>this.showName()</code>:</p> 
+         <div id="edj9jty1mc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:17,&quot;end&quot;:17}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Animal {
+  showName() {  // sebagai ganti this.name = 'animal'
+    alert('animal');
+  }
+
+  constructor() {
+    this.showName(); // sebagai ganti alert(this.name);
+  }
+}
+
+class Rabbit extends Animal {
+  showName() {
+    alert('rabbit');
+  }
+}
+
+new Animal(); // animal
+new Rabbit(); // rabbit</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Harap diperhatikan: sekarang hasilnya berbeda.</p> 
+         <p>Dan itulah yang secara natural kita harapkan. Ketika konstruktor induk dipanggil di kelas turunan, ia menggunakan metode yang diganti.</p> 
+         <p>???Tetapi untuk bidang kelas tidak demikian. Seperti yang dikatakan, konstruktor induk selalu menggunakan bidang induk.</p> 
+         <p>Mengapa ada bedanya?</p> 
+         <p>Nah, alasannya ada di urutan bidang inisialisasi. Bidang kelas diinisialisasi:</p> 
+         <ul> 
+          <li>Sebelum konstruktor untuk kelas dasar (yang tidak memperluas apa pun),</li> 
+          <li>Langsung setelah <code>super()</code> untuk kelas turunan.</li> 
+         </ul> 
+         <p>Dalam kasus kita, <code>Rabbit</code> adalah kelas turunannya. Tidak ada <code>constructor()</code> di dalamnya. Seperti yang dikatakan sebelumnya, itu sama seperti jika ada konstruktor kosong hanya dengan <code>super(...args)</code>.</p> 
+         <p>Jadi, <code>new Rabbit()</code> memanggil <code>super()</code>, sehingga mengeksekusi konstruktor induk, dan (sesuai aturan untuk kelas turunan) hanya setelah bidang kelasnya diinisialisasi. Pada saat eksekusi induk konstruktor, belum ada bidang kelas <code>Rabbit</code>, itulah mengapa bidang <code>Animal</code> digunakan.</p> 
+         <p>Perbedaan halus antara bidang dan metode ini khusus untuk JavaScript</p> 
+         <p>Untungnya, perilaku ini hanya muncul dengan sendirinya jika bidang yang diganti digunakan di konstruktor induk. Maka mungkin sulit untuk memahami apa yang sedang terjadi, jadi kita menjelaskannya di sini.</p> 
+         <p>Jika ini menjadi masalah, seseorang dapat memperbaikinya dengan menggunakan metode atau <em>getter</em>/<em>setter</em> sebagai ganti bidang.</p> 
+         <h2><a class="main__anchor" name="super-internals-homeobject" href="class-inheritance.html#super-internals-homeobject"><em>Super: internals, [[HomeObject]]</em></a></h2> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Advanced information</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika Anda membaca tutorial untuk pertama kali ??? bagian ini mungkin dilewati.</p> 
+           <p>Ini tentang mekanisme internal di balik pewarisan dan <code>super</code>.</p> 
+          </div> 
+         </div> 
+         <p>Mari kita selami lebih dalam di balik tudung <code>super</code>. Kita akan melihat beberapa hal menarik di sepanjang jalan.</p> 
+         <p>Pertama untuk mengatakan, dari semua yang telah kita pelajari sampai sekarang, mustahil bagi <code>super</code> untuk bekerja sama sekali!</p> 
+         <p>Ya, memang, mari kita tanyakan pada diri kita sendiri, bagaimana seharusnya secara teknis bekerja? Ketika sebuah metode objek dijalankan, ia mendapatkan objek saat ini sebagai <code>this</code>. Jika kita memanggil <code>super.method()</code> maka, mesin perlu mendapatkan <code>metode</code> dari prototipe objek saat ini. Tapi bagaimana caranya?</p> 
+         <p>Tugasnya mungkin tampak sederhana, tetapi sebenarnya tidak. Mesin mengetahui objek saat ini <code>this</code>, sehingga bisa mendapatkan <code>metode</code> induk sebagai <code>this.__proto__.method</code>. Sayangnya, solusi ???naif??? seperti itu tidak akan berhasil.</p> 
+         <p>Mari kita tunjukkan masalahnya. Tanpa kelas, menggunakan objek biasa demi kesederhanaan.</p> 
+         <p>Kamu dapat melewati bagian ini dan melanjutkan ke subbagian <code>[[HomeObject]]</code> jika kamu tidak ingin mengetahui detailnya. Itu tidak akan merugikan. Atau baca terus jika kamu tertarik untuk memahami berbagai hal secara mendalam.</p> 
+         <p>Pada contoh di bawah, <code>rabbit.__ proto__ = animal</code>. Sekarang mari kita coba: di <code>rabbit.eat()</code> kita akan memanggil <code>animal.eat()</code>, menggunakan<code>this.__ proto__</code>:</p> 
+         <div id="h8i2d6tb55" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:11,&quot;end&quot;:12}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  name: "Animal",
+  eat() {
+    alert(`${this.name} eats.`);
+  }
+};
+
+let rabbit = {
+  __proto__: animal,
+  name: "Rabbit",
+  eat() {
+    // begitulah kemungkinan super.eat() bisa bekerja
+    this.__proto__.eat.call(this); // (*)
+  }
+};
+
+rabbit.eat(); // Rabbit eats.</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada baris <code>(*)</code> kita mengambil <code>eat</code> dari prototipe (<code>animal</code>) dan memanggilnya dalam konteks objek saat ini. Harap dicatat bahwa <code>.call(this)</code> penting di sini, karena sesimpel <code>this.__proto__.Eat()</code> akan mengeksekusi <code>eat</code> induk dalam konteks prototipe, bukan objek saat ini.</p> 
+         <p>Dan pada kode di atas itu benar-benar berfungsi sebagaimana mestinya: kita memiliki <code>alert</code> yang benar.</p> 
+         <p>Sekarang mari tambahkan satu objek lagi ke rantai. Kita akan melihat bagaimana hal-hal rusak:</p> 
+         <div id="4a2aiekh0p" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:23,&quot;end&quot;:23}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  name: "Animal",
+  eat() {
+    alert(`${this.name} eats.`);
+  }
+};
+
+let rabbit = {
+  __proto__: animal,
+  eat() {
+    // ...melambung di sekitar rabbit-style dan panggil metode induk (animal)
+    this.__proto__.eat.call(this); // (*)
+  }
+};
+
+let longEar = {
+  __proto__: rabbit,
+  eat() {
+    // ...lakukan sesuatu dengan long ears dan panggil metode induk (rabbit)
+    this.__proto__.eat.call(this); // (**)
+  }
+};
+
+longEar.eat(); // Error: Maximum call stack size exceeded</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kode tidak berfungsi lagi! Kita dapat melihat kesalahan saat mencoba memanggil <code>longEar.eat()</code>.</p> 
+         <p>Mungkin tidak begitu jelas, tetapi jika kita melacak panggilan <code>longEar.eat()</code>, maka kita bisa melihat alasannya. Di kedua baris <code>(*)</code> dan <code>(**)</code> nilai <code>this</code> adalah objek saat ini (<code>longEar</code>). Itu penting: semua metode objek mendapatkan objek saat ini sebagai <code>this</code>, bukan prototipe atau semacamnya.</p> 
+         <p>Jadi, di kedua baris <code>(*)</code> dan <code>(**)</code> nilai dari <code>this.__ proto__</code> sama persis: <code>rabbit</code>. Mereka keduanya memanggil <code>rabbit.eat</code> tanpa naik rantai dalam perulangan tak berujung.</p> 
+         <p>Berikut gambaran tentang apa yang terjadi:</p> 
+         <figure> 
+          <div class="image" style="width:347px"> 
+           <div class="image__ratio" style="padding-top:68.58789625360231%"></div> 
+           <object type="image/svg+xml" data="article/class-inheritance/this-super-loop.svg" width="347" height="238" class="image__image" data-use-theme> <img src="article/class-inheritance/this-super-loop.svg" alt="" width="347" height="238"> </object> 
+          </div> 
+         </figure> 
+         <ol> 
+          <li> <p>Di dalam <code>longEar.eat()</code>, baris <code>(**)</code> memanggil <code>rabbit.eat</code> dengan menyediakan <code>this=longEar</code>.</p> 
+           <div id="hyboz0mbpj" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// di dalam longEar.eat() kita punya this = longEar
+this.__proto__.eat.call(this); // (**)
+// menjadi
+longEar.__proto__.eat.call(this);
+// itu adalah
+rabbit.eat.call(this);</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Lalu di baris <code>(*)</code> dari <code>rabbit.eat</code>, kita ingin meneruskan panggilan lebih tinggi lagi dalam rantai, tapi <code>this=longEar</code>, jadi <code>this.__proto__.eat</code> lagi-lagi <code>rabbit.eat</code>!</p> 
+           <div id="fmrtms1ef" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// di dalam rabbit.eat() kita juga punya this = longEar
+this.__proto__.eat.call(this); // (*)
+// menjadi
+longEar.__proto__.eat.call(this);
+// atau (lagi)
+rabbit.eat.call(this);</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>???Jadi <code>rabbit.eat</code> menyebut dirinya dalam perulangan tak berujung, karena tidak bisa naik lebih jauh.</p> </li> 
+         </ol> 
+         <p>Masalahnya tidak dapat diselesaikan hanya dengan menggunakan <code>this</code>.</p> 
+         <h3><a class="main__anchor" name="homeobject" href="class-inheritance.html#homeobject"><em><code>[[HomeObject]]</code></em></a></h3> 
+         <p>Untuk memberikan solusi, JavaScript menambahkan satu lagi properti internal khusus untuk fungsi: <code>[[HomeObject]]</code>.</p> 
+         <p>Ketika sebuah fungsi ditetapkan sebagai metode kelas atau objek, properti <code>[[HomeObject]]</code>&amp;#8209;nya menjadi objek itu.</p> 
+         <p>Lalu <code>super</code> menggunakannya untuk menyelesaikan prototipe induk dan metodenya.</p> 
+         <p>Mari kita lihat cara kerjanya, pertama dengan objek biasa:</p> 
+         <div id="akcc89bbm5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:23,&quot;end&quot;:24}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  name: "Animal",
+  eat() {         // animal.eat.[[HomeObject]] == animal
+    alert(`${this.name} eats.`);
+  }
+};
+
+let rabbit = {
+  __proto__: animal,
+  name: "Rabbit",
+  eat() {         // rabbit.eat.[[HomeObject]] == rabbit
+    super.eat();
+  }
+};
+
+let longEar = {
+  __proto__: rabbit,
+  name: "Long Ear",
+  eat() {         // longEar.eat.[[HomeObject]] == longEar
+    super.eat();
+  }
+};
+
+// bekerja dengan benar
+longEar.eat();  // Long Ear eats.</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ini berfungsi sebagaimana mestinya, karena mekanisme <code>[[HomeObject]]</code>. Metode, seperti <code>longEar.eat</code>, tahu itu <code>[[HomeObject]]</code> dan mengambil metode induk dari prototipe-nya. Tanpa menggunakan<code>this</code>.</p> 
+         <h3><a class="main__anchor" name="metode-tidak-gratis" href="class-inheritance.html#metode-tidak-gratis">Metode tidak ???gratis???</a></h3> 
+         <p>Seperti yang kita ketahui sebelumnya, umumnya fungsi adalah ???gratis???, tidak terikat ke objek di JavaScript. Jadi mereka dapat disalin di antara objek dan dipanggil dengan <code>this</code> lainnya.</p> 
+         <p>Keberadaan <code>[[HomeObject]]</code> melanggar prinsip itu, karena metode mengingat objeknya. <code>[[HomeObject]]</code> tidak bisa diubah, jadi ikatan ini selamanya.</p> 
+         <p>Satu-satunya tempat dalam bahasa di mana <code>[[HomeObject]]</code> digunakan ??? adalah <code>super</code>. Jadi, jika suatu metode tidak menggunakan <code>super</code>, maka kita masih bisa menganggapnya gratis dan menyalin antar objek. Tetapi dengan <code>super</code> mungkin ada yang salah.</p> 
+         <p>Berikut demo hasil <code>super</code> yang salah setelah menyalin:</p> 
+         <div id="f8kzqhxehr" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:26,&quot;end&quot;:26},{&quot;start&quot;:23,&quot;end&quot;:23}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  sayHi() {
+    alert(`I'm an animal`);
+  }
+};
+
+// rabbit mewarisi dari animal
+let rabbit = {
+  __proto__: animal,
+  sayHi() {
+    super.sayHi();
+  }
+};
+
+let plant = {
+  sayHi() {
+    alert("I'm a plant");
+  }
+};
+
+// tree mewarisi dari plant
+let tree = {
+  __proto__: plant,
+  sayHi: rabbit.sayHi // (*)
+};
+
+tree.sayHi();  // I'm an animal (?!?)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Panggilan ke <code>tree.sayHi()</code> menunjukkan ???I???m an animal???. Benar-benar salah.</p> 
+         <p>Alasannya sederhana:</p> 
+         <ul> 
+          <li>Di baris <code>(*)</code>, metode <code>tree.sayHi</code> telah disalin dari<code>rabbit</code>. Mungkin kita hanya ingin menghindari duplikasi kode?</li> 
+          <li><code>[[HomeObject]]</code>&amp;#8209;nya adalah <code>rabbit</code>, seperti yang dibuat di<code>rabbit</code>. Tidak ada cara untuk mengubah <code>[[HomeObject]]</code>.</li> 
+          <li>Kode <code>tree.sayHi()</code> memiliki <code>super.sayHi()</code> di dalamnya. Ini naik dari <code>rabbit</code> dan mengambil metode dari<code>animal</code>.</li> 
+         </ul> 
+         <p>Berikut diagram dari apa yang terjadi:</p> 
+         <figure> 
+          <div class="image" style="width:395px"> 
+           <div class="image__ratio" style="padding-top:48.60759493670886%"></div> 
+           <object type="image/svg+xml" data="article/class-inheritance/super-homeobject-wrong.svg" width="395" height="192" class="image__image" data-use-theme> <img src="article/class-inheritance/super-homeobject-wrong.svg" alt="" width="395" height="192"> </object> 
+          </div> 
+         </figure> 
+         <h3><a class="main__anchor" name="metode-bukan-properti-fungsi" href="class-inheritance.html#metode-bukan-properti-fungsi">Metode, bukan properti fungsi</a></h3> 
+         <p><code>[[HomeObject]]</code> didefinisikan untuk metode baik di kelas maupun di objek biasa. Tetapi untuk objek, metode harus ditentukan persis sebagai <code>method()</code>, bukan sebagai <code>"method: function()"</code>.</p> 
+         <p>Perbedaannya mungkin tidak terlalu penting bagi kita, tetapi penting untuk JavaScript.</p> 
+         <p>Dalam contoh di bawah ini, sintaks non-metode digunakan untuk perbandingan. Properti <code>[[HomeObject]]</code> tidak diatur dan warisan tidak berfungsi:</p> 
+         <div id="zme9ooko2x" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:13,&quot;end&quot;:13}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  eat: function() { // sengaja menulis seperti ini, bukan eat() {...
+    // ...
+  }
+};
+
+let rabbit = {
+  __proto__: animal,
+  eat: function() {
+    super.eat();
+  }
+};
+
+rabbit.eat();  // Kesalahan memanggil super (karena tidak ada [[HomeObject]])</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="class-inheritance.html#ringkasan">Ringkasan</a></h2> 
+         <ol> 
+          <li>Untuk memperluas kelas: <code>class Child extends Parent</code>: 
+           <ul> 
+            <li>Itu berarti <code>Child.prototype.__proto__</code> akan menjadi <code>Parent.prototype</code>, jadi metode diwariskan/diturunkan.</li> 
+           </ul> </li> 
+          <li>Saat mengganti konstruktor: 
+           <ul> 
+            <li>Kita harus memanggil konstruktor induk sebagai <code>super()</code> di konstruktor <code>Child</code> sebelum menggunakan <code>this</code>.</li> 
+           </ul> </li> 
+          <li>Saat mengganti metode lain: 
+           <ul> 
+            <li>Kita dapat menggunakan <code>super.method()</code> di metode <code>Child</code> untuk memanggil metode <code>Parent</code>.</li> 
+           </ul> </li> 
+          <li>Internal: 
+           <ul> 
+            <li>Metode mengingat kelas/objek mereka di internal properti <code>[[HomeObject]]</code>. Begitulah caranya <code>super</code> menyelesaikan metode induk.</li> 
+            <li>Jadi tidak aman untuk menyalin metode dengan <code>super</code> dari satu objek ke objek lainnya.</li> 
+           </ul> </li> 
+         </ol> 
+         <p>Juga:</p> 
+         <ul> 
+          <li><em>Arrow functions</em> tidak memiliki <code>this</code> atau <code>super</code> sendiri, sehingga secara transparan sesuai dengan konteks sekitarnya.</li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="class-inheritance.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="class-inheritance.html#kesalahan-saat-membuat-sebuah-instance" name="kesalahan-saat-membuat-sebuah-instance">Kesalahan saat membuat sebuah _instance_</a></h3> 
+           <a class="task__open-link" href="task/class-constructor-error.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Berikut kode dengan <code>Rabbit</code> <em>extending</em> <code>Animal</code>.</p> 
+            <p>Sayangnya, objek <code>Rabbit</code> tidak dapat dibuat. Apa yang salah? Perbaiki!.</p> 
+            <div id="kt8wsr3uhd" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:15}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>class Animal {
+
+  constructor(name) {
+    this.name = name;
+  }
+
+}
+
+class Rabbit extends Animal {
+  constructor(name) {
+    this.name = name;
+    this.created = Date.now();
+  }
+}
+
+let rabbit = new Rabbit("White Rabbit"); // Error: this is not defined
+alert(rabbit.name);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Itu karena konstruktor turunan harus memanggil <code>super()</code>.</p> 
+              <p>Berikut kode yang benar:</p> 
+              <div id="jt47rdigfq" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:15},{&quot;start&quot;:10,&quot;end&quot;:10}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="class-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="class-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>class Animal {
+
+  constructor(name) {
+    this.name = name;
+  }
+
+}
+
+class Rabbit extends Animal {
+  constructor(name) {
+    super(name);
+    this.created = Date.now();
+  }
+}
+
+let rabbit = new Rabbit("White Rabbit"); // sekarang oke
+alert(rabbit.name); // White Rabbit</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="class-inheritance.html#extended-clock" name="extended-clock">_Extended clock_</a></h3> 
+           <a class="task__open-link" href="task/clock-class-extended.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita punya kelas <code>Clock</code>. Sampai sekarang, ini mencetak waktu setiap detik.</p> 
+            <div id="93wvsmordj" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>class Clock {
+  constructor({ template }) {
+    this.template = template;
+  }
+
+  render() {
+    let date = new Date();
+
+    let hours = date.getHours();
+    if (hours &lt; 10) hours = '0' + hours;
+
+    let mins = date.getMinutes();
+    if (mins &lt; 10) mins = '0' + mins;
+
+    let secs = date.getSeconds();
+    if (secs &lt; 10) secs = '0' + secs;
+
+    let output = this.template
+      .replace('h', hours)
+      .replace('m', mins)
+      .replace('s', secs);
+
+    console.log(output);
+  }
+
+  stop() {
+    clearInterval(this.timer);
+  }
+
+  start() {
+    this.render();
+    this.timer = setInterval(() =&gt; this.render(), 1000);
+  }
+}</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Buat kelas baru <code>ExtendedClock</code> yang diturunkan dari<code>Clock</code> dan tambahkan parameter <code>precision</code> ??? jumlah<code>ms</code> antara ???ticks???. Seharusnya <code>1000</code> (1 detik) secara <em>default</em>.</p> 
+            <ul> 
+             <li>Kode kamu harus ada di file <code>extended-clock.js</code></li> 
+             <li>Jangan ubah <code>clock.js</code>. Perpanjang itu!.</li> 
+            </ul> 
+            <p><a href="https://plnkr.co/edit/9qKE7VpTnmgU1woH?p=preview" target="_blank" data-plunk-id="9qKE7VpTnmgU1woH">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="5hkw6xk4ks" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>class ExtendedClock extends Clock {
+  constructor(options) {
+    super(options);
+    let { precision = 1000 } = options;
+    this.precision = precision;
+  }
+
+  start() {
+    this.render();
+    this.timer = setInterval(() =&gt; this.render(), this.precision);
+  }
+};</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/3vnGE2fa19gKlvzc?p=preview" target="_blank" data-plunk-id="3vnGE2fa19gKlvzc">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="class.html" data-tooltip="Class basic syntax"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="static-properties-methods.html" data-tooltip="Properti dan metode statis"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fclass-inheritance" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fclass-inheritance" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="classes.html">Kelas</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class-inheritance.html#kata-kunci-extends">Kata kunci ???extends???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class-inheritance.html#mengganti-metode">Mengganti metode</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class-inheritance.html#mengganti-konstruktor">Mengganti konstruktor</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class-inheritance.html#super-internals-homeobject"><em>Super: internals, [[HomeObject]]</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class-inheritance.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class-inheritance.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class-inheritance.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fclass-inheritance" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fclass-inheritance" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

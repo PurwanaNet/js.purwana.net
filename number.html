@@ -1,0 +1,1479 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Angka</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="number.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Angka"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Angka"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="primitives-methods.html"> 
+  <link rel="next" href="string.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Angka"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fnumber" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fnumber" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="38" max="92" data-tooltip="Pelajaran 38 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 19 April 2021"> 
+          <div class="updated-at__content">
+            19 April 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Angka</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Angka"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Dalam JavaScript modern, ada dua tipe angka:</p> 
+         <ol> 
+          <li> <p>Angka regular di JavaScript yang disimpan dalam format 64-bit <a href="https://en.wikipedia.org/wiki/IEEE_754-2008_revision">IEEE-754</a>, juga dikenal sebagai ???angka double precision floating point???. Inilah angka yang kita paling sering kita pakai, dan kita akan bahas tentang mereka di bab ini.</p> </li> 
+          <li> <p>Angka BigInt, untuk mewakili integer dengan panjang sembarang. Mereka kadang dibutuhkan, karena angka regular tak bisa lebih dari <code>2<sup>53</sup></code> atau kurang dari <code>-2<sup>53</sup></code>. Karena bigint dipakai di sedikit area spesial, kita khususkan mereka bab spesial <a href="bigint.html">BigInt</a>.</p> </li> 
+         </ol> 
+         <p>Jadi di sini kita akan bahas angka regular. Ayo perluas pengetahuan kita tentang mereka.</p> 
+         <h2><a class="main__anchor" name="cara-lain-menulis-angka" href="number.html#cara-lain-menulis-angka">Cara lain menulis angka</a></h2> 
+         <p>Bayangkan kita harus menulis 1 milyar. Cara jelasnya begini:</p> 
+         <div id="0uu5emvulb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let billion = 1000000000;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa menggunakan <code>_</code> sebagai pemisahnya:</p> 
+         <div id="5mschemvyh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let billion = 1_000_000_000;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini, garis bawah <code>_</code> memainkan peran sebagai ???syntactic sugar???, ini membuat angka lebih mudah dibaca. Mesin JavaScript mengabaikan <code>_</code> di antara digit, jadi nilainya sama persis dengan satu miliar di atas.</p> 
+         <p>Tapi di kehidupan nyata, kita biasanya menghindari menulis string nol yang panjang karena rentan terjadi kesalahan. Selain itu, kita malas. Kita biasanya akan menulis sesuatu seperti <code>"1bn"</code> untuk milyar atau <code>"7.3bn"</code> untuk 7 milyar 300 juta. Sama halnya dengan angka besar lainnya.</p> 
+         <p>Di JavaScript, kita perpendek angka dengan menambah huruf <code>"e"</code> ke angka dan menspesifikasi jumlah nol:</p> 
+         <div id="5qo6wj3ov5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let billion = 1e9;  // 1 milyar, literalnya: 1 dan 9 nol
+
+alert( 7.3e9 );  // 7.3 milyar (7,300,000,000)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dengan kata lain, <code>"e"</code> kalikan angkanya dengan <code>1</code> dengan jumlah nol yang diberikan.</p> 
+         <div id="zyss8t0ovp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>1e3 = 1 * 1000 // e3 means *1000
+1.23e6 = 1.23 * 1000000 // e6 means *1000000</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang ayo tulis sesuatu lebih kecil. Katakan, 1 microsecond (sepersejuta second):</p> 
+         <div id="7i2iquk56g" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let ms = 0.000001;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sama seperti sebelumnya, memakai <code>"e"</code> bisa membantu. Jika kita ingin menghindari menulis nol eksplisit, kita bisa katakan hal yang sama:</p> 
+         <div id="kg5qjbsms0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let ms = 1e-6; // enam nol di sebelah kiri dari 1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita hitung nol di <code>0.000001</code>, ada 6 dari mereka. Jadi alaminya <code>1e-6</code>.</p> 
+         <p>Dengan kata lain, angka negatif setelah <code>"e"</code> artinya pembagian 1 dengan jumlah nol yang diberikan:</p> 
+         <div id="e0d4llofex" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// -3 membagi 1 dengan 3 nol
+1e-3 = 1 / 1000 (=0.001)
+
+// -6 membagi 1 dengan 6 nol
+1.23e-6 = 1.23 / 1000000 (=0.00000123)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="hex-angka-binary-dan-octal" href="number.html#hex-angka-binary-dan-octal">Hex, angka binary dan octal</a></h3> 
+         <p>Angka <a href="https://en.wikipedia.org/wiki/Hexadecimal">Hexadecimal</a> secara luas dipakai di JavaScript untuk mewakili warna, encode karakter, dan banyak hal lain. Alaminya, ada cara lebih singkat menulis mereka: <code>0x</code> kemudian angkanya.</p> 
+         <p>Misalnya:</p> 
+         <div id="eg2txgw4y7" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 0xff ); // 255
+alert( 0xFF ); // 255 (sama, case diabaikan)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sistem numeral binary dan octal jarang dipakai, tapi juga didukung menggunakan prefix <code>0b</code> dan <code>0o</code>:</p> 
+         <div id="62thoum5w7" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let a = 0b11111111; // bentuk binary dari 255
+let b = 0o377; // bentuk octal dari 255
+
+alert( a == b ); // true, angka sama 255 dari kedua sisi</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Cuma ada 3 sistem numeral dengan dukungan begitu. Untuk sistem numeral lain, kita sebaiknya memakai fungsi <code>parseInt</code> (yang akan kita lihat nanti di bab ini).</p> 
+         <h2><a class="main__anchor" name="tostring-base" href="number.html#tostring-base">toString(base)</a></h2> 
+         <p>Metode <code>num.toString(base)</code> mengembalikan representasi string dari <code>num</code> di sistem numeral dengan <code>base</code> yang diberikan.</p> 
+         <p>Misalnya:</p> 
+         <div id="dawu1ye0yo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let num = 255;
+
+alert( num.toString(16) );  // ff
+alert( num.toString(2) );   // 11111111</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>base</code> bisa bervariasi dari <code>2</code> hingga <code>36</code>. Defaultnya <code>10</code>.</p> 
+         <p>Penggunaan umumnya ialah:</p> 
+         <ul> 
+          <li> <p><strong>base=16</strong> dipakai untuk warna hex, character encoding dll, digit bisa <code>0..9</code> atau <code>A..F</code>.</p> </li> 
+          <li> <p><strong>base=2</strong> paling banyak untuk mendebug operasi bitwise, digit bisa <code>0</code> atau <code>1</code>.</p> </li> 
+          <li> <p><strong>base=36</strong> ini maximum, digit bisa <code>0..9</code> atau <code>A..Z</code>. Seluruh alfabet latin dipakai untuk merepresentasi angka. Hal lucu, tapi berguna untuk <code>36</code> ialah saat kita harus mengubah identifier numerik panjang ke dalam sesuatu yang lebih pendek, misalnya untuk membuat url pendek. Bisa direpresentasikan dalam sistem <code>36</code>:</p> 
+           <div id="4q3kpdenej" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( 123456..toString(36) ); // 2n9c</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ul> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Dua dot untuk memanggil metode</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Tolong ingat bahwa dua dot di <code>123456..toString(36)</code> bukan typo. Jika kita mau memanggil langsung metode pada angka, seperti <code>toString</code> di contoh di atas, maka kita harus menaruh dua dot <code>..</code> setelahnya.</p> 
+           <p>Jika kita menaruh dot tunggal: <code>123456.toString(36)</code>, maka akan ada galat, karena syntax JavaScript berimplikasi bahwa bagian desimal setelah dot pertama. Dan jika kita menaruh satu dot lagi, maka JavaScript tahu bahwa bagian desimal kosong dan sekarang pergi ke metode.</p> 
+           <p>Juga bisa menulis <code>(123456).toString(36)</code>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="pembulatan" href="number.html#pembulatan">Pembulatan</a></h2> 
+         <p>Satu dari operasi paling banyak dipakai saat bekerja dengan angka ialah pembulatan.</p> 
+         <p>Ada beberapa fungsi built-in untuk pembulatan:</p> 
+         <dl> 
+          <dt> 
+           <code>Math.floor</code> 
+          </dt> 
+          <dd>
+            Membulat ke bawah: 
+           <code>3.1</code> menjadi 
+           <code>3</code>, dan 
+           <code>-1.1</code> menjadi 
+           <code>-2</code>. 
+          </dd> 
+          <dt> 
+           <code>Math.ceil</code> 
+          </dt> 
+          <dd>
+            Membulat ke atas: 
+           <code>3.1</code> menjadi 
+           <code>4</code>, dan 
+           <code>-1.1</code> menjadi 
+           <code>-1</code>. 
+          </dd> 
+          <dt> 
+           <code>Math.round</code> 
+          </dt> 
+          <dd>
+            Membulatkan ke bilangan bulat terdekat: 
+           <code>3.1</code> menjadi 
+           <code>3</code>, 
+           <code>3.6</code> menjadi 
+           <code>4</code>, huruf tengah: 
+           <code>3.5</code> juga dibulatkan ke atas menjadi 
+           <code>4</code>. 
+          </dd> 
+          <dt> 
+           <code>Math.trunc</code> (tidak didukung oleh Internet Explorer) 
+          </dt> 
+          <dd>
+            Menghapus apa pun setelah koma desimal tanpa pembulatan: 
+           <code>3.1</code> menjadi 
+           <code>3</code>, 
+           <code>-1.1</code> menjadi 
+           <code>-1</code>. 
+          </dd> 
+         </dl> 
+         <p>Ini tabel untuk meringkas perbedaan di antara mereka:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th></th> 
+            <th><code>Math.floor</code></th> 
+            <th><code>Math.ceil</code></th> 
+            <th><code>Math.round</code></th> 
+            <th><code>Math.trunc</code></th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>3.1</code></td> 
+            <td><code>3</code></td> 
+            <td><code>4</code></td> 
+            <td><code>3</code></td> 
+            <td><code>3</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>3.6</code></td> 
+            <td><code>3</code></td> 
+            <td><code>4</code></td> 
+            <td><code>4</code></td> 
+            <td><code>3</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>-1.1</code></td> 
+            <td><code>-2</code></td> 
+            <td><code>-1</code></td> 
+            <td><code>-1</code></td> 
+            <td><code>-1</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>-1.6</code></td> 
+            <td><code>-2</code></td> 
+            <td><code>-1</code></td> 
+            <td><code>-2</code></td> 
+            <td><code>-1</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Fungsi ini membahas semua cara yang mungkin untuk berhadapan dengan bagian desimal dari angka. Tapi bagaimana jika kita mau membulatkan angka ke digit <code>ke-n</code> setelah desimal?</p> 
+         <p>Misalnya, kita punya <code>1.2345</code> dan mau membulatkan ke 2 digit, memperoleh <code>1.23</code>.</p> 
+         <p>Ada dua cara melakukannya:</p> 
+         <ol> 
+          <li> <p>Kali-dan-bagi.</p> <p>Misalnya, untuk membulatkan angka ke digit kedua setelah desimal, kita bisa mengalikan angkanya dengan <code>100</code> (atau sebuah pangkat dari 10), panggil fungsi pembulatan lalu membagi itu kembali.</p> 
+           <div id="yqxrfr8nnr" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let num = 1.23456;
+
+alert( Math.round(num * 100) / 100 ); // 1.23456 -&gt; 123.456 -&gt; 123 -&gt; 1.23</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Metode <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed">toFixed(n)</a> Membulatkan ke digit <code>n</code> setelah poin itu dan mengembalikan representasi string dari hasilnya.</p> 
+           <div id="vdpy5hnfko" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let num = 12.34;
+alert( num.toFixed(1) ); // "12.3"</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Ini membulatkan ke atas atau ke bawah ke nilai terdekat, serupa dengan <code>Math.round</code>:</p> 
+           <div id="ee3iz9sxpp" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let num = 12.36;
+alert( num.toFixed(1) ); // "12.4"</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Silakan catat hasil dari <code>toFixed</code> ialah string. Jika bagian desimal lebih pendek dari yang dibutuhkan, nol ditambahkan di akhir:</p> 
+           <div id="ueszl0ne7i" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let num = 12.34;
+alert( num.toFixed(5) ); // "12.34000", tambah nol supaya tepat 5 digit</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Kita bisa mengkonversi itu ke angka menggunakan unary plus atau panggilan <code>Number()</code>: <code>+num.toFixed(5)</code>.</p> </li> 
+         </ol> 
+         <h2><a class="main__anchor" name="kalkulasi-yang-tidak-tepat" href="number.html#kalkulasi-yang-tidak-tepat">Kalkulasi yang tidak tepat</a></h2> 
+         <p>Secara internal, angka direpresentasikan dalam format 64-bit <a href="https://en.wikipedia.org/wiki/IEEE_754-2008_revision">IEEE-754</a>, jadi ada tepat 64 bit untuk menyimpan angka: 52 di antaranya digunakan untuk menyimpan angka, 11 di antaranya menyimpan posisi titik desimal (nol untuk angka bilangan bulat), dan 1 bit untuk tanda.</p> 
+         <p>Jika angka terlalu besar, itu akan meluapkan penyimpanan 64-bit, berpotensi memberikan infinity:</p> 
+         <div id="xeqpjp9q2a" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 1e500 ); // Infinity</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Yang mungkin agak kurang jelas, tetapi sering terjadi adalah hilangnya ketepatan.</p> 
+         <p>Pertimbangkan (falsy!) tes ini:</p> 
+         <div id="g3bn9ph7bd" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:30,&quot;end&quot;:35}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 0.1 + 0.2 == 0.3 ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Benar, jika kita memeriksa jumlah dari <code>0.1</code> dan <code>0.2</code> adalah <code>0.3</code>, kita mendapatkan <code>false</code>.</p> 
+         <p>Aneh! Kenapa hasilnya itu dan tidak <code>0.3</code>?</p> 
+         <div id="e9brxv1dqs" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 0.1 + 0.2 ); // 0.30000000000000004</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Aduh! Ada lebih banyak konsekuensi daripada perbandingan yang salah di sini. Bayangkan Anda membuat situs e-shopping dan pengunjung memasukkan barang-barang <code>$ 0,10</code> dan<code>$ 0,20</code> ke troli mereka. Total pesanan akan <code>$ 0,30000000000000004</code>. Itu akan mengejutkan siapa pun.</p> 
+         <p>Tetapi kenapa hal ini bisa terjadi?</p> 
+         <p>Sebuah angka disimpan di memori dalam bentuk binary, sebuah urutan dari bits ??? satu dan nol. Tetapi bilangan pecahan seperti <code>0.1</code>, <code>0.2</code> yang terlihat sederhana dalam sistem angka desimal sebenarnya adalah pecahan tak berujung dalam bentuk binernya.</p> 
+         <p>Dengan kata lain, apa itu <code>0,1</code>? Ini adalah satu dibagi dengan sepuluh <code>1 / 10</code>, sepersepuluh. Dalam sistem angka desimal, angka-angka seperti itu mudah diwakili. Bandingkan dengan sepertiga: <code>1 / 3</code>. Ini menjadi pecahan yang tak berujung <code>0,33333 (3)</code>.</p> 
+         <p>Jadi, pembagian dengan kekuatan <code>10</code> dijamin bekerja dengan baik dalam sistem desimal, tetapi pembagian dengan <code>3</code> tidak. Untuk alasan yang sama, dalam sistem angka biner, pembagian dengan kekuatan <code>2</code> dijamin bekerja, tetapi <code>1 / 10</code> menjadi fraksi biner tanpa akhir.</p> 
+         <p>Tidak ada cara untuk menyimpan * tepat 0,1 * atau * persis 0,2 * menggunakan sistem biner, sama seperti tidak ada cara untuk menyimpan sepertiga sebagai fraksi desimal.</p> 
+         <p>Format numerik IEEE-754 memecahkan ini dengan membulatkan ke angka terdekat yang mungkin. Aturan pembulatan ini biasanya tidak memungkinkan kita untuk melihat bahwa ???kehilangan presisi kecil???, tetapi itu ada.</p> 
+         <p>Kita bisa melihat ini dalam aksi:</p> 
+         <div id="bz0h9xubk0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 0.1.toFixed(20) ); // 0.10000000000000000555</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan ketika kita menjumlahkan dua angka, ???kehilangan presisi??? mereka bertambah.</p> 
+         <p>Itu sebabnya <code>0,1 + 0,2</code> tidak sepenuhnya<code>0,3</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tidak hanya JavaScript</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Masalah yang sama ada di banyak bahasa pemrograman lainnya.</p> 
+           <p>PHP, Java, C, Perl, Ruby memberikan hasil yang sama persis, karena mereka didasarkan pada format numerik yang sama.</p> 
+          </div> 
+         </div> 
+         <p>Bisakah kita mengatasi masalah ini? Tentu, metode yang paling dapat diandalkan adalah melengkapi hasilnya dengan bantuan metode <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed">toFixed(n)</a>:</p> 
+         <div id="ctnd37ukew" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sum = 0.1 + 0.2;
+alert( sum.toFixed(2) ); // 0.30</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Harap dicatat bahwa <code>toFixed</code> selalu mengembalikan string. Ini memastikan bahwa ia memiliki 2 digit setelah titik desimal. Itu sebenarnya nyaman jika kita memiliki e-shopping dan perlu menunjukkan <code>$ 0,30</code>. Untuk kasus lain, kita dapat menggunakan plus unary untuk memaksanya menjadi nomor:</p> 
+         <div id="1rnbfr5zte" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sum = 0.1 + 0.2;
+alert( +sum.toFixed(2) ); // 0.3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga dapat sementara mengalikan angka dengan 100 (atau angka yang lebih besar) untuk mengubahnya menjadi bilangan bulat, menghitung, dan kemudian membaginya kembali. Kemudian, saat kita mengerjakan matematika dengan bilangan bulat, kesalahannya agak berkurang, tetapi kita masih mendapatkannya di pembagian:</p> 
+         <div id="05576qy64a" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( (0.1 * 10 + 0.2 * 10) / 10 ); // 0.3
+alert( (0.28 * 100 + 0.14 * 100) / 100); // 0.4200000000000001</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, pendekatan perkalian/pembagian mengurangi kesalahan, tetapi tidak menghapusnya sama sekali.</p> 
+         <p>Terkadang kita bisa mencoba menghindari pecahan sama sekali. Seperti jika kita berurusan dengan toko, maka kita dapat menyimpan harga dalam sen, bukan dalam dolar. Tetapi bagaimana jika kita menerapkan diskon 30%? Dalam praktiknya, menghindari pecahan sama sekali jarang dimungkinkan. Hanya bulatkan mereka untuk memotong ???ekor??? bila diperlukan.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Lucunya</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Coba jalankan ini:</p> 
+           <div id="fplbf2rl6e" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// Halo! saya adalah angka yang meningkat sendiri!
+alert( 9999999999999999 ); // menunjukkan 10000000000000000</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Penderitaan ini berasal dari masalah yang sama: kehilangan presisi. Ada 64 bit untuk angka, 52 di antaranya dapat digunakan untuk menyimpan digit, tetapi itu tidak cukup. Jadi digit yang paling tidak penting menghilang.</p> 
+           <p>JavaScript tidak memicu kesalahan dalam kejadian semacam itu. Itu melakukan yang terbaik untuk memasukkan angka ke dalam format yang diinginkan, tetapi sayangnya, format ini tidak cukup besar.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Dua nol</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Konsekuensi lucu yang lain dari representasi internal dari angka adalah adanya dua nol: <code>0</code> dan<code>-0</code>.</p> 
+           <p>Itu karena sebuah tanda diwakili oleh satu bit, sehingga dapat diatur atau tidak diatur untuk angka apa pun termasuk nol.</p> 
+           <p>Dalam kebanyakan kasus perbedaannya tidak terlalu mencolok, karena operator cocok untuk memperlakukan mereka sebagai sesuatu yang sama.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="tests-isfinite-dan-isnan" href="number.html#tests-isfinite-dan-isnan">Tests: isFinite dan isNaN</a></h2> 
+         <p>Ingat dua nilai numerik khusus ini?</p> 
+         <ul> 
+          <li><code>Infinity</code> (dan <code>-Infinity</code>) adalah nilai numerik khusus yang lebih besar (kurang) dari apa pun.</li> 
+          <li><code>NaN</code> mewakili kesalahan.</li> 
+         </ul> 
+         <p>Mereka termasuk dalam tipe <code>angka</code>, tetapi bukan angka ???normal???, jadi ada fungsi khusus untuk memeriksanya:</p> 
+         <ul> 
+          <li> <p><code>isNaN(value)</code> mengubah argumennya menjadi angka dan kemudian mengujinya <code>NaN</code>:</p> 
+           <div id="0hijhkg16p" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( isNaN(NaN) ); // true
+alert( isNaN("str") ); // true</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Tetapi apakah kita membutuhkan fungsi ini? Tidak bisakah kita menggunakan perbandingan <code>=== NaN</code>? Maaf, tapi jawabannya adalah tidak. Nilai <code>NaN</code> unik karena tidak sama dengan apa pun, termasuk dirinya sendiri:</p> 
+           <div id="vz7auw2xrh" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( NaN === NaN ); // false</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p><code>isFinite(value)</code> mengonversi argumennya menjadi angka dan mengembalikan <code>true</code> jika itu angka biasa, bukan <code>NaN/Infinity/-Infinity</code>:</p> 
+           <div id="9exs5vf9qd" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( isFinite("15") ); // true
+alert( isFinite("str") ); // false, karena nilai khusus: NaN
+alert( isFinite(Infinity) ); // false, karena nilai khusus: Infinity</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ul> 
+         <p>Terkadang <code>isFinite</code> digunakan untuk memvalidasi apakah sebuah nilai string adalah sebuah angka reguler:</p> 
+         <div id="c5qe1ghcro" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let num = +prompt("Enter a number", '');
+
+// akan benar kecuali jika Anda memasukkan Infinity, -Infinity atau bukan angka
+alert( isFinite(num) );</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Harap dicatat bahwa string kosong atau spasi-saja diperlakukan sebagai <code>0</code> dalam semua fungsi numerik termasuk<code>isFinite</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Dibandingkan dengan <code>Object.is</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ada metode bawaan khusus <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object/is">Object.is</a> yang membandingkan nilai seperti <code>===</code>, tetapi lebih dapat diandalkan untuk dua kasus:</p> 
+           <ol> 
+            <li>Ini bekerja dengan <code>NaN</code>: <code>Object.is(NaN, NaN) === true</code>, itu hal yang bagus.</li> 
+            <li>Nilai <code>0</code> and <code>-0</code> adalah berbeda: <code>Object.is(0, -0) === false</code>, secara teknis adalah benar, karena secara internal nomor tersebut memiliki bit tanda yang mungkin berbeda bahkan jika semua bit lainnya nol.</li> 
+           </ol> 
+           <p>Pada kasus lain, <code>Object.is(a, b)</code> adalah sama dengan <code>a === b</code>.</p> 
+           <p>Cara perbandingan ini sering digunakan dalam spesifikasi JavaScript. Ketika suatu algoritma internal perlu membandingkan dua nilai untuk menjadi persis sama, ia menggunakan <code>Object.is</code> (secara internal disebut <a href="https://tc39.github.io/ecma262/#sec-samevalue">SameValue</a>).</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="parseint-dan-parsefloat" href="number.html#parseint-dan-parsefloat">parseInt dan parseFloat</a></h2> 
+         <p>Konversi angka menggunakan nilai tambah <code>+</code> atau <code>Number()</code> sangat ketat. Jika suatu nilai bukan angka, itu gagal:</p> 
+         <div id="xccekmb3la" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( +"100px" ); // NaN</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Satu-satunya pengecualian adalah spasi di awal atau di akhir string, karena diabaikan.</p> 
+         <p>Tetapi dalam kehidupan nyata kita sering memiliki nilai dalam satuan, seperti <code>"100px"</code> atau <code>"12pt"</code> dalam CSS. Juga di banyak negara simbol mata uang mengikuti jumlah, jadi kita memiliki <code>"???19"</code> dan ingin mengekstraksi nilai numerik dari itu.</p> 
+         <p>Untuk itulah <code>parseInt</code> dan<code>parseFloat</code> ada.</p> 
+         <p>Mereka ???membaca??? angka dari sebuah string sampai mereka tidak bisa. Jika terjadi kesalahan, nomor yang dikumpulkan dikembalikan. Fungsi <code>parseInt</code> mengembalikan integer, sementara<code>parseFloat</code> akan mengembalikan nomor floating-point:</p> 
+         <div id="2razw0xl5p" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( parseInt('100px') ); // 100
+alert( parseFloat('12.5em') ); // 12.5
+
+alert( parseInt('12.3') ); // 12, hanya bagian integer yang dikembalikan
+alert( parseFloat('12.3.4') ); // 12.3, poin kedua berhenti membaca</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ada situasi dimana <code>parseInt/parseFloat</code> akan mengembalikan <code>NaN</code>. Ini terjadi ketika tidak ada digit yang bisa dibaca</p> 
+         <div id="wxp1kx7tjd" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( parseInt('a123') ); // NaN, symbol pertama menghentikan proses</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Pernyataan kedua dari <code>parseInt(str, radix)</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Fungsi <code>parseInt()</code> fungsi memiliki parameter opsional kedua. Ini menentukan dasar dari sistem angka, jadi <code>parseInt</code> juga dapat mengurai string nomor hex, angka biner dan sebagainya:</p> 
+           <div id="15ebwg93ex" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( parseInt('0xff', 16) ); // 255
+alert( parseInt('ff', 16) ); // 255, tanpa 0x juga bekerja
+
+alert( parseInt('2n9c', 36) ); // 123456</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="fungsi-matematika-lainnya" href="number.html#fungsi-matematika-lainnya">Fungsi matematika lainnya</a></h2> 
+         <p>Javascript memiliki objek <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a> bawaan dimana berisi perpustakaan kecil fungsi matematika dan konstanta.</p> 
+         <p>Beberapa contoh:</p> 
+         <dl> 
+          <dt> 
+           <code>Math.random()</code> 
+          </dt> 
+          <dd> 
+           <p>Mengembalikan angka acak dari 0 hingga 1 (tidak termasuk 1)</p> 
+           <div id="hnnpontxzl" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( Math.random() ); // 0.1234567894322s
+alert( Math.random() ); // 0.5435252343232
+alert( Math.random() ); // ... (angka aca apa saja)</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>Math.max(a, b, c...)</code> / 
+           <code>Math.min(a, b, c...)</code> 
+          </dt> 
+          <dd> 
+           <p>Mengembalikan argumen terbesar / terkecil dari jumlah argumen yang arbitrer.</p> 
+           <div id="631q9gp4fl" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( Math.max(3, 5, -10, 0, 1) ); // 5
+alert( Math.min(1, 2) ); // 1</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>Math.pow(n, power)</code> 
+          </dt> 
+          <dd> 
+           <p>mengembalikan bilangan <code>n</code> yang dipangkatkan.</p> 
+           <div id="ysl0v3lrcx" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( Math.pow(2, 10) ); // 2 pangkat 10 = 1024</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+         </dl> 
+         <p>Ada lebih banyak fungsi dan konstanta dalam objek <code>Math</code>, termasuk trigonometri, yang dapat Anda temukan di <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math">docs untuk objek Math</a>.</p> 
+         <h2><a class="main__anchor" name="kesimpulan" href="number.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Untuk menulis angka dengan banyak nol:</p> 
+         <ul> 
+          <li>Tambahkan <code>"e"</code> dengan hitungan angka nol ke angka. Seperti: <code>123e6</code> sama dengan <code>123</code> dengan 6 nol <code>123000000</code>.</li> 
+          <li>Angka negatif setelah <code>"e"</code> menyebabkan angka untuk dibagi 1 dengan nol yang diberikan. Contohnya <code>123e-6</code> berarti <code>0.000123</code> (<code>123</code> millionths).</li> 
+         </ul> 
+         <p>Untuk sistem angka yang berbeda:</p> 
+         <ul> 
+          <li>Dapat menulis angka secara langsung dalam sistem hex (<code>0x</code>), oktal (<code>0o</code>) dan sistem biner (<code>0b</code>)</li> 
+          <li><code>parseInt(str, base)</code> mem-parsing string <code>str</code> menjadi bilangan bulat dalam sistem angka dengan diberikan <code>base</code>, <code>2 ??? base ??? 36</code>.</li> 
+          <li><code>num.toString(base)</code> mengonversi angka menjadi string dalam sistem angka dengan diberikan <code>base</code>.</li> 
+         </ul> 
+         <p>Untuk mengkonversi nilai seperti <code>12pt</code> dan <code>100px</code> menjadi sebuah angka:</p> 
+         <ul> 
+          <li>Gunakan <code>parseInt/parseFloat</code> untuk konversi ???lembut???, dimana membaca sebuah angka dari string dan mengembalikan nilai yang bisa dibaca sebelum terjadi kesalahan.</li> 
+         </ul> 
+         <p>Untuk pecahan:</p> 
+         <ul> 
+          <li>Bulangan menggunakan <code>Math.floor</code>, <code>Math.ceil</code>, <code>Math.trunc</code>, <code>Math.round</code> atau <code>num.toFixed(presisi)</code>.</li> 
+          <li>Pastikan untuk mengingat ada kehilangan presisi saat bekerja dengan pecahan.</li> 
+         </ul> 
+         <p>Lebih banyak fungsi matematika:</p> 
+         <ul> 
+          <li>Lihat objek <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a> ketika Anda membutuhkannya. Perpustakaannya sangat kecil, tetapi dapat memenuhi kebutuhan dasar.</li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="number.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="number.html#jumlahkan-angka-dari-pengunjung" name="jumlahkan-angka-dari-pengunjung">Jumlahkan angka dari pengunjung</a></h3> 
+           <a class="task__open-link" href="task/sum-interface.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat skrip yang meminta pengunjung untuk memasukkan dua angka dan kemudian menunjukkan jumlah mereka.</p> 
+            <p><a href="number.html#" onclick="event.preventDefault(); runDemo(this)">jalankan demonya</a></p> 
+            <p>N.B. Ada gotcha dengan tipe.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="wzzvkjwznx" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let a = +prompt("The first number?", "");
+let b = +prompt("The second number?", "");
+
+alert( a + b );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Catatan bahwa unary plus <code>+</code> sebelum <code>prompt</code>. Segera mengkonversi nilai ke angka.</p> 
+              <p>Jika tidak, <code>a</code> dan <code>b</code> akan menjadi string jumlah mereka akan menjadi gabungan mereka, yaitu: <code>"1" + "2" = "12"</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="number.html#kenapa-6-35-tofixed-1-6-3" name="kenapa-6-35-tofixed-1-6-3">Kenapa 6.35.toFixed(1) == 6.3?</a></h3> 
+           <a class="task__open-link" href="task/why-rounded-down.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Berdasarkan dokumentasi <code>Math.round</code> dan <code>toFixed</code> keduanya membulatkan ke angka terdekat: <code>0..4</code> turun sementara <code>5..9</code> naik.</p> 
+            <p>Contohnya:</p> 
+            <div id="z137cjj2hq" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( 1.35.toFixed(1) ); // 1.4</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Dalam contoh serupa di bawah ini, mengapa <code>6.35</code> dibulatkan menjadi <code>6.3</code>, dan tidak <code>6.4</code>?</p> 
+            <div id="d5gw57c05w" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( 6.35.toFixed(1) ); // 6.3</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Bagaimana untuk membulatkan <code>6.35</code> dengan benar?</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Secara internal pecahan desimal <code>6.35</code> adalah sebuah biner tanpa akhir. Seperti biasa dalam kasus seperti ini, disimpan dengan kehilangan presisi.</p> 
+              <p>Ayo lihat:</p> 
+              <div id="9n4se0ft1n" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( 6.35.toFixed(20) ); // 6.34999999999999964473</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kehilangan presisi dapat menyebabkan peningkatan dan penurunan angka. Dalam kasus khusus ini jumlahnya menjadi sedikit lebih sedikit, itu sebabnya dibulatkan.</p> 
+              <p>Dan apa untuk <code>1.35</code>?</p> 
+              <div id="qkjmc6uhnk" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( 1.35.toFixed(20) ); // 1.35000000000000008882</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Di sini kehilangan presisi membuat jumlahnya sedikit lebih besar, jadi itu dibulatkan.</p> 
+              <p><strong>Bagaimana kita dapat memperbaiki masalah dengan <code>6.35</code> jika kita ingin itu dibulatkan dengan cara yang benar?</strong></p> 
+              <p>Kita harus membawanya lebih dekat ke integer sebelum pembulatan:</p> 
+              <div id="nmbutph71" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( (6.35 * 10).toFixed(20) ); // 63.50000000000000000000</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Perhatikan bahwa <code>63.5</code> tidak memiliki kehilangan presisi sama sekali. Itu karena bagian desimal <code>0,5</code> sebenarnya<code>1 / 2</code>. Pecahan yang dibagi oleh kekuatan <code>2</code> persis diwakili dalam sistem biner, sekarang kita dapat membulatkannya:</p> 
+              <div id="hot5bmpw3o" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( Math.round(6.35 * 10) / 10); // 6.35 -&gt; 63.5 -&gt; 64(rounded) -&gt; 6.4</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="number.html#ulangi-sampai-masukan-adalah-sebuah-angka" name="ulangi-sampai-masukan-adalah-sebuah-angka">Ulangi sampai masukan adalah sebuah angka</a></h3> 
+           <a class="task__open-link" href="task/repeat-until-number.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah fungsi <code>readNumber</code> yang meminta (prompts) nomor hingga pengunjung memasukkan nilai numerik yang valid.</p> 
+            <p>Nilai yang dihasilkan harus dikembalikan sebagai angka.</p> 
+            <p>Pengunjung juga dapat menghentikan proses dengan memasukkan baris kosong atau menekan ???BATAL???. Dalam hal ini, fungsi tersebut harus mengembalikan <code>null</code>.</p> 
+            <p><a href="number.html#" onclick="event.preventDefault(); runDemo(this)">jalankan demonya</a></p> 
+            <p><a href="https://plnkr.co/edit/t6kxIYa2b5LrDZAl?p=preview" target="_blank" data-plunk-id="t6kxIYa2b5LrDZAl">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="crxe6u6fw9" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function readNumber() {
+  let num;
+
+  do {
+    num = prompt("Enter a number please?", 0);
+  } while ( !isFinite(num) );
+
+  if (num === null || num === '') return null;
+
+  return +num;
+}
+
+alert(`Read: ${readNumber()}`);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Solusinya sedikit lebih rumit dari itu karena kita perlu menangani <code>null</code>/baris kosong.</p> 
+              <p>Jadi, kita benar-benar menerima input hingga ini merupakan ???angka reguler???. Baik <code>null</code> (cancel) maupun baris kosong juga cocok dengan kondisi itu, karena dalam bentuk numerik mereka adalah<code>0</code>.</p> 
+              <p>Setelah kita berhenti, kita perlu memperlakukan <code>null</code> dan khususnya baris kosong (mengembalikan <code>null</code>), karena mengonversinya menjadi angka akan mengembalikan <code>0</code>.</p> 
+              <p><a href="https://plnkr.co/edit/urJjeN1VvnDJg4zL?p=preview" target="_blank" data-plunk-id="urJjeN1VvnDJg4zL">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="number.html#lingkaran-tak-terbatas-tak-berkala" name="lingkaran-tak-terbatas-tak-berkala">Lingkaran tak terbatas tak berkala</a></h3> 
+           <a class="task__open-link" href="task/endless-loop-error.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Loop ini tidak terbatas. Tidak pernah berakhir. Mengapa?</p> 
+            <div id="5rbqo0bt48" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let i = 0;
+while (i != 10) {
+  i += 0.2;
+}</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Itu karena <code>i</code> tidak akan pernah sebanding dengan <code>10</code>.</p> 
+              <p>Jalankan ini untuk melihat nilai <em>real</em> dari <code>i</code>:</p> 
+              <div id="xtx1d7pik1" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let i = 0;
+while (i &lt; 11) {
+  i += 0.2;
+  if (i &gt; 9.8 &amp;&amp; i &lt; 10.2) alert( i );
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Tidak satu pun dari mereka yang benar-benar <code>10</code>.</p> 
+              <p>Hal-hal seperti itu terjadi karena kehilangan presisi ketika menambahkan pecahan seperti <code>0,2</code>.</p> 
+              <p>Kesimpulan: menghindari pemeriksaan kesetaraan saat bekerja dengan pecahan desimal.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="number.html#sebuah-angka-acak-dari-min-ke-max" name="sebuah-angka-acak-dari-min-ke-max">Sebuah angka acak dari min ke max</a></h3> 
+           <a class="task__open-link" href="task/random-min-max.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Fungsi bawaan <code>Math.random()</code> membuat sebuah angka acak dari <code>0</code> ke <code>1</code> (tidak termasuk <code>1</code>).</p> 
+            <p>Tulis fungsi <code>random(min, max)</code> untuk menghasilkan angka floating-point acak dari <code>min</code> ke<code>max</code> (tidak termasuk <code>max</code>).</p> 
+            <p>Contoh kerjanya:</p> 
+            <div id="x435jqja7s" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( random(1, 5) ); // 1.2345623452
+alert( random(1, 5) ); // 3.7894332423
+alert( random(1, 5) ); // 4.3435234525</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita perlu ???memetakan??? semua nilai dari interval 0???1 ke dalam nilai dari <code>min</code> ke<code>max</code>.</p> 
+              <p>Itu bisa dilakukan dalam dua tahap:</p> 
+              <ol> 
+               <li>Jika kita mengalikan angka acak dari 0???1 dengan <code>max-min</code>, maka interval nilai yang mungkin meningkat<code>0..1</code> ke <code>0..max-min</code>.</li> 
+               <li>Sekarang jika kita menambahkan <code>min</code>, interval yang mungkin menjadi dari<code>min</code> ke <code>max</code>.</li> 
+              </ol> 
+              <p>Fungsi:</p> 
+              <div id="28qqu8k99g" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function random(min, max) {
+  return min + Math.random() * (max - min);
+}
+
+alert( random(1, 5) );
+alert( random(1, 5) );
+alert( random(1, 5) );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="number.html#sebuah-integer-acak-dari-min-ke-max" name="sebuah-integer-acak-dari-min-ke-max">Sebuah integer acak dari min ke max</a></h3> 
+           <a class="task__open-link" href="task/random-int-min-max.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah fungsi <code>randomInteger(min, max)</code> yang menghasilkan angka <em>integer</em> acak dari <code>min</code> ke <code>max</code> termasuk keduanya <code>min</code> dan <code>max</code> sebagai nilai yang mungkin.</p> 
+            <p>Angka apa pun dari interval <code>min..max</code> harus muncul dengan probabilitas yang sama.</p> 
+            <p>Contoh kerjanya:</p> 
+            <div id="0qei64mq6w" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( randomInteger(1, 5) ); // 1
+alert( randomInteger(1, 5) ); // 3
+alert( randomInteger(1, 5) ); // 5</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Anda dapat menggunakan solusi dari <a href="task/random-min-max.html">tugas sebelumnya</a> sebagai basis.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">The simple but wrong solution</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">The simple but wrong solution</h4> 
+              <div class="formatted"> 
+               <p>The simplest, but wrong solution would be to generate a value from <code>min</code> to <code>max</code> and round it:</p> 
+               <div id="ubzc5iz5d0" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>function randomInteger(min, max) {
+  let rand = min + Math.random() * (max - min);
+  return Math.round(rand);
+}
+
+alert( randomInteger(1, 3) );</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>The function works, but it is incorrect. The probability to get edge values <code>min</code> and <code>max</code> is two times less than any other.</p> 
+               <p>If you run the example above many times, you would easily see that <code>2</code> appears the most often.</p> 
+               <p>That happens because <code>Math.round()</code> gets random numbers from the interval <code>1..3</code> and rounds them as follows:</p> 
+               <div id="lpxmtyykov" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>values from 1    ... to 1.4999999999  become 1
+values from 1.5  ... to 2.4999999999  become 2
+values from 2.5  ... to 2.9999999999  become 3</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Now we can clearly see that <code>1</code> gets twice less values than <code>2</code>. And the same with <code>3</code>.</p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">The correct solution</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">The correct solution</h4> 
+              <div class="formatted"> 
+               <p>There are many correct solutions to the task. One of them is to adjust interval borders. To ensure the same intervals, we can generate values from <code>0.5 to 3.5</code>, thus adding the required probabilities to the edges:</p> 
+               <div id="ah06vvicj5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:4}]"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>function randomInteger(min, max) {
+  // now rand is from  (min-0.5) to (max+0.5)
+  let rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
+
+alert( randomInteger(1, 3) );</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>An alternative way could be to use <code>Math.floor</code> for a random number from <code>min</code> to <code>max+1</code>:</p> 
+               <div id="0s6lk9xtwp" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:4}]"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="toolbar codebox__toolbar"> 
+                  <div class="toolbar__tool"> 
+                   <a href="number.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                  </div> 
+                  <div class="toolbar__tool"> 
+                   <a href="number.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                  </div> 
+                 </div> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>function randomInteger(min, max) {
+  // here rand is from min to (max+1)
+  let rand = min + Math.random() * (max + 1 - min);
+  return Math.floor(rand);
+}
+
+alert( randomInteger(1, 3) );</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Now all intervals are mapped this way:</p> 
+               <div id="jrdadpxkf7" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>values from 1  ... to 1.9999999999  become 1
+values from 2  ... to 2.9999999999  become 2
+values from 3  ... to 3.9999999999  become 3</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>All intervals have the same length, making the final distribution uniform.</p> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="primitives-methods.html" data-tooltip="Metode primitif"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="string.html" data-tooltip="String"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fnumber" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fnumber" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#cara-lain-menulis-angka">Cara lain menulis angka</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#tostring-base">toString(base)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#pembulatan">Pembulatan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#kalkulasi-yang-tidak-tepat">Kalkulasi yang tidak tepat</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#tests-isfinite-dan-isnan">Tests: isFinite dan isNaN</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#parseint-dan-parsefloat">parseInt dan parseFloat</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#fungsi-matematika-lainnya">Fungsi matematika lainnya</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#tasks">Tugas (6)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="number.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fnumber" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fnumber" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

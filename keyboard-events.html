@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Keyboard: keydown and keyup</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="keyboard-events.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Keyboard: keydown and keyup"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Keyboard: keydown and keyup"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="pointer-events.html"> 
+  <link rel="next" href="onscroll.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Keyboard: keydown and keyup"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fkeyboard-events" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fkeyboard-events" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="21" max="32" data-tooltip="Pelajaran 21 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="event-details.html"><span>UI Events</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"UI Events","item":"https://id.javascript.info/event-details"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://javascript.info/keyboard-events">English</a>, 
+          <a href="https://es.javascript.info/keyboard-events">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/keyboard-events">Fran??ais</a>, 
+          <a href="https://it.javascript.info/keyboard-events">Italiano</a>, 
+          <a href="https://ja.javascript.info/keyboard-events">?????????</a>, 
+          <a href="https://learn.javascript.ru/keyboard-events">??????????????</a>, 
+          <a href="https://tr.javascript.info/keyboard-events">T??rk??e</a>, 
+          <a href="https://uk.javascript.info/keyboard-events">????????????????????</a>, 
+          <a href="https://zh.javascript.info/keyboard-events">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Keyboard: keydown and keyup</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Keyboard: keydown and keyup"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Before we get to keyboard, please note that on modern devices there are other ways to ???input something???. For instance, people use speech recognition (especially on mobile devices) or copy/paste with the mouse.</p> 
+         <p>So if we want to track any input into an <code>&lt;input&gt;</code> field, then keyboard events are not enough. There???s another event named <code>input</code> to track changes of an <code>&lt;input&gt;</code> field, by any means. And it may be a better choice for such task. We???ll cover it later in the chapter <a href="events-change-input.html">Events: change, input, cut, copy, paste</a>.</p> 
+         <p>Keyboard events should be used when we want to handle keyboard actions (virtual keyboard also counts). For instance, to react on arrow keys <kbd class="shortcut">Up</kbd> and <kbd class="shortcut">Down</kbd> or hotkeys (including combinations of keys).</p> 
+         <h2><a class="main__anchor" name="keyboard-test-stand" href="keyboard-events.html#keyboard-test-stand">Teststand</a></h2> 
+         <p>To better understand keyboard events, you can use the teststand below.</p> 
+         <p>Try different key combinations in the text field.</p> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                script.js 
+              </div> 
+              <div class="code-tabs__switch">
+                style.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/keyboard-events/keyboard-dump/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/uIsZswsZq5pob5Qg?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:480px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/keyboard-events/keyboard-dump/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-javascript line-numbers"><code>kinput.onkeydown = kinput.onkeyup = kinput.onkeypress = handle;
+
+let lastTime = Date.now();
+
+function handle(e) {
+  if (form.elements[e.type + 'Ignore'].checked) return;
+
+  let text = e.type +
+    ' key=' + e.key +
+    ' code=' + e.code +
+    (e.shiftKey ? ' shiftKey' : '') +
+    (e.ctrlKey ? ' ctrlKey' : '') +
+    (e.altKey ? ' altKey' : '') +
+    (e.metaKey ? ' metaKey' : '') +
+    (e.repeat ? ' (repeat)' : '') +
+    "\n";
+
+  if (area.value &amp;&amp; Date.now() - lastTime &gt; 250) {
+    area.value += new Array(81).join('-') + '\n';
+  }
+  lastTime = Date.now();
+
+  area.value += text;
+
+  if (form.elements[e.type + 'Stop'].checked) {
+    e.preventDefault();
+  }
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>#kinput {
+  font-size: 150%;
+  box-sizing: border-box;
+  width: 95%;
+}
+
+#area {
+  width: 95%;
+  box-sizing: border-box;
+  height: 250px;
+  border: 1px solid black;
+  display: block;
+}
+
+form label {
+  display: inline;
+  white-space: nowrap;
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;form id="form" onsubmit="return false"&gt;
+
+    Prevent default for:
+    &lt;label&gt;
+      &lt;input type="checkbox" name="keydownStop" value="1"&gt; keydown&lt;/label&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+    &lt;label&gt;
+      &lt;input type="checkbox" name="keyupStop" value="1"&gt; keyup&lt;/label&gt;
+
+    &lt;p&gt;
+      Ignore:
+      &lt;label&gt;
+        &lt;input type="checkbox" name="keydownIgnore" value="1"&gt; keydown&lt;/label&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+      &lt;label&gt;
+        &lt;input type="checkbox" name="keyupIgnore" value="1"&gt; keyup&lt;/label&gt;
+    &lt;/p&gt;
+
+    &lt;p&gt;Focus on the input field and press a key.&lt;/p&gt;
+
+    &lt;input type="text" placeholder="Press keys here" id="kinput"&gt;
+
+    &lt;textarea id="area"&gt;&lt;/textarea&gt;
+    &lt;input type="button" value="Clear" onclick="area.value = ''" /&gt;
+  &lt;/form&gt;
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="keydown-and-keyup" href="keyboard-events.html#keydown-and-keyup">Keydown and keyup</a></h2> 
+         <p>The <code>keydown</code> events happens when a key is pressed down, and then <code>keyup</code> ??? when it???s released.</p> 
+         <h3><a class="main__anchor" name="event-code-and-event-key" href="keyboard-events.html#event-code-and-event-key">event.code and event.key</a></h3> 
+         <p>The <code>key</code> property of the event object allows to get the character, while the <code>code</code> property of the event object allows to get the ???physical key code???.</p> 
+         <p>For instance, the same key <kbd class="shortcut">Z</kbd> can be pressed with or without <kbd class="shortcut">Shift</kbd>. That gives us two different characters: lowercase <code>z</code> and uppercase <code>Z</code>.</p> 
+         <p>The <code>event.key</code> is exactly the character, and it will be different. But <code>event.code</code> is the same:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Key</th> 
+            <th><code>event.key</code></th> 
+            <th><code>event.code</code></th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><kbd class="shortcut">Z</kbd></td> 
+            <td><code>z</code> (lowercase)</td> 
+            <td><code>KeyZ</code></td> 
+           </tr> 
+           <tr> 
+            <td><kbd class="shortcut">Shift<span class="shortcut__plus">+</span>Z</kbd></td> 
+            <td><code>Z</code> (uppercase)</td> 
+            <td><code>KeyZ</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>If a user works with different languages, then switching to another language would make a totally different character instead of <code>"Z"</code>. That will become the value of <code>event.key</code>, while <code>event.code</code> is always the same: <code>"KeyZ"</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">???KeyZ??? and other key codes</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Every key has the code that depends on its location on the keyboard. Key codes described in the <a href="https://www.w3.org/TR/uievents-code/">UI Events code specification</a>.</p> 
+           <p>For instance:</p> 
+           <ul> 
+            <li>Letter keys have codes <code>"Key&lt;letter&gt;"</code>: <code>"KeyA"</code>, <code>"KeyB"</code> etc.</li> 
+            <li>Digit keys have codes: <code>"Digit&lt;number&gt;"</code>: <code>"Digit0"</code>, <code>"Digit1"</code> etc.</li> 
+            <li>Special keys are coded by their names: <code>"Enter"</code>, <code>"Backspace"</code>, <code>"Tab"</code> etc.</li> 
+           </ul> 
+           <p>There are several widespread keyboard layouts, and the specification gives key codes for each of them.</p> 
+           <p>Read the <a href="https://www.w3.org/TR/uievents-code/#key-alphanumeric-section">alphanumeric section of the spec</a> for more codes, or just press a key in the <a href="keyboard-events.html#keyboard-test-stand">teststand</a> above.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Case matters: <code>"KeyZ"</code>, not <code>"keyZ"</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Seems obvious, but people still make mistakes.</p> 
+           <p>Please evade mistypes: it???s <code>KeyZ</code>, not <code>keyZ</code>. The check like <code>event.code=="keyZ"</code> won???t work: the first letter of <code>"Key"</code> must be uppercase.</p> 
+          </div> 
+         </div> 
+         <p>What if a key does not give any character? For instance, <kbd class="shortcut">Shift</kbd> or <kbd class="shortcut">F1</kbd> or others. For those keys, <code>event.key</code> is approximately the same as <code>event.code</code>:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Key</th> 
+            <th><code>event.key</code></th> 
+            <th><code>event.code</code></th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><kbd class="shortcut">F1</kbd></td> 
+            <td><code>F1</code></td> 
+            <td><code>F1</code></td> 
+           </tr> 
+           <tr> 
+            <td><kbd class="shortcut">Backspace</kbd></td> 
+            <td><code>Backspace</code></td> 
+            <td><code>Backspace</code></td> 
+           </tr> 
+           <tr> 
+            <td><kbd class="shortcut">Shift</kbd></td> 
+            <td><code>Shift</code></td> 
+            <td><code>ShiftRight</code> or <code>ShiftLeft</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Please note that <code>event.code</code> specifies exactly which key is pressed. For instance, most keyboards have two <kbd class="shortcut">Shift</kbd> keys: on the left and on the right side. The <code>event.code</code> tells us exactly which one was pressed, and <code>event.key</code> is responsible for the ???meaning??? of the key: what it is (a ???Shift???).</p> 
+         <p>Let???s say, we want to handle a hotkey: <kbd class="shortcut">Ctrl<span class="shortcut__plus">+</span>Z</kbd> (or <kbd class="shortcut">Cmd<span class="shortcut__plus">+</span>Z</kbd> for Mac). Most text editors hook the ???Undo??? action on it. We can set a listener on <code>keydown</code> and check which key is pressed.</p> 
+         <p>There???s a dilemma here: in such a listener, should we check the value of <code>event.key</code> or <code>event.code</code>?</p> 
+         <p>On one hand, the value of <code>event.key</code> is a character, it changes depending on the language. If the visitor has several languages in OS and switches between them, the same key gives different characters. So it makes sense to check <code>event.code</code>, it???s always the same.</p> 
+         <p>Like this:</p> 
+         <div id="de1efkxu9s" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="keyboard-events.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="keyboard-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>document.addEventListener('keydown', function(event) {
+  if (event.code == 'KeyZ' &amp;&amp; (event.ctrlKey || event.metaKey)) {
+    alert('Undo!')
+  }
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>On the other hand, there???s a problem with <code>event.code</code>. For different keyboard layouts, the same key may have different characters.</p> 
+         <p>For example, here are US layout (???QWERTY???) and German layout (???QWERTZ???) under it (from Wikipedia):</p> 
+         <figure> 
+          <div class="image" style="width:602px"> 
+           <div class="image__ratio" style="padding-top:33.5548172757475%"></div> 
+           <object type="image/svg+xml" data="article/keyboard-events/us-layout.svg" width="602" height="202" class="image__image" data-use-theme> <img src="article/keyboard-events/us-layout.svg" alt="" width="602" height="202"> </object> 
+          </div> 
+         </figure> 
+         <figure> 
+          <div class="image" style="width:600px"> 
+           <div class="image__ratio" style="padding-top:33.33333333333333%"></div> 
+           <object type="image/svg+xml" data="article/keyboard-events/german-layout.svg" width="600" height="200" class="image__image" data-use-theme> <img src="article/keyboard-events/german-layout.svg" alt="" width="600" height="200"> </object> 
+          </div> 
+         </figure> 
+         <p>For the same key, US layout has ???Z???, while German layout has ???Y??? (letters are swapped).</p> 
+         <p>Literally, <code>event.code</code> will equal <code>KeyZ</code> for people with German layout when they press <kbd class="shortcut">Y</kbd>.</p> 
+         <p>If we check <code>event.code == 'KeyZ'</code> in our code, then for people with German layout such test will pass when they press <kbd class="shortcut">Y</kbd>.</p> 
+         <p>That sounds really odd, but so it is. The <a href="https://www.w3.org/TR/uievents-code/#table-key-code-alphanumeric-writing-system">specification</a> explicitly mentions such behavior.</p> 
+         <p>So, <code>event.code</code> may match a wrong character for unexpected layout. Same letters in different layouts may map to different physical keys, leading to different codes. Luckily, that happens only with several codes, e.g. <code>keyA</code>, <code>keyQ</code>, <code>keyZ</code> (as we???ve seen), and doesn???t happen with special keys such as <code>Shift</code>. You can find the list in the <a href="https://www.w3.org/TR/uievents-code/#table-key-code-alphanumeric-writing-system">specification</a>.</p> 
+         <p>To reliably track layout-dependent characters, <code>event.key</code> may be a better way.</p> 
+         <p>On the other hand, <code>event.code</code> has the benefit of staying always the same, bound to the physical key location, even if the visitor changes languages. So hotkeys that rely on it work well even in case of a language switch.</p> 
+         <p>Do we want to handle layout-dependant keys? Then <code>event.key</code> is the way to go.</p> 
+         <p>Or we want a hotkey to work even after a language switch? Then <code>event.code</code> may be better.</p> 
+         <h2><a class="main__anchor" name="auto-repeat" href="keyboard-events.html#auto-repeat">Auto-repeat</a></h2> 
+         <p>If a key is being pressed for a long enough time, it starts to ???auto-repeat???: the <code>keydown</code> triggers again and again, and then when it???s released we finally get <code>keyup</code>. So it???s kind of normal to have many <code>keydown</code> and a single <code>keyup</code>.</p> 
+         <p>For events triggered by auto-repeat, the event object has <code>event.repeat</code> property set to <code>true</code>.</p> 
+         <h2><a class="main__anchor" name="default-actions" href="keyboard-events.html#default-actions">Default actions</a></h2> 
+         <p>Default actions vary, as there are many possible things that may be initiated by the keyboard.</p> 
+         <p>For instance:</p> 
+         <ul> 
+          <li>A character appears on the screen (the most obvious outcome).</li> 
+          <li>A character is deleted (<kbd class="shortcut">Delete</kbd> key).</li> 
+          <li>The page is scrolled (<kbd class="shortcut">PageDown</kbd> key).</li> 
+          <li>The browser opens the ???Save Page??? dialog (<kbd class="shortcut">Ctrl<span class="shortcut__plus">+</span>S</kbd>)</li> 
+          <li>???and so on.</li> 
+         </ul> 
+         <p>Preventing the default action on <code>keydown</code> can cancel most of them, with the exception of OS-based special keys. For instance, on Windows <kbd class="shortcut">Alt<span class="shortcut__plus">+</span>F4</kbd> closes the current browser window. And there???s no way to stop it by preventing the default action in JavaScript.</p> 
+         <p>For instance, the <code>&lt;input&gt;</code> below expects a phone number, so it does not accept keys except digits, <code>+</code>, <code>()</code> or <code>-</code>:</p> 
+         <div id="5uxm0d0oou" data-trusted="1" class="code-example" data-demo-height="60" data-highlight="[{&quot;start&quot;:5,&quot;cols&quot;:[{&quot;start&quot;:7,&quot;end&quot;:50}]}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="keyboard-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="keyboard-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+function checkPhoneKey(key) {
+  return (key &gt;= '0' &amp;&amp; key &lt;= '9') || key == '+' || key == '(' || key == ')' || key == '-';
+}
+&lt;/script&gt;
+&lt;input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" type="tel"&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-5uxm0d0oou" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Please note that special keys, such as <kbd class="shortcut">Backspace</kbd>, <kbd class="shortcut">Left</kbd>, <kbd class="shortcut">Right</kbd>, <kbd class="shortcut">Ctrl<span class="shortcut__plus">+</span>V</kbd>, do not work in the input. That???s a side-effect of the strict filter <code>checkPhoneKey</code>.</p> 
+         <p>Let???s relax it a little bit:</p> 
+         <div id="8mpfw5xu4t" data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="keyboard-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="keyboard-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+function checkPhoneKey(key) {
+  return (key &gt;= '0' &amp;&amp; key &lt;= '9') || key == '+' || key == '(' || key == ')' || key == '-' ||
+    key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Delete' || key == 'Backspace';
+}
+&lt;/script&gt;
+&lt;input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" type="tel"&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-8mpfw5xu4t" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Now arrows and deletion works well.</p> 
+         <p>???But we still can enter anything by using a mouse and right-click + Paste. So the filter is not 100% reliable. We can just let it be like that, because most of time it works. Or an alternative approach would be to track the <code>input</code> event ??? it triggers after any modification. There we can check the new value and highlight/modify it when it???s invalid.</p> 
+         <h2><a class="main__anchor" name="legacy" href="keyboard-events.html#legacy">Legacy</a></h2> 
+         <p>In the past, there was a <code>keypress</code> event, and also <code>keyCode</code>, <code>charCode</code>, <code>which</code> properties of the event object.</p> 
+         <p>There were so many browser incompatibilities while working with them, that developers of the specification had no way, other than deprecating all of them and creating new, modern events (described above in this chapter). The old code still works, as browsers keep supporting them, but there???s totally no need to use those any more.</p> 
+         <h2><a class="main__anchor" name="mobile-keyboards" href="keyboard-events.html#mobile-keyboards">Mobile Keyboards</a></h2> 
+         <p>When using virtual/mobile keyboards, formally known as IME (Input-Method Editor), the W3C standard states that a KeyboardEvent???s <a href="https://www.w3.org/TR/uievents/#determine-keydown-keyup-keyCode"><code>e.keyCode</code> should be <code>229</code></a> and <a href="https://www.w3.org/TR/uievents-key/#key-attr-values"><code>e.key</code> should be <code>"Unidentified"</code></a>.</p> 
+         <p>While some of these keyboards might still use the right values for <code>e.key</code>, <code>e.code</code>, <code>e.keyCode</code>??? when pressing certain keys such as arrows or backspace, there???s no guarantee, so your keyboard logic might not always work on mobile devices.</p> 
+         <h2><a class="main__anchor" name="summary" href="keyboard-events.html#summary">Summary</a></h2> 
+         <p>Pressing a key always generates a keyboard event, be it symbol keys or special keys like <kbd class="shortcut">Shift</kbd> or <kbd class="shortcut">Ctrl</kbd> and so on. The only exception is <kbd class="shortcut">Fn</kbd> key that sometimes presents on a laptop keyboard. There???s no keyboard event for it, because it???s often implemented on lower level than OS.</p> 
+         <p>Keyboard events:</p> 
+         <ul> 
+          <li><code>keydown</code> ??? on pressing the key (auto-repeats if the key is pressed for long),</li> 
+          <li><code>keyup</code> ??? on releasing the key.</li> 
+         </ul> 
+         <p>Main keyboard event properties:</p> 
+         <ul> 
+          <li><code>code</code> ??? the ???key code??? (<code>"KeyA"</code>, <code>"ArrowLeft"</code> and so on), specific to the physical location of the key on keyboard.</li> 
+          <li><code>key</code> ??? the character (<code>"A"</code>, <code>"a"</code> and so on), for non-character keys, such as <kbd class="shortcut">Esc</kbd>, usually has the same value as <code>code</code>.</li> 
+         </ul> 
+         <p>In the past, keyboard events were sometimes used to track user input in form fields. That???s not reliable, because the input can come from various sources. We have <code>input</code> and <code>change</code> events to handle any input (covered later in the chapter <a href="events-change-input.html">Events: change, input, cut, copy, paste</a>). They trigger after any kind of input, including copy-pasting or speech recognition.</p> 
+         <p>We should use keyboard events when we really want keyboard. For example, to react on hotkeys or special keys.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="keyboard-events.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="keyboard-events.html#extended-hotkeys" name="extended-hotkeys">Extended hotkeys</a></h3> 
+           <a class="task__open-link" href="task/check-sync-keydown.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Create a function <code>runOnKeys(func, code1, code2, ... code_n)</code> that runs <code>func</code> on simultaneous pressing of keys with codes <code>code1</code>, <code>code2</code>, ???, <code>code_n</code>.</p> 
+            <p>For instance, the code below shows <code>alert</code> when <code>"Q"</code> and <code>"W"</code> are pressed together (in any language, with or without CapsLock)</p> 
+            <div id="57sx9kax0p" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>runOnKeys(
+  () =&gt; alert("Hello!"),
+  "KeyQ",
+  "KeyW"
+);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://id.js.cx/task/check-sync-keydown/solution/" target="blank">Demo di jendela baru</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>We should use two handlers: <code>document.onkeydown</code> and <code>document.onkeyup</code>.</p> 
+              <p>Let???s create a set <code>pressed = new Set()</code> to keep currently pressed keys.</p> 
+              <p>The first handler adds to it, while the second one removes from it. Every time on <code>keydown</code> we check if we have enough keys pressed, and run the function if it is so.</p> 
+              <p><a href="https://plnkr.co/edit/0Ai01dSUTLI5X87o?p=preview" target="_blank" data-plunk-id="0Ai01dSUTLI5X87o">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="pointer-events.html" data-tooltip="Pointer events"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="onscroll.html" data-tooltip="Scrolling"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fkeyboard-events" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fkeyboard-events" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="event-details.html">UI Events</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keyboard-events.html#keyboard-test-stand">Teststand</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keyboard-events.html#keydown-and-keyup">Keydown and keyup</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keyboard-events.html#auto-repeat">Auto-repeat</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keyboard-events.html#default-actions">Default actions</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keyboard-events.html#legacy">Legacy</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keyboard-events.html#mobile-keyboards">Mobile Keyboards</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keyboard-events.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keyboard-events.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keyboard-events.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fkeyboard-events" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fkeyboard-events" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

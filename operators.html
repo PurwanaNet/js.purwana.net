@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Operator dasar, maths</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="operators.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Operator dasar, maths"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Operator dasar, maths"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="type-conversions.html"> 
+  <link rel="next" href="comparison.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Operator dasar, maths"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Foperators" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Foperators" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="12" max="92" data-tooltip="Pelajaran 12 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="first-steps.html"><span>JavaScript Dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"JavaScript Dasar","item":"https://id.javascript.info/first-steps"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Operator dasar, maths</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Operator dasar, maths"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Kita tahu banyak operator dari sekolah. Mereka adalah penambahan <code>+</code>, perkalian <code>*</code>, pengurangan <code>-</code>, dll.</p> 
+         <p>Didalam bagian ini, kita akan memulai dengan menggunakan operator sederhana, lalu kita akan fokus pada aspek khusus Javascript, yang tidak dipelajari pada aritmatika di sekolah.</p> 
+         <h2><a class="main__anchor" name="istilah-unary-binary-operand" href="operators.html#istilah-unary-binary-operand">Istilah: ???unary???, ???binary???, ???operand???</a></h2> 
+         <p>Sebelum kita lanjut, mari pahami dulu terminologi umum.</p> 
+         <ul> 
+          <li> <p><em>Operand</em> ??? untuk apa operator diaplikasikan. Misalnya, dalam perkalian <code>5 * 2</code> ada dua operand: operand kiri <code>5</code> dan operand kanan <code>2</code>. Kadang, orang memanggil ini ???argumen??? ketimbang ???operand???.</p> </li> 
+          <li> <p>Operator disebut <em>unary</em> jika ia punya operand tunggal. Misalnya, negasi unary <code>-</code> membalikkan tanda dari angka:</p> 
+           <div id="m1szb3mdx0" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let x = 1;
+
+x = -x;
+alert( x ); // -1, negasi unary diaplikasikan</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Operator disebut <em>binary</em> jika ia punya dua operand. Minus yang sama juga berada dalam bentuk binary:</p> 
+           <div id="b15kqbvxay" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let x = 1, y = 3;
+alert( y - x ); // 2, minus binary mengurangi nilai</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Formalnya, di contoh di atas kita punya dua operator berbeda yang berbagi simbol yang sama: operator negasi, operator unary yang membalik tanda, dan operator pengurangan, operator biner yang mengurangi angka satu dengan lainnya.</p> </li> 
+         </ul> 
+         <h2><a class="main__anchor" name="maths" href="operators.html#maths">Maths</a></h2> 
+         <p>Operasi matematika dibawah telah didukung didalam Javascript:</p> 
+         <ul> 
+          <li>Penambahan <code>+</code>,</li> 
+          <li>Pengurangan <code>-</code>,</li> 
+          <li>Perkalian <code>*</code>,</li> 
+          <li>Pembagian <code>/</code>,</li> 
+          <li>Sisa Bagi <code>%</code>,</li> 
+          <li>Eksponensial <code>**</code>.</li> 
+         </ul> 
+         <p>Keempat operasi pertama sudah cukup jelas, sementara <code>%</code> dan <code>**</code> membutuhkan lebih banyak kata-kata untuk dijelaskan.</p> 
+         <h3><a class="main__anchor" name="sisa-bagi" href="operators.html#sisa-bagi">Sisa bagi %</a></h3> 
+         <p>Operator sisa bagi <code>%</code> sebagaimana kelihatannya, tidak berhubungan dengan persen.</p> 
+         <p>Hasil dari <code>a % b</code> adalah <a href="https://en.wikipedia.org/wiki/Remainder">nilai sisa</a> dai pembagian antara <code>a</code> oleh <code>b</code>.</p> 
+         <p>Contoh</p> 
+         <div id="bwc2tc6w6w" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 5 % 2 ); // 1, sisa dari pembagian antara 5 dibagi 2
+alert( 8 % 3 ); // 2, sisa dari pembagian antara 8 dibagi 3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="eksponensial" href="operators.html#eksponensial">Eksponensial **</a></h3> 
+         <p>Operator eksponensial <code>a ** b</code> mengkalikan <code>a</code> dengan nilai itu sendiri sebanyak <code>b</code> kali.</p> 
+         <p>Dalam matematika sekolah, kita menuliskannya sebagai<sup>b</sup>.</p> 
+         <p>alert( 2 ** 2 ); // 2?? = 4 alert( 2 ** 3 ); // 2?? = 8 alert( 2 ** 4 ); // 2??? = 16</p> 
+         <div id="9fwb3vvb7t" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code>Sama seperti dalam matematika, operator eksponensial juga didefinisikan untuk bilangan non-bilangan bulat.
+
+Misalnya, akar kuadrat adalah eksponensial dengan :
+
+```js run
+alert( 4 ** (1/2) ); // 2 (pangkat 1/2 sama dengan akar kuadrat)
+alert( 8 ** (1/3) ); // 2 (pangkat 1/3 sama dengan akar kubik)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="penambahan-string-dengan" href="operators.html#penambahan-string-dengan">Penambahan string dengan +</a></h2> 
+         <p>Ayo kita bertemu dengan fitur dari operator Javascript yang berada diatas aritmatika di sekolah.</p> 
+         <p>Biasanya, operator plus <code>+</code> menambah angka.</p> 
+         <p>Tapi, jika binary <code>+</code> diaplikasikan ke string, ia menggabungkan (konkatenasi) mereka:</p> 
+         <div id="xz11wznwzz" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let s = "my" + "string";
+alert(s); // mystring</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ingat bahwa jika salah satu operand berupa string, maka yang satunya dikonversi ke string juga.</p> 
+         <p>Misalnya:</p> 
+         <div id="ia6yqkmtq4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( '1' + 2 ); // "12"
+alert( 2 + '1' ); // "21"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Lihat, tak masalah operand manapun yang berupa string. Aturannya simpel: jika salah satu operand adalah string, maka yang satunya dikonversi ke string juga.</p> 
+         <p>Namun, ingat bahwa operasi berjalan dari kiri ke kanan. Jika ada dua angka diikuti string, angka akan ditambah sebelum dikonversi ke string:</p> 
+         <p>Ini adalah contoh yang lebih rumit:</p> 
+         <div id="7rd9tc0t9r" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert(2 + 2 + '1' ); // "41" dan bukan "221"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini, operator bekerja secara bergantian. Pertama <code>+</code> menambahkan dua angka, jadi akan menghasilkan <code>4</code>, lalu selanjutnya <code>+</code> menambahkan string <code>1</code> kedalamnya, jadi akan menjadi seperti <code>4 + '1' = 41</code>.</p> 
+         <div id="rxixhuwqhj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert('1' + 2 + 2); // "122" dan bukan "14"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>disini, bilangan pertama adalah string, kompiler memperlakukan dua bilangan lainnya sebagai string juga. Bilangan <code>2</code> ditambahkan dengan <code>1</code>, jadi <code>'1' + 2 = "12"</code> dan <code>"12" + 2 = "122"</code>.</p> 
+         <p>Operator <code>+</code> hanyalah satu-satunya operator yang mendukung penggunaan string dengan cara semacan itu. Operator aritmatika lainnya hanya bekerja dengan angka dan selalu mengubah operannya menjadi angka.</p> 
+         <p>Ini adalah contoh untuk pengurangan dan pembagian:</p> 
+         <div id="54g7kzziq" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 6 - '2' ); // 4, mengubah '2' menjadi angka
+alert( '6' / '2' ); // 3, mengubah keduanya menjadi angka</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="konversi-angka-unary" href="operators.html#konversi-angka-unary">Konversi angka, unary +</a></h2> 
+         <p>Plus <code>+</code> ada dalam dua bentuk: bentuk binary yang kita gunakan di atas dan bentuk unary.</p> 
+         <p>Plus unary atau, dalam kata lain, operator plus <code>+</code> diaplikasikan ke nilai tunggal, tak berefek apapun ke angka. Tapi jika operand bukan angka, plus unary dikonversi ke dalam angka.</p> 
+         <p>Misalnya:</p> 
+         <div id="n703lo52j1" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// Tak ada efek ke angka
+let x = 1;
+alert( +x ); // 1
+
+let y = -2;
+alert( +y ); // -2
+
+// Mengkonversi non-angka
+alert( +true ); // 1
+alert( +"" );   // 0</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebenarnya ia melakukan hal yang sama seperti <code>Number(...)</code>, tapi lebih pendek.</p> 
+         <p>Kebutuhan mengkonversi string ke angka sangat sering meningkat. Misalnya, jika kita memperoleh nilai dari kolom di form HTML, mereka biasanya string. Bagaimana jika kita ingin menjumlahkan mereka?</p> 
+         <p>Plus binary akan menambah mereka sebagai string:</p> 
+         <div id="mye0l1neiv" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let apples = "2";
+let oranges = "3";
+
+alert( apples + oranges ); // "23", plus binary mengkonkatenasi string</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita ingin memperlakukan mereka sebagai angka, kita harus mengkonversi, lalu menjumlahkan mereka:</p> 
+         <div id="idh3sueeda" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let apples = "2";
+let oranges = "3";
+
+// kedua nilai dikonversi ke angka sebelum plus binary
+alert( +apples + +oranges ); // 5
+
+// varian lebih panjang
+// alert( Number(apples) + Number(oranges) ); // 5</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dari sisi pandang matematikawan, melimpahnya plus terlihat aneh. Tapi dari sisi pandang programmer, tak ada yang spesial: plus unary diaplikasikan dahulu, lalu mengkonversi string ke angka, dan lalu binary plus menjumlahkan mereka.</p> 
+         <p>Kenapa plus unary diaplikasi ke nilai sebelum binarynya? Seperti yang kita lihat, itu karena <em>peresedensi lebih tinggi</em> mereka.</p> 
+         <h2><a class="main__anchor" name="presedensi-operator" href="operators.html#presedensi-operator">Presedensi operator</a></h2> 
+         <p>Jika expresi punya lebih dari satu operator, urutan eksekusi ditentukan oleh <em>presedensi</em> mereka, atau dengan kata lain, urutan prioritas default operator.</p> 
+         <p>Dari sekolah, kita semua tahu bahwa perkalian dalam expresi <code>1 + 2 * 2</code> harus dihitung sebelum penambahan. Itulah arti dari presedensi. Perkalian disebut memiliki <em>presedensi lebih tinggi</em> dari penambahan.</p> 
+         <p>Tanda kurung mengesampingkan presedensi apapun, jadi jika kita tak puas dengan urutan default, kita bisa gunakan mereka untuk mengubahnya. Misalnya: tulis <code>(1 + 2) * 2</code>.</p> 
+         <p>Ada banyak operator di JavaScript. Tiap operator punya nomor presedensi masing-masing. Nomor yang lebih besar dieksekusi terlebih dahulu. Jika presedensinya sama, urutan eksekusinya dari kiri ke kanan.</p> 
+         <p>Di sini adalah extrak dari <a href="https://developer.mozilla.org/en/JavaScript/Reference/operators/operator_precedence">tabel presedensi</a> (kamu tak usah mengingat ini, tapi catat bahwa operator unary lebih tinggi dari binary terkait):</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Presedensi</th> 
+            <th>Nama</th> 
+            <th>Tanda</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td>???</td> 
+            <td>???</td> 
+            <td>???</td> 
+           </tr> 
+           <tr> 
+            <td>17</td> 
+            <td>plus unary</td> 
+            <td><code>+</code></td> 
+           </tr> 
+           <tr> 
+            <td>17</td> 
+            <td>negasi unary</td> 
+            <td><code>-</code></td> 
+           </tr> 
+           <tr> 
+            <td>16</td> 
+            <td>akar pangkat</td> 
+            <td><code>**</code></td> 
+           </tr> 
+           <tr> 
+            <td>15</td> 
+            <td>perkalian</td> 
+            <td><code>*</code></td> 
+           </tr> 
+           <tr> 
+            <td>15</td> 
+            <td>pembagian</td> 
+            <td><code>/</code></td> 
+           </tr> 
+           <tr> 
+            <td>13</td> 
+            <td>penambahan</td> 
+            <td><code>+</code></td> 
+           </tr> 
+           <tr> 
+            <td>13</td> 
+            <td>pengurangan</td> 
+            <td><code>-</code></td> 
+           </tr> 
+           <tr> 
+            <td>???</td> 
+            <td>???</td> 
+            <td>???</td> 
+           </tr> 
+           <tr> 
+            <td>3</td> 
+            <td>penetapan</td> 
+            <td><code>=</code></td> 
+           </tr> 
+           <tr> 
+            <td>???</td> 
+            <td>???</td> 
+            <td>???</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Seperti yang kita lihat, ???plus unary??? punya prioritas <code>17</code> yang lebih tinggi dari <code>13</code> ???penambahan??? (plus binary). Itulah kenapa, dalam expresi <code>"+apples + +oranges"</code>, plus unary bekerja sebelum penambahan.</p> 
+         <h2><a class="main__anchor" name="penetapan" href="operators.html#penetapan">Penetapan</a></h2> 
+         <p>Mari ingat bahwa penetapan <code>=</code> juga merupakan operator. Ia terdaftar di tabel presedensi dengan prioritas sangat rendah <code>3</code>.</p> 
+         <p>Itulah kenapa, ketika kita tetapkan variabel, seperti <code>x = 2 * 2 + 1</code>, kalkulasinya dilakukan pertama dan kemudian <code>=</code> dievaluasi, menyimpan hasilnya dalam in <code>x</code>.</p> 
+         <div id="2f1k2usjgc" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let x = 2 * 2 + 1;
+
+alert( x ); // 5</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="assignment-mengembalikan-nilai" href="operators.html#assignment-mengembalikan-nilai">Assignment = mengembalikan nilai</a></h3> 
+         <p>Fakta dari <code>=</code> menjadi sebuah operator, bukanlah sebuah hal yang ???fantastis??? konstruksi dari bahasa memiliki implikasi yang menarik.</p> 
+         <p>Kebanyakan operator di Javascript mengembalikan sebuah nilai. Sudah jelas untuk <code>+</code> dan <code>-</code>, tetapi berlaku juga untuk <code>=</code>.</p> 
+         <p>Panggilan <code>x = value</code> menulis <code>value</code> ke dalam <code>x</code> <em>dan mengembalikannya</em>.</p> 
+         <p>Ini adalah demo yang menggunakan penetapan sebagai bagian dari expresi yang rumit:</p> 
+         <div id="9th8ojw70r" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let a = 1;
+let b = 2;
+
+let c = 3 - (a = b + 1);
+
+alert( a ); // 3
+alert( c ); // 0</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di contoh di atas, hasil dari expresi <code>(a = b + 1)</code> ialah nilai yang ditetapkan ke <code>a</code> (yaitu <code>3</code>). Ia kemudian digunakan untuk evaluasi berikutnya.</p> 
+         <p>Kodenya lucu, kan? kita harus mengerti bagaimana itu bekerja, karena terkadang kita melihat hal itu didalam library Javascript.</p> 
+         <p>Dan juga, tolong jangan tulis kode seperti itu. Trik semacam itu tidak akan membuat kode menjadi jelas dan mudah dibaca.</p> 
+         <h3><a class="main__anchor" name="chaining-assignments-assignments-berantai" href="operators.html#chaining-assignments-assignments-berantai">Chaining assignments / Assignments berantai</a></h3> 
+         <p>Fitur menarik lainnya adalah kemampuan untuk melakukan assignments berantai:</p> 
+         <div id="t66vtdcw19" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let a, b, c;
+
+a = b = c = 2 + 2;
+
+alert( a ); // 4
+alert( b ); // 4
+alert( c ); // 4</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Assignments berantai mengevaluasi dari kanan ke kiri. Pertama, dari ekspresi paling kanan <code>2 + 2</code> di evaluasi terlebih dahulu dan dimasukan kedalam variabel disebelah kiri: <code>c</code>, <code>b</code> dan <code>a</code>. Dan diakhir, seluruh variabel saling membagi satu nilai.</p> 
+         <p>Sekali lagi, untuk tujuan kode yang mudak dibaca akan lebih baik untuk membagi kode kedalam beberapa baris:</p> 
+         <div id="2pe19zq16w" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>c = 2 + 2;
+b = c;
+a = c;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ini akan mudah untuk dibaca, terutama jika melihatnya secara sekilas.</p> 
+         <h2><a class="main__anchor" name="mengubah-variabel-secara-langsung" href="operators.html#mengubah-variabel-secara-langsung">Mengubah variabel secara langsung</a></h2> 
+         <p>Kita terkadang membutuhkan sebuah operator untuk sebuah variabel dan menyimpan hasil baru didalam variabel yang sama</p> 
+         <p>Contoh:</p> 
+         <div id="xwn2hb0n2s" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let n = 2;
+n = n + 5;
+n = n * 2;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Notasi ini bisa diperpendek dengan menggunakan operator <code>+=</code> dan <code>*=</code>:</p> 
+         <div id="zuc95dy96o" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let n = 2;
+n += 5; // sekarang n = 7 (sama dengan n = n + 5)
+n *= 2; // sekarang n = 14 (sama dengan n = n * 2)
+
+alert( n ); // 14</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Operator dari ???ubah-dan-simpan??? atau bisa disebut mengubah variabel secara langsung hadir pada setiap aritmatik dan operator bitwise: <code>/=</code>, <code>-=</code>, etc.</p> 
+         <p>Operator semacam itu memiliki hak dengan tingkat yang sama dengan assignment yang biasa, jadi mereka akan berjalan setelah kalkulasi lainnya selesai:</p> 
+         <div id="dok6h57kx8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let n = 2;
+
+n *= 3 + 5;
+
+alert( n ); // 16  (bagian paling kanan dievaluasi terlebih dahulu, sama seperti n *= 8)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="inkremen-dekremen" href="operators.html#inkremen-dekremen">Inkremen/dekremen</a></h2> 
+         <!-- Tak bisa menggunakan "--/++" di judul, karena built-in parse mengubahnya menjadi sebuah "dash"/- --> 
+         <p>Menaikkan atau menurunkan satu angka ialah salah satu operasi numerik paling umum.</p> 
+         <p>Jadi, ada operator spesial untuk itu:</p> 
+         <ul> 
+          <li> <p><strong>Inkremen</strong> <code>++</code> menaikkan variabel sebanyak 1:</p> 
+           <div id="pemek9psvq" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let counter = 2;
+counter++;        // cara kerjanya sama dengan counter = counter + 1, tapi lebih pendek
+alert( counter ); // 3</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ul> 
+         <div id="mp8g9l5ud2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:40,&quot;cols&quot;:[{&quot;start&quot;:13,&quot;end&quot;:14}]},{&quot;start&quot;:29,&quot;cols&quot;:[{&quot;start&quot;:13,&quot;end&quot;:14}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code>- **Decrement** `--` menurunkan variabel sebanyak 1:
+
+    ```js run no-beautify
+    let counter = 2;
+    counter--;        // cara kerjanya sama dengan counter = counter - 1,tapi lebih pendek
+    alert( counter ); // 1
+    ```
+
+```warn
+Inkremen/dekremen cuma bisa diaplikasikan ke variabel. Mencoba menggunakan itu pada nilai seperti `5++` akan menghasilkan galat.
+???```
+
+Operator `++` dan `--` bisa ditaruh sebelum atau setelah variabel.
+
+- Ketika operatornya ditaruh setelah variabel, ia ada dalam "bentuk postfix": `counter++`.
+- "Bentuk prefix" ialah ketika operatornya ditaruh sebelum variabel: `++counter`.
+
+Kedua pernyataan ini melakukan hal yang sama: menambah `counter` sebanyak `1`.
+
+Apakah ada perbedaan? Ya, tapi kita cuma bisa melihatnya jika kita menggunakan nilai kembalian `++/--`.
+
+Mari kita klarifikasi. Seperti yang kita tahu, semua operator mengembalikan nilai. Inkremen/dekremen bukan pengecualian. Bentuk prefix mengembalikan nilai baru sedangkan bentuk postfix mengembalikan nilai lama (sebelum inkremen/dekremen).
+
+Untuk melihat perbedaannya, berikut misalnya:
+
+```js run
+let counter = 1;
+let a = ++counter; // (*)
+
+alert(a); // 2
+???```
+
+Dalam baris `(*)`, bentuk *prefix*`++counter` menginkremen `counter` dan mengembalikan nilai baru, `2`. Jadi, `alert` menampilkan `2`.
+
+Sekarang, mari kita gunakan bentuk postfix:
+
+```js run
+let counter = 1;
+let a = counter++; // (*) ganti ++counter ke counter++
+
+alert(a); // 1
+???```
+
+Dalam baris `(*)`, bentuk *postfix* `counter++` juga menginkremen `counter` tapi mengembalikan nilai *lama* (sebelum inkremen). Jadi, `alert` menampilkan `1`.
+
+Ringkasnya:
+
+- Jika hasil dari inkremen/dekremen tak digunakan, tak ada bedanya bentuk mana yang dipakai:
+
+    ```js run
+    let counter = 0;
+    counter++;
+    ++counter;
+    alert( counter ); // 2, kedua counter diatas melakukan hal yang serupa.
+    ```
+- Jika kita ingin menaikkan nilai *dan* langsung memakai hasil dari operator, kita butuh bentuk prefix:
+
+    ```js run
+    let counter = 0;
+    alert( ++counter ); // 1
+    ```
+- Jika kita ingin menginkremen suatu nilai tanpa memakai nilai sebelumnya, kita butuh bentuk postfix:
+
+    ```js run
+    let counter = 0;
+    alert( counter++ ); // 0
+    ```
+
+````smart header="Inkremen/dekremen di antara operator lainnya"
+Operator `++/--` bisa juga digunakan di dalam expresi. Presedensi mereka lebih tinggi dari kebanyakan operasi aritmatika lainnya.
+
+Misalnya:
+
+```js run
+let counter = 1;
+alert( 2 * ++counter ); // 4
+???```
+
+Bandingkan dengan:
+
+```js run
+let counter = 1;
+alert( 2 * counter++ ); // 2, karena counter++ mengembalikan nilai "lama"
+???```
+
+Meski secara teknis OK, notasi macam ini biasanya membuat kode kurang dapat dibaca. Satu baris melakukan banyak hal -- tak baik.
+
+Sambil membaca kode, dan melihatnya secara sekilas kita bisa saja melewatkan kode seperti `counter++` dan tidak akan jelas bahwa nilai variabel telah bertambah.
+
+Jadi direkomendasikan menuliskan kode dengan gaya "satu baris -- satu aksi":
+
+```js run
+let counter = 1;
+alert( 2 * counter );
+counter++;
+???```</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="operator-bitwise" href="operators.html#operator-bitwise">Operator bitwise</a></h2> 
+         <p>Operator bitwise memperlakukan argumen sebagai angka integer 32-bit dan bekerja pada level representasi biner mereka.</p> 
+         <p>Operator ini bukan spesifik JavaScript. Mereka didukung di banyak bahasa pemrograman.</p> 
+         <p>Daftar operator:</p> 
+         <ul> 
+          <li>AND ( <code>&amp;</code> )</li> 
+          <li>OR ( <code>|</code> )</li> 
+          <li>XOR ( <code>^</code> )</li> 
+          <li>NOT ( <code>~</code> )</li> 
+          <li>LEFT SHIFT ( <code>&lt;&lt;</code> )</li> 
+          <li>RIGHT SHIFT ( <code>&gt;&gt;</code> )</li> 
+          <li>ZERO-FILL RIGHT SHIFT ( <code>&gt;&gt;&gt;</code> )</li> 
+         </ul> 
+         <p>Operator seperti diatas sangat jarang digunakan, ketika kita membutuhkan untuk memainkan angka di level paling rendah (bitwise). Kita tidak akan membutuhkan operator seperti ini dalam waktu dekat, sebagaimana dalam pengembangan web penggunaan operator seperti itu lebih sedikit, tetapi di area yang spesial, seperti kriptographi, operator seperti itu sangan dibutuhkan. Kamu bisa membaca artikel <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators">Bitwise Operators</a> di MDN ketika kamu membutuhkannya.</p> 
+         <h2><a class="main__anchor" name="koma" href="operators.html#koma">Koma</a></h2> 
+         <p>Operator koma <code>,</code> ialah satu dari banyak operator paling langka dan tak biasa. Kadang, ia digunakan untuk menulis kode lebih pendek, jadi kita harus tahu itu untuk memahami apa yang terjadi.</p> 
+         <p>Operator koma memperbolehkan untuk mengevaluasi beberapa expresi, membagi mereka dengan koma <code>,</code>. Each of them is evaluated but only the result of the last one is returned.</p> 
+         <p>Misalnya:</p> 
+         <div id="v1st2sa7rs" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let a = (1 + 2, 3 + 4);
+
+alert( a ); // 7 (hasil dari 3 + 4)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini, expresi pertama <code>1 + 2</code> dievaluasi dan hasilnya dibuang. Lalu, <code>3 + 4</code> dievaluasi dan dikembalikan sebagai hasilnya.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Koma punya presedensi sangat kecil</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Harap ingat bahwa operator koma punya presedensi sangat kecil, lebih kecil dari <code>=</code>, jadi tanda kurung penting dalam contoh di atas.</p> 
+           <p>Tanpa mereka: <code>a = 1 + 2, 3 + 4</code> mengevaluasi <code>+</code> terlebih dahulu, menjumlahkan mereka menjadi <code>a = 3, 7</code>, lalu operator penetapan <code>=</code> menetapkan <code>a = 3</code>, dan sisanya diabaikan. Ini seperti <code>(a = 1 + 2), 3 + 4</code>.</p> 
+          </div> 
+         </div> 
+         <p>Kenapa kita butuh operator yang membuang semuanya kecuali expresi terakhir?</p> 
+         <p>Kadang, orang memakai itu dalam konstruksi rumit untuk menaruh beberapa aksi dalam satu baris.</p> 
+         <p>Misalnya:</p> 
+         <div id="g8awi4pqf4" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:5,&quot;end&quot;:28}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// tiga operasi dalam satu baris
+for (a = 1, b = 3, c = a * b; a &lt; 10; a++) {
+ ...
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Trik macam ini dipakai di banyak framework JavaScript. Itulah kenapa kita membahas mereka. Tapi, biasanya, mereka tak membuat kode mudah dibaca sehingga kita sebaiknya pikir-pikir dulu sebelum menggunakan mereka.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="operators.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="operators.html#bentuk-postfix-dan-prefix" name="bentuk-postfix-dan-prefix">Bentuk postfix dan prefix</a></h3> 
+           <a class="task__open-link" href="task/increment-order.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Berapa nilai final dari semua variabel <code>a</code>, <code>b</code>, <code>c</code> dan <code>d</code> setelah kode berikut?</p> 
+            <div id="6vnf4eiboy" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let a = 1, b = 1;
+
+let c = ++a; // ?
+let d = b++; // ?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya adalah:</p> 
+              <ul> 
+               <li><code>a = 2</code></li> 
+               <li><code>b = 2</code></li> 
+               <li><code>c = 2</code></li> 
+               <li><code>d = 1</code></li> 
+              </ul> 
+              <div id="08q3szzn07" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let a = 1, b = 1;
+
+alert( ++a ); // 2, bentuk prefix mengembalikan nilainya
+alert( b++ ); // 1, bentuk postfix mengembalikan nilai lamanya
+
+alert( a ); // 2, diinkremen sekali
+alert( b ); // 2, diinkremen sekali</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="operators.html#hasil-penetapan" name="hasil-penetapan">Hasil penetapan</a></h3> 
+           <a class="task__open-link" href="task/assignment-result.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Berapa nilai dari <code>a</code> dan <code>x</code> setelah kode berikut?</p> 
+            <div id="5zd180gwf1" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let a = 2;
+
+let x = 1 + (a *= 2);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya adalah:</p> 
+              <ul> 
+               <li><code>a = 4</code> (dikali 2)</li> 
+               <li><code>x = 5</code> (dikalkulasi sebagai 1 + 4)</li> 
+              </ul> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="operators.html#konversi-tipe" name="konversi-tipe">Konversi tipe</a></h3> 
+           <a class="task__open-link" href="task/primitive-conversions-questions.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apa hasil dari expresi ini?</p> 
+            <div id="j05nzitc2a" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>"" + 1 + 0
+"" - 1 + 0
+true + false
+6 / "3"
+"2" * "3"
+4 + 5 + "px"
+"$" + 4 + 5
+"4" - 2
+"4px" - 2
+"  -9  " + 5
+"  -9  " - 5
+null + 1
+undefined + 1
+" \t \n" - 2</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Pikirkan dengan baik, tulis dan bandingkan dengan jawaban.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="l18xj9brmo" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>"" + 1 + 0 = "10" // (1)
+"" - 1 + 0 = -1 // (2)
+true + false = 1
+6 / "3" = 2
+"2" * "3" = 6
+4 + 5 + "px" = "9px"
+"$" + 4 + 5 = "$45"
+"4" - 2 = 2
+"4px" - 2 = NaN
+"  -9  " + 5 = "  -9  5" // (3)
+"  -9  " - 5 = -14 // (4)
+null + 1 = 1 // (5)
+undefined + 1 = NaN // (6)
+" \t \n" - 2 = -2 // (7)</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <ol> 
+               <li>Penambahan dengan string <code>"" + 1</code> mengkonversi <code>1</code> ke string: <code>"" + 1 = "1"</code>, dan kita punya <code>"1" + 0</code>, aturan yang sama berlaku.</li> 
+               <li>Pengurangan <code>-</code> (seperti kebanyakan operasi matematika) cuma berjalan dengan angka, ia mengkonversi string kosong <code>""</code> ke <code>0</code>.</li> 
+               <li>Penambahan dengan string mengappend angka <code>5</code> ke string.</li> 
+               <li>Pengurangan selalu mengkonversi ke angka, jadi ia membuat <code>" -9 "</code> menjadi angka <code>-9</code> (mengabaikan spasi sekitarnya).</li> 
+               <li><code>null</code> menjadi <code>0</code> setelah konversi numerik.</li> 
+               <li><code>undefined</code> menjadi <code>NaN</code> setelah konversi numerik.</li> 
+               <li>Karakter spasi, ialah string yang depan dan belakangnya ditrim ketika string dikonversi ke angka. Berikut seluruh string berisi karakter spasi, seperti <code>\t</code>, <code>\n</code> dan spasi ???reguler??? di antaranya. Jadi, serupa dengan string kosong, ia menjadi <code>0</code>.</li> 
+              </ol> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="operators.html#benarkan-penambahan" name="benarkan-penambahan">Benarkan penambahan</a></h3> 
+           <a class="task__open-link" href="task/fix-prompt.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ini adalah kode yang menanyakan pengguna untuk memasukan dua angka dan menampilkan jumlahnya.</p> 
+            <p>Kodenya tidak berjalan dengan semestinya. Keluaran dari contoh kode dibawah adalah <code>12</code> (nilai dimasukan secara default didalam kotak prompt).</p> 
+            <p>Kenapa? Benarkan. Hasilnya haruslah <code>3</code>.</p> 
+            <div id="g114c93ogi" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let a = prompt("Angka pertama?", 1);
+let b = prompt("Angka kedua?", 2);
+
+alert(a + b); // 12</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Alasannya adalah karena kotak <em>prompt</em> mengembalikan inputan dari user sebagai string.</p> 
+              <p>Jadi nilai dari masing-masing variabel adalah <code>"1"</code> dan <code>"2"</code>.</p> 
+              <div id="qh2bl92ci2" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let a = "1"; // prompt("Angka pertama?", 1);
+let b = "2"; // prompt("Angka kedua?", 2);
+
+alert(a + b); // 12</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Apa yang kita harus lakukan untuk mengubah string menjadi angka sebelum <code>+</code>, gunakan <code>Number()</code> atau menambahkannya dengan <code>+</code>.</p> 
+              <p>Contoh, tepat sebelum <code>prompt</code>:</p> 
+              <div id="yggag5vqr2" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let a = +prompt("Angka pertama?", 1);
+let b = +prompt("Angka kedua?", 2);
+
+alert(a + b); // 3</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Atau didalam <code>alert</code>:</p> 
+              <div id="l2v180gzeq" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let a = prompt("Angka pertama?", 1);
+let b = prompt("Angka kedua?", 2);
+
+alert(+a + +b); // 3</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Menggunakan <em>unary</em> dan <em>binary</em> <code>+</code> dicontoh kode terakhir terlihat lucu, kan?</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="type-conversions.html" data-tooltip="Konversi Tipe"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="comparison.html" data-tooltip="Perbandingan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Foperators" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Foperators" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="first-steps.html">JavaScript Dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#istilah-unary-binary-operand">Istilah: ???unary???, ???binary???, ???operand???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#maths">Maths</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#penambahan-string-dengan">Penambahan string dengan +</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#konversi-angka-unary">Konversi angka, unary +</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#presedensi-operator">Presedensi operator</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#penetapan">Penetapan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#mengubah-variabel-secara-langsung">Mengubah variabel secara langsung</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#inkremen-dekremen">Inkremen/dekremen</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#operator-bitwise">Operator bitwise</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#koma">Koma</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#tasks">Tugas (4)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="operators.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Foperators" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Foperators" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

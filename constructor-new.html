@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Konstruktor, operator "new"</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="constructor-new.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Konstruktor, operator &quot;new&quot;"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Konstruktor, operator &quot;new&quot;"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="object-methods.html"> 
+  <link rel="next" href="optional-chaining.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Konstruktor, operator &quot;new&quot;"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fconstructor-new" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fconstructor-new" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="33" max="92" data-tooltip="Pelajaran 33 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="object-basics.html"><span>Objects: dasar-dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Objects: dasar-dasar","item":"https://id.javascript.info/object-basics"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Konstruktor, operator "new"</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Konstruktor, operator &quot;new&quot;"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Sintaks reguler <code>{...}</code> memungkinkan kita untuk membuat satu objek. Tapi seringkali kita perlu untuk membuat banyak objek-objek serupa, seperti pengguna atau <em>item</em> menu berganda dan sebagainya.</p> 
+         <p>Hal tersebut dapat diselesaikan dengan menggunakan fungsi konstruktor dan operator <code>"new"</code>.</p> 
+         <h2><a class="main__anchor" name="fungsi-konstruktor" href="constructor-new.html#fungsi-konstruktor">Fungsi konstruktor</a></h2> 
+         <p>Fungsi konstruktor secara teknis adalah fungsi biasa. Terdapat dua persetujuan sebelumnya, yakni:</p> 
+         <ol> 
+          <li>Fungsi tersebut diberi nama dengan huruf kapital terlebih dulu.</li> 
+          <li>Fungsi tersebut harus dieksekusi dengan hanya menggunakan operator <code>"new"</code>.</li> 
+         </ol> 
+         <p>Sebagai contoh:</p> 
+         <div id="wjlgeqphg1" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function User(name) {
+  this.name = name;
+  this.isAdmin = false;
+}
+
+let user = new User("Jack");
+
+alert(user.name); // Jack
+alert(user.isAdmin); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ketika sebuah fungsi dieksekusi dengan menggunakan <code>new</code>, fungsi tersebut melakukan tahapan-tahapan berikut ini:</p> 
+         <ol> 
+          <li>Sebuah objek kosong yang dibuat dan diserahkan ke <code>this</code>.</li> 
+          <li>Bagian utama fungsi tersebut bereksekusi. Biasanya memodifikasi <code>this</code>, menambahkan properti baru ke <code>this</code>.</li> 
+          <li>Nilai dari <code>this</code> dikembalikan.</li> 
+         </ol> 
+         <p>Dengan kata lain, <code>new User(...)</code> berjalan seperti ini:</p> 
+         <div id="kxl4ejylqy" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7},{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function User(name) {
+  // this = {};  (secara implisit)
+
+  // menambahkan properti ke this
+  this.name = name;
+  this.isAdmin = false;
+
+  // mengembalikan this;  (secara implisit)
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi <code>let user = new User("Jack")</code> memberikan hasil yang sama seperti halnya:</p> 
+         <div id="q6ryn2pbvo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "Jack",
+  isAdmin: false
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang jika kita ingin membuat <em>user</em> lain, kita bisa memanggil <code>new User("Ann")</code>, <code>new User("Alice")</code> dan seterusnya. Lebih pendek penulisannya daripada menulis langsung sintaks baru setiap ingin membuat <em>user</em> baru, serta lebih mudah dibaca.</p> 
+         <p>Itulah tujuan utama dari konstruktor ??? untuk mengimplementasikan kode pembuatan objek yang dapat dipakai ulang (<em>reusable</em>).</p> 
+         <p>Mari ingat sekali lagi ??? secara teknis, fungsi apapun dapat digunakan sebagai sebuah konstruktor. Hal tersebut berarti: fungsi apapun dapat dijalankan dengan <code>new</code>, dan bisa mengeksekusi algoritma di atas. ???Huruf kapital dulu??? adalah kesepakatan umum, untuk membuatnya lebih jelas bahwa sebuah fungsi untuk dijalankan dengan <code>new</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">function() { ??? } baru</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika kita memiliki banyak baris kode tentang pembuatan sebuah objek tunggal yang kompleks, kita dapat membungkus kode tersebut dalam fungsi konstruktor, seperti ini:</p> 
+           <div id="p9qh3x9uiv" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// create a function and immediately call it with new
+let user = new function() {
+  this.name = "John";
+  this.isAdmin = false;
+
+  // ...kode lain untuk pembuatan user
+  // bisa jadi lebih rumit logika dan pernyataannya
+  // variabel lokal dan lain-lain.
+};</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Konstruktor tersebut tidak dapat dipanggil lagi, karena tidak disimpan dimanapun, hanya dibuat dan dipanggil. Jadi trik ini ditujukan untuk mengenkapsulasi kode yang mengonstruksi objek tunggal, tanpa penggunaan di masa yang akan datang.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="constructor-mode-test-new-target" href="constructor-new.html#constructor-mode-test-new-target">Constructor mode test: new.target</a></h2> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Pembahasan tingkat lanjut</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Sintaks dari bagian ini jarang digunakan, lewati saja kecuali kamu ingin mengetahui semuanya.</p> 
+          </div> 
+         </div> 
+         <p>Di dalam sebuah fungsi, kita dapat memeriksa apakah fungsi tersebut dipanggil dengan atau tanpa <code>new</code>, dengan cara menggunakan sebuah properti khusus <code>new.target</code>.</p> 
+         <p>Fungsi tersebut kosong untuk panggilan-panggilan reguler dan menyamai fungsi jika dipanggil dengan <code>new</code>:</p> 
+         <div id="1u3ltnydg8" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:8},{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function User() {
+  alert(new.target);
+}
+
+// tanpa "new":
+User(); // undefined
+
+// dengan "new":
+new User(); // fungsi User { ... }</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sintaks itu dapat digunakan di dalam fungsi tersebut untuk mengetahui apakah fungsi dipanggil dengan <code>new</code>, ???dalam mode konstruktor???, atau tanpa <code>new</code>, ???dalam mode reguler???.</p> 
+         <p>Kita juga bisa membuat baik panggilan dengan <code>new</code> serta panggilan reguler untuk melakukan hal yang sama, seperti ini:</p> 
+         <div id="0gijot5dye" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function User(name) {
+  if (!new.target) { // jika kamu menjalankanku tanpa new
+    return new User(name); // ...aku akan menambahkan new untukmu
+  }
+
+  this.name = name;
+}
+
+let john = User("John"); // mengarahkan ulang panggilan ke User baru
+alert(john.name); // John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pendekatan ini terkadang digunakan dalam <em>library</em> untuk membuat sintaks lebih fleksibel. Jadi orang-orang bisa memanggil fungsi dengan atau tanap <code>new</code>, dan masih bisa berfungsi.</p> 
+         <p>Mungkin saja bukanlah hal baik untuk menggunakan pendekatan tersebut dimana saja, karena melewatkan <code>new</code> membuat kurang jelas sintaks atau kode yang sedang berjalan. Dengan <code>new</code> kita semua tahu bahwa objek baru sedang dibuat.</p> 
+         <h2><a class="main__anchor" name="hasil-return-dari-konstruktor" href="constructor-new.html#hasil-return-dari-konstruktor">Hasil <em>return</em> dari konstruktor</a></h2> 
+         <p>Biasanya, konstruktor tidak memiliki sebuah pernyataan <code>return</code>. Tugas konstruktor adalah untuk menulis semua hal-hal yang dibutuhkan ke dalam <code>this</code>, dan hal tersebut secara otomatis menjadi hasil.</p> 
+         <p>Tetapi jika ada sebuah pernyataan <code>return</code>, maka aturannya sederhana:</p> 
+         <ul> 
+          <li>Jika <code>return</code> dipanggil dengan sebuah objek, maka objek tersebut dikembalikan sebagai ganti <code>this</code>.</li> 
+          <li>Jika <code>return</code> dipanggil dengan sebuah <em>primitive</em>, panggilan tersebut diabaikan.</li> 
+         </ul> 
+         <p>Dalam kata lain, <code>return</code> dengan sebuah objek mengembalikan objek itu, dalam semua kasus lainnya <code>this</code> dikembalikan.</p> 
+         <p>Sebagai contoh, di sini <code>return</code> mengambil alih <code>this</code> dengan cara mengembalikan sebuah objek:</p> 
+         <div id="51j3dtbp29" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function BigUser() {
+
+  this.name = "John";
+
+  return { name: "Godzilla" };  // &lt;-- mengembalikan objek this
+}
+
+alert( new BigUser().name );  // Godzilla, dapat objeknya</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan berikut ini adalah sebuah contoh dengan sebuah <code>return</code> kosong (atau bisa kita tempatkan dengan sebuah <em>primitive</em> setelahnya, tidak dipermasalahkan):</p> 
+         <div id="btrz9f3uzg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function SmallUser() {
+
+  this.name = "John";
+
+  return; // &lt;-- mengembalikan this
+}
+
+alert( new SmallUser().name );  // John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Biasanya konstruktor tidak memiliki sebuah pernyataan <code>return</code>. Di sini kita menyebutkan perilaku khusus dengan cara mengembalikan objek dengan tujuan utamanya yakni hanya untuk melengkapi saja.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Mengabaikan parentheses</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Omong-omong, kita bisa mengabaikan parentheses setelah <code>new</code>, jika tidak memiliki argumen:</p> 
+           <div id="flx6zwbij1" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let user = new User; // &lt;-- tanpa parentheses
+// sama seperti
+let user = new User();</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Mengabaikan parentheses di sini tidak dipandang sebagai sebuah ???gaya yang baik???, tetapi sintaks tersebut diperbolehkan oleh spesifikasi.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="metode-dalam-konstruktor" href="constructor-new.html#metode-dalam-konstruktor">Metode dalam konstruktor</a></h2> 
+         <p>Menggunakan fungsi-fungsi konstruktor untuk membuat objek memberikan sebuah fleksibilitas yang amat baik. Fungsi konstruktor bisa jadi memiliki parameter yang mendefinisikan bagaimana cara untuk mengonstruksi objek tersebut, serta hal apa yang dimasukkan ke objek tersebut.</p> 
+         <p>Tentu saja, kita bisa menambahkan ke <code>this</code> tidak hanya properti, tapi metode juga.</p> 
+         <p>Sebagai contoh, <code>new User(name)</code> di bawah membuat sebuah objek dengan <code>name</code> yang diberikan dan metode <code>sayHi</code>:</p> 
+         <div id="d1hcj9btn5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="constructor-new.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function User(name) {
+  this.name = name;
+
+  this.sayHi = function() {
+    alert( "My name is: " + this.name );
+  };
+}
+
+let john = new User("John");
+
+john.sayHi(); // My name is: John
+
+/*
+john = {
+   name: "John",
+   sayHi: function() { ... }
+}
+*/</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk membuat objek yang kompleks, ada sintaks tingkat lanjut, yaitu <a href="classes.html">classes</a>, yang akan kita bahas nanti.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="constructor-new.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li>Fungsi konstruktor, atau secara singkat, konstruktor, adalah fungsi reguler, tetapi ada sebuah kesepakatan umum untuk memberi nama konstruktor dengan huruf kapital terlebih dahulu.</li> 
+          <li>Fungsi konstruktor seharusnya hanya bisa dipanggil menggunakan <code>new</code>. Panggilan yang demkian berarti sebuah pembuatan <code>this</code> kosong pada awalnya dan mengembalikan <code>this</code> yang sudah berisi di akhir.</li> 
+         </ul> 
+         <p>Kita bisa menggunakan fungsi konstruktor untuk membuat objek-objek serupa sekaligus.</p> 
+         <p>JavaScript menyediakan fungsi konstruktor untuk banyak objek bawaan di bahasa pemrograman: seperti <code>Date</code> untuk penanggalan, <code>Set</code> untuk kumpulan/rangkaian dan banyak lainnya yang akan kita pelajari.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Objek, kita akan kembali!</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Dalam bab ini kita hanya membahas dasar-dasar tentang objek dan konstruktor. Objek dan konstruktor adalah dasar penting untuk mempelajari lebih banyak tentang tipe data dan fungsi dalam bab-bab selanjutnya.</p> 
+           <p>Setelah kita mempelajari itu, kita kembali ke objek dan membahas objek lebih mendalam lagi di bab <a href="prototypes.html">Prototypes, inheritance</a> dan <a href="classes.html">Kelas</a>.</p> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="constructor-new.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="constructor-new.html#dua-fungsi-satu-objek" name="dua-fungsi-satu-objek">Dua fungsi ??? satu objek</a></h3> 
+           <a class="task__open-link" href="task/two-functions-one-object.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 2</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apakah mungkin untuk membuat fungsi <code>A</code> dan fungsi <code>B</code> seperti <code>new A()==new B()</code>?</p> 
+            <div id="q7xshkw7jc" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function A() { ... }
+function B() { ... }
+
+let a = new A;
+let b = new B;
+
+alert( a == b ); // true</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Jika bisa, berikan contoh kodenya.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Ya, hal itu memungkinkan.</p> 
+              <p>Jika sebuah fungsi mengembalikan sebuah objek lalu <code>new</code> mengembalikan objek tersebut sebagai ganti <code>this</code>.</p> 
+              <p>Jadi fungsi tersebut dapat, misalnya, mengembalikan objek <code>obj</code> yang secara eksternal didefinisikan sama:</p> 
+              <div id="9k9xyr9ptf" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="constructor-new.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="constructor-new.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let obj = {};
+
+function A() { return obj; }
+function B() { return obj; }
+
+alert( new A() == new B() ); // true</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="constructor-new.html#buat-kalkulator-baru" name="buat-kalkulator-baru">Buat Kalkulator baru</a></h3> 
+           <a class="task__open-link" href="task/calculator-constructor.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah fungsi konstruktor <code>Calculator</code> yang membuat objek dengan 3 method:</p> 
+            <ul> 
+             <li><code>read()</code> tanyakan dua nilai menggunakan `prompt dan masukan mereka kedalam properti objek.</li> 
+             <li><code>sum()</code> mengembalikan jumlah dari properti-properti.</li> 
+             <li><code>mul()</code> mengembalikan perkalian produk dari properti-properti.</li> 
+            </ul> 
+            <p>Contoh:</p> 
+            <div id="72zj2x6y9w" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let calculator = new Calculator();
+calculator.read();
+
+alert( "Sum=" + calculator.sum() );
+alert( "Mul=" + calculator.mul() );</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="constructor-new.html#" onclick="event.preventDefault(); runDemo(this)">jalankan demonya</a></p> 
+            <p><a href="https://plnkr.co/edit/gUh2tjhRzvPhYoi3?p=preview" target="_blank" data-plunk-id="gUh2tjhRzvPhYoi3">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="pfchc90cef" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="constructor-new.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="constructor-new.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function Calculator() {
+
+  this.read = function() {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
+  };
+
+  this.sum = function() {
+    return this.a + this.b;
+  };
+
+  this.mul = function() {
+    return this.a * this.b;
+  };
+}
+
+let calculator = new Calculator();
+calculator.read();
+
+alert( "Sum=" + calculator.sum() );
+alert( "Mul=" + calculator.mul() );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/M9QSZDmZApwuhvwh?p=preview" target="_blank" data-plunk-id="M9QSZDmZApwuhvwh">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="constructor-new.html#membuat-akumulator-baru" name="membuat-akumulator-baru">Membuat Akumulator baru</a></h3> 
+           <a class="task__open-link" href="task/accumulator.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah fungsi konstruktor <code>Accumulator(startingValue)</code>.</p> 
+            <p>Objek yang dibuat fungsi tersebut harus:</p> 
+            <ul> 
+             <li>Menyimpan ???nilai yang sekarang??? dalam <code>value</code> properti. Nilai awal diatur menjadi argumen konstruktor <code>startingValue</code>.</li> 
+             <li>Metode <code>read()</code> harus menggunakan <code>prompt</code> untuk membaca sebuah angka dan menambahkannya ke <code>value</code>.</li> 
+            </ul> 
+            <p>Dalam kata lain, properti <code>value</code> adalah hasil penjumlahan dari semua nilai yang dimasukkan oleh pengguna dengan nilai awal <code>startingValue</code>.</p> 
+            <p>Berikut ini contoh kodenya:</p> 
+            <div id="xs0xzqlu1h" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let accumulator = new Accumulator(1); // nilai awal 1
+
+accumulator.read(); // menambahkan nilai yang dimasukkan oleh pengguna
+accumulator.read(); // menambahkan nilai yang dimasukkan oleh pengguna
+
+alert(accumulator.value); // menampilkan jumlah dari kedua nilai</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="constructor-new.html#" onclick="event.preventDefault(); runDemo(this)">jalankan demonya</a></p> 
+            <p><a href="https://plnkr.co/edit/BfbJ5Pl6jol86TIL?p=preview" target="_blank" data-plunk-id="BfbJ5Pl6jol86TIL">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="65i19egw21" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="constructor-new.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="constructor-new.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function Accumulator(startingValue) {
+  this.value = startingValue;
+
+  this.read = function() {
+    this.value += +prompt('How much to add?', 0);
+  };
+
+}
+
+let accumulator = new Accumulator(1);
+accumulator.read();
+accumulator.read();
+alert(accumulator.value);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/uL0yC39Uc8wcB2Je?p=preview" target="_blank" data-plunk-id="uL0yC39Uc8wcB2Je">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="object-methods.html" data-tooltip="Metode objek, &quot;this&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="optional-chaining.html" data-tooltip="Optional chaining '?.'"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fconstructor-new" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fconstructor-new" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-basics.html">Objects: dasar-dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="constructor-new.html#fungsi-konstruktor">Fungsi konstruktor</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="constructor-new.html#constructor-mode-test-new-target">Constructor mode test: new.target</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="constructor-new.html#hasil-return-dari-konstruktor">Hasil <em>return</em> dari konstruktor</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="constructor-new.html#metode-dalam-konstruktor">Metode dalam konstruktor</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="constructor-new.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="constructor-new.html#tasks">Tugas (3)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="constructor-new.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fconstructor-new" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fconstructor-new" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

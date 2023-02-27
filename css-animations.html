@@ -1,0 +1,1444 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">CSS-animations</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="css-animations.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="CSS-animations"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="CSS-animations"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="bezier-curve.html"> 
+  <link rel="next" href="js-animation.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="CSS-animations"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcss-animations" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcss-animations" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="2" max="3" data-tooltip="Pelajaran 2 dari 3"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="animation.html"><span>Animation</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Animation","item":"https://id.javascript.info/animation"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://javascript.info/css-animations">English</a>, 
+          <a href="https://es.javascript.info/css-animations">Espa??ol</a>, 
+          <a href="https://it.javascript.info/css-animations">Italiano</a>, 
+          <a href="https://ja.javascript.info/css-animations">?????????</a>, 
+          <a href="https://ko.javascript.info/css-animations">?????????</a>, 
+          <a href="https://learn.javascript.ru/css-animations">??????????????</a>, 
+          <a href="https://tr.javascript.info/css-animations">T??rk??e</a>, 
+          <a href="https://uk.javascript.info/css-animations">????????????????????</a>, 
+          <a href="https://zh.javascript.info/css-animations">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">CSS-animations</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="CSS-animations"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>CSS animations make it possible to do simple animations without JavaScript at all.</p> 
+         <p>JavaScript can be used to control CSS animations and make them even better, with little code.</p> 
+         <h2><a class="main__anchor" name="css-transition" href="css-animations.html#css-transition">CSS transitions</a></h2> 
+         <p>The idea of CSS transitions is simple. We describe a property and how its changes should be animated. When the property changes, the browser paints the animation.</p> 
+         <p>That is, all we need is to change the property, and the fluid transition will be done by the browser.</p> 
+         <p>For instance, the CSS below animates changes of <code>background-color</code> for 3 seconds:</p> 
+         <div id="h3w8ss00xf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-css"><code>.animated {
+  transition-property: background-color;
+  transition-duration: 3s;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Now if an element has <code>.animated</code> class, any change of <code>background-color</code> is animated during 3 seconds.</p> 
+         <p>Click the button below to animate the background:</p> 
+         <div id="bate8cwsgk" data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="css-animations.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="css-animations.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button id="color"&gt;Click me&lt;/button&gt;
+
+&lt;style&gt;
+  #color {
+    transition-property: background-color;
+    transition-duration: 3s;
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+  color.onclick = function() {
+    this.style.backgroundColor = 'red';
+  };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-bate8cwsgk" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>There are 4 properties to describe CSS transitions:</p> 
+         <ul> 
+          <li><code>transition-property</code></li> 
+          <li><code>transition-duration</code></li> 
+          <li><code>transition-timing-function</code></li> 
+          <li><code>transition-delay</code></li> 
+         </ul> 
+         <p>We???ll cover them in a moment, for now let???s note that the common <code>transition</code> property allows declaring them together in the order: <code>property duration timing-function delay</code>, as well as animating multiple properties at once.</p> 
+         <p>For instance, this button animates both <code>color</code> and <code>font-size</code>:</p> 
+         <div id="dzpq5h9hwb" data-trusted="1" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="css-animations.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="css-animations.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button id="growing"&gt;Click me&lt;/button&gt;
+
+&lt;style&gt;
+#growing {
+  transition: font-size 3s, color 2s;
+}
+&lt;/style&gt;
+
+&lt;script&gt;
+growing.onclick = function() {
+  this.style.fontSize = '36px';
+  this.style.color = 'red';
+};
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-dzpq5h9hwb" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Now, let???s cover animation properties one by one.</p> 
+         <h2><a class="main__anchor" name="transition-property" href="css-animations.html#transition-property">transition-property</a></h2> 
+         <p>In <code>transition-property</code>, we write a list of properties to animate, for instance: <code>left</code>, <code>margin-left</code>, <code>height</code>, <code>color</code>. Or we could write <code>all</code>, which means ???animate all properties???.</p> 
+         <p>Do note that, there are properties which can not be animated. However, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">most of the generally used properties are animatable</a>.</p> 
+         <h2><a class="main__anchor" name="transition-duration" href="css-animations.html#transition-duration">transition-duration</a></h2> 
+         <p>In <code>transition-duration</code> we can specify how long the animation should take. The time should be in <a href="http://www.w3.org/TR/css3-values/#time">CSS time format</a>: in seconds <code>s</code> or milliseconds <code>ms</code>.</p> 
+         <h2><a class="main__anchor" name="transition-delay" href="css-animations.html#transition-delay">transition-delay</a></h2> 
+         <p>In <code>transition-delay</code> we can specify the delay <em>before</em> the animation. For instance, if <code>transition-delay</code> is <code>1s</code> and <code>transition-duration</code> is <code>2s</code>, then the animation starts 1 second after the property change and the total duration will be 2 seconds.</p> 
+         <p>Negative values are also possible. Then the animation is shown immediately, but the starting point of the animation will be after given value (time). For example, if <code>transition-delay</code> is <code>-1s</code> and <code>transition-duration</code> is <code>2s</code>, then animation starts from the halfway point and total duration will be 1 second.</p> 
+         <p>Here the animation shifts numbers from <code>0</code> to <code>9</code> using CSS <code>translate</code> property:</p> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                script.js 
+              </div> 
+              <div class="code-tabs__switch">
+                style.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/css-animations/digits/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/88wviWw2FNaQqDmh?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:200px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/css-animations/digits/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-javascript line-numbers"><code>stripe.onclick = function() {
+  stripe.classList.add('animate');
+};</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>#digit {
+  width: .5em;
+  overflow: hidden;
+  font: 32px monospace;
+  cursor: pointer;
+}
+
+#stripe {
+  display: inline-block
+}
+
+#stripe.animate {
+  transform: translate(-90%);
+  transition-property: transform;
+  transition-duration: 9s;
+  transition-timing-function: linear;
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  Click below to animate:
+
+  &lt;div id="digit"&gt;&lt;div id="stripe"&gt;0123456789&lt;/div&gt;&lt;/div&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The <code>transform</code> property is animated like this:</p> 
+         <div id="ofz3lwsvx0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-css"><code>#stripe.animate {
+  transform: translate(-90%);
+  transition-property: transform;
+  transition-duration: 9s;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>In the example above JavaScript adds the class <code>.animate</code> to the element ??? and the animation starts:</p> 
+         <div id="c0gqgucfjn" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>stripe.classList.add('animate');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>We could also start it from somewhere in the middle of the transition, from an exact number, e.g. corresponding to the current second, using a negative <code>transition-delay</code>.</p> 
+         <p>Here if you click the digit ??? it starts the animation from the current second:</p> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                script.js 
+              </div> 
+              <div class="code-tabs__switch">
+                style.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/css-animations/digits-negative-delay/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/CvqQG13FBTdMjpVe?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:200px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/css-animations/digits-negative-delay/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-javascript line-numbers"><code>stripe.onclick = function() {
+  let sec = new Date().getSeconds() % 10;
+  stripe.style.transitionDelay = '-' + sec + 's';
+  stripe.classList.add('animate');
+};</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>#digit {
+  width: .5em;
+  overflow: hidden;
+  font: 32px monospace;
+  cursor: pointer;
+}
+
+#stripe {
+  display: inline-block
+}
+
+#stripe.animate {
+  transform: translate(-90%);
+  transition-property: transform;
+  transition-duration: 9s;
+  transition-timing-function: linear;
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  Click below to animate:
+  &lt;div id="digit"&gt;&lt;div id="stripe"&gt;0123456789&lt;/div&gt;&lt;/div&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>JavaScript does it with an extra line:</p> 
+         <div id="mtazlgb1gb" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>stripe.onclick = function() {
+  let sec = new Date().getSeconds() % 10;
+  // for instance, -3s here starts the animation from the 3rd second
+  stripe.style.transitionDelay = '-' + sec + 's';
+  stripe.classList.add('animate');
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="transition-timing-function" href="css-animations.html#transition-timing-function">transition-timing-function</a></h2> 
+         <p>The timing function describes how the animation process is distributed along its timeline. Will it start slowly and then go fast, or vice versa.</p> 
+         <p>It appears to be the most complicated property at first. But it becomes very simple if we devote a bit time to it.</p> 
+         <p>That property accepts two kinds of values: a Bezier curve or steps. Let???s start with the curve, as it???s used more often.</p> 
+         <h3><a class="main__anchor" name="bezier-curve" href="css-animations.html#bezier-curve">Bezier curve</a></h3> 
+         <p>The timing function can be set as a <a href="bezier-curve.html">Bezier curve</a> with 4 control points that satisfy the conditions:</p> 
+         <ol> 
+          <li>First control point: <code>(0,0)</code>.</li> 
+          <li>Last control point: <code>(1,1)</code>.</li> 
+          <li>For intermediate points, the values of <code>x</code> must be in the interval <code>0..1</code>, <code>y</code> can be anything.</li> 
+         </ol> 
+         <p>The syntax for a Bezier curve in CSS: <code>cubic-bezier(x2, y2, x3, y3)</code>. Here we need to specify only 2nd and 3rd control points, because the 1st one is fixed to <code>(0,0)</code> and the 4th one is <code>(1,1)</code>.</p> 
+         <p>The timing function describes how fast the animation process goes.</p> 
+         <ul> 
+          <li>The <code>x</code> axis is the time: <code>0</code> ??? the start, <code>1</code> ??? the end of <code>transition-duration</code>.</li> 
+          <li>The <code>y</code> axis specifies the completion of the process: <code>0</code> ??? the starting value of the property, <code>1</code> ??? the final value.</li> 
+         </ul> 
+         <p>The simplest variant is when the animation goes uniformly, with the same linear speed. That can be specified by the curve <code>cubic-bezier(0, 0, 1, 1)</code>.</p> 
+         <p>Here???s how that curve looks:</p> 
+         <figure> 
+          <div class="image" style="width:144px"> 
+           <div class="image__ratio" style="padding-top:104.16666666666667%"></div> 
+           <object type="image/svg+xml" data="article/css-animations/bezier-linear.svg" width="144" height="150" class="image__image" data-use-theme> <img src="article/css-animations/bezier-linear.svg" alt="" width="144" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>???As we can see, it???s just a straight line. As the time (<code>x</code>) passes, the completion (<code>y</code>) of the animation steadily goes from <code>0</code> to <code>1</code>.</p> 
+         <p>The train in the example below goes from left to right with the permanent speed (click it):</p> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                style.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/css-animations/train-linear/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/iQDEZAbqPkSb2J3p?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:200px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/css-animations/train-linear/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>.train {
+  position: relative;
+  cursor: pointer;
+  width: 177px;
+  height: 160px;
+  left: 0;
+  transition: left 5s cubic-bezier(0, 0, 1, 1);
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;img class="train" src="https://js.cx/clipart/train.gif" onclick="this.style.left='450px'"&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The CSS <code>transition</code> is based on that curve:</p> 
+         <div id="nmd1gmbao5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-css"><code>.train {
+  left: 0;
+  transition: left 5s cubic-bezier(0, 0, 1, 1);
+  /* JavaScript sets left to 450px */
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???And how can we show a train slowing down?</p> 
+         <p>We can use another Bezier curve: <code>cubic-bezier(0.0, 0.5, 0.5 ,1.0)</code>.</p> 
+         <p>The graph:</p> 
+         <figure> 
+          <div class="image" style="width:149px"> 
+           <div class="image__ratio" style="padding-top:125.503355704698%"></div> 
+           <object type="image/svg+xml" data="article/css-animations/train-curve.svg" width="149" height="187" class="image__image" data-use-theme> <img src="article/css-animations/train-curve.svg" alt="" width="149" height="187"> </object> 
+          </div> 
+         </figure> 
+         <p>As we can see, the process starts fast: the curve soars up high, and then slower and slower.</p> 
+         <p>Here???s the timing function in action (click the train):</p> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                style.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/css-animations/train/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/TEoy07SorCZl46CI?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:200px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/css-animations/train/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>.train {
+  position: relative;
+  cursor: pointer;
+  width: 177px;
+  height: 160px;
+  left: 0px;
+  transition: left 5s cubic-bezier(0.0, 0.5, 0.5, 1.0);
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;img class="train" src="https://js.cx/clipart/train.gif" onclick="this.style.left='450px'"&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>CSS:</p> 
+         <div id="buadkxuzt9" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-css"><code>.train {
+  left: 0;
+  transition: left 5s cubic-bezier(0, .5, .5, 1);
+  /* JavaScript sets left to 450px */
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>There are several built-in curves: <code>linear</code>, <code>ease</code>, <code>ease-in</code>, <code>ease-out</code> and <code>ease-in-out</code>.</p> 
+         <p>The <code>linear</code> is a shorthand for <code>cubic-bezier(0, 0, 1, 1)</code> ??? a straight line, which we described above.</p> 
+         <p>Other names are shorthands for the following <code>cubic-bezier</code>:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th><code>ease</code><sup>*</sup></th> 
+            <th><code>ease-in</code></th> 
+            <th><code>ease-out</code></th> 
+            <th><code>ease-in-out</code></th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>(0.25, 0.1, 0.25, 1.0)</code></td> 
+            <td><code>(0.42, 0, 1.0, 1.0)</code></td> 
+            <td><code>(0, 0, 0.58, 1.0)</code></td> 
+            <td><code>(0.42, 0, 0.58, 1.0)</code></td> 
+           </tr> 
+           <tr> 
+            <td> 
+             <figure> 
+              <div class="image" style="width:149px"> 
+               <div class="image__ratio" style="padding-top:125.503355704698%"></div> 
+               <object type="image/svg+xml" data="article/css-animations/ease.svg" width="149" height="187" class="image__image" data-use-theme> <img src="article/css-animations/ease.svg" alt="" width="149" height="187"> </object> 
+              </div> 
+             </figure></td> 
+            <td> 
+             <figure> 
+              <div class="image" style="width:149px"> 
+               <div class="image__ratio" style="padding-top:125.503355704698%"></div> 
+               <object type="image/svg+xml" data="article/css-animations/ease-in.svg" width="149" height="187" class="image__image" data-use-theme> <img src="article/css-animations/ease-in.svg" alt="" width="149" height="187"> </object> 
+              </div> 
+             </figure></td> 
+            <td> 
+             <figure> 
+              <div class="image" style="width:149px"> 
+               <div class="image__ratio" style="padding-top:125.503355704698%"></div> 
+               <object type="image/svg+xml" data="article/css-animations/ease-out.svg" width="149" height="187" class="image__image" data-use-theme> <img src="article/css-animations/ease-out.svg" alt="" width="149" height="187"> </object> 
+              </div> 
+             </figure></td> 
+            <td> 
+             <figure> 
+              <div class="image" style="width:149px"> 
+               <div class="image__ratio" style="padding-top:125.503355704698%"></div> 
+               <object type="image/svg+xml" data="article/css-animations/ease-in-out.svg" width="149" height="187" class="image__image" data-use-theme> <img src="article/css-animations/ease-in-out.svg" alt="" width="149" height="187"> </object> 
+              </div> 
+             </figure></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p><code>*</code> ??? by default, if there???s no timing function, <code>ease</code> is used.</p> 
+         <p>So we could use <code>ease-out</code> for our slowing down train:</p> 
+         <div id="9uizd4k0hm" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-css"><code>.train {
+  left: 0;
+  transition: left 5s ease-out;
+  /* transition: left 5s cubic-bezier(0, .5, .5, 1); */
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>But it looks a bit differently.</p> 
+         <p><strong>A Bezier curve can make the animation exceed its range.</strong></p> 
+         <p>The control points on the curve can have any <code>y</code> coordinates: even negative or huge ones. Then the Bezier curve would also extend very low or high, making the animation go beyond its normal range.</p> 
+         <p>In the example below the animation code is:</p> 
+         <div id="89t55ck423" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-css"><code>.train {
+  left: 100px;
+  transition: left 5s cubic-bezier(.5, -1, .5, 2);
+  /* JavaScript sets left to 400px */
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The property <code>left</code> should animate from <code>100px</code> to <code>400px</code>.</p> 
+         <p>But if you click the train, you???ll see that:</p> 
+         <ul> 
+          <li>First, the train goes <em>back</em>: <code>left</code> becomes less than <code>100px</code>.</li> 
+          <li>Then it goes forward, a little bit farther than <code>400px</code>.</li> 
+          <li>And then back again ??? to <code>400px</code>.</li> 
+         </ul> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                style.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/css-animations/train-over/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/3DDmbcMQzFV9FWVL?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:200px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/css-animations/train-over/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>.train {
+  position: relative;
+  cursor: pointer;
+  width: 177px;
+  height: 160px;
+  left: 100px;
+  transition: left 5s cubic-bezier(.5, -1, .5, 2);
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;img class="train" src="https://js.cx/clipart/train.gif" onclick="this.style.left='400px'"&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Why it happens is pretty obvious if we look at the graph of the given Bezier curve:</p> 
+         <figure> 
+          <div class="image" style="width:225px"> 
+           <div class="image__ratio" style="padding-top:147.11111111111111%"></div> 
+           <object type="image/svg+xml" data="article/css-animations/bezier-train-over.svg" width="225" height="331" class="image__image" data-use-theme> <img src="article/css-animations/bezier-train-over.svg" alt="" width="225" height="331"> </object> 
+          </div> 
+         </figure> 
+         <p>We moved the <code>y</code> coordinate of the 2nd point below zero, and for the 3rd point we made it over <code>1</code>, so the curve goes out of the ???regular??? quadrant. The <code>y</code> is out of the ???standard??? range <code>0..1</code>.</p> 
+         <p>As we know, <code>y</code> measures ???the completion of the animation process???. The value <code>y = 0</code> corresponds to the starting property value and <code>y = 1</code> ??? the ending value. So values <code>y&lt;0</code> move the property beyond the starting <code>left</code> and <code>y&gt;1</code> ??? past the final <code>left</code>.</p> 
+         <p>That???s a ???soft??? variant for sure. If we put <code>y</code> values like <code>-99</code> and <code>99</code> then the train would jump out of the range much more.</p> 
+         <p>But how do we make a Bezier curve for a specific task? There are many tools. For instance, we can do it on the site <a href="http://cubic-bezier.com/">http://cubic-bezier.com/</a>.</p> 
+         <h3><a class="main__anchor" name="steps" href="css-animations.html#steps">Steps</a></h3> 
+         <p>The timing function <code>steps(number of steps[, start/end])</code> allows splitting an animation into steps.</p> 
+         <p>Let???s see that in an example with digits.</p> 
+         <p>Here???s a list of digits, without any animations, just as a source:</p> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                style.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/css-animations/step-list/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/501cc4Rr5B5SY7Cb?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:200px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/css-animations/step-list/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>#digit {
+  border: 1px solid red;
+  width: 1.2em;
+}
+
+#stripe {
+  display: inline-block;
+  font: 32px monospace;
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  &lt;div id="digit"&gt;&lt;div id="stripe"&gt;0123456789&lt;/div&gt;&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>We???ll make the digits appear in a discrete way by making the part of the list outside of the red ???window??? invisible and shifting the list to the left with each step.</p> 
+         <p>There will be 9 steps, a step-move for each digit:</p> 
+         <div id="oilb2nzv20" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:27,&quot;end&quot;:42}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-css"><code>#stripe.animate  {
+  transform: translate(-90%);
+  transition: transform 9s steps(9, start);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>In action:</p> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                style.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/css-animations/step/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/kG2J0oiGtHiBMK8U?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:200px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/css-animations/step/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>#digit {
+  width: .5em;
+  overflow: hidden;
+  font: 32px monospace;
+  cursor: pointer;
+}
+
+#stripe {
+  display: inline-block
+}
+
+#stripe.animate {
+  transform: translate(-90%);
+  transition-property: transform;
+  transition-duration: 9s;
+  transition-timing-function: steps(9, start);
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  Click below to animate:
+
+  &lt;div id="digit"&gt;&lt;div id="stripe"&gt;0123456789&lt;/div&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    digit.onclick = function() {
+      stripe.classList.add('animate');
+    }
+  &lt;/script&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The first argument of <code>steps(9, start)</code> is the number of steps. The transform will be split into 9 parts (10% each). The time interval is automatically divided into 9 parts as well, so <code>transition: 9s</code> gives us 9 seconds for the whole animation ??? 1 second per digit.</p> 
+         <p>The second argument is one of two words: <code>start</code> or <code>end</code>.</p> 
+         <p>The <code>start</code> means that in the beginning of animation we need to make the first step immediately.</p> 
+         <p>We can observe that during the animation: when we click on the digit it changes to <code>1</code> (the first step) immediately, and then changes in the beginning of the next second.</p> 
+         <p>The process is progressing like this:</p> 
+         <ul> 
+          <li><code>0s</code> ??? <code>-10%</code> (first change in the beginning of the 1st second, immediately)</li> 
+          <li><code>1s</code> ??? <code>-20%</code></li> 
+          <li>???</li> 
+          <li><code>8s</code> ??? <code>-80%</code></li> 
+          <li>(the last second shows the final value).</li> 
+         </ul> 
+         <p>The alternative value <code>end</code> would mean that the change should be applied not in the beginning, but at the end of each second.</p> 
+         <p>So the process would go like this:</p> 
+         <ul> 
+          <li><code>0s</code> ??? <code>0</code></li> 
+          <li><code>1s</code> ??? <code>-10%</code> (first change at the end of the 1st second)</li> 
+          <li><code>2s</code> ??? <code>-20%</code></li> 
+          <li>???</li> 
+          <li><code>9s</code> ??? <code>-90%</code></li> 
+         </ul> 
+         <p>Here???s <code>steps(9, end)</code> in action (note the pause between the first digit change):</p> 
+         <div class="code-tabs code-tabs_result_on"> 
+          <div class="code-tabs__tools"> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_left" title="&amp;larr;" data-code-tabs-left="data-code-tabs-left"></button> 
+           </div> 
+           <div class="code-tabs__switches-wrap"> 
+            <div class="code-tabs__switches" data-code-tabs-switches="data-code-tabs-switches"> 
+             <div class="code-tabs__switches-items"> 
+              <div class="code-tabs__switch code-tabs__switch_current">
+                Hasil 
+              </div> 
+              <div class="code-tabs__switch">
+                style.css 
+              </div> 
+              <div class="code-tabs__switch">
+                index.html 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <div class="code-tabs__scroll-wrap"> 
+            <button class="code-tabs__scroll-button code-tabs__scroll-button_right" title="&amp;rarr;" data-code-tabs-right="data-code-tabs-right"></button> 
+           </div> 
+           <div class="code-tabs__buttons"> 
+            <a class="code-tabs__button code-tabs__button_external" target="_blank" title="buka di jendela baru" href="article/css-animations/step-end/index.html"></a> 
+            <a class="code-tabs__button code-tabs__button_edit" target="_blank" title="edit di sandbox" href="https://plnkr.co/edit/Kg3G8cAQWC6sYX0w?p=preview"></a> 
+           </div> 
+          </div> 
+          <div class="code-tabs__content" data-code-tabs-content="data-code-tabs-content" style="height:200px"> 
+           <div class="code-tabs__section code-tabs__section_current"> 
+            <iframe class="code-tabs__result" src="article/css-animations/step-end/index.html"></iframe> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-css line-numbers"><code>#digit {
+  width: .5em;
+  overflow: hidden;
+  font: 32px monospace;
+  cursor: pointer;
+}
+
+#stripe {
+  display: inline-block
+}
+
+#stripe.animate {
+  transform: translate(-90%);
+  transition-property: transform;
+  transition-duration: 9s;
+  transition-timing-function: steps(9, end);
+}</code></pre> 
+           </div> 
+           <div class="code-tabs__section"> 
+            <pre class="language-markup line-numbers"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+  Click below to animate:
+
+  &lt;div id="digit"&gt;&lt;div id="stripe"&gt;0123456789&lt;/div&gt;&lt;/div&gt;
+
+  &lt;script&gt;
+    digit.onclick = function() {
+      stripe.classList.add('animate');
+    }
+  &lt;/script&gt;
+
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>There are also shorthand values:</p> 
+         <ul> 
+          <li><code>step-start</code> ??? is the same as <code>steps(1, start)</code>. That is, the animation starts immediately and takes 1 step. So it starts and finishes immediately, as if there were no animation.</li> 
+          <li><code>step-end</code> ??? the same as <code>steps(1, end)</code>: make the animation in a single step at the end of <code>transition-duration</code>.</li> 
+         </ul> 
+         <p>These values are rarely used, because that???s not really animation, but rather a single-step change.</p> 
+         <h2><a class="main__anchor" name="event-transitionend" href="css-animations.html#event-transitionend">Event transitionend</a></h2> 
+         <p>When the CSS animation finishes the <code>transitionend</code> event triggers.</p> 
+         <p>It is widely used to do an action after the animation is done. Also we can join animations.</p> 
+         <p>For instance, the ship in the example below starts to sail there and back when clicked, each time farther and farther to the right:</p> 
+         <div class="code-result"> 
+          <div class="code-result__toolbar toolbar"> 
+           <div class="toolbar__tool"> 
+            <a href="https://id.js.cx/article/css-animations/boat/" target="_blank" title="buka pada jendela baru" class="toolbar__button toolbar__button_external"></a> 
+           </div> 
+           <div class="toolbar__tool"> 
+            <a href="https://plnkr.co/edit/f8YveZe5g4W2yU5c?p=preview" target="_blank" title="buka pada sandbox" data-plunk-id="f8YveZe5g4W2yU5c" class="toolbar__button toolbar__button_edit"></a> 
+           </div> 
+          </div> 
+          <iframe class="code-result__iframe" data-trusted="1" style="height:300px" src="https://id.js.cx/article/css-animations/boat/"></iframe> 
+         </div> 
+         <p>The animation is initiated by the function <code>go</code> that re-runs each time the transition finishes, and flips the direction:</p> 
+         <div id="t4ur0eyr7j" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>boat.onclick = function() {
+  //...
+  let times = 1;
+
+  function go() {
+    if (times % 2) {
+      // sail to the right
+      boat.classList.remove('back');
+      boat.style.marginLeft = 100 * times + 200 + 'px';
+    } else {
+      // sail to the left
+      boat.classList.add('back');
+      boat.style.marginLeft = 100 * times - 200 + 'px';
+    }
+
+  }
+
+  go();
+
+  boat.addEventListener('transitionend', function() {
+    times++;
+    go();
+  });
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The event object for <code>transitionend</code> has a few specific properties:</p> 
+         <dl> 
+          <dt> 
+           <code>event.propertyName</code> 
+          </dt> 
+          <dd>
+            The property that has finished animating. Can be good if we animate multiple properties simultaneously. 
+          </dd> 
+          <dt> 
+           <code>event.elapsedTime</code> 
+          </dt> 
+          <dd>
+            The time (in seconds) that the animation took, without 
+           <code>transition-delay</code>. 
+          </dd> 
+         </dl> 
+         <h2><a class="main__anchor" name="keyframes" href="css-animations.html#keyframes">Keyframes</a></h2> 
+         <p>We can join multiple simple animations together using the <code>@keyframes</code> CSS rule.</p> 
+         <p>It specifies the ???name??? of the animation and rules ??? what, when and where to animate. Then using the <code>animation</code> property, we can attach the animation to the element and specify additional parameters for it.</p> 
+         <p>Here???s an example with explanations:</p> 
+         <div id="by4vds6y1r" data-trusted="1" class="code-example" data-demo-height="60" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:14},{&quot;start&quot;:3,&quot;end&quot;:6}]" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="css-animations.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="css-animations.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;div class="progress"&gt;&lt;/div&gt;
+
+&lt;style&gt;
+  @keyframes go-left-right {        /* give it a name: "go-left-right" */
+    from { left: 0px; }             /* animate from left: 0px */
+    to { left: calc(100% - 50px); } /* animate to left: 100%-50px */
+  }
+
+  .progress {
+    animation: go-left-right 3s infinite alternate;
+    /* apply the animation "go-left-right" to the element
+       duration 3 seconds
+       number of times: infinite
+       alternate direction every time
+    */
+
+    position: relative;
+    border: 2px solid green;
+    width: 50px;
+    height: 20px;
+    background: lime;
+  }
+&lt;/style&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-by4vds6y1r" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>There are many articles about <code>@keyframes</code> and a <a href="https://drafts.csswg.org/css-animations/">detailed specification</a>.</p> 
+         <p>You probably won???t need <code>@keyframes</code> often, unless everything is in constant motion on your sites.</p> 
+         <h2><a class="main__anchor" name="summary" href="css-animations.html#summary">Summary</a></h2> 
+         <p>CSS animations allow smoothly (or not) animated changes of one or multiple CSS properties.</p> 
+         <p>They are good for most animation tasks. We???re also able to use JavaScript for animations, the next chapter is devoted to that.</p> 
+         <p>Limitations of CSS animations compared to JavaScript animations:</p> 
+         <div class="balance"> 
+          <div class="balance__pluses"> 
+           <div class="balance__content"> 
+            <div class="balance__title">
+              Kelebihan 
+            </div> 
+            <ul class="balance__list"> 
+             <li>Simple things done simply.</li> 
+             <li>Fast and lightweight for CPU.</li> 
+            </ul> 
+           </div> 
+          </div> 
+          <div class="balance__minuses"> 
+           <div class="balance__content"> 
+            <div class="balance__title">
+              kekurangan 
+            </div> 
+            <ul class="balance__list"> 
+             <li>JavaScript animations are flexible. They can implement any animation logic, like an ???explosion??? of an element.</li> 
+             <li>Not just property changes. We can create new elements in JavaScript as part of the animation.</li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The majority of animations can be implemented using CSS as described in this chapter. And the <code>transitionend</code> event allows JavaScript to be run after the animation, so it integrates fine with the code.</p> 
+         <p>But in the next chapter we???ll do some JavaScript animations to cover more complex cases.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="css-animations.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="css-animations.html#animasi-sebuah-bidang-css" name="animasi-sebuah-bidang-css">Animasi sebuah bidang (CSS)</a></h3> 
+           <a class="task__open-link" href="task/animate-logo-css.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tampilkan animasi seperti gambar dibawah (klik pada bidang):</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:300px" src="https://id.js.cx/task/animate-logo-css/solution/"></iframe> 
+            </div> 
+            <ul> 
+             <li>Gambarnya membesar saat di klik dari <code>40x24px</code> menjadi <code>400x240px</code> (10 kali lebih besar).</li> 
+             <li>Animasinya memakan waktu 3 detik.</li> 
+             <li>Saat selesai keluarkan: ???Done!???.</li> 
+             <li>During the animation process, there may be more clicks on the plane. They shouldn???t ???break??? anything.</li> 
+             <li>Pada saat proses animasi, mungkin akan terjadi lebih dari 1 klik pada bidangnya. Klik-klik tersebut tidak boleh membuat aplikasinya <em>error</em>.</li> 
+            </ul> 
+            <p><a href="https://plnkr.co/edit/24n7cBYB41qlhcd7?p=preview" target="_blank" data-plunk-id="24n7cBYB41qlhcd7">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>CSS untuk menganimasikan <code>width</code> dan <code>height</code>:</p> 
+              <div id="huj8sfxlf7" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-css"><code>/* class original */
+
+#flyjet {
+  transition: all 3s;
+}
+
+/* JS menambahkan .growing */
+#flyjet.growing {
+  width: 400px;
+  height: 240px;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Perlu diingat bahwa <code>transitionend</code> memicu dua kali ??? sekali untuk setiap properti. Jadi jika kita tidak ingin melakukan pengecekan tambahan maka pesannya akan muncul 2 kali.</p> 
+              <p><a href="https://plnkr.co/edit/VEnKQBaYCz7yJZic?p=preview" target="_blank" data-plunk-id="VEnKQBaYCz7yJZic">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="css-animations.html#animasikan-bidang-yang-terbang-css" name="animasikan-bidang-yang-terbang-css">Animasikan bidang yang terbang (CSS)</a></h3> 
+           <a class="task__open-link" href="task/animate-logo-bezier-css.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Modifikasi solusi dari tugas sebelumnya <a href="task/animate-logo-css.html">Animasi sebuah bidang (CSS)</a> untuk membuat bidang yang tumbuh dari ukuran aslinya 400x240px (melompat keluar) , dan kembalikan ukuran tersebut.</p> 
+            <p>Ini adalah contoh bagaimana bidangnya terlihat (klik pada bidangnya):</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:350px" src="https://id.js.cx/task/animate-logo-bezier-css/solution/"></iframe> 
+            </div> 
+            <p>Gunakan solusi dari tugas sebelumnya sebagai acuan.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita harus memilih <em>Bezier Curve</em> yang cocok untuk animasinya. Yang mana harus memiliki <code>y&gt;1</code> agar bidangnya dapat ???melompat keluar???.</p> 
+              <p>Contoh, kita bisa menggunakan titik kontrol dengan <code>y&gt;1</code>, seperti <code>cubic-bezier(0.25, 1.5, 0.75, 1.5)</code>.</p> 
+              <p>Grafiknya:</p> 
+              <figure> 
+               <div class="image" style="width:149px"> 
+                <div class="image__ratio" style="padding-top:125.503355704698%"></div> 
+                <object type="image/svg+xml" data="task/animate-logo-bezier-css/bezier-up.svg" width="149" height="187" class="image__image" data-use-theme> <img src="task/animate-logo-bezier-css/bezier-up.svg" alt="" width="149" height="187"> </object> 
+               </div> 
+              </figure> 
+              <p><a href="https://plnkr.co/edit/4aKD26F9xu1r2ZIa?p=preview" target="_blank" data-plunk-id="4aKD26F9xu1r2ZIa">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="css-animations.html#animasikan-lingkaran" name="animasikan-lingkaran">Animasikan Lingkaran</a></h3> 
+           <a class="task__open-link" href="task/animate-circle.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah fungsi <code>showCircle(cx, cy, radius)</code> yang menampilkan animasi lingkaran yang membesar.</p> 
+            <ul> 
+             <li><code>cx, cy</code> adalah koordinat <em>window-relative</em> dari tengah lingkaran,</li> 
+             <li><code>radius</code> adalah radius dari lingkarannya.</li> 
+            </ul> 
+            <p>Klik pada tombol dibawah untuk melihat contoh:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:260px" src="https://id.js.cx/task/animate-circle/solution/"></iframe> 
+            </div> 
+            <p>Dokumen utamanya memiliki contoh dari lingkaran dengan <em>styles</em> yang benar, jadi tugasnya adalah untuk membuat animasinya benar.</p> 
+            <p><a href="https://plnkr.co/edit/2Ap0tsO47GVABRKO?p=preview" target="_blank" data-plunk-id="2Ap0tsO47GVABRKO">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><a href="https://plnkr.co/edit/axnyZVtSmuEaQ4HD?p=preview" target="_blank" data-plunk-id="axnyZVtSmuEaQ4HD">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="css-animations.html#lingkaran-animasi-dengan-callback" name="lingkaran-animasi-dengan-callback">Lingkaran animasi dengan callback</a></h3> 
+           <a class="task__open-link" href="task/animate-circle-callback.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Dalam tugas <a href="task/animate-circle.html">Animasikan Lingkaran</a> sebuah lingkaran animasi di tampilkan.</p> 
+            <p>Sekarang katakan kalau kita tidak hanya butuh lingkaran saja, tetapi juga butuh menampilkan pesan didalamnya. Pesan tersebut harus muncul <em>setelah</em> animasi nya selesai (lingkaran nya bergerak secara penuh), kalau tidak itu akan terlihat tidak bagus.</p> 
+            <p>Dalam solusi tugas, fungsi <code>showCircle(cx, cy, radius)</code> menggambar lingkaran, tetapi tidak memberikan cara untuk melacak-nya ketika sudah selesai.</p> 
+            <p>Tambahkan sebuah argumen callback: <code>showCircle(cx, cy, radius, callback)</code> untuk di panggil ketika animasi-nya sudah selesai. <code>callback</code> harusnya menerima <code>&lt;div&gt;</code> lingkaran sebagain argumen.</p> 
+            <p>Seperti ini contohnya:</p> 
+            <div id="2kghzqxou8" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>showCircle(150, 150, 100, div =&gt; {
+  div.classList.add('message-ball');
+  div.append("Hello, world!");
+});</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Demo:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:260px" src="https://id.js.cx/task/animate-circle-callback/solution/"></iframe> 
+            </div> 
+            <p>Ambil solusinya untuk tugas <a href="task/animate-circle.html">Animasikan Lingkaran</a> sebagai dasar.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><a href="https://plnkr.co/edit/2QbPplS4lyXPY78Y?p=preview" target="_blank" data-plunk-id="2QbPplS4lyXPY78Y">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="bezier-curve.html" data-tooltip="_Bezier curve_"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="js-animation.html" data-tooltip="JavaScript animations"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcss-animations" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcss-animations" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="animation.html">Animation</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#css-transition">CSS transitions</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#transition-property">transition-property</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#transition-duration">transition-duration</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#transition-delay">transition-delay</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#transition-timing-function">transition-timing-function</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#event-transitionend">Event transitionend</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#keyframes">Keyframes</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#tasks">Tugas (4)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="css-animations.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcss-animations" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fcss-animations" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

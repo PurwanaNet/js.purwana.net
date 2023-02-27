@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Objek.kunci, nilai, entri</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="keys-values-entries.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Objek.kunci, nilai, entri"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Objek.kunci, nilai, entri"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="weakmap-weakset.html"> 
+  <link rel="next" href="destructuring-assignment.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Objek.kunci, nilai, entri"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fkeys-values-entries" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fkeys-values-entries" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="45" max="92" data-tooltip="Pelajaran 45 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Objek.kunci, nilai, entri</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Objek.kunci, nilai, entri"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Mari kita berpaling dari struktur data individual dan membahas iterasi mereka.</p> 
+         <p>Di bab sebelumnya kita telah melihat method <code>map.keys()</code>, <code>map.values()</code>, <code>map.entries()</code>.</p> 
+         <p>Method ini generik, ada persetujuan umum untuk menggunakan mereka untuk struktur data. Jika kita pernah menciptakan struktur data sendiri, kita harus mengimplementasikannya juga.</p> 
+         <p>Mereka tersedia untuk:</p> 
+         <ul> 
+          <li><code>Map</code></li> 
+          <li><code>Set</code></li> 
+          <li><code>Array</code></li> 
+         </ul> 
+         <p>Objek biasa juga menghadapi method yang mirip, tapi sintaksisnya sedikit berbeda.</p> 
+         <h2><a class="main__anchor" name="objek-kunci-nilai-nilai-entri-entri" href="keys-values-entries.html#objek-kunci-nilai-nilai-entri-entri">Objek.kunci, nilai-nilai, entri-entri</a></h2> 
+         <p>Untuk objek biasa, method berikut tersedia:</p> 
+         <ul> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object/keys">Object.keys(obj)</a> ??? mengembalikan array kunci.</li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object/values">Object.values(obj)</a> ??? mengembalikan array nilai.</li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object/entries">Object.entries(obj)</a> ??? mengembalikan array pasangan <code>[key, value]</code>.</li> 
+         </ul> 
+         <p>Perhatikanlah perbedaannya(dibanding map contohnya):</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th></th> 
+            <th>Map</th> 
+            <th>Object</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td>Call syntax</td> 
+            <td><code>map.keys()</code></td> 
+            <td><code>Object.keys(obj)</code>, but not <code>obj.keys()</code></td> 
+           </tr> 
+           <tr> 
+            <td>Returns</td> 
+            <td>iterable</td> 
+            <td>???real??? Array</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Perbedaan pertama adalah kita harus memanggil <code>Object.keys(obj)</code>, bukan <code>obj.keys()</code>.</p> 
+         <p>Mengapa? Alasan pertama adalah fleksibilitas. Ingat, objek adalah dasar dari struktur kompleks di Javascript. Jadi kita mungkin mempunyai objek seperti <code>data</code> yang mengimplemen method <code>data.values()</code> sendirinya. Dan kita masih bisa memanggil <code>Object.values(data)</code> atasnya.</p> 
+         <p>Alasan kedua adalah method <code>Object.*</code> mengembalikan objek array ???betulan???, bukan hanya iterable. Itu terutama untuk alasan-alasan historis.</p> 
+         <p>Contohnya:</p> 
+         <div id="mymmwlh4mb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <ul> 
+          <li><code>Object.keys(user) = ["name", "age"]</code></li> 
+          <li><code>Object.values(user) = ["John", 30]</code></li> 
+          <li><code>Object.entries(user) = [ ["name","John"], ["age",30] ]</code></li> 
+         </ul> 
+         <p>Ini adalah contoh pengunaan <code>Object.values</code> untuk meng-loop atas nilai-nilai properti:</p> 
+         <div id="39pm5seof9" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="keys-values-entries.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="keys-values-entries.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  age: 30
+};
+
+// loop atas nilai
+for (let value of Object.values(user)) {
+  alert(value); // John, then 30
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Object.keys/values/entries abaikan properti simbolis</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Seperti <code>for..in</code> loop, method ini mengabaikan properti yang menggunakan <code>Symbol(...)</code> as keys.</p> 
+           <p>Biasanya itu mudah. Tapi jika kita mau kunci simbolis juga, ada method lain <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols">Object.getOwnPropertySymbols</a> yang mengembalikan array berisi kunci simbolis saja. Ada juga method <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys">Reflect.ownKeys(obj)</a> yang mengembalikan semua kunci.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengubah-objek" href="keys-values-entries.html#mengubah-objek">Mengubah objek</a></h2> 
+         <p>Objek kekurangan banyak method yang ada untuk arrays, contoh <code>map</code>, <code>filter</code> dan yang lainnya.</p> 
+         <p>Jika kita ingin mengapplikasikan method-method tersebut, kita bisa menggunakan <code>Object.entries</code> diikuti oleh <code>Object.fromEntries</code>:</p> 
+         <ol> 
+          <li>Gunakan <code>Object.entries(obj)</code> untuk mendapatkan array pasangan kunci/nilai dari <code>obj</code>.</li> 
+          <li>Gunakan method array di array tersebut, contoh <code>map</code>.</li> 
+          <li>Gunakan <code>Object.fromEntries(array)</code> di array hasil untuk mengubahnya kembali menjadi objek.</li> 
+         </ol> 
+         <p>Sebagai contoh, kita mempunyai objek dengan harga-harga, dan mau melipat duakan harga-harganya:</p> 
+         <div id="nfei1ga6j1" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="keys-values-entries.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="keys-values-entries.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let prices = {
+  banana: 1,
+  orange: 2,
+  meat: 4,
+};
+
+let doublePrices = Object.fromEntries(
+  // ubah menjadi array, map, lalu fromEntries mengembalikan objeknya
+  Object.entries(prices).map(([key, value]) =&gt; [key, value * 2])
+);
+
+alert(doublePrices.meat); // 8</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mungkin ini terlihat susah pertama kalinya, tetapi ini akan menjadi mudah untuk di mengerti setelah kamu menggunakannya beberapa kali. Kita bisa membuat perantaian hebat dengan cara ini.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="keys-values-entries.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="keys-values-entries.html#tambahkan-propertinya" name="tambahkan-propertinya">Tambahkan propertinya</a></h3> 
+           <a class="task__open-link" href="task/sum-salaries.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ada objek <code>salaries</code> berisi beberapa gaji orang-orang.</p> 
+            <p>Tulis fungsi <code>sumSalaries(salaries)</code> yang mengembalikan jumlah total semua gaji menggunakan <code>Object.values</code> dan loop <code>for..of</code>.</p> 
+            <p>Jika <code>salaries</code> kosong, lalu hasilnya akan <code>0</code>.</p> 
+            <p>Contohnya:</p> 
+            <div id="t7srjjrfrc" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+alert( sumSalaries(salaries) ); // 650</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/pRFxlhahGLFcx455?p=preview" target="_blank" data-plunk-id="pRFxlhahGLFcx455">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="44ayo6f4vb" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="keys-values-entries.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="keys-values-entries.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function sumSalaries(salaries) {
+
+  let sum = 0;
+  for (let salary of Object.values(salaries)) {
+    sum += salary;
+  }
+
+  return sum; // 650
+}
+
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 250
+};
+
+alert( sumSalaries(salaries) ); // 650</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Atau kita juga bisa mendapatkan jumlah total dengan menggunakan <code>Object.values</code> dan <code>reduce</code>:</p> 
+              <div id="m3u5k6q2jx" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// reduce meng-loop atas array gaji,
+// menambahkannya
+// dan mengembalikan hasilnya
+function sumSalaries(salaries) {
+  return Object.values(salaries).reduce((a, b) =&gt; a + b, 0) // 650
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/igjYJPwQIWOYM1BF?p=preview" target="_blank" data-plunk-id="igjYJPwQIWOYM1BF">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="keys-values-entries.html#count-properties" name="count-properties">Count properties</a></h3> 
+           <a class="task__open-link" href="task/count-properties.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis fungsi <code>count(obj)</code> yang mengembalikan jumlah properti di dalam objek:</p> 
+            <div id="vo0nh0t72r" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let user = {
+  name: 'John',
+  age: 30
+};
+
+alert( count(user) ); // 2</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Coba buat kodenya sependek mungkin.</p> 
+            <p>P.S. Jangan pedulikan properti simbolik, hanya hitung yang ???reguler???.</p> 
+            <p><a href="https://plnkr.co/edit/TlsQMMavwx9F4OWg?p=preview" target="_blank" data-plunk-id="TlsQMMavwx9F4OWg">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="dfnce20b1u" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function count(obj) {
+  return Object.keys(obj).length;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/hDxYTzLXWO9gPASH?p=preview" target="_blank" data-plunk-id="hDxYTzLXWO9gPASH">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="weakmap-weakset.html" data-tooltip="WeakMap dan WeakSet"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="destructuring-assignment.html" data-tooltip="Destrukturisasi Penugasan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fkeys-values-entries" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fkeys-values-entries" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keys-values-entries.html#objek-kunci-nilai-nilai-entri-entri">Objek.kunci, nilai-nilai, entri-entri</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keys-values-entries.html#mengubah-objek">Mengubah objek</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keys-values-entries.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="keys-values-entries.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fkeys-values-entries" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fkeys-values-entries" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Elemen kustom</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="custom-elements.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Elemen kustom"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Elemen kustom"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="webcomponents-intro.html"> 
+  <link rel="next" href="shadow-dom.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <script>
+  /*
+class TimeFormatted extends HTMLElement {
+
+  render() {
+    let date = new Date(this.getAttribute('datetime') || Date.now());
+
+    this.innerHTML = new Intl.DateTimeFormat("default", {
+      year: this.getAttribute('year') || undefined,
+      month: this.getAttribute('month') || undefined,
+      day: this.getAttribute('day') || undefined,
+      hour: this.getAttribute('hour') || undefined,
+      minute: this.getAttribute('minute') || undefined,
+      second: this.getAttribute('second') || undefined,
+      timeZoneName: this.getAttribute('time-zone-name') || undefined,
+    }).format(date);
+  }
+
+  connectedCallback() { // (2)
+    if (!this.rendered) {
+      this.render();
+      this.rendered = true;
+    }
+  }
+
+  static get observedAttributes() { // (3)
+    return ['datetime', 'year', 'month', 'day', 'hour', 'minute', 'second', 'time-zone-name'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) { // (4)
+    this.render();
+  }
+
+}
+
+window.customElements && customElements.define("time-formatted", TimeFormatted);
+*/
+</script> 
+  <meta property="og:title" content="Elemen kustom"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcustom-elements" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcustom-elements" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="2" max="7" data-tooltip="Pelajaran 2 dari 7"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="web-components.html"><span>Web components</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Web components","item":"https://id.javascript.info/web-components"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Elemen kustom</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Elemen kustom"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Kita dapat membuat elemen HTML kustom, yang dideskripsikan dengan sebuah kelas, dengan <em>method</em> dan <em>properties</em>-nya sendiri, <em>events</em>, dan sebagainya.</p> 
+         <p>Setelah elemen kustom didefiniskan, kita dapat menggunakannya seperti elemen HTML bawaan.</p> 
+         <p>Itu bagus, karena kamus HTML itu kaya, tetapi tidak terbatas. Tidak ada <code>&lt;easy-tabs&gt;</code>, <code>&lt;sliding-carousel&gt;</code>, <code>&lt;beautiful-upload&gt;</code> ??? Coba pikirkan tag lain yang mungkin kita perlukan.</p> 
+         <p>Kita bisa mendefinisikan elemen HTML kustom dengan sebuah kelas khusus dan kemudian menggunakannya seolah-olah sudah menjadi bagian dari HTML.</p> 
+         <p>Ada dua jenis custom elements:</p> 
+         <ol> 
+          <li><strong>Autonomous custom elements</strong> ??? elemen yang ???semuanya baru???, <em>extending</em> kelas <code>HTMLElement</code> abstrak.</li> 
+          <li><strong>Customized built-in elements</strong> ??? <em>extending</em> elemen bawaan, seperti tombol yang disesuaikan, berdasarkan <code>HTMLButtonElement</code> dll.</li> 
+         </ol> 
+         <p>Pertama kita akan membahas <em>Autonomus elements</em> dan kemudian beralih ke <em>Customized built-in elements</em>.</p> 
+         <p>Untuk membuat sebuah elemen kustom, kita perlu memberi tahu browser beberapa detail mengenai: cara menampilkannya, apa yang harus dilakukan saat elemen ditambahkan atau dihapus ke halaman, dll.</p> 
+         <p>Itu dilakukan dengan membuat kelas dengan <em>method</em> khusus. Ini mudah, karena hanya ada beberapa <em>method</em>, dan semuanya opsional.</p> 
+         <p>Berikut gambaran dengan <em>method</em> lengkapnya:</p> 
+         <div id="mdrpk2jxdj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class MyElement extends HTMLElement {
+  constructor() {
+    super();
+    // elemen dibuat
+  }
+
+  connectedCallback() {
+    // browser memanggil method ini ketika elemen ditambahkan ke dokumen
+    // (can be called many times if an element is repeatedly added/removed)
+  }
+
+  disconnectedCallback() {
+    // browser calls this method when the element is removed from the document
+    // (dapat dipanggil berkali-kali jika sebuah elemen ditambahkan / dihilangkan berulang kali)
+  }
+
+  static get observedAttributes() {
+    return [/* senarai nama atribut untuk memantau perubahan */];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    // dipanggil ketika salah satu atribut yang tercantum di atas diubah
+  }
+
+  adoptedCallback() {
+    // dipanggil saat elemen dipindahkan ke dokumen baru
+    // (terjadi di document.adoptNode, sangat jarang digunakan)
+  }
+
+  // mungkin ada elemen method dan properti lainnya
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Setelah itu, kita perlu mendaftarkan elemen tersebut:</p> 
+         <div id="612bpyzi96" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// memberi tahu browser bahwa &lt;my-element&gt; digunakan oleh kelas baru kita
+customElements.define("my-element", MyElement);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang untuk setiap elemen HTML dengan tag <code>&lt;my-element&gt;</code>, sebuah <em>instance</em> dari <code>MyElement</code> dibuat, dan <em>method</em> yang disebutkan di atas dipanggil. Kita juga bisa menggunakan <code>document.createElement ('my-element')</code> di JavaScript.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Custom element name must contain a hyphen <code>-</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Nama elemen kustom harus memiliki tanda hubung <code>-</code>, misalnya <code>my-element</code> dan <code>super-button</code> adalah nama yang valid, tapi <code>myelement</code> tidak.</p> 
+           <p>Itu untuk memastikan bahwa tidak ada konflik nama antara elemen HTML bawaan dan kustom.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="contoh-time-formatted" href="custom-elements.html#contoh-time-formatted">Contoh: ???time-formatted???</a></h2> 
+         <p>Misalnya, sudah ada elemen <code>&lt;time&gt;</code> di HTML, untuk tanggal/waktu. Tetapi itu tidak bisa melakukan pemformatan apa pun dengan sendirinya.</p> 
+         <p>Mari buat elemen <code>&lt;time-formatted&gt;</code> yang menampilkan waktu dalam format yang baik dan bahasa yang baik:</p> 
+         <div id="hi6i3z7quf" data-trusted="1" class="code-example" data-demo-height="50" data-highlight="[{&quot;start&quot;:23,&quot;end&quot;:23},{&quot;start&quot;:19,&quot;end&quot;:19},{&quot;start&quot;:1,&quot;end&quot;:1}]" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+class TimeFormatted extends HTMLElement { // (1)
+
+  connectedCallback() {
+    let date = new Date(this.getAttribute('datetime') || Date.now());
+
+    this.innerHTML = new Intl.DateTimeFormat("default", {
+      year: this.getAttribute('year') || undefined,
+      month: this.getAttribute('month') || undefined,
+      day: this.getAttribute('day') || undefined,
+      hour: this.getAttribute('hour') || undefined,
+      minute: this.getAttribute('minute') || undefined,
+      second: this.getAttribute('second') || undefined,
+      timeZoneName: this.getAttribute('time-zone-name') || undefined,
+    }).format(date);
+  }
+
+}
+
+customElements.define("time-formatted", TimeFormatted); // (2)
+&lt;/script&gt;
+
+&lt;!-- (3) --&gt;
+&lt;time-formatted datetime="2019-12-01"
+  year="numeric" month="long" day="numeric"
+  hour="numeric" minute="numeric" second="numeric"
+  time-zone-name="short"
+&gt;&lt;/time-formatted&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-hi6i3z7quf" style="height:50px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <ol> 
+          <li>Kelas diatas hanya memiliki satu <em>method</em> <code>connectedCallback()</code> ??? browser memanggilnya ketika elemen <code>&lt;time-formatted&gt;</code> ditambahkan ke laman (atau saat HTML parser mendeteksinya), dan elemen ini menggunakan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat">Intl.DateTimeFormat</a> bawaan, pemformat data, yang didukung dengan baik di seluruh browser, untuk menampilkan waktu yang diformat dengan baik.</li> 
+          <li>Kita perlu mendaftarkan elemen baru kita dengan <code>customElements.define (tag, class)</code>.</li> 
+          <li>Dan kemudian kita bisa menggunakannya di mana saja.</li> 
+         </ol> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Custom elements upgrade</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika browser menemukan elemen <code>&lt;time-formatted&gt;</code> sebelum <code>customElements.define</code>, itu bukanlah sebuah kesalahan. Tetapi elemennya belum diketahui, sama seperti tag non-standar lainnya.</p> 
+           <p>seperti elemen ???undefined??? yang bisa diberi style menggunakan CSS selector <code>:not(:defined)</code>.</p> 
+           <p>Saat <code>customElement.define</code> dipanggil, mereka ???ditingkatkan???: sebuah instance baru dari<code>TimeFormatted</code> yang dibuat untuk masing-masing pemanggilan, dan <code>connectedCallback</code> dipanggil. Mereka menjadi <code>:defined</code>.</p> 
+           <p>Untuk mendapatkan informasi tentang elemen kustom, ada methods:</p> 
+           <ul> 
+            <li><code>customElements.get(name)</code> ??? mengembalikan kelas untuk elemen khusus dengan <code>name</code> yang diberikan,</li> 
+            <li><code>customElements.whenDefined(name)</code> ??? mengembalikan sebuah promise yang resolves (tanpa value) saat elemen kustom dengan <code>name</code> menjadi defined.</li> 
+           </ul> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Rendering in <code>connectedCallback</code>, not in <code>constructor</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Dalam contoh di atas, konten elemen dirender (dibuat) di <code>connectedCallback</code>.</p> 
+           <p>Mengapa tidak di <code>constructor</code>?</p> 
+           <p>Alasannya sederhana: ketika <code>constructor</code> dipanggil, ini terlalu awal. Elemen dibuat, tetapi browser belum memproses/menetapkan atribut pada tahap ini: panggilan ke <code>getAttribute</code> akan menghasilkan<code>null</code>. Jadi kita tidak bisa merender di sana.</p> 
+           <p>Selain itu, jika anda memikirkannya, itu lebih baik dari segi kinerja ??? menunda pekerjaan sampai benar-benar dibutuhkan.</p> 
+           <p><code>ConnectedCallback</code> terpicu saat elemen ditambahkan ke dokumen. Tidak hanya ditambahkan ke elemen lain sebagai anak, tetapi sebenarnya menjadi bagian dari halaman. Jadi kita bisa membangun DOM yang terpisah, membuat elemen dan mempersiapkannya untuk digunakan nanti. Mereka hanya akan benar-benar dirender saat berhasil masuk ke halaman.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengamati-atribut" href="custom-elements.html#mengamati-atribut">Mengamati atribut</a></h2> 
+         <p>Dalam implementasi <code>&lt;time-formatted&gt;</code> saat ini, setelah elemen dirender, perubahan atribut lebih lanjut tidak berpengaruh apa pun. Itu aneh untuk sebuah elemen HTML. Biasanya, ketika kita mengubah atribut, seperti ??a.href`, kita mengharapkan perubahan itu segera terlihat. Jadi mari kita perbaiki ini.</p> 
+         <p>Kita bisa mengamati atribut dengan memberikan daftarnya di static getter ??observedAttributes () <code>. Untuk atribut seperti,</code>attributeChangedCallback` dipanggil saat atribut-atributnya diubah. Ini tidak memicu atribut karena alasan kinerja.</p> 
+         <p>Ini adalah <code>&lt;time-formatted&gt;</code> baru, yang diperbarui secara otomatis ketika atribut berubah:</p> 
+         <div id="hky1ffeh1s" data-trusted="1" class="code-example" data-demo-height="50" data-highlight="[{&quot;start&quot;:40,&quot;end&quot;:40},{&quot;start&quot;:28,&quot;end&quot;:28},{&quot;start&quot;:24,&quot;end&quot;:24},{&quot;start&quot;:17,&quot;end&quot;:17},{&quot;start&quot;:3,&quot;end&quot;:3}]" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+class TimeFormatted extends HTMLElement {
+
+  render() { // (1)
+    let date = new Date(this.getAttribute('datetime') || Date.now());
+
+    this.innerHTML = new Intl.DateTimeFormat("default", {
+      year: this.getAttribute('year') || undefined,
+      month: this.getAttribute('month') || undefined,
+      day: this.getAttribute('day') || undefined,
+      hour: this.getAttribute('hour') || undefined,
+      minute: this.getAttribute('minute') || undefined,
+      second: this.getAttribute('second') || undefined,
+      timeZoneName: this.getAttribute('time-zone-name') || undefined,
+    }).format(date);
+  }
+
+  connectedCallback() { // (2)
+    if (!this.rendered) {
+      this.render();
+      this.rendered = true;
+    }
+  }
+
+  static get observedAttributes() { // (3)
+    return ['datetime', 'year', 'month', 'day', 'hour', 'minute', 'second', 'time-zone-name'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) { // (4)
+    this.render();
+  }
+
+}
+
+customElements.define("time-formatted", TimeFormatted);
+&lt;/script&gt;
+
+&lt;time-formatted id="elem" hour="numeric" minute="numeric" second="numeric"&gt;&lt;/time-formatted&gt;
+
+&lt;script&gt;
+setInterval(() =&gt; elem.setAttribute('datetime', new Date()), 1000); // (5)
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-hky1ffeh1s" style="height:50px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <ol> 
+          <li>Logika rendering dipindahkan ke <em>method</em> helper <code>render()</code>.</li> 
+          <li>Kita memanggilnya sekali ketika elemen dimasukkan ke dalam laman.</li> 
+          <li>Untuk perubahan sebuah atribut, cantumkan dalam pemicu <code>observedAttributes()</code>, <code>attributeChangedCallback</code>.</li> 
+          <li>???dan merender ulang elemen tersebut.</li> 
+          <li>Pada akhirnya, kita dapat dengan mudah membuat sebuah pengatur waktu langsung.</li> 
+         </ol> 
+         <h2><a class="main__anchor" name="urutan-rendering" href="custom-elements.html#urutan-rendering">Urutan Rendering</a></h2> 
+         <p>Ketika HTML parser membangun DOM, elemen diproses satu demi satu, Induk sebelum anak. Misalnya. jika kita memiliki <code>&lt;outer&gt; &lt;inner&gt; &lt;/inner&gt; &lt;/outer&gt;</code>, maka elemen <code>&lt;outer&gt;</code> dibuat dan dihubungkan ke DOM terlebih dahulu, kemudian <code>&lt;inner&gt;</code>.</p> 
+         <p>Itu mengarah pada konsekuensi penting untuk elemen kustom.</p> 
+         <p>Misalnya, jika elemen khusus mencoba mengakses <code>innerHTML</code> di <code>connectedCallback</code>, elemen tersebut tidak mendapat apa-apa:</p> 
+         <div id="xxg3etdfcq" data-trusted="1" class="code-example" data-demo-height="40" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10},{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+customElements.define('user-info', class extends HTMLElement {
+
+  connectedCallback() {
+    alert(this.innerHTML); // empty (*)
+  }
+
+});
+&lt;/script&gt;
+
+&lt;user-info&gt;John&lt;/user-info&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika anda menjalankannya, <code>alert</code> kosong.</p> 
+         <p>Itu persis terjadi karena tidak ada anak pada tahap itu, DOM belum selesai. HTML parser menghubungkan elemen kustom <code>&lt;user-info&gt;</code>, dan akan melanjutkan ke anaknya, tetapi belum melakukannya.</p> 
+         <p>Jika kita ingin meneruskan informasi ke elemen kustom, kita dapat menggunakan atribut. Atribut-atribut tersebut langsung tersedia.</p> 
+         <p>Atau, jika kita benar-benar membutuhkan anak, kita dapat menunda akses ke mereka dengan <code>setTimeout</code> tanpa penundaan.</p> 
+         <p>Ini bekerja :</p> 
+         <div id="613x31cdjo" data-trusted="1" class="code-example" data-demo-height="40" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10},{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+customElements.define('user-info', class extends HTMLElement {
+
+  connectedCallback() {
+    setTimeout(() =&gt; alert(this.innerHTML)); // John (*)
+  }
+
+});
+&lt;/script&gt;
+
+&lt;user-info&gt;John&lt;/user-info&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang <code>alert</code> pada baris <code>(*)</code> menunjukkan ???John??? saat kita menjalankannya secara asinkron setelah HTML parser selesai. Kita dapat memproses anaknya jika diperlukan dan menyelesaikan inisialisasi.</p> 
+         <p>Di sisi lain, solusi ini juga belum sempurna. Jika elemen kustom bersarang juga menggunakan <code>setTimeout</code> untuk menginisialisasi dirinya sendiri, maka elemen tersebut akan dimasukkan ke dalam antrean:<code>setTimeout</code> terluar dipicu terlebih dahulu, kemudian bagian dalamnya.</p> 
+         <p>Jadi elemen outer menyelesaikan inisialisasinya sebelum elemen inner.</p> 
+         <p>Mari kita tunjukkan itu pada contoh:</p> 
+         <div id="7vyl1uh351" data-trusted="1" class="code-example" data-demo-height="0" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:11}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+customElements.define('user-info', class extends HTMLElement {
+  connectedCallback() {
+    alert(`${this.id} connected.`);
+    setTimeout(() =&gt; alert(`${this.id} initialized.`));
+  }
+});
+&lt;/script&gt;
+
+&lt;user-info id="outer"&gt;
+  &lt;user-info id="inner"&gt;&lt;/user-info&gt;
+&lt;/user-info&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Urutan keluaran:</p> 
+         <ol> 
+          <li>outer terhubung.</li> 
+          <li>inner terhubung.</li> 
+          <li>outer diinisialisasi.</li> 
+          <li>inner diinisialisasi.</li> 
+         </ol> 
+         <p>Kita dapat melihat dengan jelas bahwa elemen outer menyelesaikan inisialisasi <code>(3)</code> sebelum elemen inner <code>(4)</code>.</p> 
+         <p>Tidak ada <em>callback</em> bawaan yang terpicu setelah elemen bersarang siap. Jika perlu, kita bisa menerapkannya sendiri. Misalnya, elemen inner bisa mengirimkan <em>events</em> seperti <code>initialized</code>, dan elemen outer bisa mendengarkan dan bereaksi padanya.</p> 
+         <h2><a class="main__anchor" name="customized-built-in-elements" href="custom-elements.html#customized-built-in-elements">Customized built-in elements</a></h2> 
+         <p>Elemen baru yang kita buat, seperti <code>&lt;time-formatted&gt;</code>, tidak memiliki semantik terkait. Mereka tidak dikenal oleh mesin pencari dan perangkat aksesibilitas tidak dapat menanganinya.</p> 
+         <p>Tapi hal seperti itu bisa jadi penting. Misalnya, mesin telusur akan tertarik untuk mengetahui bahwa kita benar-benar menunjukkan waktu. Dan jika kita membuat sebuah tombol khusus, mengapa tidak menggunakan kembali fungsionalitas <code>&lt;button&gt;</code> yang ada?</p> 
+         <p>Kita dapat meng-<em>extend</em> dan menyesuaikan elemen bawaan HTML dengan mewarisi dari kelasnya.</p> 
+         <p>Misalnya, tombol adalah <em>instances</em> dari <code>HTMLButtonElement</code>, mari kita buat di atasnya.</p> 
+         <ol> 
+          <li> <p>Extend <code>HTMLButtonElement</code> dengan kelas kita:</p> 
+           <div id="mks608i8zk" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>class HelloButton extends HTMLButtonElement { /* custom element methods */ }</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Berikan argumen ketiga untuk <code>customElements.define</code>, yang menetapkan tag:</p> 
+           <div id="2u1uoj4n1p" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:51,&quot;end&quot;:70}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>customElements.define('hello-button', HelloButton, {extends: 'button'});</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Mungkin ada tag berbeda yang berbagi kelas DOM yang sama, itulah mengapa menetapkan <code>extends</code> diperlukan.</p> </li> 
+          <li> <p>Pada akhirnya, untuk menggunakan elemen kustom kita, masukkan tag <code>&lt;button&gt;</code> biasa, tetapi tambahkan <code>is = "hello-button"</code>ke dalamnya:</p> 
+           <div id="5ljbpglgtc" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;button is="hello-button"&gt;...&lt;/button&gt;</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <p>Berikut contoh lengkapnya:</p> 
+         <div id="qyvhv4vre4" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:14,&quot;end&quot;:14},{&quot;start&quot;:12,&quot;end&quot;:12},{&quot;start&quot;:9,&quot;end&quot;:9},{&quot;start&quot;:3,&quot;end&quot;:3}]" data-autorun="no-epub"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-elements.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+// The button that says "hello" on click
+class HelloButton extends HTMLButtonElement {
+  constructor() {
+    super();
+    this.addEventListener('click', () =&gt; alert("Hello!"));
+  }
+}
+
+customElements.define('hello-button', HelloButton, {extends: 'button'});
+&lt;/script&gt;
+
+&lt;button is="hello-button"&gt;Click me&lt;/button&gt;
+
+&lt;button is="hello-button" disabled&gt;Disabled&lt;/button&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-qyvhv4vre4" style="height:200px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Tombol baru kita meng-<em>extends</em> tombol bawaan. Jadi, style dan fitur standar tetap sama seperti atribut <code>disabled</code>.</p> 
+         <h2><a class="main__anchor" name="referensi" href="custom-elements.html#referensi">Referensi</a></h2> 
+         <ul> 
+          <li>HTML Living Standard: <a href="https://html.spec.whatwg.org/#custom-elements">https://html.spec.whatwg.org/#custom-elements</a>.</li> 
+          <li>Compatiblity: <a href="https://caniuse.com/#feat=custom-elementsv1">https://caniuse.com/#feat=custom-elementsv1</a>.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="ringkasan" href="custom-elements.html#ringkasan">Ringkasan</a></h2> 
+         <p>Elemen kustom dapat terdiri dari dua jenis:</p> 
+         <ol> 
+          <li> <p>???Autonomous??? ??? tag baru, <em>extending</em> <code>HTMLElement</code>.</p> <p>Skema definisi:</p> 
+           <div id="eh4xykospo" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>class MyElement extends HTMLElement {
+  constructor() { super(); /* ... */ }
+  connectedCallback() { /* ... */ }
+  disconnectedCallback() { /* ... */  }
+  static get observedAttributes() { return [/* ... */]; }
+  attributeChangedCallback(name, oldValue, newValue) { /* ... */ }
+  adoptedCallback() { /* ... */ }
+ }
+customElements.define('my-element', MyElement);
+/* &lt;my-element&gt; */</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>???Customized built-in elements??? ??? ekstensi dari elemen yang ada.</p> <p>Membutuhkan satu lagi argumen <code>.define</code>, dan <code>is =" ... "</code> dalam HTML:</p> 
+           <div id="kv53fbaic8" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>class MyButton extends HTMLButtonElement { /*...*/ }
+customElements.define('my-button', MyElement, {extends: 'button'});
+/* &lt;button is="my-button"&gt; */</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <p>Elemen kustom didukung dengan baik di antara browser. Edge agak tertinggal, tetapi ada <em>polyfill</em> .</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="custom-elements.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="custom-elements.html#elemen-live-timer" name="elemen-live-timer">Elemen live timer</a></h3> 
+           <a class="task__open-link" href="task/live-timer.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita sudah memiliki elemen <code>&lt;time-formatted&gt;</code> untuk menunjukkan waktu yang diformat dengan baik.</p> 
+            <p>Buat elemen <code>&lt;live-timer&gt;</code> untuk menunjukkan waktu saat ini:</p> 
+            <ol> 
+             <li><code>&lt;live-timer&gt;</code> harus menggunakan <code>&lt;time-formatted&gt;</code> secara internal, bukan menduplikasi fungsinya.</li> 
+             <li>Berdetak (update) setiap detik.</li> 
+             <li>Untuk setiap detik, sebuah <em>events</em> kustom bernama <code>tick</code> harus dibuat, dengan tanggal saat ini di <code>event.detail</code> (lihat bab &lt;info: dispatch-events&gt;).</li> 
+            </ol> 
+            <p>Penggunaan:</p> 
+            <div id="od22ald2cg" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-markup"><code>&lt;live-timer id="elem"&gt;&lt;/live-timer&gt;
+
+&lt;script&gt;
+  elem.addEventListener('tick', event =&gt; console.log(event.detail));
+&lt;/script&gt;</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Demo:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:40px" src="https://id.js.cx/task/live-timer/solution/"></iframe> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/9sbVdedctzcxv2rc?p=preview" target="_blank" data-plunk-id="9sbVdedctzcxv2rc">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Tolong dicatat:</p> 
+              <ol> 
+               <li>Kita menghapus timer <code>setInterval</code> ketika elemen dihapus dari dokumen. Ini penting, jika tidak, timer terus berdetak bahkan jika tidak diperlukan lagi. Dan browser tidak dapat menghapus memori dari elemen ini dan yang direferensikan olehnya.</li> 
+               <li>Kita dapat mengakses tanggal sekarang sebagai properti <code>elem.date</code>. Semua <em>methods</em> dan properti kelas secara alami adalah <em>methods</em> dan properti elemen.</li> 
+              </ol> 
+              <p><a href="https://plnkr.co/edit/54IGYg4ifzr3sOLd?p=preview" target="_blank" data-plunk-id="54IGYg4ifzr3sOLd">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="webcomponents-intro.html" data-tooltip="Dari Ketinggian Orbital"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="shadow-dom.html" data-tooltip="Shadow DOM"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcustom-elements" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcustom-elements" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="web-components.html">Web components</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-elements.html#contoh-time-formatted">Contoh: ???time-formatted???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-elements.html#mengamati-atribut">Mengamati atribut</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-elements.html#urutan-rendering">Urutan Rendering</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-elements.html#customized-built-in-elements">Customized built-in elements</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-elements.html#referensi">Referensi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-elements.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-elements.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-elements.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcustom-elements" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fcustom-elements" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

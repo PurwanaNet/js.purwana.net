@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Gaya Mengkode</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="coding-style.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Gaya Mengkode"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Gaya Mengkode"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="debugging-chrome.html"> 
+  <link rel="next" href="comments.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Gaya Mengkode"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcoding-style" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcoding-style" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="24" max="92" data-tooltip="Pelajaran 24 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="code-quality.html"><span>Kualitas Kode</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Kualitas Kode","item":"https://id.javascript.info/code-quality"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Gaya Mengkode</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Gaya Mengkode"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Kode kita harus sebisa mungkin bersih dan mudah dibaca.</p> 
+         <p>Ini sebenarnya seni pemrograman ??? ambil tugas rumit dan mengkodenya dengan cara yang benar dan dapat dibaca manusia. Gaya kode yang baik punya andil besar di situ.</p> 
+         <h2><a class="main__anchor" name="syntax" href="coding-style.html#syntax">Syntax</a></h2> 
+         <p>Ini adalah satu cheatsheet dengan beberapa aturan yang disarankan (lihat bawah untuk lebih detil):</p> 
+         <figure> 
+          <div class="image" style="width:715px"> 
+           <div class="image__ratio" style="padding-top:73.84615384615385%"></div> 
+           <object type="image/svg+xml" data="article/coding-style/code-style.svg" width="715" height="528" class="image__image" data-use-theme> <img src="article/coding-style/code-style.svg" alt="" width="715" height="528"> </object> 
+          </div> 
+         </figure> 
+         <!--
+```js
+function pow(x, n) {
+  let result = 1;
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+let x = prompt("x?", "");
+let n = prompt("n?", "");
+
+if (n < 0) {
+  alert(`Power ${n} is not supported,
+    please enter a non-negative integer number`);
+} else {
+  alert( pow(x, n) );
+}
+```
+
+--> 
+         <p>Sekarang kita bahas aturannya dan alasannya secara detil.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tak ada aturan yang memaksa</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Tak ada yang diset sekeras batu di sini. Mereka cuma preferensi gaya saja, buka dogma agama.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="kurung-kurawal" href="coding-style.html#kurung-kurawal">Kurung Kurawal</a></h3> 
+         <p>Di kebanyakan proyek JavaScript kurung kurawal ditulis dalam gaya ???Egyptian??? dengan kurawal buka di baris yang sama dengan katakunci ??? bukan di baris baru. Juga harus ada spasi sebelum bracket pembuka, seperti ini:</p> 
+         <div id="uoa9a16kh9" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (condition) {
+  // lakukan ini
+  // ...dan itu
+  // ...dan itu
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Konstruksi sebaris, seperti <code>if (condition) doSomething()</code>, ialah hal penting sampingan. Haruskah kita memakai kurawal sama sekali?</p> 
+         <p>Ini adalah varian yang teranotasi jadi kamu bisa menilai sendiri keterbacaan mereka:</p> 
+         <ol> 
+          <li>???? Pemula kadang melakukan itu. Buruk! Kurung kurawal tak dibutuhkan: 
+           <div id="vogcdey9u2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:11,&quot;end&quot;:12},{&quot;start&quot;:49,&quot;end&quot;:50}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>if (n &lt; 0) {alert(`Power ${n} is not supported`);}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li>???? Pisahkan baris berbeda tanpa kurawal. Jangan pernah lakukan, mudah membuat galat saat menambah baris baru: 
+           <div id="efqgs9aktz" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>if (n &lt; 0)
+  alert(`Power ${n} is not supported`);</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li>???? Sebaris tanpa kurawal ??? bisa diterima, jika pendek: 
+           <div id="emdwepjpqm" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>if (n &lt; 0) alert(`Power ${n} is not supported`);</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li>???? Varian terbaik: 
+           <div id="27x3tyirfn" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>if (n &lt; 0) {
+  alert(`Power ${n} is not supported`);
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <p>Untuk kode ringkas, sebaris dibolehkan, misal <code>if (cond) return null</code>. Tapi blok kode (varian terakhir) biasanya lebih dapat terbaca.</p> 
+         <h3><a class="main__anchor" name="panjang-baris" href="coding-style.html#panjang-baris">Panjang Baris</a></h3> 
+         <p>Tak ada orang suka membaca kode horizontal yang panjang. Memisahkan mereka ialah praktik yang baik.</p> 
+         <p>Misalnya:</p> 
+         <div id="kl30npvesq" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// backtick quote ` memperbolehkan memecah string jadi beberapa baris
+let str = `
+  ECMA International's TC39 is a group of JavaScript developers,
+  implementers, academics, and more, collaborating with the community
+  to maintain and evolve the definition of JavaScript.
+`;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan, untuk pernyataan <code>if</code>:</p> 
+         <div id="8ggqrrv2my" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (
+  id === 123 &amp;&amp;
+  moonPhase === 'Waning Gibbous' &amp;&amp;
+  zodiacSign === 'Libra'
+) {
+  letTheSorceryBegin();
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Panjang baris maximum sebaiknya disepakati di level-tim. Biasanya 80 atau 120 karakter.</p> 
+         <h3><a class="main__anchor" name="indent" href="coding-style.html#indent">Indent</a></h3> 
+         <p>Ada dua tipe indent:</p> 
+         <ul> 
+          <li> <p><strong>Indent horizontal: 2 atau 4 spasi.</strong></p> <p>Indentasi horizontal dibuat menggunakan 2 atau 4 spasi atau simbol tab horizontal (kunci <kbd class="shortcut">Tab</kbd>). Pemilihan ini sudah lama jadi perang suci. Spasi jadi lebih umum sekarang ini.</p> <p>Satu keutamaan spasi dari tab ialah konfigurasi indent spasi lebih flexibel dari simbol tab.</p> <p>Misalnya, kita bisa mengalinea argumen dengan bracket pembuka, seperti ini:</p> 
+           <div id="gzpu58pbgj" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>show(parameters,
+     aligned, // 5 padding spasi di kiri
+     one,
+     after,
+     another
+  ) {
+  // ...
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p><strong>Indent vertikal: baris kosong untuk memecah kode menjadi blok logika.</strong></p> <p>Bahkan satu fungsi pun sering bisa dibagi jadi blok logika. Di contoh berikut, inisialisasi variabel, loop utama dan hasil kembalian dipecah secara vertikal:</p> 
+           <div id="5ikcnae737" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  let result = 1;
+  //              &lt;--
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+  //              &lt;--
+  return result;
+}</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Sisipkan extra baris baru di mana ini membantu membuat kode lebih terbaca. Tak boleh lebih dari sembilan baris kode tanpa indentasi vertikal.</p> </li> 
+         </ul> 
+         <h3><a class="main__anchor" name="semicolon" href="coding-style.html#semicolon">Semicolon</a></h3> 
+         <p>Semicolon sebaiknya ada di tiap ujung pernyataan, bahkan meski jika itu bisa dilewati.</p> 
+         <p>Ada bahasa di mana semicolon benar-benar opsional dan jarang dipakai. Tapi di JavaScript, ada kasus di mana line break tidak diinterpretasi sebagai semicolon, membuat kode rentan galat. Lihat lebih lanjut tentang itu di bab <a href="structure.html#semicolon">Struktur kode</a>.</p> 
+         <p>Jika kamu programmer JavaScript berpengalaman, kamu bisa pilih gaya kode tanpa semicolon seperti <a href="https://standardjs.com/">StandardJS</a>. Atau, lebih baik memakai semicolon untuk menghindari kemungkinan jurang nista. Mayoritas pengembang menaruh semicolon.</p> 
+         <h3><a class="main__anchor" name="level-bersarang" href="coding-style.html#level-bersarang">Level Bersarang</a></h3> 
+         <p>Coba hindari kode bersarang dengan level terlalu dalam.</p> 
+         <p>Misalnya, dalam loop, kadang ide bagus memakai directive <a href="while-for.html#continue"><code>continue</code></a> untuk menghindari sarang extra.</p> 
+         <p>Misalnya, ketimbang menambah kondisional <code>if</code> bersarang seperti ini:</p> 
+         <div id="j2ogphkjqy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>for (let i = 0; i &lt; 10; i++) {
+  if (cond) {
+    ... // &lt;- satu lagi level bersarang
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita bisa tulis:</p> 
+         <div id="rw4886k5ws" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:13,&quot;end&quot;:21}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>for (let i = 0; i &lt; 10; i++) {
+  if (!cond) continue;
+  ...  // &lt;- tak ada extra level bersarang
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hal serupa bisa dilakukan dengan <code>if/else</code> dan <code>return</code>.</p> 
+         <p>Misalnya, dua konstruksi berikut identik.</p> 
+         <p>Opsi 1:</p> 
+         <div id="6xtt2gz786" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  if (n &lt; 0) {
+    alert("Negative 'n' not supported");
+  } else {
+    let result = 1;
+
+    for (let i = 0; i &lt; n; i++) {
+      result *= x;
+    }
+
+    return result;
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Opsi 2:</p> 
+         <div id="kxyu69nb1r" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  if (n &lt; 0) {
+    alert("Negative 'n' not supported");
+    return;
+  }
+
+  let result = 1;
+
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Yang kedua lebih terbaca karena ???kasus spesial??? <code>n &lt; 0</code> ditangani segera. Sekali pengecekan selesai kita bisa pindah ke aliran kode ???utama??? tanpa sarang tambahan.</p> 
+         <h2><a class="main__anchor" name="penempatan-fungsi" href="coding-style.html#penempatan-fungsi">Penempatan Fungsi</a></h2> 
+         <p>Jika kamu menulis beberapa fungsi ???pembantu??? dan kode yang menggunakan mereka, ada tiga cara untuk mengorganisir fungsi.</p> 
+         <ol> 
+          <li> <p>Deklarasi fungsi <em>di atas</em> kode yang menggunakan mereka:</p> 
+           <div id="tlhajb885i" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:13,&quot;cols&quot;:[{&quot;start&quot;:3,&quot;end&quot;:31}]},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:3,&quot;end&quot;:19}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// deklarasi fungsi
+function createElement() {
+  ...
+}
+
+function setHandler(elem) {
+  ...
+}
+
+function walkAround() {
+  ...
+}
+
+// kode yang menggunakan mereka
+let elem = createElement();
+setHandler(elem);
+walkAround();</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Kode pertama, lalu fungsi</p> 
+           <div id="wzi7y1sogw" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;cols&quot;:[{&quot;start&quot;:7,&quot;end&quot;:22}]},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:3,&quot;end&quot;:31}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// kode yang menggunakan mereka
+let elem = createElement();
+setHandler(elem);
+walkAround();
+
+// --- fungsi pembantu ---
+function createElement() {
+  ...
+}
+
+function setHandler(elem) {
+  ...
+}
+
+function walkAround() {
+  ...
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Campuran: fungsi dideklarasi di mana ia pertama dipakai.</p> </li> 
+         </ol> 
+         <p>Seringnya, varian kedua jadi pilihan.</p> 
+         <p>Itu karena saat membaca kode, kita pertama mau tahu <em>itu bisa apa</em>. Jika kode mulai duluan, maka jadi lebih jelas dari awal. Lalu, mungkin kita tak mau membaca fungsinya sama sekali, terutama jika nama mereka deskriptif, sesuai dengan kelakuan mereka.</p> 
+         <h2><a class="main__anchor" name="panduan-gaya" href="coding-style.html#panduan-gaya">Panduan Gaya</a></h2> 
+         <p>Panguan gaya berisi aturan umum tentang ???bagaimana menulis??? kode, misal quote mana yang dipakai, berapa spasi indent, panjang baris maximal, dll. Banyak hal remeh.</p> 
+         <p>Saat semua anggota tim menggunakan panduan gaya yang sama, kodenya terlihat seragam, tak peduli anggota tim mana yang menulisnya.</p> 
+         <p>Tentu saja, tim bisa saja menulis panduan gaya mereka sendiri, tapi biasanya mereka tak butuh. There are many existing guides to choose from.</p> 
+         <p>Beberapa pilihan populer:</p> 
+         <ul> 
+          <li><a href="https://google.github.io/styleguide/javascriptguide.xml">Panduan Gaya JavaScript Google</a></li> 
+          <li></li> 
+          <li></li> 
+          <li><a href="https://standardjs.com/">StandardJS</a></li> 
+          <li>(plus banyak lainnya)</li> 
+         </ul> 
+         <p>Jika kamu pengembang pemula, mulai dengan cheatsheet di awal bab ini. Lalu kamu bisa menjelajah panduan gaya lain untuk mencari ide lebih dan menentukan mana yang terbaik.</p> 
+         <h2><a class="main__anchor" name="linter-terotomasi" href="coding-style.html#linter-terotomasi">Linter Terotomasi</a></h2> 
+         <p>Linter ialah tool yang bisa otomatis mengecek gaya kodemu dan memberi saran improvisasi.</p> 
+         <p>Yang keren dari ini ialah pengecekan gaya sekaligus menemukan bug., like typos in variable or function names. Because of this feature, using a linter is recommended even if you don???t want to stick to one particular ???code style???.</p> 
+         <p>Berikut beberapa linting tool terkenal:</p> 
+         <ul> 
+          <li><a href="http://www.jslint.com/">JSLint</a> ??? one of the first linters.</li> 
+          <li><a href="http://www.jshint.com/">JSHint</a> ??? more settings than JSLint.</li> 
+          <li><a href="http://eslint.org/">ESLint</a> ??? probably the newest one.</li> 
+         </ul> 
+         <p>Semuanya bisa melakukan itu. Penulis ini menggunakan <a href="http://eslint.org/">ESLint</a>.</p> 
+         <p>Kebanyakan linter terintegrasi dengan banyak editor populer: cuma mengaktifkan plugin di editor dan mengkonfigurasi gayanya.</p> 
+         <p>Misalnya, untuk ESLint kamu harus melakukan hal ini:</p> 
+         <ol> 
+          <li>Instal <a href="https://nodejs.org/">Node.js</a>.</li> 
+          <li>Instal ESLint dengan command <code>npm install -g eslint</code> (npm ialah installer package JavaScript).</li> 
+          <li>Buat file konfig bernama <code>.eslintrc</code> di root proyek JavaScriptmu (di folder yang berisi semua filemu).</li> 
+          <li>Instal/aktifkan plugin untuk editormu yang berintegrasi dengan ESLint. Mayoritas editor punya satu.</li> 
+         </ol> 
+         <p>Berikut contoh file <code>.eslintrc</code>:</p> 
+         <div id="0294xsimlq" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>{
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "no-console": 0,
+    "indent": 2
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini directive <code>"extends"</code> menunjukkan bahwa konfigurasinya berdasarkan set pengaturan ???eslint:recommended???. Setelah itu, kita spesifikasikan punya kita sendiri.</p> 
+         <p>Selain itu, dimungkinkan juga mengunduh set aturan gaya dari web dan mengextend mereka. Lihat <a href="http://eslint.org/docs/user-guide/getting-started">http://eslint.org/docs/user-guide/getting-started</a> untuk detil lebih tentang instalasi.</p> 
+         <p>Juga IDE tertentu punya linting built-in, yang nyaman tapi tak bisa dikustomisasi seperti ESLint.</p> 
+         <h2><a class="main__anchor" name="kesimpulan" href="coding-style.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Semua aturan syntax yang dideskripsikan di bab ini (dan di referensi panduan gaya) bertujuan untuk meningkatkan keterbacaan kodemu. Mereka dapat diperdebatkan.</p> 
+         <p>Saat kita berpikir tentang menulis kode ???lebih baik???, pertanyaannya ialah haruskah kita tanya diri kita sendiri: ???Apa yang membuat kode dapat lebih terbaca dan lebih mudah dipahami???? dan ???Apa yang bisa membantu kita menghindari galat???? Inilah hal utama yang harus dipikirkan saat memilih dan memperdebatkan gaya kode.</p> 
+         <p>Membaca panduan gaya populer akan membuatmu selalu terupdate dengan ide terbaru tentang tren gaya kode dan praktik terbaiknya.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="coding-style.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="coding-style.html#gaya-jelek" name="gaya-jelek">Gaya jelek</a></h3> 
+           <a class="task__open-link" href="task/style-errors.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apa yang salah dengan gaya kode di bawah?</p> 
+            <div id="n8wke0suu8" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function pow(x,n)
+{
+  let result=1;
+  for(let i=0;i&lt;n;i++) {result*=x;}
+  return result;
+}
+
+let x=prompt("x?",''), n=prompt("n?",'')
+if (n&lt;=0)
+{
+  alert(`Power ${n} is not supported, please enter an integer number greater than zero`);
+}
+else
+{
+  alert(pow(x,n))
+}</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Betulkan.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kamu bisa perhatikan berikut:</p> 
+              <div id="y3324sj85r" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function pow(x,n)  // &lt;- tak ada spasi diantara arguments
+{  // &lt;- menemukan bracket di baris terpisah
+  let result=1;   // &lt;- tak ada spasi sebelum atau setelah =
+  for(let i=0;i&lt;n;i++) {result*=x;}   // &lt;- tak ada spasi
+  // konten { ... } sebaiknya di baris baru
+  return result;
+}
+
+let x=prompt("x?",''), n=prompt("n?",'') // &lt;-- secara teknis bisa saja
+// tapi akan lebih baik jika dibuat dua baris, juga jangan gunakan spasi dan jangan lupa tanda ;
+if (n&lt;=0)  // &lt;- tidak ada spasi didalam (n &lt;= 0), dan harus ada baris tambahan diatasnya
+{   // &lt;- pembuka kurung kurawal di baris baru
+  // dibawah - baris yang panjang dapat dibagi menjadi beberapa baris untuk menambah keterbacaan kode
+  alert(`Power ${n} is not supported, please enter an integer number greater than zero`);
+}
+else // &lt;- bisa menulisnya di baris tunggal seperti "} else {"
+{
+  alert(pow(x,n))  // tak ada spasi dan kehilangan ;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Varian yang dibetulkan:</p> 
+              <div id="v1k0vff7ai" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function pow(x, n) {
+  let result = 1;
+
+  for (let i = 0; i &lt; n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+let x = prompt("x?", "");
+let n = prompt("n?", "");
+
+if (n &lt;= 0) {
+  alert(`Power ${n} is not supported,
+    please enter an integer number greater than zero`);
+} else {
+  alert( pow(x, n) );
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="debugging-chrome.html" data-tooltip="Mendebug di Chrome"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="comments.html" data-tooltip="Komentar"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcoding-style" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcoding-style" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="code-quality.html">Kualitas Kode</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="coding-style.html#syntax">Syntax</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="coding-style.html#penempatan-fungsi">Penempatan Fungsi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="coding-style.html#panduan-gaya">Panduan Gaya</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="coding-style.html#linter-terotomasi">Linter Terotomasi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="coding-style.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="coding-style.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="coding-style.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcoding-style" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fcoding-style" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

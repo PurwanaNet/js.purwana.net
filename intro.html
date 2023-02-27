@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pengenalan JavaScript</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="intro.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pengenalan JavaScript"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pengenalan JavaScript"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="getting-started.html"> 
+  <link rel="next" href="manuals-specifications.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pengenalan JavaScript"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fintro" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fintro" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="1" max="92" data-tooltip="Pelajaran 1 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="getting-started.html"><span>Pengenalan</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Pengenalan","item":"https://id.javascript.info/getting-started"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pengenalan JavaScript</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pengenalan JavaScript"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Mari kita lihat apa yang spesial dari JavaScript, apa saja yang bisa kita buat menggunakan JavaScript, dan teknologi apa yang cocok dengan JavaScript.</p> 
+         <h2><a class="main__anchor" name="apa-itu-javascript" href="intro.html#apa-itu-javascript">Apa itu JavaScript?</a></h2> 
+         <p>*Javascript" pada awalnya diciptakan untuk ???membuat halaman web menjadi hidup???.</p> 
+         <p>Program yang ada dalam bahasa ini disebut <em>script</em>. Script ini bisa ditulis langsung ke dalam kode HTML dari sebuah web dan berjalan otomatis saat halaman dimuat.</p> 
+         <p>Script tersedia dan dieksekusi sebagai sebuah teks biasa. Script tidak membutuhkan persiapan khusus atau kompilasi untuk dijalankan.</p> 
+         <p>Dalam hal ini, JavaScript sangat berbeda dari bahasa lain yang disebut <a href="https://en.wikipedia.org/wiki/Java_(programming_language)">Java</a>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Kenapa disebut <u>Java</u>Script?</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Saat JavaScript diciptakan, nama awalnya adalah ???LiveScript???. Namun saat itu Java sudah sangat terkenal, sehingga akhirnya diputuskanlah bahwa memposisikan bahasa baru menjadi ???adik??? Java dapat membantu.</p> 
+           <p>Seiring waktu, JavaScript tumbuh menjadi bahasa yang sepenuhnya bebas dengan memiliki spesifikasi <a href="http://en.wikipedia.org/wiki/ECMAScript">ECMAScript</a>, dan sekarang JavaScript tak punya hubungan apa-apa dengan Java.</p> 
+          </div> 
+         </div> 
+         <p>Sekarang, JavaScript bisa berjalan tak hanya pada browser, tapi juga di server, atau di perangkat manapun yang memiliki program khusus <a href="https://en.wikipedia.org/wiki/JavaScript_engine">JavaScript engine</a>.</p> 
+         <p>Browser punya engine yang tertanam didalamnya yang disebut ???JavaScript virtual machine???.</p> 
+         <p>Tiap engine punya <em>codename</em>-nya sendiri. Misalnya:</p> 
+         <ul> 
+          <li><a href="https://en.wikipedia.org/wiki/V8_(JavaScript_engine)">V8</a> ??? di Chrome dan Opera.</li> 
+          <li><a href="https://en.wikipedia.org/wiki/SpiderMonkey">SpiderMonkey</a> ??? di Firefox.</li> 
+          <li>???Ada juga codename lain seperti ???Trident??? dan ???Chakra??? untuk versi berbeda dari IE, ???ChakraCore??? untuk Microsoft Edge, ???Nitro??? dan ???SquirrelFish??? untuk Safari, dll.</li> 
+         </ul> 
+         <p>Istilah di atas sebaiknya diingat karena akan sering digunakan dalam artikel para developer di internet. Kita akan menggunakannya juga. Misalnya, jika ???fitur X didukung V8???, kemungkinan ia bisa jalan di Chrome dan Opera.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Bagaimana engine bekerja?</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Engine sangat rumit. Tapi basicnya mudah.</p> 
+           <ol> 
+            <li>Engine (tertanam jika ia sebuah browser)bisa membaca (???memparsing???) script.</li> 
+            <li>Lalu ia mengkonversi (???mengkompilasi???) script tersebut menjadi bahasa mesin.</li> 
+            <li>Dan kemudian kode mesin berjalan, lumayan cepat.</li> 
+           </ol> 
+           <p>Engine melakukan optimisasi di setiap langkah proses. Dia bahkan memperhatikan script yang telah dikompilasi saat sedang berjalan, menganalisa data yang mengalir di dalam, dan melakukan optimisasi ke kode mesin berdasarkan pengetahuan itu.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="apa-yang-bisa-dilakukan-in-browser-javascript" href="intro.html#apa-yang-bisa-dilakukan-in-browser-javascript">Apa yang bisa dilakukan <em>in-browser JavaScript</em>?</a></h2> 
+         <p>JavaScript modern merupakan bahasa pemrograman yang ???aman???. Ia tidak menyebabkan akses tingkat-rendah ke memory atau CPU, karena memang awalnya dibuat untuk browser, yang tentunya tidak membutuhkan hal tersebut.</p> 
+         <p>Kemampuan JavaScript sangat tergantung pada lingkungan tempat ia berjalan. Misalnya, <a href="https://wikipedia.org/wiki/Node.js">Node.js</a> mendukung function yang memungkingkan JavaScript melakukan baca/tulis file apapun, melakukan permintaan jaringan, dsb.</p> 
+         <p><em>In-browser JavaScript</em> bisa melakukan apapun terkait manipulasi halaman web, interaksi dengan pengguna, dan webserver.</p> 
+         <p>Misalnya, <em>in-browser JavaScript</em> mampu:</p> 
+         <ul> 
+          <li>Menambah HTML baru ke sebuah halaman, mengganti isinya, memodifikasi gayanya.</li> 
+          <li>Bereaksi terhadap aktifitas pengguna, berjalan saat mouse diklik, pointer digerakkan, tombol ditekan.</li> 
+          <li>Mengirim permintaan jaringan ke remote server, mengunduh dan mengunggah file (disebut teknologi <a href="https://en.wikipedia.org/wiki/Ajax_(programming)">AJAX</a> dan <a href="https://en.wikipedia.org/wiki/Comet_(programming)">COMET</a>).</li> 
+          <li>Memperoleh and menset cookie, bertanya ke pengunjung, menampilkan pesan.</li> 
+          <li>Menyimpan data pada client-side (???local storage???).</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="apa-yang-tidak-bisa-dilakukan-in-browser-javascript" href="intro.html#apa-yang-tidak-bisa-dilakukan-in-browser-javascript">Apa yang TIDAK BISA dilakukan <em>in-browser JavaScript</em>?</a></h2> 
+         <p>Kemampuan JavaScript yang ada di dalam browser terbatas demi keamanan pengguna. Tujuannya supaya mencegah halaman web berbahya mengakses informasi pribadi atau merusak data pengguna.</p> 
+         <p>Contoh keterbatasan tersebut meliputi:</p> 
+         <ul> 
+          <li> <p>Javascript didalam sebuah halaman web seharusnya tidak dapat membaca/mengubah file didalam hardisk semaunya.</p> <p>Browser-browser modern memperbolehkan JavaScript mengakses file, tapi aksesnya dibatasi dan tersedia hanya jika pengguna melakukan hal tertentu, misalnya seperti ???menjatuhkan??? file ke dalam jendela browser atau memilih file via tag <code>&lt;input&gt;</code>.</p> <p>Ada beberapa cara untuk berinteraksi dengan kamera/mikrofon dan perangkat-perangkat lainnya, namun mereka butuh ijin khusus pengguna. Jadi sebuah halaman yang memiliki JavaScript tidak bisa mengaktifkan web-camera, memantau sekeliling dan mengirim informasinya ke [NSA] secara diam-diam(https://en.wikipedia.org/wiki/National_Security_Agency).</p> </li> 
+          <li> <p>Tab/jendela yang berbeda umumnya tidak ada hubungan sama sekali. Terkadang jendela yang berbeda bisa saling berhubungan juga, misalnya ketika satu jendela menggunakan JavaScript untuk membuka jendela lainnya. Tapi meski demikian, JavaScript dari suatu halaman tak boleh mengakses halaman lainnya jika mereka berasal dari situs yang berbeda (dari domain, protokol, atau port berbeda).</p> <p>Ini disebut ???Same Origin Policy???. Untuk melakukan hal tersebut, <em>kedua halaman</em> harus sepakat terhadap adanya pertukaran data dan memiliki kode JavaScript khusus yang melakukan hal tersebut. Kita akan membahasnya nanti dalam tutorial ini.</p> <p>Pembatasan ini pun demi keselamatan pengguna. Sebuah halaman dari <code>http://anysite.com</code> yang dibuka pengguna tidak akan bisa mengakses tab browser lainnya dengan URL <code>http://gmail.com</code> dan mencuri informasinya.</p> </li> 
+          <li> <p>JavaScript bisa dengan mudah berinteraksi secara online ke server di mana halaman berasal. Tapi kemampuannya menerima data dari situs/domain lain dilumpuhkan. Meskipun mampu, ia butuh persetujuan explisit (yang diexpresikan dalam HTTP header) dari sisi remote. Sekali lagi, itu merupakan pembatasan keamanan.</p> </li> 
+         </ul> 
+         <figure> 
+          <div class="image" style="width:566px"> 
+           <div class="image__ratio" style="padding-top:79.3286219081272%"></div> 
+           <object type="image/svg+xml" data="article/intro/limitations.svg" width="566" height="449" class="image__image" data-use-theme> <img src="article/intro/limitations.svg" alt="" width="566" height="449"> </object> 
+          </div> 
+         </figure> 
+         <p>Pembatasan macam ini tidak ada jika JavaScript digunakan di luar browser, misalnya di server. Browser-browser modern juga memperbolehkan plugin/ekstensi yang membutuhkan ijin tambahan.</p> 
+         <h2><a class="main__anchor" name="apa-yang-membuat-javascript-unik" href="intro.html#apa-yang-membuat-javascript-unik">Apa yang membuat JavaScript unik?</a></h2> 
+         <p>Paling tidak ada <em>tiga</em> hal unik dari JavaScript:</p> 
+         <div class="balance balance_single"> 
+          <div class="balance__pluses"> 
+           <div class="balance__content"> 
+            <ul class="balance__list"> 
+             <li>Integrasi penuh dengan HTML/CSS.</li> 
+             <li>Hal sederhana diselesaikan dengan sederhana.</li> 
+             <li>Dukungan dari mayoritas web browser dan aktif secara default.</li> 
+            </ul> 
+           </div> 
+          </div> 
+         </div> 
+         <p>JavaScript merupakan satu-satunya teknologi browser yang mengkombinasikan ketiga poin di atas.</p> 
+         <p>Itulah yang membuat JavaScript unik. Itulah kenapa JavaScript menjadi alat yang paling sering untuk membuat antarmuka browser.</p> 
+         <p>Katanya, JavaScript juga bisa dipakai untuk membuat aplikasi server, mobile, dsb.</p> 
+         <h2><a class="main__anchor" name="bahasa-di-atas-javascript" href="intro.html#bahasa-di-atas-javascript">Bahasa ???di atas??? JavaScript</a></h2> 
+         <p>Sintaks JavaScript tidak memenuhi kebutuhan setiap orang. Masing-masing orang ingin fitur yang berbeda-beda.</p> 
+         <p>Itu wajar, karena proyek dan persyaratan tiap orang berbeda-beda.</p> 
+         <p>Akhir-akhir ini muncul banyak bahasa baru, yang <em>ditranspile</em> (dikonversi) ke JavaScript sebelum dijalankan di browser.</p> 
+         <p>Tools modern membuat transpilasi sangat cepat dan transparan, yang memungkinkan para developer menulis kodenya dalam bahasa lain dan mengautokonversi itu ???di balik layar???.</p> 
+         <p>Contoh bahasa yang dimaksud:</p> 
+         <ul> 
+          <li><a href="http://coffeescript.org/">CoffeeScript</a> merupakan ???syntactic sugar??? dari JavaScript. Dia memperkenalkan syntax yang lebih pendek, memungkingkan kita menulis kode lebih bersih dan lebih presisi. Biasanya, Ruby devs menyukainya.</li> 
+          <li><a href="http://www.typescriptlang.org/">TypeScript</a> berfokus pada penambahan ???strict data typing??? yang menyederhanakan pengembangan dan dukungan sistem yang komplex. Ia dikembangkan oleh Microsoft.</li> 
+          <li><a href="http://flow.org/">Flow</a> juga menambahkan data typing, tapi dalam cara berbeda. Dikembangkan oleh Facebook.</li> 
+          <li><a href="https://www.dartlang.org/">Dart</a> ialah bahasa mandiri yang punya engine sendiri yang berjalan di lingkungan non-peramban (seperti mobile apps), tapi bisa juga ditranspile ke JavaScript. Dikembangkan oleh Google.</li> 
+          <li><a href="https://brython.info/">Brython</a> adalah transpiler python untuk Javascript yang memperbolehkan untuk menulis kode aplikasi didalam Python murni tanpa Javascript.</li> 
+          <li><a href="https://kotlinlang.org/docs/reference/js-overview.html">Kotlin</a> adalah sebuah bahasa pemograman modern, ringkas dan aman yang dapat ditargetkan untuk browser atau Node.</li> 
+         </ul> 
+         <p>Masih banyak lagi. Tentunya, jika kita menggunakan salah satu bahasa yang ditranspile tersebut, kita sebaiknya juga paham JavaScript untuk mengerti apa yang mereka lakukan.</p> 
+         <h2><a class="main__anchor" name="kesimpulan" href="intro.html#kesimpulan">Kesimpulan</a></h2> 
+         <ul> 
+          <li>JavaScript awalnya diciptakan sebagai bahasa khusus browser, namun sekarang banyak digunakan di lingkungan lain.</li> 
+          <li>Sekarang, JavaScript mempunyai posisi unik sebagai bahasa browser paling banyak diadopsi dengan integrasi penuh dengan HTML/CSS.</li> 
+          <li>Ada banyak bahasa yang ???ditranspile??? ke JavaScript dan menyediakan fitur tertentu. Disarankan untuk mempelajari mereka juga, minimal sebentar, setelah menguasai JavaScript.</li> 
+         </ul> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="getting-started.html" data-tooltip="Pengenalan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="manuals-specifications.html" data-tooltip="Manual dan spesifikasi"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fintro" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fintro" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="getting-started.html">Pengenalan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="intro.html#apa-itu-javascript">Apa itu JavaScript?</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="intro.html#apa-yang-bisa-dilakukan-in-browser-javascript">Apa yang bisa dilakukan <em>in-browser JavaScript</em>?</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="intro.html#apa-yang-tidak-bisa-dilakukan-in-browser-javascript">Apa yang TIDAK BISA dilakukan <em>in-browser JavaScript</em>?</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="intro.html#apa-yang-membuat-javascript-unik">Apa yang membuat JavaScript unik?</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="intro.html#bahasa-di-atas-javascript">Bahasa ???di atas??? JavaScript</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="intro.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="intro.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fintro" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fintro" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

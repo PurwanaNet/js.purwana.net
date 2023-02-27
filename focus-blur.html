@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Focusing: focus/blur</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="focus-blur.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Focusing: focus/blur"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Focusing: focus/blur"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="form-elements.html"> 
+  <link rel="next" href="events-change-input.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Focusing: focus/blur"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffocus-blur" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffocus-blur" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="24" max="32" data-tooltip="Pelajaran 24 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="forms-controls.html"><span>Forms, controls</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Forms, controls","item":"https://id.javascript.info/forms-controls"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Focusing: focus/blur</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Focusing: focus/blur"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Sebuah elemen menjadi fokus ketika user mengkliknya atau menggunakan tombol <kbd class="shortcut">Tab</kbd> pada keyboard. Ada juga atribut HTML <code>autofocus</code> yang fokus pada sebuah element secara default ketika memuat sebuah halaman dan sebagainya untuk mendapatkan fokus.</p> 
+         <p>Fokus pada sebuah elemen pada umumnya diartikan: ???bersiap untuk terima datanya disini???, jadi itu adalah momen ketika kita bisa menjalankan kode untuk di inisiasi kebutuhan fungsionalitas.</p> 
+         <p>Momen ketika hilang fokus (???blur???) bahkan bisa lebih penting. Itu adalah dimana user klik disuatu tempat or menekan <kbd class="shortcut">Tab</kbd> untuk pindah ke kotak selanjutnya, atau dengan cara yang lain.</p> 
+         <p>Kehilangan fokus pada umumnya diartikan: ???data telah di isi???, jadi kita bisa menjalankan kode untuk mengeceknya atau bahkan menyimpannya ke server dan sebagainya.</p> 
+         <p>Ada beberapa keanehan saat bekerja dengan event fokus. Kami akan melakukan yang terbaik untuk membahasnya lebih lanjut.</p> 
+         <h2><a class="main__anchor" name="events-focus-blur" href="focus-blur.html#events-focus-blur">Events focus/blur</a></h2> 
+         <p>Event <code>focus</code> terpanggil/trigger saat sedang fokus, dan event <code>blur</code> ??? ketika elemen hilang fokus.</p> 
+         <p>Mari gunakan mereka sebagai validasi sebuah kotak input.</p> 
+         <p>Dalam contoh dibawah:</p> 
+         <ul> 
+          <li><code>blur</code> cek jika kotak email telah terisi , dan jika tidak ??? tampilkan error.</li> 
+          <li><code>focus</code> menyembunyikan pesan error (pada <code>blur</code> itu akan di cek kembali):</li> 
+         </ul> 
+         <div id="rqmrucpz2g" data-trusted="1" class="code-example" data-demo-height="60" data-highlight="[{&quot;start&quot;:21,&quot;cols&quot;:[{&quot;start&quot;:2,&quot;end&quot;:15}]},{&quot;start&quot;:14,&quot;cols&quot;:[{&quot;start&quot;:2,&quot;end&quot;:14}]}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="focus-blur.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="focus-blur.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+  .invalid {
+    border-color: red;
+  }
+  #error {
+    color: red;
+  }
+&lt;/style&gt;
+
+Your email please: &lt;input type="email" id="input" /&gt;
+
+&lt;div id="error"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  input.onblur = function() {
+    if (!input.value.includes('@')) { // not email
+      input.classList.add('invalid');
+      error.innerHTML = 'Please enter a correct email.'
+    }
+  };
+
+  input.onfocus = function() {
+    if (this.classList.contains('invalid')) {
+      // remove the "error" indication, because the user wants to re-enter something
+      this.classList.remove('invalid');
+      error.innerHTML = "";
+    }
+  };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-rqmrucpz2g" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Dengan HTML modern kita bisa melakukan beberapa validasi menggunakan atribut input: <code>required</code>, <code>pattern</code> dan lainnya. Dan terkadang hanya mereka yang kita butuhkan. Kita bisa menggunakan Javascricpt jika ingin fleksibelitas lebih. Juga kita bisa secara otomatis mengirim nilai yang diubah ke server jika nilainya benar.</p> 
+         <h2><a class="main__anchor" name="metode-focus-blur" href="focus-blur.html#metode-focus-blur">Metode focus/blur</a></h2> 
+         <p>Metode <code>elem.focus()</code> dan <code>elem.blur()</code> set/unset fokus pada elemen.</p> 
+         <p>Misalnya, mari buat pengunjung tidak bisa keluar dari input jika nilainya tidak valid:</p> 
+         <div id="fk4p0yfxmq" data-trusted="1" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:18,&quot;end&quot;:19}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="focus-blur.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="focus-blur.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+  .error {
+    background: red;
+  }
+&lt;/style&gt;
+
+Your email please: &lt;input type="email" id="input" /&gt;
+&lt;input
+  type="text"
+  style="width:220px"
+  placeholder="make email invalid and try to focus here"
+/&gt;
+
+&lt;script&gt;
+    input.onblur = function() {
+      if (!this.value.includes('@')) { // not email
+        // show the error
+        this.classList.add("error");
+        // ...and put the focus back
+        input.focus();
+      } else {
+        this.classList.remove("error");
+      }
+    };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-fk4p0yfxmq" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Itu bekerja pada semua browser kecuali Firefox (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=53579">bug</a>).</p> 
+         <p>Jika kita sedang mengetik/memasukkan sesuatu ke input dan coba menggunakan<kbd class="shortcut">Tab</kbd> atau klik diluar elemen <code>&lt;input&gt;</code>, maka <code>onblur</code> membuat fokus kembali ke input.</p> 
+         <p>Perlu diingat bahwa kita tidak bisa ???mencegah hilangnya fokus??? dengan memanggil <code>event.preventDefault()</code> pada <code>onblur</code>, karena <code>onblur</code> bekerja saat element hilang fokus.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">JavaScript-initiated focus loss</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Focus loss bisa terjadi untuk alasan tertentu.</p> 
+           <p>Salah satu diantaranya adalah ketika pengunjung klik di tempat lain. Tetapi mungkin Javascript sendiri yang menyebabkannya, Misalya:</p> 
+           <ul> 
+            <li>Sebuah <code>alert</code> memindahkan fokus untuknya, jadi itu menyebabkan focus loss pada elemen (<code>blur</code> event), dan ketika <code>alert</code> sudah tidak ada, fokus ada kembali (<code>focus</code> event).</li> 
+            <li>Jika sebuah elemen dihapus dari DOM, itu juga menyebabkan focus loss. Jika di isi lagi nanti, maka fokus tidak akan kembali.</li> 
+           </ul> 
+           <p>Beberapa fitur ini membuat <code>focus/blur</code> handler menjadi misbehave ??? trigger disaat mereka tidak diperlukan.</p> 
+           <p>Resep yang baik adalah berhati-hati mengunakan event ini. Jika kita ingin melacak focus-loss yang dimulai oleh user, maka kita harus menghidari yang dapat menyebabkan pada kita sendiri.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="memungkinkan-fokus-pada-elemen-apapun-tabindex" href="focus-blur.html#memungkinkan-fokus-pada-elemen-apapun-tabindex">Memungkinkan fokus pada elemen apapun: tabindex</a></h2> 
+         <p>Secara default banyak elemen yang tidak support focusing.</p> 
+         <p>Daftarnya sedikit bervariasi dibeda browser, etapi satu hal yang pasti benar: <code>focus/blur</code> dukungannya terjamin untuk elemen-elemen yang pengunjung bisa berinteraksi dengan: <code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;a&gt;</code> dan lainnya.</p> 
+         <p>Di lain sisi, elemen-elemen yang ada hanya untuk meformat sesuatu seperti <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;table&gt;</code> ??? adalah <em>unfocusable</em> secara default. Metode <code>elem.focus()</code> tidak bekerja pada mereka, dan <code>focus/blur</code> event tidak akan pernah ke trigger.</p> 
+         <p>Ini bisa diubah dengan menggunakan HTML-attribute <code>tabindex</code>.</p> 
+         <p>Elemen apapun menjadi <em>focusable</em> jika ia memilki<code>tabindex</code>. Nilai atributnya adalah dari urutan nomor elemen ketika <kbd class="shortcut">Tab</kbd> digunakan untuk berpindah diantara mereka.</p> 
+         <p>Itu adalah: jika kita memilki 2 elemen, yang pertama memilki <code>tabindex="1"</code>, dan yang kedua memilki <code>tabindex="2"</code>, lalu menekan <kbd class="shortcut">Tab</kbd> pada saat masih di elemen pertama ??? fokus berpindah ke elemen kedua.</p> 
+         <p>Urutuan pindahnya ialah: elemen dengan <code>tabindex</code> dari <code>1</code> dan diatasnya menjadi yang pertama (pada urutan<code>tabindex</code>), dan baru kemudian elemen tanpa <code>tabindex</code> (seperti <code>&lt;input&gt;</code> input biasa).</p> 
+         <p>Element dengan <code>tabindex</code> yang sesuai berpindah pada urutan sumber dokumen (urutan default).</p> 
+         <p>Disana ada dua nilai khusus:</p> 
+         <ul> 
+          <li> <p><code>tabindex="0"</code> menempatkan sebuah elemen diantara mereka tanpa <code>tabindex</code>. Itu ialah, ketika kita pindah elemen, elemen dengan <code>tabindex=0</code> berpindah setelah elemen dengan <code>tabindex ??? 1</code>.</p> <p>Biasanya itu digunakan agar sebuah elemen menjadi <em>focusable</em>, tapi tetap memerhatikan urutan perpindahan default. Untuk membuat sebuah elemen menjadi bagian dari form yang setara<code>&lt;input&gt;</code>.</p> </li> 
+          <li> <p><code>tabindex="-1"</code> hanya membolehkan <em>programmatic focusing</em> pada sebuah elemen. Kunci <kbd class="shortcut">Tab</kbd> mengabaikan elemen seperti itu, akan tetapi metode <code>elem.focus()</code> dapat berfungsi.</p> </li> 
+         </ul> 
+         <p>Misalnya, ada list elemen. Klik item pertama dan tekan <kbd class="shortcut">Tab</kbd>:</p> 
+         <div id="zcmtd0sqxf" data-trusted="1" class="code-example" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>Klik pada elemen pertama dan tekan tab. Perhatikan pada urutan. Harap perhatikan
+bahwa banyak Tab berikutnya yang dapat memindahkan fokus dari iframe dalam
+contoh.
+&lt;ul&gt;
+  &lt;li tabindex="1"&gt;One&lt;/li&gt;
+  &lt;li tabindex="0"&gt;Zero&lt;/li&gt;
+  &lt;li tabindex="2"&gt;Two&lt;/li&gt;
+  &lt;li tabindex="-1"&gt;Minus one&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;style&gt;
+  li {
+    cursor: pointer;
+  }
+  :focus {
+    outline: 1px dashed green;
+  }
+&lt;/style&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-zcmtd0sqxf" style="height:200px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Urutannya sepeti ini: <code>1 - 2 - 0</code>. Normalnya, <code>&lt;li&gt;</code> tidak support <em>focusing</em>, tetapi dengan <code>tabindex</code>membuatnya <em>focusable</em>, berserta dengan eventnya dan styling <code>:focus</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">The property <code>elem.tabIndex</code>juga dapat bekerja</span> 
+          </div> 
+          <div class="important__content"></div> 
+         </div> 
+         <h2><a class="main__anchor" name="delegation-focusin-focusout" href="focus-blur.html#delegation-focusin-focusout">Delegation: focusin/focusout</a></h2> 
+         <p>Events <code>focus</code> and <code>blur</code> tidak mengelembung(bubble)./ Misalnya, kita tidak bisa letak <code>onfocus</code> pada <code>&lt;form&gt;</code> untuk menghighlight-nya, seperti ini:</p> 
+         <div id="g5tlqsu2ss" data-trusted="1" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:6,&quot;end&quot;:40}]}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;!-- on focusing in the form -- add the class --&gt;
+&lt;form onfocus="this.className='focused'"&gt;
+  &lt;input type="text" name="name" value="Name"&gt;
+  &lt;input type="text" name="surname" value="Surname"&gt;
+&lt;/form&gt;
+
+&lt;style&gt; .focused { outline: 1px solid red; } &lt;/style&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-g5tlqsu2ss" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Contoh diatas tidak akan bekerja, karena ketika sedang fokus pada sebuah <code>&lt;input&gt;</code>, event <code>focus</code> akan trigger hanya pada input tersebut. Ia tidak mengelembung ke atas(bubble up). Jadi <code>form.onfocus</code> tidak akan pernah trigger.</p> 
+         <p>Hanya ada dua solusi.</p> 
+         <p>Pertama, ada satu sejarah lucu dengan fitur: <code>focus/blur</code> yang tidak mengelembung ke atas(bubble up), tetapi merambat ke bawah saat <em>capturing phase</em>.</p> 
+         <p>Ini akan bekerja:</p> 
+         <div id="19dr1cawmr" data-trusted="1" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:14}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;form id="form"&gt;
+  &lt;input type="text" name="name" value="Name" /&gt;
+  &lt;input type="text" name="surname" value="Surname" /&gt;
+&lt;/form&gt;
+
+&lt;style&gt;
+  .focused {
+    outline: 1px solid red;
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+    // meletakkan handler pada capturing phase (argumenterakhir set menjadit true)
+    form.addEventListener("focus", () =&gt; form.classList.add('focused'), true);
+    form.addEventListener("blur", () =&gt; form.classList.remove('focused'), true);
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-19dr1cawmr" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Kedua, ada event <code>focusin</code> dan <code>focusout</code> ??? persis sama dengan<code>focus/blur</code>, tetapi mereka mengelembung(bubble). Ingat bahwa mereka perlu di definisi menggunakan <code>elem.addEventListener</code>, bukan <code>on&lt;event&gt;</code>.</p> 
+         <p>Jadi ini adalah cara lain yang dapat bekerja:</p> 
+         <div id="9owlnk36ea" data-trusted="1" class="code-example" data-demo-height="80" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:13}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;form id="form"&gt;
+  &lt;input type="text" name="name" value="Name" /&gt;
+  &lt;input type="text" name="surname" value="Surname" /&gt;
+&lt;/form&gt;
+
+&lt;style&gt;
+  .focused {
+    outline: 1px solid red;
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+    form.addEventListener("focusin", () =&gt; form.classList.add('focused'));
+    form.addEventListener("focusout", () =&gt; form.classList.remove('focused'));
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-9owlnk36ea" style="height:80px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="kesimpulan" href="focus-blur.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Event <code>focus</code> dan <code>blur</code> trigger pada saat sebuah elemen fokus dan hilang fokus.</p> 
+         <p>Keistimewaan mereka adalah:</p> 
+         <ul> 
+          <li>Mereka tidak mengelembung(bubble). Gantinya bisa menggunakan <em>capturing state</em> atau <code>focusin/focusout</code>.</li> 
+          <li>Kebanyakan elemen tidak mendukung fokus secara default. Gunakan <code>tabindex</code> untuk membuat elemen manapapun menjadi <em>focusable</em>.</li> 
+         </ul> 
+         <p>Elemen fokus saat ini tersedia sebagai <code>document.activeElement</code>.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="focus-blur.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="focus-blur.html#editable-div" name="editable-div">Editable div</a></h3> 
+           <a class="task__open-link" href="task/editable-div.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah <code>&lt;div&gt;</code> yang berubah menjadi<code>&lt;textarea&gt;</code> ketika diklik.</p> 
+            <p>Textarea memungkinkan untuk mengedit HTML pada <code>&lt;div&gt;</code>.</p> 
+            <p>Ketika user menekan <kbd class="shortcut">Enter</kbd> atau hilang fokus, maka <code>&lt;textarea&gt;</code> berubah kembali menjadi <code>&lt;div&gt;</code>, dan isinya menjadi HTML di dalam <code>&lt;div&gt;</code>.</p> 
+            <p><a href="https://id.js.cx/task/editable-div/solution/" target="blank">Demo di jendela baru</a></p> 
+            <p><a href="https://plnkr.co/edit/JdKB7kpbLZ4Dixts?p=preview" target="_blank" data-plunk-id="JdKB7kpbLZ4Dixts">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><a href="https://plnkr.co/edit/6PVvgrEzLkJ3XS6k?p=preview" target="_blank" data-plunk-id="6PVvgrEzLkJ3XS6k">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="focus-blur.html#edit-td-on-click" name="edit-td-on-click">Edit TD on click</a></h3> 
+           <a class="task__open-link" href="task/edit-td-click.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sel tabel yang dapat diedit saat diklik.</p> 
+            <ul> 
+             <li>Saat diklik ??? sel akan menjadi ???editable??? (textarea muncul dalam), kita bisa mengubah HTML. Tidak boleh mengubah ukurannya, semua geometri harus tetap sama???</li> 
+             <li>Tombol OK and CANCEL muncul di bawah sel untuk menyelesaikan atau membatalkan proses perubahan.</li> 
+             <li>Hanya satu sel yang dapat diedit setiap saatya. Sementara <code>&lt;td&gt;</code> dalam ???edit mode???, klik pada sel lain akan diabaikan.</li> 
+             <li>Tabel mungkin memilki banyak sel. Gunakan event delegation.</li> 
+            </ul> 
+            <p>Demo:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:400px" src="https://id.js.cx/task/edit-td-click/solution/"></iframe> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/4XcCFlLjwcG38eZA?p=preview" target="_blank" data-plunk-id="4XcCFlLjwcG38eZA">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <ol> 
+               <li>Saat diklik ??? ganti <code>innerHTML</code> dari sel <code>&lt;textarea&gt;</code> dengan ukuran yang sama dan tanpa border. Bisa menggunakan JavaScript atau CSS untuk mengatur ukuran yang sesuai.</li> 
+               <li>Ubah <code>textarea.value</code> ke <code>td.innerHTML</code>.</li> 
+               <li>Fokus pada textarea.</li> 
+               <li>Tampilkan tombol OK/CANCEL dibawah sel, tangani klik pada mereka.</li> 
+              </ol> 
+              <p><a href="https://plnkr.co/edit/328cXEpGtWcuKg1y?p=preview" target="_blank" data-plunk-id="328cXEpGtWcuKg1y">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="focus-blur.html#keyboard-driven-mouse" name="keyboard-driven-mouse">Keyboard-driven mouse</a></h3> 
+           <a class="task__open-link" href="task/keyboard-mouse.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 4</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Fokus pada mouse. Lalu gunakan tombol arah untuk menggerakkannya:</p> 
+            <p><a href="https://id.js.cx/task/keyboard-mouse/solution/" target="blank">Demo di jendela baru</a></p> 
+            <p>P.S. Jangan letakkan event handler dimanapun kecuali pada elemen <code>#mouse</code>. P.P.S. Jangan modifikasi HTML/CSS, pendekatannya harus umum dan bekerja dengan elemen manapun.</p> 
+            <p><a href="https://plnkr.co/edit/wAUetNDXN2avc87g?p=preview" target="_blank" data-plunk-id="wAUetNDXN2avc87g">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita bisa gunakan <code>mouse.onclick</code> untuk menangani klik dan membuat mouse ???moveable/bergerak??? dengan <code>position:fixed</code>, kemudian <code>mouse.onkeydown</code> untuk yang menangani tombol panah.</p> 
+              <p>Satu-satunya jebakan ialah <code>keydown</code> hanya memicu pada elemen dengan fokus. Jadi kita perlu untuk menambahkan <code>tabindex</code> pada elemen. Karena kita dilarang mengubah HTML, kita bisa gunakan properti <code>mouse.tabIndex</code> untuk itu.</p> 
+              <p>P.S. Kita juga bisa ganti <code>mouse.onclick</code> dengan <code>mouse.onfocus</code>.</p> 
+              <p><a href="https://plnkr.co/edit/HyRVXHJibZ5ivaru?p=preview" target="_blank" data-plunk-id="HyRVXHJibZ5ivaru">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="form-elements.html" data-tooltip="Metode dan properti form"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="events-change-input.html" data-tooltip="Events: change, input, cut, copy, paste"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffocus-blur" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffocus-blur" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="forms-controls.html">Forms, controls</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="focus-blur.html#events-focus-blur">Events focus/blur</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="focus-blur.html#metode-focus-blur">Metode focus/blur</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="focus-blur.html#memungkinkan-fokus-pada-elemen-apapun-tabindex">Memungkinkan fokus pada elemen apapun: tabindex</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="focus-blur.html#delegation-focusin-focusout">Delegation: focusin/focusout</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="focus-blur.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="focus-blur.html#tasks">Tugas (3)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="focus-blur.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffocus-blur" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Ffocus-blur" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

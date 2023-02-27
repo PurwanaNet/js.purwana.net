@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Unicode: flag "u" and class \p{...}</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="regexp-unicode.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Unicode: flag &quot;u&quot; and class \p{...}"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Unicode: flag &quot;u&quot; and class \p{...}"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="regexp-character-classes.html"> 
+  <link rel="next" href="regexp-anchors.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Unicode: flag &quot;u&quot; and class \p{...}"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-unicode" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-unicode" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="3" max="17" data-tooltip="Pelajaran 3 dari 17"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="regular-expressions.html"><span>Regular expressions</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Regular expressions","item":"https://id.javascript.info/regular-expressions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 7 Juni 2021"> 
+          <div class="updated-at__content">
+            7 Juni 2021 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://javascript.info/regexp-unicode">English</a>, 
+          <a href="https://es.javascript.info/regexp-unicode">Espa??ol</a>, 
+          <a href="https://fa.javascript.info/regexp-unicode">??????????</a>, 
+          <a href="https://fr.javascript.info/regexp-unicode">Fran??ais</a>, 
+          <a href="https://it.javascript.info/regexp-unicode">Italiano</a>, 
+          <a href="https://ja.javascript.info/regexp-unicode">?????????</a>, 
+          <a href="https://ko.javascript.info/regexp-unicode">?????????</a>, 
+          <a href="https://learn.javascript.ru/regexp-unicode">??????????????</a>, 
+          <a href="https://uk.javascript.info/regexp-unicode">????????????????????</a>, 
+          <a href="https://zh.javascript.info/regexp-unicode">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Unicode: flag "u" and class \p{...}</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Unicode: flag &quot;u&quot; and class \p{...}"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>JavaScript uses <a href="https://en.wikipedia.org/wiki/Unicode">Unicode encoding</a> for strings. Most characters are encoded with 2 bytes, but that allows to represent at most 65536 characters.</p> 
+         <p>That range is not big enough to encode all possible characters, that???s why some rare characters are encoded with 4 bytes, for instance like <code>????</code> (mathematical X) or <code>????</code> (a smile), some hieroglyphs and so on.</p> 
+         <p>Here are the Unicode values of some characters:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Character</th> 
+            <th>Unicode</th> 
+            <th>Bytes count in Unicode</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td>a</td> 
+            <td><code>0x0061</code></td> 
+            <td>2</td> 
+           </tr> 
+           <tr> 
+            <td>???</td> 
+            <td><code>0x2248</code></td> 
+            <td>2</td> 
+           </tr> 
+           <tr> 
+            <td>????</td> 
+            <td><code>0x1d4b3</code></td> 
+            <td>4</td> 
+           </tr> 
+           <tr> 
+            <td>????</td> 
+            <td><code>0x1d4b4</code></td> 
+            <td>4</td> 
+           </tr> 
+           <tr> 
+            <td>????</td> 
+            <td><code>0x1f604</code></td> 
+            <td>4</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>So characters like <code>a</code> and <code>???</code> occupy 2 bytes, while codes for <code>????</code>, <code>????</code> and <code>????</code> are longer, they have 4 bytes.</p> 
+         <p>Long time ago, when JavaScript language was created, Unicode encoding was simpler: there were no 4-byte characters. So, some language features still handle them incorrectly.</p> 
+         <p>For instance, <code>length</code> thinks that here are two characters:</p> 
+         <div id="yvjwa9j3pk" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert('????'.length); // 2
+alert('????'.length); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???But we can see that there???s only one, right? The point is that <code>length</code> treats 4 bytes as two 2-byte characters. That???s incorrect, because they must be considered only together (so-called ???surrogate pair???, you can read about them in the article <a href="string.html">String</a>).</p> 
+         <p>By default, regular expressions also treat 4-byte ???long characters??? as a pair of 2-byte ones. And, as it happens with strings, that may lead to odd results. We???ll see that a bit later, in the article <a href="regexp-character-sets-and-ranges.html">Sets and ranges [...]</a>.</p> 
+         <p>Unlike strings, regular expressions have flag <code class="pattern">u</code> that fixes such problems. With such flag, a regexp handles 4-byte characters correctly. And also Unicode property search becomes available, we???ll get to it next.</p> 
+         <h2><a class="main__anchor" name="unicode-properties-p" href="regexp-unicode.html#unicode-properties-p">Unicode properties \p{???}</a></h2> 
+         <p>Every character in Unicode has a lot of properties. They describe what ???category??? the character belongs to, contain miscellaneous information about it.</p> 
+         <p>For instance, if a character has <code>Letter</code> property, it means that the character belongs to an alphabet (of any language). And <code>Number</code> property means that it???s a digit: maybe Arabic or Chinese, and so on.</p> 
+         <p>We can search for characters with a property, written as <code class="pattern">\p{???}</code>. To use <code class="pattern">\p{???}</code>, a regular expression must have flag <code class="pattern">u</code>.</p> 
+         <p>For instance, <code>\p{Letter}</code> denotes a letter in any language. We can also use <code>\p{L}</code>, as <code>L</code> is an alias of <code>Letter</code>. There are shorter aliases for almost every property.</p> 
+         <p>In the example below three kinds of letters will be found: English, Georgian and Korean.</p> 
+         <div id="94jgfst2ir" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "A ??? ???";
+
+alert( str.match(/\p{L}/gu) ); // A,???,???
+alert( str.match(/\p{L}/g) ); // null (no matches, \p doesn't work without the flag "u")</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Here???s the main character categories and their subcategories:</p> 
+         <ul> 
+          <li>Letter <code>L</code>: 
+           <ul> 
+            <li>lowercase <code>Ll</code></li> 
+            <li>modifier <code>Lm</code>,</li> 
+            <li>titlecase <code>Lt</code>,</li> 
+            <li>uppercase <code>Lu</code>,</li> 
+            <li>other <code>Lo</code>.</li> 
+           </ul> </li> 
+          <li>Number <code>N</code>: 
+           <ul> 
+            <li>decimal digit <code>Nd</code>,</li> 
+            <li>letter number <code>Nl</code>,</li> 
+            <li>other <code>No</code>.</li> 
+           </ul> </li> 
+          <li>Punctuation <code>P</code>: 
+           <ul> 
+            <li>connector <code>Pc</code>,</li> 
+            <li>dash <code>Pd</code>,</li> 
+            <li>initial quote <code>Pi</code>,</li> 
+            <li>final quote <code>Pf</code>,</li> 
+            <li>open <code>Ps</code>,</li> 
+            <li>close <code>Pe</code>,</li> 
+            <li>other <code>Po</code>.</li> 
+           </ul> </li> 
+          <li>Mark <code>M</code> (accents etc): 
+           <ul> 
+            <li>spacing combining <code>Mc</code>,</li> 
+            <li>enclosing <code>Me</code>,</li> 
+            <li>non-spacing <code>Mn</code>.</li> 
+           </ul> </li> 
+          <li>Symbol <code>S</code>: 
+           <ul> 
+            <li>currency <code>Sc</code>,</li> 
+            <li>modifier <code>Sk</code>,</li> 
+            <li>math <code>Sm</code>,</li> 
+            <li>other <code>So</code>.</li> 
+           </ul> </li> 
+          <li>Separator <code>Z</code>: 
+           <ul> 
+            <li>line <code>Zl</code>,</li> 
+            <li>paragraph <code>Zp</code>,</li> 
+            <li>space <code>Zs</code>.</li> 
+           </ul> </li> 
+          <li>Other <code>C</code>: 
+           <ul> 
+            <li>control <code>Cc</code>,</li> 
+            <li>format <code>Cf</code>,</li> 
+            <li>not assigned <code>Cn</code>,</li> 
+            <li>private use <code>Co</code>,</li> 
+            <li>surrogate <code>Cs</code>.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>So, e.g. if we need letters in lower case, we can write <code class="pattern">\p{Ll}</code>, punctuation signs: <code class="pattern">\p{P}</code> and so on.</p> 
+         <p>There are also other derived categories, like:</p> 
+         <ul> 
+          <li><code>Alphabetic</code> (<code>Alpha</code>), includes Letters <code>L</code>, plus letter numbers <code>Nl</code> (e.g. ??? ??? a character for the roman number 12), plus some other symbols <code>Other_Alphabetic</code> (<code>OAlpha</code>).</li> 
+          <li><code>Hex_Digit</code> includes hexadecimal digits: <code>0-9</code>, <code>a-f</code>.</li> 
+          <li>???And so on.</li> 
+         </ul> 
+         <p>Unicode supports many different properties, their full list would require a lot of space, so here are the references:</p> 
+         <ul> 
+          <li>List all properties by a character: <a href="https://unicode.org/cldr/utility/character.jsp">https://unicode.org/cldr/utility/character.jsp</a>.</li> 
+          <li>List all characters by a property: <a href="https://unicode.org/cldr/utility/list-unicodeset.jsp">https://unicode.org/cldr/utility/list-unicodeset.jsp</a>.</li> 
+          <li>Short aliases for properties: <a href="https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt">https://www.unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt</a>.</li> 
+          <li>A full base of Unicode characters in text format, with all properties, is here: <a href="https://www.unicode.org/Public/UCD/latest/ucd/">https://www.unicode.org/Public/UCD/latest/ucd/</a>.</li> 
+         </ul> 
+         <h3><a class="main__anchor" name="example-hexadecimal-numbers" href="regexp-unicode.html#example-hexadecimal-numbers">Example: hexadecimal numbers</a></h3> 
+         <p>For instance, let???s look for hexadecimal numbers, written as <code>xFF</code>, where <code>F</code> is a hex digit (0???9 or A???F).</p> 
+         <p>A hex digit can be denoted as <code class="pattern">\p{Hex_Digit}</code>:</p> 
+         <div id="degw7x7nsu" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let regexp = /x\p{Hex_Digit}\p{Hex_Digit}/u;
+
+alert("number: xAF".match(regexp)); // xAF</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="example-chinese-hieroglyphs" href="regexp-unicode.html#example-chinese-hieroglyphs">Example: Chinese hieroglyphs</a></h3> 
+         <p>Let???s look for Chinese hieroglyphs.</p> 
+         <p>There???s a Unicode property <code>Script</code> (a writing system), that may have a value: <code>Cyrillic</code>, <code>Greek</code>, <code>Arabic</code>, <code>Han</code> (Chinese) and so on, <a href="https://en.wikipedia.org/wiki/Script_(Unicode)">here???s the full list</a>.</p> 
+         <p>To look for characters in a given writing system we should use <code class="pattern">Script=&lt;value&gt;</code>, e.g. for Cyrillic letters: <code class="pattern">\p{sc=Cyrillic}</code>, for Chinese hieroglyphs: <code class="pattern">\p{sc=Han}</code>, and so on:</p> 
+         <div id="73tjrxfya2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let regexp = /\p{sc=Han}/gu; // returns Chinese hieroglyphs
+
+let str = `Hello ???????????? ?????? 123_456`;
+
+alert( str.match(regexp) ); // ???,???</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="example-currency" href="regexp-unicode.html#example-currency">Example: currency</a></h3> 
+         <p>Characters that denote a currency, such as <code>$</code>, <code>???</code>, <code>??</code>, have Unicode property <code class="pattern">\p{Currency_Symbol}</code>, the short alias: <code class="pattern">\p{Sc}</code>.</p> 
+         <p>Let???s use it to look for prices in the format ???currency, followed by a digit???:</p> 
+         <div id="e902h539vs" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-unicode.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let regexp = /\p{Sc}\d/gu;
+
+let  str = `Prices: $2, ???1, ??9`;
+
+alert( str.match(regexp) ); // $2,???1,??9</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Later, in the article <a href="regexp-quantifiers.html">Quantifiers +, *, ? and {n}</a> we???ll see how to look for numbers that contain many digits.</p> 
+         <h2><a class="main__anchor" name="summary" href="regexp-unicode.html#summary">Summary</a></h2> 
+         <p>Flag <code class="pattern">u</code> enables the support of Unicode in regular expressions.</p> 
+         <p>That means two things:</p> 
+         <ol> 
+          <li>Characters of 4 bytes are handled correctly: as a single character, not two 2-byte characters.</li> 
+          <li>Unicode properties can be used in the search: <code>\p{???}</code>.</li> 
+         </ol> 
+         <p>With Unicode properties we can look for words in given languages, special characters (quotes, currencies) and so on.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="regexp-character-classes.html" data-tooltip="Kelas-kelas Karakter (Character classes)"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="regexp-anchors.html" data-tooltip="Anchors: mulai _string_ ^ dan akhiran $"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-unicode" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-unicode" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regular-expressions.html">Regular expressions</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-unicode.html#unicode-properties-p">Unicode properties \p{???}</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-unicode.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-unicode.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-unicode" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fregexp-unicode" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

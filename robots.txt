@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /node/
+Disallow: /users/
+Disallow: /content/
+Disallow: /play/
+Disallow: /profile/
+
+sitemap: /sitemap-1.txt
+sitemap: /sitemap-2.txt
+sitemap: /sitemap-3.txt
+sitemap: /sitemap-4.txt
+sitemap: /sitemap-5.txt

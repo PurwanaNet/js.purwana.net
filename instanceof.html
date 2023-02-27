@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pengecekan kelas: "instanceof"</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="instanceof.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pengecekan kelas: &quot;instanceof&quot;"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pengecekan kelas: &quot;instanceof&quot;"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="extend-natives.html"> 
+  <link rel="next" href="mixins.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pengecekan kelas: &quot;instanceof&quot;"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Finstanceof" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Finstanceof" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="71" max="92" data-tooltip="Pelajaran 71 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="classes.html"><span>Kelas</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Kelas","item":"https://id.javascript.info/classes"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pengecekan kelas: "instanceof"</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pengecekan kelas: &quot;instanceof&quot;"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Operator <code>instanceof</code> memungkinkan kita untuk memeriksa apakah suatu <em>object</em> milik <em>class</em> tertentu. <code>instanceof</code> juga memperhatikan <em>inheritance</em>.</p> 
+         <p>Pengecekan seperti itu mungkin diperlukan dalam beberapa kasus. Di sini kita akan menggunakannya untuk membangun fungsi <em>polymorphic</em>, yang memperlakukan argumen secara berbeda bergantung pada tipenya.</p> 
+         <h2><a class="main__anchor" name="ref-instanceof" href="instanceof.html#ref-instanceof">Operator instanceof</a></h2> 
+         <p>Sintaksnya adalah:</p> 
+         <div id="h1s16a1cph" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>obj instanceof Class</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Akan mengembalikan <code>true</code> jika <code>obj</code> dimiliki oleh <code>Class</code> atau kelas turunannya.</p> 
+         <p>Misalnya:</p> 
+         <div id="hmfjitbx65" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Rabbit {}
+let rabbit = new Rabbit();
+
+// apakah ini merupakan object dari kelas Rabbit?
+alert( rabbit instanceof Rabbit ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu juga bekerja dengan fungsi <em>constructor</em>:</p> 
+         <div id="7gyp6v3bi9" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// dari pada class
+function Rabbit() {}
+
+alert( new Rabbit() instanceof Rabbit ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Dan kelas bawaan seperti <code>Array</code>:</p> 
+         <div id="913otg4hc8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3];
+alert( arr instanceof Array ); // true
+alert( arr instanceof Object ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Harap dicatat bahwa <code>arr</code> juga termasuk dalam kelas <code>Object</code>. Itu karena <code>Array</code> secara prototipikal mewarisi dari<code>Object</code>.</p> 
+         <p>Normalnya, <code>instanceof</code> memeriksa rantai <em>prototype</em> untuk pemeriksaan. Kita juga dapat menyetel <em>custom logic</em> dalam <em>static method</em> <code>Symbol.hasInstance</code>.</p> 
+         <p>Algoritma <code>obj instanceof Class</code> bekerja kurang lebih sebgai berikut:</p> 
+         <ol> 
+          <li> <p>Jika terdapat <em>static method</em> <code>Symbol.hasInstance</code>, maka panggil saja: <code>Class[Symbol.hasInstance](obj)</code>. Itu akan mengembalikan <code>true</code> atau <code>false</code>, selesai. Begitulah cara kita bisa menyesuaikan perilaku dari <code>instanceof</code>.</p> <p>Sebagai contoh:</p> 
+           <div id="t1i8e5dtap" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// menyiapkan instanceOf yang berasumsi
+// apapun yang memiliki properti canEat adalah binatang
+class Animal {
+  static [Symbol.hasInstance](obj) {
+    if (obj.canEat) return true;
+  }
+}
+
+let obj = { canEat: true };
+
+alert(obj instanceof Animal); // true: Animal[Symbol.hasInstance](obj) dipanggil</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Kebanyakan kelas tidak memiliki <code>Symbol.hasInstance</code>. Dalam kasus ini, logika standar digunakan: <code>obj instanceOf Class</code> Memeriksa apakah <code>Class.prototype</code> sama dengan salah satu <em>prototype</em> dalam rantai <em>prototype</em><code>obj</code> .</p> <p>Dengan kata lain, bandingkan satu sama lain:</p> 
+           <div id="42kf5lvoz1" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>obj.__proto__ === Class.prototype?
+obj.__proto__.__proto__ === Class.prototype?
+obj.__proto__.__proto__.__proto__ === Class.prototype?
+...
+// jika jawabannya true, return true
+// jika tidak, jika kita mencapai ujung rantai, return false</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Pada contoh diatas <code>rabbit.__proto__ === Rabbit.prototype</code>, sehingga akan memberikan jawaban segera.</p> <p>Dalam kasus <em>inheritance</em>, kesamaan akan berada pada langkah kedua:</p> 
+           <div id="bf6qcgshmq" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7},{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>class Animal {}
+class Rabbit extends Animal {}
+
+let rabbit = new Rabbit();
+alert(rabbit instanceof Animal); // true
+
+// rabbit.__proto__ === Rabbit.prototype
+// rabbit.__proto__.__proto__ === Animal.prototype (match!)</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <p>Berikut ilustrasi tentang perbandingan <code>rabbit instanceof Animal</code> dengan <code>Animal.prototype</code>:</p> 
+         <figure> 
+          <div class="image" style="width:509px"> 
+           <div class="image__ratio" style="padding-top:85.46168958742632%"></div> 
+           <object type="image/svg+xml" data="article/instanceof/instanceof.svg" width="509" height="435" class="image__image" data-use-theme> <img src="article/instanceof/instanceof.svg" alt="" width="509" height="435"> </object> 
+          </div> 
+         </figure> 
+         <p>Omong-omong, terdapat juga <em>method</em> <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/object/isPrototypeOf">objA.isPrototypeOf(objB)</a>, yang mengembalikan <code>true</code> jika <code>objA</code> berada di suatu tempat dalam rantai <em>prototypes</em> untuk <code>objB</code>. Jadi pengujian <code>obj instanceof Class</code> bisa dirumuskan sebagai <code>Class.prototype.isPrototypeOf(obj)</code>.</p> 
+         <p>Ini lucu, tetapi <em>constructor</em> <code>Class</code> itu sendiri tidak ikut dalam pemeriksaan! Hanya rangkaian dari <em>prototype</em> dan <code>Class.prototype</code> yang penting.</p> 
+         <p>Itu bisa menimbulkan konsekuensi yang menarik ketika properti <code>prototype</code> diubah setelah objek dibuat.</p> 
+         <p>Seperti:</p> 
+         <div id="5nfgfrqclk" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function Rabbit() {}
+let rabbit = new Rabbit();
+
+// mengubah prototype
+Rabbit.prototype = {};
+
+// ...bukan kelinci lagi!
+alert( rabbit instanceof Rabbit ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="bonus-object-prototype-tostring-untuk-tipe" href="instanceof.html#bonus-object-prototype-tostring-untuk-tipe">Bonus: Object.prototype.toString untuk tipe</a></h2> 
+         <p>Kita tahu bahwa <em>plain object</em> akan diubah menjadi <em>string</em> sebagai <code>[object Object]</code>:</p> 
+         <div id="i6g881e566" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let obj = {};
+
+alert(obj); // [object Object]
+alert(obj.toString()); // sama</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itulah implementasi dari <code>toString</code>. Tetapi ada fitur tersembunyi yang membuat <code>toString</code> menjadi lebih <em>powerful</em> dari itu. Kita bisa menggunakannya sebagai perluasan dari <code>typeof</code> dan alternatif untuk <code>instanceof</code>.</p> 
+         <p>Terdengar aneh? Tentu. Mari kita cari tahu.</p> 
+         <p>Dengan <a href="https://tc39.github.io/ecma262/#sec-object.prototype.tostring">spesifikasi</a>, <code>toString</code> bawaan dapat diekstrak dari object dan dijalankan dalam konteks nilai lainnya. Dan hasilnya tergantung pada nilai tersebut.</p> 
+         <ul> 
+          <li>Untuk angka, akan menjadi <code>[object Number]</code></li> 
+          <li>Untuk <em>boolean</em>, akan menjadi <code>[object Boolean]</code></li> 
+          <li>Untuk <code>null</code>: <code>[object Null]</code></li> 
+          <li>Untuk <code>undefined</code>: <code>[object Undefined]</code></li> 
+          <li>Untuk <em>array</em>: <code>[object Array]</code></li> 
+          <li>???dll (dapat disesuaikan).</li> 
+         </ul> 
+         <p>Mari kita tunjukkan:</p> 
+         <div id="zn2lkh4mdk" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;cols&quot;:[{&quot;start&quot;:46,&quot;end&quot;:51}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// copy toString method kedalam sebuah variabel
+let objectToString = Object.prototype.toString;
+
+// tipe apa ini?
+let arr = [];
+
+alert( objectToString.call(arr) ); // [object Array]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini kita gunakan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/function/call"><em>call</em></a> seperti dijelaskan dalam bab <a href="call-apply-decorators.html">Decorators dan forwarding, call/apply</a> untuk menjalankan fungsi <code>objectToString</code> dalam konteks <code>this=arr</code>.</p> 
+         <p>Secara internal, algoritme <code>toString</code> memeriksa <code>this</code> dan mengembalikan hasil yang sesuai. Contoh lainnya:</p> 
+         <div id="wn4wugfj8z" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let s = Object.prototype.toString;
+
+alert( s.call(123) ); // [object Number]
+alert( s.call(null) ); // [object Null]
+alert( s.call(alert) ); // [object Function]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="symbol-tostringtag" href="instanceof.html#symbol-tostringtag">Symbol.toStringTag</a></h3> 
+         <p>Perilaku object <code>toString</code> dapat disesuaikan dengan menggunakan properti objek khusus <code>Symbol.toStringTag</code>.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="n0zc372ac2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  [Symbol.toStringTag]: "User"
+};
+
+alert( {}.toString.call(user) ); // [object User]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk sebagian besar objek yang spesifik pada <em>environment</em>, terdapat properti seperti itu. Berikut beberapa contoh untuk browser yang spesifik:</p> 
+         <div id="eii9zz1d0j" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// toStringTag untuk objek dan kelas yang spesifik pada environtment:
+alert( window[Symbol.toStringTag]); // Window
+alert( XMLHttpRequest.prototype[Symbol.toStringTag] ); // XMLHttpRequest
+
+alert( {}.toString.call(window) ); // [object Window]
+alert( {}.toString.call(new XMLHttpRequest()) ); // [object XMLHttpRequest]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dapat dilihat, hasilnya persis <code>Symbol.toStringTag</code> (jika ada), digabungkan ke dalam <code>[object ...]</code>.</p> 
+         <p>Pada akhirnya kami memiliki <em>???typeof on steroids???</em> yang tidak hanya akan berfungsi untuk tipe data primitif, tetapi juga untuk objek bawaan dan bahkan dapat disesuaikan.</p> 
+         <p>Kita dapat menggunakan <code>{}.toString.call</code> daripada <code>instanceof</code> untuk objek bawaan ketika ingin mendapatkan tipe sebagai string daripada hanya untuk diperiksa.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="instanceof.html#ringkasan">Ringkasan</a></h2> 
+         <p>Mari kita rangkum metode pengecekan tipe yang kita ketahui:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th></th> 
+            <th>bekerja pada</th> 
+            <th>mengembalikan</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>typeof</code></td> 
+            <td>primitif</td> 
+            <td>string</td> 
+           </tr> 
+           <tr> 
+            <td><code>{}.toString</code></td> 
+            <td>primitif, objek bawaan, objek dengan <code>Symbol.toStringTag</code></td> 
+            <td>string</td> 
+           </tr> 
+           <tr> 
+            <td><code>instanceof</code></td> 
+            <td>objek</td> 
+            <td>true/false</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Dapat kita lihat, <code>{}.toString</code> secara teknis ???lebih <em>advanced</em>??? <code>typeof</code>.</p> 
+         <p>Dan operator <code>instanceof</code> akan lebih berguna ketika kita bekerja dengan hirearki kelas dan ingin memeriksa kelas yang memperhatikan <em>inheritance</em>.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="instanceof.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="instanceof.html#instanceof-aneh" name="instanceof-aneh">"instanceof" Aneh</a></h3> 
+           <a class="task__open-link" href="task/strange-instanceof.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Pada kode dibawah, kenapa <code>instanceof</code> mengembalikan <code>true</code>? Dengan jelas kita dapat melihat <code>a</code> tidak dibuat oleh <code>B()</code>.</p> 
+            <div id="eah6r2tp4s" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="instanceof.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="instanceof.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function A() {}
+function B() {}
+
+A.prototype = B.prototype = {};
+
+let a = new A();
+
+alert( a instanceof B ); // true</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Yah, memang terlihat aneh.</p> 
+              <p>Tetapi <code>instanceof</code> tidak peduli dengan fungsinya, melainkan tentang <code>prototype</code>, yang cocok dengan rantai prototipe.</p> 
+              <p>Dan di sini <code>a.__proto__ == B.prototype</code>, jadi <code>instanceof</code> mengembalikan <code>true</code>.</p> 
+              <p>Jadi, dengan menggunakan logika <code>instanceof</code>, <code>prototype</code> sebenarnya mendefinisikan tipe, bukan fungsi konstruktor.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="extend-natives.html" data-tooltip="Meng-_extend_ `class` bawaan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="mixins.html" data-tooltip="_Mixins_"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Finstanceof" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Finstanceof" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="classes.html">Kelas</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="instanceof.html#ref-instanceof">Operator instanceof</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="instanceof.html#bonus-object-prototype-tostring-untuk-tipe">Bonus: Object.prototype.toString untuk tipe</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="instanceof.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="instanceof.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="instanceof.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Finstanceof" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Finstanceof" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

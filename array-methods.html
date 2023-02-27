@@ -1,0 +1,2312 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Metode *array*</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="array-methods.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Metode *array*"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Metode *array*"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="array.html"> 
+  <link rel="next" href="iterable.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Metode *array*"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Farray-methods" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Farray-methods" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="41" max="92" data-tooltip="Pelajaran 41 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Metode *array*</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Metode *array*"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p><em>Array</em> menyediakan begitu banyak metode. Untuk mempermudah, dalam bab ini metode-metode tersebut dibagi menjadi beberapa kelompok.</p> 
+         <h2><a class="main__anchor" name="menambahkan-menghapus-item" href="array-methods.html#menambahkan-menghapus-item">Menambahkan/menghapus <em>item</em></a></h2> 
+         <p>Kita sudah tahu metode-metode yang menambahkan dan menghapus <em>item</em> dari bagian awal atau akhir <em>array</em>:</p> 
+         <ul> 
+          <li><code>arr.push(...items)</code> ??? menambahkan <em>item</em> ke bagian akhir,</li> 
+          <li><code>arr.pop()</code> ??? mengekstrak sebuah <em>item</em> dari bagian akhir,</li> 
+          <li><code>arr.shift()</code> ??? mengekstrak sebuah <em>item</em> dari bagian awal,</li> 
+          <li><code>arr.unshift(...items)</code> ??? menambahkan <em>item</em> ke bagian awal.</li> 
+         </ul> 
+         <p>Berikut ini ada beberapa metode lainnya.</p> 
+         <h3><a class="main__anchor" name="splice" href="array-methods.html#splice"><em>splice</em></a></h3> 
+         <p>Bagaimana cara untuk menghapus sebuah elemen dari <em>array</em>?</p> 
+         <p><em>Array</em> merupakan objek, jadi kita bisa coba menggunakan <code>delete</code>:</p> 
+         <div id="jfag1ny4ss" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = ["I", "go", "home"];
+
+delete arr[1]; // menghapus "go"
+
+alert( arr[1] ); // undefined
+
+// kini arr = ["I",  , "home"];
+alert( arr.length ); // 3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Elemen tersebut telah dihapus, tetapi <em>array</em> itu masih memiliki 3 elemen, kita bisa melihat bahwa <code>arr.length == 3</code>.</p> 
+         <p>Hal itu alami, karena <code>delete obj.key</code> menghilangkan sebuah nilai berdasarkan <code>key</code>. Itulah yang dilakukannya. Tidak masalah bagi objek. Tapi untuk <em>array</em> kita biasanya ingin elemen yang tersisa untuk bergeser dan mengisi ruang yang dikosongkan tadi. Kita ingin memiliki sebuah <em>array</em> yang lebih pendek sekarang.</p> 
+         <p>Jadi, metode khusus harus digunakan.</p> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/splice">arr.splice(start)</a> adalahs sebuah fungsi serbaguna untuk <em>array</em>. <em>Splice</em> bisa melakukan banyak hal: memasukkan, menghilangkan serta mengganti elemen.</p> 
+         <p>Sintaksnya yakni:</p> 
+         <div id="mp7v0835hx" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>arr.splice(start[, deleteCount, elem1, ..., elemN])</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dimulai dari posisi <code>index</code>: menghapus elemen <code>deleteCount</code> dan kemudian memasukkan <code>elem1, ..., elemN</code> di tempatnya masing-masing. Mengembalikan <em>array</em> yang tersusun atas elemen yang dihapus.</p> 
+         <p>Metode ini mudah untuk dipahami melalui contoh.</p> 
+         <p>Mari mulai dengan penghapusan:</p> 
+         <div id="upxoqs861b" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = ["I", "study", "JavaScript"];
+
+arr.splice(1, 1); // dari indeks 1 menghapus 1 elemen
+
+alert( arr ); // ["I", "JavaScript"]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mudah, kan? Mulai dari indeks <code>1</code> metode ini menghilangkan elemen di indeks <code>1</code>.</p> 
+         <p>Dalam contoh selanjutnya kita menghilangkan 3 element dan menggantinya dengan 2 elemen lain:</p> 
+         <div id="joipk0verm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;cols&quot;:[{&quot;start&quot;:26,&quot;end&quot;:42}]},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:11,&quot;end&quot;:38}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = ["I", "study", "JavaScript", "right", "now"];
+
+// menghilangkan 3 elemen pertama dan menggantinya dengan yang lain
+arr.splice(0, 3, "Let's", "dance");
+
+alert( arr ) // sekarang ["Let's", "dance", "right", "now"]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini kita dapat melihat bahwa <code>splice</code> mengembalikan <em>array</em> yang berisi elemen terhapus:</p> 
+         <div id="k7ez23bgyy" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:11,&quot;end&quot;:24}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = ["I", "study", "JavaScript", "right", "now"];
+
+// menghilangkan 2 elemen pertama
+let removed = arr.splice(0, 2);
+
+alert( removed ); // "I", "study" &lt;-- array yang berisi elemen-elemen yang dihapus</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Metode <code>splice</code> juga mampu memasukkan elemen tanpa menghilangkan elemen apapun yang ada sebelumnya. Untuk itu kita perlu mengatur <code>deleteCount</code> menjadi <code>0</code>:</p> 
+         <div id="frlnkiuge1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = ["I", "study", "JavaScript"];
+
+// dari indeks 2
+// menghapus 0
+// kemudian masukkan "complex" dan "language"
+arr.splice(2, 0, "complex", "language");
+
+alert( arr ); // "I", "study", "complex", "language", "JavaScript"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Indeks berangka negatif diperbolehkan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Di sini dan di metode array lainnya, indeks (berangka) negatif diperbolehkan. Indeks-indeks tersebut menspesifikasikan posisi dari bagian akhir sebuah array, seperti ini:</p> 
+           <div id="shwofu6xzg" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 5];
+
+// dari indeks -1 (satu langkah dari bagian akhir)
+// menghaous 0 element,
+// lalu memasukka 3 dan 4
+arr.splice(-1, 0, 3, 4);
+
+alert( arr ); // 1,2,3,4,5</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="slice" href="array-methods.html#slice"><em>slice</em></a></h3> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/slice">arr.slice</a> lebih sederhana daripada metode serupa sebelumnya yakni <code>arr.splice</code>.</p> 
+         <p>Sintaksnya adalah:</p> 
+         <div id="fj3w13bwnn" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>arr.slice([start], [end])</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Metode ini mengembalikan sebuah sebuah <em>array</em> baru hasil salinan semua <em>item</em> yang ada dari indeks <code>start</code> hingga <code>end</code> (indeks <code>end</code> tidak termasuk). Baik <code>start</code> maupun <code>end</code> bisa saja negatif, dalam kasus tersebut posisi dari bagian akhir <em>array</em> sudah diasumsikan/diperkirakan.</p> 
+         <p>Mirip dengan metode <em>string</em> <code>str.slice</code>, namun membuat <em>subarray</em> bukan <em>substring</em>.</p> 
+         <p>Contohnya:</p> 
+         <div id="yv04jev3ne" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = ["t", "e", "s", "t"];
+
+alert( arr.slice(1, 3) ); // e,s (disalin dari 1 sampai 3)
+
+alert( arr.slice(-2) ); // s,t (disalin dari -2 sampai bagian akhir)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa memanggil metode tersebut tanpa argumen: <code>arr.slice()</code> membuat sebuah salinan dari <code>arr</code>. Cara demikian seringkali digunakan untuk mendapatkan sebuah salinan untuk transformasi yang lebih jauh tanpa mempengaruhi <em>array</em> yang asli.</p> 
+         <h3><a class="main__anchor" name="concat" href="array-methods.html#concat"><em>concat</em></a></h3> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/concat">arr.concat</a> membuat sebuah <em>array</em> baru yang sudah termasuk nilai-nilai dari <em>array</em> lainnya serta <em>item-item</em> tambahan.</p> 
+         <p>Sintaksnya sebagai berikut:</p> 
+         <div id="ms54gzkx3u" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>arr.concat(arg1, arg2...)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sintaks tersebut menerima berapapun argumen ??? bisa jadi <em>array</em> atau nilai.</p> 
+         <p>Hasilnya adalah sebuah <em>array</em> yang berisi <em>item</em> dari <code>arr</code>, kemudian <code>arg1</code>, <code>arg2</code> dan sebagainya.</p> 
+         <p>Jika sebuah argumen <code>argN</code> adalah sebuah <em>array</em>, makan semua elemennya akan disalin. Jika tidak, argumen itu sendiri yang akan disalin.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="95xywjszh3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2];
+
+// membuat sebuah array dari: arr dan [3,4]
+alert( arr.concat([3, 4]) ); // 1,2,3,4
+
+// membuat sebuah array dari: arr dan [3,4] dan [5,6]
+alert( arr.concat([3, 4], [5, 6]) ); // 1,2,3,4,5,6
+
+// membuat sebuah array dari: arr dan [3,4], lalu menambahkan nilai 5 dan 6
+alert( arr.concat([3, 4], 5, 6) ); // 1,2,3,4,5,6</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Normalnya, metode ini hanya menyalin elemen-elemen dari <em>array</em>. Objek lainnya, bahkan jika objek-objek tersebut terlihat seperti <em>array</em>, akan ditambahkan secara keseluruhan:</p> 
+         <div id="575jivlvip" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2];
+
+let arrayLike = {
+  0: "something",
+  length: 1
+};
+
+alert( arr.concat(arrayLike) ); // 1,2,[oobjek Object]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Tetapi jika sebuah objek mirip <em>array</em> memiliki sebuah properti khusus <code>Symbol.isConcatSpreadable</code>, maka objek tersebut diperlakukan sebagai sebuah <em>array</em> dengan <code>concat</code>: elemennya ditambahkan:</p> 
+         <div id="2imnd6c5gn" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2];
+
+let arrayLike = {
+  0: "something",
+  1: "else",
+  [Symbol.isConcatSpreadable]: true,
+  length: 2
+};
+
+alert( arr.concat(arrayLike) ); // 1,2,something,else</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="iterate-foreach" href="array-methods.html#iterate-foreach"><em>Iterate</em>: forEach</a></h2> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">arr.forEach</a> membuat kita dapat menjalankan sebuah fungsi untuk setiap elemen yang ada di dalam <em>array</em>.</p> 
+         <p>Sintaksnya:</p> 
+         <div id="l6x1b0x6dr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>arr.forEach(function(item, index, array) {
+  // ... do something with item
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebagai contoh, kode berikut ini menampilkan tiap elemen dalam <em>array</em>:</p> 
+         <div id="ahcbbyv8vt" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// untuk setiap (for each) elemen memanggil alert
+["Bilbo", "Gandalf", "Nazgul"].forEach(alert);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan kode ini lebih rinci tentang posisi elemen-elemen tersebut dalam <em>array</em> yang dituju:</p> 
+         <div id="23wn4b3vae" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) =&gt; {
+  alert(`${item} is at index ${index} in ${array}`);
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hasil dari fungsi tersebut (jika mengembalikan sesuatu) dibuang dan diabaikan.</p> 
+         <h2><a class="main__anchor" name="mencari-dalam-array" href="array-methods.html#mencari-dalam-array">Mencari dalam <em>array</em></a></h2> 
+         <p>Kini mari membahas metode-metode yang bertugas mencari dalam <em>array</em>.</p> 
+         <h3><a class="main__anchor" name="indexof-lastindexof-dan-includes" href="array-methods.html#indexof-lastindexof-dan-includes"><em>indexOf/lastIndexOf</em> dan <em>includes</em></a></h3> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf">arr.indexOf</a>, <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf">arr.lastIndexOf</a> dan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/includes">arr.includes</a> memiliki sintaks yang sama dan pada dasarnya keduanya melakukan fungsi yang samahave the same syntax, namun untuk mengoperasikannya perlu ditujukan <em>item</em> bukan karakter:</p> 
+         <ul> 
+          <li><code>arr.indexOf(item, from)</code> ??? mencari <code>item</code> dimulai dari indeks <code>from</code>, dan mengembalikan indeks dimana <em>item</em> yang dicari itu ditemukan, jika tidak akan mengembalikan <code>-1</code>.</li> 
+          <li><code>arr.lastIndexOf(item, from)</code> ??? serupa, namun mencari dari kiri ke kanan.</li> 
+          <li><code>arr.includes(item, from)</code> ??? mencari <code>item</code> dimulai dari indeks <code>from</code>, mengembalkikan <code>true</code> jika yang dicari itu ditemukan.</li> 
+         </ul> 
+         <p>Contohnya:</p> 
+         <div id="z0tj4hug6v" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 0, false];
+
+alert( arr.indexOf(0) ); // 1
+alert( arr.indexOf(false) ); // 2
+alert( arr.indexOf(null) ); // -1
+
+alert( arr.includes(1) ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perlu diperhatikan bahwa metode tersebut menggunakan perbandingan <code>===</code>. Jadi, jika kita mencari <code>false</code>, metode ini akan tepat mencari <code>false</code> dan bukan nol.</p> 
+         <p>Jika kita ingin memeriksa pencantuman, dan tidak ingin tahu indeks yang persis, maka direkomendasikan menggunakan <code>arr.includes</code>.</p> 
+         <p>Juga, perbedaan kecil dari <code>includes</code> yakni metode ini menangani <code>NaN</code> dengan tepat, tidak seperti <code>indexOf/lastIndexOf</code>:</p> 
+         <div id="zu16vv4p5z" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>const arr = [NaN];
+alert( arr.indexOf(NaN) ); // -1 (seharusnya 0, tetapi tanda persamaan === tidak berfungsi pada NaN)
+alert( arr.includes(NaN) );// true (benar)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="find-dan-findindex" href="array-methods.html#find-dan-findindex"><em>find</em> dan <em>findIndex</em></a></h3> 
+         <p>Bayangkan kita memiliki sebuah <em>array</em> berisi objek. Bagaimana cata kita menemukan sebuah objek dengan kondisi tertentu?</p> 
+         <p>Berikut ini ada metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/find">arr.find(fn)</a> yang dapat mudah digunakan.</p> 
+         <p>Sintaksnya:</p> 
+         <div id="7gbtv2t0f4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let result = arr.find(function(item, index, array) {
+  // jika true dikembalikan, item dikembalikan dan pengulangan dihentinkan
+  // untuk skenario palsu akan mengembalikan undefined
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fungsi tersebut dipanggil untuk elemen-elemen dalam <em>array</em>, satu sama lainnya:</p> 
+         <ul> 
+          <li><code>item</code> adalah elemen.</li> 
+          <li><code>index</code> adalah indeks elemen tersebut.</li> 
+          <li><code>array</code> adalah <em>array</em> itu sendiri.</li> 
+         </ul> 
+         <p>Jika fungsi tersebut mengembalikan <code>true</code>, pencarian dihentikan, lalu <code>item</code> akan dikembalikan. Jika tidak ditemukan apa-apa, <code>undefined</code> yang dikembalikan.</p> 
+         <p>Sebagai contoh, kita memiliki sebuah <em>array</em> berisi elemen pengguna, tiap pengguna memiliki <em>field</em> <code>id</code> dan <code>name</code>. Mari cari pengguna dengan <code>id == 1</code>:</p> 
+         <div id="l9ep3an0ss" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+let user = users.find(item =&gt; item.id == 1);
+
+alert(user.name); // John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada kehidupan nayata <em>array</em> berisi objek adalah hal yang umum, jadi metode <code>find</code> sangatlah berguna.</p> 
+         <p>Ingat bahwa contoh yang kami berikan untuk mencari (<code>find</code>) fungsi <code>item =&gt; item.id == 1</code> hanya dengan satu argumen. Ini adalah hal umum, argumen lainnya pada fungsi lainnya jarang digunakan.</p> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex">arr.findIndex</a> pada dasarnya sama, namun mengembalikan indeks dimana elemen tersebut ditemukan bukan elemen itu sendiri serta mengembalikan <code>-1</code> ketika tidak ditemukan apapun.</p> 
+         <h3><a class="main__anchor" name="filter" href="array-methods.html#filter"><em>filter</em></a></h3> 
+         <p>Metode <code>find</code> mencari sebuah elemen tunggal (pertama) yang akan membuat fungsi tersebut mengembalikan <code>true</code>.</p> 
+         <p>Jika ada banyak elemen demikian, kita bisa menggunakan<a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/filter">arr.filter(fn)</a>.</p> 
+         <p>Sintaksnya mirip dengan <code>find</code>, tetapi <code>filter</code> mengembalikan <em>array</em> yang berisi elemen-elemen yang cocok:</p> 
+         <div id="xe5xp7ub52" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let results = arr.filter(function(item, index, array) {
+  // jika true item di-push ke hasil dan pengulangan berlanjut
+  // mengembalikan array kosong jika tidak ditemukan apapun
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebagai contoh:</p> 
+         <div id="h4n3yrotul" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+// mengembalikan array dua user pertama
+let someUsers = users.filter(item =&gt; item.id &lt; 3);
+
+alert(someUsers.length); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengubah-array" href="array-methods.html#mengubah-array">Mengubah <em>array</em></a></h2> 
+         <p>Mari lanjutkan ke metode-metode yang mengubah dan mengatur ulang <em>array</em>.</p> 
+         <h3><a class="main__anchor" name="map" href="array-methods.html#map"><em>map</em></a></h3> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/map">arr.map</a> adalah salah satu metode yang paling berguna dan paling sering digunakan.</p> 
+         <p>Metode ini memanggil fungsi untuk tiap elemen di <em>array</em> dan mengembalikan hasilnya dalam bentuk <em>array</em>.</p> 
+         <p>Sintaksnya yakni:</p> 
+         <div id="14rlpn7eei" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let result = arr.map(function(item, index, array) {
+  // mengembalikan nilai baru, bukan item
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebagai contoh, di sini kita mengubah setiap elemen menjadi panjang (<em>length</em>) dari <em>string</em> elemen tersebut:</p> 
+         <div id="m8uleuiewt" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item =&gt; item.length);
+alert(lengths); // 5,7,6</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="sort-fn" href="array-methods.html#sort-fn"><em>sort</em>(fn)</a></h3> 
+         <p>Panggilan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">arr.sort()</a> menata <em>array</em> <em>dalam wadah</em>, mengubah urutan elemen yang ada.</p> 
+         <p>Metode ini juga mengembalikan <em>array</em> yang sudah tertata, tetapi nilai yang dikembalikan biasanya diabaikan, mengingat <code>arr</code> itu sendiri sudah termodifikasi/diubah.</p> 
+         <p>Contohnya:</p> 
+         <div id="tqydarzfht" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;cols&quot;:[{&quot;start&quot;:18,&quot;end&quot;:26}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [ 1, 2, 15 ];
+
+// metode tersebut mengurutkan ulang konten arr
+arr.sort();
+
+alert( arr );  // 1, 15, 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Apa kamu menyadari adanya keanehan dari hasil di atas?</p> 
+         <p>Urutannya menjadi <code>1, 15, 2</code>. Tidak benar. Tapi mengapa demikian?</p> 
+         <p><strong><em>Item-item</em> tersebut diurutkan sebagai <em>string</em> secara pada dasarnya.</strong></p> 
+         <p>Secara harfiah, semua elemen dikonversi menjadi <em>string</em> untuk dibandingkan. Sedangkan pada <em>string</em>, berlaku pengurutan leksikograpis dan memang benar bahwa <code>"2" &gt; "15"</code>.</p> 
+         <p>Untuk menggunakan urutan penataan kita sendiri, kita perlu memberikan sebuah fungsi sebagai argumen pada <code>arr.sort()</code>.</p> 
+         <p>Fungsi tersebut harus membandingkan dua nilai yang berubah-ubah dan mengembalikan (hasilnya):</p> 
+         <div id="gjpw81uit0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function compare(a, b) {
+  if (a &gt; b) return 1; // if the first value is greater than the second
+  if (a == b) return 0; // if values are equal
+  if (a &lt; b) return -1; // if the first value is less than the second
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Contoh, untuk mengurutkan elemen sebagai angka:</p> 
+         <div id="syhibdoz9e" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;cols&quot;:[{&quot;start&quot;:16,&quot;end&quot;:24}]},{&quot;start&quot;:8,&quot;end&quot;:8}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function compareNumeric(a, b) {
+  if (a &gt; b) return 1;
+  if (a == b) return 0;
+  if (a &lt; b) return -1;
+}
+
+let arr = [ 1, 2, 15 ];
+
+arr.sort(compareNumeric);
+
+alert(arr);  // 1, 2, 15</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kini metode tersebu berfungsi seperti yang diinginkan.</p> 
+         <p>Mari berhenti sejenak dan pikirkan apa yang terjadi. <code>arr</code> bisa jadi <em>array</em> berisi apapun, benar? <em>Array</em> itu bisa saja berisi angka atau <em>string</em> atau objek atau apapun. Kita memiliki sekumpulan <em>beberapa item</em>. Untuk mengurutkannya, kita perlu sebuah <em>fungsi pengurutan</em> yang tahu bagaimana cara untuk membandingkan elemen-elemen. Setelan awalnya adalah sebuah urutan <em>string</em>.</p> 
+         <p>Metode <code>arr.sort(fn)</code> mengimplementasikan sebuah algoritma pengurutan yang umum. Kita tidak perlu benar-benar tahu bagaimana algoritma itu bekerja (sebuah <a href="https://en.wikipedia.org/wiki/Quicksort">cara cepat/<em>quicksort</em></a> yang sudah teroptimasi sepanjang waktu). Algoritma itu akan menyusuri <em>array</em>, membandungkan elemen-elemennya menggunakan fungsi yang diberikan dan mengurutkan ulang elemen-elemen tersebut, yang perlu kita lakukan yakni memberikan <code>fn</code> yang mana akan melakukan operasi perbandingan.</p> 
+         <p><em>Ngomong-omong</em>, jika kita pernah ingin tahu elemen mana saja yang dibandingkan ??? cukup dengan cara memberi <em>alert</em>:</p> 
+         <div id="ip75vqfs58" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>[1, -2, 15, 2, 0, 8].sort(function(a, b) {
+  alert( a + " &lt;&gt; " + b );
+  return a - b;
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Algoritma tersebut dapat membandingkan sebuah elemen dengan banyak elemen lainnya dalam proses ini, tapi algoritma itu akan mencoba membuat sedikit mungkin perbandingan.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Sebuah fungsi perbandingan dapat mengembalikan angka manapun</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Sebenarnya, sebuah fungsi perbandingan hanya perlu untuk mengembalikan sebuah angka positif untuk mengatakan ???lebih besar (dari)??? dan angka negatif untuk mengatakan ???kurang (dari)???.</p> 
+           <p>Hal tersebut membuat penulisan fungsi jadi lebih pendek:</p> 
+           <div id="0gsneq1p8z" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;cols&quot;:[{&quot;start&quot;:16,&quot;end&quot;:24}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let arr = [ 1, 2, 15 ];
+
+arr.sort(function(a, b) { return a - b; });
+
+alert(arr);  // 1, 2, 15</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Fungsi arrow yang terbaik</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ingat <a href="arrow-functions-basics.html">fungsi arrow</a>? Kita dapat menggunakan fungsi arrow di sini untuk pengurutan yang lebih rapi:</p> 
+           <div id="fatwqyngmq" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>arr.sort( (a, b) =&gt; a - b );</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Fungsi ini berfungsi samahalnya dengan metode versi yang lebih panjang di atasnya.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="reverse" href="array-methods.html#reverse"><em>reverse</em></a></h3> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse">arr.reverse</a> membalikkan urutan elemen di dalam <code>arr</code>.</p> 
+         <p>Contohnya:</p> 
+         <div id="hf89usx2ns" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3, 4, 5];
+arr.reverse();
+
+alert( arr ); // 5,4,3,2,1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Metode ini juga mengembalikan <em>array</em> <code>arr</code> setelah proses pembalikan.</p> 
+         <h3><a class="main__anchor" name="split-dan-join" href="array-methods.html#split-dan-join"><em>split</em> dan <em>join</em></a></h3> 
+         <p>Ini adalah situasi dari dunia nyata. Kita menulis sebuah aplikasi olahpesan, dan orang tersebut memasukkan ke dalam daftar penerima yang dipisahkan oleh tanda koma, antara lain: <code>John, Pete, Mary</code>. Namun bagi kita <em>array</em> yang berisi nama akan jauh lebih apik ketimbang sebuah <em>string</em>. Jadi bagaiman cara mendapatkannya?</p> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/split">str.split(delim)</a> melakukan tepat hal yang dijelaskan di atas. Metode ini memisahkan <em>string</em> ke dalam <em>array</em> dengan <em>delimiter</em> (pemisah) <code>delim</code>.</p> 
+         <p>Dalam contoh berikut ini, kita memisahkan elemen dengan tanda koma yang diikuti oleh spasi:</p> 
+         <div id="ia280wwga8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let names = 'Bilbo, Gandalf, Nazgul';
+
+let arr = names.split(', ');
+
+for (let name of arr) {
+  alert( `A message to ${name}.` ); // Sebuah pesan untuk (serta nama-nama lainnya)
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Metode <code>split</code> memiliki argumen numerik oposional kedua ??? sebuah batas pada panjang (<em>length</em>) <em>array</em>. Jika batasan itu diberikan, maka elemen ekstra (lebih dari batas panjang <em>array</em> yang diberikan) akan diabaikan. Dalam praktiknya, hal ini jarang digunakan:</p> 
+         <div id="zfqlzhfsri" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = 'Bilbo, Gandalf, Nazgul, Saruman'.split(', ', 2);
+
+alert(arr); // Bilbo, Gandalf</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Pisah menjadi huruf</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Panggilan <code>split(s)</code> dengan <code>s</code> yang kosong akan memisahkan string menjadi array yang berisi huruf-huruf:</p> 
+           <div id="mi36hzbndb" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "test";
+
+alert( str.split('') ); // t,e,s,t</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Panggilan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/join">arr.join(glue)</a> melalukan pembalikan ke <code>split</code>. Panggilan ini membuat sebuah <em>string item-item</em> <code>arr</code> digabungkan oleh <code>glue</code> (lem) diantara <em>item</em> tersebut.</p> 
+         <p>Contohnya:</p> 
+         <div id="m13hg4ds2o" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = ['Bilbo', 'Gandalf', 'Nazgul'];
+
+let str = arr.join(';'); // menempelkan/me-lem isi array menjadi sebuah string menggunakan ;
+
+alert( str ); // Bilbo;Gandalf;Nazgul</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="reduce-reduceright" href="array-methods.html#reduce-reduceright"><em>reduce</em>/reduceRight</a></h3> 
+         <p>Ketika kita perlu mengulang-ulang sebuah <em>array</em> ??? kita dapat menggunakan <code>forEach</code>, <code>for</code> atau <code>for..of</code>.</p> 
+         <p>Ketika kita perlu mengulang dan mengembalikan data setiap elemen ??? kita menggunakan <code>map</code>.</p> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce">arr.reduce</a> dan metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight">arr.reduceRight</a> juga termasuk ke dalam kelompok metode-metode tadi, tapi ada sedikit lebih rumit. Kedua metode ini digunakan untuk menghitung sebuah nilai tunggal berdasarkan <em>array</em>.</p> 
+         <p>Sintaksnya yakni:</p> 
+         <div id="i2cwe7mqie" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let value = arr.reduce(function(accumulator, item, index, array) {
+  // ...
+}, [initial]);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fungsi di atas diterapkan pada semua elemen <em>array</em> satu sama lainnya dan ???melanjutkan??? hasil perhitungannya ke panggilan berikutnya.</p> 
+         <p>Argument-argumennya yakni:</p> 
+         <ul> 
+          <li><code>previousValue</code> ??? adalah hasil dari dari pemanggilan fungsi sebelumnya, sama dengan <code>initial</code> pertama kalinya (jika <code>initial</code> diberikan).</li> 
+          <li><code>item</code> ??? adalah <em>item array</em> yang sekarang.</li> 
+          <li><code>index</code> ??? adalah posisi <em>item</em> tersebut.</li> 
+          <li><code>array</code> ??? adalah <em>array</em>-nya.</li> 
+         </ul> 
+         <p>Jika fungsi sudah diterapkan, masil dari panggilan fungsi sebelumnya dioper ke panggilan selanjutnya sebagai argumen pertama.</p> 
+         <p>Memang terdengar rumit, tapi tidak seperti yang kamu pikirkan tentang argumen pertama sebagai ???akumulator??? yang menyimpan dan menggabungkan jasil dari semua eksekusi sebelumnya. Serta pada akhirnya, itu menjadi hasil dari <code>reduce</code>.</p> 
+         <p>Cara termudah untuk memahami metode ini adalah dengan melihat contohnya.</p> 
+         <p>Di sini kita mendapat jumlah dari sebuah <em>array</em> dalam satu baris:</p> 
+         <div id="8us701fk69" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3, 4, 5];
+
+let result = arr.reduce((sum, current) =&gt; sum + current, 0);
+
+alert(result); // 15</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fungsi yang dioper ke <code>reduce</code> hanya menggunakan 2 argumen, itu cukup khas.</p> 
+         <p>Mari lihat rincian dari apa yang terjadi.</p> 
+         <ol> 
+          <li>Pada <em>run</em> pertama, <code>sum</code> adalah nilai <code>initial</code> (argumen terakhir dari <code>reduce</code>), sama dengan <code>0</code>, dan <code>current</code> adalah elemen pertama <em>array</em> tersebut, yang sama dengan <code>1</code>. Jadi hasil fungsi tersebut adalah <code>1</code>.</li> 
+          <li>Pada <em>run</em> ke-dua, <code>sum = 1</code>, kita tambahkan elemen kedua dari <em>array</em> (<code>2</code>) dan mengembalikan hasilnya.</li> 
+          <li>Pada <em>run</em> ke-tiga, <code>sum = 3</code> dan kita menambahkan satu elemen lagi, dan seterusnya???</li> 
+         </ol> 
+         <p>Alur perhitungannya:</p> 
+         <figure> 
+          <div class="image" style="width:620px"> 
+           <div class="image__ratio" style="padding-top:20.806451612903228%"></div> 
+           <object type="image/svg+xml" data="article/array-methods/reduce.svg" width="620" height="129" class="image__image" data-use-theme> <img src="article/array-methods/reduce.svg" alt="" width="620" height="129"> </object> 
+          </div> 
+         </figure> 
+         <p>ATau dalam bentuk sebuah tabel, dimana setiap baris merepresentasikan sebuah panggilan fungsi pada elemen <em>array</em> selanjutnya:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th></th> 
+            <th><code>sum</code></th> 
+            <th><code>current</code></th> 
+            <th>result</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td>the first call</td> 
+            <td><code>0</code></td> 
+            <td><code>1</code></td> 
+            <td><code>1</code></td> 
+           </tr> 
+           <tr> 
+            <td>the second call</td> 
+            <td><code>1</code></td> 
+            <td><code>2</code></td> 
+            <td><code>3</code></td> 
+           </tr> 
+           <tr> 
+            <td>the third call</td> 
+            <td><code>3</code></td> 
+            <td><code>3</code></td> 
+            <td><code>6</code></td> 
+           </tr> 
+           <tr> 
+            <td>the fourth call</td> 
+            <td><code>6</code></td> 
+            <td><code>4</code></td> 
+            <td><code>10</code></td> 
+           </tr> 
+           <tr> 
+            <td>the fifth call</td> 
+            <td><code>10</code></td> 
+            <td><code>5</code></td> 
+            <td><code>15</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Di sini kita bisa dengan jelas melihat bagaimana hasil dari panggilan sebelumnya menjadi argumen pertama pada panggilan berikutnya.</p> 
+         <p>Kita bisa juga mengjilangkan nilai awal (<em>initial</em>):</p> 
+         <div id="zm5ktcl21k" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3, 4, 5];
+
+// menghilangkan nilai awal dari reduce (bukan 0)
+let result = arr.reduce((sum, current) =&gt; sum + current);
+
+alert( result ); // 15</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hasilnya sama. Itu karena tidak ada nilai awal, maka <code>reduce</code> mengambil elemen pertama <em>array</em> sebagai nilai awal dan memulai pengulangan dari elemen ke-dua.</p> 
+         <p>Tabel perhitungan tersebut sama dengan yang di atas, tanpa baris pertama.</p> 
+         <p>Akan tetapi, penggunaan yang demikian membutuhkan perhatian lebih. Jika <em>array</em> kosong, maka panggilan <code>reduce</code> tanpa nilai awal akan menghasilkan error.</p> 
+         <p>Berikut ini contohnya:</p> 
+         <div id="ccrc170uun" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [];
+
+// Error: Reduce dari array kosong tanpa nilai awal
+// jika nilai awalnya ada, reduce akan mengembalikannya pada  arr yang kosong.
+arr.reduce((sum, current) =&gt; sum + current);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi sangat disarankan untuk selalu menspesifikasikan nilai awal.</p> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceRight">arr.reduceRight</a> melaksanakan hal yang sama, tapi beroperasi dari kanan ke kiri.</p> 
+         <h2><a class="main__anchor" name="array-isarray" href="array-methods.html#array-isarray">Array.isArray</a></h2> 
+         <p><em>Array</em> tidak membentuk sebuah bahasa tipe sendiri. <em>Array</em> terbentuk berdasarkan objek.</p> 
+         <p>Jadi <code>typeof</code> tidak membantu membedakan sebuah objek polos dari sebuah <em>array</em>:</p> 
+         <div id="ug2amx44k1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert(typeof {}); // objek
+alert(typeof []); // sama</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Tetapi <em>array</em> serung diguakan hingga ada metode khusus untuk hal ini: <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray">Array.isArray(value)</a>. Metode ini mengembalikan <code>true</code> jika <code>value</code> adalah sebuah <em>array</em>, dan <code>false</code> jika sebaliknya.</p> 
+         <div id="1mbwrmvf9o" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert(Array.isArray({})); // false
+
+alert(Array.isArray([])); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="kebanyakan-metode-mendukung-thisarg" href="array-methods.html#kebanyakan-metode-mendukung-thisarg">Kebanyakan metode mendukung ???thisArg???</a></h2> 
+         <p>Hamppir semua metode <em>array</em> yang memanggil fungsi ??? seperti <code>find</code>, <code>filter</code>, <code>map</code>, dengan pengecualian <code>sort</code>, menerima paramater tambahan yakni <code>thisArg</code>.</p> 
+         <p>Parameter itu tidak dijelaskan pada bab sebelumnya, karena jarang digunakan. Tetapi demi kelengkapan kita harus menutupi metodenya.</p> 
+         <p>Berikut ini adalah sintkas lengkap dari metode-metode tersebut:</p> 
+         <div id="cg2f9f7w7i" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>arr.find(func, thisArg);
+arr.filter(func, thisArg);
+arr.map(func, thisArg);
+// ...
+// thisArg adalah argumen akhir yang oposional</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Nilai dari paramater <code>thisArg</code> menjadi <code>this</code> untuk <code>func</code>.</p> 
+         <p>Contohnya, di sini kita menggunakan metode dengan objek <code>army</code> sebagai penyaringnya, dan <code>thisArg</code> mengoper konteksnya:</p> 
+         <div id="vvg3lf2j3l" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:16}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let army = {
+  minAge: 18,
+  maxAge: 27,
+  canJoin(user) {
+    return user.age &gt;= this.minAge &amp;&amp; user.age &lt; this.maxAge;
+  }
+};
+
+let users = [
+  {age: 16},
+  {age: 20},
+  {age: 23},
+  {age: 30}
+];
+
+// cari user, dari army.canJoin yang megembalikan true
+let soldiers = users.filter(army.canJoin, army);
+
+alert(soldiers.length); // 2
+alert(soldiers[0].age); // 20
+alert(soldiers[1].age); // 23</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika dalam contoh di atas kita menggunakan <code>users.filter(army.canJoin)</code>, maka <code>army.canJoin</code> akan bisa dipanggil sebagai fungsi yang berdisi sendiri, dengan <code>this=undefined</code>, itu smeua berujung pada error seketika.</p> 
+         <p>Sebuah panggilan ke <code>users.filter(army.canJoin, army)</code> bisa diganti dengan <code>users.filter(user =&gt; army.canJoin(user))</code>, yang mana melakukan hal yang sama. Metode yang pertama (<code>users.filter(army.canJoin, army)</code>) lebih sering digunakan, karena sedikit lebih mudah dimengerti oleh banyak orang.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="array-methods.html#ringkasan">Ringkasan</a></h2> 
+         <p><em>Cheat sheet</em> tentang metode-metode <em>array</em>:</p> 
+         <ul> 
+          <li> <p>Untuk menambah/menghilangkan elemen:</p> 
+           <ul> 
+            <li><code>push(...items)</code> ??? menambah <em>item</em> ke bagian akhir,</li> 
+            <li><code>pop()</code> ??? mengekstrak sebuah <em>item</em> dari bagian akhir,</li> 
+            <li><code>shift()</code> ??? mengekstrak sebuah <em>item</em> dari bagian awal,</li> 
+            <li><code>unshift(...items)</code> ??? menambah <em>item</em> ke bagian awal.</li> 
+            <li><code>splice(pos, deleteCount, ...items)</code> ??? pada indeks <code>pos</code> menghapus elemen <code>deleteCount</code> dam memasukkan <code>items</code>.</li> 
+            <li><code>slice(start, end)</code> ??? membuat <em>array</em> baru, menyalin elemen dari posisi <code>start</code> hingga <code>end</code> (tidak inklusif) ke dalam <em>array</em> baru tersebut.</li> 
+            <li><code>concat(...items)</code> --mengembalikan sebuah <em>array</em> baru: menyalin semua anggota <em>array</em> yang sekarang dan menambahkan <code>items</code> ke dalamnya. Jika <code>items</code> adalah sebuah <em>array</em>, maka elemennya yang akan diambil.</li> 
+           </ul> </li> 
+          <li> <p>Untuk mencari di antara elemen-elemen:</p> 
+           <ul> 
+            <li><code>indexOf/lastIndexOf(item, pos)</code> ??? mencari <code>item</code> mulai dari posisi <code>pos</code>, mengembalikan indeksnya atau <code>-1</code> jika tidak ditemukan.</li> 
+            <li><code>includes(value)</code> ??? mengembalikan <code>true</code> jika <em>array</em> memiliki <code>value</code>, jika tidak akan mengembalikan <code>false</code>.</li> 
+            <li><code>find/filter(func)</code> ??? menyaring elemen dengan menggunakan fungsi, mengembalikan nilai awal/semua nilai yang membuat hasil <em>return</em>-nya menjadi <code>true</code>.</li> 
+            <li><code>findIndex</code> seperti <code>find</code>, namun mengembalikan indeks bukan nilai.</li> 
+           </ul> </li> 
+          <li> <p>Untuk mengulang elemen:</p> 
+           <ul> 
+            <li><code>forEach(func)</code> ??? memanggil <code>func</code> untuk setiap elemen, tidak mengembalikan apapun.</li> 
+           </ul> </li> 
+          <li> <p>Untuk mengubah <em>array</em>:</p> 
+           <ul> 
+            <li><code>map(func)</code> ??? membuat sebuah <em>array</em> dari hasil pemanggilan <code>func</code> untuk setiap elemen.</li> 
+            <li><code>sort(func)</code> ??? mengurutkan <em>array</em> dalam-tempatnya, lalu mengembalikan hasilnya.</li> 
+            <li><code>reverse()</code> ??? membalikkan <em>array</em> dalam-tempatnya, lalu mengembalikan hasilnya.</li> 
+            <li><code>split/join</code> ??? mengonversi sebuah <em>string</em> menjadi <em>array</em> dan sebaliknya.</li> 
+            <li><code>reduce(func, initial)</code> ??? menghitung sebuah nilai tunggal pada <em>array</em> dengan cara memanggil <code>func</code> untuk setiap elemen dan mengoper hasil tersebut di antara panggilan.</li> 
+           </ul> </li> 
+          <li> <p>Sebagai tambahan:</p> 
+           <ul> 
+            <li><code>Array.isArray(arr)</code> memeriksa apakah <code>arr</code> merupakan <em>array</em> atau bukan.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>Tolong diingat bahwa metode <code>sort</code>, <code>reverse</code> dan <code>splice</code> memodifikasi <em>array</em> itu sendiri.</p> 
+         <p>Metode-metode ini adalah yang paling sering digunakan, mencakupi 99% kasus penggunaan. Namun masih ada beberapa metode lainnya:</p> 
+         <ul> 
+          <li> <p><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/some">arr.some(fn)</a>/<a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/every">arr.every(fn)</a> memeriksa <em>array</em> terseebut.</p> <p>Fungsi <code>fn</code> dipanggil pada tiap elemen <em>array</em> yang serupa dengan <code>map</code>. Jika beberapa/semua hasilnya <code>true</code>, maka akan mengembalikan <code>true</code>, jika tidak maka akan mengembalikan <code>false</code>.</p> <p>Metode ini berperilaku seperti operator <code>||</code> dan <code>&amp;&amp;</code>: jika <code>fn</code> mengembalikan nilai yang sebenarnya,<code>arr.some ()</code>segera mengembalikan<code>true</code> dan berhenti melakukan iterasi pada item lainnya; jika <code>fn</code> mengembalikan nilai yang salah,<code>arr.every ()</code>segera mengembalikan<code>false</code> dan juga menghentikan iterasi pada item lainnya.</p> <p>Kita bisa menggunakan <code>every</code> untuk membandingkan array:</p> 
+           <div id="tgpnk2ynta" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function arraysEqual(arr1, arr2) {
+  return arr1.length === arr2.length &amp;&amp; arr1.every((value, index) =&gt; value === arr2[index]);
+}
+
+alert( arraysEqual([1, 2], [1, 2])); // true</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/fill">arr.fill(value, start, end)</a> ??? mengisi array dengan <code>nilai</code> berulang dari indeks<code>mulai</code> hingga <code>akhir</code>.</p> </li> 
+          <li> <p><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin">arr.copyWithin(target, start, end)</a> ??? menyalin elemen dari posisi <code>start</code> hingga posisi <code>end</code> ke dalam <em>array itu sendiri</em>, pada posisi <code>target</code> (menumpuk/<em>overwrite</em> elemen yang ada).</p> </li> 
+          <li> <p><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/flat">arr.flat(depth)</a>/<a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap">arr.flatMap(fn)</a> buat array baru dari array multidimensi.</p> </li> 
+         </ul> 
+         <p>Untuk daftar lengkapnya, lihat <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array">manual</a>.</p> 
+         <p>Sejak pandangan pertama mungkin terlihat ada begitu banyak metode, cukup sulit untuk diingat. Namun sebenarnya hal itu jauh lebih mudah.</p> 
+         <p>Lihat <em>cheat sheet</em> hanya untuk sekedar tahu semua metode tersebut. Lalu selesaikan <em>task</em> bab ini sebagai latihan, jadi kamu memiliki pengalaman mengenai metode <em>array</em>.</p> 
+         <p>Sesudah itu kapan pun kamu perlu melakukan sesuatu dengan <em>array</em>, dan tidak tahu bagaimana caranya ??? datanglah ke halaman ini, lihat <em>cheat sheet</em> dan temukan metode yang tepat. Contoh-contoh yang diberikan akan membantumu dalam penulisan sintaks yang benar. Setelah itu kamu akan secara otomatis mengingat metode-metode tersebut, tanpa usaha yang terlalu rumit.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="array-methods.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#ubah-border-left-width-menjadi-borderleftwidth" name="ubah-border-left-width-menjadi-borderleftwidth">Ubah border-left-width menjadi borderLeftWidth</a></h3> 
+           <a class="task__open-link" href="task/camelcase.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis sebuah fungsi <code>cameize(str)</code> yang mengubah tulisan dengan tanda garin seperti ???my-short-string??? menjadi camel-case ???myShortString???.</p> 
+            <p>Itu saja: hapus semua tanda garis, setiap kata setelah tanda garis menjadi camel-case.</p> 
+            <p>Contoh:</p> 
+            <div id="pc4bdkn9tu" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>camelize("background-color") == 'backgroundColor';
+camelize("list-style-image") == 'listStyleImage';
+camelize("-webkit-transition") == 'WebkitTransition';</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Catatan. Hint: gunakan <code>split</code> untuk memisahkan string menjadi array, ubah itu dan gunakan <code>join</code> untuk menyatukannya.</p> 
+            <p><a href="https://plnkr.co/edit/GTG4e6bO228nGZTk?p=preview" target="_blank" data-plunk-id="GTG4e6bO228nGZTk">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="7vomqq6ufz" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function camelize(str) {
+  return str
+    .split('-') // pecah 'my-long-word' menjadi array ['my', 'long', 'word']
+    .map(
+      // Ubah huruf pertama dari setiap item array menjadi huruf kapital kecuali item pertama
+      // Ubah ['my', 'long', 'word'] into ['my', 'Long', 'Word']
+      (word, index) =&gt; index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join(''); // satukan ['my', 'Long', 'Word'] menjadi 'myLongWord'
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/iodWiSvsYRZOYAqN?p=preview" target="_blank" data-plunk-id="iodWiSvsYRZOYAqN">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#filter-range-menyaring-dengan-jarak" name="filter-range-menyaring-dengan-jarak">Filter range / menyaring dengan jarak</a></h3> 
+           <a class="task__open-link" href="task/filter-range.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulislah sebuah fungsi <code>filterRange(arr, a, b)</code> yang mendapatkan sebuah array <code>arr</code>, carilah elemen yang berada diantara <code>a</code> dan <code>b</code> didalamnya dan kembalikanlah array dari mereka.</p> 
+            <p>Fungsinya haruslah tidak memodifikasi arraynya. Itu haruslah mengembalikan array baru.</p> 
+            <p>Contoh:</p> 
+            <div id="bvd4nrhh84" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+alert( filtered ); // 3,1 (mencocokan nilai)
+
+alert( arr ); // 5,3,8,1 (tidak diubah)</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/TPPvyaIzBz3rxryu?p=preview" target="_blank" data-plunk-id="TPPvyaIzBz3rxryu">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="4qj14l1j9j" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function filterRange(arr, a, b) {
+  // menambahkan kurung di sekitar ekspresi untuk membuat keterbacaan menjadi lebih baik
+  return arr.filter(item =&gt; (a &lt;= item &amp;&amp; item &lt;= b));
+}
+
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+alert( filtered ); // 3,1 (mencocokan nilai)
+
+alert( arr ); // 5,3,8,1 (tidak diubah)</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/3e5WzsLfwKGNItDJ?p=preview" target="_blank" data-plunk-id="3e5WzsLfwKGNItDJ">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#filter-range-in-place-menyaring-dengan-jarak-secara-langsung" name="filter-range-in-place-menyaring-dengan-jarak-secara-langsung">Filter range "in place" / menyaring dengan jarak "secara langsung"</a></h3> 
+           <a class="task__open-link" href="task/filter-range-in-place.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis sebuah fungsi <code>filteredRangeInPlace(arr, a, b)</code> yang mendapatkan array <code>arr</code> dan menghilangkan seluruh nilai yang berada diantara <code>a</code> dan <code>b</code>. Testnya adalah: <code>a ??? arr[i] ??? b</code>.</p> 
+            <p>Fungsinya haruslah hanya memodifikasi arraynya. Itu harus tidak mengembalikan apapun.</p> 
+            <p>For instance:</p> 
+            <div id="4byv9mft7a" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4); // hapus angka kecuali dari 1 to 4
+
+alert( arr ); // [3, 1]</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/3nFnKDfz5VjYZkLM?p=preview" target="_blank" data-plunk-id="3nFnKDfz5VjYZkLM">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="v2cf3eb0j1" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function filterRangeInPlace(arr, a, b) {
+
+  for (let i = 0; i &lt; arr.length; i++) {
+    let val = arr[i];
+
+    // hilangkan jika berada diluar interval
+    if (val &lt; a || val &gt; b) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+
+}
+
+let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4); // hilangkan angkanya kecuali dari 1 to 4
+
+alert( arr ); // [3, 1]</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/y7Hl8HXvXLjNzsTm?p=preview" target="_blank" data-plunk-id="y7Hl8HXvXLjNzsTm">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#sortir-secara-menurun" name="sortir-secara-menurun">Sortir secara menurun</a></h3> 
+           <a class="task__open-link" href="task/sort-back.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <div id="9sem0zxrsr" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let arr = [5, 2, 1, -10, 8];
+
+// ... kodemu untuk menyortir secara menurun
+
+alert( arr ); // 8, 5, 2, 1, -10</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="lzsb6i3mts" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let arr = [5, 2, 1, -10, 8];
+
+arr.sort((a, b) =&gt; b - a);
+
+alert( arr );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#salin-dan-sortir-array" name="salin-dan-sortir-array">Salin dan sortir array</a></h3> 
+           <a class="task__open-link" href="task/copy-sort-array.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita mempunyai sebuah array dari string <code>arr</code>. Kita ingin mempunyai salinan yang telah disortir, tapi tidak mengubah <code>arr</code>.</p> 
+            <p>Buat sebuah fungsi <code>copySorted(arr)</code> yang mengembalikan kopiannya.</p> 
+            <div id="umvgi2qocr" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+alert( sorted ); // CSS, HTML, JavaScript
+alert( arr ); // HTML, JavaScript, CSS (tidak berubah)</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita bisa menggunakan <code>slice()</code> untuk membuat salinan dan menjalankan penyortirannya:</p> 
+              <div id="viys53i9ef" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function copySorted(arr) {
+  return arr.slice().sort();
+}
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+alert( sorted );
+alert( arr );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#buat-sebuah-kalkulator-yang-bisa-diperluas" name="buat-sebuah-kalkulator-yang-bisa-diperluas">Buat sebuah kalkulator yang bisa diperluas</a></h3> 
+           <a class="task__open-link" href="task/calculator-extendable.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah konstructor fungsi <code>Calculator</code> yang membuat objek kalkulator ???yang dapat diperluas???.</p> 
+            <p>Tugasnya terdiri dari dua bagian.</p> 
+            <ol> 
+             <li> <p>Pertama, implementasikan method <code>calculate(str)</code> yang menerima sebuah string sepertin <code>"1 + 2"</code> didalam format ???ANGKA operator ANGKA??? (membatasi ruang) dan mengembalikan hasilnya. Harus mengerti tambah <code>+</code> dan kurang <code>-</code>.</p> <p>Contoh penggunaan:</p> 
+              <div id="pa5o3ztbcf" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let calc = new Calculator;
+
+alert( calc.calculate("3 + 7") ); // 10</code></pre> 
+                </div> 
+               </div> 
+              </div></li> 
+             <li> <p>Lalu tambahkan method <code>addMethod(name, func)</code> yang mengajarkan operator operasi baru. methodnya akan menerima <code>name</code> dan fungsi dengan dua-argumen <code>func(a, b)</code> yang mengimplementasikannya.</p> <p>Contoh, kita tambah perkalian <code>*</code>, pembagian <code>/</code> dan pangkat <code>**</code>:</p> 
+              <div id="xh8co4l4xj" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let powerCalc = new Calculator;
+powerCalc.addMethod("*", (a, b) =&gt; a * b);
+powerCalc.addMethod("/", (a, b) =&gt; a / b);
+powerCalc.addMethod("**", (a, b) =&gt; a ** b);
+
+let result = powerCalc.calculate("2 ** 3");
+alert( result ); // 8</code></pre> 
+                </div> 
+               </div> 
+              </div></li> 
+            </ol> 
+            <ul> 
+             <li>Tidak ada tanda kurung atau ekspresi yang rumit didalam tugas ini.</li> 
+             <li>Angka dan operatornya dibatasi dengan hanya satu spasi.</li> 
+             <li>Disana mungkin terdapat penanganan error jika kamu ingin menambahkannya.</li> 
+            </ul> 
+            <p><a href="https://plnkr.co/edit/xw4kvQmbTPaXHDxs?p=preview" target="_blank" data-plunk-id="xw4kvQmbTPaXHDxs">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <ul> 
+               <li>Tolong perhatikan bagaimana method disimpan. Mereka secara sederhana ditambahkan kedalam properti <code>this.methods</code>.</li> 
+               <li>Semua test dan perubahan numerik dilakukan didalam method <code>calculate</code>. Selanjutnya mungkin bisa diperluas untuk mendukung lebih banyak ekspresi yang rumit.</li> 
+              </ul> 
+              <div id="sbmlqgtdp9" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function Calculator() {
+
+  this.methods = {
+    "-": (a, b) =&gt; a - b,
+    "+": (a, b) =&gt; a + b
+  };
+
+  this.calculate = function(str) {
+
+    let split = str.split(' '),
+      a = +split[0],
+      op = split[1],
+      b = +split[2];
+
+    if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+      return NaN;
+    }
+
+    return this.methods[op](a, b);
+  };
+
+  this.addMethod = function(name, func) {
+    this.methods[name] = func;
+  };
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/UPdYPdKZfR4REIZN?p=preview" target="_blank" data-plunk-id="UPdYPdKZfR4REIZN">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#memetakan-nama" name="memetakan-nama">Memetakan nama</a></h3> 
+           <a class="task__open-link" href="task/array-get-names.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kamu punya sebuah array dari objek <code>user</code>, masing-masing memiliki <code>user.name</code>. Tulis kode yang mengubah itu menjadi sebuah array dari nama.</p> 
+            <p>Contoh:</p> 
+            <div id="tmfdma6beg" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = /* ... Kodemu */
+
+alert( names ); // John, Pete, Mary</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="ue1nju4lmg" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = users.map(item =&gt; item.name);
+
+alert( names ); // John, Pete, Mary</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#memetakan-objek" name="memetakan-objek">Memetakan objek</a></h3> 
+           <a class="task__open-link" href="task/map-objects.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kamu mempunyai array dari objek <code>user</code>, masing-masing memiliki <code>name</code>, <code>surname</code> dan <code>id</code>.</p> 
+            <p>Tulis kode untuk membuat array lainnya dari itu, sebuah objek dengan <code>id</code> dan <code>fullName</code>, dimana<code>fullName</code> dibuat dari <code>name</code> dan <code>surname</code>.</p> 
+            <p>Contoh:</p> 
+            <div id="ybdcz4z0tv" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [ john, pete, mary ];
+
+let usersMapped = /* ... kodemu ... */
+
+/*
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
+
+alert( usersMapped[0].id ) // 1
+alert( usersMapped[0].fullName ) // John Smith</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Jadi, sebenarnya kamu harus memetakan satu array dari objek menjadi array dari objek lainnya. Cobalah gunakan <code>=&gt;</code> disini. Ada sedikit yang harus ditangkap.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="vu9ba34r8p" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:9}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let john = { name: "John", surname: "Smith", id: 1 };
+let pete = { name: "Pete", surname: "Hunt", id: 2 };
+let mary = { name: "Mary", surname: "Key", id: 3 };
+
+let users = [ john, pete, mary ];
+
+let usersMapped = users.map(user =&gt; ({
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id
+}));
+
+/*
+usersMapped = [
+  { fullName: "John Smith", id: 1 },
+  { fullName: "Pete Hunt", id: 2 },
+  { fullName: "Mary Key", id: 3 }
+]
+*/
+
+alert( usersMapped[0].id ); // 1
+alert( usersMapped[0].fullName ); // John Smith</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Perhatikan bahwa didalam fungsi arrow kita butuh untuk menggunakan tambahan kurung.</p> 
+              <p>Kita tidak bisa menulis seperti ini:</p> 
+              <div id="kfcll5hj44" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:36,&quot;end&quot;:37}]}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let usersMapped = users.map(user =&gt; {
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id
+});</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Seperti yang kita ingat, terdapat dua fungsi arrow: tanpa body <code>value =&gt; expression</code> dan dengan body <code>value =&gt; {...}</code>.</p> 
+              <p>Disini Javascript akan memperlakukan <code>{</code> seperti awal dari fungsi body, bukan awal dari objek. Solusinya adalah untuk membungkus mereka didalam kurung ???biasa???:</p> 
+              <div id="z0i910dz5u" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:36,&quot;end&quot;:38}]}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let usersMapped = users.map(user =&gt; ({
+  fullName: `${user.name} ${user.surname}`,
+  id: user.id
+}));</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Sekarang beres.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#urutkan-user-dari-umur" name="urutkan-user-dari-umur">Urutkan user dari umur</a></h3> 
+           <a class="task__open-link" href="task/sort-objects.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulislah fungsi <code>sortByAge(users)</code> yang menerima sebuah array dari objek dengan properti <code>age</code> dan urutkan mereka berdasarkan <code>age</code>.</p> 
+            <p>Contoh:</p> 
+            <div id="340pn4adue" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [ pete, john, mary ];
+
+sortByAge(arr);
+
+// sekarang: [john, mary, pete]
+alert(arr[0].name); // John
+alert(arr[1].name); // Mary
+alert(arr[2].name); // Pete</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="ekv649sg2x" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function sortByAge(arr) {
+  arr.sort((a, b) =&gt; a.age - b.age);
+}
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let arr = [ pete, john, mary ];
+
+sortByAge(arr);
+
+// sekarang sudah diurutkan: [john, mary, pete]
+alert(arr[0].name); // John
+alert(arr[1].name); // Mary
+alert(arr[2].name); // Pete</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#mengacak-sebuah-array" name="mengacak-sebuah-array">Mengacak sebuah array</a></h3> 
+           <a class="task__open-link" href="task/shuffle.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis fungsi <code>shuffle(array</code>) yang mengocok (pengurutan secara acak) elemen dari sebuah array.</p> 
+            <p>Pemanggilan dari <code>shuffle</code> akan menghasilkan urutan yang berbeda-beda. Contoh:</p> 
+            <div id="o521amf3co" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3];
+
+shuffle(arr);
+// arr = [3, 2, 1]
+
+shuffle(arr);
+// arr = [2, 1, 3]
+
+shuffle(arr);
+// arr = [3, 1, 2]
+// ...</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Seluruh pengurutan elemen harus punya probabilitas yang sama. Contoh, <code>[1,2,3]</code> bisa di urutkan menjadi <code>[1,2,3]</code> atau <code>[1,3,2]</code> atau <code>[3,1,2]</code> dll, dengan probabilitas yang sama untuk setiap kasus.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Solusi simpelnya bisa seperti:</p> 
+              <div id="6kj26ttmzv" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:2}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function shuffle(array) {
+  array.sort(() =&gt; Math.random() - 0.5);
+}
+
+let arr = [1, 2, 3];
+shuffle(arr);
+alert(arr);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Entah bagaimana kode diatas bekerja, karena <code>Math.random() - 0.5</code> adalah angka acak yang mungkin bisa positif atau negatif, jadi fungsi untuk pengurutan menyusun ulang elemen secara acak.</p> 
+              <p>Tapi karena fungsi untuk mengurutkan bukan digunakan dengan cara seperti ini, tidak semua permutasi memiliki probabilitas yang sama.</p> 
+              <p>Contoh, lihat kode dibawah. Itu akan menjalankan <code>shuffle</code> 1000000 kali dan menghitung kemunculan dari seluruh hasil yang mungkin terjadi:</p> 
+              <div id="kd90eogy9y" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function shuffle(array) {
+  array.sort(() =&gt; Math.random() - 0.5);
+}
+
+// hitung kemunculan dari seluruh permutasi yang mungkin terjadi
+let count = {
+  '123': 0,
+  '132': 0,
+  '213': 0,
+  '231': 0,
+  '321': 0,
+  '312': 0
+};
+
+for (let i = 0; i &lt; 1000000; i++) {
+  let array = [1, 2, 3];
+  shuffle(array);
+  count[array.join('')]++;
+}
+
+// tampilkan hitungan permutasi yang mungkin terjadi
+for (let key in count) {
+  alert(`${key}: ${count[key]}`);
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>An example result (depends on JS engine):</p> 
+              <div id="7r4cpfa1a8" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>123: 250706
+132: 124425
+213: 249618
+231: 124880
+312: 125148
+321: 125223</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kita bisa melihat secara jelas: <code>123</code> dan <code>213</code> muncul lebih banyak dari lainnya.</p> 
+              <p>Hasil dari kodenya mungkin berbeda-beda diantara mesin Javascript, tapi kita sudah bisa melihat pendekatan yang tak bisa diandalkan.</p> 
+              <p>kenapa itu tidak bekerja? Secara umum, <code>sort</code> adalah sebuah ???black box???: kita bisa berikan sebuah array dan fungsi perbandingan kedalamnya dan berharap arraynya akan diurutkan. Tapi karena keteracakan dari perbandingan blackbox menjadi tak karuan, dan bagaimana tepatnya itu tergantung dari perbedaan implementasi diantara mesinnya.</p> 
+              <p>Terdapat cara yang lebih baik untuk melakukan tugas seperti itu. Contoh, terdapat algoritma bagus yang dipanggil dengan <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Fisher-Yates shuffle</a>. Idenya adalah untuk membuat array menjadi terbalik dan mengganti setiap elemen dengan elemen acak sebelumnya:</p> 
+              <div id="jabac1csem" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function shuffle(array) {
+  for (let i = array.length - 1; i &gt; 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1)); // index acak dari 0 ke i
+
+    // ganti elemen array[i] dan array[j]
+    // kita gunakan sintaks "destructuring assignment" untuk mendapatkannya
+    // kamu akan menemukan lebih banyak detail tentang sintaksnya nanti di bab selanjutnya
+    // bisa juga ditulis seperti:
+    // let t = array[i]; array[i] = array[j]; array[j] = t
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>pengetesan dengan cara yang sama:</p> 
+              <div id="kio9s0yf5s" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function shuffle(array) {
+  for (let i = array.length - 1; i &gt; 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+// hitung seluruh kemunculan dari permutasi yang mungkin terjadi
+let count = {
+  '123': 0,
+  '132': 0,
+  '213': 0,
+  '231': 0,
+  '321': 0,
+  '312': 0
+};
+
+for (let i = 0; i &lt; 1000000; i++) {
+  let array = [1, 2, 3];
+  shuffle(array);
+  count[array.join('')]++;
+}
+
+// tampilkan perhitungan dari seluruh permutasi yang mungkin terjadi
+for (let key in count) {
+  alert(`${key}: ${count[key]}`);
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Contoh keluaran:</p> 
+              <div id="strkapbbl7" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>123: 166693
+132: 166647
+213: 166628
+231: 167517
+312: 166199
+321: 166316</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Sekarang terlihat bagus: seluruh permutasi muncul dengan probabilitas yang sama.</p> 
+              <p>Also, performance-wise the Fisher-Yates algorithm is much better, there???s no ???sorting??? overhead. Juga, performansi dari algoritma Fisher-Yates lebih baik, tidak ada ???pengurutan??? tambahan.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#dapatkan-rata-rata-umur" name="dapatkan-rata-rata-umur">Dapatkan rata-rata umur</a></h3> 
+           <a class="task__open-link" href="task/average-age.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis fungsi <code>getAverageAge(users)</code> yang menerima sebuah array dari objek dengan properti <code>age</code> dan mengembalikan rata-rata umur.</p> 
+            <p>Rumus dari rata-rata adalah <code>(age1 + age2 + ... + ageN) / N</code>.</p> 
+            <p>Contoh:</p> 
+            <div id="ucy5payuv6" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr = [ john, pete, mary ];
+
+alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="rulgw9lmzk" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getAverageAge(users) {
+  return users.reduce((prev, user) =&gt; prev + user.age, 0) / users.length;
+}
+
+let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 29 };
+
+let arr = [ john, pete, mary ];
+
+alert( getAverageAge(arr) ); // 28</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#filter-untuk-anggota-array-yang-unik" name="filter-untuk-anggota-array-yang-unik">Filter untuk anggota array yang unik</a></h3> 
+           <a class="task__open-link" href="task/array-unique.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah array <code>arr</code>.</p> 
+            <p>Buatlah sebuah fungsi <code>unique(arr)</code> yang harus mengembalikan array dengan item yang unik dari <code>arr</code>.</p> 
+            <p>Contoh:</p> 
+            <div id="gh6xrjwuxh" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function unique(arr) {
+  /* kodemu */
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+alert( unique(strings) ); // Hare, Krishna, :-O</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/Bsg2LvE3Kk7mWgkR?p=preview" target="_blank" data-plunk-id="Bsg2LvE3Kk7mWgkR">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita lihat seluruh item didalam array:</p> 
+              <ul> 
+               <li>Untuk setiap item kita memeriksa apakah array keluaran sudah memiliki itemnya.</li> 
+               <li>Jika sudah maka abaikan, sebaliknya tambahkan kedalam array keluaran.</li> 
+              </ul> 
+              <div id="ay46w1xw5q" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="array-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function unique(arr) {
+  let result = [];
+
+  for (let str of arr) {
+    if (!result.includes(str)) {
+      result.push(str);
+    }
+  }
+
+  return result;
+}
+
+let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+alert( unique(strings) ); // Hare, Krishna, :-O</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kodenya bekerja, tapi terdapat sebuah masalah performansi didalamnya.</p> 
+              <p>Metode <code>result.includes(str)</code> secara internal menyusuri arrau <code>result</code> dan membandingkan setiap elemen dengan <code>str</code> untuk menemukan apakah ada yang sama.</p> 
+              <p>Jadi jika didalam <code>result</code> terdapat <code>100</code> elemen dan tidak ada yang sama dengan <code>str</code>, lalu itu akan menyusuri seluruh <code>result</code> dan melakukan tepat <code>100</code> perbandingan. Dan jika <code>result</code> berukuran sangat besar, seperti <code>10000</code>, maka akan terjadi <code>10000</code> perbandingan.</p> 
+              <p>Itu bukanlah masalah bagi mesinnya, karena mesin Javascript sangatlah cepat, jadi menyusuri <code>10000</code> array hanya akan terjadi secara microseconds (micro detik).</p> 
+              <p>Tapi kita melakukan test untuk setiap elemen dari <code>arr</code>, didalam perulangan <code>for</code>.</p> 
+              <p>Jadi jika <code>arr.length</code> adalah <code>10000</code> kita akan memiliki sesuatu seperti <code>10000*10000</code> = 100 juta perbandingan. Itu sangatlah banyak.</p> 
+              <p>Demikian, solusi ini hanya bagus untuk array dengan ukuran kecil.</p> 
+              <p>Selanjutnya didalam bab <a href="map-set.html">Map dan Set</a> kita akan melihat bagaimana cara mengoptimasinya.</p> 
+              <p><a href="https://plnkr.co/edit/LUkyU1HaeD0kxP6l?p=preview" target="_blank" data-plunk-id="LUkyU1HaeD0kxP6l">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="array-methods.html#buatlah-objek-dengan-kunci-dari-array" name="buatlah-objek-dengan-kunci-dari-array">Buatlah objek dengan kunci dari array</a></h3> 
+           <a class="task__open-link" href="task/reduce-object.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Anggaplah kita menerima sebuah array dari user didalam form <code>{id:..., name:..., age... }</code>.</p> 
+            <p>Buatlah sebuah fungsi <code>groupById(arr)</code> yang membuat sebuah objek, dengan <code>id</code> sebagai key/kunci, dan item array sebagai nilai</p> 
+            <p>Contoh:</p> 
+            <div id="snzt33b422" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let users = [
+  {id: 'john', name: "John Smith", age: 20},
+  {id: 'ann', name: "Ann Smith", age: 24},
+  {id: 'pete', name: "Pete Peterson", age: 31},
+];
+
+let usersById = groupById(users);
+
+/*
+// Setelah pemanggilan kita harus mempunyai:
+
+usersById = {
+  john: {id: 'john', name: "John Smith", age: 20},
+  ann: {id: 'ann', name: "Ann Smith", age: 24},
+  pete: {id: 'pete', name: "Pete Peterson", age: 31},
+}
+*/</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Fungsi seperti itu sangat berguna ketika bekerja dengan data dari server.</p> 
+            <p>Ditugas ini kita asumsikan bahwa <code>id</code> adalah unik. Tidak mungkin memiliki dua item array dengan <code>id</code> yang sama.</p> 
+            <p>Tolong gunakan metode array <code>.reduce</code> didalam solusi.</p> 
+            <p><a href="https://plnkr.co/edit/N1RZGZEJ621Cjmtn?p=preview" target="_blank" data-plunk-id="N1RZGZEJ621Cjmtn">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="850d1u5j4h" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function groupById(array) {
+  return array.reduce((obj, value) =&gt; {
+    obj[value.id] = value;
+    return obj;
+  }, {})
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/Apjgiut50G77ssXt?p=preview" target="_blank" data-plunk-id="Apjgiut50G77ssXt">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="array.html" data-tooltip="*Array*"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="iterable.html" data-tooltip="Iterables / Bisa di iterasi"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Farray-methods" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Farray-methods" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array-methods.html#menambahkan-menghapus-item">Menambahkan/menghapus <em>item</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array-methods.html#iterate-foreach"><em>Iterate</em>: forEach</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array-methods.html#mencari-dalam-array">Mencari dalam <em>array</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array-methods.html#mengubah-array">Mengubah <em>array</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array-methods.html#array-isarray">Array.isArray</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array-methods.html#kebanyakan-metode-mendukung-thisarg">Kebanyakan metode mendukung ???thisArg???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array-methods.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array-methods.html#tasks">Tugas (13)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="array-methods.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Farray-methods" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Farray-methods" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

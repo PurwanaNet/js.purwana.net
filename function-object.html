@@ -1,0 +1,824 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "tw";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Objek fungsi, NFE</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="function-object.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Objek fungsi, NFE"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Objek fungsi, NFE"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="global-object.html"> 
+  <link rel="next" href="new-function.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Objek fungsi, NFE"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffunction-object" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffunction-object" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="54" max="92" data-tooltip="Pelajaran 54 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="advanced-functions.html"><span>Penggunaan lanjutan fungsi</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Penggunaan lanjutan fungsi","item":"https://id.javascript.info/advanced-functions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Objek fungsi, NFE</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Objek fungsi, NFE"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Seperti yang telah kita tahu, sebuah fungsi didalam Javascript adalah sebuah nilai.</p> 
+         <p>Setiap nilai didalam Javascript memiliki sebuah tipe. Apa tipe dari sebuah fungsi?</p> 
+         <p>Didalam Javascript, fungsi adalah objek.</p> 
+         <p>Sebuah cara yang bagus untuk membayangkan fungsi adalah sebagai ???aksi objek??? yang dapat dipanggil. Kita tidak hanya memanggil mereka, tapi juga memperlakukannya seperti sebuah objek: menambah/menghapus properti, memberikan referensi dll.</p> 
+         <h2><a class="main__anchor" name="properti-name" href="function-object.html#properti-name">Properti ???name???</a></h2> 
+         <p>Objek fungsi mengandung beberapa properti yang dapat digunakan.</p> 
+         <p>Contoh, sebuah nama fungsi dapat diakses sebagai properti ???name???:</p> 
+         <div id="8awpwq59be" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi() {
+  alert("Hi");
+}
+
+alert(sayHi.name); // sayHi</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu terlihat cukup lucu, logika untuk penggunaan nama cukup pintar. Itu juga menggunakan nama fungsi yang benar bahkan jika tidak terdapat nama sekalipun, dan jika langsung ditempatkan:</p> 
+         <div id="lhgaqoo8uy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function() {
+  alert("Hi");
+};
+
+alert(sayHi.name); // sayHi (ada namanya!)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu juga akan bekerja jika assignmentnya dilakukan dengan menggunakan nilai default:</p> 
+         <div id="m0ya4ozeyf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function f(sayHi = function() {}) {
+  alert(sayHi.name); // sayHi (bekerja!)
+}
+
+f();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Didalam spesifikasinya, fitur ini dinamakan dengan ???nama kontekstual/contextual name???. Jika sebuah fungsi tidak memiliki nama, maka didalam assignment-nya akan mencarinya didalam konteksnya.</p> 
+         <p>Metode objek mempunyai nama juga:</p> 
+         <div id="3lsvcwlry5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+
+  sayHi() {
+    // ...
+  },
+
+  sayBye: function() {
+    // ...
+  }
+
+}
+
+alert(user.sayHi.name); // sayHi
+alert(user.sayBye.name); // sayBye</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tidak ada sulap disini. Terdapat kasus dimana tidak ada cara untuk mengetahui namanya. Didalam kasus itu, properti namanya akan kosong, seperti disini:</p> 
+         <div id="qortmstd5h" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// fungsi dibuat didalam array
+let arr = [function() {}];
+
+alert( arr[0].name ); // &lt;string kosong&gt;
+// mesinnya tidak memiliki cara untuk mengetahui namanya, maka isinya akan menjadi kosong</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Didalam penerapannya, entah bagaimana, kebanyakan fungsi akan memiliki nama.</p> 
+         <h2><a class="main__anchor" name="properti-length" href="function-object.html#properti-length">Properti ???length???</a></h2> 
+         <p>Juga terdapat properti bawaan ???length??? yang mengembalikan jumlah dari parameter sebuah fungsi, contoh:</p> 
+         <div id="h92jt6yl02" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function f1(a) {}
+function f2(a, b) {}
+function many(a, b, ...more) {}
+
+alert(f1.length); // 1
+alert(f2.length); // 2
+alert(many.length); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini kita bisa melihat parameter rest tidak dihitung.</p> 
+         <p>Properti <code>length</code> terkadang digunakan untuk <a href="https://en.wikipedia.org/wiki/Type_introspection">introspeksi</a> didalam fungsi yang mengoperasikan fungsi lainnya.</p> 
+         <p>Contoh, didalam kode dibawah fungsi <code>ask</code> menerima sebuah <code>question</code> untuk ditanyakan dan sebuah angka yang panjang dari fungsi <code>handler</code> untuk dipanggil.</p> 
+         <p>Sekalinya pengguna memberikan jawaban mereka, pemanggilan fungsi akan memanggil handler-nya. Kita bisa memberikan dua macan handler:</p> 
+         <ul> 
+          <li>Fungsi dengan jumlah argumen nol, yang mana hanya dipanggil ketika pengguna memberikan jawaban yang positif.</li> 
+          <li>Fungsi dengan argumen, yang mana akan dipanggil diantara salah satu kasusnya dan mengembalikan sebuah jawaban.</li> 
+         </ul> 
+         <p>Untuk memanggil <code>handler</code> dengan cara yang tepat, kita memeriksa properti <code>handler.length</code>.</p> 
+         <p>Idenya adalah kita mempunyai handler yang simpel tanpa argumen untuk kasus yang positif (pada kasus yang sering terjadi), tapi yang tentunya tidak mendukung handler yang universal:</p> 
+         <div id="ku5y03jcq3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function ask(question, ...handlers) {
+  let isYes = confirm(question);
+
+  for(let handler of handlers) {
+    if (handler.length == 0) {
+      if (isYes) handler();
+    } else {
+      handler(isYes);
+    }
+  }
+
+}
+
+// untuk jawaban yang positif, kedua handler-nya akan dipanggil
+// untuk jawaban yang negatif, hanya yang kedua
+ask("Question?", () =&gt; alert('You said yes'), result =&gt; alert(result));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ini hanyalah kasus tertentu yang dipanggil dengan <a href="https://en.wikipedia.org/wiki/Polymorphism_(computer_science)">polimorfisme</a> ??? memperlakukan argumen berbeda-beda tergantung dari tipenya atau, didalam kasus kita tergantung dari <code>length</code>. Idenya adalah didalam penggunakan librari Javascript.</p> 
+         <h2><a class="main__anchor" name="properti-properti-kustom-custom-properties" href="function-object.html#properti-properti-kustom-custom-properties">Properti-properti kustom/Custom properties</a></h2> 
+         <p>Kita juga bisa menambahkan properti-properti milik kita sendiri.</p> 
+         <p>Disini kita menambahkan properti <code>counter</code> untuk melacar total dari pemanggilan:</p> 
+         <div id="x6wv8nc7yy" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi() {
+  alert("Hi");
+
+  // hitung berapa kali kita berjalan
+  sayHi.counter++;
+}
+sayHi.counter = 0; // nilai awal
+
+sayHi(); // Hi
+sayHi(); // Hi
+
+alert( `Called ${sayHi.counter} times` ); // dipanggil dua kali</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Sebuah properti bukanlah sebuah variabel</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Sebuah properti dimasukan kedalam fungsi seperti <code>sayHi.counter = 0</code> tidak mendefinisikan variabel lokal <code>counter</code> didalamnya. Dengan kata lain, sebuah properti <code>counter</code> dan sebuah variabel <code>let counter</code> adalah dua hal yang tidak memiliki hubungam sama sekali.</p> 
+           <p>Kita bisa memperlakukan sebuah fungsi seperti sebuah objek, menyimpan properti didalamnya, tapi itu tidak akan mempengaruhi eksekusinya sendiri. Variabel bukanlah sebuah properti fungsi dan sebaliknya. Keduanya hanyalah dua hal yang berbeda.</p> 
+          </div> 
+         </div> 
+         <p>Terkadang properti fungsi bisa menggantikan closure. Contoh, kita bisa menulis ulang contoh fungsi counter dari bab <a href="closure.html">Lingkup variabel, closure</a> untuk menggunakan properti fungsi:</p> 
+         <div id="ytnasxt9vr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function makeCounter() {
+  // daripada:
+  // let count = 0
+
+  function counter() {
+    return counter.count++;
+  };
+
+  counter.count = 0;
+
+  return counter;
+}
+
+let counter = makeCounter();
+alert( counter() ); // 0
+alert( counter() ); // 1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>count</code>nya sekarang tersimpan didalam fungsinya langsung, bukan diluar dari lingkungan leksikalnya.</p> 
+         <p>Apakah lebih baik atau tidak menggunakan closure?</p> 
+         <p>Perbedaan utamanya adalah jika nilai dari <code>count</code> berada didalam variabel luar, maka kode eksternal tidak dapat mengaksesnya. Hanya fungsi bercabang yang bisa memodifikasinya. Dan jika itu terikat dengan sebuah fungsi, maka kode eksternal dapat mengaksesnya.</p> 
+         <div id="8lybp4iikz" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:13,&quot;end&quot;:14}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function makeCounter() {
+
+  function counter() {
+    return counter.count++;
+  };
+
+  counter.count = 0;
+
+  return counter;
+}
+
+let counter = makeCounter();
+
+counter.count = 10;
+alert( counter() ); // 10</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi pilihannya implementasinya adalah tergantung pada kebutuhan kita.</p> 
+         <h2><a class="main__anchor" name="ekspresi-fungsi-yang-mempunyai-nama" href="function-object.html#ekspresi-fungsi-yang-mempunyai-nama">Ekspresi fungsi yang mempunyai nama</a></h2> 
+         <p>Ekspresi fungsi yang mempunyai nama, atau NFE(Named Function Expression) adalah istilah untuk ekspresi fungsi yang memiliki nama.</p> 
+         <p>Contoh, ayo kita lihat ekspresi fungsi yang biasa:</p> 
+         <div id="ecf1zxetqb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function(who) {
+  alert(`Hello, ${who}`);
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan tambahkan nama:</p> 
+         <div id="2u9ljpx3n3" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:21,&quot;end&quot;:25}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function func(who) {
+  alert(`Hello, ${who}`);
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Apakah kita meraih sesuatu disini? Apa tujuan dari penambahan nama <code>"func"</code>?</p> 
+         <p>pertama kita perhatikan, bahwa kita masih memiliki ekspresi fungsi. Menambahkan nama <code>"func"</code> setelah <code>function</code> tidaklah membuatnya menjadi deklarasi fungsi, karena itu masih dibuat sebagai bagian dari sebuah assignment ekspresi.</p> 
+         <p>Menambahkan nama seperti itu tidak akan merusak apapun.</p> 
+         <p>Fungsinya masih ada sebagai <code>sayHi()</code>:</p> 
+         <div id="ej3r945zgc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:21,&quot;end&quot;:25}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function func(who) {
+  alert(`Hello, ${who}`);
+};
+
+sayHi("John"); // Hello, John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Terdapat dua hal yang spesial tentang nama <code>func</code>, hal itu adalah:</p> 
+         <ol> 
+          <li>Itu mengijinkan fungsinya untuk mereferensi dirinya sendiri secara internal.</li> 
+          <li>Fungsinya tidak akan terlihat diluar fungsi tersebut.</li> 
+         </ol> 
+         <p>Untuk contoh, fungsi <code>sayHi</code> dibawah memanggil dirinya-sendiri lagi dengan <code>"Guest"</code> jika <code>who</code> tidak ada:</p> 
+         <div id="y0j4fmgmqx" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:21,&quot;end&quot;:25}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function func(who) {
+  if (who) {
+    alert(`Hello, ${who}`);
+  } else {
+    func("Guest"); // gunakan func untuk memanggil dirinya sendiri
+  }
+};
+
+sayHi(); // Hello, Guest
+
+// Tapi hal ini tidak akan bekerja
+func(); // Error, func is not defined (tidak terliha diluar fungsinya sendiri)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kenapa kita menggunakan <code>func</code>? Mungkin cukup gunakan <code>sayHi</code> untuk pemanggilan bercabang?</p> 
+         <p>Sebenarnya, dalam kebanyakan kasus kita bisa:</p> 
+         <div id="hz2df0dakj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function(who) {
+  if (who) {
+    alert(`Hello, ${who}`);
+  } else {
+    sayHi("Guest");
+  }
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Masalahnya dengan kode itu adalah <code>sayHi</code> mungkin akan berubah di kode terluar. Malah jika fungsinya dimasukan kedalam variabel lain, kodenya akan mulai memberikan error:</p> 
+         <div id="jjhap8ncz1" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function(who) {
+  if (who) {
+    alert(`Hello, ${who}`);
+  } else {
+    sayHi("Guest"); // Error: sayHi is not a function
+  }
+};
+
+let welcome = sayHi;
+sayHi = null;
+
+welcome(); // Error, pemanggilan bercabang sayHi tidak akan bekerja lagi!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hal itu terjadi karena fungsinya menggunakan <code>sayHi</code> dari luar lingkungan leksikalnya. Disana tidak ada <code>sayHi</code> lokal, jadi variabel terluar digunakan. Dan pada saat pemanggilannya terjadi <code>sayHi</code> terluar adalah <code>null</code>.</p> 
+         <p>Nama opsional dimana kita bisa memasukannya kedalam ekspresi fungsi diartikan untuk menyelesaikan masalah yang tepat seperti ini.</p> 
+         <p>Ayo kita gunakan itu untuk membetulkan masalah pada kode kita:</p> 
+         <div id="jwdbms1jqq" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:21,&quot;end&quot;:25}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function func(who) {
+  if (who) {
+    alert(`Hello, ${who}`);
+  } else {
+    func("Guest"); // Sekarang semuanya mantap
+  }
+};
+
+let welcome = sayHi;
+sayHi = null;
+
+welcome(); // Hello, Guest (pemanggilan bercabang bekerja)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang hal itu bekerja karena nama <code>"func"</code> adalah fungsi-lokal. Fungsi itu tidak diambil dari luar (dan tidak terlihat dari luar). Spesifikasinya menjamin itu akan selalu mereferensi fungsi saat ini.</p> 
+         <p>Fungsi dari luar kode mempunyai variabel <code>sayHi</code> atau <code>welcome</code>nya sendiri. Dan <code>func</code> adalah sebuah ???nama fungsi internal???, bagaimana fungsi bisa memanggil dirinya sendiri secara internal.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tidak ada hal semacam itu untuk deklarasi fungsi</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Fitur ???nama internal??? dideskripsikan disini hanya tersedia untuk ekspresi fungsi, bukan deklarasi fungsi. Untuk deklarasi fungsi, tidak terdapat sintaks untuk menambahkan sebuah nama ???internal???.</p> 
+           <p>Terkadang, ketika kita membutuhkan nama internal yang dapat diandalkan, itulah alasan yang tepat untuk menulis ulang sebuah deklarasi fungsi kedalam bentuk ekspresi fungsi.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="function-object.html#ringkasan">Ringkasan</a></h2> 
+         <p>Fungsi adalah objek.</p> 
+         <p>Disini kita memperlajari properti-propertinya:</p> 
+         <ul> 
+          <li><code>name</code> ??? nama dari fungsinya. Biasanya diambil dari definisi fungsinya, tapi jika disana tidak ada, Javascript akan mencoba mencarinya dari konteksnya (contoh. dari assignment-nya).</li> 
+          <li><code>length</code> ??? jumlah dari argumen didalam definisi dari fungsi. Parameter rest tidak dihitung.</li> 
+         </ul> 
+         <p>Jika fungsinya di deklarasikan sebagai ekspresi fungsi (tidak didalam alur kode utama), dan itu memiliki nama, maka itu dipanggil dengan ekspresi fungsi yang memiliki nama. Namanya bisa digunakan didalam fungsinya untuk mereferensi dirinya sendiri, untuk pemanggilan rekursif atau sejenisnya.</p> 
+         <p>Juga, fungsi mungkin memiliki properti tambahan. Beberapa librari Javascript yang cukup terkenal banyak menggunakan fitur ini.</p> 
+         <p>Mereka membuat sebuah fungsi ???utama??? dan mengkaitkannya dengan fungsi ???pembantu???. Contoh librari <a href="https://jquery.com">jQuery</a> menciptakan fungsi bernama <code>$</code>. Librari The <a href="https://lodash.com">lodash</a> membuat sebuah fungsi <code>_</code> dan lalu menambahkan <code>_.clone</code>, <code>_.keyBy</code>dan properti lainnya kedalamnya (lihat <a href="https://lodash.com/docs">dokumentasinya</a> ketika kamu mau tau lebih dalam). Sebenarnya, mereka melakukannya untuk mengurangi penggunaan dari ruang global, jadi librari tunggal itu hanya menggunakan satu variabel global. Itu mengurangi kemungkinan dari konflik penamaan variabel.</p> 
+         <p>Jadi, sebuah fungsi bisa melakukan hal-hal yang berguna dengan dirinya-sendiri dan juga membawa setumpuk fungsionalitas didalam propertinya sendiri.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="function-object.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="function-object.html#setel-dan-kurangi-penghitung" name="setel-dan-kurangi-penghitung">Setel dan kurangi penghitung</a></h3> 
+           <a class="task__open-link" href="task/counter-inc-dec.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Modifikasi kode dari <code>makeCounter()</code> jadi penghitungnya juga bisa mengurangi dan menyetel ulang angkanya:</p> 
+            <ul> 
+             <li><code>counter()</code> harus mengembalikan angka selanjutnya (seperti sebelumnya).</li> 
+             <li><code>counter.set(value)</code> harus menyetel ulang penghitungnya jadi <code>value</code>.</li> 
+             <li><code>counter.decrease()</code> harus mengurangi angka penghitungnya dengan 1.</li> 
+            </ul> 
+            <p>Lihat kode pada sandbox untuk contoh penggunaan yang lengkap.</p> 
+            <p>Catatan. Kamu bisa menggunakan closure atau properti fungsi untuk menyimpan perhitungan yang sekarang. Atau tulis kedua variannya.</p> 
+            <p><a href="https://plnkr.co/edit/Vj1IzZs1ZMslRsvO?p=preview" target="_blank" data-plunk-id="Vj1IzZs1ZMslRsvO">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Solusinya adalah menggunakan <code>count</code> didalam variabel lokal, tapi metode tambahan ditulis tepat didalam <code>counter</code>nya. Mereka membagi lingkungan leksikan luar yang sama dan juga bisa mengakses <code>count</code> yang sekarang.</p> 
+              <div id="vm0c1hub6c" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function makeCounter() {
+  let count = 0;
+
+  function counter() {
+    return count++;
+  }
+
+  counter.set = value =&gt; count = value;
+
+  counter.decrease = () =&gt; count--;
+
+  return counter;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/8EMh0NV5cC8AtXgH?p=preview" target="_blank" data-plunk-id="8EMh0NV5cC8AtXgH">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="function-object.html#tambahkan-dengan-jumlah-kurung-yang-banyak" name="tambahkan-dengan-jumlah-kurung-yang-banyak">Tambahkan dengan jumlah kurung yang banyak</a></h3> 
+           <a class="task__open-link" href="task/sum-many-brackets.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah fungsi <code>sum</code> yang harus bekerja seperti ini:</p> 
+            <div id="j08vd5qr2e" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>sum(1)(2) == 3; // 1 + 2
+sum(1)(2)(3) == 6; // 1 + 2 + 3
+sum(5)(-1)(2) == 6
+sum(6)(-1)(-2)(-3) == 0
+sum(0)(1)(2)(3)(4)(5) == 15</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Catatan. Kamu mungkin perlu untuk mengatur objek kostum menjadi perngubah primitif didalam fungsi kamu.</p> 
+            <p><a href="https://plnkr.co/edit/7eqSfBKzfNzQya4z?p=preview" target="_blank" data-plunk-id="7eqSfBKzfNzQya4z">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <ol> 
+               <li>Untuk membuat semuanya bekerja <em>entah bagaimana</em>, hasil dari <code>sum</code> haruslah sebuah fungsi.</li> 
+               <li>Fungsi harus menyimpan nilai sekarang yang berada diantara pemanggilan didalam memori.</li> 
+               <li>Menurut tasknya, fungsinya harus menjadi angka ketika digunakan didalam <code>==</code>. Fungsi adalah objek, jadi perubahan terjasi seperti yang dideskripsikan didalam bab <a href="object-toprimitive.html">Menolak konversi primitif</a>, dan kita bisa menyediakan metode milik kita yang mengembalikan angkanya.</li> 
+              </ol> 
+              <p>Sekarang angkanya:</p> 
+              <div id="zc9ff96lmd" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="function-object.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="function-object.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function sum(a) {
+
+  let currentSum = a;
+
+  function f(b) {
+    currentSum += b;
+    return f;
+  }
+
+  f.toString = function() {
+    return currentSum;
+  };
+
+  return f;
+}
+
+alert( sum(1)(2) ); // 3
+alert( sum(5)(-1)(2) ); // 6
+alert( sum(6)(-1)(-2)(-3) ); // 0
+alert( sum(0)(1)(2)(3)(4)(5) ); // 15</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Perhatikan baik-baik bahwa fungsi <code>sum</code> sebenarnya hanya bekerja satu kali. Itu mengembalikan fungsi <code>f</code>.</p> 
+              <p>Lalu, untuk setiap pemanggilan selanjutnya <code>f</code> menambahkan parameternya kedlaam <code>currentSum</code>, dan mengembalikan dirinya sendiri.</p> 
+              <p><strong>Tidak terdapat rekursi di akhir baris dari <code>f</code>.</strong></p> 
+              <p>Ini adalah bagaimana rekursi terlihat:</p> 
+              <div id="i33yjkhykn" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function f(b) {
+  currentSum += b;
+  return f(); // &lt;-- pemanggilan rekursi
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Dan didalam kasus kita, kita hanya mengembalikan fungsinya, tanpa memanggilnya:</p> 
+              <div id="1f19ade93w" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function f(b) {
+  currentSum += b;
+  return f; // &lt;-- tidak memanggil dirinya-sendiri, hanya mengembalikan dirinya
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><code>f</code> ini akan digunakan didalam pemanggilan selanjutnya, dan lagi akan mengembalikan dirinya-sendiri, berapa kalipun seperti yang dibutuhkan. Lalu, ketika digunakan sebagai angka atau sebuah string ??? <code>toString</code> mengembalikan <code>currentSum</code>. Kita jadi bisa menggunakan <code>Symbol.toPrimitive</code> atau <code>valueOf</code> disini sebagai perubahan.</p> 
+              <p><a href="https://plnkr.co/edit/6qDP3xxs2JhHVSHo?p=preview" target="_blank" data-plunk-id="6qDP3xxs2JhHVSHo">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="global-object.html" data-tooltip="Objek global"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="new-function.html" data-tooltip="Sintaks &quot;new Function&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffunction-object" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffunction-object" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="advanced-functions.html">Penggunaan lanjutan fungsi</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-object.html#properti-name">Properti ???name???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-object.html#properti-length">Properti ???length???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-object.html#properti-properti-kustom-custom-properties">Properti-properti kustom/Custom properties</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-object.html#ekspresi-fungsi-yang-mempunyai-nama">Ekspresi fungsi yang mempunyai nama</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-object.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-object.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-object.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffunction-object" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Ffunction-object" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

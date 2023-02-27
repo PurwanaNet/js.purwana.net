@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Kesalahan khusus, memperluas Kesalahan</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="custom-errors.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Kesalahan khusus, memperluas Kesalahan"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Kesalahan khusus, memperluas Kesalahan"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="try-catch.html"> 
+  <link rel="next" href="async.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Kesalahan khusus, memperluas Kesalahan"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcustom-errors" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcustom-errors" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="74" max="92" data-tooltip="Pelajaran 74 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="error-handling.html"><span>Penanganan kesalahan</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Penanganan kesalahan","item":"https://id.javascript.info/error-handling"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 5 Oktober 2020"> 
+          <div class="updated-at__content">
+            5 Oktober 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Kesalahan khusus, memperluas Kesalahan</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Kesalahan khusus, memperluas Kesalahan"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Saat kita mengembangkan sesuatu, kita sering membutuhkan kelas kesalahan kita sendiri untuk mencerminkan hal-hal spesifik yang mungkin salah dalam tugas kita. Untuk kesalahan dalam operasi jaringan kita mungkin memerlukan <code>HttpError</code>, untuk operasi basis data <code>DbError</code>, untuk operasi pencarian <code>NotFoundError</code> dan seterusnya.</p> 
+         <p>Kesalahan kita harus mendukung properti kesalahan dasar seperti <code>message</code>, <code>name</code> dan, sebaiknya, <code>stack</code>. Tetapi mereka juga mungkin memiliki properti lain sendiri, misalnya objek <code>HttpError</code> mungkin memiliki properti <code>statusCode</code> dengan nilai seperti <code>404</code> atau <code>403</code> atau <code>500</code>.</p> 
+         <p>JavaScript memungkinkan untuk menggunakan <code>throw</code> dengan argumen apa pun, jadi secara teknis kelas kesalahan khusus kita tidak perlu mewarisi dari <code>Error</code>. Tetapi jika kita mewarisi, maka menjadi mungkin untuk menggunakan <code>obj instanceof Error</code> untuk mengidentifikasi objek kesalahan. Jadi lebih baik mewarisinya.</p> 
+         <p>Saat aplikasi berkembang, kesalahan kita sendiri secara alami membentuk hierarki. Misalnya, <code>HttpTimeoutError</code> mungkin mewarisi dari <code>HttpError</code>, dan seterusnya.</p> 
+         <h2><a class="main__anchor" name="memperluas-kesalahan" href="custom-errors.html#memperluas-kesalahan">Memperluas Kesalahan</a></h2> 
+         <p>Sebagai contoh, mari pertimbangkan fungsi <code>readUser(json)</code> yang harus membaca JSON dengan data pengguna.</p> 
+         <p>Berikut adalah contoh tampilan <code>json</code> yang valid:</p> 
+         <div id="8wu5felgsj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let json = `{ "name": "John", "age": 30 }`;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Secara internal, kita akan menggunakan <code>JSON.parse</code>. Jika menerima <code>json</code> yang salah, maka itu melontarkan <code>SyntaxError</code>. Tetapi bahkan jika <code>json</code> secara sintaksis benar, itu tidak berarti bahwa itu adalah pengguna yang valid, bukan? Ini mungkin kehilangan data yang diperlukan. Misalnya, mungkin tidak memiliki properti <code>name</code> dan <code>age</code> yang penting bagi pengguna kita.</p> 
+         <p>Fungsi kita <code>readUser(json)</code> tidak hanya akan membaca JSON, tetapi juga memeriksa (???memvalidasi???) data. Jika tidak ada bidang yang wajib diisi, atau formatnya salah, itu adalah kesalahan. Dan itu bukan <code>SyntaxError</code>, karena datanya benar secara sintaksis, tetapi jenis kesalahan lain. Kita akan menyebutnya <code>ValidationError</code> dan membuat kelas untuk itu. Kesalahan semacam itu juga harus membawa informasi tentang bidang yang melanggar.</p> 
+         <p>Kelas <code>ValidationError</code> kita harus mewarisi dari kelas <code>Error</code> bawaan.</p> 
+         <p>Kelas itu sudah ada di dalamnya, tetapi berikut ini kode perkiraannya sehingga kita dapat memahami apa yang kita perluas:</p> 
+         <div id="1luns3ufey" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// "Kode semu" untuk kelas Kesalahan bawaan yang ditentukan oleh JavaScript itu sendiri
+class Error {
+  constructor(message) {
+    this.message = message;
+    this.name = "Error"; // (nama yang berbeda untuk kelas kesalahan bawaan yang berbeda)
+    this.stack = &lt;call stack&gt;; // tidak standar, tetapi sebagian besar lingkungan mendukungnya
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang mari kita mewarisi <code>ValidationError</code> darinya dan mencobanya dalam tindakan:</p> 
+         <div id="au3gibq1is" data-trusted="0" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class ValidationError extends Error {
+  constructor(message) {
+    super(message); // (1)
+    this.name = "ValidationError"; // (2)
+  }
+}
+
+function test() {
+  throw new ValidationError("Whoops!");
+}
+
+try {
+  test();
+} catch(err) {
+  alert(err.message); // Whoops!
+  alert(err.name); // ValidationError
+  alert(err.stack); // daftar panggilan bertingkat dengan masing-masing nomor baris
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Harap diperhatikan: pada baris <code>(1)</code> kita memanggil konstruktor induk. JavaScript mengharuskan kita memanggil <code>super</code> di konstruktor anak, jadi itu wajib. Konstruktor induk mengatur properti <code>message</code>.</p> 
+         <p>Konstruktor induk juga menyetel properti <code>name</code> menjadi <code>"Error"</code>, jadi di baris <code>(2)</code> kita menyetel ulang ke nilai yang benar.</p> 
+         <p>Mari kita coba menggunakannya di <code>readUser(json)</code>:</p> 
+         <div id="gl38f8sogy" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:27,&quot;end&quot;:27}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
+
+// Penggunaan
+function readUser(json) {
+  let user = JSON.parse(json);
+
+  if (!user.age) {
+    throw new ValidationError("No field: age");
+  }
+  if (!user.name) {
+    throw new ValidationError("No field: name");
+  }
+
+  return user;
+}
+
+// Contoh kerja dengan try..catch
+
+try {
+  let user = readUser('{ "age": 25 }');
+} catch (err) {
+  if (err instanceof ValidationError) {
+    alert("Invalid data: " + err.message); // Invalid data: No field: name (Tidak ada bidang: name)
+  } else if (err instanceof SyntaxError) { // (*)
+    alert("JSON Syntax Error: " + err.message);
+  } else {
+    throw err; // unknown error (kesalahan yang tidak diketahui), lontarkan kembali (**)
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Blok <code>try..catch</code> dalam kode di atas menangani baik <code>ValidationError</code> dan <code>SyntaxError</code> bawaan dari <code>JSON.parse</code>.</p> 
+         <p>Silakan lihat bagaimana kita menggunakan <code>instanceof</code> untuk memeriksa jenis kesalahan spesifik pada baris <code>(*)</code>.</p> 
+         <p>Kita juga bisa melihat <code>err.name</code>, seperti ini:</p> 
+         <div id="2psiza71az" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ...
+// daripada (err instanceof SyntaxError)
+} else if (err.name == "SyntaxError") { // (*)
+// ...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Versi <code>instanceof</code> jauh lebih baik, karena di masa mendatang kita akan memperluas <code>ValidationError</code>, membuat subtipe darinya, seperti <code>PropertyRequiredError</code>. Dan pemeriksaan <code>instanceof</code> akan terus berfungsi untuk kelas pewaris baru. Jadi itu bukti masa depan.</p> 
+         <p>Juga penting bahwa jika <code>catch</code> menemui kesalahan yang tidak diketahui, maka itu akan ditarik kembali di baris <code>(**)</code>. Blok <code>catch</code> hanya mengetahui cara menangani validasi dan kesalahan sintaksis, jenis lain (karena kesalahan ketik pada kode atau kesalahan lain yang tidak diketahui) akan gagal.</p> 
+         <h2><a class="main__anchor" name="warisan-lebih-lanjut" href="custom-errors.html#warisan-lebih-lanjut">Warisan lebih lanjut</a></h2> 
+         <p>Kelas <code>ValidationError</code> sangat umum. Banyak hal mungkin salah. Properti mungkin tidak ada atau mungkin dalam format yang salah (seperti nilai string untuk <code>age</code>). Mari kita buat kelas yang lebih konkret <code>PropertyRequiredError</code>, tepatnya untuk properti yang tidak ada. Ini akan membawa informasi tambahan tentang properti yang hilang.</p> 
+         <div id="bg2qsc2g2a" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:35,&quot;end&quot;:37},{&quot;start&quot;:7,&quot;end&quot;:13}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class ValidationError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "ValidationError";
+  }
+}
+
+class PropertyRequiredError extends ValidationError {
+  constructor(property) {
+    super("No property: " + property);
+    this.name = "PropertyRequiredError";
+    this.property = property;
+  }
+}
+
+// Penggunaan
+function readUser(json) {
+  let user = JSON.parse(json);
+
+  if (!user.age) {
+    throw new PropertyRequiredError("age");
+  }
+  if (!user.name) {
+    throw new PropertyRequiredError("name");
+  }
+
+  return user;
+}
+
+// Contoh kerja dengan try..catch
+
+try {
+  let user = readUser('{ "age": 25 }');
+} catch (err) {
+  if (err instanceof ValidationError) {
+    alert("Invalid data: " + err.message); // Invalid data: No property: name (Tidak ada properti: name)
+    alert(err.name); // PropertyRequiredError
+    alert(err.property); // name
+  } else if (err instanceof SyntaxError) {
+    alert("JSON Syntax Error: " + err.message);
+  } else {
+    throw err; // unknown error (kesalahan yang tidak diketahui), lontarkan kembali
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kelas baru <code>PropertyRequiredError</code> mudah digunakan: kita hanya perlu meneruskan nama properti: <code>new PropertyRequiredError(property)</code>. <code>Pesan</code> yang dapat dibaca manusia dihasilkan oleh konstruktor.</p> 
+         <p>Harap dicatat bahwa <code>this.name</code> dalam konstruktor <code>PropertyRequiredError</code> ditetapkan lagi secara manual. Itu mungkin agak membosankan ??? untuk menetapkan <code>this.name = &lt;class name&gt;</code> di setiap kelas kesalahan kustom. Kita dapat menghindarinya dengan membuat kelas ???kesalahan dasar??? kita sendiri yang menetapkan <code>this.name = this.constructor.name</code>. Dan kemudian mewarisi semua kesalahan khusus kita darinya.</p> 
+         <p>Sebut saja <code>MyError</code>.</p> 
+         <p>Berikut kode dengan <code>MyError</code> dan kelas kesalahan khusus lainnya, yang disederhanakan:</p> 
+         <div id="l5iri401xj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class MyError extends Error {
+  constructor(message) {
+    super(message);
+    this.name = this.constructor.name;
+  }
+}
+
+class ValidationError extends MyError { }
+
+class PropertyRequiredError extends ValidationError {
+  constructor(property) {
+    super("No property: " + property);
+    this.property = property;
+  }
+}
+
+// name-nya benar
+alert( new PropertyRequiredError("field").name ); // PropertyRequiredError</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang kesalahan khusus jauh lebih pendek, terutama <code>ValidationError</code>, karena kita menyingkirkan baris <code>"this.name = ..."</code> di konstruktor.</p> 
+         <h2><a class="main__anchor" name="pengecualian-pembungkusan" href="custom-errors.html#pengecualian-pembungkusan">Pengecualian pembungkusan</a></h2> 
+         <p>Tujuan dari fungsi <code>readUser</code> pada kode di atas adalah ???untuk membaca data pengguna???. Mungkin ada berbagai jenis kesalahan dalam prosesnya. Saat ini kita memiliki <code>SyntaxError</code> dan <code>ValidationError</code>, tetapi di masa mendatang fungsi <code>readUser</code> dapat berkembang dan mungkin menghasilkan jenis kesalahan lain.</p> 
+         <p>Kode yang memanggil <code>readUser</code> harus menangani kesalahan ini. Saat ini ia menggunakan beberapa <code>if</code> dalam blok <code>catch</code>, yang memeriksa kelas dan menangani kesalahan yang diketahui dan memunculkan kembali yang tidak diketahui.</p> 
+         <p>Skemanya seperti ini:</p> 
+         <div id="ifwppgx17d" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>try {
+  ...
+  readUser()  // potensi sumber kesalahan
+  ...
+} catch (err) {
+  if (err instanceof ValidationError) {
+    // menangani kesalahan validasi
+  } else if (err instanceof SyntaxError) {
+    // menangani kesalahan sintaks
+  } else {
+    throw err; // unknown error (kesalahan yang tidak diketahui), lontarkan kembali
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada kode di atas kita dapat melihat dua jenis kesalahan, tetapi bisa juga lebih.</p> 
+         <p>Jika fungsi <code>readUser</code> menghasilkan beberapa jenis kesalahan, maka kita harus bertanya pada diri sendiri: apakah kita benar-benar ingin memeriksa semua jenis kesalahan satu per satu setiap saat?</p> 
+         <p>Seringkali jawabannya adalah ???Tidak???: kita ingin menjadi ???satu tingkat di atas semua itu???. Kita hanya ingin tahu apakah ada ???kesalahan membaca data??? ??? mengapa sebenarnya hal itu terjadi seringkali tidak relevan (pesan kesalahan menjelaskannya). Atau, lebih baik lagi, kita ingin mendapatkan cara untuk mendapatkan detail kesalahan, tetapi hanya jika kita perlu.</p> 
+         <p>Teknik yang kita jelaskan di sini disebut ???pengecualian pembungkusan???.</p> 
+         <ol> 
+          <li>Kita akan membuat kelas baru <code>ReadError</code> untuk merepresentasikan kesalahan ???membaca data??? yang umum.</li> 
+          <li>Fungsi <code>readUser</code> akan menangkap kesalahan pembacaan data yang terjadi di dalamnya, seperti <code>ValidationError</code> dan <code>SyntaxError</code>, dan sebagai gantinya menghasilkan <code>ReadError</code>.</li> 
+          <li>Objek <code>ReadError</code> akan menyimpan referensi ke kesalahan asli dalam properti <code>cause</code>&amp;#8209;nya.</li> 
+         </ol> 
+         <p>Kemudian kode yang memanggil <code>readUser</code> hanya perlu memeriksa <code>ReadError</code>, bukan untuk setiap jenis kesalahan pembacaan data. Dan jika membutuhkan detail lebih lanjut tentang kesalahan, ia dapat memeriksa properti <code>cause</code>-nya.</p> 
+         <p>Berikut kode yang mendefinisikan <code>ReadError</code> dan mendemonstrasikan penggunaannya dalam <code>readUser</code> dan <code>try..catch</code>:</p> 
+         <div id="zjnfhftg8x" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:50,&quot;end&quot;:52},{&quot;start&quot;:37,&quot;end&quot;:41},{&quot;start&quot;:27,&quot;end&quot;:31}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="custom-errors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class ReadError extends Error {
+  constructor(message, cause) {
+    super(message);
+    this.cause = cause;
+    this.name = 'ReadError';
+  }
+}
+
+class ValidationError extends Error { /*...*/ }
+class PropertyRequiredError extends ValidationError { /* ... */ }
+
+function validateUser(user) {
+  if (!user.age) {
+    throw new PropertyRequiredError("age");
+  }
+
+  if (!user.name) {
+    throw new PropertyRequiredError("name");
+  }
+}
+
+function readUser(json) {
+  let user;
+
+  try {
+    user = JSON.parse(json);
+  } catch (err) {
+    if (err instanceof SyntaxError) {
+      throw new ReadError("Syntax Error", err);
+    } else {
+      throw err;
+    }
+  }
+
+  try {
+    validateUser(user);
+  } catch (err) {
+    if (err instanceof ValidationError) {
+      throw new ReadError("Validation Error", err);
+    } else {
+      throw err;
+    }
+  }
+
+}
+
+try {
+  readUser('{bad json}');
+} catch (e) {
+  if (e instanceof ReadError) {
+    alert(e);
+    // Original error: SyntaxError: Unexpected token b in JSON at position 1 (Kesalahan sintaks: Token b yang tidak terduga di JSON pada posisi 1)
+    alert("Original error: " + e.cause);
+  } else {
+    throw e;
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada kode di atas, <code>readUser</code> bekerja persis seperti yang dijelaskan ??? menangkap kesalahan sintaks dan validasi dan melontarkan kesalahan <code>ReadError</code> (kesalahan yang tidak diketahui ditampilkan ulang seperti biasa).</p> 
+         <p>Jadi kode terluar memeriksa <code>instanceof ReadError</code> dan hanya itu. Tidak perlu mencantumkan semua kemungkinan jenis kesalahan.</p> 
+         <p>Pendekatan ini disebut ???pembungkusan pengecualian???, karena kita mengambil pengecualian ???tingkat rendah??? dan ???membungkusnya??? menjadi <code>ReadError</code> yang lebih abstrak. Ini banyak digunakan dalam pemrograman berorientasi objek.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="custom-errors.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li>Kita bisa mewarisi dari <code>Error</code> dan kelas kesalahan bawaan lainnya secara normal. Kita hanya perlu menjaga properti <code>name</code> dan jangan lupa memanggil <code>super</code>.</li> 
+          <li>Kita bisa menggunakan <code>instanceof</code> untuk memeriksa kesalahan tertentu. Ini juga bekerja dengan warisan. Namun terkadang kita memiliki objek kesalahan yang berasal dari pustaka pihak ketiga dan tidak ada cara mudah untuk mendapatkan kelasnya. Kemudian properti <code>name</code> dapat digunakan untuk pemeriksaan semacam itu.</li> 
+          <li>Pengecualian pembungkusan adalah teknik yang tersebar luas: fungsi menangani pengecualian tingkat rendah dan membuat kesalahan tingkat lebih tinggi daripada berbagai kesalahan tingkat rendah. Pengecualian tingkat rendah terkadang menjadi properti dari objek tersebut seperti <code>err.cause</code> dalam contoh di atas, tetapi itu tidak sepenuhnya diperlukan.</li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="custom-errors.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="custom-errors.html#mewarisi-dari-syntaxerror" name="mewarisi-dari-syntaxerror">Mewarisi dari SyntaxError</a></h3> 
+           <a class="task__open-link" href="task/format-error.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat kelas <code>FormatError</code> yang diwarisi dari bawaan kelas <code>SyntaxError</code>.</p> 
+            <p>Ini harus mendukung properti <code>message</code>, <code>name</code> dan <code>stack</code>.</p> 
+            <p>Contoh penggunaan:</p> 
+            <div id="z704pwm20d" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let err = new FormatError('formatting error');
+
+alert(err.message); // formatting error
+alert(err.name); // FormatError
+alert(err.stack); // stack
+
+alert(err instanceof FormatError); // true
+alert(err instanceof SyntaxError); // true (karena mewarisi dari SyntaxError)</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="iv1u36uimo" data-trusted="0" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="custom-errors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="custom-errors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>class FormatError extends SyntaxError {
+  constructor(message) {
+    super(message);
+    this.name = this.constructor.name;
+  }
+}
+
+let err = new FormatError("formatting error");
+
+alert( err.message ); // formatting error
+alert( err.name ); // FormatError
+alert( err.stack ); // stack
+
+alert( err instanceof SyntaxError ); // true</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="try-catch.html" data-tooltip="Penanganan eror, &quot;try..catch&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="async.html" data-tooltip="Promises, async/await"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcustom-errors" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcustom-errors" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="error-handling.html">Penanganan kesalahan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-errors.html#memperluas-kesalahan">Memperluas Kesalahan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-errors.html#warisan-lebih-lanjut">Warisan lebih lanjut</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-errors.html#pengecualian-pembungkusan">Pengecualian pembungkusan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-errors.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-errors.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="custom-errors.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcustom-errors" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fcustom-errors" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

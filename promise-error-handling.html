@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Penanganan error dengan promise</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="promise-error-handling.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Penanganan error dengan promise"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Penanganan error dengan promise"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="promise-chaining.html"> 
+  <link rel="next" href="promise-api.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <script>
+class HttpError extends Error {
+  constructor(response) {
+    super(`${response.status} for ${response.url}`);
+    this.name = 'HttpError';
+    this.response = response;
+  }
+}
+
+function loadJson(url) {
+  return fetch(url)
+    .then(response => {
+      if (response.status == 200) {
+        return response.json();
+      } else {
+        throw new HttpError(response);
+      }
+    })
+}
+</script> 
+  <style>
+.promise-avatar-example {
+  border-radius: 50%;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}
+</style> 
+  <meta property="og:title" content="Penanganan error dengan promise"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-error-handling" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpromise-error-handling" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="78" max="92" data-tooltip="Pelajaran 78 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="async.html"><span>Promises, async/await</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Promises, async/await","item":"https://id.javascript.info/async"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Penanganan error dengan promise</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Penanganan error dengan promise"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Chain promise bagus dalam penanganan <em>error</em>. ketika sebuah promise me-reject, kontrolnya melompat ke handler rejection terdekat. Itu sangat nyaman dalam praktiknya.</p> 
+         <p>Sebagai contoh, kode di bawah sebuah URL ke <code>fetch</code> itu salah (tidak ada situs seperti itu) dan <code>.catch</code> menangani error tersebut:</p> 
+         <div id="lr9dd1ucip" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fetch('https://no-such-server.blabla') // reject
+  .then(response =&gt; response.json())
+  .catch(err =&gt; alert(err)) // TypeError: failed to fetch (gagal mengambil resourse, error yang dihasilkan mungkin berbeda)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang anda lihat, <code>.catch</code> tidak harus segera. <code>.catch</code> mungkin muncul setelah satu atau mungkin beberapa <code>.then</code>.</p> 
+         <p>Atau, mungkin, semuanya baik-baik saja dengan situs tersebut, tetapi response-nya bukan JSON yang valid. Cara termudah untuk catch semua <em>error</em> adalah menambahkan <code>.catch</code> pada akhiran chain:</p> 
+         <div id="ok8sw79r60" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:15}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>fetch('/article/promise-chaining/user.json')
+  .then(response =&gt; response.json())
+  .then(user =&gt; fetch(`https://api.github.com/users/${user.name}`))
+  .then(response =&gt; response.json())
+  .then(githubUser =&gt; new Promise((resolve, reject) =&gt; {
+    let img = document.createElement('img');
+    img.src = githubUser.avatar_url;
+    img.className = "promise-avatar-example";
+    document.body.append(img);
+
+    setTimeout(() =&gt; {
+      img.remove();
+      resolve(githubUser);
+    }, 3000);
+  }))
+  .catch(error =&gt; alert(error.message));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Biasanya, <code>.catch</code> semacam itu tidak memicu sama sekali. Tetapi jika salah satu promise di atas me-reject (sebuah masalah jaringan atau json yang tidak valid atau apapun itu), maka promise tersebut akan meng-catch-nya.</p> 
+         <h2><a class="main__anchor" name="try-catch-implisit" href="promise-error-handling.html#try-catch-implisit">try???catch implisit</a></h2> 
+         <p>Kode dari sebuah eksekutor promise dan handler promise memiliki "<code>try..catch</code> yang tak terlihat" di sekitarnya. Jika terjadi pengecualian, maka pengecualian itu tertangkap dan diperlakukan sebagai rejection.</p> 
+         <p>Sebagai contoh, kode ini:</p> 
+         <div id="mdi5d0z926" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>new Promise((resolve, reject) =&gt; {
+  throw new Error("Whoops!");
+}).catch(alert); // Error: Whoops!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Bekerja persis sama seperti ini:</p> 
+         <div id="7uo0l5gjqp" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>new Promise((resolve, reject) =&gt; {
+  reject(new Error("Whoops!"));
+}).catch(alert); // Error: Whoops!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>"<code>try..catch</code> yang tak terlihat" di sekitar eksekutor secara otomatis menangkap <em>error</em> dan mengubahnya menjadi promise yang direject.</p> 
+         <p>Ini terjadi bukan hanya di dalam function eksekutor saja, tetapi di handler-nya juga. Jika kita <code>throw</code> dalam handler <code>.then</code>, itu artinya sebuah promise yang direject, jadi kontrolnya melompat ke handler error terdekat.</p> 
+         <p>Ini contohnya:</p> 
+         <div id="726todmyw1" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>new Promise((resolve, reject) =&gt; {
+  resolve("ok");
+}).then((result) =&gt; {
+  throw new Error("Whoops!"); // reject promise tersebut
+}).catch(alert); // Error: Whoops!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ini terjadi pada semua <em>error</em>, tidak hanya disebabkan oleh pernyataan <code>throw</code>. Sebagai contoh, sebuah <em>error</em> pemrograman:</p> 
+         <div id="1ekqc5lz2q" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>new Promise((resolve, reject) =&gt; {
+  resolve("ok");
+}).then((result) =&gt; {
+  blabla(); // tidak ada fungsi seperti ini
+}).catch(alert); // ReferenceError: blabla is not defined (blabla tidak terdefinisi)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>.catch</code> terakhir tidak hanya meng-catch rejection secara ekplisit, tetapi juga sesekali <em>error</em> dalam handler di atas.</p> 
+         <h2><a class="main__anchor" name="melempar-kembali" href="promise-error-handling.html#melempar-kembali">Melempar kembali</a></h2> 
+         <p>Seperti yang sudah kita perhatikan, <code>.catch</code> di akhir chain mirip dengan <code>try..catch</code>. Kita bisa saja memiliki sebanyak mungkin handler <code>.then</code> seperti yang kita inginkan, dan kemudian menggunakan satu <code>.catch</code> di akhir untuk menangani <em>error</em> di semuanya.</p> 
+         <p>Di dalam <code>try..catch</code> biasa kita dapat menganalisis <em>error</em> nya dan mungkin melemparkannya kembali jika tidak bisa ditangani. Hal yang sama mungkin untuk promise.</p> 
+         <p>Jika kita <code>throw</code> di dalam <code>.catch</code>, kemudian kontrolnya mengarah ke handler <em>error</em> terdekat selanjutnya. Dan jika kita menangani <em>error</em> dan selesai dengan normal, kemudian berlanjut ke handler <code>.then</code> sukses terdekat berikutnya.</p> 
+         <p>Pada contoh di bawah ini <code>.catch</code> sukses menangani <em>error</em>:</p> 
+         <div id="i5feohkvke" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// eksekusi: catch -&gt; then
+new Promise((resolve, reject) =&gt; {
+  throw new Error("Whoops!");
+})
+  .catch(function (error) {
+    alert("The error is handled, continue normally");
+  })
+  .then(() =&gt; alert("Next successful handler runs"));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini blok <code>.catch</code> selesai secara normal. Jadi handler <code>.then</code> yang sukses selanjutnya dipanggil.</p> 
+         <p>Pada contoh di bawah ini kita lihat situasi lain dengan <code>.catch</code>. Handler <code>(*)</code> menangkap <em>error</em> dan tidak bisa mengatasinya (misalnya hanya tahu bagaimana menangani <code>URIError</code>), jadi <em>error</em>-nya dilempar lagi:</p> 
+         <div id="th8i3x2qjo" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:12}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// eksekusi: catch -&gt; catch -&gt; then
+new Promise((resolve, reject) =&gt; {
+
+  throw new Error("Whoops!");
+
+}).catch(function(error) { // (*)
+
+  if (error instanceof URIError) {
+    // tangani di sini
+  } else {
+    alert("Can't handle such error");
+
+    throw error; // lemparkan ini atau error lain melompat ke catch selanjutnya
+  }
+
+}).then(function() {
+  /* tidak berjalan di sini */
+}).catch(error =&gt; { // (**)
+
+  alert(`The unknown error has occurred: ${error}`);
+  // tidak mengembalikkan apapun =&gt; eksekusi berjalan normal
+
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Eksekusi tersebut melompat dari <code>.catch</code> <code>(*)</code> pertama ke yang selanjutnya <code>(**)</code> menuruni chain.</p> 
+         <h2><a class="main__anchor" name="rejection-yang-tidak-tertangani" href="promise-error-handling.html#rejection-yang-tidak-tertangani">Rejection yang tidak tertangani</a></h2> 
+         <p>Apa yang terjadi ketika sebuah <em>error</em> tidak ditangani? Sebagai contoh, kita lupa untuk menambahkan <code>.catch</code> ke akhir chain, seperti ini:</p> 
+         <div id="4ezlgl6h3c" data-trusted="0" class="code-example" data-refresh="1"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>new Promise(function () {
+  noSuchFunction(); // Error di sini (tidak ada function seperti itu)
+}).then(() =&gt; {
+  //  handler promise yang sukses, satu atau lebih
+}); // tanpa .catch di akhir!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika terjadi <em>error</em>, promise jadi direject, dan eksekusi harus melompat ke handler penolakan terdekat. Tapi tidak ada. Jadi <em>error</em>-nya ???stuck???. Tidak ada kode untuk menangani-nya.</p> 
+         <p>Dalam prakteknya, seperti <em>error</em> biasa yang tidak tertangani dalam kode, itu berarti ada sesuatu yang tidak beres.</p> 
+         <p>Apa yang terjadi ketika sebuah <em>error</em> biasa muncul dan tidak tertangkap oleh <code>try..catch</code>? script-nya mati dengan sebuah pesan di console. Sesuatu yang mirip terjadi dengan rejection promise yang tidak tertangani.</p> 
+         <p>Mesin JavaScript melacak rejection tersebut dan menghasilkan <em>error</em> global dalam kasus itu. Anda dapat melihatnya di console jika anda menjalankan contoh di atas.</p> 
+         <p>Di dalam peramban kita dapat meng-catch kesalahan tersebut menggunakan event <code>unhandledrejection</code>:</p> 
+         <div id="q8w7gxgzrm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>window.addEventListener('unhandledrejection', function(event) {
+  // object event tersebut memiliki dua properti spesial:
+  alert(event.promise); // [object Promise] - promise yang menghasilkan error
+  alert(event.reason); // Error: Whoops! - object error yang tidak tertangani
+});
+
+new Promise(function() {
+  throw new Error("Whoops!");
+}); // tidak ada catch untuk menangani error</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Event tersebut adalah bagian dari <a href="https://html.spec.whatwg.org/multipage/webappapis.html#unhandled-promise-rejections">standar HTML</a>.</p> 
+         <p>Jika sebuah <em>error</em> muncul, dan di sana tidak ada <code>.catch</code>, handler <code>unhandledrejection</code> terpicu, dan mendapatkan object <code>event</code> dengan informasi tentang <em>error</em>, jadi kita dapat melakukan sesuatu.</p> 
+         <p>Biasanya <em>error</em> seperti itu tidak dapat dipulihkan, jadi jalan keluar terbaik kita adalah memberi tahu pengguna tentang masalah dan mungkin melaporkan insiden tersebut ke server.</p> 
+         <p>Di dalam lingkungan non-peramban seperti Node.js di sana ada cara lain untuk melacak <em>error</em> yang tak tertangani.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="promise-error-handling.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li><code>.catch</code> menangani <em>error</em> di segala macam promise: baik itu panggilan <code>reject()</code>, atau sebuah <em>error</em> yang dilemparkan di dalam handler.</li> 
+          <li>Kita harus meletakkan <code>.catch</code> tepat di tempat dimana kita ingin menangani <em>error</em> dan tahu bagaimana untuk menangani <em>error-error</em> tersebut. Handler harus menganalisa <em>error</em> (bantuan class <em>error</em> khusus) dan melemparkan kembali yang tidak diketahui (mungkin itu adalah kesalahan pemrograman).</li> 
+          <li>Ok untuk tidak menggunakan <code>.catch</code> sama sekali, jika tidak ada cara untuk memulihkan dari kesalahan.</li> 
+          <li>Bagaimanapun kita harus memiliki handler event <code>unhandledrejection</code> (untuk peramban,dan analog untuk lingkungan lainnya), untuk melacak <em>error</em> yang tak tertangani dan memberi tahu pengguna (dan mungkin server kita) tentang <em>error-error</em> tersebut, jadi aplikasi kita tidak pernah ???mati begitu saja???.</li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="promise-error-handling.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="promise-error-handling.html#error-di-dalam-settimeout" name="error-di-dalam-settimeout">Error di dalam setTimeout</a></h3> 
+           <a class="task__open-link" href="task/error-async.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apa yang anda pikirkan? Akankan <code>.catch</code> terpicu? Jelaskan jawaban anda.</p> 
+            <div id="szd0e89lzf" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>new Promise(function (resolve, reject) {
+  setTimeout(() =&gt; {
+    throw new Error("Whoops!");
+  }, 1000);
+}).catch(alert);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya adalah: <strong>tidak, tidak terpicu</strong>:</p> 
+              <div id="gm00psiijg" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="promise-error-handling.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="promise-error-handling.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>new Promise(function (resolve, reject) {
+  setTimeout(() =&gt; {
+    throw new Error("Whoops!");
+  }, 1000);
+}).catch(alert);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Seperti yang dikatakan di bab, ada sebuah "<code>try..catch</code> implisit" di sekitar kode function. jadi semua error synchronous ditangani.</p> 
+              <p>Tetapi di sini error tersebut tidak dihasilkan saat eksekutornya berjalan, tapi nanti. Jadi promise tidak dapat menanganinya.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="promise-chaining.html" data-tooltip="Promises chaining"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="promise-api.html" data-tooltip="API Promise"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-error-handling" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpromise-error-handling" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async.html">Promises, async/await</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-error-handling.html#try-catch-implisit">try???catch implisit</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-error-handling.html#melempar-kembali">Melempar kembali</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-error-handling.html#rejection-yang-tidak-tertangani">Rejection yang tidak tertangani</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-error-handling.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-error-handling.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="promise-error-handling.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpromise-error-handling" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fpromise-error-handling" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Operator penggabungan nullish '??'</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="nullish-coalescing-operator.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Operator penggabungan nullish '??'"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Operator penggabungan nullish '??'"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="logical-operators.html"> 
+  <link rel="next" href="while-for.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Operator penggabungan nullish '??'"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fnullish-coalescing-operator" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fnullish-coalescing-operator" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="16" max="92" data-tooltip="Pelajaran 16 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="first-steps.html"><span>JavaScript Dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"JavaScript Dasar","item":"https://id.javascript.info/first-steps"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Operator penggabungan nullish '??'</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Operator penggabungan nullish '??'"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>[browser terbaru=???baru???]</p> 
+         <p>Operator penggabungan nullish ditulis sebagai dua tanda tanya <code>??</code>.</p> 
+         <p>Karena memperlakukan <code>null</code> dan <code>undefined</code> sama, kita akan menggunakan istilah khusus di sini, di artikel ini. Kami akan mengatakan bahwa ekspresi adalah ???didefinisikan??? ketika itu bukan <code>null</code> atau <code>undefined</code>.</p> 
+         <p>Hasil dari <code>a?? b</code> adalah:</p> 
+         <ul> 
+          <li>jika <code>a</code> didefinisikan, maka <code>a</code>,</li> 
+          <li>jika <code>a</code> tidak didefinisikan, maka <code>b</code>.</li> 
+         </ul> 
+         <p>Dengan kata lain, <code>??</code> mengembalikan argumen pertama jika bukan <code>null/undefined</code>. Kalau tidak, yang kedua.</p> 
+         <p>Operator penggabungan nullish bukanlah sesuatu yang benar-benar baru. Ini hanya sintaks yang bagus untuk mendapatkan nilai ???didefinisikan??? pertama dari keduanya.</p> 
+         <p>Kita dapat menulis ulang <code>result = a ?? b</code> menggunakan operator yang sudah kita kenal, seperti ini:</p> 
+         <div id="npehu9ilrw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>result = (a !== null &amp;&amp; a !== undefined) ? a : b;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang harus benar-benar jelas apa yang dilakukan <code>??</code>. Mari kita lihat di mana itu membantu.</p> 
+         <p>Kasus penggunaan umum untuk <code>??</code> adalah memberikan nilai default untuk variabel yang berpotensi tidak terdefinisi.</p> 
+         <p>Misalnya, di sini kami menampilkan <code>pengguna</code> jika didefinisikan, jika tidak <code>Anonim</code>:</p> 
+         <div id="cuod9neia0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>biarkan pengguna;
+
+alert(pengguna ?? "Anonim"); // Anonim (pengguna tidak ditentukan)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Berikut ini contoh dengan <code>pengguna</code> ditetapkan ke sebuah nama:</p> 
+         <div id="dtb3fypdi8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>biarkan pengguna = "John";
+
+alert(pengguna ?? "Anonim"); // John (ditentukan pengguna)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga dapat menggunakan urutan <code>??</code> untuk memilih nilai pertama dari daftar yang bukan <code>null/undefined</code>.</p> 
+         <p>Katakanlah kita memiliki data pengguna dalam variabel <code>FirstName</code>, <code>lastName</code> atau <code>nickName</code>. Semuanya mungkin tidak ditentukan, jika pengguna memutuskan untuk tidak memasukkan nilai.</p> 
+         <p>Kami ingin menampilkan nama pengguna menggunakan salah satu variabel ini, atau menampilkan ???Anonim??? jika semuanya tidak ditentukan.</p> 
+         <p>Mari kita gunakan operator <code>??</code> untuk itu:</p> 
+         <div id="h7d9sua69e" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>biarkan namadepan = null;
+biarkan namabelakang = null;
+biarkan nickName = "Supercoder";
+
+// menunjukkan nilai yang ditentukan pertama:
+alert(FirstName ?? LastName ?? nickName ?? "Anonim"); // kode super</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="perbandingan-dengan" href="nullish-coalescing-operator.html#perbandingan-dengan">Perbandingan dengan ||</a></h2> 
+         <p>Operator OR <code>||</code> dapat digunakan dengan cara yang sama seperti <code>??</code>, seperti yang dijelaskan di <a href="logical-operators.html#or-finds-the-first-truthy-value">bab sebelumnya</a>.</p> 
+         <p>Misalnya, pada kode di atas kita dapat mengganti <code>??</code> dengan <code>||</code> dan tetap mendapatkan hasil yang sama:</p> 
+         <div id="cj55hzv3mt" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>biarkan namadepan = null;
+biarkan namabelakang = null;
+biarkan nickName = "Supercoder";
+
+// menunjukkan nilai kebenaran pertama:
+alert(Namadepan || Nama Belakang || Nama Panggilan || "Anonim"); // kode super</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Secara historis, operator OR <code>||</code> ada terlebih dahulu. Itu ada sejak awal JavaScript, jadi pengembang menggunakannya untuk tujuan seperti itu untuk waktu yang lama.</p> 
+         <p>Di sisi lain, operator penggabungan nullish <code>??</code> baru saja ditambahkan ke JavaScript, dan alasannya adalah karena orang-orang tidak terlalu senang dengan <code>||</code>.</p> 
+         <p>Perbedaan penting di antara mereka adalah bahwa:</p> 
+         <ul> 
+          <li><code>||</code> mengembalikan nilai <em>truth</em> pertama.</li> 
+          <li><code>??</code> mengembalikan nilai <em>yang ditentukan</em> pertama.</li> 
+         </ul> 
+         <p>Dengan kata lain, <code>||</code> tidak membedakan antara <code>false</code>, <code>0</code>, string kosong <code>""</code> dan <code>null/undefined</code>. Semuanya sama ??? nilai yang salah. Jika salah satu dari ini adalah argumen pertama dari <code>||</code>, maka kita akan mendapatkan argumen kedua sebagai hasilnya.</p> 
+         <p>Namun dalam praktiknya, kita mungkin ingin menggunakan nilai default hanya jika variabelnya <code>null/undefined</code>. Artinya, ketika nilainya benar-benar tidak diketahui/tidak disetel.</p> 
+         <p>Misalnya, pertimbangkan ini:</p> 
+         <div id="y2zqoywzbu" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>misalkan tinggi = 0;
+
+waspada(tinggi || 100); // 100
+waspada (tinggi ?? 100); // 0</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <ul> 
+          <li><code>tinggi || 100</code> memeriksa <code>height</code> sebagai nilai yang salah, dan itu adalah <code>0</code>, memang salah. 
+           <ul> 
+            <li>jadi hasil dari <code>||</code> adalah argumen kedua, <code>100</code>.</li> 
+           </ul> </li> 
+          <li><code>tinggi ?? 100</code> memeriksa <code>height</code> sebagai <code>null/undefined</code>, dan bukan, 
+           <ul> 
+            <li>jadi hasilnya adalah <code>height</code> ???sebagaimana adanya???, yaitu <code>0</code>.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>Dalam praktiknya, ketinggian nol seringkali merupakan nilai yang valid, yang tidak boleh diganti dengan default. Jadi <code>??</code> melakukan hal yang benar.</p> 
+         <h2><a class="main__anchor" name="prioritas" href="nullish-coalescing-operator.html#prioritas">Prioritas</a></h2> 
+         <p>Prioritas operator <code>??</code> hampir sama dengan <code>||</code>, hanya sedikit lebih rendah. Ini sama dengan <code>5</code> di <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table">tabel MDN</a>, sedangkan <code>||</code> adalah <code>6</code> .</p> 
+         <p>Artinya, seperti halnya <code>||</code>, operator penggabungan nullish <code>??</code> dievaluasi sebelum <code>=</code> dan <code>?</code>, tetapi setelah sebagian besar operasi lain, seperti <code>+</code>, <code>*</code>.</p> 
+         <p>Jadi, jika kita ingin memilih nilai dengan <code>??</code> dalam ekspresi dengan operator lain, pertimbangkan untuk menambahkan tanda kurung:</p> 
+         <div id="ztm54tv1ah" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>biarkan tinggi = nol;
+biarkan lebar = nol;
+
+// penting: gunakan tanda kurung
+biarkan luas = (tinggi ?? 100) * (lebar ?? 50);
+
+waspada (daerah); // 5000</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika tidak, jika kita menghilangkan tanda kurung, maka karena <code>*</code> memiliki prioritas yang lebih tinggi daripada <code>??</code>, tanda kurung akan dieksekusi terlebih dahulu, sehingga menghasilkan hasil yang salah.</p> 
+         <div id="d97ufe3cnr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// tanpa tanda kurung
+misal luas = tinggi?? 100 * lebar ?? 50;
+
+// ...berfungsi sama seperti ini (mungkin bukan yang kita inginkan):
+misal luas = tinggi?? (100 * lebar) ?? 50;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="menggunakan-dengan-atau" href="nullish-coalescing-operator.html#menggunakan-dengan-atau">Menggunakan ?? dengan &amp;&amp; atau ||</a></h3> 
+         <p>Karena alasan keamanan, JavaScript melarang penggunaan <code>??</code> bersama dengan operator <code>&amp;&amp;</code> dan <code>||</code>, kecuali jika prioritas secara eksplisit ditentukan dengan tanda kurung.</p> 
+         <p>Kode di bawah ini memicu kesalahan sintaks:</p> 
+         <div id="6qqzy2d2yj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>misalkan x = 1 &amp;&amp; 2 ?? 3; // Kesalahan sintaks</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Batasan ini tentu masih bisa diperdebatkan, hal itu ditambahkan ke spesifikasi bahasa dengan tujuan untuk menghindari kesalahan pemrograman, ketika orang mulai beralih dari <code>||</code> ke <code>??</code>.</p> 
+         <p>Gunakan tanda kurung eksplisit untuk mengatasinya:</p> 
+         <div id="584mnq2gtj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>misalkan x = (1 &amp;&amp; 2) ?? 3; // Bekerja
+
+waspada(x); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="nullish-coalescing-operator.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li> <p>Operator penggabungan nullish <code>??</code> menyediakan cara singkat untuk memilih nilai ???ditentukan??? pertama dari daftar.</p> <p>Ini digunakan untuk menetapkan nilai default ke variabel:</p> 
+           <div id="3hlxf512id" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// atur tinggi=100, jika tinggi nol atau tidak terdefinisi
+tinggi = tinggi?? 100;</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Operator <code>??</code> memiliki prioritas yang sangat rendah, hanya sedikit lebih tinggi dari <code>?</code> dan <code>=</code>, jadi pertimbangkan untuk menambahkan tanda kurung saat menggunakannya dalam ekspresi.</p> </li> 
+          <li> <p>Dilarang menggunakannya dengan <code>||</code> atau <code>&amp;&amp;</code> tanpa tanda kurung eksplisit.</p> </li> 
+         </ul> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="logical-operators.html" data-tooltip="Operator logika"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="while-for.html" data-tooltip="Perulangan: while dan for"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fnullish-coalescing-operator" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fnullish-coalescing-operator" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="first-steps.html">JavaScript Dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="nullish-coalescing-operator.html#perbandingan-dengan">Perbandingan dengan ||</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="nullish-coalescing-operator.html#prioritas">Prioritas</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="nullish-coalescing-operator.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="nullish-coalescing-operator.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fnullish-coalescing-operator" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fnullish-coalescing-operator" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Properti getter and setter</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="property-accessors.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Properti getter and setter"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Properti getter and setter"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="property-descriptors.html"> 
+  <link rel="next" href="prototypes.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Properti getter and setter"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fproperty-accessors" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fproperty-accessors" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="61" max="92" data-tooltip="Pelajaran 61 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="object-properties.html"><span>Object properties configuration</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Object properties configuration","item":"https://id.javascript.info/object-properties"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 21 September 2020"> 
+          <div class="updated-at__content">
+            21 September 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Properti getter and setter</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Properti getter and setter"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Terdapat dua jenis properti objek.</p> 
+         <p>Yang pertama adalah <em>properti data</em>. Kita telah mengetahui bagaimana cara kerja mereka. Semua properti yang kita gunakan sampai sekarang adalah properti data.</p> 
+         <p>Yang kedua adalah properti yang bisa dibilang cukup baru. Properti itu adalah <em>properti aksesor</em>. Mereka sebenarnya adalah fungsi untuk mendapatkan dan mengatur sebuah nilai, tapi mereka mirip seperti properti biasa pada kode eksternal.</p> 
+         <h2><a class="main__anchor" name="getter-dan-setter" href="property-accessors.html#getter-dan-setter">Getter dan setter</a></h2> 
+         <p>Properti aksesor diwakili dengan method ???getter??? dan ???setter???. Didalam objek literal mereka dilambangkan dengan <code>get</code> dan <code>set</code>:</p> 
+         <div id="i2bvj32aiy" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;cols&quot;:[{&quot;start&quot;:2,&quot;end&quot;:21}]},{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:2,&quot;end&quot;:16}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let obj = {
+  get propName() {
+    // getter, kode dijalankan untuk mendapat obj.propName
+  },
+
+  set propName(value) {
+    // setter, kode dijalankan untuk mengatur obj.propName = value
+  }
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Getter bekerja ketika <code>obj.propName</code> terbaca, sedangkan setter ??? ketika variabel itu ditetapkan.</p> 
+         <p>Sebagai contoh, kita memiliki sebuah objek <code>user</code> dengan <code>name</code> dan <code>surname</code> (nama variabel):</p> 
+         <div id="nvb8t4bixa" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  surname: "Smith"
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang kita ingin untuk menambahkan sebuah properti <code>fullName</code>, yang berisi <code>"John Smith"</code>. kita tidak ingin untuk melakukan penyalinan terhadap informasi yang sudah ada, melainkan kita bisa menerapakan sebuah aksesor:</p> 
+         <div id="qfhrxtvlgk" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:9},{&quot;start&quot;:4,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  surname: "Smith",
+
+  get fullName() {
+    return `${this.name} ${this.surname}`;
+  }
+};
+
+alert(user.fullName); // John Smith</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dari luar, properti aksesor tampak seperti variabel pada umumnya. Itulah ide dari properti aksesor. Kita tidak <em>memanggil</em> <code>user.fullName</code> melaui fungsi, Namun kita <em>membacanya</em> secara biasa: properti getter berjalan di belakang layar.</p> 
+         <p>Sekarang, <code>fullName</code> memiliki sebuah properti getter. Jika kita mencoba untuk menetapkan value lain pada <code>user.fulName=</code>, maka akan terjadi eror:</p> 
+         <div id="ctupk77b5z" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  get fullName() {
+    return `...`;
+  }
+};
+
+user.fullName = "Test"; // Error (property has only a getter)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mari kita perbaiki dengan menambahkan setter untuk <code>user.fullName</code>:</p> 
+         <div id="oaxtdsjcqq" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  surname: "Smith",
+
+  get fullName() {
+    return `${this.name} ${this.surname}`;
+  },
+
+  set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
+  }
+};
+
+// variabel fullName dijalankan dengan value ditetapkan.
+user.fullName = "Alice Cooper";
+
+alert(user.name); // Alice
+alert(user.surname); // Cooper</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Alhasil, kita memiliki sebuah properti virtual <code>fullname</code>. Yang bisa di baca dan diatur nilainya.</p> 
+         <h2><a class="main__anchor" name="deskriptor-aksesor" href="property-accessors.html#deskriptor-aksesor">Deskriptor aksesor</a></h2> 
+         <p>Deskriptor untuk properti aksesor berbeda dengan yang ada di dalam properti data.</p> 
+         <p>Untuk properti aksesor, tidak ada <code>nilai</code> atau <code>pengaturan</code> dalam properti aksesor, melainkan digantikan dengan fungsi <code>get</code> dan <code>set</code>.</p> 
+         <p>Yang berarti, deskriptor aksesor mungkin memiliki:</p> 
+         <ul> 
+          <li><strong><code>get</code></strong> ??? sebuah fungsi tanpa argument, yang bekerja ketika properti dibaca,</li> 
+          <li><strong><code>set</code></strong> ??? sebuah fungsi dengan satu argumen, yang dipanggil ketika properti itu ditetapkan,</li> 
+          <li><strong><code>enumerable</code></strong> ??? sama seperti pada properti data,</li> 
+          <li><strong><code>configurable</code></strong> ??? sama seperti pada properti data.</li> 
+         </ul> 
+         <p>Sebagai contoh, untuk membuat sebuah aksesor <code>fullName</code> dengan <code>defineProperty</code>, kita dapat membawa sebuah deskriptor dengan <code>get</code> dan <code>set</code>:</p> 
+         <div id="fjbp3n10fl" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:12}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  surname: "Smith"
+};
+
+Object.defineProperty(user, 'fullName', {
+  get() {
+    return `${this.name} ${this.surname}`;
+  },
+
+  set(value) {
+    [this.name, this.surname] = value.split(" ");
+  }
+});
+
+alert(user.fullName); // John Smith
+
+for(let key in user) alert(key); // name, surname</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perlu diperhatikan bahwa sebuah properti bisa jadi adalah sebuah properti aksesor(memiliki method <code>get/set</code>) atau sebuah properti data(hanya memiliki sebuah <code>nilai</code>), namun tidak keduanya.</p> 
+         <p>Jika kita mencoba untuk menyediakan <code>get</code> dan <code>value</code> pada satu deskriptor yang sama, maka akan terjadi eror.</p> 
+         <div id="sj2bamxv6w" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// Error: Invalid property descriptor.
+Object.defineProperty({}, 'prop', {
+  get() {
+    return 1
+  },
+
+  value: 2
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="getter-setter-yang-lebih-baik" href="property-accessors.html#getter-setter-yang-lebih-baik">getter/setter yang lebih baik</a></h2> 
+         <p>Getter/setter dapat digunakan sebagai wrapper pada properti <code>asli</code>(bukan aksesor) untuk mendapatkan akses kontrol lebih terkait pengoperasian dengan mereka.</p> 
+         <p>Sebagai contoh, jika kita ingin untuk melarang penamaan yang terlalu singkat untuk <code>user</code>, kita dapat memiliki sebuah setter <code>name</code> dan menjaga nilainya pada properti yang terpisah <code>_name</code>:</p> 
+         <div id="dgq3byj2f4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  get name() {
+    return this._name;
+  },
+
+  set name(value) {
+    if (value.length &lt; 4) {
+      alert("Name is too short, need at least 4 characters");
+      return;
+    }
+    this._name = value;
+  }
+};
+
+user.name = "Pete";
+alert(user.name); // Pete
+
+user.name = ""; // Name is too short...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, variabel name tersebut disimpan pada properti <code>_name</code>, yang aksesnya dapat melalui getter dan setter.</p> 
+         <p>Secara teknis, kode eksternal bisa aja mengakses variabel nama secara langsung dengan menggunakan <code>user._name</code>. Tapi sudah menjadi rahasia umum bahwa properti yang diawali dengan underscore <code>"_"</code> adalah internal variabel yang seharusnya tidak boleh diakses dari luar.</p> 
+         <h2><a class="main__anchor" name="penggunaan-kompabilitas" href="property-accessors.html#penggunaan-kompabilitas">Penggunaan kompabilitas</a></h2> 
+         <p>Salah satu kegunaan besar properti aksesor adalah mereka memperbolehkan kita untuk mengontrol properti data <code>biasa</code> untuk menggantinya pada suatu waktu, dengan sebuah setter dan getter, serta mengubah perilakunya.</p> 
+         <p>Bayangkan kita mulai dengan implementasi objek user menggunakan properti <code>name</code> dan <code>age</code>.</p> 
+         <div id="yu1u5qgbzx" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function User(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+let john = new User("John", 25);
+
+alert( john.age ); // 25</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Tapi cepat atau lambat, sesuatu mungkin berubah. Alih-alih menggunakan <code>age</code> kita mungkin memutuskan untuk menyimpan <code>birthday</code>, karena mungkin itu lebih tepat dan sesuai:</p> 
+         <div id="996b6zzsty" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function User(name, birthday) {
+  this.name = name;
+  this.birthday = birthday;
+}
+
+let john = new User("John", new Date(1992, 6, 1));</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang apa yang akan kita lakukan terhadap kode lama yang masih menggunakan properti<code>age</code>?</p> 
+         <p>Kita dapat mencoba untuk mencarinya disemua tempat dan memperbaiki nya, tapi itu akan memakan waktu yang lama dan susah jika kode itu digunakan oleh banyak orang. selain itu, properti <code>age</code> adalah sesuatu yang bagus dimiliki oleh user, kan ?</p> 
+         <p>Tetaplah menjaganya.</p> 
+         <p>Menambahkan sebuah getter pada <code>age</code> menyelesaikan permasalahan.</p> 
+         <div id="rg6ucuva8q" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="property-accessors.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function User(name, birthday) {
+  this.name = name;
+  this.birthday = birthday;
+
+  // variabel age dihitung berdasarkan tanggal sekarang dan tanggal lahirnya
+  Object.defineProperty(this, "age", {
+    get() {
+      let todayYear = new Date().getFullYear();
+      return todayYear - this.birthday.getFullYear();
+    }
+  });
+}
+
+let john = new User("John", new Date(1992, 6, 1));
+
+alert( john.birthday ); // properti birthday tersedia
+alert( john.age );      // ...begitu juga dengan age</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang kode yang lama bisa bekerja dan kita memiliki tambahan properti yang bagus.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="property-descriptors.html" data-tooltip="Properti flag dan Deskriptor"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="prototypes.html" data-tooltip="Prototypes, inheritance"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fproperty-accessors" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fproperty-accessors" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-properties.html">Object properties configuration</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="property-accessors.html#getter-dan-setter">Getter dan setter</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="property-accessors.html#deskriptor-aksesor">Deskriptor aksesor</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="property-accessors.html#getter-setter-yang-lebih-baik">getter/setter yang lebih baik</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="property-accessors.html#penggunaan-kompabilitas">Penggunaan kompabilitas</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="property-accessors.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fproperty-accessors" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fproperty-accessors" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

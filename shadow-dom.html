@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Shadow DOM</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="shadow-dom.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Shadow DOM"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Shadow DOM"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="custom-elements.html"> 
+  <link rel="next" href="template-element.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Shadow DOM"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="3" max="7" data-tooltip="Pelajaran 3 dari 7"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="web-components.html"><span>Web components</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Web components","item":"https://id.javascript.info/web-components"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 11 Oktober 2020"> 
+          <div class="updated-at__content">
+            11 Oktober 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Shadow DOM</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Shadow DOM"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Shadow DOM berfungsi untuk enkapsulasi. Ia memungkinkan sebuah komponen memiliki pohon DOM ???bayangan??? sendiri, yang tidak dapat diakses secara tidak sengaja dari dokumen utama, memungkinkan untuk memiliki aturan gaya secara lokal, dan banyak lagi.</p> 
+         <h2><a class="main__anchor" name="built-in-shadow-dom" href="shadow-dom.html#built-in-shadow-dom">Built-in shadow DOM</a></h2> 
+         <p>Pernahkah anda berpikir betapa rumitnya kontrol browser dibuat dan ditata?</p> 
+         <p>Seperti <code>&lt;input type="range"&gt;</code>:</p> 
+         <p> <input type="range"> </p> 
+         <p>Browser menggunakan DOM / CSS secara internal untuk menggambarnya. Struktur DOM itu biasanya tersembunyi dari kita, tetapi kita dapat melihatnya di alat pengembang. Misalnya, di Chrome, kita perlu mengaktifkan di Dev Tools opsi ???Show user agent shadow DOM???.</p> 
+         <p>Kemudian <code>&lt;input type ="range"&gt;</code> terlihat seperti ini:</p> 
+         <div class="markdown-error">
+           Gambar "/article/shadow-dom/shadow-dom-range.png" rusak 
+         </div> 
+         <p>Apa yang anda lihat di bawah <code>#shadow-root</code> disebut ???shadow DOM???.</p> 
+         <p>Kita tidak bisa mendapatkan elemen shadow DOM bawaan dengan panggilan atau <em>selectors</em> JavaScript biasa. Ini bukan anak biasa, tetapi teknik enkapsulasi yang kuat.</p> 
+         <p>Dalam contoh di atas, kita dapat melihat atribut yang berguna yaitu <code>pseudo</code>. Ini non-standar, ada karena alasan historis. Kita dapat menggunakannya untuk memberi gaya pada subelemen dengan CSS, seperti ini:</p> 
+         <div id="1r5hl58y4t" data-trusted="1" class="code-example" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+/* make the slider track red */
+input::-webkit-slider-runnable-track {
+  background: red;
+}
+&lt;/style&gt;
+
+&lt;input type="range"&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-1r5hl58y4t" style="height:200px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Sekali lagi, <code>pseudo</code> adalah atribut non-standar. Secara kronologis, browser pertama kali mulai bereksperimen dengan struktur DOM internal untuk mengimplementasikan kontrol, dan kemudian, setelah beberapa waktu, shadow DOM distandarisasi untuk memungkinkan kami, pengembang, melakukan hal serupa.</p> 
+         <p>Selanjutnya, kita akan menggunakan standar shadow DOM modern, yang dicakup oleh <a href="https://dom.spec.whatwg.org/#shadow-trees">DOM Spec</a> terkait spesifikasi lainnya.</p> 
+         <h2><a class="main__anchor" name="shadow-tree" href="shadow-dom.html#shadow-tree">Shadow tree</a></h2> 
+         <p>Elemen DOM dapat memiliki dua jenis subpohon DOM:</p> 
+         <ol> 
+          <li>Light tree ??? subpohon DOM biasa, terbuat dari anak-anak HTML. Semua subpohon yang telah kita lihat di bab sebelumnya adalah termasuk ???light???.</li> 
+          <li>Shadow tree ??? subpohon DOM tersembunyi, tidak tercetak dalam HTML, tersembunyi dari mata-mata.</li> 
+         </ol> 
+         <p>Jika sebuah elemen memiliki keduanya, browser hanya akan merender shadow tree. Tapi kita bisa mengatur semacam komposisi antara shadow dan light tree juga. Kita akan melihat detailnya nanti di bab <a href="slots-composition.html">Slot shadow DOM, komposisi</a>.</p> 
+         <p>Shadow tree dapat digunakan di Elemen Kustom untuk menyembunyikan internal komponen dan menerapkan gaya lokal-komponen.</p> 
+         <p>Misalnya, elemen <code>&lt;show-hello&gt;</code> ini menyembunyikan DOM internalnya di pohon bayangan:</p> 
+         <div id="2icf2lkxxn" data-trusted="1" class="code-example" data-demo-height="60" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+customElements.define('show-hello', class extends HTMLElement {
+  connectedCallback() {
+    const shadow = this.attachShadow({mode: 'open'});
+    shadow.innerHTML = `&lt;p&gt;
+      Hello, ${this.getAttribute('name')}
+    &lt;/p&gt;`;
+  }
+});
+&lt;/script&gt;
+
+&lt;show-hello name="John"&gt;&lt;/show-hello&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-2icf2lkxxn" style="height:60px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Begitulah tampilan DOM yang dihasilkan di alat pengembang Chrome, semua konten berada di bawah ???#shadow-root???:</p> 
+         <div class="markdown-error">
+           Gambar "/article/shadow-dom/shadow-dom-say-hello.png" rusak 
+         </div> 
+         <p>Pertama, panggilan ke <code>elem.attachShadow ({mode:???})</code> adalah untuk membuat pohon bayangan.</p> 
+         <p>Ada dua batasan:</p> 
+         <ol> 
+          <li>Kita hanya dapat membuat satu shadow root per elemen.</li> 
+          <li><code>Elem</code> harus berupa elemen kustom, atau salah satu dari: ???article???, ???aside???, ???blockquote???, ???body???, ???div???, ???footer???, ???h1???h6???, ???header???, ???main??? ???nav???, ???p???, ???section???, atau ???span???. Elemen lain, seperti <code>&lt;img&gt;</code>, tidak dapat menjadi host pohon bayangan.</li> 
+         </ol> 
+         <p>Opsi <code>mode</code> mengatur tingkat enkapsulasi. <code>mode</code> harus memiliki salah satu dari dua nilai:</p> 
+         <ul> 
+          <li> <p><code>"open"</code> ??? <em>shadow root</em> tersedia sebagai <code>elem.shadowRoot</code>.</p> <p>Kode apa pun dapat mengakses pohon bayangan dari <code>elem</code>.</p> </li> 
+          <li> <p><code>"closed"</code> ??? <code>elem.shadowRoot</code> selalu bernilai <code>null</code>.</p> <p>Kita hanya bisa mengakses shadow DOM dengan referensi yang dikembalikan oleh <code>attachShadow</code> (dan mungkin tersembunyi di dalam kelas). Shadow tree asli browser, seperti <code>&lt;input type =" range "&gt;</code>, ditutup. Tidak ada cara untuk mengaksesnya.</p> </li> 
+         </ul> 
+         <p><a href="https://dom.spec.whatwg.org/#shadowroot">Shadow root</a>, dikembalikan oleh <code>attachShadow</code>, seperti sebuah elemen: kita bisa menggunakan metode <code>innerHTML</code> atau DOM, seperti <code>append</code>, untuk mengisinya.</p> 
+         <p>Elemen dengan sebuah shadow root disebut ???shadow tree host???, dan tersedia sebagai properti <code>host</code> root bayangan:</p> 
+         <div id="wsxr01jzty" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// dengan asumsi {mode: "open"}, jika tidak nilai elem.shadowRoot adalah null
+alert(elem.shadowRoot.host === elem); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="enkapsulasi" href="shadow-dom.html#enkapsulasi">Enkapsulasi</a></h2> 
+         <p>Shadow DOM sangat dibatasi dari dokumen utama:</p> 
+         <ol> 
+          <li>Elemen shadow DOM tidak terlihat oleh <code>querySelector</code> dari light DOM. Secara khusus, elemen Shadow DOM mungkin memiliki ID yang bertentangan dengan ID yang ada di light DOM. Mereka harus unik hanya di dalam shadow tree.</li> 
+          <li>Shadow DOM memiliki stylesheet sendiri. Aturan gaya dari DOM luar tidak diterapkan.</li> 
+         </ol> 
+         <p>Sebagai contoh:</p> 
+         <div id="72lxq7qour" data-trusted="0" class="code-example" data-demo-height="40" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:15},{&quot;start&quot;:9,&quot;end&quot;:9},{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="shadow-dom.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;style&gt;
+  /* document style won't apply to the shadow tree inside #elem (1) */
+  p { color: red; }
+&lt;/style&gt;
+
+&lt;div id="elem"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+  elem.attachShadow({mode: 'open'});
+    // shadow tree memiliki gaya tersendiri (2)
+  elem.shadowRoot.innerHTML = `
+    &lt;style&gt; p { font-weight: bold; } &lt;/style&gt;
+    &lt;p&gt;Hello, John!&lt;/p&gt;
+  `;
+
+  // &lt;p&gt; hanya terlihat dari kueri di dalam shadow tree (3)
+  alert(document.querySelectorAll('p').length); // 0
+  alert(elem.shadowRoot.querySelectorAll('p').length); // 1
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <ol> 
+          <li>Gaya dari dokumen tidak mempengaruhi shadow tree.</li> 
+          <li>???Tapi gaya dari dalam berpengaruh.</li> 
+          <li>Untuk mendapatkan elemen di shadow tree, kita harus melakukan kueri dari dalam tree.</li> 
+         </ol> 
+         <h2><a class="main__anchor" name="referensi" href="shadow-dom.html#referensi">Referensi</a></h2> 
+         <ul> 
+          <li>DOM: <a href="https://dom.spec.whatwg.org/#shadow-trees">https://dom.spec.whatwg.org/#shadow-trees</a></li> 
+          <li>Compatibility: <a href="https://caniuse.com/#feat=shadowdomv1">https://caniuse.com/#feat=shadowdomv1</a></li> 
+          <li>Shadow DOM disebutkan dalam banyak spesifikasi lainnya, misalnya <a href="https://w3c.github.io/DOM-Parsing/#the-innerhtml-mixin">DOM Parsing</a> menentukan bahwa shadow root memiliki <code>innerHTML</code>.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="ringkasan" href="shadow-dom.html#ringkasan">Ringkasan</a></h2> 
+         <p>Shadow DOM adalah cara untuk membuat DOM komponen-lokal.</p> 
+         <ol> 
+          <li><code>shadowRoot = elem.attachShadow({mode: open|closed})</code> ??? membuat shadow DOM untuk <code>elem</code>. Jika <code>mode="open"</code>, maka itu dapat diakses sebagai properti <code>elem.shadowRoot</code>.</li> 
+          <li>Kita bisa mengisi <code>shadowRoot</code> menggunakan <code>innerHTML</code> atau metode DOM lainnya.</li> 
+         </ol> 
+         <p>Elemen shadow DOM:</p> 
+         <ul> 
+          <li>Memiliki id-nya sendiri,</li> 
+          <li>Tidak terlihat oleh selectors JavaScript dari dokumen utama, seperti <code>querySelector</code>,</li> 
+          <li>Gunakan gaya hanya dari shadow tree, bukan dari dokumen utama.</li> 
+         </ul> 
+         <p>Shadow DOM, jika ada, akan dirender oleh browser alih-alih yang disebut ???light DOM??? (turunan biasa). Dalam bab <a href="slots-composition.html">Slot shadow DOM, komposisi</a> kita akan melihat bagaimana menyusunnya.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="custom-elements.html" data-tooltip="Elemen kustom"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="template-element.html" data-tooltip="Elemen template"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="web-components.html">Web components</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom.html#built-in-shadow-dom">Built-in shadow DOM</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom.html#shadow-tree">Shadow tree</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom.html#enkapsulasi">Enkapsulasi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom.html#referensi">Referensi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="shadow-dom.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fshadow-dom" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

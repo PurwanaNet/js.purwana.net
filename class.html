@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Class basic syntax</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="class.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Class basic syntax"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Class basic syntax"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="classes.html"> 
+  <link rel="next" href="class-inheritance.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Class basic syntax"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fclass" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fclass" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="66" max="92" data-tooltip="Pelajaran 66 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="classes.html"><span>Kelas</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Kelas","item":"https://id.javascript.info/classes"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Class basic syntax</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Class basic syntax"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <blockquote class="quote"> 
+          <div class="quote__i"> 
+           <div class="quote__text"> 
+            <p>In object-oriented programming, a <em>class</em> is an extensible program-code-template for creating objects, providing initial values for state (member variables) and implementations of behavior (member functions or methods).</p> 
+           </div> 
+          </div> 
+          <footer class="quote__footer"> 
+           <cite class="quote__author">Wikipedia</cite> 
+          </footer> 
+         </blockquote> 
+         <p>Pada kenyataannya, kita sering membutuhkan sesuatu untuk membuat banyak objek yang memiliki kemiripan, seperti user, atau benda-benda lainnya seperti buah-buahan, binatang, kendaraan dan sesuatu yang biasanya bisa dikelompokan.</p> 
+         <p>Seperti yang kita ketahui dari bab <a href="constructor-new.html">Konstruktor, operator "new"</a>, <code>new function</code> dapat membantu kita membuatnya.</p> 
+         <p>Tapi pada Javascript modern, ada cara pembuatan ???class??? yang lebih lanjut, Yang akan memperkenalkan fitur-fitur yang sangat berguna untuk pemograman berbasis objek / objek oriented.</p> 
+         <h2><a class="main__anchor" name="sintaks-class" href="class.html#sintaks-class">Sintaks ???class???</a></h2> 
+         <p>Sintaks dasarnya adalah:</p> 
+         <div id="0j3g7b3si0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class MyClass {
+  // class methods
+  constructor() { ... }
+  method1() { ... }
+  method2() { ... }
+  method3() { ... }
+  ...
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kemudian kita gunakan <code>new MyClass</code> untuk menciptakan sebuah objek baru dengan semua method yang sudah didaftarkan.</p> 
+         <p>Method <code>constructor()</code> secara otomatis terpanggil oleh <code>new</code>, jadi kita dapat menginisialisasi sebuah objek dengannya.</p> 
+         <p>Contohnyya:</p> 
+         <div id="nsbj4278u4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class User {
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayHi() {
+    alert(this.name);
+  }
+
+}
+
+// Cara penggunaan:
+let user = new User("John");
+user.sayHi();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ketika <code>new user("john")</code> dijalankan:</p> 
+         <ol> 
+          <li>Sebuah objek baru terbentuk.</li> 
+          <li>method ???constructor??? berjalan dengan argumen yang dberikan dan menetapkan <code>this.name</code> pada nya.</li> 
+         </ol> 
+         <p>???Lalu kita dapat memanggil method objek, seperti <code>user.sayHi()</code>.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tidak boleh ada koma diantara method class</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Kesalahan umum bagi pemula biasanya dengan memberikan koma diantara method class, yang nantinya akan menghasilkan sintaks eror.</p> 
+           <p>Notasi disini jangan disamakan dengan objek literal. Dalam class, tidak perlu ada koma.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="apa-itu-class" href="class.html#apa-itu-class">Apa itu class?</a></h2> 
+         <p>Jadi apa sih sebenarnnya <code>class</code> itu ? Itu bukan sebuah istilah baru dalam bahasa pemograman.</p> 
+         <p>Mari kita uraikan dan lihat apa sebenarnya class itu. Yang nantinya akan membantu untuk memahami berbagai aspek yang lebih rumit.</p> 
+         <p>Di Javascript, sebuah class itu merupakan sesuatu yang mirip fungsi.</p> 
+         <p>Yuk kita lihat disini:</p> 
+         <div id="1p3h1bsw69" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class User {
+  constructor(name) { this.name = name; }
+  sayHi() { alert(this.name); }
+}
+
+// bukti: User adalah sebuah fungsi
+alert(typeof User); // function</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Apa yang konstruktor <code>class User {...}</code> sebenarnya lakukan:</p> 
+         <ol> 
+          <li>Membuat sebuah fungsi bernama <code>User</code>, yang akan menjadi hasil dari deklarasi class. Sebuah fungsi kodingan diambil dari method <code>constructor</code> (kita asumsikan kosong jika kita tidak menulis sebuah method).</li> 
+          <li>Simpan method-method class didalamnya, seperti <code>sayHi</code>, pada <code>User.prototype</code>.</li> 
+         </ol> 
+         <p>Setelah objek <code>new User</code> terbentuk, ketika kita panggil method tersebut, itu akan mengambil dari prototypenya, seperti yang dijelaskan pada bab <a href="function-prototype.html">F.prototype</a>. Sehingga objek tersebut memiliki akses pada method class nya.</p> 
+         <p>Kita dapat mengilustrasikan hasil dari deklrasi <code>class User</code> seperti berikut:</p> 
+         <figure> 
+          <div class="image" style="width:486px"> 
+           <div class="image__ratio" style="padding-top:19.34156378600823%"></div> 
+           <object type="image/svg+xml" data="article/class/class-user.svg" width="486" height="94" class="image__image" data-use-theme> <img src="article/class/class-user.svg" alt="" width="486" height="94"> </object> 
+          </div> 
+         </figure> 
+         <p>Mari kita bedah kode tersebut:</p> 
+         <div id="10fhksoafz" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class User {
+  constructor(name) { this.name = name; }
+  sayHi() { alert(this.name); }
+}
+
+// class adalah sebuah fungsi
+alert(typeof User); // function
+
+// ...atau, lebih tepatnya, Method constructor
+alert(User === User.prototype.constructor); // true
+
+// Method tersebut berada pada User.prototype, contoh:
+alert(User.prototype.sayHi); // alert(this.name);
+
+// Didalamnya terdapat dua method pada prototipe
+alert(Object.getOwnPropertyNames(User.prototype)); // constructor, sayHi</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="bukan-hanya-sebuah-pemanis-sintaks-belaka" href="class.html#bukan-hanya-sebuah-pemanis-sintaks-belaka">Bukan hanya sebuah pemanis sintaks belaka</a></h2> 
+         <p>Terkadang orang-orang mengatakan bahwa <code>class</code> adalah sebuah <code>sintaksis sugar</code> (sintaks yang diciptakan untuk membuat mudah pembacaan, tapi tidak ada sesuatu yang baru didalamnya), karena kita sebenarnya dapat mendeklasikan objek tanpa menggunakan sintaks <code>class</code> sama sekali.</p> 
+         <div id="zgk0yz73yk" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// menjalankan Class User hanya dengan fungsi
+
+// 1. Membuat fungsi konstruktor
+function User(name) {
+  this.name = name;
+}
+// sebuah fungsi prototipe memiliki properti "constructor" secara bawaannya,
+// jadi kita tidak perlu membuatnya
+
+// 2 menambahkan method pada prototype
+User.prototype.sayHi = function() {
+  alert(this.name);
+};
+
+// Penggunaan:
+let user = new User("John");
+user.sayHi();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hasil dari pendefinisian berikut adalah sama. Jadi memang ada alasan mengapa <code>class</code> dapat dianggap sebagai pemanis sintaks untuk pendefinisian konstruktor bersamaan dengan method prototipe-nya.</p> 
+         <p>Tetap saja, ada perbedaan penting.</p> 
+         <ol> 
+          <li> <p>Pertama, sebuah fungsi yang dibentuk dengan <code>class</code> dilabeli oleh properti internal yang khusus <code>[[FunctionKind]]:"classConstructor"</code>. Jadi tidak sepenuhnya sama dengan membuatnya secara manual.</p> <p>Javascript sendiri mengecek properti tersebut diberbagai tempat. sebagai contoh, tidak seperti fungsi biasa, itu harus dijalankan dengan sintaks <code>new</code>:</p> 
+           <div id="c5vfscbrva" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>class User {
+  constructor() {}
+}
+
+alert(typeof User); // function
+User(); // Error: Class constructor User cannot be invoked without 'new'</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Selain itu, representasi string dari konstruktor class di sebagian besar mesin JavaScript dimulai dengan ???class ??????</p> 
+           <div id="e2kxugdbef" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>class User {
+  constructor() {}
+}
+
+alert(User); // class User { ... }</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Terdapat perbedaan lain, kita akan segera melihatnya.</p> </li> 
+          <li> <p>Method Class merupakan non-enumerable(tidak bisa melakukan perhitungan dengan method ini) Sebuah pendefinisian class menetapkan flag <code>enumerable</code> menjadi <code>false</code> untuk semua methods yang ada di <code>properti</code> nya.</p> <p>Itu bagus, karena jika kita melakukan <code>for..in</code> pada sebuah objek, kita biasanya tidak menginginkan method bawaan class nya.</p> </li> 
+          <li> <p>Class selalu menggunakan <code>use strict</code>.(cek apa itu <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">strict mode</a>)</p> </li> 
+         </ol> 
+         <p>Selain itu, sintaks <code>class</code> menghadirkan banyak fitur lain yang akan kita bahas nantinya.</p> 
+         <h2><a class="main__anchor" name="class-expression" href="class.html#class-expression">Class Expression</a></h2> 
+         <p>Sama seperti fungsi, kelas dapat didefinisikan denga ekspresi lain, diturunkan, dikembalikan, ditetapkan, dll.</p> 
+         <p>Berikut adalah contoh class expression:</p> 
+         <div id="pgni047wq2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let User = class {
+  sayHi() {
+    alert("Hello");
+  }
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mirip dengan fungsi Expressions yang memiliki nama, class expression juga mungkin memiliki nama.</p> 
+         <p>Jika sebuah class expression memiliki nama, itu hanya terlihat di dalam class tersebut:</p> 
+         <div id="3ke515c1ju" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:17,&quot;end&quot;:24}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// "Class Expression yang memiliki nama"
+// ((tidak ada pembahasan dalam spesifikasinya, tapi itu mirip dengan function expression yang memiliki nama)
+let User = class MyClass {
+  sayHi() {
+    alert(MyClass); // Nama MyClass hanya terlihat di dalam kelas
+  }
+};
+
+new User().sayHi(); //berjalan, menunjukkan definisi dari MyClass
+
+alert(MyClass); // error, Nama MyClass tidak bisa dilihat di luar kelas</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita bahkan dapat membuat kelas secara dinamis ???sesuai permintaan???, seperti berikut:</p> 
+         <div id="bkn4ezjoqr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function makeClass(phrase) {
+  // deklrasikan sebuah class dan kembalikan class trsebut
+  return class {
+    sayHi() {
+      alert(phrase);
+    }
+  };
+}
+
+// Membuat sebuah class baru
+let User = makeClass("Hello");
+
+new User().sayHi(); // Hello</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="getter-setter" href="class.html#getter-setter">Getter/setter</a></h2> 
+         <p>Sama seperti objek literal, class dapat menyertakan getter / setter serta properti yang telah diproses, dll.</p> 
+         <p>Berikut adalah sebuah contoh untuk <code>user.name</code> dengan implementasi menggunakan <code>get/set</code>:</p> 
+         <div id="da9fwmiz4d" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:11,&quot;end&quot;:11},{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class User {
+
+  constructor(name) {
+    // memanggil setternya
+    this.name = name;
+  }
+
+  get name() {
+    return this._name;
+  }
+
+  set name(value) {
+    if (value.length &lt; 4) {
+      alert("Name is too short.");
+      return;
+    }
+    this._name = value;
+  }
+
+}
+
+let user = new User("John");
+alert(user.name); // John
+
+user = new User(""); // Name is too short.</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Secara teknis, deklarasi kelas tersebut bekerja dengan membuat getter dan setter didalam <code>User.prototype</code>.</p> 
+         <h2><a class="main__anchor" name="nama-yang-telah-diproses" href="class.html#nama-yang-telah-diproses">Nama yang telah diproses [???]</a></h2> 
+         <p>Berikut adalah sebuah contoh menggunakan method pada nama yang telah diproses pada bracket<code>[...]</code>:</p> 
+         <div id="no3y9f32jv" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class User {
+
+  ['say' + 'Hi']() {
+    alert("Hello");
+  }
+
+}
+
+new User().sayHi();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fitur seperti itu mudah diingat, karena mirip dengan objek literal.</p> 
+         <h2><a class="main__anchor" name="class-fields" href="class.html#class-fields">Class fields</a></h2> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Browser lama mungkin membutuhkan polyfill</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Class fields adalah tambahan terbaru pada bahasa ini???</p> 
+          </div> 
+         </div> 
+         <p>Sebelumnya, kelas ini hanya memiliki method.</p> 
+         <p>???Class fields??? adalah sebuah sintaks yang memungkinkan untuk menambahkan properti apa pun.</p> 
+         <p>Sebagai contoh, mari kita tambahkan properti <code>name</code> pada <code>class User</code>:</p> 
+         <div id="283a0311uw" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class User {
+  name = "John";
+
+  sayHi() {
+    alert(`Hello, ${this.name}!`);
+  }
+}
+
+new User().sayHi(); // Hello, John!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, kita hanya perlu menulis " 
+          <property name>
+            = 
+           <value>
+             " pada saat proses deklarasi. 
+           </value> 
+          </property></p> 
+         <p>Perbedaan penting pada class field adalah bahwa class field tersebut diatur untuk objek individual, bukan pada <code>User.prototype</code>:</p> 
+         <div id="p7tclfxmn5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class User {
+  name = "John";
+}
+
+let user = new User();
+alert(user.name); // John
+alert(User.prototype.name); // undefined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga dapat menetapkan nilai menggunakan ekspresi yang lebih kompleks dan memanggil fungsi:</p> 
+         <div id="heg8uv1bbn" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class User {
+  name = prompt("Name, please?", "John");
+}
+
+let user = new User();
+alert(user.name); // John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="membuat-bound-method-dengan-class-field" href="class.html#membuat-bound-method-dengan-class-field">Membuat bound method dengan class field</a></h3> 
+         <p>Seperti yang ditunjukkan pada bab &lt;info: bind&gt;, fungsi di JavaScript memiliki <code>this</code> yang dinamis. Itu tergantung pada konteks pemanggilannya.</p> 
+         <p>Jadi, jika method objek diteruskan dan dipanggil pada konteks lain, <code>this</code> tidak akan menjadi referensi ke objek itu lagi.</p> 
+         <p>Sebagai contoh, kode dibawah ini akan menampilkan output <code>undefined</code>:</p> 
+         <div id="fdi87e6vtm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:12}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Button {
+  constructor(value) {
+    this.value = value;
+  }
+
+  click() {
+    alert(this.value);
+  }
+}
+
+let button = new Button("hello");
+
+setTimeout(button.click, 1000); // undefined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Masalah itu terjadi karena memanggil <code>this</code> pada konteks lain.</p> 
+         <p>Terdapat dua pendekatan cara untuk memperbaikinya, seperti yang telah kita diskusikan pada bab <a href="bind.html">Function binding</a>:</p> 
+         <ol> 
+          <li>Meneruskan sebuah fungsi-wrapper, seperti <code>setTimeout(() =&gt; button.click(), 1000)</code>.</li> 
+          <li>Mengikat method tersebut terhadap objek, seperti pada constructor.</li> 
+         </ol> 
+         <p>Class field menyediakan sintaks lain yang cukup elegan:</p> 
+         <div id="rfxlggdjhh" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="class.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class Button {
+  constructor(value) {
+    this.value = value;
+  }
+  click = () =&gt; {
+    alert(this.value);
+  }
+}
+
+let button = new Button("hello");
+
+setTimeout(button.click, 1000); // hello</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Class field ini <code>click = () =&gt; {...}</code> dibuat pada pada basis tiap objek, ada sebuah fungsi terpisah pada tiap <code>Button</code> objek, dengan <code>this</code> di dalamnya mereferensikan objek tersebut. Kita dapat meneruskan <code>button.click</code> di mana saja, dan nilai<code>this</code> akan selalu benar.</p> 
+         <p>Itu akan sangat berguna pada lingkungan browser, teruntuk event listener.</p> 
+         <h2><a class="main__anchor" name="kesimpulan" href="class.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Sintaks class dasar terlihat seperti ini:</p> 
+         <div id="9cm7mkn6mp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>class MyClass {
+  prop = value; // property
+
+  constructor(...) { // constructor
+    // ...
+  }
+
+  method(...) {} // method
+
+  get something(...) {} // getter method
+  set something(...) {} // setter method
+
+  [Symbol.iterator]() {} // method dengan nama yang telah diproses (disini simbol)
+  // ...
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>MyClass</code> secara teknis adalah sebuah fungsi (yang kita sediakan sebagai<code>konstruktor</code>), sedangkan method, getter, dan setter ditulis ke <code>MyClass.prototype</code>.</p> 
+         <p>Pada bab selanjutnya kita akan mempelajari lebih lanjut tentang class, termasuk pewarisan dan fitur lainnya.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="class.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="class.html#menulis-ulang-ke-class" name="menulis-ulang-ke-class">Menulis ulang ke class</a></h3> 
+           <a class="task__open-link" href="task/rewrite-to-class.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Class <code>Clock</code> ditulis dalam gaya fungsional. Tulis ulang dengan menggunakan sintaks ???class???.</p> 
+            <p>P.S Class Clock berdetak pada console, buka untuk melihatnya.</p> 
+            <p><a href="https://plnkr.co/edit/yswxhFfvorHrw4aa?p=preview" target="_blank" data-plunk-id="yswxhFfvorHrw4aa">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="4dpjga246h" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>class Clock {
+  constructor({ template }) {
+    this.template = template;
+  }
+
+  render() {
+    let date = new Date();
+
+    let hours = date.getHours();
+    if (hours &lt; 10) hours = '0' + hours;
+
+    let mins = date.getMinutes();
+    if (mins &lt; 10) mins = '0' + mins;
+
+    let secs = date.getSeconds();
+    if (secs &lt; 10) secs = '0' + secs;
+
+    let output = this.template
+      .replace('h', hours)
+      .replace('m', mins)
+      .replace('s', secs);
+
+    console.log(output);
+  }
+
+  stop() {
+    clearInterval(this.timer);
+  }
+
+  start() {
+    this.render();
+    this.timer = setInterval(() =&gt; this.render(), 1000);
+  }
+}
+
+
+let clock = new Clock({template: 'h:m:s'});
+clock.start();</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/vMDfwHmgARYfgRwQ?p=preview" target="_blank" data-plunk-id="vMDfwHmgARYfgRwQ">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="classes.html" data-tooltip="Kelas"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="class-inheritance.html" data-tooltip="Turunan Kelas"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fclass" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fclass" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="classes.html">Kelas</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#sintaks-class">Sintaks ???class???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#apa-itu-class">Apa itu class?</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#bukan-hanya-sebuah-pemanis-sintaks-belaka">Bukan hanya sebuah pemanis sintaks belaka</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#class-expression">Class Expression</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#getter-setter">Getter/setter</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#nama-yang-telah-diproses">Nama yang telah diproses [???]</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#class-fields">Class fields</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="class.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fclass" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fclass" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

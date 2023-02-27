@@ -1,0 +1,943 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pewarisan *Prototype* (*Prototypal Inheritance*)</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="prototype-inheritance.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pewarisan *Prototype* (*Prototypal Inheritance*)"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pewarisan *Prototype* (*Prototypal Inheritance*)"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="prototypes.html"> 
+  <link rel="next" href="function-prototype.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pewarisan *Prototype* (*Prototypal Inheritance*)"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fprototype-inheritance" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fprototype-inheritance" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="62" max="92" data-tooltip="Pelajaran 62 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="prototypes.html"><span>Prototypes, inheritance</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Prototypes, inheritance","item":"https://id.javascript.info/prototypes"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pewarisan *Prototype* (*Prototypal Inheritance*)</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pewarisan *Prototype* (*Prototypal Inheritance*)"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Dalam <em>programming</em>, terkadang kita ingin mengambil sesuatu lalu dikembangkan lagi.</p> 
+         <p>Contoh, kita memiliki objek <code>user</code> lengkap dengan properti dan metodenya, dan kita ingin membuat <code>admin</code> dan <code>guest</code> sebagai varian yang sedikit diubah dari objek <code>user</code>. Kita ingin menggunakan apa yang dimiliki oleh <code>user</code>, bukan menyalin ataupun meimplementasikan ulang metode-metodenya, akan tetapi menciptakan objek baru diatasnya.</p> 
+         <p><em>Pewarisan Prototype</em> adalah fitur yang bisa membantu untuk melakukan hal itu.</p> 
+         <h2><a class="main__anchor" name="prototype" href="prototype-inheritance.html#prototype">[[Prototype]]</a></h2> 
+         <p>Didalam Javascript, objek memiliki properti tersembunyi yang spesial <code>[[Prototype]]</code> (seperti yang dinamakan didalam spesifikasinya), yang mana dapat mereferensi pada <code>null</code> atau mereferensi pada objek lainnya. Objek itu disebut dengan <em>prototype</em>:</p> 
+         <figure> 
+          <div class="image" style="width:191px"> 
+           <div class="image__ratio" style="padding-top:78.53403141361257%"></div> 
+           <object type="image/svg+xml" data="article/prototype-inheritance/object-prototype-empty.svg" width="191" height="150" class="image__image" data-use-theme> <img src="article/prototype-inheritance/object-prototype-empty.svg" alt="" width="191" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Saat kita membaca properti dari <code>objek</code>, dan properti itu hilang, JavaScript secara otomatis mengambilnya dari prototipe. Dalam pemrograman, ini disebut ???pewarisan prototipe???. Dan segera kita akan mempelajari banyak contoh pewarisan tersebut, serta fitur bahasa yang lebih keren yang dibangun di atasnya.</p> 
+         <p>Properti yang dimiliki <code>[[Prototype]]</code> bersifat internal dan tersembunyi, tapi ada banyak cara untuk melihat properti tersebut.</p> 
+         <p>Salah satunya adalah menggunakan nama spesial <code>__proto__</code>, seperti:</p> 
+         <div id="lkutecozf" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  eats: true
+};
+let rabbit = {
+  jumps: true
+};
+
+rabbit.__proto__ = animal; // sets rabbit.[[Prototype]] = animal</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang jika kita ingin membaca properti dari <code>rabbit</code>, dan ternyada tidak ada, Javascript akan mengambilnya dari <code>animal</code>.</p> 
+         <p>Contoh:</p> 
+         <div id="q554bstam6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:10,&quot;end&quot;:10},{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  eats: true
+};
+let rabbit = {
+  jumps: true
+};
+
+rabbit.__proto__ = animal; // (*)
+
+// sekarang kita bisa menggunakan kedua propertinya didalam *rabbit*:
+alert( rabbit.eats ); // true (**)
+alert( rabbit.jumps ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada baris <code>(*)</code> menyetel <code>animal</code> untuk menjadi prototype dari <code>rabbit</code>.</p> 
+         <p>Lalu, ketika <code>alert</code> mencoba untuk membaca properti <code>rabbit.eats</code> <code>(**)</code>, ternyata <code>rabbit</code> tidak memiliki propertinya, maka Javascript mengikuti referensi <code>[[Prototype]]</code>nya dan menemukan <code>animal</code> (mencari dari bawah ke atas):</p> 
+         <figure> 
+          <div class="image" style="width:191px"> 
+           <div class="image__ratio" style="padding-top:78.53403141361257%"></div> 
+           <object type="image/svg+xml" data="article/prototype-inheritance/proto-animal-rabbit.svg" width="191" height="150" class="image__image" data-use-theme> <img src="article/prototype-inheritance/proto-animal-rabbit.svg" alt="" width="191" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Disini kita bisa berkata bahwa "<code>animal</code> adalah prototype dari <code>rabbit</code>" atau "<code>rabbit</code> secara prototype mewarisi dari <code>animal</code>".</p> 
+         <p>Jadi jika <code>animal</code> memiliki banyak properti dan metode yang berguna, maka properti dan metode tersebut secara otomatis akan tersedia didalam <code>rabbit</code>. Properti tersebut dinamakan ???pewarisan???.</p> 
+         <p>Jika kita memiliki metode didalam <code>animal</code>, maka metode tersebut dapat dipanggil didalam <code>rabbit</code>:</p> 
+         <div id="uf8wy5uih6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:13,&quot;end&quot;:13},{&quot;start&quot;:2,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  eats: true,
+  walk() {
+    alert("Animal walk");
+  }
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+// walk diambil dari prototype
+rabbit.walk(); // Animal walk</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Metodenya secara otomatis diambil dari <em>prototype</em>nya, seperti:</p> 
+         <figure> 
+          <div class="image" style="width:205px"> 
+           <div class="image__ratio" style="padding-top:84.39024390243902%"></div> 
+           <object type="image/svg+xml" data="article/prototype-inheritance/proto-animal-rabbit-walk.svg" width="205" height="173" class="image__image" data-use-theme> <img src="article/prototype-inheritance/proto-animal-rabbit-walk.svg" alt="" width="205" height="173"> </object> 
+          </div> 
+         </figure> 
+         <p>Rantai <em>prototype</em> bisa lebih panjang:</p> 
+         <div id="dq4gvii420" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:14,&quot;end&quot;:14},{&quot;start&quot;:9,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  eats: true,
+  walk() {
+    alert("Animal walk");
+  }
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+let longEar = {
+  earLength: 10,
+  __proto__: rabbit
+};
+
+// walk diambil dari rantai prototype
+longEar.walk(); // Animal walk
+alert(longEar.jumps); // true (dari rabbit)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:206px"> 
+           <div class="image__ratio" style="padding-top:125.24271844660196%"></div> 
+           <object type="image/svg+xml" data="article/prototype-inheritance/proto-animal-rabbit-chain.svg" width="206" height="258" class="image__image" data-use-theme> <img src="article/prototype-inheritance/proto-animal-rabbit-chain.svg" alt="" width="206" height="258"> </object> 
+          </div> 
+         </figure> 
+         <p>Sekarang jika kita membaca sesuatu dari <code>longEar</code>, dan ternyata tidak ada, Javascript akan mencarinya didalam <code>rabbit</code>, dan lalu didalam <code>animal</code>.</p> 
+         <p>Akan tetapi terdapat dua batasan:</p> 
+         <ol> 
+          <li>Referensinya tidak bisa berputar (seperti lingkaran atau perulangan tak terhingga). Javascript akan mengembalikan error jika kita mencoba untuk membuat <code>__proto__</code> berputar.</li> 
+          <li>Nilai dari <code>__proto__</code> bisa antara sebuah objek atau <code>null</code>. Tipe lainnya akan diabaikan.</li> 
+         </ol> 
+         <p>Dan juga tentu saja: hanya terdapat satu <code>[[Prototype]]</code>. Sebuah objek tidak bisa mewarisi dari dua objek.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>__proto__</code> adalah asal usul getter/setter untuk <code>[[Prototype]]</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Biasanya kesalan <em>developer</em> pemula adalah tidak mengetahui perbedaan antara keduanya.</p> 
+           <p>Perlu diingat bahwa <code>__proto__</code> <em>tidak sama</em> dengan properti internal <code>[[Prototype]]</code>. Itu hanyalah <em>getter/setter</em> untuk <code>[[Prototype]]</code>. Nanti kita akan melihat situasi dimana hal itu akan digunakan, untuk sekarang kita hanya perlu tahu, kita akan terus bangun pemahaman kita tentang Javascript.</p> 
+           <p>Properti <code>__proto__</code> sedikit ketinggalan jaman. Properti tersebut ada karena alasan lama, pada Javascript terbaru merekomendasikan kita untuk menggunakan fungsi <code>Object.getPrototypeOf/Object.setPrototypeOf</code> daripada <em>prototype</em> get/set. Kita akan belajar tentang fungsi ini nanti.</p> 
+           <p>Dari spesifikasinya, <code>__proto__</code> telah didukung oleh banyak <em>browser</em>. Faktanya, seluruh lingkungan termasuk dibagian <em>server</em> juga mendukung <code>__proto__</code>, jadi kita aman untuk menggunakannya.</p> 
+           <p>Karena notasi <code>__proto__</code> sedikit lebih jelas, kita akan menggunakannya didalam contoh.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="menulis-tanpa-menggunakan-prototype" href="prototype-inheritance.html#menulis-tanpa-menggunakan-prototype">Menulis tanpa menggunakan <em>prototype</em></a></h2> 
+         <p><em>Prototype</em> hanya digunakan untuk membaca properti.</p> 
+         <p>Operasi menulis / menghapus bekerja secara langsung dengan objeknya.</p> 
+         <p>Didalam contoh dibawah, kita memasukan metode <code>walk</code> kedalam <code>rabbit</code>:</p> 
+         <div id="hej1kejfe3" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:11,&quot;end&quot;:13}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  eats: true,
+  walk() {
+    /* metode ini tidak akan digunakan oleh rabbit */
+  }
+};
+
+let rabbit = {
+  __proto__: animal
+};
+
+rabbit.walk = function() {
+  alert("Rabbit! Bounce-bounce!");
+};
+
+rabbit.walk(); // Rabbit! Bounce-bounce!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mulai sekarang, pemanggilan <code>rabbit.walk()</code> akan menemukan metodenya secara langsung didalam objek dan langsung dieksekusi tanpa menggunakan <em>prototype</em>:</p> 
+         <figure> 
+          <div class="image" style="width:202px"> 
+           <div class="image__ratio" style="padding-top:85.64356435643565%"></div> 
+           <object type="image/svg+xml" data="article/prototype-inheritance/proto-animal-rabbit-walk-2.svg" width="202" height="173" class="image__image" data-use-theme> <img src="article/prototype-inheritance/proto-animal-rabbit-walk-2.svg" alt="" width="202" height="173"> </object> 
+          </div> 
+         </figure> 
+         <p>Properti pengakses adalah pengecualian, sebagaimana memasukan nilai dipegang oleh fungsi <em>setter</em>. Jadi menulis properti seperti itu sebenarnya sama dengan memanggil sebuah fungsi.</p> 
+         <p>Untuk alasan itu <code>admin.fullName</code> akan bekerja dengan benar pada contoh dibawah:</p> 
+         <div id="ej18mr19wg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  name: "John",
+  surname: "Smith",
+
+  set fullName(value) {
+    [this.name, this.surname] = value.split(" ");
+  },
+
+  get fullName() {
+    return `${this.name} ${this.surname}`;
+  }
+};
+
+let admin = {
+  __proto__: user,
+  isAdmin: true
+};
+
+alert(admin.fullName); // John Smith (*)
+
+// memicu setter!
+admin.fullName = "Alice Cooper"; // (**)
+
+alert(admin.fullName); // Alice Cooper, state dari admin diubah
+alert(user.fullName); // John Smith, state dari user dilindungi / *protected*</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini pada baris <code>(*)</code> properti <code>admin.fullName</code> memiliki <em>getter</em> didalam prototype <code>user</code>, jadi itu akan dipanggil. Pada baris <code>(**)</code> properti memiliki <em>setter</em> didalam <em>prototype</em>, jadi itu dipanggil.</p> 
+         <h2><a class="main__anchor" name="nilai-dari-this" href="prototype-inheritance.html#nilai-dari-this">Nilai dari ???this???</a></h2> 
+         <p>Sebuah pertanyaan menarik mungkin muncul didalam contoh diatas: apa nilai dari <code>this</code> didalam <code>set fullName(value)</code>? Dimanakah properti dari <code>this.name</code> dan <code>this.surname</code> ditulis: kedalam <code>user</code> atau <code>admin</code>?</p> 
+         <p>Jawabannya sederhana: <code>this</code> sama sekali tidak terkena efek oleh <em>prototype</em>.</p> 
+         <p><strong>Tidak peduli dimana metodenya ditemukan: didalam objek atau didalam <em>prototype</em>nya. Dalam pemanggilan metode, <code>this</code> adalah objeknya sebelum titik.</strong></p> 
+         <p>Jadi, pemanggilan <em>setter</em> <code>admin.fullName=</code> menggunakan <code>admin</code> sebagai <code>this</code> dan bukan <code>user</code>.</p> 
+         <p>Itu sebenarnya adalah sebuah hal yang sangat penting, karena kita mungkin memiliki objek yang besar dengan banyak metode, dan memiliki objek yang mewarisinya. Dan ketika pewarisan objek berjalan metode yang diwariskan, mereka hanya akan memodifikasi bagian / <em>state</em> mereka sendiri, bukan bagian dari objek besarnya.</p> 
+         <p>Contoh, disini <code>animal</code> merepresentasikan sebuah ???method storage (penyimpanan metode)???, dan <code>rabbit</code> menggunakannya.</p> 
+         <p>Pemanggilan <code>rabbit.sleep()</code> menyetel <code>this.isSleeping</code> didalam objek <code>rabbit</code>:</p> 
+         <div id="7c2f0y1v4o" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// animal memiliki metode
+let animal = {
+  walk() {
+    if (!this.isSleeping) {
+      alert(`I walk`);
+    }
+  },
+  sleep() {
+    this.isSleeping = true;
+  }
+};
+
+let rabbit = {
+  name: "White Rabbit",
+  __proto__: animal
+};
+
+// memodifikasi rabbit.isSleeping
+rabbit.sleep();
+
+alert(rabbit.isSleeping); // true
+alert(animal.isSleeping); // undefined (no such property in the prototype / tidak ada property seperti itu didalam prototype)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hasilnya:</p> 
+         <figure> 
+          <div class="image" style="width:206px"> 
+           <div class="image__ratio" style="padding-top:92.23300970873787%"></div> 
+           <object type="image/svg+xml" data="article/prototype-inheritance/proto-animal-rabbit-walk-3.svg" width="206" height="190" class="image__image" data-use-theme> <img src="article/prototype-inheritance/proto-animal-rabbit-walk-3.svg" alt="" width="206" height="190"> </object> 
+          </div> 
+         </figure> 
+         <p>Jika kita memiliki objek lainnya, seperti <code>bird</code>, <code>snake</code>, dll., Mewarisi dari <code>animal</code>, mereka juga akan memiliki kases kepada metode dari <code>animal</code>. Tapi <code>this</code> didalam setiap pemanggilan metode adalah objeknya itu sendiri, mengevaluasi pada saat pemanggilan (sebelum titik), bukan <code>animal</code>. Jadi ketika kita menulis data kedalam <code>this</code>, itu akan tersimpan kedalam objeknya.</p> 
+         <p>Sebagai hasilnya, metodenya dibagi bersama, tapi <em>state</em> dari objeknya tidak.</p> 
+         <h2><a class="main__anchor" name="perulangan-for-in" href="prototype-inheritance.html#perulangan-for-in">Perulangan for???in</a></h2> 
+         <p>Perulangan <code>for..in</code> mengiterasi properti yang diwariskan juga.</p> 
+         <p>Contoh:</p> 
+         <div id="7eivo11poz" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:13},{&quot;start&quot;:9,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  eats: true
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+// Object.keys hanya mengembalikan kunci / keys miliknya sendiri
+alert(Object.keys(rabbit)); // jumps
+
+// perulangan for..in mengiterasi kunci milik sendiri dan kunci yang diwariskan
+for(let prop in rabbit) alert(prop); // jumps, lalu eats</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika itu bukanlah hal yang kita inginkanm dan kita ingin untuk mengecualikan properti warisan, terdapat metode bawaan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty">obj.hasOwnProperty(key)</a>: yang mengembalikan <code>true</code> jika <code>obj</code> memiliki properti bernama <code>key</code> (bukan properti warisan).</p> 
+         <p>Jadi kita bisa memisahkan properti warisan (atau melakukan sesuatu dengan properti warisan itu):</p> 
+         <div id="rhj2rz3zeb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let animal = {
+  eats: true
+};
+
+let rabbit = {
+  jumps: true,
+  __proto__: animal
+};
+
+for(let prop in rabbit) {
+  let isOwn = rabbit.hasOwnProperty(prop);
+
+  if (isOwn) {
+    alert(`Our: ${prop}`); // Our: jumps
+  } else {
+    alert(`Inherited: ${prop}`); // Inherited: eats
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini kita memiliki rantai pewarisan: <code>rabbit</code> mewarisi dari <code>animal</code>, pewarisan itu dari <code>Object.prototype</code> (karena <code>animal</code> adalah objek literal <code>{...}</code>, jadi itu terjadi secara otomatis), dan lalu <code>null</code> diatasnya:</p> 
+         <figure> 
+          <div class="image" style="width:233px"> 
+           <div class="image__ratio" style="padding-top:147.6394849785408%"></div> 
+           <object type="image/svg+xml" data="article/prototype-inheritance/rabbit-animal-object.svg" width="233" height="344" class="image__image" data-use-theme> <img src="article/prototype-inheritance/rabbit-animal-object.svg" alt="" width="233" height="344"> </object> 
+          </div> 
+         </figure> 
+         <p>Catat bahwa ada satu hal lucu. darimanakah <code>rabbit.hasOwnProperty</code> datang? Kita tidak membuatnya. Lihat rantainya dan kita bisa melihat metodenya disediakan oleh <code>Object.prototype.hasOwnProperty</code>. Dengan kata lain, itu diwariskan.</p> 
+         <p>???Tapi kenapa <code>hasOwnProperty</code> tidak muncul didalam perulangan <code>for..in</code> seperti <code>eats</code> dan <code>jumps</code>, jika <code>for..in</code> adalah properti yang diwariskan?</p> 
+         <p>Jawabanya sederhana: properti tersebut tidak dapat terhitung(<em>enumerable</em>). Sama seperti properti lainnya dari <code>Object.prototype</code>, yang mana memiliki tanda <code>enumerable:false</code>. Dan <code>for..in</code> hanya akan menampilkan properti yang dapat dihitung (<em>enumerable</em>). Itulah kenapa properti <code>Object.prototype</code>tidak terlihat.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Hampir semua metode key/value mengabaikan properti warisan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Hampir semua metode key/value, seperti <code>Object.keys</code>, <code>Object.values</code> dan lainnya mengabaikan properti warisan.</p> 
+           <p>Mereka hanya akan beroperasi pada objeknya sendiri. Properti dari <em>prototype</em> <em>tidak</em> akan dihitung.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="prototype-inheritance.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li>Dalam Javascript, seluruh objek memiliki <code>[[Prototype]]</code> tersembunyi yang mana bisa objek atau <code>null</code>.</li> 
+          <li>Kita bisa menggunakan <code>obj.__proto__</code> untuk mengaksesnya (selain getter/setter, terdapat cara lain, yang mana akan dibahas nanti).</li> 
+          <li>Objek yang diferensi oleh <code>[[Prototype]]</code> dipanggil dengan sebuah ???prototype???.</li> 
+          <li>Jika kita ingin membaca sebuah properti dari <code>obj</code> atau memanggil metode, dan ternyata tidak ada maka Javascript akan mencoba mencari didalam <em>prototype</em>nya</li> 
+          <li>Operasi menulis/menghapus langsung bekerja didalam objeknya, mereka tidak menggunakan <em>prototype</em> (asumsikan propertinya adalah data, bukan sebuah <em>setter</em>).</li> 
+          <li>Jika kita memanggil <code>obj.method()</code>, dan <code>method</code>nya diambil dari prototype, <code>this</code> akan mereferensi <code>obj</code>. Jadi metode selalu bekerja dengan objek yang sedang digunakannya bahkan jika objeknya adalah hasil pewarisan.</li> 
+          <li>Perulangan <code>for..in</code> mengiterasi properti asli dan properti warisan. Semua metode key/value hanya akan bekerja pada objeknya sendiri.</li> 
+         </ul> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="prototype-inheritance.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="prototype-inheritance.html#bekerja-dengan-prototype" name="bekerja-dengan-prototype">Bekerja dengan prototype</a></h3> 
+           <a class="task__open-link" href="task/property-after-delete.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ini adalah kode yang membuat sepasang objek, lalu dimodifikasi.</p> 
+            <p>Nilai manakan yang akan muncul?</p> 
+            <div id="xnwpi0kz5u" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let animal = {
+  jumps: null
+};
+let rabbit = {
+  __proto__: animal,
+  jumps: true
+};
+
+alert( rabbit.jumps ); // ? (1)
+
+delete rabbit.jumps;
+
+alert( rabbit.jumps ); // ? (2)
+
+delete animal.jumps;
+
+alert( rabbit.jumps ); // ? (3)</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Seharusnya ada 3 jawaban.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <ol> 
+               <li><code>true</code>, diambil dari <code>rabbit</code>.</li> 
+               <li><code>null</code>, diambil dari <code>animal</code>.</li> 
+               <li><code>undefined</code>, propertinya sudah tidak ada.</li> 
+              </ol> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="prototype-inheritance.html#algoritma-pencarian" name="algoritma-pencarian">Algoritma pencarian</a></h3> 
+           <a class="task__open-link" href="task/search-algorithm.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tugasnya memiliki dua bagian.</p> 
+            <p>Diberikan objek-objek berikut:</p> 
+            <div id="4m6zqo3cv8" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let head = {
+  glasses: 1
+};
+
+let table = {
+  pen: 3
+};
+
+let bed = {
+  sheet: 1,
+  pillow: 2
+};
+
+let pockets = {
+  money: 2000
+};</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <ol> 
+             <li>Gunakan <code>__proto__</code> untuk memasukan <em>prototype</em> dengan cara yang mana membuat property yang mencari akan mengikuti <em>path</em>: <code>pockets</code> ??? <code>bed</code> ??? <code>table</code> ??? <code>head</code>. Contoh, <code>pockets.pen</code> haruslah <code>3</code> (ditemukan di <code>table</code>), dan <code>bed.glasses</code> haruslah <code>1</code> (ditemukan didalam <code>head</code>).</li> 
+             <li>Jawab pertanyaan: mana yang lebih cepat didapatkan <code>glasses</code> sebagai <code>pockets.glasses</code> atau <code>head.glasses</code>? Jika diperlukan gunakanlah <em>benchmark</em>.</li> 
+            </ol> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <ol> 
+               <li> <p>Let???s add <code>__proto__</code>:</p> 
+                <div id="alj6efr8pu" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="toolbar codebox__toolbar"> 
+                   <div class="toolbar__tool"> 
+                    <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                   </div> 
+                   <div class="toolbar__tool"> 
+                    <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                   </div> 
+                  </div> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>let head = {
+  glasses: 1
+};
+
+let table = {
+  pen: 3,
+  __proto__: head
+};
+
+let bed = {
+  sheet: 1,
+  pillow: 2,
+  __proto__: table
+};
+
+let pockets = {
+  money: 2000,
+  __proto__: bed
+};
+
+alert( pockets.pen ); // 3
+alert( bed.glasses ); // 1
+alert( table.money ); // undefined</code></pre> 
+                  </div> 
+                 </div> 
+                </div></li> 
+               <li> <p>Dalam mesin modern, kinerja yang bagus, tidak ada perbedaan apakan kita mengambil properti dari sebuah objek atau dari <em>prototype</em>nya. Mesinnya akan ingat darimana mengambil propertinya dan menggunakannya kembali pada request selanjutnya.</p> <p>Contoh, untuk <code>pockets.glasses</code> mereka ingat dimana <code>glasses</code> ditemukan (dalam <code>head</code>), dan pencarian selanjutnya akan dicari ditempat yang sama. Mesinnya juga cukup pintar untuk memperbaharui <em>cache internal</em> jika sesuatu berubah, jadi optimasinya akan aman.</p> </li> 
+              </ol> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="prototype-inheritance.html#dimanakah-akan-tertulis" name="dimanakah-akan-tertulis">Dimanakah akan tertulis?</a></h3> 
+           <a class="task__open-link" href="task/proto-and-this.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita memiliki <code>rabbit</code> mewarisi dari <code>animal</code>.</p> 
+            <p>Jika kita memanggil <code>rabbit.eat()</code>, yang mana objeknya menerima properti <code>full</code>: <code>animal</code> atau <code>rabbit</code>?</p> 
+            <div id="j6wh37oep4" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let animal = {
+  eat() {
+    this.full = true;
+  }
+};
+
+let rabbit = {
+  __proto__: animal
+};
+
+rabbit.eat();</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><strong>Jawabannya: <code>rabbit</code>.</strong></p> 
+              <p>Karena <code>this</code> adalah sebuah objek sebelum titik, jadi <code>rabbit.eat()</code> memodifikasi <code>rabbit</code>.</p> 
+              <p>Pencarian properti dan eksekusi adalah dua hal yang berbeda.</p> 
+              <p>The method <code>rabbit.eat</code> is first found in the prototype, then executed with <code>this=rabbit</code>. Metode <code>rabbit.eat</code> adalah yang pertama ditemukan dalam <em>prototype</em>, lalu dieksekusi dengan <code>this=rabbit</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="prototype-inheritance.html#kenapa-kedua-hamster-kenyang" name="kenapa-kedua-hamster-kenyang">Kenapa kedua hamster kenyang?</a></h3> 
+           <a class="task__open-link" href="task/hamster-proto.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita memiliki dua hamster: <code>speedy</code> dan <code>lazy</code> yang mewarisi objek <code>hamster</code>.</p> 
+            <p>Ketika kita memberi makan salah satunya, yang satunya lagi akan ikut kenyang. Kenapa? Bagaimana cara memperbaikinya?</p> 
+            <div id="81q63ic4xs" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach.push(food);
+  }
+};
+
+let speedy = {
+  __proto__: hamster
+};
+
+let lazy = {
+  __proto__: hamster
+};
+
+// Yang satu ini menemukan makanan
+speedy.eat("apple");
+alert( speedy.stomach ); // apple
+
+// Yang ini juga memilikinya, kenapa? perbaikilah.
+alert( lazy.stomach ); // apple</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita perhatikan baik-baik pada apa yang terjadi dalam pemanggilannya <code>speedy.eat("apple")</code>.</p> 
+              <ol> 
+               <li> <p>Metode <code>speedy.eat</code> ditemukan dalam prototype (<code>hamster</code>), lalu dieksekusi dengan <code>this=speedy</code> (objek sebelum titik).</p> </li> 
+               <li> <p>Lalu <code>this.stomach.push()</code> perlu menemukan properti <code>stomach</code> dan panggil <code>push</code> didalamnya. Itu akan mencati <code>stomach</code> didalam <code>this</code> (<code>=speedy</code>), tapi tidak menemukan apapun.</p> </li> 
+               <li> <p>Lalu akan mengikuti rantai <em>prototype</em> dan menemukan <code>stomach</code> didalam <code>hamster</code>.</p> </li> 
+               <li> <p>lalu akan memanggil <code>push</code> didalamnya, menambahkan makanan kedalam <em>stomach dari prototype</em>.</p> </li> 
+              </ol> 
+              <p>Jadi semua hamster membagi satu <em>stomach</em>!</p> 
+              <p>Diantara <code>lazy.stomach.push(...)</code> dan <code>speedy.stomach.push()</code>. properti <code>stomach</code> ditemukan didalam <em>prototype</em> (sebagaimana tidak didalam objeknya sendiri) , lalu datanya akan dimasukan.</p> 
+              <p>Perhatikan bahwa hal tersebut tidak akan terjadi pada <em>assignment</em> sederhana <code>this.stomach=</code>:</p> 
+              <div id="o3hf8vadb6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:5}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let hamster = {
+  stomach: [],
+
+  eat(food) {
+    // masukan this.stomach daripada this.stomach.push
+    this.stomach = [food];
+  }
+};
+
+let speedy = {
+   __proto__: hamster
+};
+
+let lazy = {
+  __proto__: hamster
+};
+
+// Speedy one menemukan makanannya
+speedy.eat("apple");
+alert( speedy.stomach ); // apple
+
+// Perut Lazy one kosong
+alert( lazy.stomach ); // &lt;nothing&gt;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Sekarang semuanya berjalan dengan baik, karena <code>this.stomach=</code> tidak melakukan pencarian <code>stomach</code>. Nilainya ditulis langsung kedalam objek <code>this</code>.</p> 
+              <p>Kita juga bisa benar-benar menghindar dari masalah dengan memastikan bahwa setiak hamster memiliki perut mereka masing-masing:</p> 
+              <div id="6xws11cz5l" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:15},{&quot;start&quot;:10,&quot;end&quot;:10}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="prototype-inheritance.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="prototype-inheritance.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach.push(food);
+  }
+};
+
+let speedy = {
+  __proto__: hamster,
+  stomach: []
+};
+
+let lazy = {
+  __proto__: hamster,
+  stomach: []
+};
+
+// Speedy one menemukan makanan
+speedy.eat("apple");
+alert( speedy.stomach ); // apple
+
+// Perut Lazy one kosong
+alert( lazy.stomach ); // &lt;nothing&gt;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Sebagai solusi umum, seluruh properti yang dideskripsikan dari objek tertentu, seperti <code>stomach</code> diatas, seharusnya ditulis kedalam objeknya. Untuk menghindari masalah seperti itu.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="prototypes.html" data-tooltip="Prototypes, inheritance"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="function-prototype.html" data-tooltip="F.prototype"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fprototype-inheritance" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fprototype-inheritance" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototypes.html">Prototypes, inheritance</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototype-inheritance.html#prototype">[[Prototype]]</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototype-inheritance.html#menulis-tanpa-menggunakan-prototype">Menulis tanpa menggunakan <em>prototype</em></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototype-inheritance.html#nilai-dari-this">Nilai dari ???this???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototype-inheritance.html#perulangan-for-in">Perulangan for???in</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototype-inheritance.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototype-inheritance.html#tasks">Tugas (4)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="prototype-inheritance.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fprototype-inheritance" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fprototype-inheritance" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

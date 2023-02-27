@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pengenalan: callback</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="callbacks.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pengenalan: callback"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pengenalan: callback"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="async.html"> 
+  <link rel="next" href="promise-basics.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pengenalan: callback"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcallbacks" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcallbacks" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="75" max="92" data-tooltip="Pelajaran 75 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="async.html"><span>Promises, async/await</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Promises, async/await","item":"https://id.javascript.info/async"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pengenalan: callback</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pengenalan: callback"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Disini kita menggunakan method dari browser</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Untuk menunjukkan penggunaan callback, promise dan konsep abstract lainnya, kita akan menggunakan beberapa method dari browser; khususnya, memuat script dan melakukan manipulasi dokumen sederhana.</p> 
+           <p>Jika kamu belum terbiasa dengan method ini, dan penggunaanya didalam contoh membuat bingung, atau jika kamu hanya ingin mengerti lebih baik lagi,kamu mungkin mau membaca beberapa bab dari <a href="https://id.javascript.info/dokumen">bagian selanjutnya</a> tutorial ini.</p> 
+           <p>Meski, kita akan mencoba memperjelas situasi ini. Takkan ada yang sebijaksana browser komplex yang rumit.</p> 
+          </div> 
+         </div> 
+         <p>Banyak action didalam JavaScript yang <em>asynchronous</em>. Dengan kata lain, kita inisiasi action tersebut sekarang, tetapi action tersebut selesai-nya nanti.</p> 
+         <p>Sebagai contoh, kita bisa atur action tersebut menggunakan <code>setTimeout</code>.</p> 
+         <p>Contoh-contoh lain dari action asynchronous di kehidupan nyata, misalnya memuat script dan module (kita akan bahas di bab selanjutnya).</p> 
+         <p>Coba lihat pada fungsi <code>loadScript(src)</code>, yang memuat sebuah script dengan pemberian <code>src</code>:</p> 
+         <div id="qlie4y4y25" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function loadScript(src) {
+  // creates a &lt;script&gt; tag and append it to the page
+  // this causes the script with given src to start loading and run when complete
+  let script = document.createElement('script');
+  script.src = src;
+  document.head.append(script);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fungsi tersebut menambahkan ke dokumen baru, dibuat secara dinamis, tag <code>&lt;script src="???"&gt;</code> dengan <code>src</code> yang diberikan. Browser kemudian secara otomatis memuat dan menjalankannya ketika lengkap.</p> 
+         <p>Kita bisa menggunakan fungsi tersebut seperti ini:</p> 
+         <div id="czby4seuc3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// memuat dan menjalankan script sesuai path yang diberikan
+loadScript('/my/script.js');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Script tersebut dijalankan secara ???asynchronously???, dimulai dengan memuatnya sekarang, namun dijalankan nanti, ketika fungsi tersebut sudah selesai.</p> 
+         <p>Jika ada kode lain di bawah <code>loadScript(???)</code>, ia tidak akan menunggu sampai pemuatan script selesai.</p> 
+         <div id="t9jd0w5bis" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript('/my/script.js');
+// kode lain dibawah loadScript
+// tidak akan menunggu sampai pemuatan script selesai
+// ...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Katakanlah kita butuh menggunakan script baru segera setelah dimuat. Mendeklarasikan fungsi baru, dan kita mau menjalankannya.</p> 
+         <p>Tetapi jika kita melakukannya secara langsung setelah memanggil <code>loadScript(???)</code>, itu tidak akan berfungsi:</p> 
+         <div id="iz68mebh86" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript('/my/script.js'); // script memiliki "fungsi newFunction() {???}"
+
+newFunction(); // tidak ada fungsi seperti itu!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tentu saja, browser mungkin tidak punya waktu untuk memuat script tersebut. Seperti yang sekarang, fungsi <code>loadScript</code> tidak menyediakan sebuah cara untuk melacak selesainya proses pemuatan. script dimuat dan akhirnya berjalan, itu saja. Tetapi kita ingin tahu ketika itu terjadi, untuk menggunakan fungsi baru dan variable dari script itu.</p> 
+         <p>Mari tambahkan sebuah fungsi <code>callback</code> sebagai argumen kedua untuk <code>loadScript</code> yang seharusnya dijalankan ketika memuat script:</p> 
+         <div id="4cfox8bntl" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:25,&quot;end&quot;:33}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+
+  script.onload = () =&gt; callback(script);
+
+  document.head.append(script);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang jika kita ingin memanggil fungsi baru dari script, kita harus menulisnya didalam callback:</p> 
+         <div id="3wacrjre3d" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript('/my/script.js', function() {
+  // callback berjalan setelah script dimuat
+  newFunction(); // jadi sekarang bisa berfungsi
+  ...
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu idenya: argumen kedua adalah sebuah fungsi (biasanya anonymous) yang berjalan ketika sebuah action selesai.</p> 
+         <p>Ini contoh yang bisa dijalankan dengan script asli:</p> 
+         <div id="f36b26l2b2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:10}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="callbacks.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="callbacks.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+  script.onload = () =&gt; callback(script);
+  document.head.append(script);
+}
+
+loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js', script =&gt; {
+  alert(`Cool, the ${script.src} is loaded`);
+  alert( _ ); // fungsi dideklarasi di dalam script yang dimuat
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu disebut gaya ???callback-based??? dalam pemrograman asynchronous. Sebuah fungsi yang melakukan sesuatu secara asynchronous harus menyediakan sebuah argumen <code>callback</code> dimana kita meletakkan fungsi untuk dijalankan setelah selesai.</p> 
+         <p>Di sini kita melakukannya dalam <code>loadScript</code>, tapi tentu saja ini pendekatan secara umum.</p> 
+         <h2><a class="main__anchor" name="callback-didalam-callback" href="callbacks.html#callback-didalam-callback">Callback didalam callback</a></h2> 
+         <p>Bagaimana kita bisa memuat dua script secara berurutan: yang pertama, dan kemudian setelahnya yang kedua?</p> 
+         <p>Solusi alaminya bisa kita letakkan <code>loadScript</code> kedua kemudian panggil didalam callback, seperti ini:</p> 
+         <div id="tpvi70dyu2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript('/my/script.js', function(script) {
+
+  alert(`Keren, ${script.src} sudah dimuat, ayo muat satu lagi`);
+
+  loadScript('/my/script2.js', function(script) {
+    alert(`Keren, script kedua sudah dimuat`);
+  });
+
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Setelah <code>loadScript</code> yang diluar sudah selesai, kemudian callback inisiasi yang didalam.</p> 
+         <p>Bagaimana jika kita ingin menambahkan satu script lagi????</p> 
+         <div id="j2v2uv5t0a" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript('/my/script.js', function(script) {
+
+  loadScript('/my/script2.js', function(script) {
+
+    loadScript('/my/script3.js', function(script) {
+      // ...dilanjutkan setelah semua script sudah dimuat
+    });
+
+  });
+
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, setiap action baru ada didalam callback. Tidak masalah untuk beberapa action, tetapi tidak bagus apabila banyak action, jadi kita akan melihat varian lainnya.</p> 
+         <h2><a class="main__anchor" name="menangani-error" href="callbacks.html#menangani-error">Menangani error</a></h2> 
+         <p>Pada contoh diatas kita tidak mempertimbangkan error. Bagaimana jika script yang dimuat gagal? Callback kita harusnya bisa bereaksi terhadap itu.</p> 
+         <p>Ini sebuah versi <code>loadScript</code> yang ditingkatkan untuk melacak error saat memuat:</p> 
+         <div id="1whnl19m64" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function loadScript(src, callback) {
+  let script = document.createElement('script');
+  script.src = src;
+
+  script.onload = () =&gt; callback(null, script);
+  script.onerror = () =&gt; callback(new Error(`Error memuat script untuk ${src}`));
+
+  document.head.append(script);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu akan memanggil <code>callback(null, script)</code> apabila berhasil memuat dan <code>callback(error)</code> jika tidak berhasil.</p> 
+         <p>Pengunaanya:</p> 
+         <div id="pobpcy7wy0" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript('/my/script.js', function(error, script) {
+  if (error) {
+    // menangani error
+  } else {
+    // sukses memuat script
+  }
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekali lagi, resep yang kita gunakan untuk <code>loadScript</code> sebenarnya cukup umum. Itu disebut gaya ???error-first callback???.</p> 
+         <p>Ketentuan-nya adalah:</p> 
+         <ol> 
+          <li>Argumen pertama dari <code>callback</code> dicadangkan untuk sebuah error jika itu terjadi. Kemudian <code>callback(err)</code> dipanggil.</li> 
+          <li>Argumen kedua (dan argumen selanjutnya jika dibutuhkan) untuk hasil yang sukses. Kemudian <code>callback(null, result1, result2???)</code> dipanggil.</li> 
+         </ol> 
+         <p>Jadi fungsi <code>callback</code> single tersebut keduanya digunakan untuk pelaporan error dan memberikan sebuah hasil.</p> 
+         <h2><a class="main__anchor" name="pyramid-of-doom" href="callbacks.html#pyramid-of-doom">Pyramid of Doom</a></h2> 
+         <p>Dari tampilan pertama, itu adalah cara yang layak untuk coding secara asynchronous. Dan memang demikian. Untuk satu atau bahkan dua pemanggilan bersarang itu tidak masalah.</p> 
+         <p>Tetapi untuk beberapa action asynchronous yang mengikuti satu demi satu kita akan punya kode seperti ini:</p> 
+         <div id="7fy7s74q3c" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:15}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript('1.js', function(error, script) {
+
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript('2.js', function(error, script) {
+      if (error) {
+        handleError(error);
+      } else {
+        // ...
+        loadScript('3.js', function(error, script) {
+          if (error) {
+            handleError(error);
+          } else {
+            // ...dilanjutkan setelah semua script dimuat (*)
+          }
+        });
+
+      }
+    });
+  }
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam kode di atas:</p> 
+         <ol> 
+          <li>Kita memuat <code>1.js</code>, kemudian jika tidak ada error.</li> 
+          <li>Kita muat <code>2.js</code>, kemudian jika tidak ada error.</li> 
+          <li>Kita muat <code>3.js</code>, jika tidak ada error ??? lakukan sesuatu yang lain <code>(*)</code>.</li> 
+         </ol> 
+         <p>Saat pemanggilan jadi lebih bersarang, kode akan menjadi lebih dalam dan semakin susah untuk diatur, khususnya jika kita punya kode asli daripada <code>...</code>, itu mungkin berisi loop yang lebih, pernyataan bersyarat dan seterusnya.</p> 
+         <p>Ini kadang disebut ???callback hell??? atau ???pyramid of doom.???</p> 
+         <!--
+loadScript('1.js', function(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript('2.js', function(error, script) {
+      if (error) {
+        handleError(error);
+      } else {
+        // ...
+        loadScript('3.js', function(error, script) {
+          if (error) {
+            handleError(error);
+          } else {
+            // ...
+          }
+        });
+      }
+    });
+  }
+});
+--> 
+         <figure> 
+          <div class="image" style="width:467px"> 
+           <div class="image__ratio" style="padding-top:59.743040685224834%"></div> 
+           <object type="image/svg+xml" data="article/callbacks/callback-hell.svg" width="467" height="279" class="image__image" data-use-theme> <img src="article/callbacks/callback-hell.svg" alt="" width="467" height="279"> </object> 
+          </div> 
+         </figure> 
+         <p>???Piramida??? panggilan bersarang bergerak ke kanan dengan setiap action asynchronous. Segera itu akan lepas kendali.</p> 
+         <p>Jadi, ini merupakan cara coding yang tidak baik.</p> 
+         <p>Kita bisa coba untuk meringankan masalah tersebut dengan membuat setiap action menjadi fungsi yang mandiri atau berdiri sendiri, seperti ini:</p> 
+         <div id="o6d1v6imh4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>loadScript('1.js', step1);
+
+function step1(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript('2.js', step2);
+  }
+}
+
+function step2(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...
+    loadScript('3.js', step3);
+  }
+}
+
+function step3(error, script) {
+  if (error) {
+    handleError(error);
+  } else {
+    // ...berlanjut setelah semua script dimuat(*)
+  }
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Lihat? Itu sama saja, dan tidak ada sarang yang dalam sekarang karena kita buat setiap action menjadi fungsi top-level yang terpisah.</p> 
+         <p>Ini berfungsi, tetapi kode-nya terlihat seperti sebuah spreadsheet yang terkoyak. Itu sulit di baca, dan kamu mungkin memperhatikan kalau yang satu butuh untuk eye-jump antara potongan lainnya saat di baca. Itu tidak nyaman, khususnya jika pembaca tidak terbiasa dengan kode dan tidak tahu harus kemana saat eye-jump.</p> 
+         <p>Juga, fungsi yang bernama <code>step*</code> semuanya digunakan sekali saja, mereka dibuat hanya untuk menghindari ???pyramid of doom.??? Tidak ada satupun yang digunakan kembali di luar rantai action. Jadi ada sedikit namespace yang berantakan disini.</p> 
+         <p>Kita ingin memiliki sesuatu yang lebih baik.</p> 
+         <p>Untunglah, ada cara lain untuk menghindari pyramida seperti itu. Salah satu cara yang bagus yaitu menggunakan ???promise,??? di jelaskan dalam bab selanjutnya.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="async.html" data-tooltip="Promises, async/await"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="promise-basics.html" data-tooltip="Promise"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcallbacks" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fcallbacks" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async.html">Promises, async/await</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="callbacks.html#callback-didalam-callback">Callback didalam callback</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="callbacks.html#menangani-error">Menangani error</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="callbacks.html#pyramid-of-doom">Pyramid of Doom</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="callbacks.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fcallbacks" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fcallbacks" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

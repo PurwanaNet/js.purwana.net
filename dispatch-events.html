@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Dispatching custom events</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="dispatch-events.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Dispatching custom events"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Dispatching custom events"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="default-browser-action.html"> 
+  <link rel="next" href="event-details.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Dispatching custom events"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdispatch-events" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdispatch-events" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="16" max="32" data-tooltip="Pelajaran 16 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="events.html"><span>Pengenalan ke Peristiwa</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Pengenalan ke Peristiwa","item":"https://id.javascript.info/events"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 7 Desember 2020"> 
+          <div class="updated-at__content">
+            7 Desember 2020 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://javascript.info/dispatch-events">English</a>, 
+          <a href="https://es.javascript.info/dispatch-events">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/dispatch-events">Fran??ais</a>, 
+          <a href="https://it.javascript.info/dispatch-events">Italiano</a>, 
+          <a href="https://ja.javascript.info/dispatch-events">?????????</a>, 
+          <a href="https://ko.javascript.info/dispatch-events">?????????</a>, 
+          <a href="https://learn.javascript.ru/dispatch-events">??????????????</a>, 
+          <a href="https://tr.javascript.info/dispatch-events">T??rk??e</a>, 
+          <a href="https://uk.javascript.info/dispatch-events">????????????????????</a>, 
+          <a href="https://zh.javascript.info/dispatch-events">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Dispatching custom events</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Dispatching custom events"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>We can not only assign handlers, but also generate events from JavaScript.</p> 
+         <p>Custom events can be used to create ???graphical components???. For instance, a root element of our own JS-based menu may trigger events telling what happens with the menu: <code>open</code> (menu open), <code>select</code> (an item is selected) and so on. Another code may listen for the events and observe what???s happening with the menu.</p> 
+         <p>We can generate not only completely new events, that we invent for our own purposes, but also built-in ones, such as <code>click</code>, <code>mousedown</code> etc. That may be helpful for automated testing.</p> 
+         <h2><a class="main__anchor" name="event-constructor" href="dispatch-events.html#event-constructor">Event constructor</a></h2> 
+         <p>Built-in event classes form a hierarchy, similar to DOM element classes. The root is the built-in <a href="http://www.w3.org/TR/dom/#event">Event</a> class.</p> 
+         <p>We can create <code>Event</code> objects like this:</p> 
+         <div id="3d7a7ijyoy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let event = new Event(type[, options]);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Arguments:</p> 
+         <ul> 
+          <li> <p><em>type</em> ??? event type, a string like <code>"click"</code> or our own like <code>"my-event"</code>.</p> </li> 
+          <li> <p><em>options</em> ??? the object with two optional properties:</p> 
+           <ul> 
+            <li><code>bubbles: true/false</code> ??? if <code>true</code>, then the event bubbles.</li> 
+            <li><code>cancelable: true/false</code> ??? if <code>true</code>, then the ???default action??? may be prevented. Later we???ll see what it means for custom events.</li> 
+           </ul> <p>By default both are false: <code>{bubbles: false, cancelable: false}</code>.</p> </li> 
+         </ul> 
+         <h2><a class="main__anchor" name="dispatchevent" href="dispatch-events.html#dispatchevent">dispatchEvent</a></h2> 
+         <p>After an event object is created, we should ???run??? it on an element using the call <code>elem.dispatchEvent(event)</code>.</p> 
+         <p>Then handlers react on it as if it were a regular browser event. If the event was created with the <code>bubbles</code> flag, then it bubbles.</p> 
+         <p>In the example below the <code>click</code> event is initiated in JavaScript. The handler works same way as if the button was clicked:</p> 
+         <div id="1qaswln3qa" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button id="elem" onclick="alert('Click!');"&gt;Autoclick&lt;/button&gt;
+
+&lt;script&gt;
+  let event = new Event("click");
+  elem.dispatchEvent(event);
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">event.isTrusted</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>There is a way to tell a ???real??? user event from a script-generated one.</p> 
+           <p>The property <code>event.isTrusted</code> is <code>true</code> for events that come from real user actions and <code>false</code> for script-generated events.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="bubbling-example" href="dispatch-events.html#bubbling-example">Bubbling example</a></h2> 
+         <p>We can create a bubbling event with the name <code>"hello"</code> and catch it on <code>document</code>.</p> 
+         <p>All we need is to set <code>bubbles</code> to <code>true</code>:</p> 
+         <div id="83caoswwpu" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;h1 id="elem"&gt;Hello from the script!&lt;/h1&gt;
+
+&lt;script&gt;
+  // catch on document...
+  document.addEventListener("hello", function(event) { // (1)
+    alert("Hello from " + event.target.tagName); // Hello from H1
+  });
+
+  // ...dispatch on elem!
+  let event = new Event("hello", {bubbles: true}); // (2)
+  elem.dispatchEvent(event);
+
+  // the handler on document will activate and display the message.
+
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Notes:</p> 
+         <ol> 
+          <li>We should use <code>addEventListener</code> for our custom events, because <code>on&lt;event&gt;</code> only exists for built-in events, <code>document.onhello</code> doesn???t work.</li> 
+          <li>Must set <code>bubbles:true</code>, otherwise the event won???t bubble up.</li> 
+         </ol> 
+         <p>The bubbling mechanics is the same for built-in (<code>click</code>) and custom (<code>hello</code>) events. There are also capturing and bubbling stages.</p> 
+         <h2><a class="main__anchor" name="mouseevent-keyboardevent-and-others" href="dispatch-events.html#mouseevent-keyboardevent-and-others">MouseEvent, KeyboardEvent and others</a></h2> 
+         <p>Here???s a short list of classes for UI Events from the <a href="https://www.w3.org/TR/uievents">UI Event specification</a>:</p> 
+         <ul> 
+          <li><code>UIEvent</code></li> 
+          <li><code>FocusEvent</code></li> 
+          <li><code>MouseEvent</code></li> 
+          <li><code>WheelEvent</code></li> 
+          <li><code>KeyboardEvent</code></li> 
+          <li>???</li> 
+         </ul> 
+         <p>We should use them instead of <code>new Event</code> if we want to create such events. For instance, <code>new MouseEvent("click")</code>.</p> 
+         <p>The right constructor allows to specify standard properties for that type of event.</p> 
+         <p>Like <code>clientX/clientY</code> for a mouse event:</p> 
+         <div id="wxm50skj9i" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let event = new MouseEvent("click", {
+  bubbles: true,
+  cancelable: true,
+  clientX: 100,
+  clientY: 100
+});
+
+alert(event.clientX); // 100</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Please note: the generic <code>Event</code> constructor does not allow that.</p> 
+         <p>Let???s try:</p> 
+         <div id="l7edqj48m2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let event = new Event("click", {
+  bubbles: true, // only bubbles and cancelable
+  cancelable: true, // work in the Event constructor
+  clientX: 100,
+  clientY: 100
+});
+
+alert(event.clientX); // undefined, the unknown property is ignored!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Technically, we can work around that by assigning directly <code>event.clientX=100</code> after creation. So that???s a matter of convenience and following the rules. Browser-generated events always have the right type.</p> 
+         <p>The full list of properties for different UI events is in the specification, for instance, <a href="https://www.w3.org/TR/uievents/#mouseevent">MouseEvent</a>.</p> 
+         <h2><a class="main__anchor" name="custom-events" href="dispatch-events.html#custom-events">Custom events</a></h2> 
+         <p>For our own, completely new events types like <code>"hello"</code> we should use <code>new CustomEvent</code>. Technically <a href="https://dom.spec.whatwg.org/#customevent">CustomEvent</a> is the same as <code>Event</code>, with one exception.</p> 
+         <p>In the second argument (object) we can add an additional property <code>detail</code> for any custom information that we want to pass with the event.</p> 
+         <p>For instance:</p> 
+         <div id="m0brcawfnf" data-trusted="1" class="code-example" data-refresh="1" data-highlight="[{&quot;start&quot;:9,&quot;end&quot;:9},{&quot;start&quot;:5,&quot;cols&quot;:[{&quot;start&quot;:10,&quot;end&quot;:27}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;h1 id="elem"&gt;Hello for John!&lt;/h1&gt;
+
+&lt;script&gt;
+  // additional details come with the event to the handler
+  elem.addEventListener("hello", function(event) {
+    alert(event.detail.name);
+  });
+
+  elem.dispatchEvent(new CustomEvent("hello", {
+    detail: { name: "John" }
+  }));
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The <code>detail</code> property can have any data. Technically we could live without, because we can assign any properties into a regular <code>new Event</code> object after its creation. But <code>CustomEvent</code> provides the special <code>detail</code> field for it to evade conflicts with other event properties.</p> 
+         <p>Besides, the event class describes ???what kind of event??? it is, and if the event is custom, then we should use <code>CustomEvent</code> just to be clear about what it is.</p> 
+         <h2><a class="main__anchor" name="event-preventdefault" href="dispatch-events.html#event-preventdefault">event.preventDefault()</a></h2> 
+         <p>Many browser events have a ???default action???, such as navigating to a link, starting a selection, and so on.</p> 
+         <p>For new, custom events, there are definitely no default browser actions, but a code that dispatches such event may have its own plans what to do after triggering the event.</p> 
+         <p>By calling <code>event.preventDefault()</code>, an event handler may send a signal that those actions should be canceled.</p> 
+         <p>In that case the call to <code>elem.dispatchEvent(event)</code> returns <code>false</code>. And the code that dispatched it knows that it shouldn???t continue.</p> 
+         <p>Let???s see a practical example ??? a hiding rabbit (could be a closing menu or something else).</p> 
+         <p>Below you can see a <code>#rabbit</code> and <code>hide()</code> function that dispatches <code>"hide"</code> event on it, to let all interested parties know that the rabbit is going to hide.</p> 
+         <p>Any handler can listen for that event with <code>rabbit.addEventListener('hide',...)</code> and, if needed, cancel the action using <code>event.preventDefault()</code>. Then the rabbit won???t disappear:</p> 
+         <div id="pklqtm8ft1" data-trusted="1" class="code-example" data-refresh="1" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;pre id="rabbit"&gt;
+  |\   /|
+   \|_|/
+   /. .\
+  =\_Y_/=
+   {&gt;o&lt;}
+&lt;/pre&gt;
+&lt;button onclick="hide()"&gt;Hide()&lt;/button&gt;
+
+&lt;script&gt;
+  function hide() {
+    let event = new CustomEvent("hide", {
+      cancelable: true // without that flag preventDefault doesn't work
+    });
+    if (!rabbit.dispatchEvent(event)) {
+      alert('The action was prevented by a handler');
+    } else {
+      rabbit.hidden = true;
+    }
+  }
+
+  rabbit.addEventListener('hide', function(event) {
+    if (confirm("Call preventDefault?")) {
+      event.preventDefault();
+    }
+  });
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-pklqtm8ft1" style="height:200px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Please note: the event must have the flag <code>cancelable: true</code>, otherwise the call <code>event.preventDefault()</code> is ignored.</p> 
+         <h2><a class="main__anchor" name="events-in-events-are-synchronous" href="dispatch-events.html#events-in-events-are-synchronous">Events-in-events are synchronous</a></h2> 
+         <p>Usually events are processed in a queue. That is: if the browser is processing <code>onclick</code> and a new event occurs, e.g. mouse moved, then it???s handling is queued up, corresponding <code>mousemove</code> handlers will be called after <code>onclick</code> processing is finished.</p> 
+         <p>The notable exception is when one event is initiated from within another one, e.g. using <code>dispatchEvent</code>. Such events are processed immediately: the new event handlers are called, and then the current event handling is resumed.</p> 
+         <p>For instance, in the code below the <code>menu-open</code> event is triggered during the <code>onclick</code>.</p> 
+         <p>It???s processed immediately, without waiting for <code>onclick</code> handler to end:</p> 
+         <div id="6g7nu2z52o" data-trusted="1" class="code-example" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button id="menu"&gt;Menu (click me)&lt;/button&gt;
+
+&lt;script&gt;
+  menu.onclick = function() {
+    alert(1);
+
+    menu.dispatchEvent(new CustomEvent("menu-open", {
+      bubbles: true
+    }));
+
+    alert(2);
+  };
+
+  // triggers between 1 and 2
+  document.addEventListener('menu-open', () =&gt; alert('nested'));
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-6g7nu2z52o" style="height:200px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>The output order is: 1 ??? nested ??? 2.</p> 
+         <p>Please note that the nested event <code>menu-open</code> is caught on the <code>document</code>. The propagation and handling of the nested event is finished before the processing gets back to the outer code (<code>onclick</code>).</p> 
+         <p>That???s not only about <code>dispatchEvent</code>, there are other cases. If an event handler calls methods that trigger other events ??? they are processed synchronously too, in a nested fashion.</p> 
+         <p>Let???s say we don???t like it. We???d want <code>onclick</code> to be fully processed first, independently from <code>menu-open</code> or any other nested events.</p> 
+         <p>Then we can either put the <code>dispatchEvent</code> (or another event-triggering call) at the end of <code>onclick</code> or, maybe better, wrap it in the zero-delay <code>setTimeout</code>:</p> 
+         <div id="6uj4oz3m67" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="dispatch-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button id="menu"&gt;Menu (click me)&lt;/button&gt;
+
+&lt;script&gt;
+  menu.onclick = function() {
+    alert(1);
+
+    setTimeout(() =&gt; menu.dispatchEvent(new CustomEvent("menu-open", {
+      bubbles: true
+    })));
+
+    alert(2);
+  };
+
+  document.addEventListener('menu-open', () =&gt; alert('nested'));
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Now <code>dispatchEvent</code> runs asynchronously after the current code execution is finished, including <code>menu.onclick</code>, so event handlers are totally separate.</p> 
+         <p>The output order becomes: 1 ??? 2 ??? nested.</p> 
+         <h2><a class="main__anchor" name="summary" href="dispatch-events.html#summary">Summary</a></h2> 
+         <p>To generate an event from code, we first need to create an event object.</p> 
+         <p>The generic <code>Event(name, options)</code> constructor accepts an arbitrary event name and the <code>options</code> object with two properties:</p> 
+         <ul> 
+          <li><code>bubbles: true</code> if the event should bubble.</li> 
+          <li><code>cancelable: true</code> if the <code>event.preventDefault()</code> should work.</li> 
+         </ul> 
+         <p>Other constructors of native events like <code>MouseEvent</code>, <code>KeyboardEvent</code> and so on accept properties specific to that event type. For instance, <code>clientX</code> for mouse events.</p> 
+         <p>For custom events we should use <code>CustomEvent</code> constructor. It has an additional option named <code>detail</code>, we should assign the event-specific data to it. Then all handlers can access it as <code>event.detail</code>.</p> 
+         <p>Despite the technical possibility of generating browser events like <code>click</code> or <code>keydown</code>, we should use them with great care.</p> 
+         <p>We shouldn???t generate browser events as it???s a hacky way to run handlers. That???s bad architecture most of the time.</p> 
+         <p>Native events might be generated:</p> 
+         <ul> 
+          <li>As a dirty hack to make 3rd-party libraries work the needed way, if they don???t provide other means of interaction.</li> 
+          <li>For automated testing, to ???click the button??? in the script and see if the interface reacts correctly.</li> 
+         </ul> 
+         <p>Custom events with our own names are often generated for architectural purposes, to signal what happens inside our menus, sliders, carousels etc.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="default-browser-action.html" data-tooltip="_Browser default actions_"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="event-details.html" data-tooltip="UI Events"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdispatch-events" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdispatch-events" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="events.html">Pengenalan ke Peristiwa</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dispatch-events.html#event-constructor">Event constructor</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dispatch-events.html#dispatchevent">dispatchEvent</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dispatch-events.html#bubbling-example">Bubbling example</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dispatch-events.html#mouseevent-keyboardevent-and-others">MouseEvent, KeyboardEvent and others</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dispatch-events.html#custom-events">Custom events</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dispatch-events.html#event-preventdefault">event.preventDefault()</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dispatch-events.html#events-in-events-are-synchronous">Events-in-events are synchronous</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dispatch-events.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="dispatch-events.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdispatch-events" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fdispatch-events" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

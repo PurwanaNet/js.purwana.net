@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Map dan Set</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="map-set.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Map dan Set"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Map dan Set"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="iterable.html"> 
+  <link rel="next" href="weakmap-weakset.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Map dan Set"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fmap-set" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fmap-set" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="43" max="92" data-tooltip="Pelajaran 43 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 31 Januari 2021"> 
+          <div class="updated-at__content">
+            31 Januari 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Map dan Set</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Map dan Set"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Sekarang kita telah membelajari struktur data compleks berikut:</p> 
+         <ul> 
+          <li>Objek untuk menyimpan koleksi kunci.</li> 
+          <li>Array untuk menyimpan koleksi berurut.</li> 
+         </ul> 
+         <p>Tapi itu tidak cukup dalam kehidupan nyata. Itu sebabnya <code>Map</code> dan<code>Set</code> juga ada.</p> 
+         <h2><a class="main__anchor" name="map" href="map-set.html#map">Map</a></h2> 
+         <p><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a> adalah kumpulan item data yang berkunci, seperti <code>Object</code>. Tetapi perbedaan utama adalah <code>Map</code> membolehkan kunci jenis apa pun.</p> 
+         <p>Metode dan properti:</p> 
+         <ul> 
+          <li><code>new Map()</code> ??? menciptakan map.</li> 
+          <li><code>map.set(key, value)</code> ??? menyimpan nilai dengan kunci.</li> 
+          <li><code>map.get(key)</code> ??? mengembalikan nilai dengan kunci, <code>undefined</code> jika<code>key</code> tidak ada di map.</li> 
+          <li><code>map.has(key)</code> ??? mengembalikan <code>true</code> jika<code>key</code> ada, <code>false</code> sebaliknya.</li> 
+          <li><code>map.delete(key)</code> ??? menghapus nilai dengan kunci.</li> 
+          <li><code>map.clear()</code> ??? menghapus semua isi dari map.</li> 
+          <li><code>map.size</code> ??? mengembalikan jumlah elemen saat ini.</li> 
+         </ul> 
+         <p>Misalnya:</p> 
+         <div id="5g9r5yphy1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let map = new Map();
+
+map.set('1', 'str1');   // kunci string
+map.set(1, 'num1');     // kunci nomor
+map.set(true, 'bool1'); // kunci boolean
+
+//ingat Object biasa? ia akan mengkonversi kunci menjadi string
+//Map menyimpan tipenya, jadi kedua berikut tidaklah sama:
+alert( map.get(1)   ); // 'num1'
+alert( map.get('1') ); // 'str1'
+
+alert( map.size ); // 3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang dapat kita lihat, lain dari objek, kunci tidak dikonversi ke string. Jenis kunci apa pun dimungkinkan.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>map[key]</code> bukan cara yang baik untuk menggunakan <code>Map</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Meski <code>map[key]</code> juga bekerja, misal kita bisa mengeset <code>map[key] = 2</code>, ini memperlakukan <code>map</code> sebagai objek JavaScript biasa, berimplikasi pada semua limitasi yang sesuai (tak ada kunci objek dan lain-lain).</p> 
+           <p>Jadi kita sebaiknya memakai metode <code>map</code>: <code>set</code>, <code>get</code> dan seterusnya.</p> 
+          </div> 
+         </div> 
+         <p><strong>Map juga dapat menggunakan objek sebagai kunci.</strong></p> 
+         <p>Misalnya:</p> 
+         <div id="0ndk9l7rqi" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let john = { name: "John" };
+
+// Untuk setiap pengguna, mari kita simpan jumlah kunjungan mereka
+let visitsCountMap = new Map();
+
+// john adalah kunci bagi mapnya
+visitsCountMap.set(john, 123);
+
+alert( visitsCountMap.get(john) ); // 123</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Menggunakan objek sebagai kunci adalah salah satu fitur <code>Map</code> yang paling terkenal dan penting. Untuk kunci string, <code>Object</code> bisa dipakai, tetapi tidak untuk kunci objek.</p> 
+         <p>Mari kita coba:</p> 
+         <div id="q2ins34k7p" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let john = { name: "John" };
+let ben = { name: "Ben" };
+
+let visitsCountObj = {}; // cobalah memakai objek
+
+visitsCountObj[ben] = 234; // cobalah memakai ben sebagai kunci
+visitsCountObj[john] = 123; // cobalah memakai john sebagai kunci
+
+// Inilah yang tertulis!
+alert( visitsCountObj["[object Object]"] ); // 123</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Karena <code>visitsCountObj</code> adalah sebuah objek, ia mengubah semua kunci, seperti <code>john</code> menjadi string, jadi kita mendapatkan kunci string <code>"[object Object]"</code>. Jelas bukan yang kita inginkan.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Cara <code>Map</code> membandingkan kunci</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Untuk mengetes kesamaan kunci, <code>Map</code> menggunakan algoritma <a href="https://tc39.github.io/ecma262/#sec-samevaluezero">SameValueZero</a>. Ini kira-kira sama dengan kesetaraan ketat <code>===</code>, tetapi perbedaannya adalah <code>NaN</code> dianggap sama dengan <code>NaN</code>. Jadi <code>NaN</code> bisa digunakan sebagai kunci juga.</p> 
+           <p>Algoritma ini tidak dapat diubah atau dikustomisasi.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Chaining</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Setiap panggilan <code>map.set</code> mengembalikan map itu sendiri, sehingga kami dapat ???mem-chain??? panggilan-panggilan:</p> 
+           <div id="na8j3dmlrt" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>map.set('1', 'str1')
+  .set(1, 'num1')
+  .set(true, 'bool1');</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="iterasi-atas-map" href="map-set.html#iterasi-atas-map">Iterasi Atas Map</a></h2> 
+         <p>Untuk looping atas <code>map</code>, ada 3 method:</p> 
+         <ul> 
+          <li><code>map.keys()</code> ??? mengembalikan iterable untuk kunci,</li> 
+          <li><code>map.values()</code> ??? mengembalikan iterable untuk nilai,</li> 
+          <li><code>map.entries()</code> ??? mengembalikan iterable untuk entri <code>[key, value]</code>, ini digunakan dengan standar di <code>for..of</code>.</li> 
+         </ul> 
+         <p>Misalnya:</p> 
+         <div id="r6k1cuxfde" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let recipeMap = new Map([
+  ['cucumber', 500],
+  ['tomatoes', 350],
+  ['onion',    50]
+]);
+
+// iterasi atas kunci (vegetables)
+for (let vegetable of recipeMap.keys()) {
+  alert(vegetable); // cucumber, tomatoes, onion
+}
+
+// iterasi atas nilai (amounts)
+for (let amount of recipeMap.values()) {
+  alert(amount); // 500, 350, 50
+}
+
+// iterasi atas entri-entri [key, value]
+for (let entry of recipeMap) { // the same as of recipeMap.entries()
+  alert(entry); // cucumber,500 (and so on)
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Urutan insersi digunakan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Iterasi berjalan dalam urutan yang sama dengan nilai yang dimasukkan. <code>Map</code> mempertahankan urutan ini, tidak seperti <code>Object</code> biasa.</p> 
+          </div> 
+         </div> 
+         <p>Selain itu, <code>Map</code> memilike method <code>forEach</code>, mirip dengan <code>Array</code>:</p> 
+         <div id="ael56hjw5u" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// menjalankan fungsi untuk setiap pasangan (kunci, nilai)
+recipeMap.forEach( (value, key, map) =&gt; {
+  alert(`${key}: ${value}`); // cucumber: 500 etc
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="object-entries-map-dari-object" href="map-set.html#object-entries-map-dari-object">Object.entries: Map dari Object</a></h2> 
+         <p>Ketika <code>Map</code> diciptakan, kita bisa memberi array (atau iterabel lainnya) pasangan kunci/nilai untuk inisialisasi, seperti ini:</p> 
+         <div id="d1tn4brjmc" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// array berisi pasangan [kunci, nilai]
+let map = new Map([
+  ['1',  'str1'],
+  [1,    'num1'],
+  [true, 'bool1']
+]);
+
+alert( map.get('1') ); // str1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita memiliki objek biasa, dan kita mau menciptakan sebuah <code>Map</code> darinya, kita bisa menggunakan method built-in <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Object/entries">Object.entries(obj)</a> yang mengembalikan array daripada pasangan-pasangan kunci/nilai untuk satu objek yang berformat persis sama.</p> 
+         <p>Jadi kita bisa menciptakan map dari objek seperti ini:</p> 
+         <div id="cg1ersvytl" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let obj = {
+  name: "John",
+  age: 30
+};
+
+let map = new Map(Object.entries(obj));
+
+alert( map.get('name') ); // John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini, <code>Object.entries</code> mengembalikan array daripada pasangan-pasangan kunci/nilai: <code>[ ["name","John"], ["age", 30] ]</code>. Itu yang <code>Map</code> perlukan.</p> 
+         <h2><a class="main__anchor" name="object-fromentries-object-dari-map" href="map-set.html#object-fromentries-object-dari-map">Object.fromEntries: Object dari Map</a></h2> 
+         <p>Kita baru saja menyaksikan cara menciptakan <code>Map</code> dari objek biasa dengan <code>Object.entries(obj)</code>.</p> 
+         <p>Ada juga method <code>Object.fromEntries</code> yang melakukan kebalikkannya: jika diberi array berisi pasangan <code>[kunci, nilai]</code>, ia menciptakan objek darinya:</p> 
+         <div id="ftgsanczkk" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let prices = Object.fromEntries([
+  ['banana', 1],
+  ['orange', 2],
+  ['meat', 4]
+]);
+
+// now prices = { banana: 1, orange: 2, meat: 4 }
+
+alert(prices.orange); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita bisa menggunakan <code>Object.fromEntries</code> untuk mendapatkan objek polos dari <code>Map</code>.</p> 
+         <p>Contoh: Kita menyimpan data di dalam <code>Map</code>, tapi kita perlu mengirimnya ke kode pihak ketiga yang mengharapkan objek biasa.</p> 
+         <p>Kita mulai:</p> 
+         <div id="elemgo52pt" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let map = new Map();
+map.set('banana', 1);
+map.set('orange', 2);
+map.set('meat', 4);
+
+let obj = Object.fromEntries(map.entries()); // ciptakan objek biasa (*)
+
+// selesai!
+// obj = { banana: 1, orange: 2, meat: 4 }
+
+alert(obj.orange); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pemanggilan <code>map.entries()</code> mengembalikan sebuah iterable dari pasangan key/value, persis didalam format dari <code>Object.fromEntries</code>.</p> 
+         <p>Kita juga bisa membuat barisan <code>(*)</code> lebih pendek:</p> 
+         <div id="sbhfdsa4s5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let obj = Object.fromEntries(map); // hilangkan .entries()</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu sama, karena <code>Object.fromEntries</code> mengharapkan objek iterabel sebagai argumen. Tidak harus sesuatu array. Dan iterasi standar untuk <code>map</code> mengembalikan pasangan kunci/nilai yang sama dengan <code>map.entries()</code>. Jadi kita mendapatkan objek biasa dengan kunci/nilai yang sama dengan <code>map</code>.</p> 
+         <h2><a class="main__anchor" name="set" href="map-set.html#set">Set</a></h2> 
+         <p><code>Set</code> adalah tipe koleksi spesial ??? ???set nilai-nilai??? (tanpa kunci), dimana setiap nilai hanya dapat terjadi sekali.</p> 
+         <p>Method utamanya adalah:</p> 
+         <ul> 
+          <li><code>new Set(iterable)</code> ??? menciptakan set, dan jika objek <code>iterable</code> disediakan (biasanya array), menyalin nilai darinya ke set.</li> 
+          <li><code>set.add(value)</code> ??? menambahkan nilai, mengembalikan set itu sendiri.</li> 
+          <li><code>set.delete(value)</code> ??? menghapus nilai, mengembalikan <code>true</code> jika <code>value</code> ada pada saat panggilan berlangsung, jika tidak <code>false</code>.</li> 
+          <li><code>set.has(value)</code> ??? mengembalikan <code>true</code> jika nilai ada di set, jika tidak <code>false</code>.</li> 
+          <li><code>set.clear()</code> ??? menghapus semuanya dari set.</li> 
+          <li><code>set.size</code> ??? adalah hitungan elemen.</li> 
+         </ul> 
+         <p>Fitur utamanya adalah panggilan berulang <code>set.add(value)</code> dengan nilai yang sama tidak melakukan apa-apa. Itulah alasan mengapa setiap nilai hanya muncul dalam <code>Set</code> sekali.</p> 
+         <p>Misalnya, ada pengunjung yang datang, dan kami ingin mengingat semua orang. Tetapi kunjungan berulang tidak harus menyebabkan duplikasi. Pengunjung harus ???dihitung??? hanya sekali.</p> 
+         <p><code>Set</code> adalah hal yang tepat untuk itu:</p> 
+         <div id="uxkj88zofy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let set = new Set();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+// kunjungan-kunjungan, beberapa pengguna datang berkali-kali
+set.add(john);
+set.add(pete);
+set.add(mary);
+set.add(john);
+set.add(mary);
+
+// set hanya menyimpan nilai-nilai unik
+alert( set.size ); // 3
+
+for (let user of set) {
+  alert(user.name); // John (lalu Pete dan Mary)
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Alternatif untuk <code>Set</code> dapat berupa array pengguna, dan kode untuk memeriksa duplikat pada setiap insersi menggunakan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/find">arr.find</a>. Tetapi kinerjanya akan jauh lebih buruk, karena metode ini menjalani seluruh array memeriksa setiap elemen. <code>Set</code> jauh lebih baik dioptimalkan secara internal untuk pemeriksaan keunikan.</p> 
+         <h2><a class="main__anchor" name="iteration-atas-set" href="map-set.html#iteration-atas-set">Iteration atas Set</a></h2> 
+         <p>Kita bisa meng-loop atas set dengan <code>for..of</code> atau menggunakan <code>forEach</code>:</p> 
+         <div id="qc1fb4jrv7" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let set = new Set(["oranges", "apples", "bananas"]);
+
+for (let value of set) alert(value);
+
+// sama untuk forEach:
+set.forEach((value, valueAgain, set) =&gt; {
+  alert(value);
+});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ingat keanehannya. Fungsi callback yang dilewatkan dalam <code>forEach</code> memiliki 3 argumen: satu <code>value</code>, kemudian <em>nilai yang sama</em> <code>valueAgain</code>, dan kemudian objek target. Memang, nilai yang sama muncul dalam argumen dua kali.</p> 
+         <p>Itu untuk kompatibilitas dengan <code>Map</code> di mana callback yang dilewati <code>forEach</code> memiliki tiga argumen. Terlihat agak aneh, memang. Tetapi dapat membantu mengganti <code>Map</code> dengan<code>Set</code> dalam kasus-kasus tertentu dengan mudah, dan sebaliknya.</p> 
+         <p>Metode yang sama yang dimiliki <code>Map</code> untuk iterator juga didukung:</p> 
+         <ul> 
+          <li><code>set.keys()</code> ??? mengembalikan objek iterable untuk nilai,</li> 
+          <li><code>set.values()</code> ??? sama dengan <code>set.keys()</code>, untuk kompatibilitas dengan <code>Map</code>,</li> 
+          <li><code>set.entries()</code> ??? mengembalikan objek iterable untuk entri <code>[nilai, nilai]</code>, ada untuk kompatibilitas dengan <code>Map</code>.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="ringkasan" href="map-set.html#ringkasan">Ringkasan</a></h2> 
+         <p><code>Map</code> ??? adalah kumpulan nilai-nilai berkunci.</p> 
+         <p>Metode dan properti:</p> 
+         <ul> 
+          <li><code>new Map([iterable])</code> ??? membuat map, dengan <code>iterable</code> opsional (mis. array) dari pasangan <code>[key, value]</code> untuk inisialisasi.</li> 
+          <li><code>map.set(key, value)</code> ??? menyimpan nilai dengan kunci.</li> 
+          <li><code>map.get(key)</code> ??? mengembalikan nilai dengan kunci, <code>undefined</code> jika <code>key</code> tidak ada di map.</li> 
+          <li><code>map.has(key)</code> ??? mengembalikan <code>true</code> jika <code>key</code> ada, <code>false</code> sebaliknya.</li> 
+          <li><code>map.delete(key)</code> ??? menghapus nilai dengan kunci.</li> 
+          <li><code>map.clear()</code> ??? menghapus semuanya dari peta.</li> 
+          <li><code>map.size</code> ??? mengembalikan jumlah elemen saat ini.</li> 
+         </ul> 
+         <p>Perbedaan dari <code>Object</code> biasa:</p> 
+         <ul> 
+          <li>Kunci apa saja, objek bisa dijadikan kunci.</li> 
+          <li>Metode-metode tambahan untuk kenyamanan, properti <code>size</code>.</li> 
+         </ul> 
+         <p><code>Set</code> ??? adalah kumpulan nilai-nilai unik.</p> 
+         <p>Metode dan properti:</p> 
+         <ul> 
+          <li><code>new Set([iterable])</code> ??? membuat set, dengan nilai opsional <code>iterable</code> (mis. array) untuk inisialisasi.</li> 
+          <li><code>set.add(value)</code> ??? menambahkan nilai (tidak melakukan apa-apa jika <code>value</code> ada), mengembalikan set itu sendiri.</li> 
+          <li><code>set.delete(value)</code> ??? menghapus nilai, mengembalikan <code>true</code> jika <code>value</code> ada pada saat panggilan berlangsung, jika tidak <code>false</code>.</li> 
+          <li><code>set.has(value)</code> ??? mengembalikan <code>true</code> jika nilai ada di set, jika tidak <code>false</code>.</li> 
+          <li><code>set.clear()</code> ??? menghapus semuanya dari set.</li> 
+          <li><code>set.size</code> ??? adalah hitungan elemen.</li> 
+         </ul> 
+         <p>Iterasi atas <code>Map</code> dan<code>Set</code> selalu dalam urutan insersi, jadi kami tidak dapat mengatakan bahwa koleksi ini tidak berurut, tetapi kami tidak dapat menyusun ulang elemen atau secara langsung mendapatkan elemen dengan nomornya.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="map-set.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="map-set.html#memfilter-item-array-yang-unik" name="memfilter-item-array-yang-unik">Memfilter item array yang unik</a></h3> 
+           <a class="task__open-link" href="task/array-unique-map.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Anggaplah <code>arr</code> sebagai sebuah array.</p> 
+            <p>Ciptakanlah fungsi <code>unique(arr)</code> yang harus mengembalikan array yang berisi nilai-nilai unik dari <code>arr</code>.</p> 
+            <p>Sebagai contoh:</p> 
+            <div id="a7wazwl3tt" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function unique(arr) {
+  /* kodemu */
+}
+
+let values = ["Hare", "Krishna", "Hare", "Krishna",
+  "Krishna", "Krishna", "Hare", "Hare", ":-O"
+];
+
+alert( unique(values) ); // Hare, Krishna, :-O</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>P.S. Disini string dipakai sebagai contoh, tetapi nilai dengan tipe apa saja bisa dipakai.</p> 
+            <p>P.P.S. Pakailah <code>Set</code> untuk menyimpan nilai-nilai yang unik.</p> 
+            <p><a href="https://plnkr.co/edit/SR61VldojNR4A2bq?p=preview" target="_blank" data-plunk-id="SR61VldojNR4A2bq">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="zv2vm9bzdk" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function unique(arr) {
+  return Array.from(new Set(arr));
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/ezkqLIWGbpYxFYsx?p=preview" target="_blank" data-plunk-id="ezkqLIWGbpYxFYsx">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="map-set.html#filter-anagram" name="filter-anagram">Filter anagram</a></h3> 
+           <a class="task__open-link" href="task/filter-anagrams.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p><a href="https://en.wikipedia.org/wiki/Anagram">Anagram</a> adalah kata-kata yang mempunyai jumlah huruf-huruf yang sama, tetapi dengan susunan yang berbeda.</p> 
+            <p>Sebagai contoh:</p> 
+            <div id="lik211q5pf" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-none"><code>nap - pan
+ear - are - era
+cheaters - hectares - teachers</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Ciptakanlah fungsi <code>aclean(arr)</code> yang mengembalikan array yang bersih dari anagram.</p> 
+            <p>Sebagai contoh:</p> 
+            <div id="6lix1z3uyb" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+alert( aclean(arr) ); // "nap,teachers,ear" or "PAN,cheaters,era"</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Dari setiap grup anagram hanya harus tersisa satu kata, boleh yang mana saja.</p> 
+            <p><a href="https://plnkr.co/edit/2423X0b5UkCkW5ZH?p=preview" target="_blank" data-plunk-id="2423X0b5UkCkW5ZH">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Untuk menemukan semua anagram, mari kita pecahkan setiap kata menjadi huruf-huruf dan urutkanlah. Ketika huruf-huruf terurut, semua anagram adalah sama.</p> 
+              <p>Sebagai contoh:</p> 
+              <div id="6028y3eki1" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-none"><code>nap, pan -&gt; anp
+ear, era, are -&gt; aer
+cheaters, hectares, teachers -&gt; aceehrst
+...</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kita akan menggunakan varian yang diurutkan berdasarkan huruf sebagai kunci map untuk menyimpan hanya satu nilai untuk setiap kunci:</p> 
+              <div id="cutesc0xkf" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function aclean(arr) {
+  let map = new Map();
+
+  for (let word of arr) {
+    // split the word by letters, sort them and join back
+    let sorted = word.toLowerCase().split('').sort().join(''); // (*)
+    map.set(sorted, word);
+  }
+
+  return Array.from(map.values());
+}
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+alert( aclean(arr) );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Penyortiran huruf dilakukan oleh deretan panggilan di baris <code>(*)</code>.</p> 
+              <p>Untuk kenyamanan marilah kita pecahkan menjadi beberapa baris:</p> 
+              <div id="m3ltjmjobw" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let sorted = word // PAN
+  .toLowerCase() // pan
+  .split('') // ['p','a','n']
+  .sort() // ['a','n','p']
+  .join(''); // anp</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Dua kata berbeda <code>'PAN'</code> dan <code>'nap'</code> mendapatkan form urutan huruf yang sama <code>'anp'</code>.</p> 
+              <p>Baris berikutnya menempatkan kata tersebut ke dalam map:</p> 
+              <div id="13x6i7oyex" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>map.set(sorted, word);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Jika kita pernah bertemu kata dengan urutan huruf yang sama lagi, maka kata itu akan menggantikan nilai sebelumnya dengan kunci yang sama di dalam map. Maka dari itu kita akan selalu mempunyai maksimum satu kata untuk setiap form huruf.</p> 
+              <p>Akhirnya <code>Array.from(map.values())</code> mengambil iterable atas nilai-nilai map (kita tidak memperlukan kunci-kunci dalam hasilnya) dan mengembalikan array dengan isi tersebut.</p> 
+              <p>Disini kita juga bisa menggunakan objek biasa daripada <code>Map</code>, karena kunci adalah string.</p> 
+              <p>Solusinya bisa terlihat seperti ini:</p> 
+              <div id="hwfgrdephm" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function aclean(arr) {
+  let obj = {};
+
+  for (let i = 0; i &lt; arr.length; i++) {
+    let sorted = arr[i].toLowerCase().split("").sort().join("");
+    obj[sorted] = arr[i];
+  }
+
+  return Object.values(obj);
+}
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+alert( aclean(arr) );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/luFXALaoWilv4KcF?p=preview" target="_blank" data-plunk-id="luFXALaoWilv4KcF">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="map-set.html#kunci-kunci-iterable" name="kunci-kunci-iterable">Kunci-kunci iterable</a></h3> 
+           <a class="task__open-link" href="task/iterable-keys.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kami ingin mendapatkan array daripada <code>map.keys()</code> dalam satu variabel lalu mengaplikasikan metode yang array spesifik kepadanya, contoh <code>.push</code>.</p> 
+            <p>Tapi itu tidak berhasil:</p> 
+            <div id="n54gkmhllm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:7}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let map = new Map();
+
+map.set("name", "John");
+
+let keys = map.keys();
+
+// Error: keys.push is not a function
+keys.push("more");</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Mengapa? Bagaimana kita bisa membenarkan kode ini untuk membuat <code>keys.push</code> berhasil?</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Itu karena <code>map.keys()</code> mengembalikan iterable, tetapi bukan sebuah array.</p> 
+              <p>Kita bisa mengubahnya ke sebuah array menggunakan <code>Array.from</code>:</p> 
+              <div id="g668pm4jg6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="map-set.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="map-set.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let map = new Map();
+
+map.set("name", "John");
+
+let keys = Array.from(map.keys());
+
+keys.push("more");
+
+alert(keys); // name, more</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="iterable.html" data-tooltip="Iterables / Bisa di iterasi"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="weakmap-weakset.html" data-tooltip="WeakMap dan WeakSet"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fmap-set" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fmap-set" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="map-set.html#map">Map</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="map-set.html#iterasi-atas-map">Iterasi Atas Map</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="map-set.html#object-entries-map-dari-object">Object.entries: Map dari Object</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="map-set.html#object-fromentries-object-dari-map">Object.fromEntries: Object dari Map</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="map-set.html#set">Set</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="map-set.html#iteration-atas-set">Iteration atas Set</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="map-set.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="map-set.html#tasks">Tugas (3)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="map-set.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fmap-set" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fmap-set" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

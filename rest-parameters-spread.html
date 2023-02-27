@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Parameter rest dan sintaks spread</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="rest-parameters-spread.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Parameter rest dan sintaks spread"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Parameter rest dan sintaks spread"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="recursion.html"> 
+  <link rel="next" href="closure.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Parameter rest dan sintaks spread"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Frest-parameters-spread" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Frest-parameters-spread" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="50" max="92" data-tooltip="Pelajaran 50 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="advanced-functions.html"><span>Penggunaan lanjutan fungsi</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Penggunaan lanjutan fungsi","item":"https://id.javascript.info/advanced-functions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Parameter rest dan sintaks spread</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Parameter rest dan sintaks spread"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Banyak fungsi bawaan Javascript yang mendukung argumen dengan angka yang panjang.</p> 
+         <p>Contoh:</p> 
+         <ul> 
+          <li><code>Math.max(arg1, arg2, ..., argN)</code> ??? mengembalikan nilai terbesar dari argumen.</li> 
+          <li><code>Object.assign(dest, src1, ..., srcN)</code> ??? menyalin properti dari <code>src1..N</code> kedalam <code>dest</code>.</li> 
+          <li>???dan lainnya.</li> 
+         </ul> 
+         <p>Didalam bab ini kita akan belajar bagaimana cara untuk melakukan hal yang sama, bagaimana cara untuk mengirim array kepada fungsi seperti itu sebagai parameter.</p> 
+         <h2><a class="main__anchor" name="parameter-rest" href="rest-parameters-spread.html#parameter-rest">Parameter rest <code>...</code></a></h2> 
+         <p>Sebuah fungsi dapat dipanggil dengan jumlah argumen berapapun, tidak peduli bagaimana itu didefinisikan.</p> 
+         <p>Seperti ini:</p> 
+         <div id="xjqqmf4hj8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sum(a, b) {
+  return a + b;
+}
+
+alert( sum(1, 2, 3, 4, 5) );</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disana tidak akan terdapat error karena argumen ???berlebihan???. Tapi tentu saja hasilnya hanya dua angka pertama yang dihitung.</p> 
+         <p>Sisa parameternya bisa digunakan didalam fungsi dengan menggunakan tiga titik <code>...</code> diikuti nama dari array yang akan berisi mereka. Titik secara harfiah berarti ???kumpulkan sisa parameter didalam array???.</p> 
+         <p>Contoh, untuk mengumpulkan seluruh argumen menjadi array <code>args</code>:</p> 
+         <div id="35c4n4dqev" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sumAll(...args) { // args adalah nama dari arraynya
+  let sum = 0;
+
+  for (let arg of args) sum += arg;
+
+  return sum;
+}
+
+alert( sumAll(1) ); // 1
+alert( sumAll(1, 2) ); // 3
+alert( sumAll(1, 2, 3) ); // 6</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita bisa memilih untuk mendapatkan parameter pertama sebagai variabel, dan sisanya dikumpulkan.</p> 
+         <p>Disini dua parameter pertama akan dimasukan kedalam variabel dan sisanya akan masuk kedalam array <code>titles</code>:</p> 
+         <div id="qygazskwq4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function showName(firstName, lastName, ...titles) {
+  alert( firstName + ' ' + lastName ); // Julius Caesar
+
+  // sisanya masuk kedalam array titles
+  // i.e. titles = ["Consul", "Imperator"]
+  alert( titles[0] ); // Consul
+  alert( titles[1] ); // Imperator
+  alert( titles.length ); // 2
+}
+
+showName("Julius", "Caesar", "Consul", "Imperator");</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Parameter rest harus berada di akhir</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Parameter rest mengumpulkan seluruh sisa argumen, jadi contoh dibawah tidak dapat dimengerti dan akan menyebabkan error:</p> 
+           <div id="qs6kzpk8kv" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function f(arg1, ...rest, arg2) { // arg2 after ...rest ?!
+  // error
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p><code>...rest</code> harus selalu berada di akhir.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="variable-arguments" href="rest-parameters-spread.html#variable-arguments">Variable ???arguments???</a></h2> 
+         <p>Juga terdapat objek spesial seperti array bernama <code>arguments</code> yang mengandung seluruh argumen dengan indeksnya.</p> 
+         <p>Contoh:</p> 
+         <div id="ispsvnu3nb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function showName() {
+  alert( arguments.length );
+  alert( arguments[0] );
+  alert( arguments[1] );
+
+  // dapat diiterasi
+  // for(let arg of arguments) alert(arg);
+}
+
+// menampilkan: 2, Julius, Caesar
+showName("Julius", "Caesar");
+
+// menampilkan: 1, Ilya, undefined (tidak ada argumen kedua)
+showName("Ilya");</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dahulu, parameter rest tidak ada didalam bahasa pemrograman, dan menggunakan <code>arguments</code> hanyalah satu-satunya cara untuk mendapatkan seluruh argumen dari sebuah fungsi. Dan itu tetap bekerja, kita bisa menemukannya di kode-kode jadul.</p> 
+         <p>Tapi kekurangannya adalah walaupun <code>arguments</code> seperti array dan bisa diiterasi, itu bukanlah sebuah array. Itu tidak mendukung metode-metode array, jadi kita tidak bisa memanggil untuk contoh <code>arguments.map(...)</code>.</p> 
+         <p>Juga, itu selalu mengandung seluruh argumen. Kita tidak bisa menangkapnya dalam beberapa bagian, seperti yang kita lakukan dengan parameter rest.</p> 
+         <p>Jadi ketika kita membutuhkan fiturnya, parameter rest lebih disukai.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Arrow function tidak memiliki <code>"arguments"</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika kita ingin mengakses objek <code>arguments</code>dari sebuah fungsi panah/arrow function, itu akan mengambilnya dari fungsi ???normal??? terluar.</p> 
+           <p>Contoh:</p> 
+           <div id="35wrxw9mpf" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function f() {
+  let showArg = () =&gt; alert(arguments[0]);
+  showArg();
+}
+
+f(1); // 1</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Seperti yang kita ingat, arrow function tidak memiliki <code>this</code> mereka sendiri. Sekarang kita tahu mereka tidak memiliki objek <code>arguments</code> yang spesial juga.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="spread-syntax" href="rest-parameters-spread.html#spread-syntax">Sintaks spread</a></h2> 
+         <p>Kita baru saja melihat bagaimana cara untuk mendapatkan sebuah array dari daftar dari sebuah parameter-parameter.</p> 
+         <p>Tapi terkadang kita perlu untuk melakukan hal yang sama dengan terbalik.</p> 
+         <p>Contoh, terdapat fungsi bawaan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Math/max">Math.max</a> yang mengembalikan angka terbesar dari list:</p> 
+         <div id="98q54b9y0r" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( Math.max(3, 5, 1) ); // 5</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang kita bayangkan kita mempunyai sebuah array <code>[3, 5, 1]. Bagaimana caranya kita memanggil</code>Math.max` dengan itu?</p> 
+         <p>Berikan itu ???kedalamnya??? tidak akan bekerja, karena <code>Math.max</code> mengharapkan sebuah daftar dari argumen numerik, bukan dari array tunggal:</p> 
+         <div id="u2qqs0lry9" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [3, 5, 1];
+
+alert( Math.max(arr) ); // NaN</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan tentu saja kita tidak bisa secara manual memasukan itemnya kedalam kode <code>Math.max(arr[0], arr[1], arr[2])</code>, karena kita mungkin tidak yakin ada berapa elemen didalamnya. Lalu saat skripnya dieksekusi, disana mungkin terdapat banyak, atau mungkin tidak ada. Dan itu bukanlah hal yang bagus.</p> 
+         <p><em>Sintaks spread</em> datang untuk membantu! Itu terlihat sama dengan parameter rest, juga menggunakan <code>...</code>, tapi itu melakukan yang sebaliknya.</p> 
+         <p>Ketika <code>...arr</code> digunakan didalam pemanggilan fungsi, itu ???memperluas??? sebuah objek yang bisa diiterasi <code>arr</code> kedalam daftar dari argumen.</p> 
+         <p>Untuk <code>Math.max</code>:</p> 
+         <div id="hoj6mcpvr4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [3, 5, 1];
+
+alert( Math.max(...arr) ); // 5 (spread mengubah array menjadi daftar dari argumen)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa memberikan beberapa hal yang bisa diiterasi dengan cara ini:</p> 
+         <div id="6gee0cldj4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr1 = [1, -2, 3, 4];
+let arr2 = [8, 3, -8, 1];
+
+alert( Math.max(...arr1, ...arr2) ); // 8</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa mengkombinasikan sintaks spread dengan nilai normal:</p> 
+         <div id="uxgqhq3auy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr1 = [1, -2, 3, 4];
+let arr2 = [8, 3, -8, 1];
+
+alert( Math.max(1, ...arr1, 2, ...arr2, 25) ); // 25</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Juga, sintaks spread bisa digunakan untuk menyatukan array-array:</p> 
+         <div id="268p5v27qo" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [3, 5, 1];
+let arr2 = [8, 9, 15];
+
+let merged = [0, ...arr, 2, ...arr2];
+
+alert(merged); // 0,3,5,1,2,8,9,15 (0, lalu arr, lalu 2, lalu arr2)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam contoh diatas kita menggunakan sebuah array untuk mendemonstrasikan sintaks spread, tapi hal yang bisa diiterasi apapun bisa digunakan.</p> 
+         <p>Contoh, disini kita menggunakan sintaks spread untuk mengubah string menjadi array dari karakter-karakter:</p> 
+         <div id="q9eg07pufo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "Hello";
+
+alert( [...str] ); // H,e,l,l,o</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sintaks spread secara internal menggunakan iterator untuk menggabungkan elemen-elemen, cara yang sama seperti yang dilakukan <code>for..of</code>.</p> 
+         <p>Jadi, untuk sebuah string, <code>for..of</code> mengembalikan karakter-karakter dan <code>...str</code> menjadi <code>"H","e","l","l","o"</code>. Daftar dari karakter-karakter diberikan kepada penginisialisasi array <code>[...str]</code>.</p> 
+         <p>Untuk task tertentu kita bisa juga menggunakan <code>Array.from</code>, karena itu akan mengkonversi sebuah hal yang bisa diiterasi (seperti string) menjadi sebuah array:</p> 
+         <div id="zqr2jhd331" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "Hello";
+
+// Array.from mengubah sebuah iterabel menjadi sebuah array
+alert( Array.from(str) ); // H,e,l,l,o</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hasilnya akan sama seperti <code>[...str]</code>.</p> 
+         <p>Tapi disana terdapat perbedaan yang tipis diantara <code>Array.from(obj)</code> dan <code>[...obj]</code>:</p> 
+         <ul> 
+          <li><code>Array.from</code> dapat dioperasikan di ???hal yang seperti array??? dan ???hal yang bisa diiterasi???.</li> 
+          <li>Sintaks spread hanya bekerja dengan hal yang bisa diiterasi.</li> 
+         </ul> 
+         <p>Jadi, task untuk mengubah sesuatu menjadi sebuah array, <code>Array.from</code> cenderung lebih banyak digunakan.</p> 
+         <h2><a class="main__anchor" name="mendapatkan-salinan-baru-dari-sebuah-array-objek" href="rest-parameters-spread.html#mendapatkan-salinan-baru-dari-sebuah-array-objek">Mendapatkan salinan baru dari sebuah array/objek</a></h2> 
+         <p>Inget ketika kita berbicara tentang <code>Object.assign()</code> <a href="object-copy.html#cloning-and-merging-object-assign">sebelumnya</a>?</p> 
+         <p>Itu adalah hal yang bisa dilakukan untuk melakukan hal yang sama dengan sintaks spread.</p> 
+         <div id="b4ck9uz8wd" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arr = [1, 2, 3];
+let arrCopy = [...arr]; // sebarkan arraynya menjadi list dari parameter
+                        // lalu masukan hasilnya kedalam array yang baru
+
+// apakah arraynya mempunyai konten yang sama?
+alert(JSON.stringify(arr) === JSON.stringify(arrCopy)); // true
+
+// apakah arraynya sama?
+alert(arr === arrCopy); // false (bukanlah referensi yang sama)
+
+// memodifikasi array awal kita tidak memodifikasi salinannya:
+arr.push(4);
+alert(arr); // 1, 2, 3, 4
+alert(arrCopy); // 1, 2, 3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perhatikan bahwa melakukan hal yang sama seperti menyalin sebuah objek adalah hal yang bisa dilakukan:</p> 
+         <div id="3i1ytwcenk" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="rest-parameters-spread.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let obj = { a: 1, b: 2, c: 3 };
+let objCopy = { ...obj }; // sebarkan objeknya menjadi daftar dari parameter
+                          // lalu kembalikan hasilnya kedalam objek baru.
+
+// apakah objeknya memiliki kontent yang sama?
+alert(JSON.stringify(obj) === JSON.stringify(objCopy)); // true
+
+// apakah objeknya sama?
+alert(obj === objCopy); // false (not same reference)
+
+// memodifikasi objel awal kita tidak berarti memodifikasi salinannya:
+obj.d = 4;
+alert(JSON.stringify(obj)); // {"a":1,"b":2,"c":3,"d":4}
+alert(JSON.stringify(objCopy)); // {"a":1,"b":2,"c":3}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Menyalin objek dengan cara ini lebih pendek daripada <code>let objCopy = Object.assign({}, obj);</code> atau untuk sebuah array <code>let arrCopy = Objek.assign([], arr);</code> jadi kita lebih memilih menggunakannya kapanpun bila bisa digunakan.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="rest-parameters-spread.html#ringkasan">Ringkasan</a></h2> 
+         <p>ketika kita melihat <code>"..."</code> didalam kode, itu adalah parameter rest atau sintaks spread.</p> 
+         <p>Terdapat sebuah cara yang mudah untuk membedakan mereka:</p> 
+         <ul> 
+          <li>Ketika <code>...</code> berada di akhiran dari parameter fungsi, itu adalah ???parameter rest??? dan menggabungkan sisa dari daftar argumen menjadi sebuah array.</li> 
+          <li>Ketika <code>...</code> muncul didalam pemanggilan fungsi atau sejenisnya, itu dipanggil dengan ???sintaks spread??? dan membentangkan array menjadi sebuah list.</li> 
+         </ul> 
+         <p>Penggunaan pola:</p> 
+         <ul> 
+          <li>Paramter rest digunakan untuk membuat fungsi yang dapat menerima argumen dengan jumlah berapapun.</li> 
+          <li>Sintkas spread digunakan untuk mengirimkan sebuah array kedalam sebuah fungsi yang biasanya membutuhkan daftar dari beberapa argumen.</li> 
+         </ul> 
+         <p>Bersama mereka membantu menggunakan sebuah list dan sebuah array dari parameter dengan mudah.</p> 
+         <p>Semua argumen dari sebuah pemanggilan fungsi juga tersedia di argumen dengan ???gaya-lama???: objek seperti array yang bisa diiterasi.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="recursion.html" data-tooltip="Rekursi dan tumpukan (Recursion and stack)"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="closure.html" data-tooltip="Lingkup variabel, closure"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Frest-parameters-spread" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Frest-parameters-spread" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="advanced-functions.html">Penggunaan lanjutan fungsi</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="rest-parameters-spread.html#parameter-rest">Parameter rest <code>...</code></a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="rest-parameters-spread.html#variable-arguments">Variable ???arguments???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="rest-parameters-spread.html#spread-syntax">Sintaks spread</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="rest-parameters-spread.html#mendapatkan-salinan-baru-dari-sebuah-array-objek">Mendapatkan salinan baru dari sebuah array/objek</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="rest-parameters-spread.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="rest-parameters-spread.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Frest-parameters-spread" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Frest-parameters-spread" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

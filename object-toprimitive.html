@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "id";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Menolak konversi primitif</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="object-toprimitive.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Menolak konversi primitif"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Menolak konversi primitif"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="symbol.html"> 
+  <link rel="next" href="data-types.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Menolak konversi primitif"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fobject-toprimitive" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fobject-toprimitive" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="36" max="92" data-tooltip="Pelajaran 36 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="object-basics.html"><span>Objects: dasar-dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Objects: dasar-dasar","item":"https://id.javascript.info/object-basics"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Menolak konversi primitif</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Menolak konversi primitif"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Apa yang terjadi ketika objek ditambahkan <code>obj1 + obj2</code>, dikurangi <code>obj1 - obj2</code> atau dicetak menggunakan <code>alert(obj)</code>?</p> 
+         <p>JavaScript tidak benar-benar memungkinkan untuk menyesuaikan cara operator bekerja pada objek. Tidak seperti beberapa bahasa pemrograman lain, seperti Ruby atau C++, kami tidak dapat mengimplementasikan metode objek khusus untuk menangani penambahan (atau operator lain).</p> 
+         <p>Dalam kasus operasi seperti itu, objek secara otomatis dikonversi ke primitif, dan kemudian operasi dilakukan di atas primitif ini dan menghasilkan nilai primitif.</p> 
+         <p>Itu batasan penting, karena hasil dari <code>obj1 + obj2</code> tidak bisa menjadi objek lain!</p> 
+         <p>Misalnya. kita tidak dapat membuat objek yang mewakili vektor atau matriks (atau pencapaian atau apa pun), menambahkannya dan mengharapkan objek ???dijumlahkan??? sebagai hasilnya. Prestasi arsitektur seperti itu secara otomatis ???di luar papan???.</p> 
+         <p>Jadi, karena kita tidak bisa berbuat banyak di sini, tidak ada matematika dengan objek dalam proyek nyata. Ketika itu terjadi, biasanya karena kesalahan pengkodean.</p> 
+         <p>Dalam bab ini kita akan membahas bagaimana sebuah objek dikonversi ke primitif dan bagaimana menyesuaikannya.</p> 
+         <p>Kami memiliki dua tujuan:</p> 
+         <ol> 
+          <li>Ini akan memungkinkan kita untuk memahami apa yang terjadi jika terjadi kesalahan pengkodean, ketika operasi seperti itu terjadi secara tidak sengaja.</li> 
+          <li>Ada pengecualian, di mana operasi semacam itu dimungkinkan dan terlihat bagus. Misalnya. mengurangkan atau membandingkan tanggal (objek <code>Tanggal</code>). Kami akan menemukan mereka nanti.</li> 
+         </ol> 
+         <h2><a class="main__anchor" name="aturan-konversi" href="object-toprimitive.html#aturan-konversi">Aturan konversi</a></h2> 
+         <p>Dalam bab <a href="type-conversions.html">Konversi Tipe</a> kita telah melihat aturan untuk konversi numerik, string, dan boolean dari primitif. Tapi kami meninggalkan celah untuk objek. Sekarang, seperti yang kita ketahui tentang metode dan simbol, menjadi mungkin untuk mengisinya.</p> 
+         <ol> 
+          <li>Semua objek <code>benar</code> dalam konteks boolean. Hanya ada konversi numerik dan string.</li> 
+          <li>Konversi numerik terjadi ketika kita mengurangi objek atau menerapkan fungsi matematika. Misalnya, objek <code>Tanggal</code> (akan dibahas dalam bab <span class="markdown-error">Artikel "tanggal" tidak ditemukan</span>) dapat dikurangi, dan hasil dari <code>tanggal1 - tanggal2</code> adalah perbedaan waktu antara dua tanggal.</li> 
+          <li>Untuk konversi string ??? biasanya terjadi ketika kita mengeluarkan objek seperti <code>alert(obj)</code> dan dalam konteks yang serupa.</li> 
+         </ol> 
+         <p>Kita dapat menyempurnakan konversi string dan numerik, menggunakan metode objek khusus.</p> 
+         <p>Ada tiga varian konversi tipe, yang terjadi dalam berbagai situasi.</p> 
+         <p>Mereka disebut ???petunjuk???, seperti yang dijelaskan dalam <a href="https://tc39.github.io/ecma262/#sec-toprimitive">spesifikasi</a>:</p> 
+         <dl> 
+          <dt> 
+           <code>"tali"</code> 
+          </dt> 
+          <dd> 
+           <p>Untuk konversi objek-ke-string, saat kita melakukan operasi pada objek yang mengharapkan string, seperti <code>alert</code>:</p> 
+           <div id="zcl3o985td" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// keluaran
+waspada (obj);
+
+// menggunakan objek sebagai kunci properti
+lainObj[obj] = 123;</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>"nomor"</code> 
+          </dt> 
+          <dd> 
+           <p>Untuk konversi objek ke angka, seperti saat kita mengerjakan matematika:</p> 
+           <div id="wog2ttq7jc" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// konversi eksplisit
+misalkan angka = Angka(obj);
+
+// matematika (kecuali biner plus)
+misalkan n = +obj; // unary plus
+biarkan delta = tanggal1 - tanggal2;
+
+// lebih sedikit/perbandingan lebih besar
+biarkan lebih besar = pengguna1 &gt; pengguna2;</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>"default"</code> 
+          </dt> 
+          <dd> 
+           <p>Terjadi dalam kasus yang jarang terjadi ketika operator ???tidak yakin??? jenis apa yang diharapkan.</p> 
+           <p>Misalnya, biner plus <code>+</code> dapat bekerja baik dengan string (menggabungkannya) dan angka (menambahkannya), jadi string dan angka bisa digunakan. Jadi jika biner plus mendapatkan objek sebagai argumen, ia menggunakan petunjuk <code>"default"</code> untuk mengonversinya.</p> 
+           <p>Selain itu, jika suatu objek dibandingkan menggunakan <code>==</code> dengan string, angka, atau simbol, konversi mana yang harus dilakukan juga tidak jelas, sehingga petunjuk <code>"default"</code> digunakan.</p> 
+           <div id="27ged4t9nl" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// binary plus menggunakan petunjuk "default"
+misalkan total = obj1 + obj2;
+
+// obj == nomor menggunakan petunjuk "default"
+if (pengguna == 1) { ... };</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Operator perbandingan yang lebih besar dan lebih kecil, seperti <code>&lt;</code> <code>&gt;</code>, dapat bekerja dengan string dan angka juga. Namun, mereka menggunakan petunjuk <code>"number"</code>, bukan <code>"default"</code>. Itu karena alasan historis.</p> 
+           <p>Namun dalam praktiknya, kita tidak perlu mengingat detail aneh ini, karena semua objek bawaan kecuali satu kasus (objek <code>Tanggal</code>, kita akan mempelajarinya nanti) mengimplementasikan konversi <code>"default"</code> dengan cara yang sama seperti <code>"nomor"</code>. Dan kita bisa melakukan hal yang sama.</p> 
+          </dd> 
+         </dl> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Tidak ada petunjuk <code>"boolean"</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Harap dicatat ??? hanya ada tiga petunjuk. Sesederhana itu.</p> 
+           <p>Tidak ada petunjuk ???boolean??? (semua objek <code>benar</code> dalam konteks boolean) atau yang lainnya. Dan jika kita memperlakukan <code>"default"</code> dan <code>"number"</code> sama, seperti kebanyakan built-in, maka hanya ada dua konversi.</p> 
+          </div> 
+         </div> 
+         <p><strong>Untuk melakukan konversi, JavaScript mencoba menemukan dan memanggil tiga metode objek:</strong></p> 
+         <ol> 
+          <li>Panggil <code>obj[Symbol.toPrimitive](hint)</code> ??? metode dengan kunci simbolis <code>Symbol.toPrimitive</code> (simbol sistem), jika metode tersebut ada,</li> 
+          <li>Sebaliknya jika petunjuknya adalah <code>"string"</code> 
+           <ul> 
+            <li>coba <code>obj.toString()</code> dan <code>obj.valueOf()</code>, apa pun yang ada.</li> 
+           </ul> </li> 
+          <li>Jika petunjuknya adalah <code>"number"</code> atau <code>"default"</code> 
+           <ul> 
+            <li>coba <code>obj.valueOf()</code> dan <code>obj.toString()</code>, apa pun yang ada.</li> 
+           </ul> </li> 
+         </ol> 
+         <h2><a class="main__anchor" name="symbol-toprimitive" href="object-toprimitive.html#symbol-toprimitive">Symbol.toPrimitive</a></h2> 
+         <p>Mari kita mulai dari cara pertama. Ada simbol bawaan bernama <code>Symbol.toPrimitive</code> yang harus digunakan untuk menamai metode konversi, seperti ini:</p> 
+         <div id="nlmlrwpvlh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>obj[Simbol.toPrimitif] = fungsi(petunjuk) {
+  // dia</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="symbol.html" data-tooltip="Tipe simbol"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="data-types.html" data-tooltip="Tipe data"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fobject-toprimitive" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fobject-toprimitive" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-basics.html">Objects: dasar-dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-toprimitive.html#aturan-konversi">Aturan konversi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-toprimitive.html#symbol-toprimitive">Symbol.toPrimitive</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="object-toprimitive.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fobject-toprimitive" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fobject-toprimitive" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

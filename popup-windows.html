@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Metode Popup dan window</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="popup-windows.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Metode Popup dan window"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Metode Popup dan window"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="frames-and-windows.html"> 
+  <link rel="next" href="cross-window-communication.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Metode Popup dan window"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpopup-windows" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpopup-windows" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="1" max="3" data-tooltip="Pelajaran 1 dari 3"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="frames-and-windows.html"><span>Frames and windows</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Frames and windows","item":"https://id.javascript.info/frames-and-windows"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 31 Januari 2021"> 
+          <div class="updated-at__content">
+            31 Januari 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Metode Popup dan window</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Metode Popup dan window"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Jendela popup adalah salah satu metode tertua untuk menampilkan tambahan dokumen kepada pengguna. Secara umum, kamu hanya menjalankan:</p> 
+         <div id="wz6sbe7hfe" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>window.open('https://javascript.info/')</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Dan akan terbuka jendela baru yang telah diberi URL, Kebanyakan peramban moderen akan membuka jendela baru bukannya jendela terpisah. Popup ada sejak jaman dahulu. Ide awalnya adalah untuk menampilkan konten lain tanpa menutup jendela utama. Saat ini, ada cara lain untuk melakukan hal tersebut: Kita bisa membuka konten secara dinamis dengan <a href="fetch.html">fetch</a> dan menampilkannya di dalam sebuah <code>&lt;div&gt;</code> yang dihasilkan secara dinamis. Jadi popups adalah sesuatu yang tidak kita gunakan setiap hari.</p> 
+         <p>Kemudian, popups itu rumit di perangkat seluler, karena tidak menampilkan beberapa jendela secara serempak.</p> 
+         <p>Namun, ada tugas dimana popups masih digunakan, misalnya untuk otorisasi OAuth (masuk dengan Google/Facebook/???), karena:</p> 
+         <ol> 
+          <li>Popup adalah sebuah jendela terpisah dengan ekosistem Javascript independennya sendiri. Sehingga aman membuka popup dari situs pihak ketiga yang tidak terpercaya.</li> 
+          <li>Sangat mudah untuk membuka popup.</li> 
+          <li>Sebuah popup dapat menavigasi (merubah URL) dan mengirimkan pesan ke pembuka jendela.</li> 
+         </ol> 
+         <h2><a class="main__anchor" name="pemblokiran-popup" href="popup-windows.html#pemblokiran-popup">Pemblokiran Popup</a></h2> 
+         <p>Di masa lalu, situs jahat sering sekali menyalahgunakan popups. Sebuah halaman jahat dapat membuka banyak sekali jendela popup dengan iklan. Sehingga saat ini kebanyakan peramban mencoba untuk memblokir dan melindungi pengguna.</p> 
+         <p><strong>Kebanyakan peramban akan memblokir popups jika dipangil dari luar aktifitas yang dipicu oleh pengguna seperti <code>onclick</code>.</strong></p> 
+         <p>Sebgai contoh:</p> 
+         <div id="10gdafsi9j" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// popup diblokir
+window.open('https://javascript.info');
+
+// popup diperbolehkan
+button.onclick = () =&gt; {
+  window.open('https://javascript.info');
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dengan cara ini pengguna agak terlindungi dari popups yang tidak diinginkan dan fungsionalitasnya tidak dinonaktifkan secara total. Bagaimana jika popups dibuka dari <code>onclick</code>, tetapi setelah <code>setTimeout</code> ? Hal ini sedikit rumit.</p> 
+         <p>Coba kode berikut:</p> 
+         <div id="7iom8hbdna" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// terbuka setelah 3 detik
+setTimeout(() =&gt; window.open('http://google.com'), 3000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Popup terbuka di Chrome, namun diblokir di Firefox.</p> 
+         <p>???Jika kita mengurangi penundaan, popup akan bekerja di Firefox juga:</p> 
+         <div id="tzheoxnak6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// open after 1 seconds
+setTimeout(() =&gt; window.open('http://google.com'), 1000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perbedaannya adalah Firefox memperlakukan sebuah timeout antara 2000ms atau kurang dari itu untuk dapat diterima, namun lebih dari itu ??? hilangkan ???kepercayaan???, Firefox berasumsi bahwa saat ini ???diluar kendali pengguna???. Sehingga yang pertama akan diblokir, dan yang kedua tidak.</p> 
+         <h2><a class="main__anchor" name="window-open" href="popup-windows.html#window-open">window.open</a></h2> 
+         <p>Sintak untuk membuka popup adalah: <code>window.open(url, name, params)</code>: url : URL yang akan dimuat di dalam jendela baru.</p> 
+         <dl> 
+          <dt>
+            nama 
+          </dt> 
+          <dd>
+            nama dari jendela baru. Setiap jendela memiliki sebuah 
+           <code>window.name</code>, dan dengan ini kita bisa secara spesifik menentukan jendela mana yang digunakan untuk popup. Jika telah ada jendela menggunakan nama tersebut ??? URL akan menjadi gantinya, jika tidak jendela baru terbuka. 
+          </dd> 
+          <dt>
+            parameter 
+          </dt> 
+          <dd>
+            Konfigurasi untuk jendela baru. Mengandung pengaturan, yang dipisahkan dengan koma. Tidak boleh ada spasi di dalam parameter, sebagai contoh: 
+           <code>width=200,height=100</code>. 
+          </dd> 
+         </dl> 
+         <p>Pengaturan untuk <code>params</code>:</p> 
+         <ul> 
+          <li>Posisi: 
+           <ul> 
+            <li><code>left/top</code> (numeric) ??? mengatur sudut jendela atas-kanan di layar. Namun ada batasan: sebuah jendela baru tidak bisa diposisikan tersembunyi.</li> 
+            <li><code>width/height</code> (numeric) ??? Lebar dan tinggi dari jendela baru. Namun ada batasan pada Lebar/tinggi minimal, sehingga tidak mungkin untuk membuat jendela tidak terlihat.</li> 
+           </ul> </li> 
+          <li>Fitur jendela: 
+           <ul> 
+            <li><code>menubar</code> (yes/no) ??? menampilkan atau menyembunyikan menu peramban pada jendela baru.</li> 
+            <li><code>toolbar</code> (yes/no) ??? menampilkan atau menyembunyikan navigasi bar peramban (kembali, kedepan, isi ulang dan sebagainya) pada jendela baru.</li> 
+            <li><code>location</code> (yes/no) ??? menampilkan atau menyembunyikan URL pada jendela baru. FF dan IE tidak mengizinkan untuk meyembunyikan URL secara <em>default</em></li> 
+            <li><code>status</code> (yes/no) ??? menampilkan atau menyembunyikan <em>bar status</em>. Sekali lagi kebanyakan peramban memaksa untuk menampilkannya.</li> 
+            <li><code>resizable</code> (yes/no) ??? mengizinkan atau menolak untuk merubah ukuran jendela baru. Tidak direkomendasikan.</li> 
+            <li><code>scrollbars</code> (yes/no) ??? mengizinkan atau menolak <em>scrollbars</em>. untuk jendela baru. Tidak direkomendasikan.</li> 
+           </ul> </li> 
+         </ul> 
+         <p>Ada juga sedikit dukungan untuk fitur spesifik peramban, Dimana biasanya tidak digunakan. Periksa <a href="https://developer.mozilla.org/en/DOM/window.open">window.open in MDN</a> Sebagai contoh.</p> 
+         <h2><a class="main__anchor" name="contoh-sebuah-jendela-sederhana" href="popup-windows.html#contoh-sebuah-jendela-sederhana">Contoh: sebuah jendela sederhana</a></h2> 
+         <p>Mari buka jendela dengan pengaturan fitur paling sedikit untuk melihat fitur mana yang akan diizinkan atau tidak oleh peramban:</p> 
+         <div id="vzc3xysmi9" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=0,height=0,left=-1000,top=-1000`;
+
+open('/', 'test', params);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam contoh kebanyakan ???fitur jendela??? telah dinonaktifkan dan jendela berada di luar layar. Jalankan dan lihat apa yang terjadi. Kebanyakan peramban akan ???Memperbaiki??? hal-hal yang ganjil seperti <code>width/height</code> yang kosong dan <code>left/top</code> yang keluar jendela. Sebagai contoh, Chrome membuka semacam jendela dengan lebar/tinggi penuh. sehingga akan menempati layar penuh.</p> 
+         <p>Mari tambahkan opsi penempatan normal dan masuk akal untuk koordinat <code>width</code>, <code>height</code>, <code>left</code>, <code>top</code>:</p> 
+         <div id="2i925jyjwi" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+width=600,height=300,left=100,top=100`;
+
+open('/', 'test', params);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kebanyakan peramban menampilkan contoh diatas sesuai dengan yang diinginkan.</p> 
+         <p>Aturan untuk penggaturan yang dihilangkan:</p> 
+         <ul> 
+          <li>Jika tidak ada argumen ketiga di dalam pemanggilan <code>open</code>, atau kosong, maka parameter <em>default</em> jendela yang akan digunakan.</li> 
+          <li>Jika ada serangkaian parameter, namun sebagian fitur <code>yes/no</code> diabaikan, maka fitur yang diabaikan akan diasumsikan untuk memiliki nilai <code>no</code>. Sehingga jika anda menetapkan parameter, pastikan secara eksplisit anda telah menyetel semua fitur yang dibutuhkan ke <em>yes</em>.</li> 
+          <li>Jika tidak ada <code>left/top</code> di dalam parameter, maka peramban akan mencoba untuk membuka sebuah jendela baru didekat jendela yang terakhir terbuka.</li> 
+          <li>Jika tidak ada <code>width/height</code>, maka jendela baru akan memiliki ukuran yang sama seperti jendela yang terakhir terbuka.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="mengakses-popup-dari-jendela" href="popup-windows.html#mengakses-popup-dari-jendela">Mengakses popup dari jendela</a></h2> 
+         <p>Pemanggilan <code>Open</code> mengembalikan referensi ke jendela baru. referensi itu bisa digunakan untuk memanipulasi properti, merubah lokasi dan melakukan hal lain yang lebih dari itu.</p> 
+         <p>Pada contoh ini, kita menghasilkan popup konten dari Javascript:</p> 
+         <div id="7t76zpg2qa" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let newWin = window.open("about:blank", "hello", "width=200,height=200");
+
+newWin.document.write("Hello, world!");</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan disini kita memodifikasi konten setelah dimuat:</p> 
+         <div id="8hf224bdrd" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let newWindow = open('/', 'example', 'width=300,height=300')
+newWindow.focus();
+
+alert(newWindow.location.href); // (*) about:blank, loading belum dimulai
+
+newWindow.onload = function() {
+  let html = `&lt;div style="font-size:30px"&gt;Welcome!&lt;/div&gt;`;
+  newWindow.document.body.insertAdjacentHTML('afterbegin', html);
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Penting untuk dicatat: Segera setelah <code>window.open</code>, saat itu jendela baru belum dimuat. Hal itu didemonstrasikan oleh <code>alert</code> di baris <code>(*)</code>, Sehingga kita menunggu untuk <code>onload</code> untuk memodifikasinya. Kita juga bisa menggunakan <em>handler</em> <code>DOMContentLoaded</code> untuk <code>newWin.document</code>.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Same origin policy</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jendela dapat dengan leluasa mengakses konten satu sama lain hanya jika mereka datang dari asal yang sama (protocol://domain:port yang sama) Jika tidak, semisal jendela utama datang dari <code>site.com</code>, dan popup datang dari <code>gmail.com</code>, hal ini mustahil dilakukan demi alasan keamanan penguna. Untuk lebih detail lihat bagian <a href="cross-window-communication.html">Cross-window communication</a>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengakses-jendela-dari-popup" href="popup-windows.html#mengakses-jendela-dari-popup">Mengakses jendela dari popup</a></h2> 
+         <p>Popup mungkin mengakses ???pembuka??? jendela menggunakan referensei <code>window.openner</code>. Ini akan menjadi <code>null</code> dari semua jendela kecuali popup. Jika code dibawah dijalankan, maka konten pembuka jendela saat ini akan dibuah menjadi ???Test???:</p> 
+         <div id="299elqbflo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let newWin = window.open("about:blank", "hello", "width=200,height=200");
+
+newWin.document.write(
+  "&lt;script&gt;window.opener.document.body.innerHTML = 'Test'&lt;\/script&gt;"
+);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sehingga terjadi koneksi dua arah antara jendela: jendela utama dan popup memiliki sebuah referensi satu sama lain.</p> 
+         <h2><a class="main__anchor" name="menutup-sebuah-popup" href="popup-windows.html#menutup-sebuah-popup">Menutup sebuah popup</a></h2> 
+         <p>Untuk menutup sebuah jendela: <code>win.close()</code>.</p> 
+         <p>Untuk memeriksa apakah jendela sudah tertutup: <code>win.closed</code>.</p> 
+         <p>Secara teknis, metode <code>close()</code> tersedia pada setiap <code>window</code>, namun <code>window.close()</code> diabaikan oleh kebanyakan beramban jika <code>window</code> tidak dibuat dengan <code>window.open</code>. Jadi hanya akan bekerja untuk popup.</p> 
+         <p>properti <code>closed</code> bernilai <code>true</code> jika jendela ditutup. Hal ini berguna untuk memeriksa apakah popup (atau jendela utama) masih terbuka atau tidak. seorang pengguna bisa menutupnya kapan saja, dan kode kita mengambil pertimbangan untuk diperhitungkan.</p> 
+         <p>Code dibawah ini dimuat dan kemudian menutup jendela:</p> 
+         <div id="eewdjpzqz5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let newWindow = open('/', 'example', 'width=300,height=300');
+
+newWindow.onload = function() {
+  newWindow.close();
+  alert(newWindow.closed); // benar
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="berpindah-dan-merubah-ukuran" href="popup-windows.html#berpindah-dan-merubah-ukuran">berpindah dan merubah ukuran.</a></h2> 
+         <p>Ada metode untuk memindahkan/merubah ukuran sebuah jendela:</p> 
+         <dl> 
+          <dt> 
+           <code>win.moveBy(x,y)</code> 
+          </dt> 
+          <dd>
+            Memindahkan jendela ke posisi 
+           <code>x</code> piksel ke kanan dan 
+           <code>y</code> piksel kebawah. Nilai negatif dapat diterima (untuk memindahkan kiri/atas). 
+          </dd> 
+          <dt> 
+           <code>win.moveTo(x,y)</code> 
+          </dt> 
+          <dd>
+            Memindahkan jendela ke koordinat 
+           <code>(x,y)</code> di layar. 
+          </dd> 
+          <dt> 
+           <code>win.resizeBy(width,height)</code> 
+          </dt> 
+          <dd>
+            Merubah ukuran jendela dengan memberikan 
+           <code>width/height</code> ke ukuran sat ini. Nilai negatif dapat diterima. 
+          </dd> 
+          <dt> 
+           <code>win.resizeTo(width,height)</code> 
+          </dt> 
+          <dd>
+            Merubah ukuran jendela ke ukuran yang diberikan. 
+          </dd> 
+         </dl> 
+         <p>Ada juga <code>window.onresize</code> <em>event</em>.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Hanya popups</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Untuk mencegah penyalahgunaan, peramban biasanya memblokir metode ini. Mereka hanya bekerja baik pada popup yang kami buka, yang tidak memiliki tab tambahan.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tidak ada modifikasi/maksimasi</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Javascript tidak memiliki cara untuk mengecilkan atau memaksimalkan sebuah jendela. fungsi OS-level ini tersembunyi dari pengembang frontend metode Move/resize tidak dapat berjalan pada jendela maximized/minimized.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="gulir-jendela" href="popup-windows.html#gulir-jendela">Gulir jendela</a></h2> 
+         <p>Kami telah membicarakan tentang mengulir jendela di bagian <a href="size-and-scroll-window.html">Window sizes and scrolling</a>. <code>win.scrollBy(x,y)</code> : Gulir jendela <code>x</code> piksel ke kanan dan <code>y</code> kebawah terhadap posisi gulir saat ini. Nilai negatif dapat diterima. <code>win.scrollTo(x,y)</code> : Scroll the window to the given coordinates <code>(x,y)</code>.</p> 
+         <dl> 
+          <dt> 
+           <code>elem.scrollIntoView(top = true)</code> 
+          </dt> 
+          <dd>
+            Mengulir jendela untuk membuat 
+           <code>elem</code> terlihat diatas atau di bawah dari 
+           <code>elem.scrollIntoView(false)</code>, Kemudian ada juga 
+           <em>event</em> 
+           <code>window.onscroll</code>. 
+          </dd> 
+         </dl> 
+         <h2><a class="main__anchor" name="fokus-kabur-di-jendela" href="popup-windows.html#fokus-kabur-di-jendela">Fokus/kabur di jendela</a></h2> 
+         <p>Secara teori, ada metode <code>window.focus()</code> dan <code>window.blur()</code> untuk memfokuskan/tidak fokus sebuah jendela. Dan ada juga <em>even</em> <code>focus/blur</code> yang mengizinkan untuk menangkap momen saat pegunjung fokus pada jendela dan berpindah ke tempat lain.</p> 
+         <p>Meskipun, dalam praktiknya hal ini dibatasi, karena pada masa lalu halaman jahat menyalahgunakannya.</p> 
+         <p>Sebagai contoh, lihat code ini:</p> 
+         <div id="tih3zbrrlp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="popup-windows.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>window.onblur = () =&gt; window.focus();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mesikipun pengguna mencoba untuk berpindah dari jendela (<code>window.onblur</code>), hal ini membawa jendela kembali fokus. Tujuanya adalah untuk ???mengunci??? pengguna selama berada di dalam <code>window</code>.</p> 
+         <p>Sehingga peramban harus memperkenalkan banyak batasan kode seperti ini dan melindungi pengguna dari iklan dan halaman jahat. Mereka bergantung ke peramban.</p> 
+         <p>Sebagai contoh, sebuah peramban <em>mobile</em> pada umumnya mengabaikan <code>window.focus()</code>. Dan fokus tidak bekerja saat sebuah popup terbuka di dalam tab yang terpisah daripada membuka sebuah jendela baru.</p> 
+         <p>Masih ada beberapa kasus pengunaan menggunakan pangilan sejenis untuk menjalankan dan berguna.</p> 
+         <p>Sebagai contoh:</p> 
+         <ul> 
+          <li>Saat kita membuka popup, mungkin ide yang bagus untuk menjalankan <code>newWindow.focus()</code>. untuk beberapa kombinasi OS/peramban memastikan bahwa pengguna saat ini berada di dalam jendela baru</li> 
+          <li>Jika kita ingin melacak kapan pengunjung mengunakan web-app, kita dapat melacak <code>window.onfocus/onblur</code>. Hal ini mengijinkan kita untuk menangguhkan / melanjutkan di dalam aktifitas animasi dan semacamnya. Tetapi tolong dicatat bahwa <em>event</em> <code>blur</code> berarti pengunjung berpindah dari jendela, teteapi mereka mungkin masih mengamatinya. Jendela berada di latar belakang, namun mungkin masih dapat dilihat.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="kesimpulan" href="popup-windows.html#kesimpulan">kesimpulan</a></h2> 
+         <p>Jendela popup jarang digunakan, karena ada beberapa alternatif: memuat dan menampilkan informasi in-page, atau di dalam iframe.</p> 
+         <p>Jika kita akan membuka popup, cara yang benar adalah dengan memberitahu pengguna tentang hal ini. Sebuah ikon ???jendela terbuka??? dekat tautan atau tombol yang mengizinkan pengunjung untuk tetap fokus dan ingat kedua jendela.</p> 
+         <ul> 
+          <li>Popup dapat dibuka dengan pemanggilan <code>open(url, name, params)</code>. hal ini akan mengembalikan referensi untuk jendela yang lebih baru.</li> 
+          <li>Peramban memblokir pemanggilan <code>open</code> dari kode yang berasal dari luar aksi pengguna. Biasanya notifikasi muncul, sehingga pengguna mungkin mengizinkannya.</li> 
+          <li>Secara umum peramban membuka tab baru, tetapi jika ukuran disediakan, maka akan terbuka jendela popup.</li> 
+          <li>Popup mungkin mengakses pembuka jendela menggunakan properti <code>window.opener</code>.</li> 
+          <li>Jendela utama dan popup dapat secara bebas membaca dan memodifikasi satu sama lain jika mereka memiliki asal yang sama. Jika tidak mereka dapat merubah lokasi satu sama lain dan <a href="cross-window-communication.html">bertukar pesan</a>.</li> 
+         </ul> 
+         <p>Untuk menutuo popup: gunakan pemanggilan <code>close()</code>. Juga pengguna mungkin menutupnya (seperti jendela yang lain). <code>window.closed</code> adalah <code>true</code> setelahnya.</p> 
+         <ul> 
+          <li>Metode <code>focus()</code> dan <code>blur()</code> mengizinkan sebuah jendela untuk fokus/ tidak fokus. Tetapi mereka tidak bekerja setiap saat.</li> 
+          <li><code>focus</code> dan <code>blur</code> <em>even</em> mengizinkan untuk melacak perpindahan masuk dan keluar jendela. Namun tolong dicatat bahwa sebuah jendela mungkin masih dapat terlihat meskipun di dalam status latar belakang, setelah <code>blur</code>.</li> 
+         </ul> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="frames-and-windows.html" data-tooltip="Frames and windows"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="cross-window-communication.html" data-tooltip="Cross-window communication"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpopup-windows" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fpopup-windows" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="frames-and-windows.html">Frames and windows</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#pemblokiran-popup">Pemblokiran Popup</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#window-open">window.open</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#contoh-sebuah-jendela-sederhana">Contoh: sebuah jendela sederhana</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#mengakses-popup-dari-jendela">Mengakses popup dari jendela</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#mengakses-jendela-dari-popup">Mengakses jendela dari popup</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#menutup-sebuah-popup">Menutup sebuah popup</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#berpindah-dan-merubah-ukuran">berpindah dan merubah ukuran.</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#gulir-jendela">Gulir jendela</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#fokus-kabur-di-jendela">Fokus/kabur di jendela</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#kesimpulan">kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="popup-windows.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fpopup-windows" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fpopup-windows" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

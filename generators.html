@@ -1,0 +1,925 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Generators</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="generators.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Generators"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Generators"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="generators-iterators.html"> 
+  <link rel="next" href="async-iterators-generators.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Generators"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fgenerators" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fgenerators" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="83" max="92" data-tooltip="Pelajaran 83 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="generators-iterators.html"><span>Generator, iterasi lanjutan</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Generator, iterasi lanjutan","item":"https://id.javascript.info/generators-iterators"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://ar.javascript.info/generators">????????</a>, 
+          <a href="https://javascript.info/generators">English</a>, 
+          <a href="https://es.javascript.info/generators">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/generators">Fran??ais</a>, 
+          <a href="https://it.javascript.info/generators">Italiano</a>, 
+          <a href="https://ja.javascript.info/generators">?????????</a>, 
+          <a href="https://ko.javascript.info/generators">?????????</a>, 
+          <a href="https://learn.javascript.ru/generators">??????????????</a>, 
+          <a href="https://tr.javascript.info/generators">T??rk??e</a>, 
+          <a href="https://uk.javascript.info/generators">????????????????????</a>, 
+          <a href="https://zh.javascript.info/generators">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Generators</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Generators"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Regular functions return only one, single value (or nothing).</p> 
+         <p>Generators can return (???yield???) multiple values, one after another, on-demand. They work great with <a href="iterable.html">iterables</a>, allowing to create data streams with ease.</p> 
+         <h2><a class="main__anchor" name="generator-functions" href="generators.html#generator-functions">Generator functions</a></h2> 
+         <p>To create a generator, we need a special syntax construct: <code>function*</code>, so-called ???generator function???.</p> 
+         <p>It looks like this:</p> 
+         <div id="px62kau8ss" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Generator functions behave differently from regular ones. When such function is called, it doesn???t run its code. Instead it returns a special object, called ???generator object???, to manage the execution.</p> 
+         <p>Here, take a look:</p> 
+         <div id="3i5nr1b55t" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:8}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+
+// "generator function" creates "generator object"
+let generator = generateSequence();
+alert(generator); // [object Generator]</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The function code execution hasn???t started yet:</p> 
+         <figure> 
+          <div class="image" style="width:353px"> 
+           <div class="image__ratio" style="padding-top:42.492917847025495%"></div> 
+           <object type="image/svg+xml" data="article/generators/generateSequence-1.svg" width="353" height="150" class="image__image" data-use-theme> <img src="article/generators/generateSequence-1.svg" alt="" width="353" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>The main method of a generator is <code>next()</code>. When called, it runs the execution until the nearest <code>yield &lt;value&gt;</code> statement (<code>value</code> can be omitted, then it???s <code>undefined</code>). Then the function execution pauses, and the yielded <code>value</code> is returned to the outer code.</p> 
+         <p>The result of <code>next()</code> is always an object with two properties:</p> 
+         <ul> 
+          <li><code>value</code>: the yielded value.</li> 
+          <li><code>done</code>: <code>true</code> if the function code has finished, otherwise <code>false</code>.</li> 
+         </ul> 
+         <p>For instance, here we create the generator and get its first yielded value:</p> 
+         <div id="l7n5vqsofg" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:8}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+
+let generator = generateSequence();
+
+let one = generator.next();
+
+alert(JSON.stringify(one)); // {value: 1, done: false}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>As of now, we got the first value only, and the function execution is on the second line:</p> 
+         <figure> 
+          <div class="image" style="width:519px"> 
+           <div class="image__ratio" style="padding-top:28.901734104046245%"></div> 
+           <object type="image/svg+xml" data="article/generators/generateSequence-2.svg" width="519" height="150" class="image__image" data-use-theme> <img src="article/generators/generateSequence-2.svg" alt="" width="519" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Let???s call <code>generator.next()</code> again. It resumes the code execution and returns the next <code>yield</code>:</p> 
+         <div id="o734pw621o" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let two = generator.next();
+
+alert(JSON.stringify(two)); // {value: 2, done: false}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:519px"> 
+           <div class="image__ratio" style="padding-top:28.901734104046245%"></div> 
+           <object type="image/svg+xml" data="article/generators/generateSequence-3.svg" width="519" height="150" class="image__image" data-use-theme> <img src="article/generators/generateSequence-3.svg" alt="" width="519" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>And, if we call it a third time, the execution reaches the <code>return</code> statement that finishes the function:</p> 
+         <div id="8vcdec58gu" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:44,&quot;end&quot;:54}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let three = generator.next();
+
+alert(JSON.stringify(three)); // {value: 3, done: true}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:519px"> 
+           <div class="image__ratio" style="padding-top:28.901734104046245%"></div> 
+           <object type="image/svg+xml" data="article/generators/generateSequence-4.svg" width="519" height="150" class="image__image" data-use-theme> <img src="article/generators/generateSequence-4.svg" alt="" width="519" height="150"> </object> 
+          </div> 
+         </figure> 
+         <p>Now the generator is done. We should see it from <code>done:true</code> and process <code>value:3</code> as the final result.</p> 
+         <p>New calls to <code>generator.next()</code> don???t make sense any more. If we do them, they return the same object: <code>{done: true}</code>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>function* f(???)</code> or <code>function *f(???)</code>?</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Both syntaxes are correct.</p> 
+           <p>But usually the first syntax is preferred, as the star <code>*</code> denotes that it???s a generator function, it describes the kind, not the name, so it should stick with the <code>function</code> keyword.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="generators-are-iterable" href="generators.html#generators-are-iterable">Generators are iterable</a></h2> 
+         <p>As you probably already guessed looking at the <code>next()</code> method, generators are <a href="iterable.html">iterable</a>.</p> 
+         <p>We can loop over their values using <code>for..of</code>:</p> 
+         <div id="0d2k0pw7v9" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+
+let generator = generateSequence();
+
+for(let value of generator) {
+  alert(value); // 1, then 2
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Looks a lot nicer than calling <code>.next().value</code>, right?</p> 
+         <p>???But please note: the example above shows <code>1</code>, then <code>2</code>, and that???s all. It doesn???t show <code>3</code>!</p> 
+         <p>It???s because <code>for..of</code> iteration ignores the last <code>value</code>, when <code>done: true</code>. So, if we want all results to be shown by <code>for..of</code>, we must return them with <code>yield</code>:</p> 
+         <div id="lz3xpojcgb" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+let generator = generateSequence();
+
+for(let value of generator) {
+  alert(value); // 1, then 2, then 3
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>As generators are iterable, we can call all related functionality, e.g. the spread syntax <code>...</code>:</p> 
+         <div id="28jlnbawq1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+let sequence = [0, ...generateSequence()];
+
+alert(sequence); // 0, 1, 2, 3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>In the code above, <code>...generateSequence()</code> turns the iterable generator object into an array of items (read more about the spread syntax in the chapter <a href="rest-parameters-spread.html#spread-syntax">Parameter rest dan sintaks spread</a>)</p> 
+         <h2><a class="main__anchor" name="using-generators-for-iterables" href="generators.html#using-generators-for-iterables">Using generators for iterables</a></h2> 
+         <p>Some time ago, in the chapter <a href="iterable.html">Iterables / Bisa di iterasi</a> we created an iterable <code>range</code> object that returns values <code>from..to</code>.</p> 
+         <p>Here, let???s remember the code:</p> 
+         <div id="wqp087audb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5,
+
+  // for..of range calls this method once in the very beginning
+  [Symbol.iterator]() {
+    // ...it returns the iterator object:
+    // onward, for..of works only with that object, asking it for next values
+    return {
+      current: this.from,
+      last: this.to,
+
+      // next() is called on each iteration by the for..of loop
+      next() {
+        // it should return the value as an object {done:.., value :...}
+        if (this.current &lt;= this.last) {
+          return { done: false, value: this.current++ };
+        } else {
+          return { done: true };
+        }
+      }
+    };
+  }
+};
+
+// iteration over range returns numbers from range.from to range.to
+alert([...range]); // 1,2,3,4,5</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>We can use a generator function for iteration by providing it as <code>Symbol.iterator</code>.</p> 
+         <p>Here???s the same <code>range</code>, but much more compact:</p> 
+         <div id="npy5i462ir" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5,
+
+  *[Symbol.iterator]() { // a shorthand for [Symbol.iterator]: function*()
+    for(let value = this.from; value &lt;= this.to; value++) {
+      yield value;
+    }
+  }
+};
+
+alert( [...range] ); // 1,2,3,4,5</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>That works, because <code>range[Symbol.iterator]()</code> now returns a generator, and generator methods are exactly what <code>for..of</code> expects:</p> 
+         <ul> 
+          <li>it has a <code>.next()</code> method</li> 
+          <li>that returns values in the form <code>{value: ..., done: true/false}</code></li> 
+         </ul> 
+         <p>That???s not a coincidence, of course. Generators were added to JavaScript language with iterators in mind, to implement them easily.</p> 
+         <p>The variant with a generator is much more concise than the original iterable code of <code>range</code>, and keeps the same functionality.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Generators may generate values forever</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>In the examples above we generated finite sequences, but we can also make a generator that yields values forever. For instance, an unending sequence of pseudo-random numbers.</p> 
+           <p>That surely would require a <code>break</code> (or <code>return</code>) in <code>for..of</code> over such generator. Otherwise, the loop would repeat forever and hang.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="generator-composition" href="generators.html#generator-composition">Generator composition</a></h2> 
+         <p>Generator composition is a special feature of generators that allows to transparently ???embed??? generators in each other.</p> 
+         <p>For instance, we have a function that generates a sequence of numbers:</p> 
+         <div id="86s2zf5uyo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence(start, end) {
+  for (let i = start; i &lt;= end; i++) yield i;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Now we???d like to reuse it to generate a more complex sequence:</p> 
+         <ul> 
+          <li>first, digits <code>0..9</code> (with character codes 48???57),</li> 
+          <li>followed by uppercase alphabet letters <code>A..Z</code> (character codes 65???90)</li> 
+          <li>followed by lowercase alphabet letters <code>a..z</code> (character codes 97???122)</li> 
+         </ul> 
+         <p>We can use this sequence e.g. to create passwords by selecting characters from it (could add syntax characters as well), but let???s generate it first.</p> 
+         <p>In a regular function, to combine results from multiple other functions, we call them, store the results, and then join at the end.</p> 
+         <p>For generators, there???s a special <code>yield*</code> syntax to ???embed??? (compose) one generator into another.</p> 
+         <p>The composed generator:</p> 
+         <div id="clzt6bsgzw" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:13}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence(start, end) {
+  for (let i = start; i &lt;= end; i++) yield i;
+}
+
+function* generatePasswordCodes() {
+
+  // 0..9
+  yield* generateSequence(48, 57);
+
+  // A..Z
+  yield* generateSequence(65, 90);
+
+  // a..z
+  yield* generateSequence(97, 122);
+
+}
+
+let str = '';
+
+for(let code of generatePasswordCodes()) {
+  str += String.fromCharCode(code);
+}
+
+alert(str); // 0..9A..Za..z</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The <code>yield*</code> directive <em>delegates</em> the execution to another generator. This term means that <code>yield* gen</code> iterates over the generator <code>gen</code> and transparently forwards its yields outside. As if the values were yielded by the outer generator.</p> 
+         <p>The result is the same as if we inlined the code from nested generators:</p> 
+         <div id="74de7jvl6y" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:13}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generateSequence(start, end) {
+  for (let i = start; i &lt;= end; i++) yield i;
+}
+
+function* generateAlphaNum() {
+
+  // yield* generateSequence(48, 57);
+  for (let i = 48; i &lt;= 57; i++) yield i;
+
+  // yield* generateSequence(65, 90);
+  for (let i = 65; i &lt;= 90; i++) yield i;
+
+  // yield* generateSequence(97, 122);
+  for (let i = 97; i &lt;= 122; i++) yield i;
+
+}
+
+let str = '';
+
+for(let code of generateAlphaNum()) {
+  str += String.fromCharCode(code);
+}
+
+alert(str); // 0..9A..Za..z</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>A generator composition is a natural way to insert a flow of one generator into another. It doesn???t use extra memory to store intermediate results.</p> 
+         <h2><a class="main__anchor" name="yield-is-a-two-way-street" href="generators.html#yield-is-a-two-way-street">???yield??? is a two-way street</a></h2> 
+         <p>Until this moment, generators were similar to iterable objects, with a special syntax to generate values. But in fact they are much more powerful and flexible.</p> 
+         <p>That???s because <code>yield</code> is a two-way street: it not only returns the result to the outside, but also can pass the value inside the generator.</p> 
+         <p>To do so, we should call <code>generator.next(arg)</code>, with an argument. That argument becomes the result of <code>yield</code>.</p> 
+         <p>Let???s see an example:</p> 
+         <div id="ra8ghqn8zs" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* gen() {
+  // Pass a question to the outer code and wait for an answer
+  let result = yield "2 + 2 = ?"; // (*)
+
+  alert(result);
+}
+
+let generator = gen();
+
+let question = generator.next().value; // &lt;-- yield returns the value
+
+generator.next(4); // --&gt; pass the result into the generator</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <figure> 
+          <div class="image" style="width:559px"> 
+           <div class="image__ratio" style="padding-top:38.64042933810376%"></div> 
+           <object type="image/svg+xml" data="article/generators/genYield2.svg" width="559" height="216" class="image__image" data-use-theme> <img src="article/generators/genYield2.svg" alt="" width="559" height="216"> </object> 
+          </div> 
+         </figure> 
+         <ol> 
+          <li>The first call <code>generator.next()</code> should be always made without an argument (the argument is ignored if passed). It starts the execution and returns the result of the first <code>yield "2+2=?"</code>. At this point the generator pauses the execution, while staying on the line <code>(*)</code>.</li> 
+          <li>Then, as shown at the picture above, the result of <code>yield</code> gets into the <code>question</code> variable in the calling code.</li> 
+          <li>On <code>generator.next(4)</code>, the generator resumes, and <code>4</code> gets in as the result: <code>let result = 4</code>.</li> 
+         </ol> 
+         <p>Please note, the outer code does not have to immediately call <code>next(4)</code>. It may take time. That???s not a problem: the generator will wait.</p> 
+         <p>For instance:</p> 
+         <div id="7u3rwzghel" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// resume the generator after some time
+setTimeout(() =&gt; generator.next(4), 1000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>As we can see, unlike regular functions, a generator and the calling code can exchange results by passing values in <code>next/yield</code>.</p> 
+         <p>To make things more obvious, here???s another example, with more calls:</p> 
+         <div id="rbbn70xz04" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* gen() {
+  let ask1 = yield "2 + 2 = ?";
+
+  alert(ask1); // 4
+
+  let ask2 = yield "3 * 3 = ?"
+
+  alert(ask2); // 9
+}
+
+let generator = gen();
+
+alert( generator.next().value ); // "2 + 2 = ?"
+
+alert( generator.next(4).value ); // "3 * 3 = ?"
+
+alert( generator.next(9).done ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The execution picture:</p> 
+         <figure> 
+          <div class="image" style="width:461px"> 
+           <div class="image__ratio" style="padding-top:55.9652928416486%"></div> 
+           <object type="image/svg+xml" data="article/generators/genYield2-2.svg" width="461" height="258" class="image__image" data-use-theme> <img src="article/generators/genYield2-2.svg" alt="" width="461" height="258"> </object> 
+          </div> 
+         </figure> 
+         <ol> 
+          <li>The first <code>.next()</code> starts the execution??? It reaches the first <code>yield</code>.</li> 
+          <li>The result is returned to the outer code.</li> 
+          <li>The second <code>.next(4)</code> passes <code>4</code> back to the generator as the result of the first <code>yield</code>, and resumes the execution.</li> 
+          <li>???It reaches the second <code>yield</code>, that becomes the result of the generator call.</li> 
+          <li>The third <code>next(9)</code> passes <code>9</code> into the generator as the result of the second <code>yield</code> and resumes the execution that reaches the end of the function, so <code>done: true</code>.</li> 
+         </ol> 
+         <p>It???s like a ???ping-pong??? game. Each <code>next(value)</code> (excluding the first one) passes a value into the generator, that becomes the result of the current <code>yield</code>, and then gets back the result of the next <code>yield</code>.</p> 
+         <h2><a class="main__anchor" name="generator-throw" href="generators.html#generator-throw">generator.throw</a></h2> 
+         <p>As we observed in the examples above, the outer code may pass a value into the generator, as the result of <code>yield</code>.</p> 
+         <p>???But it can also initiate (throw) an error there. That???s natural, as an error is a kind of result.</p> 
+         <p>To pass an error into a <code>yield</code>, we should call <code>generator.throw(err)</code>. In that case, the <code>err</code> is thrown in the line with that <code>yield</code>.</p> 
+         <p>For instance, here the yield of <code>"2 + 2 = ?"</code> leads to an error:</p> 
+         <div id="jlp51ds5s6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:14,&quot;end&quot;:14}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* gen() {
+  try {
+    let result = yield "2 + 2 = ?"; // (1)
+
+    alert("The execution does not reach here, because the exception is thrown above");
+  } catch(e) {
+    alert(e); // shows the error
+  }
+}
+
+let generator = gen();
+
+let question = generator.next().value;
+
+generator.throw(new Error("The answer is not found in my database")); // (2)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The error, thrown into the generator at line <code>(2)</code> leads to an exception in line <code>(1)</code> with <code>yield</code>. In the example above, <code>try..catch</code> catches it and shows it.</p> 
+         <p>If we don???t catch it, then just like any exception, it ???falls out??? the generator into the calling code.</p> 
+         <p>The current line of the calling code is the line with <code>generator.throw</code>, labelled as <code>(2)</code>. So we can catch it here, like this:</p> 
+         <div id="zpkh3d5fwd" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:12}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function* generate() {
+  let result = yield "2 + 2 = ?"; // Error in this line
+}
+
+let generator = generate();
+
+let question = generator.next().value;
+
+try {
+  generator.throw(new Error("The answer is not found in my database"));
+} catch(e) {
+  alert(e); // shows the error
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If we don???t catch the error there, then, as usual, it falls through to the outer calling code (if any) and, if uncaught, kills the script.</p> 
+         <h2><a class="main__anchor" name="summary" href="generators.html#summary">Summary</a></h2> 
+         <ul> 
+          <li>Generators are created by generator functions <code>function* f(???) {???}</code>.</li> 
+          <li>Inside generators (only) there exists a <code>yield</code> operator.</li> 
+          <li>The outer code and the generator may exchange results via <code>next/yield</code> calls.</li> 
+         </ul> 
+         <p>In modern JavaScript, generators are rarely used. But sometimes they come in handy, because the ability of a function to exchange data with the calling code during the execution is quite unique. And, surely, they are great for making iterable objects.</p> 
+         <p>Also, in the next chapter we???ll learn async generators, which are used to read streams of asynchronously generated data (e.g paginated fetches over a network) in <code>for await ... of</code> loops.</p> 
+         <p>In web-programming we often work with streamed data, so that???s another very important use case.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="generators.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="generators.html#pseudo-random-generator" name="pseudo-random-generator">Pseudo-random generator</a></h3> 
+           <a class="task__open-link" href="task/pseudo-random-generator.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>There are many areas where we need random data.</p> 
+            <p>One of them is testing. We may need random data: text, numbers, etc. to test things out well.</p> 
+            <p>In JavaScript, we could use <code>Math.random()</code>. But if something goes wrong, we???d like to be able to repeat the test, using exactly the same data.</p> 
+            <p>For that, so called ???seeded pseudo-random generators??? are used. They take a ???seed???, the first value, and then generate the next ones using a formula so that the same seed yields the same sequence, and hence the whole flow is easily reproducible. We only need to remember the seed to repeat it.</p> 
+            <p>An example of such formula, that generates somewhat uniformly distributed values:</p> 
+            <div id="bgs076wvzx" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-none"><code>next = previous * 16807 % 2147483647</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>If we use <code>1</code> as the seed, the values will be:</p> 
+            <ol> 
+             <li><code>16807</code></li> 
+             <li><code>282475249</code></li> 
+             <li><code>1622650073</code></li> 
+             <li>???and so on???</li> 
+            </ol> 
+            <p>The task is to create a generator function <code>pseudoRandom(seed)</code> that takes <code>seed</code> and creates the generator with this formula.</p> 
+            <p>Usage example:</p> 
+            <div id="8cl2ox8pdz" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let generator = pseudoRandom(1);
+
+alert(generator.next().value); // 16807
+alert(generator.next().value); // 282475249
+alert(generator.next().value); // 1622650073</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/pDV56H92Oh5GDhVm?p=preview" target="_blank" data-plunk-id="pDV56H92Oh5GDhVm">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="00h5kvoc46" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function* pseudoRandom(seed) {
+  let value = seed;
+
+  while(true) {
+    value = value * 16807 % 2147483647
+    yield value;
+  }
+
+};
+
+let generator = pseudoRandom(1);
+
+alert(generator.next().value); // 16807
+alert(generator.next().value); // 282475249
+alert(generator.next().value); // 1622650073</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Please note, the same can be done with a regular function, like this:</p> 
+              <div id="wlflta4ocl" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="generators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="generators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function pseudoRandom(seed) {
+  let value = seed;
+
+  return function() {
+    value = value * 16807 % 2147483647;
+    return value;
+  }
+}
+
+let generator = pseudoRandom(1);
+
+alert(generator()); // 16807
+alert(generator()); // 282475249
+alert(generator()); // 1622650073</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>That also works. But then we lose ability to iterate with <code>for..of</code> and to use generator composition, that may be useful elsewhere.</p> 
+              <p><a href="https://plnkr.co/edit/h3bBM4F3ky8qu1sJ?p=preview" target="_blank" data-plunk-id="h3bBM4F3ky8qu1sJ">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="generators-iterators.html" data-tooltip="Generator, iterasi lanjutan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="async-iterators-generators.html" data-tooltip="Iterasi dan generator asinkron"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fgenerators" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fgenerators" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators-iterators.html">Generator, iterasi lanjutan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators.html#generator-functions">Generator functions</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators.html#generators-are-iterable">Generators are iterable</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators.html#using-generators-for-iterables">Using generators for iterables</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators.html#generator-composition">Generator composition</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators.html#yield-is-a-two-way-street">???yield??? is a two-way street</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators.html#generator-throw">generator.throw</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators.html#tasks">Tugas (1)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="generators.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fgenerators" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fgenerators" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

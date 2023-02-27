@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "gb";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Sets and ranges [...]</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="regexp-character-sets-and-ranges.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Sets and ranges [...]"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Sets and ranges [...]"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="regexp-escaping.html"> 
+  <link rel="next" href="regexp-quantifiers.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Sets and ranges [...]"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-sets-and-ranges" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-sets-and-ranges" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="8" max="17" data-tooltip="Pelajaran 8 dari 17"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="regular-expressions.html"><span>Regular expressions</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Regular expressions","item":"https://id.javascript.info/regular-expressions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 13 Desember 2020"> 
+          <div class="updated-at__content">
+            13 Desember 2020 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://javascript.info/regexp-character-sets-and-ranges">English</a>, 
+          <a href="https://es.javascript.info/regexp-character-sets-and-ranges">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/regexp-character-sets-and-ranges">Fran??ais</a>, 
+          <a href="https://it.javascript.info/regexp-character-sets-and-ranges">Italiano</a>, 
+          <a href="https://ja.javascript.info/regexp-character-sets-and-ranges">?????????</a>, 
+          <a href="https://learn.javascript.ru/regexp-character-sets-and-ranges">??????????????</a>, 
+          <a href="https://uk.javascript.info/regexp-character-sets-and-ranges">????????????????????</a>, 
+          <a href="https://zh.javascript.info/regexp-character-sets-and-ranges">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Sets and ranges [...]</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Sets and ranges [...]"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Several characters or character classes inside square brackets <code>[???]</code> mean to ???search for any character among given???.</p> 
+         <h2><a class="main__anchor" name="sets" href="regexp-character-sets-and-ranges.html#sets">Sets</a></h2> 
+         <p>For instance, <code class="pattern">[eao]</code> means any of the 3 characters: <code>'a'</code>, <code>'e'</code>, or <code>'o'</code>.</p> 
+         <p>That???s called a <em>set</em>. Sets can be used in a regexp along with regular characters:</p> 
+         <div id="lw956tzsq6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// find [t or m], and then "op"
+alert( "Mop top".match(/[tm]op/gi) ); // "Mop", "top"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Please note that although there are multiple characters in the set, they correspond to exactly one character in the match.</p> 
+         <p>So the example below gives no matches:</p> 
+         <div id="jhoh1vo3p1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// find "V", then [o or i], then "la"
+alert( "Voila".match(/V[oi]la/) ); // null, no matches</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The pattern searches for:</p> 
+         <ul> 
+          <li><code class="pattern">V</code>,</li> 
+          <li>then <em>one</em> of the letters <code class="pattern">[oi]</code>,</li> 
+          <li>then <code class="pattern">la</code>.</li> 
+         </ul> 
+         <p>So there would be a match for <code class="match">Vola</code> or <code class="match">Vila</code>.</p> 
+         <h2><a class="main__anchor" name="ranges" href="regexp-character-sets-and-ranges.html#ranges">Ranges</a></h2> 
+         <p>Square brackets may also contain <em>character ranges</em>.</p> 
+         <p>For instance, <code class="pattern">[a-z]</code> is a character in range from <code>a</code> to <code>z</code>, and <code class="pattern">[0-5]</code> is a digit from <code>0</code> to <code>5</code>.</p> 
+         <p>In the example below we???re searching for <code>"x"</code> followed by two digits or letters from <code>A</code> to <code>F</code>:</p> 
+         <div id="vsje70fvls" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "Exception 0xAF".match(/x[0-9A-F][0-9A-F]/g) ); // xAF</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Here <code class="pattern">[0-9A-F]</code> has two ranges: it searches for a character that is either a digit from <code>0</code> to <code>9</code> or a letter from <code>A</code> to <code>F</code>.</p> 
+         <p>If we???d like to look for lowercase letters as well, we can add the range <code>a-f</code>: <code class="pattern">[0-9A-Fa-f]</code>. Or add the flag <code class="pattern">i</code>.</p> 
+         <p>We can also use character classes inside <code>[???]</code>.</p> 
+         <p>For instance, if we???d like to look for a wordly character <code class="pattern">\w</code> or a hyphen <code class="pattern">-</code>, then the set is <code class="pattern">[\w-]</code>.</p> 
+         <p>Combining multiple classes is also possible, e.g. <code class="pattern">[\s\d]</code> means ???a space character or a digit???.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Character classes are shorthands for certain character sets</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>For instance:</p> 
+           <ul> 
+            <li><strong>\d</strong> ??? is the same as <code class="pattern">[0-9]</code>,</li> 
+            <li><strong>\w</strong> ??? is the same as <code class="pattern">[a-zA-Z0-9_]</code>,</li> 
+            <li><strong>\s</strong> ??? is the same as <code class="pattern">[\t\n\v\f\r ]</code>, plus few other rare Unicode space characters.</li> 
+           </ul> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="example-multi-language-w" href="regexp-character-sets-and-ranges.html#example-multi-language-w">Example: multi-language \w</a></h3> 
+         <p>As the character class <code class="pattern">\w</code> is a shorthand for <code class="pattern">[a-zA-Z0-9_]</code>, it can???t find Chinese hieroglyphs, Cyrillic letters, etc.</p> 
+         <p>We can write a more universal pattern, that looks for wordly characters in any language. That???s easy with Unicode properties: <code class="pattern">[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]</code>.</p> 
+         <p>Let???s decipher it. Similar to <code class="pattern">\w</code>, we???re making a set of our own that includes characters with following Unicode properties:</p> 
+         <ul> 
+          <li><code>Alphabetic</code> (<code>Alpha</code>) ??? for letters,</li> 
+          <li><code>Mark</code> (<code>M</code>) ??? for accents,</li> 
+          <li><code>Decimal_Number</code> (<code>Nd</code>) ??? for digits,</li> 
+          <li><code>Connector_Punctuation</code> (<code>Pc</code>) ??? for the underscore <code>'_'</code> and similar characters,</li> 
+          <li><code>Join_Control</code> (<code>Join_C</code>) ??? two special codes <code>200c</code> and <code>200d</code>, used in ligatures, e.g. in Arabic.</li> 
+         </ul> 
+         <p>An example of use:</p> 
+         <div id="sbdez08a8v" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let regexp = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
+
+let str = `Hi ?????? 12`;
+
+// finds all letters and digits:
+alert( str.match(regexp) ); // H,i,???,???,1,2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Of course, we can edit this pattern: add Unicode properties or remove them. Unicode properties are covered in more details in the article <a href="regexp-unicode.html">Unicode: flag "u" and class \p{...}</a>.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Unicode properties aren???t supported in IE</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Unicode properties <code class="pattern">p{???}</code> are not implemented in IE. If we really need them, we can use library <a href="http://xregexp.com/">XRegExp</a>.</p> 
+           <p>Or just use ranges of characters in a language that interests us, e.g. <code class="pattern">[??-??]</code> for Cyrillic letters.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="excluding-ranges" href="regexp-character-sets-and-ranges.html#excluding-ranges">Excluding ranges</a></h2> 
+         <p>Besides normal ranges, there are ???excluding??? ranges that look like <code class="pattern">[^???]</code>.</p> 
+         <p>They are denoted by a caret character <code>^</code> at the start and match any character <em>except the given ones</em>.</p> 
+         <p>For instance:</p> 
+         <ul> 
+          <li><code class="pattern">[^aeyo]</code> ??? any character except <code>'a'</code>, <code>'e'</code>, <code>'y'</code> or <code>'o'</code>.</li> 
+          <li><code class="pattern">[^0-9]</code> ??? any character except a digit, the same as <code class="pattern">\D</code>.</li> 
+          <li><code class="pattern">[^\s]</code> ??? any non-space character, same as <code>\S</code>.</li> 
+         </ul> 
+         <p>The example below looks for any characters except letters, digits and spaces:</p> 
+         <div id="0kyww0fwd3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "alice15@gmail.com".match(/[^\d\sA-Z]/gi) ); // @ and .</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="escaping-in" href="regexp-character-sets-and-ranges.html#escaping-in">Escaping in [???]</a></h2> 
+         <p>Usually when we want to find exactly a special character, we need to escape it like <code class="pattern">\.</code>. And if we need a backslash, then we use <code class="pattern">\\</code>, and so on.</p> 
+         <p>In square brackets we can use the vast majority of special characters without escaping:</p> 
+         <ul> 
+          <li>Symbols <code class="pattern">. + ( )</code> never need escaping.</li> 
+          <li>A hyphen <code class="pattern">-</code> is not escaped in the beginning or the end (where it does not define a range).</li> 
+          <li>A caret <code class="pattern">^</code> is only escaped in the beginning (where it means exclusion).</li> 
+          <li>The closing square bracket <code class="pattern">]</code> is always escaped (if we need to look for that symbol).</li> 
+         </ul> 
+         <p>In other words, all special characters are allowed without escaping, except when they mean something for square brackets.</p> 
+         <p>A dot <code>.</code> inside square brackets means just a dot. The pattern <code class="pattern">[.,]</code> would look for one of characters: either a dot or a comma.</p> 
+         <p>In the example below the regexp <code class="pattern">[-().^+]</code> looks for one of the characters <code>-().^+</code>:</p> 
+         <div id="86mbuj03p6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// No need to escape
+let regexp = /[-().^+]/g;
+
+alert( "1 + 2 - 3".match(regexp) ); // Matches +, -</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???But if you decide to escape them ???just in case???, then there would be no harm:</p> 
+         <div id="fygxzcuwgo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// Escaped everything
+let regexp = /[\-\(\)\.\^\+]/g;
+
+alert( "1 + 2 - 3".match(regexp) ); // also works: +, -</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ranges-and-flag-u" href="regexp-character-sets-and-ranges.html#ranges-and-flag-u">Ranges and flag ???u???</a></h2> 
+         <p>If there are surrogate pairs in the set, flag <code class="pattern">u</code> is required for them to work correctly.</p> 
+         <p>For instance, let???s look for <code class="pattern">[????????]</code> in the string <code class="subject">????</code>:</p> 
+         <div id="auaq44ecrw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( '????'.match(/[????????]/) ); // shows a strange character, like [?]
+// (the search was performed incorrectly, half-character returned)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The result is incorrect, because by default regular expressions ???don???t know??? about surrogate pairs.</p> 
+         <p>The regular expression engine thinks that <code>[????????]</code> ??? are not two, but four characters:</p> 
+         <ol> 
+          <li>left half of <code>????</code> <code>(1)</code>,</li> 
+          <li>right half of <code>????</code> <code>(2)</code>,</li> 
+          <li>left half of <code>????</code> <code>(3)</code>,</li> 
+          <li>right half of <code>????</code> <code>(4)</code>.</li> 
+         </ol> 
+         <p>We can see their codes like this:</p> 
+         <div id="vrrb8jxyfu" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>for(let i=0; i&lt;'????????'.length; i++) {
+  alert('????????'.charCodeAt(i)); // 55349, 56499, 55349, 56500
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>So, the example above finds and shows the left half of <code>????</code>.</p> 
+         <p>If we add flag <code class="pattern">u</code>, then the behavior will be correct:</p> 
+         <div id="j7vajx56c5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( '????'.match(/[????????]/u) ); // ????</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The similar situation occurs when looking for a range, such as <code>[????-????]</code>.</p> 
+         <p>If we forget to add flag <code class="pattern">u</code>, there will be an error:</p> 
+         <div id="spnmgc7uu6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>'????'.match(/[????-????]/); // Error: Invalid regular expression</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The reason is that without flag <code class="pattern">u</code> surrogate pairs are perceived as two characters, so <code>[????-????]</code> is interpreted as <code>[&lt;55349&gt;&lt;56499&gt;-&lt;55349&gt;&lt;56500&gt;]</code> (every surrogate pair is replaced with its codes). Now it???s easy to see that the range <code>56499-55349</code> is invalid: its starting code <code>56499</code> is greater than the end <code>55349</code>. That???s the formal reason for the error.</p> 
+         <p>With the flag <code class="pattern">u</code> the pattern works correctly:</p> 
+         <div id="dctonlpgcq" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// look for characters from ???? to ????
+alert( '????'.match(/[????-????]/u) ); // ????</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="regexp-character-sets-and-ranges.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="regexp-character-sets-and-ranges.html#java-script" name="java-script">Java[^script]</a></h3> 
+           <a class="task__open-link" href="task/find-range-1.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>We have a regexp <code class="pattern">/Java[^script]/</code>.</p> 
+            <p>Does it match anything in the string <code class="subject">Java</code>? In the string <code class="subject">JavaScript</code>?</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Answers: <strong>no, yes</strong>.</p> 
+              <ul> 
+               <li> <p>In the script <code class="subject">Java</code> it doesn???t match anything, because <code class="pattern">[^script]</code> means ???any character except given ones???. So the regexp looks for <code>"Java"</code> followed by one such symbol, but there???s a string end, no symbols after it.</p> 
+                <div id="r4rqmy45vh" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="toolbar codebox__toolbar"> 
+                   <div class="toolbar__tool"> 
+                    <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                   </div> 
+                   <div class="toolbar__tool"> 
+                    <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                   </div> 
+                  </div> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>alert( "Java".match(/Java[^script]/) ); // null</code></pre> 
+                  </div> 
+                 </div> 
+                </div></li> 
+               <li> <p>Yes, because the <code class="pattern">[^script]</code> part matches the character <code>"S"</code>. It???s not one of <code class="pattern">script</code>. As the regexp is case-sensitive (no <code class="pattern">i</code> flag), it treats <code>"S"</code> as a different character from <code>"s"</code>.</p> 
+                <div id="tu2d90h2lh" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="toolbar codebox__toolbar"> 
+                   <div class="toolbar__tool"> 
+                    <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                   </div> 
+                   <div class="toolbar__tool"> 
+                    <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                   </div> 
+                  </div> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>alert( "JavaScript".match(/Java[^script]/) ); // "JavaS"</code></pre> 
+                  </div> 
+                 </div> 
+                </div></li> 
+              </ul> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="regexp-character-sets-and-ranges.html#find-the-time-as-hh-mm-or-hh-mm" name="find-the-time-as-hh-mm-or-hh-mm">Find the time as hh:mm or hh-mm</a></h3> 
+           <a class="task__open-link" href="task/find-time-2-formats.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>The time can be in the format <code>hours:minutes</code> or <code>hours-minutes</code>. Both hours and minutes have 2 digits: <code>09:00</code> or <code>21-30</code>.</p> 
+            <p>Write a regexp to find time:</p> 
+            <div id="rszw5dklh1" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let regexp = /your regexp/g;
+alert( "Breakfast at 09:00. Dinner at 21-30".match(regexp) ); // 09:00, 21-30</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>P.S. In this task we assume that the time is always correct, there???s no need to filter out bad strings like ???45:67???. Later we???ll deal with that too.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Answer: <code class="pattern">\d\d[-:]\d\d</code>.</p> 
+              <div id="d5d2zkoofo" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-character-sets-and-ranges.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-character-sets-and-ranges.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let regexp = /\d\d[-:]\d\d/g;
+alert( "Breakfast at 09:00. Dinner at 21-30".match(regexp) ); // 09:00, 21-30</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Please note that the dash <code class="pattern">'-'</code> has a special meaning in square brackets, but only between other characters, not when it???s in the beginning or at the end, so we don???t need to escape it.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="regexp-escaping.html" data-tooltip="Escaping, special characters"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="regexp-quantifiers.html" data-tooltip="Quantifiers +, *, ? and {n}"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-sets-and-ranges" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-sets-and-ranges" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regular-expressions.html">Regular expressions</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-sets-and-ranges.html#sets">Sets</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-sets-and-ranges.html#ranges">Ranges</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-sets-and-ranges.html#excluding-ranges">Excluding ranges</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-sets-and-ranges.html#escaping-in">Escaping in [???]</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-sets-and-ranges.html#ranges-and-flag-u">Ranges and flag ???u???</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-sets-and-ranges.html#tasks">Tugas (2)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-sets-and-ranges.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-sets-and-ranges" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-sets-and-ranges" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

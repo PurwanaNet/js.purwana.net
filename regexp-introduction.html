@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pola dan flag</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="regexp-introduction.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pola dan flag"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pola dan flag"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="regular-expressions.html"> 
+  <link rel="next" href="regexp-character-classes.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Pola dan flag"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-introduction" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-introduction" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="1" max="17" data-tooltip="Pelajaran 1 dari 17"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="regular-expressions.html"><span>Regular expressions</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Regular expressions","item":"https://id.javascript.info/regular-expressions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 7 Juni 2020"> 
+          <div class="updated-at__content">
+            7 Juni 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pola dan flag</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pola dan flag"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Ekspresi reguler merupakan cara ampuh untuk mencari dan mengganti string.</p> 
+         <p>Di JavaScript, mereka tersedia melalui objek <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/RegExp">RegExp</a> dan juga terintegrasi dalam metode string.</p> 
+         <h2><a class="main__anchor" name="ekspresi-reguler" href="regexp-introduction.html#ekspresi-reguler">Ekspresi Reguler</a></h2> 
+         <p>Ekspresi reguler (???regexp???, atau hanya ???reg???) terdiri dari <em>pola</em> dan <em>flag</em> opsional.</p> 
+         <p>Ada dua syntax yang bisa dipakai untuk membuat objek ekspresi reguler.</p> 
+         <p>Syntax panjang:</p> 
+         <div id="jj6utcxthu" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>regexp = new RegExp("pattern", "flag");</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan yang ???pendek???, menggunakan garis miring <code>"/"</code>:</p> 
+         <div id="kecx1vfaz2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>regexp = /pattern/; // tanpa flag
+regexp = /pattern/gmi; // dengan flag g,m dan i (untuk segera ditutup)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Garis miring <code class="pattern">/.../</code> memberitahu JavaScript bahwa kita sedang membuat ekspresi regular. Mereka memiliki peran yang sama dengan tanda petik untuk <em>string</em>.</p> 
+         <p>Untuk kedua kasus di atas <code>regexp</code> menjadi instance dari built-in object kelas <code>RegExp</code>.</p> 
+         <p>Perbedaan utama antara kedua syntax ini adalah garis miring <code class="pattern">/.../</code> melarang penyisipan ekspresi (seperti string dengan <code>${...}</code>). Mereka benar-benar static.</p> 
+         <p>Garis miring digunakan saat kita tahu ekspresi regular saat menulis kode ??? dan itu situasi paling umum. Sedangkan <code>RegExp baru</code>, lebih sering dipakai saat kita harus membuat regexp baru ???on the fly??? dari string yang dihasilkan secara dinamis. Misalnya:</p> 
+         <div id="etjwecrei6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let tag = prompt("What tag do you want to find?", "h2");
+
+let regexp = new RegExp(`&lt;${tag}&gt;`); // sama dengan /&lt;h2&gt;/ jika dijawab "h2" di prompt di atas</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="flag" href="regexp-introduction.html#flag">Flag</a></h2> 
+         <p>Expresi regular bisa punya flag yang mempengaruhi pencarian.</p> 
+         <p>Cuma ada 6 di antaranya di JavaScript:</p> 
+         <dl> 
+          <dt> 
+           <code class="pattern">i</code> 
+          </dt> 
+          <dd>
+            Dengan flag ini pencarian case-insensitive: tak ada perbedaan antara 
+           <code>A</code> dan 
+           <code>a</code> (lihat contoh di bawah). 
+          </dd> 
+          <dt> 
+           <code class="pattern">g</code> 
+          </dt> 
+          <dd>
+            Dengan flag ini pencarian mencari semua kecocokan, tanpanya ??? hanya yang pertama yang dikembalikan. 
+          </dd> 
+          <dt> 
+           <code class="pattern">m</code> 
+          </dt> 
+          <dd>
+            Mode baris-ganda (dibahas di bab 
+           <a href="regexp-multiline-mode.html">Multiline mode of anchors ^ $, flag "m"</a>). 
+          </dd> 
+          <dt> 
+           <code class="pattern">s</code> 
+          </dt> 
+          <dd>
+            Menyalakan mode ???dotall???, yang membolehkan dot 
+           <code class="pattern">.</code> untuk cocok dengan karakter baris-baru 
+           <code>\n</code> (dibahas di bab 
+           <a href="regexp-character-classes.html">Kelas-kelas Karakter (Character classes)</a>). 
+          </dd> 
+          <dt> 
+           <code class="pattern">u</code> 
+          </dt> 
+          <dd>
+            Menyalakan dukungan penuh unicode. Flag ini menyalakan pemrosesan yang benar dari pasangan pengganti. Lebih lanjut tentang itu di bab 
+           <a href="regexp-unicode.html">Unicode: flag "u" and class \p{...}</a>. 
+          </dd> 
+          <dt> 
+           <code class="pattern">y</code> 
+          </dt> 
+          <dd>
+            Mode ???sticky???: mencari posisi tepat di dalam teks (dibahas di bab 
+           <a href="regexp-sticky.html">Sticky flag "y", searching at position</a>) 
+          </dd> 
+         </dl> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Warna</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Skema warnanya adalah:</p> 
+           <ul> 
+            <li>regexp ??? <code class="pattern">merah</code></li> 
+            <li>string (tempat kita mencari) ??? <code class="subject">biru</code></li> 
+            <li>result ??? <code class="match">hijau</code></li> 
+           </ul> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="pencarian-str-match" href="regexp-introduction.html#pencarian-str-match">Pencarian: str.match</a></h2> 
+         <p>Seperti yang dikatakan sebelumnya, expresi regular terintegrasi dengan metode string.</p> 
+         <p>Metode ini <code>str.match(regexp)</code> mencari semua kecocokan <code>regexp</code> di dalam string <code>str</code>.</p> 
+         <p>Ia punya 3 mode kerja:</p> 
+         <ol> 
+          <li> <p>Jika expresi regular punya flag <code class="pattern">g</code>, ia mengembalikan array semua kecocokan:</p> 
+           <div id="mrj5lpv383" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-introduction.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-introduction.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "We will, we will rock you";
+
+alert( str.match(/we/gi) ); // We,we (array 2 substring yang cocok)</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Tolong ingat bahwa kedua <code class="match">We</code> dan <code class="match">we</code> ditemukan, karena flag <code class="pattern">i</code> membuat regular expression case-insensitive.</p> </li> 
+          <li> <p>Jika tak ada flag macam ini ia mengembalikan hanya kecocokan pertama dalam bentuk array, dengan kecocokan penuh pada index <code>0</code> dan beberapa detil tambahan di properti:</p> 
+           <div id="69zobd48h0" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-introduction.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-introduction.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "We will, we will rock you";
+
+let result = str.match(/we/i); // tanpa flag g
+
+alert( result[0] );     // We (1st match)
+alert( result.length ); // 1
+
+// Detil:
+alert( result.index );  // 0 (posisi kecocokan)
+alert( result.input );  // We will, we will rock you (source string)</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Array itu bisa punya index lain, selain <code>0</code> jika satu bagian expresi regular disertakan dalam tanda kurung. Kita akan bahas itu di bab <a href="regexp-groups.html">Capturing groups</a>.</p> </li> 
+          <li> <p>Dan, akhirnya, jika tak ada kecocokan, <code>null</code> dikembalikan (tak peduli apakah ada flag <code class="pattern">g</code> atau tidak).</p> <p>Itu nuansa paling penting. Jika tak ada kecocokan, kita tak mendapatkan array kosong, melainkan <code>null</code>. Melupakan itu bisa membawa galat, misal:</p> 
+           <div id="kt88lco4m" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-introduction.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-introduction.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let matches = "JavaScript".match(/HTML/); // = null
+
+if (!matches.length) { // Error: Cannot read property 'length' of null
+  alert("Error in the line above");
+}</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Jika kita mau hasilnya selalu array, kita bisa menulisnya seperti ini:</p> 
+           <div id="ig7kjirrs5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:40,&quot;end&quot;:46}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-introduction.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-introduction.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let matches = "JavaScript".match(/HTML/) || [];
+
+if (!matches.length) {
+  alert("No matches"); // sekarang ini bekerja
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <h2><a class="main__anchor" name="penggantian-str-replace" href="regexp-introduction.html#penggantian-str-replace">Penggantian: str.replace</a></h2> 
+         <p>Metode <code>str.replace(regexp, replacement)</code> mengganti kecocokan dengan <code>regexp</code> dalam string <code>str</code> dengan <code>replacement</code> (semua cocok jika ada flag <code class="pattern">g</code>, kalau tidak, cuma yang pertama saja).</p> 
+         <p>Misalnya:</p> 
+         <div id="3vc02r03p2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-introduction.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-introduction.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// tak ada flag g
+alert( "We will, we will".replace(/we/i, "I") ); // I will, we will
+
+// dengan flag g
+alert( "We will, we will".replace(/we/ig, "I") ); // I will, I will</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Argumen kedua adalah string <code>replacement</code>. Kita bisa memakai kombinasi karakter spesial di dalamnya untuk menyisipkan fragment kecocokan:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Simbol</th> 
+            <th>Aksi di string pengganti</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>$&amp;</code></td> 
+            <td>menyisipkan seluruh kecocokan</td> 
+           </tr> 
+           <tr> 
+            <td><code>$`</code></td> 
+            <td>menyisipkan bagian string sebelum kecocokan</td> 
+           </tr> 
+           <tr> 
+            <td><code>$'</code></td> 
+            <td>menyisipkan bagian string setelah kecocokan</td> 
+           </tr> 
+           <tr> 
+            <td><code>$n</code></td> 
+            <td>jika <code>n</code> angka 1-2 digit, maka ia menyisipkan konten tanda kurung ke-n, lebih lanjut tentang itu di bab <a href="regexp-groups.html">Capturing groups</a></td> 
+           </tr> 
+           <tr> 
+            <td><code>$&lt;name&gt;</code></td> 
+            <td>menyisipkan konten tanda kurung dengan <code>name</code> yang diberikan, lebih lanjut tentang ini ada di bab <a href="regexp-groups.html">Capturing groups</a></td> 
+           </tr> 
+           <tr> 
+            <td><code>$$</code></td> 
+            <td>menyisipkan karakter <code>$</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Contohnya dengan <code class="pattern">$&amp;</code>:</p> 
+         <div id="8w9yads1m1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-introduction.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-introduction.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "I love HTML".replace(/HTML/, "$&amp; and JavaScript") ); // I love HTML and JavaScript</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="pengujian-regexp-test" href="regexp-introduction.html#pengujian-regexp-test">Pengujian: regexp.test</a></h2> 
+         <p>Metode <code>regexp.test(str)</code> mencari paling tidak 1 kecocokan, jika ditemukan, mengembalikan <code>true</code>, kalau tidak <code>false</code>.</p> 
+         <div id="xew69ejnut" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-introduction.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-introduction.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "I love JavaScript";
+let regexp = /LOVE/i;
+
+alert( regexp.test(str) ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Lebih lanjut di bab ini kita akan mempelajari lebih expresi regular, menjumpai banyak contoh, dan menemui metode lainnya.</p> 
+         <p>Informasi penuh tentang metode ini diberikan dalam artikel <a href="regexp-methods.html">Methods of RegExp and String</a>.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="regexp-introduction.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li>Expresi regular terdiri atas pola dan flag opsional: <code class="pattern">g</code>, <code class="pattern">i</code>, <code class="pattern">m</code>, <code class="pattern">u</code>, <code class="pattern">s</code>, <code class="pattern">y</code>.</li> 
+          <li>Tanpa flag dan simbol spesial yang akan kita pelajari nanti, pencarian menggunakan regexp sama dengan pencarian substring.</li> 
+          <li>Metode <code>str.match(regexp)</code> mencari kecocokan: semuanya jika ada flag <code class="pattern">g</code>, kalau tidak, cuma yang pertama saja.</li> 
+          <li>Metode <code>str.replace(regexp, replacement)</code> mengganti kecocokan dengan <code>regexp</code> by <code>replacement</code>: semuanya jika ada flag <code class="pattern">g</code>, selain itu cuma yang pertama.</li> 
+          <li>Metode <code>regexp.test(str)</code> mengembalikan <code>true</code> jika paling tidak ada satu yang cocok, kalau tidak ada, ia mengembalikan <code>false</code>.</li> 
+         </ul> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="regular-expressions.html" data-tooltip="Regular expressions"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="regexp-character-classes.html" data-tooltip="Kelas-kelas Karakter (Character classes)"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-introduction" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-introduction" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regular-expressions.html">Regular expressions</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-introduction.html#ekspresi-reguler">Ekspresi Reguler</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-introduction.html#flag">Flag</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-introduction.html#pencarian-str-match">Pencarian: str.match</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-introduction.html#penggantian-str-replace">Penggantian: str.replace</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-introduction.html#pengujian-regexp-test">Pengujian: regexp.test</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-introduction.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-introduction.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-introduction" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fregexp-introduction" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

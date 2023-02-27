@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Kelas-kelas Karakter (Character classes)</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="regexp-character-classes.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Kelas-kelas Karakter (Character classes)"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Kelas-kelas Karakter (Character classes)"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="regexp-introduction.html"> 
+  <link rel="next" href="regexp-unicode.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Kelas-kelas Karakter (Character classes)"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-classes" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-classes" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="2" max="17" data-tooltip="Pelajaran 2 dari 17"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="regular-expressions.html"><span>Regular expressions</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Regular expressions","item":"https://id.javascript.info/regular-expressions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Kelas-kelas Karakter (Character classes)</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Kelas-kelas Karakter (Character classes)"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Bayangkan sebuah tugas praktik ??? kita memiliki sebuah nomor telepon <code>"+7(903)-123-45-67"</code>, dan kita harus mengubah nomor telepon tersebut menjadi angka murni: <code>79031234567</code>.</p> 
+         <p>Untuk melakukan hal itu, kita harus menemukan apapun yang bukan merupakan angka. Kelas karakter dapat membantu membereskan hal tersebut.</p> 
+         <p>Sebuah <em>Kelas Karakter</em> adalah sebuah notasi yang spesial yang membandingkan simbol apapun dengan aturan tertentu.</p> 
+         <p>Untuk memulai, ayo kita <em>explore</em> kelas ???angka??? (digit). Kelas ???angka??? ditulis seperti <code class="pattern">\d</code> dan dapat disamakan dengan ???setiap angka yang ada???.</p> 
+         <p>Untuk contoh, kita akan mencoba mencari angka pertama pada nomor telepon:</p> 
+         <div id="bnykf80uhb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "+7(903)-123-45-67";
+
+let regexp = /\d/;
+
+alert( str.match(regexp) ); // 7</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tanpa tanda <code class="pattern">g</code>, ekspresi regularnya hanya akan mencari satu kecocokan, yaitu angka pertama <code class="pattern">\d</code>.</p> 
+         <p>Coba kita tambahkan tanda <code class="pattern">g</code> untuk mencari seluruh angka:</p> 
+         <div id="yjkee2zk2q" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "+7(903)-123-45-67";
+
+let regexp = /\d/g;
+
+alert( str.match(regexp) ); // array: 7,9,0,3,1,2,3,4,5,6,7
+
+// kita coba untuk membuat "hanya angka" dari nomor teleponnya:
+alert( str.match(regexp).join('') ); // 79031234567</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu adalah kelas karakter untuk angka. Tentu saja ada karakter kelas lainnya.</p> 
+         <p>Yang paling banyak digunakan adalah:</p> 
+         <dl> 
+          <dt> 
+           <code class="pattern">\d</code> (???d??? untuk ???digit??? / ???angka???) 
+          </dt> 
+          <dd>
+            Angka: adalah karakter dari 
+           <code>0</code> sampai 
+           <code>9</code>. 
+          </dd> 
+          <dt> 
+           <code class="pattern">\s</code> (???s??? untuk ???space??? / ???spasi??? / untuk mencari 
+           <em>whitespace</em>) 
+          </dt> 
+          <dd>
+            Simbol 
+           <em>space</em> / spasi: termasuk spasi, 
+           <em>tabs</em> 
+           <code>\t</code>, garis baru 
+           <code>\n</code> dan beberapa karakter lainnya yang jarang digunakan, seperti 
+           <code>\v</code>, 
+           <code>\f</code> dan 
+           <code>\r</code>. 
+          </dd> 
+          <dt> 
+           <code class="pattern">\w</code> (???w??? untuk ???word??? / ???karakter kata???) 
+          </dt> 
+          <dd>
+            ???karakter kata???: antara sebuah huruf dari alfabet latin atau sebuah angka atau sebuah 
+           <em>underscore</em> 
+           <code>_</code> (a-z, A-Z, 0-9). 
+           <code class="pattern">\w</code> tidak bisa digunakan untuk huruf yang bukan huruf latin (seperti 
+           <em>cyrillic</em> atau 
+           <em>hindi</em>). 
+          </dd> 
+         </dl> 
+         <p>Contohnya, <code class="pattern">\d\s\w</code> menandakan sebuah ???digit??? yang diikuti dengan ???karakter <em>space</em>??? diikuti dengan ???karakter kata???, seperti <code class="match">1 a</code>.</p> 
+         <p><strong>Regular ekspresi mungkin mengandung simbol dan kelas karakter.</strong></p> 
+         <p>Contoh, <code class="pattern">CSS\d</code> cocok dengan <em>string</em> <code class="match">CSS</code> dengan angka setelahnya:</p> 
+         <div id="xjos64i1qe" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "Apakah CSS4 telah rilis?";
+let regexp = /CSS\d/
+
+alert( str.match(regexp) ); // CSS4</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan juga kita bisa menggunakan banyak kelas karakter:</p> 
+         <div id="49hjym3tne" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "I love HTML5!".match(/\s\w\w\w\w\d/) ); // ' HTML5'</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kecocokannya (setiap karakter kelas regexp yang menghasilkan hasil yang sesuai):</p> 
+         <figure> 
+          <div class="image" style="width:236px"> 
+           <div class="image__ratio" style="padding-top:16.101694915254235%"></div> 
+           <object type="image/svg+xml" data="article/regexp-character-classes/love-html5-classes.svg" width="236" height="38" class="image__image" data-use-theme> <img src="article/regexp-character-classes/love-html5-classes.svg" alt="" width="236" height="38"> </object> 
+          </div> 
+         </figure> 
+         <h2><a class="main__anchor" name="kelas-kebalikan-inverse-classes" href="regexp-character-classes.html#kelas-kebalikan-inverse-classes">Kelas kebalikan (Inverse Classes)</a></h2> 
+         <p>Untuk setiap kelas karakter yang ada terdapat sebuah ???kelas kebalikan???, ditunjukan dengan huruf yang sama, tapi dengan huruf besar / kapital.</p> 
+         <p>???Kebalikan??? berarti kelas tersebut cocok dengan seluruh karakter lainnya, contoh:</p> 
+         <dl> 
+          <dt> 
+           <code class="pattern">\D</code> 
+          </dt> 
+          <dd>
+            Bukan angka: karakter apapun kecuali 
+           <code class="pattern">\d</code>, contoh huruf. 
+          </dd> 
+          <dt> 
+           <code class="pattern">\S</code> 
+          </dt> 
+          <dd>
+            Bukan spasi: karakter apapun kecuali 
+           <code class="pattern">\s</code>, contoh huruf. 
+          </dd> 
+          <dt> 
+           <code class="pattern">\W</code> 
+          </dt> 
+          <dd>
+            Bukan karakter kata: apapun kecuali 
+           <code class="pattern">\w</code>, contoh huruf yang bukan latin atau sebuah spasi. 
+          </dd> 
+         </dl> 
+         <p>Pada awal bab kita melihat bagaimana cara membuat nomor telepon yang hanya angka dari string seperti <code class="subject">+7(903)-123-45-67</code>: cari seluruh angka dan gabungkan.</p> 
+         <div id="pls1n93xtc" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "+7(903)-123-45-67";
+
+alert( str.match(/\d/g).join('') ); // 79031234567</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Alternatif, cara pendeknya adalah dengan mencari karakter yang bukan angka dan hilangkan dari stringnya:</p> 
+         <div id="jikqloo5je" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "+7(903)-123-45-67";
+
+alert( str.replace(/\D/g, "") ); // 79031234567</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="sebuah-titik-adalah-karakter-apapun" href="regexp-character-classes.html#sebuah-titik-adalah-karakter-apapun">Sebuah titik adalah ???karakter apapun???</a></h2> 
+         <p>Sebuah titik <code class="pattern">.</code> adalah sebuah kelas karakter spesial yang cocok ???dengan karakter apapun kecuali garis baru???.</p> 
+         <p>Contoh:</p> 
+         <div id="uuxnyo4hpg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "Z".match(/./) ); // Z</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Atau ditengah dari sebuah ekspresi regular:</p> 
+         <div id="8ykjiv82iw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let regexp = /CS.4/;
+
+alert( "CSS4".match(regexp) ); // CSS4
+alert( "CS-4".match(regexp) ); // CS-4
+alert( "CS 4".match(regexp) ); // CS 4 (spasi juga merupakan karakter)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ingatlah bahwa titik berarti ???karakter apapun???, tapi bukan sebuah ???ketiadaan karakter???. Harusnya ada karakter yang mirip dengannya:</p> 
+         <div id="nju9d5r3xf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "CS4".match(/CS.4/) ); // null, tidak ada yang cocok karena tidak terdapat karakter untuk titiknya.</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="titik-secara-literal-adalah-karakter-apapun-dengan-tanda-s" href="regexp-character-classes.html#titik-secara-literal-adalah-karakter-apapun-dengan-tanda-s">Titik secara literal adalah karakter apapun dengan tanda ???s???</a></h3> 
+         <p>Pada dasarnya, sebuah titik tidak cocok dengan karakter garis baru <code>\n</code>.</p> 
+         <p>Contoh, ekspresi regular <code class="pattern">A.B</code> cocok dengan <code class="match">A</code>, dan lalu <code class="match">B</code> dengan karakter apapun diantaranya, kecuali garis baru <code>\n</code>:</p> 
+         <div id="4hoctzb9am" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "A\nB".match(/A.B/) ); // null (tidak ada yang cocok)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Terdapat beberapa situasi ketika kita ingin memperlakukan titik sebagai ???karakter apapun???, garis baru termasuk.</p> 
+         <p>Itulah yang dilakukan oleh <code class="pattern">s</code>. Jika sebuah ekspresi regular memilikinya, maka sebuah titik <code class="pattern">.</code> secara literal cocok dengan karakter apapun:</p> 
+         <div id="9425j0sawh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "A\nB".match(/A.B/s) ); // A\nB (cocok!)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tidak didukung IE</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Tanda <code class="pattern">s</code> tidak didukung pada IE.</p> 
+           <p>Beruntungnya, masih terdapat alternatif untuk hal itu yang mana dapat berjalan dimanapun. Kita bisa menggunakan <em>regexp</em> seperti <code class="pattern">[\s\S]</code> untuk dicocokan dengan ???karakter apapun??? (pola ini akan dijelaskan pada bab <a href="regexp-character-sets-and-ranges.html">Sets and ranges [...]</a>).</p> 
+           <div id="9gpg1jshta" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "A\nB".match(/A[\s\S]B/) ); // A\nB (cocok!)</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Pola <code class="pattern">[\s\S]</code> bisa dikatakan: ???sebuah karakter spasi ATAU bukan sebuah karakter spasi???. Dengan kata lain, ???apapun???. Kita bisa menggunakan kelas komplemen pasangan lainnya, seperti <code class="pattern">[\d\D]</code>, itu tidak penting. Atau bahkan <code class="pattern">[^]</code> ??? sama seperti mencocokan karakter apapun kecuali tidak ada.</p> 
+           <p>Kita juga bisa menggunakan trik ini jika kita ingin dua bentuk ???titik??? didalam pola yang sama: titik yang sebenarnya <code class="pattern">.</code> bertingkah seperti biasa (???tidak termasuk garis baru???), dan juga sebuah cara untuk mencocokan ???karakter apapun??? dengan <code class="pattern">[\s\S]</code> atau sejenisnya.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Perhatikan spasinya</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Biasanya kita hanya memberikan sedikit perhatian pada spasi. Untuk kita string <code class="subject">1-5</code> dan <code class="subject">1 - 5</code> adalah hal yang hampir mirip.</p> 
+           <p>Tapi jika sebuah ekspresi regular tidak memperhatikan spasinya, maka pencocokannya akan gagal.</p> 
+           <p>Kita coba untuk mencari angka yang dipisahkan dengan tanda penghubung:</p> 
+           <div id="zf5qj3sb1v" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "1 - 5".match(/\d-\d/) ); // null, tidak cocok!</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Sekarang kita benarkan dengan menambahkan spasi pada regexp-nya <code class="pattern"> \d - \d</code>:</p> 
+           <div id="35usrg4eaf" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-character-classes.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-character-classes.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( "1 - 5".match(/\d - \d/) ); // 1 - 5, sekarang pencocokannya bekerja
+// atau kita bisa menggunakan kelas \s:
+alert( "1 - 5".match(/\d\s-\s\d/) ); // 1 - 5, juga bekerja</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p><strong>Sebuah spasi adalah sebuah karakter. Sama pentingnya dengan karakter lainnya</strong></p> 
+           <p>Kita tidak bisa menambah atau menghilangkan spasi dari ekspresi regular dan berharap pencocokanya akan berjalan sama.</p> 
+           <p>Dengan kata lain, didalam ekspresi regular seluruh karakter bersifat penting, spasi pun sama.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="regexp-character-classes.html#ringkasan">Ringkasan</a></h2> 
+         <p>Terdapat karakter kelas:</p> 
+         <ul> 
+          <li><code class="pattern">\d</code> ??? digits / Angka.</li> 
+          <li><code class="pattern">\D</code> ??? non-digits / Bukan angka.</li> 
+          <li><code class="pattern">\s</code> ??? simbol spasi, tabs, garis baru.</li> 
+          <li><code class="pattern">\S</code> ??? semuanya kecuali <code class="pattern">\s</code>.</li> 
+          <li><code class="pattern">\w</code> ??? huruf latin, angka, <em>underscore</em> <code>'_'</code>.</li> 
+          <li><code class="pattern">\W</code> ??? semuanya kecuali <code class="pattern">\w</code>.</li> 
+          <li><code class="pattern">.</code> ??? karakter apapun jika dengan regexp tanda <code>'s'</code>, sebaliknya semuanya kecuali sebuah garis baru <code>\n</code>.</li> 
+         </ul> 
+         <p>???Tapi ini belum semuanya!</p> 
+         <p><em>Unicode encoding</em>, digunakan oleh Javascript untuk <em>string</em>, menyediakan berbagai properti untuk karakter, seperti: bahasa mana yang cocok dengan surat ini (jika sebuah surat), tanda bacanya, dll.</p> 
+         <p>We can search by these properties as well. That requires flag <code class="pattern">u</code>, covered in the next article. Tentu saja kita bisa mencari dengan propertinya. Yang mana membutuhkan tanda <code class="pattern">u</code>, yang akan dibahas didalam bab selanjutnya.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="regexp-introduction.html" data-tooltip="Pola dan flag"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="regexp-unicode.html" data-tooltip="Unicode: flag &quot;u&quot; and class \p{...}"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-classes" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-classes" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regular-expressions.html">Regular expressions</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-classes.html#kelas-kebalikan-inverse-classes">Kelas kebalikan (Inverse Classes)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-classes.html#sebuah-titik-adalah-karakter-apapun">Sebuah titik adalah ???karakter apapun???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-classes.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-character-classes.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-classes" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fregexp-character-classes" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

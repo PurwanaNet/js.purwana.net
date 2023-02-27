@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Variabel</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="variables.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Variabel"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Variabel"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="strict-mode.html"> 
+  <link rel="next" href="types.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Variabel"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fvariables" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fvariables" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="8" max="92" data-tooltip="Pelajaran 8 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="first-steps.html"><span>JavaScript Dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"JavaScript Dasar","item":"https://id.javascript.info/first-steps"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Variabel</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Variabel"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Seringnya, aplikasi JavaScript butuh kerja dengan informasi. Di sini ada dua contoh:</p> 
+         <ol> 
+          <li>Toko online ??? informasinya mungkin berisi barang-barang yang dijual dan kereta belanja.</li> 
+          <li>Aplikasi chat ??? informasinya mungkin berisi user, pesan, dan banyak lagi.</li> 
+         </ol> 
+         <p>Variabel digunakan untuk menyimpan informasi ini.</p> 
+         <h2><a class="main__anchor" name="variabel" href="variables.html#variabel">Variabel</a></h2> 
+         <p><a href="https://en.wikipedia.org/wiki/Variable_(computer_science)">Variabel</a> ialah ???simpanan bernama??? untuk data. Kita bisa memakainya untuk menyimpan barang, pengunjung, dan data lain.</p> 
+         <p>Untuk membuat variabel di JavaScript, gunakan katakunci <code>let</code>.</p> 
+         <p>Pernyataan di bawah membuat (dengan kata lain: <em>declares</em> or <em>defines</em>) variabel dengan nama ???message???:</p> 
+         <div id="cnvp93g74y" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let message;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kini, kita bisa menaruh beberapa data ke dalamnya dengan menggunakan operator penetapan <code>=</code>:</p> 
+         <div id="zcv8awmd44" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let message;
+
+message = 'Hello'; // simpan string</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>String ini kini disimpan ke area memori yang terasosiasi dengan variabel. Kita bisa mengakses itu menggunakan nama variabel:</p> 
+         <div id="gxinpwsvv7" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let message;
+message = 'Hello!';
+
+alert(message); // tampilkan isi variabel</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Supaya ringkas, kita bisa mengkombinasi deklarasi variabel dan penetapan ke baris tunggal:</p> 
+         <div id="0gezwa73ov" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let message = 'Hello!'; // definisikan variabel dan tetapkan nilai
+
+alert(message); // Hello!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa mendeklarasi variabel ganda dalam satu baris:</p> 
+         <div id="8zaem45na2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = 'John', age = 25, message = 'Hello';</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kelihatannya pendek, tapi itu tidak disarankan. Demi kemudahan dibaca, tolong gunakan bari tunggal per variabel.</p> 
+         <p>Varian multibaris agak panjang, tapi lebih mudah dibaca:</p> 
+         <div id="7ix20kzaie" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = 'John';
+let age = 25;
+let message = 'Hello';</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Beberapa orang juga mendefinisi variabel ganda dalam gaya multibaris ini:</p> 
+         <div id="izzgwsqasn" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = 'John',
+  age = 25,
+  message = 'Hello';</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Atau bahkan dalam gaya ???comma-first???:</p> 
+         <div id="yy8xkavw7b" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = 'John'
+  , age = 25
+  , message = 'Hello';</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Secara teknis, semua varian ini melakukan hal yang sama. Jadi, cuma masaleh selera personal dan estetika saja.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>var</code> ketimbang <code>let</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Di script jadul, kamu mungkin juga menemukan katakunci lain: <code>var</code> ketimbang <code>let</code>:</p> 
+           <div id="h9d4yp059v" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:3}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>var message = 'Hello';</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Katakunci <code>var</code> <em>hampir</em> sama dengan <code>let</code>. Gunanya untuk mendeklarasi variabel, tapi caranya agak sedikit beda, ???jadul???.</p> 
+           <p>Ada perbedaan halus antara <code>let</code> dan <code>var</code>, tapi itu tak masalah buat kita sekarang ini. Kita akan mengcover mereka lebih detil di bab <a href="var.html">Si Tua "var"</a>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="analogy-kehidupan-nyata" href="variables.html#analogy-kehidupan-nyata">Analogy kehidupan nyata</a></h2> 
+         <p>Kita bisa dengan mudah memahami konsep ???variabel??? jika kita membayangkannya sebagai ???box??? untuk data, dengan stiker nama yang unik.</p> 
+         <p>Misalnya, variabel <code>message</code> bisa dibayangkan sebagai box berlabel <code>"message"</code> dengan nilai <code>"Hello!"</code> di dalamnya:</p> 
+         <figure> 
+          <div class="image" style="width:166px"> 
+           <div class="image__ratio" style="padding-top:87.34939759036145%"></div> 
+           <object type="image/svg+xml" data="article/variables/variable.svg" width="166" height="145" class="image__image" data-use-theme> <img src="article/variables/variable.svg" alt="" width="166" height="145"> </object> 
+          </div> 
+         </figure> 
+         <p>Kita bisa menaruh nilai apapun di dalam box.</p> 
+         <p>Kita juga bisa mengubahnya sebanyak yang kita mau:</p> 
+         <div id="4exe154urg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let message;
+
+message = 'Hello!';
+
+message = 'World!'; // value changed
+
+alert(message);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ketika nilainya berubah, data lama dihapus dari variabel:</p> 
+         <figure> 
+          <div class="image" style="width:392px"> 
+           <div class="image__ratio" style="padding-top:48.97959183673469%"></div> 
+           <object type="image/svg+xml" data="article/variables/variable-change.svg" width="392" height="192" class="image__image" data-use-theme> <img src="article/variables/variable-change.svg" alt="" width="392" height="192"> </object> 
+          </div> 
+         </figure> 
+         <p>Kita juga bisa mendeklarasi dua variabel dan mengkopi data dari satu ke yang lainnya.</p> 
+         <div id="70haq1qa21" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let hello = 'Hello world!';
+
+let message;
+
+// mengkopi 'Hello world' dari hello ke message
+message = hello;
+
+// sekarang dua variabel punya data yang sama
+alert(hello); // Hello world!
+alert(message); // Hello world!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Mendeklarasikan variabel dua kali akan menciptakan error</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Sebuah variabel seharusnya di deklarasikan hanya sekali.</p> 
+           <p>Mendeklarasikan variabel berkali kali akan menciptakan error:</p> 
+           <div id="qk80uosyrf" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let message = "This";
+
+// repeated 'let' leads to an error
+// deklarasi 'let' berulang akan mengembalikan sebuah error
+let message = "That"; // SyntaxError: 'message' has already been declared</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Jadi, kita harus mendeklarasikan variabel sekali dan menggunakan variabel tersebut tanpa menggunakan ???let???.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Bahasa fungsional</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ini sangat menarik untuk diperhatikan bahwa ada bahasa pemrograman <a href="https://en.wikipedia.org/wiki/Functional_programming">fungsional</a>, seperti <a href="http://www.scala-lang.org/">Scala</a> atau <a href="http://www.erlang.org/">Erlang</a> yang melarang merubah nilai dari variabel.</p> 
+           <p>Di dalam bahasa macam ini, sekali nilai disimpan ???dalam box???, ia akan di sana selamanya. Jika kita harus menyimpan sesuatu yang lain, bahasa tersebut memaksa kita membuat box baru (mendeklarasi variabel baru). Kita tak bisa menggunakan ulang yang lama.</p> 
+           <p>Meski kelihatan sedikit aneh saat pandangan pertama, bahasa-bahasa ini ternyata mumpuni untuk pengembangan yang serius. Lebih dari itu, ada area seperti komputasi paralel di mana keterbatasan ini memberikan keuntungan tertentu. Disarankan mempelajari bahasa macam ini (meski jika kamu tak berencana menggunakannya segera) untuk meningkatkan wawasan.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="variable-naming" href="variables.html#variable-naming">Penamaan variabel</a></h2> 
+         <p>Ada dua keterbatasan pada nama variabel di JavaScript:</p> 
+         <ol> 
+          <li>Nama hanya boleh mengandung huruf, digit, atau simbol seperti <code>$</code> and <code>_</code>.</li> 
+          <li>Karakter pertama tidak boleh digit.</li> 
+         </ol> 
+         <p>Contoh nama valid:</p> 
+         <div id="g252omvnfn" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let userName;
+let test123;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ketika namanya mengandung kata ganda, <a href="https://en.wikipedia.org/wiki/CamelCase">camelCase</a> umum digunakan: kata demi kata digabung, setiap kata kecuali yang pertama dimulai dengan huruf kapital: <code>myVeryLongName</code>.</p> 
+         <p>Yang menarik ialah ??? tanda dollar <code>'$'</code> dan underscore <code>'_'</code> juga bisa digunakan dalam nama. Mereka simbol reguler, hanya seperti huruf, tanpa makna yang spesial.</p> 
+         <p>Nama-nama ini valid:</p> 
+         <div id="mnqm2reat1" data-trusted="0" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let $ = 1; // declared a variable with the name "$"
+let _ = 2; // and now a variable with the name "_"
+
+alert($ + _); // 3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Contoh nama variabel yang tidak valid:</p> 
+         <div id="vs0ao35ejy" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let 1a; // cannot start with a digit
+
+let my-name; // hyphens '-' aren't allowed in the name</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Case berpengaruh</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Variabel dengan nama <code>apple</code> dan <code>AppLE</code> adalah dua variabel yang berbeda.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Huruf non-Latin diperbolehkan, namun tak direkomendasikan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Boleh menggunakan bahasa apapun, termasuk huruf cyrillic atau bahkan hieroglyphs, seperti ini:</p> 
+           <div id="p4dsjvcbwc" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let ?????? = '...';
+let ??? = '...';</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Secara teknis, tak ada error di sini, nama-nama begitu boleh digunakan, tapi ada tradisi internasional untuk menggunakan bahasa Inggris dalam nama variabel. Meski jika kita menulis script kecil, kemungkinan variabelnya akan digunakan terus-menerus. Dan juga orang-orang dari negara lain mungkin harus membaca beberapa kali.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Nama-nama yang dikecualikan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ada <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords">daftar kata yang dikecualikan</a>, yang tidak bisa digunakan sebagai nama variabel karena mereka digunakan oleh bahasa Javascript sendiri.</p> 
+           <p>Misalnya: <code>let</code>, <code>class</code>, <code>return</code>, dan <code>function</code> dikecualikan.</p> 
+           <p>Kode di bawah menghasilkan galat syntax:</p> 
+           <div id="w597jcaszq" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let let = 5; // tak bisa menamai variable "let", galat!
+let return = 5; // juga tak bisa menamainya "return", galat!</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Assignment tanpa <code>use strict</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Normalnya, kita harus mendefinisi variabel sebelum memakainya. Tapi dulu, secara teknis boleh membuat variabel hanya dengan penetapan nilai tanpa menggunakan <code>let</code>. Ini masih berjalan jika kita tak menaruh <code>use strict</code> di script kita untuk mengelola kompatibilitas dengan script jadul.</p> 
+           <div id="8rit387a5u" data-trusted="1" class="code-example" data-no-strict="1"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// note: tak ada "use strict" di contoh ini
+
+num = 5; // variabel "num" dibuat jika ia tak ada
+
+alert(num); // 5</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Ini kebiasaan buruk dan akan mengakibatkan galat dalam mode ketat:</p> 
+           <div id="03dmb49b3c" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>"use strict";
+
+num = 5; // galat: num tak terdefinisi</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="konstan" href="variables.html#konstan">Konstan</a></h2> 
+         <p>Untuk mendeklarasi variabel konstan (tak berubah), gunakan <code>const</code> ketimbang <code>let</code>:</p> 
+         <div id="h5f8cz38ua" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>const myBirthday = '18.04.1982';</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Variabel yang dideklarasi menggunakan <code>const</code> disebut ???konstan???. Mereka tak bisa diubah. Jika kamu mencoba mengubahnya maka ia menghasilkan galat:</p> 
+         <div id="jbi0mc5lo2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>const myBirthday = '18.04.1982';
+
+myBirthday = '01.01.2001'; // error, tak bisa menetapkan-ulang konstan!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ketika programmer yakin bahwa variabel tak akan berubah, mereka bisa mendeklarasikan <code>const</code> untuk menjamin hal itu dan memberitahu semua orang.</p> 
+         <h3><a class="main__anchor" name="konstan-huruf-besar" href="variables.html#konstan-huruf-besar">Konstan huruf-besar</a></h3> 
+         <p>Ada kebiasaan umum untuk menggunakan konstan sebagai alias untuk nilai yang sulit dihafal yang akan diketahui sebelum dieksekusi.</p> 
+         <p>Konstan macam ini dinamai dengan huruf kapital dan underscore.</p> 
+         <p>Misalnya, mari kita buat konstan untuk warna dalam sesuatu yang disebut format ???web??? (hexadecimal):</p> 
+         <div id="6s57f91rz3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>const COLOR_RED = "#F00";
+const COLOR_GREEN = "#0F0";
+const COLOR_BLUE = "#00F";
+const COLOR_ORANGE = "#FF7F00";
+
+// ...ketika kita harus memilih warna
+let color = COLOR_ORANGE;
+alert(color); // #FF7F00</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Keuntungan:</p> 
+         <ul> 
+          <li><code>COLOR_ORANGE</code> lebih mudah diingat ketimbang <code>"#FF7F00"</code>.</li> 
+          <li>Lebih rentan salah penulisan <code>"#FF7F00"</code> ketimbang <code>COLOR_ORANGE</code>.</li> 
+          <li>Ketika membaca code, <code>COLOR_ORANGE</code> lebih berarti daripada <code>#FF7F00</code>.</li> 
+         </ul> 
+         <p>Kapan kita sebaiknya menggunakan kapital untuk konstan dan kapan itu dinamai dengan normal? Ayo kita perjelas.</p> 
+         <p>Menjadi ???konstan??? hanya berarti jika nilai variable tak pernah berubah. Tapi ada konstan yang diketahui sebelum eksekusi (seperti nilai hexadecimal untuk merah) dan ada konstan yang <em>dikalkulasi</em> dalam run-time, selama eksekusi, tapi tak berubah setelah penetapan inisial mereka.</p> 
+         <p>Misalnya:</p> 
+         <div id="l8dfjjujx6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>const pageLoadTime = /* waktu yang dibutuhkan laman web untuk meload */;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Nilai <code>pageLoadTime</code> tidak diketahui sebelum laman diload, jadi itu dinamai dengan normal. Tapi ia masih konstan karena ia tak berubah setelah penetapan.</p> 
+         <p>Dengan kata lain, konstan berhuruf kapital hanya digunakan sebagai alias untuk nilai yang ???dihard-code???.</p> 
+         <h2><a class="main__anchor" name="namai-dengan-benar" href="variables.html#namai-dengan-benar">Namai dengan benar</a></h2> 
+         <p>Berbicara tentang variabel, ada satu hal yang sangat penting.</p> 
+         <p>Nama variabel sebaiknya punya arti yang bersih dan jelas, yang menjelaskan data yang ia simpan.</p> 
+         <p>Penamaan variabel adalah salah satu keahlian yang penting dan rumit dalam pemrograman. Pandangan sekilas pada nama variabel bisa menyingkap kode yang ditulis oleh pengembang pemula versus pengembang berpengalaman.</p> 
+         <p>Di proyek nyata, kebanyakan waktu dihabiskan untuk modifikasi dan mengextend code base ketimbang menulis sesuatu yang benar-benar baru dari awal. Ketika kita kembali ke beberapa kode setelah melakukan sesuatu yang lain untuk sementara, akan lebih mudah menemukan informasi yang labelnya tepat. Atau, dengan kata lain, ketika variabel punya nama yang baik.</p> 
+         <p>Tolong renungkan tentang nama yang baik untuk variabel sebelum mendeklarasinya. Itu baik untukmu.</p> 
+         <p>Beberapa aturan yang baik untuk ditiru:</p> 
+         <ul> 
+          <li>Gunakan nama yang manusiawi seperti <code>userName</code> atau <code>shoppingCart</code>.</li> 
+          <li>Jauhi singkatan atau nama pendek seperti <code>a</code>, <code>b</code>, <code>c</code>, kecuali jika kamu benar-benar tau apa yang kamu lakukan.</li> 
+          <li>Buat nama sedeskriptif dan sejelas mungkin. Contoh nama yang jelek ialah <code>data</code> dan <code>value</code>. Nama semacam ini tidak punya makna dan hanya OK untuk menggunakannya jika data atau nilai variabel yang mengacu kontex kodenya luar biasa jelas.</li> 
+          <li>Sepakat dalam hal-hal yang ada di dalam timmu dan pikiranmu. Jika pengunjung situs disebut ???user??? maka kita sebaiknya menamai variabel terkait <code>currentUser</code> atau <code>newUser</code> ketimbang <code>currentVisitor</code> atau <code>newManInTown</code>.</li> 
+         </ul> 
+         <p>Kedengaran simpel kan? Jelas saja, tapi membuat nama variabel descriptif dan jelas pada praktiknya tidak mudah. Coba lakukan.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Daur ulang atau buat baru?</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Dan catatan terakhirnya. Ada juga programmer malas yang, ketimbang mendeklarasi variabel baru, cenderung menggunakan variabel yang sudah ada.</p> 
+           <p>Hasilnya, variabel mereka seperti box yang orang-orang lempar tanpa menganti stikernya. Apa yang ada di dalam boxnya? Siapa yang tahu? Kita harus mengeceknya dengan seksama.</p> 
+           <p>Programmer macam ini pelit terhadap satu deklarasi variabel namun boros sepuluh kali saat debugging.</p> 
+           <p>Variabel extra itu baik, tidak jahat.</p> 
+           <p>JavaScript minifier dan peramban modern mengoptimisasi kode dengan cukup baik, sehingga ia tak akan mengakibatkan isu performa. Menggunakan variabel yang berbeda untuk nilai yang berbeda bahkan bisa membantu engine mengoptimisasi kodemu.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="kesimpulan" href="variables.html#kesimpulan">Kesimpulan</a></h2> 
+         <p>Kita bisa mendeklarasi variabel untuk menyimpan data menggunakan katakunci <code>var</code>, <code>let</code>, atau <code>const</code>.</p> 
+         <ul> 
+          <li><code>let</code> ??? adalah deklarasi variabel modern.</li> 
+          <li><code>var</code> ??? adalah deklarasi variabel jadul. Normalnya kita tak menggunakannya sama sekali, tapi kita akan mengcover perbedaan halus dari <code>let</code> di bab <a href="var.html">Si Tua "var"</a>, hanya jika kamu membutuhkannya.</li> 
+          <li><code>const</code> ??? seperti <code>let</code>, tapi nilai variabelnya tak bisa diubah.</li> 
+         </ul> 
+         <p>Variabel sebaiknya diberi nama yang memudahkan kita untuk memahami apa isinya.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="variables.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="variables.html#bekerja-dengan-variabel" name="bekerja-dengan-variabel">Bekerja dengan variabel</a></h3> 
+           <a class="task__open-link" href="task/hello-variables.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <ol> 
+             <li>Deklarasikan dua variabel: <code>admin</code> and <code>name</code>.</li> 
+             <li>Assign nilai <code>"John"</code> ke <code>name</code>.</li> 
+             <li>Kopi nilai dari <code>name</code> ke <code>admin</code>.</li> 
+             <li>Tampilkan nilai <code>admin</code> menggunakan <code>alert</code> (harus beroutput ???John???).</li> 
+            </ol> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Dalam kode di bawah, tiap baris berkorespondensi ke item di dalam daftar tugas.</p> 
+              <div id="5e7arsphrf" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="variables.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="variables.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let admin, name; // bisa mendeklarasikan dua variabel sekaligus
+
+name = "John";
+
+admin = name;
+
+alert( admin ); // "John"</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="variables.html#memberikan-nama-yang-tepat" name="memberikan-nama-yang-tepat">Memberikan nama yang tepat</a></h3> 
+           <a class="task__open-link" href="task/declare-variables.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <ol> 
+             <li>Buat variabel dengan nama planet kita. Bagaimana kamu akan menamainya?</li> 
+             <li>Buat variabel untuk menyimpan nama pengunjung saat ini ke website. Bagaimana kamu menamainya?</li> 
+            </ol> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Variabel untuk planet kita</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Variabel untuk planet kita</h4> 
+              <div class="formatted"> 
+               <p>Itu simpel:</p> 
+               <div id="l0u3bg9f0c" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>let ourPlanetName = "Earth";</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Ingat, kita bisa menggunakan nama lebih pendek <code>planet</code>, tapi itu tak akan jelas planet apa. Bagus jika lebih panjang dan deskriptif. Minimal hingga variabel isNotTooLong.</p> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Nama pengunjung saat ini</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Nama pengunjung saat ini</h4> 
+              <div class="formatted"> 
+               <div id="rahd7lapte" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-javascript"><code>let currentUserName = "John";</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Lagi, kita bisa memperpendek jadi <code>userName</code> jika kita tahu pasti user saat ini.</p> 
+               <p>Editor modern dan autocomplete membuat nama variabel panjang mudah ditulis. Jangan pelit terhadap mereka. Nama yang mengandung 3 kata di dalamnya itu bagus.</p> 
+               <p>Dan jika editormu tidak punya autocompletion yang layak, carilah <a href="code-editors.html">editor yang baru</a>.</p> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="variables.html#const-huruf-kapital" name="const-huruf-kapital">Const huruf kapital?</a></h3> 
+           <a class="task__open-link" href="task/uppercast-constant.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Cek kode berikut:</p> 
+            <div id="pu7khnjjr2" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>const birthday = '18.04.1982';
+
+const age = someCode(birthday);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Di sini kita punya konstan tanggal <code>birthday</code> dan <code>age</code> dikalkulasi dari <code>birthday</code> dengan batuan beberapa kode (tidak tersedia yang pendek-pendek, dan karena detail tidak masalah di sini).</p> 
+            <p>Apakah tepat menggunakan huruf kapital untuk <code>birthday</code>? Untuk <code>age</code>? Atau bahkan untuk keduanya?</p> 
+            <div id="l8gj7iqvug" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>const BIRTHDAY = '18.04.1982'; // buat huruf kapital?
+
+const AGE = someCode(BIRTHDAY); // buat huruf kapital?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita umumnya menggunakan case yang layak untuk konstan yang ???dihard-code???. Atau, dengan kata lain, ketika nilainya diketahui sebelum eksekusi dan langsung ditulis ke dalam kode.</p> 
+              <p>Di dalam kode, <code>birthday</code> memang seperti itu. Jadi kita bisa menggunakan kapital besar untuknya.</p> 
+              <p>Sebaliknya, <code>age</code> dievaluasi saat run-time. Hari ini kita punya satu umur, setahun kemudian kita akan punya umur yang berbeda. Ia termasuk konstan yang takkan berubah melalui eksekusi kode. Tapi ia agak ???sedikit bukan konstan??? ketimbang <code>birthday</code>: ia dihitung, jadi sebaiknya kita menggunakan huruf kecil untuk itu.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="strict-mode.html" data-tooltip="The modern mode, &quot;use strict&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="types.html" data-tooltip="Tipe data"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fvariables" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fvariables" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="first-steps.html">JavaScript Dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="variables.html#variabel">Variabel</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="variables.html#analogy-kehidupan-nyata">Analogy kehidupan nyata</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="variables.html#variable-naming">Penamaan variabel</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="variables.html#konstan">Konstan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="variables.html#namai-dengan-benar">Namai dengan benar</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="variables.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="variables.html#tasks">Tugas (3)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="variables.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fvariables" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fvariables" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Tanggal dan waktu</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="date.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Tanggal dan waktu"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Tanggal dan waktu"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="destructuring-assignment.html"> 
+  <link rel="next" href="json.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Tanggal dan waktu"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdate" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdate" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="47" max="92" data-tooltip="Pelajaran 47 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Tanggal dan waktu</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Tanggal dan waktu"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Ayo kita bertemu dengan objek bawaan baru: <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>. yang akan menyimpan tanggal, waktu dan menyediakan metode untuk manajemen tanggal/waktu.</p> 
+         <p>Contoh, kita bisa menggunakan itu untuk menyimpan pembuatan/modifikasi waktu, untuk menghitung waktu atau hanya untuk melihat tanggal sekarang.</p> 
+         <h2><a class="main__anchor" name="pembuatan" href="date.html#pembuatan">Pembuatan</a></h2> 
+         <p>Untuk membuat objek <code>Date</code> baru panggil <code>new Date()</code> dengan salah satu dari argumen dibawah:</p> 
+         <dl> 
+          <dt> 
+           <code>new Date()</code> 
+          </dt> 
+          <dd> 
+           <p>Tanpa argumen ??? membuat sebuah objek <code>Date</code> untuk tanggal dan waktu sekarang:</p> 
+           <div id="n7t65x84th" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let now = new Date();
+alert( now ); // tampilkan tanggal/waktu sekarang</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>new Date(milliseconds)</code> 
+          </dt> 
+          <dd> 
+           <p>Membuat sebuah objek <code>Date</code> dengan waktu yang sama dengan mili-detik (1/1000 dari satu detik) lewat dari Januari 1 1970 UTC+0.</p> 
+           <div id="gub4fpvo5n" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// 0 berarti 01.01.1970 UTC+0
+let Jan01_1970 = new Date(0);
+alert( Jan01_1970 );
+
+// sekarang tambahkan 24 jam, ambil 02.01.1970 UTC+0
+let Jan02_1970 = new Date(24 * 3600 * 1000);
+alert( Jan02_1970 );</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Sebuah angka integer merepresentasikan angka dari milidetik yang telah lewat sejak awal dari 1970 dipanggil dengan <em>timestamp</em>.</p> 
+           <p>Ini adalah angka numerik ringan yang merepresentasikan sebuah tanggal. Kita akan selalu bisa membuat tanggal dari timestamp menggunakan <code>new Date(timestamp)</code> dan mengubah objek <code>Date</code> yang ada ke sebuah timestamp dengan menggunakan metode <code>date.getTime()</code> (lihat dibawah).</p> 
+           <p>Tanggal sebelum 01.01.1970 mempunyai timestamp yang negatif, contoh.:</p> 
+           <div id="btymy2ktww" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// 31 Dec 1969
+let Dec31_1969 = new Date(-24 * 3600 * 1000);
+alert( Dec31_1969 );</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>new Date(datestring)</code> 
+          </dt> 
+          <dd> 
+           <p>Jika terdapat sebuah argumen tunggal, dan itu adalah sebuah string, lalu itu akan diurai secara otomatis. Algoritmanya sama dengan yang digunakan <code>Date.parse</code>, kita akan pelajari itu nanti.</p> 
+           <div id="pcjv0rie68" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let date = new Date("2017-01-26");
+alert(date);
+// Waktunya belum di set, jadi itu diasumsikan tengah malam GMT dan
+// disesuaikan menurut zona waktu dimana kodenya berjalan
+// Jadi hasilnya mungkin bisa
+// Kamis Jan 26 2017 11:00:00 GMT+1100 (Waktu timur siang hari Australia )
+// atau
+// Rabu Jan 25 2017 16:00:00 GMT-0800 (Waktu standar pasifik)</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>new Date(year, month, date, hours, minutes, seconds, ms)</code> 
+          </dt> 
+          <dd> 
+           <p>Membuat waktu dengan komponen yang diberikan dari zona waktu lokal. Hanya dua argument pertama yang wajib.</p> 
+           <ul> 
+            <li><code>Tahun</code>nya harus mempunyai 4 angka: <code>2013</code> boleh, <code>98</code> tidak boleh.</li> 
+            <li>Perhitungan <code>Bulan</code>nya dimulai dari <code>0</code> (Jan), sampai <code>11</code> (Des).</li> 
+            <li>Parameter <code>date</code> sebenarnya adalah hari dari bulan, jika tidak ada maka akan diasumsikan <code>1</code>.</li> 
+            <li>Jika <code>jam/menit/detik/milidetik</code> tidak ada, mereka akan diasumsikan sama dengan <code>0</code>.</li> 
+           </ul> 
+           <p>Contoh:</p> 
+           <div id="khb214zqkr" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>new Date(2011, 0, 1, 0, 0, 0, 0); // 1 Jan 2011, 00:00:00
+new Date(2011, 0, 1); // sama, jam dan yang lainnya secara default adalah 0</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Presisi paling minimal adalah 1ms (1/1000 detik):</p> 
+           <div id="mnkbfr0g2w" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let date = new Date(2011, 0, 1, 2, 3, 4, 567);
+alert( date ); // 1.01.2011, 02:03:04.567</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+         </dl> 
+         <h2><a class="main__anchor" name="mengakses-komponen-tanggal" href="date.html#mengakses-komponen-tanggal">Mengakses komponen tanggal</a></h2> 
+         <p>Terdapat beberapa metode untuk mengakses tahun, bulan dan lainnya dari objek <code>Date</code>:</p> 
+         <dl> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear">getFullYear()</a> 
+          </dt> 
+          <dd>
+            Mendapatkan tahun (4 angka) 
+          </dd> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getMonth">getMonth()</a> 
+          </dt> 
+          <dd>
+            Mendapatkan bulan, 
+           <strong>dari 0 sampai 11</strong>. 
+          </dd> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getDate">getDate()</a> 
+          </dt> 
+          <dd>
+            mendapatkan hari dari bulan, dari 1 sampai 31, nama dari metodenya sedikit terlihat aneh. 
+          </dd> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours">getHours()</a>, 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes">getMinutes()</a>, 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds">getSeconds()</a>, 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getMilliseconds">getMilliseconds()</a> 
+          </dt> 
+          <dd>
+            Mendapatkan komponen-komponen yang bersangkutan. 
+          </dd> 
+         </dl> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Bukan <code>getYear()</code>, Tapi <code>getFullYear()</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Banyak mesin Javascript mengimplementasikan metode yang tidak-standar <code>getYear()</code>. Metode ini sudah usang. Itu terkadang mengembalikan tahun dengan 2-angka. Tolong jangan gunakan itu. Gunakan <code>getFullYear()</code> untuk tahun.</p> 
+          </div> 
+         </div> 
+         <p>Sebagai tambahan, kita bisa mendapatkan hari dari minggu:</p> 
+         <dl> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay">getDay()</a> 
+          </dt> 
+          <dd>
+            Dapatkan hari dari minggu, dimulai dari 
+           <code>0</code> (Minggu) to 
+           <code>6</code> (Sabtu). Hari pertama akan selalu Minggu, di beberapa negara bukanlah minggu, dan tidak bisa diubah. 
+          </dd> 
+         </dl> 
+         <p><strong>Semua metode diatas mengembalikan komponen yang bersangkutan dengan zona waktu lokal.</strong></p> 
+         <p>Juga terdapat pasangan-UTC, yang mengembalikan hari bulan, tahun dan lainnya untuk zona waktu UTC+0: <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCFullYear">getUTCFullYear()</a>, <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCMonth">getUTCMonth()</a>, <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getUTCDay">getUTCDay()</a>. Hanya dengan memasukan <code>"UTC"</code> tepat setelah <code>"get"</code>.</p> 
+         <p>Jika zona waktu lokal kamu diubah menjadi zona yang berhubungan dengan UTC, maka kode dibawah akan menunjukan waktu yang berbeda.</p> 
+         <div id="3nftrencix" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// tanggal sekarang
+let date = new Date();
+
+// jam didalam zona waktu kamu sekarang
+alert( date.getHours() );
+
+// jam di zona waktu UTC+0 (waktu london tanpa waktu musim panas)
+alert( date.getUTCHours() );</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disamping metode yang diberikan, disana terdapat dua yang spesial yang tidak memiliki variasi waktu UTC:</p> 
+         <dl> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime">getTime()</a> 
+          </dt> 
+          <dd> 
+           <p>Mengembalikan timestamp untuk tanggal ??? sebuah angka dari milidetik yang telah terlewat sejak 1 Januari 1970 UTC+0</p> 
+          </dd> 
+          <dt> 
+           <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/getTimezoneOffset">getTimezoneOffset()</a> 
+          </dt> 
+          <dd> 
+           <p>Mengembalikan perbedaan diantara UTC dan zona waktu lokal, dalam menit:</p> 
+           <div id="m6q0jlswrh" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// jika kamu berada didalam zona waktu UTC-1, mengeluarkan 60
+// jika kamu berada di zona waktu UTC+3, mengeluarkan -180
+alert( new Date().getTimezoneOffset() );</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+         </dl> 
+         <h2><a class="main__anchor" name="menyetel-komponen-tanggal" href="date.html#menyetel-komponen-tanggal">Menyetel komponen tanggal</a></h2> 
+         <p>Metode berikut memperbolehkan kita untuk menyetel komponen tanggal/waktu:</p> 
+         <ul> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/setFullYear"><code>setFullYear(year, [month], [date])</code></a></li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/setMonth"><code>setMonth(month, [date])</code></a></li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate"><code>setDate(date)</code></a></li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/setHours"><code>setHours(hour, [min], [sec], [ms])</code></a></li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/setMinutes"><code>setMinutes(min, [sec], [ms])</code></a></li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/setSeconds"><code>setSeconds(sec, [ms])</code></a></li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/setMilliseconds"><code>setMilliseconds(ms)</code></a></li> 
+          <li><a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/setTime"><code>setTime(milliseconds)</code></a> (setel seluruh tanggal dengan milidetik sejak 01.01.1970 UTC)</li> 
+         </ul> 
+         <p>Semuanya kecuali salah satunya yaitu <code>setTime()</code> mempunyai varian-UTC, contoh: <code>setUTCHours()</code>.</p> 
+         <p>Seperti yang bisa kita lihat, beberapa metode bisa menyetel beberapa komponen sekaligus, untuk contoh <code>setHours</code>. Komponen yang tidak disebutkan tidak akan diubah.</p> 
+         <p>Contoh:</p> 
+         <div id="nhk1sviz0s" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let today = new Date();
+
+today.setHours(0);
+alert(today); // masih hari ini, tapi jamnya diubah menjadi 0
+
+today.setHours(0, 0, 0, 0);
+alert(today); // masih hari ini, tapi tepat 00:00:00</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="koreksi-otomatis" href="date.html#koreksi-otomatis">Koreksi otomatis</a></h2> 
+         <p><em>Koreksi otomatis</em> adalah fitur yang sangat berguna dari objek <code>Date</code>. Kita bisa menyetel nilai yang diluar jangkauan, dan itu akan menyesuaikan dirinya sendiri.</p> 
+         <p>Contoh:</p> 
+         <div id="85fkx6d5w7" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:29,&quot;end&quot;:31}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let date = new Date(2013, 0, 32); // 32 Jan 2013 ?!?
+alert(date); // ...adalah 1st Feb 2013!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>komponen tanggal yang diluar jangkauan akan diganti secara otomatis.</p> 
+         <p>Kita bisa berkata untuk menambah tanggal ???28 feb 2016??? dengan 2 hari. Itu mungkin akan ???2 maret??? atau ???1 maret??? didalam kasus tahun kabisat. Kita tidak perlu memikirkan hal itu. Tinggal tambah 2 hari. Objek <code>Date</code> akan melakukan sisanya:</p> 
+         <div id="uxoi5hs1xc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let date = new Date(2016, 1, 28);
+date.setDate(date.getDate() + 2);
+
+alert( date ); // 1 Mar 2016</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Fitur itu sering digunakan untuk mendapatkan tanggal setelah diberikan waktu yang ditentukan, coba dapatkan tanggal ???70 detik setelah saat ini???:</p> 
+         <div id="dftnd7dmtv" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let date = new Date();
+date.setSeconds(date.getSeconds() + 70);
+
+alert( date ); // menampilkan tanggal yang benar</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa menyetel nol atau bahkan nilai negatif. Contoh:</p> 
+         <div id="rakpb9lugr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let date = new Date(2016, 0, 2); // 2 Jan 2016
+
+date.setDate(1); // setel hari pertama dari bulan
+alert( date );
+
+date.setDate(0); // kurangi 1 hari, jadi diasumsikan hari terakhir di bulan sebelumnya
+
+alert( date ); // 31 Desember 2015</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="tanggal-menjadi-angka-perbedaan-tanggal" href="date.html#tanggal-menjadi-angka-perbedaan-tanggal">Tanggal menjadi angka, perbedaan tanggal</a></h2> 
+         <p>Ketika sebuah objek <code>Date</code> diubah menjadi angka, itu menjadi timestamp sama seperti <code>date.getTime()</code>:</p> 
+         <div id="e4342v7lmv" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let date = new Date();
+alert(+date); // angka dari milidetik, sama seperti date.getTime()</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Efek yang perlu diperhatikan: tanggal bisa dikurangi, hasilnya adalah perbedaan dalam milidetik.</p> 
+         <p>Hal itu bisa gunakan untuk mengukur waktu:</p> 
+         <div id="vxeoz5qorh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let start = new Date(); // mulai pengukuran waktu
+
+// lakukan perhitungannya
+for (let i = 0; i &lt; 100000; i++) {
+  let doSomething = i * i * i;
+}
+
+let end = new Date(); // akhiri pengukuran waktu
+
+alert( `The loop took ${end - start} ms` );</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="date-now" href="date.html#date-now">Date.now()</a></h2> 
+         <p>Jika kita ingin mengukur waktu, kita tidak butuh objek <code>Date</code>.</p> 
+         <p>Terdapat metode spesial <code>Date.now()</code> yang mengembalikan timestamp saat ini.</p> 
+         <p>Itu secara semaktik sama dengan <code>new Date().getTime()</code>, tapi itu tidak menciptakan sebuah perantara objek <code>Date</code>. Jadi itu lebih cepat dan tidak menambah beban pembuangan sampah.</p> 
+         <p>Kebanyakan itu digunakan untuk kenyamanan atau ketika performansi menjadi hal yang diperhatikan, seperti permainan didalam Javascript atau aplikasi yang terspesialisasi lainnya.</p> 
+         <p>Jadi ini mungkin lebih baik:</p> 
+         <div id="4iynjd21m6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7},{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let start = Date.now(); // milidetik dihitung dari 1 Januari 1970
+
+// lakukan perhitungannya
+for (let i = 0; i &lt; 100000; i++) {
+  let doSomething = i * i * i;
+}
+
+let end = Date.now(); // selesai
+
+alert( `The loop took ${end - start} ms` ); // kurangi angka, bukan tanggal</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="menguji-kemampuan-benchmarking" href="date.html#menguji-kemampuan-benchmarking">Menguji kemampuan / Benchmarking</a></h2> 
+         <p>Jika kita ingin kemampuan yang dapat diandalkan dari fungsi yang haus akan sumberdaya CPU, kita harus hati-hati.</p> 
+         <p>Contoh, coba kita bandingkan dua fungsi yang mengkalkulasikan perbedaan diantara dua tanggal: yang mana yang lebih cepat?</p> 
+         <p>Pengukurang performa seperti itu sering disebut dengan ???benchmarks???.</p> 
+         <div id="qz8nzk34wh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// kita punya date1 dan date2, fungsi yang mana yang lebih cepat mengembalikan perbedaannya dalam milidetik?
+function diffSubtract(date1, date2) {
+  return date2 - date1;
+}
+
+// atau
+function diffGetTime(date1, date2) {
+  return date2.getTime() - date1.getTime();
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>kedua fungsi itu melakukan hal yang sama persis, tapi satu dari mereka menggunakan <code>date.getTime()</code> secara eksplisit untuk mendapatkan tanggal dalam milidetik, dan lainnya menggunakan perubahan tanggal-ke-angka. Hasil mereka akan selalu sama.</p> 
+         <p>Jadi, yang mana yang lebih cepat?</p> 
+         <p>Cara sederhananya mungkin menjalankan mereka beberapa kali dan menghitung perbedaan waktunya. Untuk kasus ini, fungsi sangatlah sederhana, jadi kita hanya harus melakukannya setidaknya 100000 kali.</p> 
+         <p>Ayo kita hitung:</p> 
+         <div id="14qovdizta" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function diffSubtract(date1, date2) {
+  return date2 - date1;
+}
+
+function diffGetTime(date1, date2) {
+  return date2.getTime() - date1.getTime();
+}
+
+function bench(f) {
+  let date1 = new Date(0);
+  let date2 = new Date();
+
+  let start = Date.now();
+  for (let i = 0; i &lt; 100000; i++) f(date1, date2);
+  return Date.now() - start;
+}
+
+alert( 'Time of diffSubtract: ' + bench(diffSubtract) + 'ms' );
+alert( 'Time of diffGetTime: ' + bench(diffGetTime) + 'ms' );</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Wow! Menggunakan <code>getTime()</code> lebih cepat! itu karena disana tidak terdapat perubahan tipe, itu akan membuat mesinnya lebih mudah dalam mengoptimasi.</p> 
+         <p>Oke, kita punya sesuatu. Tapi itu bukanlah sebuah pengujian kemampuan yang bagus.</p> 
+         <p>Bayangkan itu pada saat menjalankan <code>bench(diffSubtract)</code> CPU nya sedang melakukan sesuatu yang lain, dan itu mengambil sumberdaya nya. Dan pada saat menjalankan <code>bench(diffGetTime)</code> pekerjaanya telah selesai.</p> 
+         <p>Sebuah skenario nyata untuk Sistem Operasi multi-proses yang modern.</p> 
+         <p>Sebagai sebuah hasil, pengujian kemampuan pertama mempunyai sedikit sumberdaya CPU daripada yang kedua. Itu mungkin akan mengakibatkan hasil menjadi keliru.</p> 
+         <p><strong>Untuk pengujian yang lebih dapat diandalkan, seluruh pengujian harus dijalankan beberapa kali.</strong></p> 
+         <p>Contoh, seperti ini:</p> 
+         <div id="tfdgeabxy6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:20,&quot;end&quot;:24}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function diffSubtract(date1, date2) {
+  return date2 - date1;
+}
+
+function diffGetTime(date1, date2) {
+  return date2.getTime() - date1.getTime();
+}
+
+function bench(f) {
+  let date1 = new Date(0);
+  let date2 = new Date();
+
+  let start = Date.now();
+  for (let i = 0; i &lt; 100000; i++) f(date1, date2);
+  return Date.now() - start;
+}
+
+let time1 = 0;
+let time2 = 0;
+
+// jalankan bench(upperSlice) dan bench(upperLoop) setiap 10 kali bergantian
+for (let i = 0; i &lt; 10; i++) {
+  time1 += bench(diffSubtract);
+  time2 += bench(diffGetTime);
+}
+
+alert( 'Total time for diffSubtract: ' + time1 );
+alert( 'Total time for diffGetTime: ' + time2 );</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Mesin Javascript yang modern mulai menggunakan optimasi yang tinggi hanya untuk ???hot code??? yang dieksekusi beberapa kali (tidak butuh untuk optimasi hal yang jarang dieksekusi). Jadi, dalam contoh diatas, eksekusi pertama tidak benar-benar di optimasi. Kita mungkin butuh menambah sebuah pemanasan:</p> 
+         <div id="dvndaqhfig" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// ditambahkan untuk "memanaskan" terlebih dahulu perulangan utama
+bench(diffSubtract);
+bench(diffGetTime);
+
+// sekarang benchmark
+for (let i = 0; i &lt; 10; i++) {
+  time1 += bench(diffSubtract);
+  time2 += bench(diffGetTime);
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Berhati-hati saat melakukan microbenchmarking/pengujian kemampuan micro</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Mesin Javascript modern melakukan banyak optimasi. mereka mungkin merekayasa hasil dari ???test buatan??? dibandingkan dengan ???pemakaian normal???, terutama ketika kita mengukur kemampuan sesuatu yang sangat kecil, seperti bagaimana operator bekerja, atau fungsi bawaan. Jadi jika kamu sangat serius ingin mengerti tentang performansi, maka pelajarilah bagaiman mesin Javascript bekerja. dan maka kamu mungkin tidak butuh microbenchmarking sama sekali</p> 
+           <p>Kumpulan artikel yang bagus tentang V8 bisa ditemukan di <a href="http://mrale.ph">http://mrale.ph</a>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="date-parse-dari-sebuah-string" href="date.html#date-parse-dari-sebuah-string">Date.parse dari sebuah string</a></h2> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date/parse">Date.parse(str)</a> bisa membaca tanggal dari sebuah string.</p> 
+         <p>Bentuk dari string haruslah: <code>YYYY-MM-DDTHH:mm:ss.sssZ</code>, dimana:</p> 
+         <ul> 
+          <li><code>YYYY-MM-DD</code> ??? adalah tanggal: tahun-bulan-hari.</li> 
+          <li>Karakter dari <code>"T"</code> digunakan sebagai pembatas.</li> 
+          <li><code>HH:mm:ss.sss</code> ??? adalah waktu: jam, menit, detik dan milidetik.</li> 
+          <li>Bagian opsional <code>'Z'</code> menandakan zona waktu dalam format <code>+-hh:mm</code>. Huruf tunggal <code>Z</code> menandakan UTC+0.</li> 
+         </ul> 
+         <p>Varian yang lebih pendek juga bisa, seperti <code>YYYY-MM-DD</code> atau <code>YYYY-MM</code> atau bahkan <code>YYYY</code>.</p> 
+         <p>Pemanggilan <code>Date.parse(str)</code> mengolah string dalam bentuk yang diberikan dan mengembalikan timestamp (angka dalam milidetik dari 1 Januari 1970 UTC+0). Jika formatnya tidak valid, akan mengembalikan <code>NaN</code>.</p> 
+         <p>Contoh:</p> 
+         <div id="zqnqlv7voj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let ms = Date.parse('2012-01-26T13:51:50.417-07:00');
+
+alert(ms); // 1327611110417  (timestamp)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita bisa secara instan membuat sebuah objek <code>new Date</code> dari timestamp:</p> 
+         <div id="qjgruuggxj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let date = new Date( Date.parse('2012-01-26T13:51:50.417-07:00') );
+
+alert(date);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="date.html#ringkasan">Ringkasan</a></h2> 
+         <ul> 
+          <li>Tanggal dan waktu dalam Javascript direpresentasikan oleh objek <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>. Kita tidak bisa membuat ???hanya tanggal??? atau ???hanya waktu???: objek <code>Date</code> selalu membawa keduanya.</li> 
+          <li>Bulan dihitung dari nol (ya, Januari adalah bulan ke-nol)</li> 
+          <li>Hari-hari di minggu di <code>getDay()</code> juga dihitung dari nol (yang mana adalah minggu).</li> 
+          <li><code>Date</code> mengkoreksi sendiri secara otomatis ketika komponen diluar jangkauan di-set. Bagus unduk menambahkan/mengurangi hari/bulan/jam.</li> 
+          <li>Tanggal bisa dikurangi, memberikan perbedaannya dalam milidetik. Itu karena <code>Date</code> menjadi timestamp ketika diubah menjadi angka.</li> 
+          <li>Gunakan <code>Date.now()</code> untuk mendapatkan timestamp dengan cepat.</li> 
+         </ul> 
+         <p>Perhatikan tidak seperti sistem lainnya, timestamp didalam Javascript adalah dalam milidetik, bukan dalam detik.</p> 
+         <p>Terkadang kita ingin pengukuran yang lebih teliti. Javascript sendiri tidak mendukung cara untuk mengukur waktu didalam microdetik (1 juta dalam satu detik), tapi kebanyakan lingkungan menyediakannya. Contoh, peramban punya <a href="https://developer.mozilla.org/id/docs/Web/API/Performance/now">performance.now()</a> yang memberikan angka milidetik dari awal halaman dimuat dengan ketepatan microdetik (3 angka setelah titik):</p> 
+         <div id="sfl7iku3ci" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert(`Loading started ${performance.now()}ms ago`);
+// Sesuatu seperti: "Loading started 34731.26000000001ms ago"
+// .26 adalah microdetik (260 microdetik)
+// lebih dari 3 angka setelah titik desimal adalah presisi error, tapi hanya 3 yang benar</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Node.js punya modul <code>microtime</code> dan cara lainnya. Secara teknis, hampir kebanyakan perangkat dan environment memperbolehkan untuk mendapatkan presisi, itu hanya bukan didalam <code>Date</code>.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="date.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="date.html#buat-sebuah-tanggal" name="buat-sebuah-tanggal">Buat sebuah tanggal</a></h3> 
+           <a class="task__open-link" href="task/new-date.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah objek <code>Date</code> untuk tanggal: Feb 20, 2012, 3:12am. Zona waktu lokal.</p> 
+            <p>Tampilkan menggunakan <code>alert</code>.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Konstruktor <code>new Date</code> menggunakan zona waktu lokal. Sehingga hal penting yang harus diingat adalah bulan dimulai dari angka 0.</p> 
+              <p>Jadi Februari mempunyai angka 1.</p> 
+              <p>Here???s an example with numbers as date components:</p> 
+              <div id="1ymo4ysb0d" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>//new Date(year, month, date, hour, minute, second, millisecond)
+let d1 = new Date(2012, 1, 20, 3, 12);
+alert( d1 );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>We could also create a date from a string, like this:</p> 
+              <div id="vaytqn47q2" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>//new Date(datastring)
+let d2 = new Date("February 20, 2012 03:12:00");
+alert( d2 );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="date.html#tampilkan-hari-dalam-satu-minggu" name="tampilkan-hari-dalam-satu-minggu">Tampilkan hari dalam satu minggu</a></h3> 
+           <a class="task__open-link" href="task/get-week-day.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis sebuah fungsi <code>getWeekDay(tanggal)</code> untuk menunjukkan hari dalam format: ???SEN???, ???SEL???, ???RAB???, ???KAM???, ???JUM???, ???SAB???, ???MIN???.</p> 
+            <p>Sebagai contoh:</p> 
+            <div id="iti9762a6i" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let tanggal = new Date(2012, 0, 3);  // 3 Jan 2012
+alert( getWeekDay(tanggal) );        // harus mengeluarkan "SEL"</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/CfubP3ZnUPzIqvCB?p=preview" target="_blank" data-plunk-id="CfubP3ZnUPzIqvCB">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Metode <code>date.getDay()</code> mengembalikan angka dari hari dalam satu minggu, dimulai dari Minggu.</p> 
+              <p>Buat array hari dalam seminggu, sehingga kita bisa mendapatkan nama yang sesuai dengan angkanya:</p> 
+              <div id="mn3bu7sf9a" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getWeekDay(date) {
+  let days = ['MIN', 'SEN', 'SEL', 'RAB', 'KAM', 'JUM', 'SAB'];
+
+  return days[date.getDay()];
+}
+
+let date = new Date(2014, 0, 3); // 3 Jan 2014
+alert( getWeekDay(date) ); // JUM</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/XBjr85Fb5zR0xm7M?p=preview" target="_blank" data-plunk-id="XBjr85Fb5zR0xm7M">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="date.html#hari-di-eropa" name="hari-di-eropa">Hari di Eropa</a></h3> 
+           <a class="task__open-link" href="task/weekday.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Negara-negara di Eropa mempunyai hari yang dimulai dari Senin (angka 1), kemudian Selasa (angka 2) sampai dengan Minggu (angka 7). Buatlah sebuah fungsi <code>getLocalDay(date)</code> yang mengembalikan hari sesuai dengan standar tanggal di Eropa.</p> 
+            <div id="h4o2oapjah" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let date = new Date(2012, 0, 3);  // 3 Jan 2012
+alert( getLocalDay(date) );       // Selasa, seharusnya menunjukkan angka 2</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/UKQsMWmly2RbtLdp?p=preview" target="_blank" data-plunk-id="UKQsMWmly2RbtLdp">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="bebvwcyigt" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getLocalDay(date) {
+
+  let days = date.getDay();
+
+  if (days == 0) { // hari ke-0 (Minggu) adalah hari ke-7 di Eropa
+    days = 7;
+  }
+
+  return days;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/rUwEt35SXSDwIQ8p?p=preview" target="_blank" data-plunk-id="rUwEt35SXSDwIQ8p">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="date.html#tanggal-berapakah-beberapa-hari-yang-lalu" name="tanggal-berapakah-beberapa-hari-yang-lalu">Tanggal berapakah beberapa hari yang lalu?</a></h3> 
+           <a class="task__open-link" href="task/get-date-ago.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah fungsi <code>getDateAgo(tanggal, hari)</code> yang mengembalikan beberapa <code>hari</code> yang telah berlalu dari sebuah <code>tanggal</code>.</p> 
+            <p>Sebagai contoh, apabila hari ini tanggal 20, maka <code>getDateAgo(new Date(), 1)</code> harus mengembalikan tanggal 19 dan <code>getDateAgo(new Date(), 2)</code> harus mengembalikan tanggal 18.</p> 
+            <p>Harus bekerja dengan baik dan dapat diandalkan untuk <code>hari=365</code> atau lebih:</p> 
+            <div id="17hjzq4yzl" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let tanggal = new Date(2015, 0, 2);
+
+alert( getDateAgo(tanggal, 1) ); // 1, (1 Jan 2015)
+alert( getDateAgo(tanggal, 2) ); // 31, (31 Des 2014)
+alert( getDateAgo(tanggal, 365) ); // 2, (2 Jan 2014)</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>P.S. Fungsi tidak boleh mengubah <code>tanggal</code> yang diberikan.</p> 
+            <p><a href="https://plnkr.co/edit/8jla2mRyAWNhgwLq?p=preview" target="_blank" data-plunk-id="8jla2mRyAWNhgwLq">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Idenya mudah: Kurangi <code>tanggal</code> dengan jumlah hari yang diberikan.</p> 
+              <div id="it09z1gfnn" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getDateAgo(tanggal, hari) {
+  tanggal.setDate(tanggal.getDate() - hari);
+  return tanggal.getDate();
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>???Namun fungsi tersebut tidak boleh mengubah <code>tanggal</code> yang diberikan. Ini adalah yang terpenting, karena kode di luar yang memberikan kita tanggal tidak mengira tanggal tersebut akan berubah.</p> 
+              <p>Untuk mengimplementasikannya kita akan menduplikasi tanggal tersebut, seperti ini:</p> 
+              <div id="n8a5g576cc" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getDateAgo(tanggal, hari) {
+  let tanggalCopy = new Date(tanggal);
+
+  tanggalCopy.setDate(tanggal.getDate() - hari);
+  return tanggalCopy.getDate();
+}
+
+let tanggal = new Date(2015, 0, 2);
+
+alert( getDateAgo(tanggal, 1) ); // 1, (1 Jan 2015)
+alert( getDateAgo(tanggal, 2) ); // 31, (31 Des 2014)
+alert( getDateAgo(tanggal, 365) ); // 2, (2 Jan 2014)</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/n6IeyQ2EFUdqiDxi?p=preview" target="_blank" data-plunk-id="n6IeyQ2EFUdqiDxi">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="date.html#tanggal-terakhir-dari-sebuah-bulan" name="tanggal-terakhir-dari-sebuah-bulan">Tanggal terakhir dari sebuah bulan?</a></h3> 
+           <a class="task__open-link" href="task/last-day-of-month.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis sebuah fungsi <code>getLastDayOfMonth(tahun, bulan)</code> yang mengembalikan tanggal terakhir dari sebuah bulan. Terkadang 30, 31, atau bahkan 28/29 untuk Februari.</p> 
+            <p>Parameter:</p> 
+            <ul> 
+             <li><code>tahun</code> ??? tahun dalam empat-digit, sebagai contoh 2012.</li> 
+             <li><code>bulan</code> ??? bulan, dari 0 sampai 11.</li> 
+            </ul> 
+            <p>Sebagai contoh, <code>getLastDayOfMonth(2012, 1) = 29</code> (tahun kabisat, Feb).</p> 
+            <p><a href="https://plnkr.co/edit/1BBv996wiMfZpKer?p=preview" target="_blank" data-plunk-id="1BBv996wiMfZpKer">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Buat sebuah tanggal menggunakan bulan berikutnya, namun berikan 0 sebagai tanggalnya:</p> 
+              <div id="i16tv4iivw" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getLastDayOfMonth(tahun, bulan) {
+  let tanggal = new Date(tahun, bulan + 1, 0);
+  return tanggal.getDate();
+}
+
+alert( getLastDayOfMonth(2012, 0) ); // 31
+alert( getLastDayOfMonth(2012, 1) ); // 29
+alert( getLastDayOfMonth(2013, 1) ); // 28</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Normalnya, tanggal dimulai dari 1, namun secara teknis kita bisa berikan angka apapun, dan tanggal akan otomatis menyesuaikan. Sehingga ketika kita berikan 0, itu berarti ???satu hari sebelum tanggal pertama untuk sebuah bulan???, dengan kata lain: ???hari terakhir pada bulan sebelumnya???.</p> 
+              <p><a href="https://plnkr.co/edit/zbeAq7K3zrsNAlwc?p=preview" target="_blank" data-plunk-id="zbeAq7K3zrsNAlwc">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="date.html#berapa-detik-yang-telah-berlalu-untuk-hari-ini" name="berapa-detik-yang-telah-berlalu-untuk-hari-ini">Berapa detik yang telah berlalu untuk hari ini?</a></h3> 
+           <a class="task__open-link" href="task/get-seconds-today.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis sebuah fungsi <code>getSecondsToday()</code> yang mengembalikan angka dari detik yang telah berlalu dari sejak permulaan hari ini.</p> 
+            <p>Sebagai contoh, sekarang pukul <code>10:00 am</code>, dan tidak ada daylight savings shift, maka:</p> 
+            <div id="hxcs05lht5" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>getSecondsToday() == 36000 // (3600 * 10)</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Fungsi haruslah berjalan untuk hari apapun. sehingga, tidak boleh ada nilai ???hari ini??? yang ditulis secara hard-code.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Untuk mendapatkan jumlah detik, kita harus membuat sebuah tanggal menggunakan hari yang sedang berlangsung dan waktu 00:00:00, dan mengurangi waktu ???saat ini??? dengannya.</p> 
+              <p>Perbedaan yang didapat adalah angka dalam milidetik sejak permulaan hari, yang harus dibagi dengan 1000 agar menjadi detik:</p> 
+              <div id="zsy3hpqwm8" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getSecondsToday() {
+  let sekarang = new Date();
+
+  // Buat sebuah objek menggunakan hari/bulan/tahun saat ini
+  let hariIni = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  let beda = sekarang - hariIni; // beda dalam milidetik
+  return Math.round(beda / 1000); // ubah menjadi detik
+}
+
+alert( getSecondsToday() );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Solusi alternatif adalah cari jam/menit/detik dan ubah menjadi detik:</p> 
+              <div id="pgguva8nig" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getSecondsToday() {
+  let d = new Date();
+  return d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
+}
+
+alert( getSecondsToday() );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="date.html#berapa-detik-lagi-sampai-besok" name="berapa-detik-lagi-sampai-besok">Berapa detik lagi sampai besok?</a></h3> 
+           <a class="task__open-link" href="task/get-seconds-to-tomorrow.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah fungsi <code>getSecondsToTomorrow()</code> yang mengembalikan jumlah detik yang tersisa hingga esok hari.</p> 
+            <p>Sebagai contoh, jika sekarang <code>23:00</code>, maka:</p> 
+            <div id="jkt4l8lpgz" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>getSecondsToTomorrow() == 3600</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>P.S. Fungsi haruslah berjalan untuk semua hari, sehingga ???hari ini??? tidak bisa dalam bentuk hard-code.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Untuk mendapatkan jumlah milidetik hingga besok, kita bisa mendapatkannya melalui pengurangan tanggal hari ini dengan ???besok 00:00:00???</p> 
+              <p>Pertama, kita tentukan ???besok???, dan kemudian lakukan perhitungan:</p> 
+              <div id="m79t1p6ei6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;cols&quot;:[{&quot;start&quot;:58,&quot;end&quot;:73}]}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getSecondsToTomorrow() {
+  let sekarang = new Date();
+
+  // besok
+  let besok = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1);
+
+  let beda = besok - sekarang; // beda dalam milidetik
+  return Math.round(beda / 1000); // ubah ke detik
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Solusi alternatif:</p> 
+              <div id="sk4gesnqhg" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function getSecondsToTomorrow() {
+  let sekarang = new Date();
+  let jam = sekarang.getHours();
+  let menit = sekarang.getMinutes();
+  let detik = sekarang.getSeconds();
+  let detikTotalHariIni = (jam * 60 + menit) * 60 + detik;
+  let detikTotalDalamSatuHari = 86400;
+
+  return detikTotalDalamSatuHari - detikTotalHariIni;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Harap diingat bahwa banyak negara menerapkan Daylight Savings Time (DST), sehingga memungkinkan ada hari dengan 23 atau 25 jam. Kita mungkin ingin melakukan perhitungan dengan cara yang berbeda untuk mereka.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="date.html#ubah-menjadi-tanggal-yang-berhubungan" name="ubah-menjadi-tanggal-yang-berhubungan">Ubah menjadi tanggal yang berhubungan</a></h3> 
+           <a class="task__open-link" href="task/format-date-relative.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis sebuah fungsi <code>formatDate(date)</code> yang harus memformat <code>date</code> seperti berikut:</p> 
+            <ul> 
+             <li>Jika sejak <code>date</code> lewat kurang dari 1 detik, lalu <code>"sekarang"</code>.</li> 
+             <li>Sebaliknya, jika sejak <code>date</code> lewat kurang dari satu menit, lalu <code>"n detik yang lalu"</code>.</li> 
+             <li>Sebaliknya, jika kurang dari satu jam, lalu <code>"m menit yang lalu"</code>.</li> 
+             <li>Sebaliknya, tanggal dalam format penuh <code>"DD.MM.YY HH:mm"</code>. Itu adalah: <code>"hari.bulan.tahun jam:menit"</code>, semua dalam format 2 angka, contoh. <code>31.12.16 10:00</code>.</li> 
+            </ul> 
+            <p>Contoh:</p> 
+            <div id="0gqlqgcg1o" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( formatDate(new Date(new Date - 1)) ); // "sekarang"
+
+alert( formatDate(new Date(new Date - 30 * 1000)) ); // "30 detik yang lalu"
+
+alert( formatDate(new Date(new Date - 5 * 60 * 1000)) ); // "5 menit yang lalu"
+
+// tanggal kemarin seperti 31.12.16 20:00
+alert( formatDate(new Date(new Date - 86400 * 1000)) );</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/augt54lbIhWS1FnL?p=preview" target="_blank" data-plunk-id="augt54lbIhWS1FnL">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Untuk mendapatkan waktu dari <code>date</code> sampai sekarang ??? kita kurangi tanggalnya.</p> 
+              <div id="228vhety9u" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function formatDate(date) {
+  let diff = new Date() - date; // perbedaan dalam mili-detik
+
+  if (diff &lt; 1000) { // kurang dari 1 detik
+    return 'right now';
+  }
+
+  let sec = Math.floor(diff / 1000); // ubah diff menjadi detik
+
+  if (sec &lt; 60) {
+    return sec + ' sec. ago';
+  }
+
+  let min = Math.floor(diff / 60000); // ubah diff menjadi menit
+  if (min &lt; 60) {
+    return min + ' min. ago';
+  }
+
+  // format tanggalnya
+  // tambahkan awalan nol ke dijit-tunggal hari/bulan/jam/menit
+  let d = date;
+  d = [
+    '0' + d.getDate(),
+    '0' + (d.getMonth() + 1),
+    '' + d.getFullYear(),
+    '0' + d.getHours(),
+    '0' + d.getMinutes()
+  ].map(component =&gt; component.slice(-2)); // ambil setidaknya 2 dijit dari setiap komponen
+
+  // satukan komponen menjadi tanggal
+  return d.slice(0, 3).join('.') + ' ' + d.slice(3).join(':');
+}
+
+alert( formatDate(new Date(new Date - 1)) ); // "sekarang"
+
+alert( formatDate(new Date(new Date - 30 * 1000)) ); // "30 detik yang lalu"
+
+alert( formatDate(new Date(new Date - 5 * 60 * 1000)) ); // "5 menit yang lalu"
+
+// tanggal kemarin seperti 31.12.2016 20:00
+alert( formatDate(new Date(new Date - 86400 * 1000)) );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Alternative solution:</p> 
+              <div id="1zqtoakzob" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="date.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function formatDate(date) {
+  let dayOfMonth = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+  let hour = date.getHours();
+  let minutes = date.getMinutes();
+  let diffMs = new Date() - date;
+  let diffSec = Math.round(diffMs / 1000);
+  let diffMin = diffSec / 60;
+  let diffHour = diffMin / 60;
+
+  // formatting
+  year = year.toString().slice(-2);
+  month = month &lt; 10 ? '0' + month : month;
+  dayOfMonth = dayOfMonth &lt; 10 ? '0' + dayOfMonth : dayOfMonth;
+  hour = hour &lt; 10 ? '0' + hour : hour;
+  minutes = minutes &lt; 10 ? '0' + minutes : minutes;
+
+  if (diffSec &lt; 1) {
+    return 'right now';
+  } else if (diffMin &lt; 1) {
+    return `${diffSec} sec. ago`
+  } else if (diffHour &lt; 1) {
+    return `${diffMin} min. ago`
+  } else {
+    return `${dayOfMonth}.${month}.${year} ${hour}:${minutes}`
+  }
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/ni4x5QhSdUNtxRMq?p=preview" target="_blank" data-plunk-id="ni4x5QhSdUNtxRMq">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="destructuring-assignment.html" data-tooltip="Destrukturisasi Penugasan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="json.html" data-tooltip="Metode JSON, toJSON"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdate" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fdate" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#pembuatan">Pembuatan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#mengakses-komponen-tanggal">Mengakses komponen tanggal</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#menyetel-komponen-tanggal">Menyetel komponen tanggal</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#koreksi-otomatis">Koreksi otomatis</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#tanggal-menjadi-angka-perbedaan-tanggal">Tanggal menjadi angka, perbedaan tanggal</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#date-now">Date.now()</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#menguji-kemampuan-benchmarking">Menguji kemampuan / Benchmarking</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#date-parse-dari-sebuah-string">Date.parse dari sebuah string</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#tasks">Tugas (8)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="date.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fdate" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fdate" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

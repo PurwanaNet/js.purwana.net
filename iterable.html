@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "de";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Iterables / Bisa di iterasi</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="iterable.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Iterables / Bisa di iterasi"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Iterables / Bisa di iterasi"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="array-methods.html"> 
+  <link rel="next" href="map-set.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Iterables / Bisa di iterasi"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fiterable" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fiterable" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="42" max="92" data-tooltip="Pelajaran 42 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 31 Januari 2021"> 
+          <div class="updated-at__content">
+            31 Januari 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Iterables / Bisa di iterasi</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Iterables / Bisa di iterasi"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Objek yang <em>bisa di iterasi</em> adalah sebuah generalisasi dari sebuah array. Konsep itu membolehkan kita untuk membuat objek apapun yang bisa digunakan didalam perulangan <code>for..of</code>.</p> 
+         <p>Tentu saja, Array bisa di iterasi. Tapi disana terdapat objek bawaan (built-in objek) lainnya, yang tentu saja bisa di iterasi. Contoh string juga bisa di iterasi.</p> 
+         <p>Jika sebuah objek secara teknis bukan sebuah array, tapi representasi dari sebuah koleksi (list, set) dari sesuatu, lalu <code>for..of</code> adalah sintaks yang bagus untuk melakukan perulangan didalamnya, Jadi ayo kita lihat bagaimana cara membuat itu bekerja.</p> 
+         <h2><a class="main__anchor" name="symbol-iterator" href="iterable.html#symbol-iterator">Symbol.iterator</a></h2> 
+         <p>Kita bisa dengan mudah mendapatkan konsep dari iterasi dengan membuatnya sendiri.</p> 
+         <p>Untuk contoh, kita mempunyai sebuah objek yang bukanlah array, tapi cocok untuk <code>for..of</code>.</p> 
+         <p>Seperti objek <code>range</code> yang merepresentasikan sebuah interval dari angka:</p> 
+         <div id="1ame4y6ygp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5
+};
+
+// Kita ingin membuat for..of untuk bisa digunakan:
+// for(let num of range) ... num=1,2,3,4,5</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk bisa membuat <code>range</code> bisa diiterasi (dan membuat <code>for..of</code> bekerja) kita harus menambahkan sebuah metode kedalam objeknya bernama <code>Symbol.iterator</code> (Simbol built-in spesian yang hanya digunakan untuk hal itu).</p> 
+         <ol> 
+          <li>Ketika <code>for.of</code> dimulai, itu akan memanggil metodenya sekali (atau error jika tidak ditemukan). Metodenya haruslah mengembalikan sebuah <em>iterator</em> ??? sebuah objek dengan metode <code>next</code>.</li> 
+          <li>Selanjutnya, <code>for..of</code> bekerja <em>hanya bila itu mengembalikan objek</em>.</li> 
+          <li>Ketika <code>for..of</code> menginginkan nilai selanjutnya, itu akan memanggil <code>next()</code> didalam objeknya.</li> 
+          <li>Hasil dari <code>next()</code> harus mempunyai form <code>{done: Boolean, value: any}</code>, dimana <code>done=true</code> berarti iterasinya telah selesai, sebaliknya <code>value</code> adalah nilai selanjutnya.</li> 
+         </ol> 
+         <p>Ini adalah implementasi penuh untuk <code>range</code> dengan catatan:</p> 
+         <div id="yhcw6x9gww" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5
+};
+
+// 1. panggil for..of pertama kali untuk memanggil ini
+range[Symbol.iterator] = function() {
+
+  // ini akan mengembalikan objek iterator:
+  // 2. Selanjutnya, for..of hanya bekerja dengan iterator ini, menanyakan nilai selanjutnya
+  return {
+    current: this.from,
+    last: this.to,
+
+    // 3. next() dipanggil untuk setiap iterasi oleh perulangan for..of
+    next() {
+      // 4. itu harus mengembalikan nilai sebagai sebuah objek {done:.., nilai:...}
+      if (this.current &lt;= this.last) {
+        return { done: false, value: this.current++ };
+      } else {
+        return { done: true };
+      }
+    }
+  };
+};
+
+// sekarang ini bekerja!
+for (let num of range) {
+  alert(num); // 1, lalu 2, 3, 4, 5
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perhatikan fitur utama dari <em>iterables</em>: pemisahan perhatian.</p> 
+         <ul> 
+          <li><code>range</code> sendiri tidak memiliki metode <code>next()</code>.</li> 
+          <li>Malah, objek lainnya, yang dipanggil ???iterator??? dibuat dengan memanggil ke <code>range[Symbol.iterator]()</code>, dan <code>next()</code> miliknya menghasilkan nilai untuk diiterasi.</li> 
+         </ul> 
+         <p>Jadi, objek iterator berbeda dari objek yang diiterasi.</p> 
+         <p>Secara teknis, kita mungkin menyatukannya dan menggunakan <code>range</code> nya sendiri sebagai iterator untuk membuat kode lebih simpel.</p> 
+         <p>Seperti ini:</p> 
+         <div id="epymryl5er" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let range = {
+  from: 1,
+  to: 5,
+
+  [Symbol.iterator]() {
+    this.current = this.from;
+    return this;
+  },
+
+  next() {
+    if (this.current &lt;= this.to) {
+      return { done: false, value: this.current++ };
+    } else {
+      return { done: true };
+    }
+  }
+};
+
+for (let num of range) {
+  alert(num); // 1, lalu 2, 3, 4, 5
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang <code>range[Symbol.iterator]()</code> mengembalikan objek <code>range</code>nya sendiri: itu membutuhkan metode <code>next()</code> dan mengingat progress iterasi saat ini didalam <code>this.current</code>. Lebih pendek? Ya. Dan terkadang bagus juga.</p> 
+         <p>Kekurangannya adalah sekarang menjadi mustahil untuk memiliki dua perulangan <code>for..of</code> yang berjalan didalam objeknya secara bersamaan: mereka akan membagi bagian-bagian iterasi, karena hanya terdapat satu iterator ??? objeknya sendiri. Tapi menggunakan dua for-of adalah hal yang jarang terjadi, bahkan didalam asinkron sekalipun.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Iterator tak terbatas/infinite iterator</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Interator tak terbatas bisa dilakukan. Contoh, <code>range</code> menjadi tak terbatas terhadap <code>range.to = Infinity</code>. Atau kita bisa membuat objek yang bisa di iterasi dan menghasilkan rentetan tak terbatas dari angka yang acak. Juga bisa berguna.</p> 
+           <p>Tidak ada batasan didalam <code>next</code>, itu bisa mengembalikan semakin banyak nilai, itu adalah hal yang normal.</p> 
+           <p>Tentu saja, perulangan <code>for..of</code> didalam iterasi seperti itu takan ada habisnya. Tapi kita selalu bisa menghentikannya dengan menggunakan <code>break</code>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="string-bisa-di-iterasi" href="iterable.html#string-bisa-di-iterasi">String bisa di iterasi</a></h2> 
+         <p>Array dan string adalah dua hal yang paling banyak menggunakan iterasi.</p> 
+         <p>Untuk string, perulangan <code>for..of</code> akan mengiterasi karakternya:</p> 
+         <div id="u81bh0z17b" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>for (let char of "test") {
+  // berjalan 4 kali: sekali tiap karakter
+  alert( char ); // t, lalu e, lalu s, lalu t
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dan itu akan berjalan lancar dengan karakter pengganti (surrogate pairs)!</p> 
+         <div id="ukmifiavil" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = '????????';
+for (let char of str) {
+    alert( char ); // ????, dan lalu ????
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="memanggil-sebuah-iterator-secara-jelas" href="iterable.html#memanggil-sebuah-iterator-secara-jelas">Memanggil sebuah iterator secara jelas</a></h2> 
+         <p>Untuk pemahaman lebih dalam, kita lihat bagaimana untuk menggunakan sebuah iterator secara eksplisit.</p> 
+         <p>Kita akan mengiterasi didalam sebuah string dengan cara yang sama seperti <code>for..of</code>, tapi dengan pemanggilan yang langsung. Kode ini membuat sebuah iterator string dan mendapatkan nilai dari itu secara ???manual???:</p> 
+         <div id="2om4bzoqzl" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "Hello";
+
+// melakukan hal yang sama dengan
+// for (let char of str) alert(char);
+
+let iterator = str[Symbol.iterator]();
+
+while (true) {
+  let result = iterator.next();
+  if (result.done) break;
+  alert(result.value); // karakter keluar satu demi satu
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hal itu sangat jarang dibutuhkan, tapi akan memberikan kita kontrol lebih terhadap prosesnya daripada <code>for..of</code>. Contoh, kita bisa membagi proses iterasi: iterasi sedikit, lalu berhenti, lakukan hal lain, dan lalu lanjutkan nanti.</p> 
+         <h2><a class="main__anchor" name="array-like" href="iterable.html#array-like">Bisa di iterasi dan seperti array</a></h2> 
+         <p>Terdapat dua istilah resmi yang terlihat mirip, akan tetapi sangat berbeda. Perhatikan mereka baik-baik dan pahamilah untuk terhindar dari kebingungan.</p> 
+         <ul> 
+          <li><em>Iterables/bisa di iterasi</em> adalah objek yang mengimplementasikan metode <code>Symbol.iterator</code>, seperti yang dideskripsikan diatas.</li> 
+          <li><em>Array-likes/Seperti array</em> adalah objek yang memiliki indeks dan <code>length</code>, jadi mereka terlihat seperti array.</li> 
+         </ul> 
+         <p>ketika kita menggunakan javascript untuk melakukan prakter didalam browser atau lingkungan pengembangan lainnya, kita mungkin bertemu objek yang bisa diiterasi atau yang seperti array, atau keduanya.</p> 
+         <p>Contoh, string adalah keduanya, bisa diiterasi (<code>for..of</code> dapat bekerja) dan seperti array(mempunyai indeks angka dan <code>length</code>(panjang)).</p> 
+         <p>Akan tetapi bisa diiterasi mungkin bukanlah array. Dan sebaliknya sebuah array mungkin tidak bisa diiterasi.</p> 
+         <p>Contoh, <code>range</code> di contoh diatas bisa diiterasi, tapi tidak seperti array, karena itu tidak memiliki properti indeks dan <code>length</code>.</p> 
+         <p>Dan disini objek yang seperti array, tapi tidak bisa diiterasi:</p> 
+         <div id="m88qlq5kmt" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arrayLike = { // punya indeks dan panjang(length) =&gt; seperti array
+  0: "Hello",
+  1: "World",
+  length: 2
+};
+
+// Error (no Symbol.iterator)
+for (let item of arrayLike) {}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Contoh diatas bisa diiterasi dan seperti array yang biasanya <em>bukan array</em>, mereka tidak punya <code>push</code>, <code>pop</code>, dll. Hal seperti itu bisa merepotkan jika kita memiliki sebuah objek dan ingin bekerja dengannya sama seperti sebuah array. Misalnya, kita ingin bekerja dengan <code>range</code> menggunakan metode array. Bagaimana cara mencapai hal itu?</p> 
+         <h2><a class="main__anchor" name="array-from" href="iterable.html#array-from">Array.from</a></h2> 
+         <p>Terdapat sebuah metode universal <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Array/from">Array.from</a> yang menerima hal yang bisa diiterasi atau nilai yang seperti array dan membuat <code>Array</code> "sungguhan darinya. Lalu kita bisa memanggil metode array didalamnya.</p> 
+         <p>Contoh:</p> 
+         <div id="k997zwaqyk" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let arrayLike = {
+  0: "Hello",
+  1: "World",
+  length: 2
+};
+
+let arr = Array.from(arrayLike); // (*)
+alert(arr.pop()); // World (metode bekerja)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>Array.from</code> pada baris <code>(*)</code> menerima objeknya, memeriksanya apakah itu sesuatu yang bisa diiterasi atau seperti array, lalu membuat array bari dan menyalin seluruh item kedalamnya.</p> 
+         <p>Hal yang serupa terjadi untuk sesuatu yang bisa diiterasi:</p> 
+         <div id="foglkc2sgc" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// asumsikan bahwa range diambil dari contoh diatas
+let arr = Array.from(range);
+alert(arr); // 1,2,3,4,5 (konversi array toString bekerja)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sintaks penuh dari <code>Array.from</code> juga memperbolehkan kita untuk menyediakan fungsi ???mapping??? opsional:</p> 
+         <div id="vzb9btq5y1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>Array.from(obj[, mapFn, thisArg])</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Argumen kedua yang opsional <code>mapFn</code> bisa saja sebuah fungsi yang akan digunakan untuk setiap elemen sebelum ditambahkan kedalam array, dan <code>thisArg</code> memperbolehkan kita untuk menggunakan <code>this</code> didalamnya.</p> 
+         <p>Contoh:</p> 
+         <div id="eoyqs55xcp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// asumsikan bahwa range diambil dari contoh diatas
+
+// kuadratkan setiap angka
+let arr = Array.from(range, num =&gt; num * num);
+
+alert(arr); // 1,4,9,16,25</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini kita gunakan <code>Array.from</code> untuk mengubah string menjadi array dari karakter-karakter:</p> 
+         <div id="tape5wnn5u" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = '????????';
+
+// pisahkan str menjadi array dari karakter-karakter
+let chars = Array.from(str);
+
+alert(chars[0]); // ????
+alert(chars[1]); // ????
+alert(chars.length); // 2</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tidak seperti <code>str.split</code>, itu bergantung pada sifat bisa diiterasi dari string dan juga, sama seperti <code>for..of</code>, yang bekerja dengan benar bahkan dengan karakter pengganti (surrogate pairs).</p> 
+         <p>Secara teknis disini itu melakukan hal yang sama seperti:</p> 
+         <div id="tsxr874wpe" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = '????????';
+
+let chars = []; // Array.from secara internal melakukan perulangan yang sama
+for (let char of str) {
+  chars.push(char);
+}
+
+alert(chars);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Tapi ini lebih pendek.</p> 
+         <p>Kita bahkan bisa membangun <code>slice</code> pengganti didalamnya:</p> 
+         <div id="zf8u212equ" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="iterable.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function slice(str, start, end) {
+  return Array.from(str).slice(start, end).join('');
+}
+
+let str = '????????????';
+
+alert( slice(str, 1, 3) ); // ????????
+
+// metode natif tidak mendukung karakter pengganti
+alert( str.slice(1, 3) ); // tidak berguna (dua bagian dari karakter pengganti yang berbeda)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="ringkasan" href="iterable.html#ringkasan">Ringkasan</a></h2> 
+         <p>Objek yang bisa digunakan didalam <code>for..if</code> dipanggil dengan <em>iterable</em>.</p> 
+         <ul> 
+          <li>Secara teknis, iterables harus mengimplementasi nama metode <code>Symbol.iterator</code>. 
+           <ul> 
+            <li>Hasil dari <code>obj[Symbol.iterator]</code> dipanggil dengan sebuah <em>iterator</em>. Itu menangani proses iterasi lebih jauh.</li> 
+            <li>Sebuah iterator harus mempunyai nama metode <code>next()</code> yang mengembalikan sebuah objek <code>{done: Boolean, value: any}</code>, disini <code>done:true</code> menandakan akhir dari proses iterasi, sebaliknya <code>value</code> adalah nilai selanjutnya.</li> 
+           </ul> </li> 
+          <li>Metode <code>Symbol.iterator</code> dipanggil secara otomatis oleh <code>for..of</code>, tapi kita bisa melakukannya secara langsung.</li> 
+          <li>Iterables bawaan seperti string atau array, juga mengimplementasikan <code>Symbol.iterator</code>.</li> 
+          <li>Iterator string tahu tentang karakter pengganti (surrogate pairs).</li> 
+         </ul> 
+         <p>Objek yang mempunyai properti indeks dan <code>length</code> dipanggil dengan <em>seperti-array/array-like</em>. Objek seperti itu mungkin mempunyai properti dan metode lainnya, tapi tidak memiliki metode bawaan dari array.</p> 
+         <p>Jika kita melihat kedalam spesifikasinya ??? kita akan melihat kebanyakan metode bawaan yang mengasumsikan bahwa mereka bekerja dengan iterables atau seperti-array daripada dengan array ???sungguhan???, karena hal itu lebih abstrak.</p> 
+         <p><code>Array.from(obj[, mapFn, thisArg])</code> membuak <code>Array</code> sungguhan dari sebuah iterable atau seperti-array <code>obj</code>, dan lalu kita bisa menggunakan metode array didalamnya. Argumen opsional <code>mapFn</code> dan <code>thisArg</code> memperbolehan kita untuk menerapkan sebuah fungsi kedalam setiap item.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="array-methods.html" data-tooltip="Metode *array*"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="map-set.html" data-tooltip="Map dan Set"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fiterable" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fiterable" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="iterable.html#symbol-iterator">Symbol.iterator</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="iterable.html#string-bisa-di-iterasi">String bisa di iterasi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="iterable.html#memanggil-sebuah-iterator-secara-jelas">Memanggil sebuah iterator secara jelas</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="iterable.html#array-like">Bisa di iterasi dan seperti array</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="iterable.html#array-from">Array.from</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="iterable.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="iterable.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fiterable" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fiterable" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

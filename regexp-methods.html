@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Methods of RegExp and String</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="regexp-methods.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Methods of RegExp and String"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Methods of RegExp and String"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="regexp-sticky.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Methods of RegExp and String"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-methods" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-methods" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="17" max="17" data-tooltip="Pelajaran 17 dari 17"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="regular-expressions.html"><span>Regular expressions</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Regular expressions","item":"https://id.javascript.info/regular-expressions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 13 Juni 2021"> 
+          <div class="updated-at__content">
+            13 Juni 2021 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://ar.javascript.info/regexp-methods">????????</a>, 
+          <a href="https://javascript.info/regexp-methods">English</a>, 
+          <a href="https://es.javascript.info/regexp-methods">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/regexp-methods">Fran??ais</a>, 
+          <a href="https://it.javascript.info/regexp-methods">Italiano</a>, 
+          <a href="https://ja.javascript.info/regexp-methods">?????????</a>, 
+          <a href="https://learn.javascript.ru/regexp-methods">??????????????</a>, 
+          <a href="https://zh.javascript.info/regexp-methods">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Methods of RegExp and String</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Methods of RegExp and String"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>In this article we???ll cover various methods that work with regexps in-depth.</p> 
+         <h2><a class="main__anchor" name="str-match-regexp" href="regexp-methods.html#str-match-regexp">str.match(regexp)</a></h2> 
+         <p>The method <code>str.match(regexp)</code> finds matches for <code>regexp</code> in the string <code>str</code>.</p> 
+         <p>It has 3 modes:</p> 
+         <ol> 
+          <li> <p>If the <code>regexp</code> doesn???t have flag <code class="pattern">g</code>, then it returns the first match as an array with capturing groups and properties <code>index</code> (position of the match), <code>input</code> (input string, equals <code>str</code>):</p> 
+           <div id="6aajwbl9g" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "I love JavaScript";
+
+let result = str.match(/Java(Script)/);
+
+alert( result[0] );     // JavaScript (full match)
+alert( result[1] );     // Script (first capturing group)
+alert( result.length ); // 2
+
+// Additional information:
+alert( result.index );  // 7 (match position)
+alert( result.input );  // I love JavaScript (source string)</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>If the <code>regexp</code> has flag <code class="pattern">g</code>, then it returns an array of all matches as strings, without capturing groups and other details.</p> 
+           <div id="88lb9wek4y" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "I love JavaScript";
+
+let result = str.match(/Java(Script)/g);
+
+alert( result[0] ); // JavaScript
+alert( result.length ); // 1</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>If there are no matches, no matter if there???s flag <code class="pattern">g</code> or not, <code>null</code> is returned.</p> <p>That???s an important nuance. If there are no matches, we don???t get an empty array, but <code>null</code>. It???s easy to make a mistake forgetting about it, e.g.:</p> 
+           <div id="c6wflrbhtx" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "I love JavaScript";
+
+let result = str.match(/HTML/);
+
+alert(result); // null
+alert(result.length); // Error: Cannot read property 'length' of null</code></pre> 
+             </div> 
+            </div> 
+           </div><p>If we want the result to be an array, we can write like this:</p> 
+           <div id="172hfm8dw4" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let result = str.match(regexp) || [];</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <h2><a class="main__anchor" name="str-matchall-regexp" href="regexp-methods.html#str-matchall-regexp">str.matchAll(regexp)</a></h2> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tambahan baru-baru ini</span> 
+          </div> 
+          <div class="important__content">
+            Ini adalah tambahan terbaru untuk bahasa ini. Browser lama mungkin memerlukan polyfill. 
+          </div> 
+         </div> 
+         <p>The method <code>str.matchAll(regexp)</code> is a ???newer, improved??? variant of <code>str.match</code>.</p> 
+         <p>It???s used mainly to search for all matches with all groups.</p> 
+         <p>There are 3 differences from <code>match</code>:</p> 
+         <ol> 
+          <li>It returns an iterable object with matches instead of an array. We can make a regular array from it using <code>Array.from</code>.</li> 
+          <li>Every match is returned as an array with capturing groups (the same format as <code>str.match</code> without flag <code class="pattern">g</code>).</li> 
+          <li>If there are no results, it returns an empty iterable object instead of <code>null</code>.</li> 
+         </ol> 
+         <p>Usage example:</p> 
+         <div id="gl1aqlj5zp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = '&lt;h1&gt;Hello, world!&lt;/h1&gt;';
+let regexp = /&lt;(.*?)&gt;/g;
+
+let matchAll = str.matchAll(regexp);
+
+alert(matchAll); // [object RegExp String Iterator], not array, but an iterable
+
+matchAll = Array.from(matchAll); // array now
+
+let firstMatch = matchAll[0];
+alert( firstMatch[0] );  // &lt;h1&gt;
+alert( firstMatch[1] );  // h1
+alert( firstMatch.index );  // 0
+alert( firstMatch.input );  // &lt;h1&gt;Hello, world!&lt;/h1&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If we use <code>for..of</code> to loop over <code>matchAll</code> matches, then we don???t need <code>Array.from</code> any more.</p> 
+         <h2><a class="main__anchor" name="str-split-regexp-substr-limit" href="regexp-methods.html#str-split-regexp-substr-limit">str.split(regexp|substr, limit)</a></h2> 
+         <p>Splits the string using the regexp (or a substring) as a delimiter.</p> 
+         <p>We can use <code>split</code> with strings, like this:</p> 
+         <div id="7ozgxpqdc5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert('12-34-56'.split('-')) // array of ['12', '34', '56']</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>But we can split by a regular expression, the same way:</p> 
+         <div id="3v2nk1phd7" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert('12, 34, 56'.split(/,\s*/)) // array of ['12', '34', '56']</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="str-search-regexp" href="regexp-methods.html#str-search-regexp">str.search(regexp)</a></h2> 
+         <p>The method <code>str.search(regexp)</code> returns the position of the first match or <code>-1</code> if none found:</p> 
+         <div id="lwgfg99g3l" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "A drop of ink may make a million think";
+
+alert( str.search( /ink/i ) ); // 10 (first match position)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><strong>The important limitation: <code>search</code> only finds the first match.</strong></p> 
+         <p>If we need positions of further matches, we should use other means, such as finding them all with <code>str.matchAll(regexp)</code>.</p> 
+         <h2><a class="main__anchor" name="str-replace-str-regexp-str-func" href="regexp-methods.html#str-replace-str-regexp-str-func">str.replace(str|regexp, str|func)</a></h2> 
+         <p>This is a generic method for searching and replacing, one of most useful ones. The swiss army knife for searching and replacing.</p> 
+         <p>We can use it without regexps, to search and replace a substring:</p> 
+         <div id="1abzfm8ml9" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// replace a dash by a colon
+alert('12-34-56'.replace("-", ":")) // 12:34-56</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>There???s a pitfall though.</p> 
+         <p><strong>When the first argument of <code>replace</code> is a string, it only replaces the first match.</strong></p> 
+         <p>You can see that in the example above: only the first <code>"-"</code> is replaced by <code>":"</code>.</p> 
+         <p>To find all hyphens, we need to use not the string <code>"-"</code>, but a regexp <code class="pattern">/-/g</code>, with the obligatory <code class="pattern">g</code> flag:</p> 
+         <div id="w4xo0mfvto" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:27,&quot;end&quot;:31}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// replace all dashes by a colon
+alert( '12-34-56'.replace( /-/g, ":" ) )  // 12:34:56</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The second argument is a replacement string. We can use special characters in it:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Symbols</th> 
+            <th>Action in the replacement string</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>$&amp;</code></td> 
+            <td>inserts the whole match</td> 
+           </tr> 
+           <tr> 
+            <td><code>$`</code></td> 
+            <td>inserts a part of the string before the match</td> 
+           </tr> 
+           <tr> 
+            <td><code>$'</code></td> 
+            <td>inserts a part of the string after the match</td> 
+           </tr> 
+           <tr> 
+            <td><code>$n</code></td> 
+            <td>if <code>n</code> is a 1-2 digit number, inserts the contents of n-th capturing group, for details see <a href="regexp-groups.html">Capturing groups</a></td> 
+           </tr> 
+           <tr> 
+            <td><code>$&lt;name&gt;</code></td> 
+            <td>inserts the contents of the parentheses with the given <code>name</code>, for details see <a href="regexp-groups.html">Capturing groups</a></td> 
+           </tr> 
+           <tr> 
+            <td><code>$$</code></td> 
+            <td>inserts character <code>$</code></td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>For instance:</p> 
+         <div id="jtkfin9mug" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "John Smith";
+
+// swap first and last name
+alert(str.replace(/(john) (smith)/i, '$2, $1')) // Smith, John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><strong>For situations that require ???smart??? replacements, the second argument can be a function.</strong></p> 
+         <p>It will be called for each match, and the returned value will be inserted as a replacement.</p> 
+         <p>The function is called with arguments <code>func(match, p1, p2, ..., pn, offset, input, groups)</code>:</p> 
+         <ol> 
+          <li><code>match</code> ??? the match,</li> 
+          <li><code>p1, p2, ..., pn</code> ??? contents of capturing groups (if there are any),</li> 
+          <li><code>offset</code> ??? position of the match,</li> 
+          <li><code>input</code> ??? the source string,</li> 
+          <li><code>groups</code> ??? an object with named groups.</li> 
+         </ol> 
+         <p>If there are no parentheses in the regexp, then there are only 3 arguments: <code>func(str, offset, input)</code>.</p> 
+         <p>For example, let???s uppercase all matches:</p> 
+         <div id="aca907ehgf" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "html and css";
+
+let result = str.replace(/html|css/gi, str =&gt; str.toUpperCase());
+
+alert(result); // HTML and CSS</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Replace each match by its position in the string:</p> 
+         <div id="9paovmj03c" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert("Ho-Ho-ho".replace(/ho/gi, (match, offset) =&gt; offset)); // 0-3-6</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>In the example below there are two parentheses, so the replacement function is called with 5 arguments: the first is the full match, then 2 parentheses, and after it (not used in the example) the match position and the source string:</p> 
+         <div id="gg1ep151ng" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "John Smith";
+
+let result = str.replace(/(\w+) (\w+)/, (match, name, surname) =&gt; `${surname}, ${name}`);
+
+alert(result); // Smith, John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If there are many groups, it???s convenient to use rest parameters to access them:</p> 
+         <div id="ejpwsyhsft" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "John Smith";
+
+let result = str.replace(/(\w+) (\w+)/, (...match) =&gt; `${match[2]}, ${match[1]}`);
+
+alert(result); // Smith, John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Or, if we???re using named groups, then <code>groups</code> object with them is always the last, so we can obtain it like this:</p> 
+         <div id="w5wyy9b5z6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "John Smith";
+
+let result = str.replace(/(?&lt;name&gt;\w+) (?&lt;surname&gt;\w+)/, (...match) =&gt; {
+  let groups = match.pop();
+
+  return `${groups.surname}, ${groups.name}`;
+});
+
+alert(result); // Smith, John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Using a function gives us the ultimate replacement power, because it gets all the information about the match, has access to outer variables and can do everything.</p> 
+         <h2><a class="main__anchor" name="str-replaceall-str-regexp-str-func" href="regexp-methods.html#str-replaceall-str-regexp-str-func">str.replaceAll(str|regexp, str|func)</a></h2> 
+         <p>This method is essentially the same as <code>str.replace</code>, with two major differences:</p> 
+         <ol> 
+          <li>If the first argument is a string, it replaces <em>all occurences</em> of the string, while <code>replace</code> replaces only the <em>first occurence</em>.</li> 
+          <li>If the first argument is a regular expression without the <code>g</code> flag, there???ll be an error. With <code>g</code> flag, it works the same as <code>replace</code>.</li> 
+         </ol> 
+         <p>The main use case for <code>replaceAll</code> is replacing all occurences of a string.</p> 
+         <p>Like this:</p> 
+         <div id="7t0b3kcz1n" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// replace all dashes by a colon
+alert('12-34-56'.replaceAll("-", ":")) // 12:34:56</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="regexp-exec-str" href="regexp-methods.html#regexp-exec-str">regexp.exec(str)</a></h2> 
+         <p>The <code>regexp.exec(str)</code> method returns a match for <code>regexp</code> in the string <code>str</code>. Unlike previous methods, it???s called on a regexp, not on a string.</p> 
+         <p>It behaves differently depending on whether the regexp has flag <code class="pattern">g</code>.</p> 
+         <p>If there???s no <code class="pattern">g</code>, then <code>regexp.exec(str)</code> returns the first match exactly as <code>str.match(regexp)</code>. This behavior doesn???t bring anything new.</p> 
+         <p>But if there???s flag <code class="pattern">g</code>, then:</p> 
+         <ul> 
+          <li>A call to <code>regexp.exec(str)</code> returns the first match and saves the position immediately after it in the property <code>regexp.lastIndex</code>.</li> 
+          <li>The next such call starts the search from position <code>regexp.lastIndex</code>, returns the next match and saves the position after it in <code>regexp.lastIndex</code>.</li> 
+          <li>???And so on.</li> 
+          <li>If there are no matches, <code>regexp.exec</code> returns <code>null</code> and resets <code>regexp.lastIndex</code> to <code>0</code>.</li> 
+         </ul> 
+         <p>So, repeated calls return all matches one after another, using property <code>regexp.lastIndex</code> to keep track of the current search position.</p> 
+         <p>In the past, before the method <code>str.matchAll</code> was added to JavaScript, calls of <code>regexp.exec</code> were used in the loop to get all matches with groups:</p> 
+         <div id="g5hji3tbhb" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = 'More about JavaScript at https://javascript.info';
+let regexp = /javascript/ig;
+
+let result;
+
+while (result = regexp.exec(str)) {
+  alert( `Found ${result[0]} at position ${result.index}` );
+  // Found JavaScript at position 11, then
+  // Found javascript at position 33
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>This works now as well, although for newer browsers <code>str.matchAll</code> is usually more convenient.</p> 
+         <p><strong>We can use <code>regexp.exec</code> to search from a given position by manually setting <code>lastIndex</code>.</strong></p> 
+         <p>For instance:</p> 
+         <div id="qfdj92wz1q" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = 'Hello, world!';
+
+let regexp = /\w+/g; // without flag "g", lastIndex property is ignored
+regexp.lastIndex = 5; // search from 5th position (from the comma)
+
+alert( regexp.exec(str) ); // world</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If the regexp has flag <code class="pattern">y</code>, then the search will be performed exactly at the position <code>regexp.lastIndex</code>, not any further.</p> 
+         <p>Let???s replace flag <code class="pattern">g</code> with <code class="pattern">y</code> in the example above. There will be no matches, as there???s no word at position <code>5</code>:</p> 
+         <div id="4cx8jpxkob" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = 'Hello, world!';
+
+let regexp = /\w+/y;
+regexp.lastIndex = 5; // search exactly at position 5
+
+alert( regexp.exec(str) ); // null</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>That???s convenient for situations when we need to ???read??? something from the string by a regexp at the exact position, not somewhere further.</p> 
+         <h2><a class="main__anchor" name="regexp-test-str" href="regexp-methods.html#regexp-test-str">regexp.test(str)</a></h2> 
+         <p>The method <code>regexp.test(str)</code> looks for a match and returns <code>true/false</code> whether it exists.</p> 
+         <p>For instance:</p> 
+         <div id="cdpk3rlpdn" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;cols&quot;:[{&quot;start&quot;:18,&quot;end&quot;:25}]},{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:7,&quot;end&quot;:14}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "I love JavaScript";
+
+// these two tests do the same
+alert( /love/i.test(str) ); // true
+alert( str.search(/love/i) != -1 ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>An example with the negative answer:</p> 
+         <div id="fmbisic5sd" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:18,&quot;end&quot;:25}]},{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:7,&quot;end&quot;:14}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "Bla-bla-bla";
+
+alert( /love/i.test(str) ); // false
+alert( str.search(/love/i) != -1 ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If the regexp has flag <code class="pattern">g</code>, then <code>regexp.test</code> looks from <code>regexp.lastIndex</code> property and updates this property, just like <code>regexp.exec</code>.</p> 
+         <p>So we can use it to search from a given position:</p> 
+         <div id="bi47luiwam" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let regexp = /love/gi;
+
+let str = "I love JavaScript";
+
+// start the search from position 10:
+regexp.lastIndex = 10;
+alert( regexp.test(str) ); // false (no match)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Same global regexp tested repeatedly on different sources may fail</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>If we apply the same global regexp to different inputs, it may lead to wrong result, because <code>regexp.test</code> call advances <code>regexp.lastIndex</code> property, so the search in another string may start from non-zero position.</p> 
+           <p>For instance, here we call <code>regexp.test</code> twice on the same text, and the second time fails:</p> 
+           <div id="shb8ioau4b" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-methods.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="regexp-methods.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let regexp = /javascript/g;  // (regexp just created: regexp.lastIndex=0)
+
+alert( regexp.test("javascript") ); // true (regexp.lastIndex=10 now)
+alert( regexp.test("javascript") ); // false</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>That???s exactly because <code>regexp.lastIndex</code> is non-zero in the second test.</p> 
+           <p>To work around that, we can set <code>regexp.lastIndex = 0</code> before each search. Or instead of calling methods on regexp, use string methods <code>str.match/search/...</code>, they don???t use <code>lastIndex</code>.</p> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="regexp-sticky.html" data-tooltip="Sticky flag &quot;y&quot;, searching at position"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-methods" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-methods" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regular-expressions.html">Regular expressions</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-methods.html#str-match-regexp">str.match(regexp)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-methods.html#str-matchall-regexp">str.matchAll(regexp)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-methods.html#str-split-regexp-substr-limit">str.split(regexp|substr, limit)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-methods.html#str-search-regexp">str.search(regexp)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-methods.html#str-replace-str-regexp-str-func">str.replace(str|regexp, str|func)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-methods.html#str-replaceall-str-regexp-str-func">str.replaceAll(str|regexp, str|func)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-methods.html#regexp-exec-str">regexp.exec(str)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-methods.html#regexp-test-str">regexp.test(str)</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-methods.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-methods" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fregexp-methods" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

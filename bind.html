@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Function binding</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="bind.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Function binding"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Function binding"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="call-apply-decorators.html"> 
+  <link rel="next" href="arrow-functions.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.0/lodash.min.js"></script> 
+  <script>
+function mul(a, b) {
+  return a * b;
+};
+
+function ask(question, answer, ok, fail) {
+  let result = prompt(question, '');
+  if (result.toLowerCase() == answer.toLowerCase()) ok();
+  else fail();
+}
+
+function bind(func, context /*, args*/) {
+  let bindArgs = [].slice.call(arguments, 2); // (1)
+  function wrapper() {                        // (2)
+    let args = [].slice.call(arguments);
+    let unshiftArgs = bindArgs.concat(args);  // (3)
+    return func.apply(context, unshiftArgs);  // (4)
+  }
+  return wrapper;
+}
+</script> 
+  <meta property="og:title" content="Function binding"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbind" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fbind" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="58" max="92" data-tooltip="Pelajaran 58 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="advanced-functions.html"><span>Penggunaan lanjutan fungsi</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Penggunaan lanjutan fungsi","item":"https://id.javascript.info/advanced-functions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 16 Desember 2020"> 
+          <div class="updated-at__content">
+            16 Desember 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Function binding</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Function binding"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Ketika mengirimkan metode objek sebagai callback, seperti <code>setTimeout</code>, terdapat sebuah masalah: "kehilangan <code>this</code>".</p> 
+         <p>Didalam chapter ini kita akan belajar cara memperbaikinya.</p> 
+         <h2><a class="main__anchor" name="kehilangan-this" href="bind.html#kehilangan-this">Kehilangan ???this???</a></h2> 
+         <p>Kita sudah melihat beberapa contoh saat kehilangan <code>this</code>. Sekalinya sebuah metode dikirim kebagian kode lain dengan terpisah dari objeknya ??? <code>this</code> akan menghilang dari metodenya.</p> 
+         <p>Ini adalah bagaimana hal itu terjadi dengan <code>setTimeout</code>:</p> 
+         <div id="96qz8edqid" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  firstName: "John",
+  sayHi() {
+    alert(`Hello, ${this.firstName}!`);
+  }
+};
+
+setTimeout(user.sayHi, 1000); // Hello, undefined!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang bisa kita lihat, keluarannya tidak menampilkan ???John??? sebagai <code>this.firstName</code>, tapi menampilkan <code>undefined</code>!</p> 
+         <p>Itu karena <code>setTimeout</code> mendapatkan fungsi <code>user.sayHi</code>, terpisah dari objeknya. Baris terakhir bisa ditulis ulang sebagai:</p> 
+         <div id="norixfy2th" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let f = user.sayHi;
+setTimeout(f, 1000); // kehilangan konteks dari user</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Metode <code>setTimeout</code> didalam peramban sedikit spesial: metode tersebut menyetel <code>this=window</code> untuk pemanggilan fungsi (untuk Node.js, <code>this</code> menjadi objek timer, tapi tidak terlalu penting disini). Jadi untuk <code>this.firstName</code> metodenya jadi mendapatkan <code>window.firstName</code>, yang mana tidak ada. Dalam kasus serupa lainnya <code>this</code> akan menjadi <code>undefined</code>.</p> 
+         <p>Tugasnya cukup tipikal ??? kita ingin mengirim metode objek ke bagian kode lainnya (disini ??? kepada penjadwal/setTimeout) dimana metodenya akan dipanggil. Bagaimana cara untuk memeriksa konteksnya dipanggil dengan benar?</p> 
+         <h2><a class="main__anchor" name="solusi-1-pembungkus" href="bind.html#solusi-1-pembungkus">Solusi 1: pembungkus</a></h2> 
+         <p>Solusi sederhananya adalah untuk menggunakan fungsi pembungkus:</p> 
+         <div id="h96sbo5n38" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  firstName: "John",
+  sayHi() {
+    alert(`Hello, ${this.firstName}!`);
+  }
+};
+
+setTimeout(function() {
+  user.sayHi(); // Hello, John!
+}, 1000);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kode diatas bekerja, karena <code>user</code> didapatkan dari lingkungan leksikal terluar, dan lalu memanggil metodenya secara normal.</p> 
+         <p>Solusi yang sama, tapi lebih pendek:</p> 
+         <div id="aqase08fl6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>setTimeout(() =&gt; user.sayHi(), 1000); // Hello, John!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Terlihat bagus, tapi sedikit memiliki kerentanan yang akan muncul pada struktur kodenya.</p> 
+         <p>Bagaimana jika sebelum <code>setTimeout</code> berjalan (terdapat penundaan selama satu detik!) nilai <code>user</code> untuk berubah? Maka, tiba-tiba,fungsinya akan memanggil objek yang salah.</p> 
+         <div id="gm51d9zh5s" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  firstName: "John",
+  sayHi() {
+    alert(`Hello, ${this.firstName}!`);
+  }
+};
+
+setTimeout(() =&gt; user.sayHi(), 1000);
+
+// ...nilai dari user berubah sebelum 1 detik!
+user = {
+  sayHi() { alert("Another user in setTimeout!"); }
+};
+
+// setTimeout menggunakan user yang berbeda!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Solusi selanjutnya akan menjamin hal seperti diatas tidak akan terjadi.</p> 
+         <h2><a class="main__anchor" name="solusi-2-bind" href="bind.html#solusi-2-bind">Solusi 2: bind</a></h2> 
+         <p>Fungsi menyediakan sebuah metode bawaan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/Function/bind">bind</a> yang mengijinkan untuk membernarkan <code>this</code>.</p> 
+         <p>Sintaks dasarnya adalah:</p> 
+         <div id="faklgd5g05" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// contoh sintaks yang lebih kompleks akan kita segera lihat
+let boundFunc = func.bind(context);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>hasil dari <code>func.bind(contenxt)</code> adalah sesuatu yang terlihat seperti fungsi spesial atau bisa disebut dengan ???objek eksotik???, yang dapat dipanggil sebagai fungsi dan dapat melanjutkan pemanggilan kepada <code>func</code> sambil menyetel <code>this=context</code>.</p> 
+         <p>Dengan kata lain, memanggil <code>boundFunc</code> sama seperti <code>func</code> dengan nilai <code>this</code> yang tetap.</p> 
+         <p>Contoh, disini <code>funcUser</code> mengirimkan sebuah panggilan kepada <code>func</code> dengan <code>this=user</code>:</p> 
+         <div id="p0x5mvkwlj" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  firstName: "John"
+};
+
+function func() {
+  alert(this.firstName);
+}
+
+let funcUser = func.bind(user);
+funcUser(); // John</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini <code>func.bin(user)</code> sebagai sebuah varian dari <code>func</code>, dengan nilai tetap <code>this=user</code>.</p> 
+         <p>Seluruh argumen dikirim kepada <code>func</code> asli ???sebagaimana adanya???, contoh:</p> 
+         <div id="75dxf0mcvu" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:11,&quot;end&quot;:11}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  firstName: "John"
+};
+
+function func(phrase) {
+  alert(phrase + ', ' + this.firstName);
+}
+
+// bind this to user
+let funcUser = func.bind(user);
+
+funcUser("Hello"); // Hello, John (argumen "Hello" dikirim, dan this=user)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang kita coba dengan menggunakan metode objek:</p> 
+         <div id="yydtpn62hy" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  firstName: "John",
+  sayHi() {
+    alert(`Hello, ${this.firstName}!`);
+  }
+};
+
+let sayHi = user.sayHi.bind(user); // (*)
+
+// bisa dijalankan tanpa objek
+sayHi(); // Hello, John!
+
+setTimeout(sayHi, 1000); // Hello, John!
+
+// bahkan jika nilai dari user berubah sebelum 1 detik
+// sayHi menggunakan nilai yang telah diikat, yang mana telah mereferensi kepada objek yang lama
+user = {
+  sayHi() { alert("Another user in setTimeout!"); }
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Didalam baris <code>(*)</code> kita menggunakan metode <code>user.sayHi</code> dan mengikatkannta kepada <code>user</code>. <code>sayHi</code> adalah sebuah fungsi ???terikat???, yang bisa dipanggil sendiri atau dikirimkan kepada <code>setTimeout</code> ??? itu tidaklah penting, yang penting adalah konteksnya tepat.</p> 
+         <p>Disini kita bisa melihat argumen yang dikirimkan ???seperti adanya???, hanya saja <code>this</code> nilainya menjadi tetap oleh <code>bind</code>:</p> 
+         <div id="kxf27pgq89" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let user = {
+  firstName: "John",
+  say(phrase) {
+    alert(`${phrase}, ${this.firstName}!`);
+  }
+};
+
+let say = user.say.bind(user);
+
+say("Hello"); // Hello, John (argumen "Hello" dikirim untuk digunakan)
+say("Bye"); // Bye, John ("Bye" dikirim untuk digunakan)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Metode yang bermanfaat: <code>bindAll</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika sebuah objek mempunyai beberapa metode dan kita berencana untuk mengirimkannya kebagian kode lain secara terus-menerus, kita bisa mengikatkannya didalam sebuah perulangan:</p> 
+           <div id="fpiumdow2o" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>for (let key in user) {
+  if (typeof user[key] == 'function') {
+    user[key] = user[key].bind(user);
+  }
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Librari Javascript juga menyediakan fungsi untuk memudahkan pengikatan/binding masal, contoh <a href="http://lodash.com/docs#bindAll">_.bindAll(object, methodNames)</a> didalam lodash.</p> 
+           <h2><a class="main__anchor" name="partial-functions-fungsi-sebagian" href="bind.html#partial-functions-fungsi-sebagian">Partial functions/Fungsi sebagian</a></h2> 
+           <p>Sampai sekarang kita hanya berbicara tentang binding/pengikatan <code>this</code>. Ayo kita lihat lebih dalam.</p> 
+           <p>Kita bisa mengikat bukan hanya <code>this</code>, tapi juga argumen. Yang mana sangat jarang digunakan, tapi terkadang cukup mudah digunakan.</p> 
+           <p>Sintaks penuh dari <code>bind</code>:</p> 
+           <div id="ju5pec6i46" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let bound = func.bind(context, [arg1], [arg2], ...);</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Yang mana mengijinkan kita untuk mengikat konteks sebagai <code>this</code> dan memulai argumen dari sebuah fungsi.</p> 
+           <p>Contoh, kita mempunyai sebuah fungsi perkalian <code>mul(a, b)</code>:</p> 
+           <div id="jth26vunal" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function mul(a, b) {
+  return a * b;
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Kita gunakan <code>bind</code> untuk membuat sebuah fungsi <code>double</code> didalamnya:</p> 
+           <div id="gaqe4t5zbb" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function mul(a, b) {
+  return a * b;
+}
+
+let double = mul.bind(null, 2);
+
+alert( double(3) ); // = mul(2, 3) = 6
+alert( double(4) ); // = mul(2, 4) = 8
+alert( double(5) ); // = mul(2, 5) = 10</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Panggilan pada <code>mul.bind(null, 2)</code> membuat function <code>double</code> baru yang memberikan panggilan terhadap <code>mul</code>, memperbaiki <code>null</code> sebagai konteksnya dan <code>2</code> sebagai argumen pertamanya. Argumen-argumen lebih lanjut yang diberikan ???as is/sebagaimana adanya???.</p> 
+           <p>Itu dipanggil <a href="https://en.wikipedia.org/wiki/Partial_application">partial function application</a> ??? kita membuat sebuah fungsi baru dengan memperbaiki beberapa parameter dari yang sudah ada.</p> 
+           <p>Harap dicatat bahwa disini kita tidak menggunakan <code>this</code>. Tapi <code>bind</code> memerlukannya, jadi kita harus meletakkan di dalam sesuatu seperti <code>null</code>.</p> 
+           <p>Fungsi <code>triple</code> di dalam kode dibawah ini melipatkan tiga kali lipat nilai tersebut:</p> 
+           <div id="lz429pk4os" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function mul(a, b) {
+  return a * b;
+}
+
+let triple = mul.bind(null, 3);
+
+alert( triple(3) ); // = mul(3, 3) = 9
+alert( triple(4) ); // = mul(3, 4) = 12
+alert( triple(5) ); // = mul(3, 5) = 15</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Kenapa kita umumnya membuat fungsi parsial?</p> 
+           <p>Manfaatnya bahwa kita dapat membuat sebuah fungsi independen dengan nama yang dapat dibaca (<code>double</code>, <code>triple</code>). Kita bisa menggunakannya dan tidak menyediakan argumen pertamanya setiap saat karena sudah diperbaiki dengan <code>bind</code>.</p> 
+           <p>Dalam kasus lain, aplikasi parsial berguna saat kita punya sebuah fungsi generik dan menginginkan varian yang kurang universal untuk kenyamanan.</p> 
+           <p>Contoh, kita punya sebuah fungsi <code>send(from, to, text)</code>. Kemudian, di dalam objek <code>user</code> kita mungkin ingin menggunakan varian parsial darinya: <code>sendTo(to, text)</code> yang dikirim dari user saat ini.</p> 
+           <h2><a class="main__anchor" name="menjadi-parsial-tanpa-konteks" href="bind.html#menjadi-parsial-tanpa-konteks">Menjadi parsial tanpa konteks</a></h2> 
+           <p>Bagaimana jika kita ingin memperbaiki beberapa argumen, tetapi bukan konteks <code>this</code>? Contoh, untuk sebuah method objek.</p> 
+           <p><code>bind</code> yang asli tidak mengizinkan itu. Kita tidak bisa begitu saja mengabaikan konteks dan lompat ke argumen.</p> 
+           <p>Untungnya, fungsi <code>partial</code> untuk mengikat argumen saja dapat dengan mudah diterapkan.</p> 
+           <p>Seperti ini:</p> 
+           <div id="qpg0u3arla" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:4}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function partial(func, ...argsBound) {
+  return function(...args) { // (*)
+    return func.call(this, ...argsBound, ...args);
+  }
+}
+
+// Usage:
+let user = {
+  firstName: "John",
+  say(time, phrase) {
+    alert(`[${time}] ${this.firstName}: ${phrase}!`);
+  }
+};
+
+// tambahkan method parsial dengan waktu tetap
+user.sayNow = partial(user.say, new Date().getHours() + ':' + new Date().getMinutes());
+
+user.sayNow("Hello");
+// Something like:
+// [10:00] John: Hello!</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Hasil dari panggilan <code>partial(func[, arg1, arg2...])</code> yaitu sebuah pembungkus <code>(*)</code> yang memanggil <code>func</code> dengan:</p> 
+           <ul> 
+            <li><code>this</code> sama seperti yang didapat (<code>user.sayNow</code> menyebutnya <code>user</code>)</li> 
+            <li>Lalu berikan <code>...argsBound</code> ??? argumen dari panggilan <code>partial</code> yaitu (<code>"10:00"</code>)</li> 
+            <li>Lalu berikan <code>...args</code> ??? argumen yang diberikan ke pembungkus (<code>" Hello "</code>)</li> 
+           </ul> 
+           <p>Sangat mudah melakukannya dengan sintaks penyebaran, bukan?</p> 
+           <p>Juga ada implementasi <a href="https://lodash.com/docs#pihak">_.partial</a> yang siap dari perpustakaan lodash.</p> 
+           <h2><a class="main__anchor" name="kesimpulan" href="bind.html#kesimpulan">Kesimpulan</a></h2> 
+           <p>Method <code>func.bind(context, ...args)</code> mengembalikan sebuah ???varian terikat??? dari function <code>func</code> yang memperbaiki konteks<code>this</code> dan argumen pertama jika diberikan.</p> 
+           <p>Biasanya kita menerapkan <code>bind</code> untuk memperbaiki <code>this</code> untuk sebuah method objek, sehingga kita bisa memberikannya ke suatu tempat. Misalnya, ke <code>setTimeout</code>.</p> 
+           <p>Ketika kita memperbaiki beberapa argumen dari function yang ada, fungsi yang dihasilkan (less universal) disebut <em>partially applied</em> atau <em>partial</em>.</p> 
+           <p>Parsial lebih mudah digunakan ketika kita tidak ingin mengulangi argumen yang sama berulang kali. Seperti jika kita memiliki fungsi <code>send (from, to)</code>, dan <code>from</code> harus selalu sama untuk tugas kita, kita bisa mendapatkan sebuah partial dan melanjutkannya.</p> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="bind.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="bind.html#ikat-fungsi-sebagai-sebuah-metode" name="ikat-fungsi-sebagai-sebuah-metode">Ikat fungsi sebagai sebuah metode</a></h3> 
+           <a class="task__open-link" href="task/write-to-object-after-bind.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apakah keluarannya?</p> 
+            <div id="16sqzqgdiy" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function f() {
+  alert( this ); // ?
+}
+
+let user = {
+  g: f.bind(null)
+};
+
+user.g();</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya: <code>null</code>.</p> 
+              <div id="ycfh6c3v1j" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function f() {
+  alert( this ); // null
+}
+
+let user = {
+  g: f.bind(null)
+};
+
+user.g();</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Konteks dari pengikatan fungsi sangat sulit diperbaiki. Tidak ada cara untuk merubahnya dilain waktu.</p> 
+              <p>Jadi bahkan ketika kita menjalankan <code>user.g()</code>, fungsi aslinya dipanggil dengan <code>this=null</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="bind.html#pengikatan-kedua" name="pengikatan-kedua">Pengikatan kedua</a></h3> 
+           <a class="task__open-link" href="task/second-bind.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Bisakah kita merubah<code>this</code> dengan pengikatan tambahan?</p> 
+            <p>Apakah yang akan menjadi keluarannya?</p> 
+            <div id="aci2mzzje5" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function f() {
+  alert(this.name);
+}
+
+f = f.bind( {name: "John"} ).bind( {name: "Ann" } );
+
+f();</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya: <strong>John</strong>.</p> 
+              <div id="ccwbpb1yqz" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function f() {
+  alert(this.name);
+}
+
+f = f.bind( {name: "John"} ).bind( {name: "Pete"} );
+
+f(); // John</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Objek eksotis <a href="https://tc39.github.io/ecma262/#sec-bound-function-exotic-objects">bound function</a> yang dikembalikan oleh <code>f.bind(...)</code> mengingat konteksnya (dan argumen jika ada) hanya pada waktu pembuatan.</p> 
+              <p>Sebuah fungsi tidak bisa diikat-ulang.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="bind.html#properti-fungsi-setelah-pengikatan" name="properti-fungsi-setelah-pengikatan">Properti fungsi setelah pengikatan</a></h3> 
+           <a class="task__open-link" href="task/function-property-after-bind.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Terdapat sebuah nilai didalam properti dari sebuah fungsi. Apakah properti tersebut akan berubah setelah <code>bind</code>? Kenapa, atau kenapa tidak?</p> 
+            <div id="olzg7h5iks" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:9}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function sayHi() {
+  alert( this.name );
+}
+sayHi.test = 5;
+
+let bound = sayHi.bind({
+  name: "John"
+});
+
+alert( bound.test ); // apakah keluarannya? kenapa?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya: <code>undefined</code>.</p> 
+              <p>Hasil dari <code>bind</code> adalah objek lainnya. Objek tersebut tidak memiliki properti <code>test</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="bind.html#perbaiki-sebuah-fungsi-yang-telah-kehilangan-this" name="perbaiki-sebuah-fungsi-yang-telah-kehilangan-this">Perbaiki sebuah fungsi yang telah kehilangan "this"</a></h3> 
+           <a class="task__open-link" href="task/question-use-bind.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Pemanggilan kepada <code>askPassword()</code> didalam kode dibawah harus memeriksa passwordnya dan lalu memanggil <code>user.loginOk/loginFail</code> tergantung dari jawabannya.</p> 
+            <p>Tapi pemanggilan itu mengembalikan sebuah error. kenapa?</p> 
+            <p>Perbaiki baris yang di tandai agar kodenya dapat berjalan dengan benar (baris lainnya tidak perlu diubah).</p> 
+            <div id="71ykkuyjw7" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:19,&quot;end&quot;:19}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function askPassword(ok, fail) {
+  let password = prompt("Password?", '');
+  if (password == "rockstar") ok();
+  else fail();
+}
+
+let user = {
+  name: 'John',
+
+  loginOk() {
+    alert(`${this.name} logged in`);
+  },
+
+  loginFail() {
+    alert(`${this.name} failed to log in`);
+  },
+
+};
+
+askPassword(user.loginOk, user.loginFail);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Errornya muncul karena <code>ask</code> mendapatkan fungsi <code>loginOk/loginFail</code> tanpa objeknya.</p> 
+              <p>ketika <code>ask</code> memanggil, <code>loginOk/loginFail</code> mengasumsikan bahwa <code>this=undefined</code>.</p> 
+              <p>Ayo kita coba <code>bind</code> konteksnya:</p> 
+              <div id="addej9pevb" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:19,&quot;end&quot;:19}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="bind.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="bind.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function askPassword(ok, fail) {
+  let password = prompt("Password?", '');
+  if (password == "rockstar") ok();
+  else fail();
+}
+
+let user = {
+  name: 'John',
+
+  loginOk() {
+    alert(`${this.name} logged in`);
+  },
+
+  loginFail() {
+    alert(`${this.name} failed to log in`);
+  },
+
+};
+
+askPassword(user.loginOk.bind(user), user.loginFail.bind(user));</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Sekarang kodenya berjalan.</p> 
+              <p>Alternatif lainnya bisa menggunakan:</p> 
+              <div id="vdgca7po7w" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>//...
+askPassword(() =&gt; user.loginOk(), () =&gt; user.loginFail());</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Contoh diatas biasanya bekerja dan terlihat lebih rapih.</p> 
+              <p>Cara ini sedikit kurang bisa digunakan didalam situasi yang lebih kompleks dimana variabel <code>user</code> mungkin berubah <em>setelah</em> <code>askPassword</code> dipanggil, tapi <em>sebelum</em> pengguna menjawab dan memanggil <code>() =&gt; user.loginOk()</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="bind.html#pengaplikasian-parsial-untuk-login" name="pengaplikasian-parsial-untuk-login">Pengaplikasian parsial untuk login</a></h3> 
+           <a class="task__open-link" href="task/ask-partial.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tugas yang ini adalah varian yang sedikit lebih sulit daripada <a href="task/question-use-bind.html">Perbaiki sebuah fungsi yang telah kehilangan "this"</a>.</p> 
+            <p>Objek <code>user</code>nya telah dimodifikasi. Sekarang daripada menggunakan dua fungsi <code>loginOk/loginFail</code>, sekarang hanya memiliki satu fungsi <code>user.login(true/false)</code>.</p> 
+            <p>Apa yang harus kita kirimkan kedalam <code>askPassword</code> di kode dibawah, apakah harus memanggul <code>user.login(true)</code> sebagai <code>ok</code> dan <code>user.login(false)</code> sebagai <code>fail</code>?</p> 
+            <div id="e5cgpqswo1" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:14,&quot;end&quot;:14}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function askPassword(ok, fail) {
+  let password = prompt("Password?", '');
+  if (password == "rockstar") ok();
+  else fail();
+}
+
+let user = {
+  name: 'John',
+
+  login(result) {
+    alert( this.name + (result ? ' logged in' : ' failed to log in') );
+  }
+};
+
+askPassword(?, ?); // ?</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Ubahlah kodenya hanya pada bagian yang ditandai.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <ol> 
+               <li> <p>Funakan fungsi pembungkus, lebih jelasnya gunakanlah fungsi arrow:</p> 
+                <div id="lzjz2huix2" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>askPassword(() =&gt; user.login(true), () =&gt; user.login(false));</code></pre> 
+                  </div> 
+                 </div> 
+                </div><p>Sekarang fungsi `user dapat diambil dari variabel luar dan dijalankan dengan normal.</p> </li> 
+               <li> <p>Atau buat sebuah fungsi mini dari <code>user.login</code> yang menggunakan <code>user</code> sebagai konteksnya dan yang mana mempunyai argumen pertama yang benar:</p> 
+                <div id="0vdhuzjh72" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>askPassword(user.login.bind(user, true), user.login.bind(user, false));</code></pre> 
+                  </div> 
+                 </div> 
+                </div></li> 
+              </ol> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="call-apply-decorators.html" data-tooltip="Decorators dan forwarding, call/apply"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="arrow-functions.html" data-tooltip="Membahas Kembali Fungsi Arrow"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbind" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fbind" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="advanced-functions.html">Penggunaan lanjutan fungsi</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bind.html#kehilangan-this">Kehilangan ???this???</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bind.html#solusi-1-pembungkus">Solusi 1: pembungkus</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bind.html#solusi-2-bind">Solusi 2: bind</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bind.html#partial-functions-fungsi-sebagian">Partial functions/Fungsi sebagian</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bind.html#menjadi-parsial-tanpa-konteks">Menjadi parsial tanpa konteks</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bind.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bind.html#tasks">Tugas (5)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="bind.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fbind" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fbind" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

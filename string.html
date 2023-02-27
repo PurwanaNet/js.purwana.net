@@ -1,0 +1,1608 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">String</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="string.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="String"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="String"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="number.html"> 
+  <link rel="next" href="array.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="String"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fstring" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fstring" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="39" max="92" data-tooltip="Pelajaran 39 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="data-types.html"><span>Tipe data</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Tipe data","item":"https://id.javascript.info/data-types"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">String</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="String"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Di Javascript, data teks disimpan sebagai string. Tidak ada tipe data sendiri untuk satu buah karakter.</p> 
+         <p><a href="https://en.wikipedia.org/wiki/UTF-16">UTF-16</a> selalu digunakan sebagai format internal string, hal tersebut tidak terikat dengan jenis encoding yang digunakan oleh halaman.</p> 
+         <h2><a class="main__anchor" name="petik" href="string.html#petik">Petik</a></h2> 
+         <p>Mari kita lihat berbagai jenis petik.</p> 
+         <p>String dapat ditutup dengan petik satu, petik dua, maupun backtick:</p> 
+         <div id="2ie6p5yq7h" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let single = 'single-quoted';
+let double = "double-quoted";
+
+let backticks = `backticks`;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Petik satu dan petik dua kurang lebih hampir sama. Akan tetapi backtick memiliki perbedaan, yaitu memperbolehkan kita untuk menyisipkan ekspresi ke dalam string, dengan menaruhnya di dalam <code>${???}</code>:</p> 
+         <div id="yyj3ab3dfn" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sum(a, b) {
+  return a + b;
+}
+
+alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kelebihan backtick yang lain yaitu backtick memperbolehkan sebuah string untuk terdiri lebih dari satu baris:</p> 
+         <div id="cljba9r9g2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let guestList = `Guests:
+ * John
+ * Pete
+ * Mary
+`;
+
+alert(guestList); // list tamu, dipisahkan per baris</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Lebih rapi, kan? Tetapi petik satu atau dua tidak bekerja seperti itu.</p> 
+         <p>Jika kita coba untuk menggunakan mereka untuk lebih dari satu baris, akan terjadi error:</p> 
+         <div id="n6qck0j7o" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let guestList = "Guests: // Error: Unexpected token ILLEGAL
+  * John";</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Petik satu dan petik dua berasal dari masa lalu saat bahasa pemrograman dibuat, dimana kebutuhan untuk string lebih dari satu baris belum dipikirkan. Backtick muncul di kemudian hari, dan lebih fleksibel.</p> 
+         <p>Backtick juga memperbolehkan kita untuk menspesifikasi ???fungsi template??? sebelum backtick pertama. Syntaxnya yaitu: <code>func`string`</code>. Fungsi <code>func</code> dipanggil secara otomatis, menerima string dan ekspresi yang berada di dalamnya dan bisa memproses mereka. Ini disebut ???tagged templates???. Fitur ini membuat implementasi kustom templating lebih mudah, tapi jaran dipakai dalam praktik. Kamu bisa membaca lebih tentang ini di <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Template_literals#Tagged_templates">manual</a>.</p> 
+         <h2><a class="main__anchor" name="karakter-spesial" href="string.html#karakter-spesial">Karakter spesial</a></h2> 
+         <p>Masih mungkin untuk membuat string dengan banyak baris menggunakan petik satu atau petik dua dengan menggunakan ???karakter newline???, ditulis seperti berikut <code>\n</code>, yang menandakan baris baru:</p> 
+         <div id="ps3mhlskj4" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let guestList = "Guests:\n * John\n * Pete\n * Mary";
+
+alert(guestList); // list tamu yang dipisahkan per baris</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sebagai contoh, kedua baris berikut sama saja, hanya ditulis dengan cara yang berbeda:</p> 
+         <div id="6ngo9zzkha" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str1 = "Hello\nWorld"; // dua baris menggunakan "simbol baris baru"
+
+// dua baris menggunakan backtick
+let str2 = `Hello
+World`;
+
+alert(str1 == str2); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ada karakter spesial lain, tetapi mereka jarang digunakan</p> 
+         <p>Berikut adalah daftar lengkapnya:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>Character</th> 
+            <th>Description</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>\n</code></td> 
+            <td>Baris baru</td> 
+           </tr> 
+           <tr> 
+            <td><code>\r</code></td> 
+            <td>Carriage return: tidak digunakan sendiri. File teks milik di Windows menggunakan kombinasi dari dua karakter <code>\r\n</code> untuk menandakan baris baru.</td> 
+           </tr> 
+           <tr> 
+            <td><code>\'</code>, <code>\"</code></td> 
+            <td>Petik-petik</td> 
+           </tr> 
+           <tr> 
+            <td><code>\\</code></td> 
+            <td>Backslash</td> 
+           </tr> 
+           <tr> 
+            <td><code>\t</code></td> 
+            <td>Tab</td> 
+           </tr> 
+           <tr> 
+            <td><code>\b</code>, <code>\f</code>, <code>\v</code></td> 
+            <td>Backspace, Form Feed, Vertical Tab ??? tetap bisa digunakan untuk kompabilitas, sekarang sudah tidak digunakan.</td> 
+           </tr> 
+           <tr> 
+            <td><code>\xXX</code></td> 
+            <td>Karakter unicode dengan nilai heksadesimal <code>XX</code>, misalnya <code>'\x7A'</code> itu sama saja dengan <code>'z'</code>.</td> 
+           </tr> 
+           <tr> 
+            <td><code>\uXXXX</code></td> 
+            <td>Sebuah simbol unicode dengan nilai heksadesimal <code>XXXX</code> di dalam encoding UTF-16, sebagai contoh <code>\u00A9</code> ??? adalah sebuah unicode untuk simbol copyright <code>??</code>. Simbol ini harus terdiri dari 4 digit heksadesimal.</td> 
+           </tr> 
+           <tr> 
+            <td><code>\u{X???XXXXXX}</code> (1 to 6 karakter heksadesimal)</td> 
+            <td>Sebuah simbol unicode dengan encoding UTF-32. Beberapa karakter langka menggunakan dua simbol unicode, yang memakan 4 byte. Dengan cara ini kita dapat menggunakan kode yang panjang.</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <p>Contoh dengan unicode:</p> 
+         <div id="xoyxiycu78" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "\u00A9" ); // ??
+alert( "\u{20331}" ); // ???, sebuah karakter mandarin (unicode panjang)
+alert( "\u{1F60D}" ); // ????, sebuah simbol wajah tersenyum (unicode panjang lainnya)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Karakter-karakter spesial yang diawali dengan karakter backslash <code>\</code> kadang dipanggil dengan sebutan ???escape character???.</p> 
+         <p>Kita kadang dapat menggunakannya apabila kita ingin menggunakan petik di dalam string.</p> 
+         <p>Misalnya:</p> 
+         <div id="0nzd7j5edm" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:9,&quot;end&quot;:11},{&quot;start&quot;:32,&quot;end&quot;:35}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 'I\'m the Walrus!' ); // I'm the Walrus!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang kita lihat, kita harus menambahkan backslash di depan petik yang di dalam string <code>\'</code>, karena jika tidak petik tersebut akan menandakan akhir dari sebuah string.</p> 
+         <p>Tentu saja, hanya jenis petik yang sama dengan penutup string yang perlu di ???escape???. Jadi, solusi yang lebih elegan yaitu mengganti petik satu menjadi petik dua atau backtick:</p> 
+         <div id="exmrz230vl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( `I'm the Walrus!` ); // I'm the Walrus!</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ingat bahwa backslash <code>\</code> hanya dipakai untuk Javascript agar dapat membaca string dengan benar. Di dalam memori, string tidak memiliki <code>\</code>. Anda dapat melihatnya secara langsung pada contoh <code>alert</code> di atas.</p> 
+         <p>Tetapi bagaimana jika kita ingin menampilkan backslash <code>\</code> di dalam sebuah string?</p> 
+         <p>Hal tersebut bisa dilakukan, tetapi kita harus menulisnya dua kali seperti ini <code>\\</code>:</p> 
+         <div id="dkf2y3zddt" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( `The backslash: \\` ); // The backslash: \</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="panjang-string" href="string.html#panjang-string">Panjang string</a></h2> 
+         <p>Properti <code>length</code> memiliki panjang dari string:</p> 
+         <div id="bz84eqez7j" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( `My\n`.length ); // 3</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perlu diingat bahwa <code>\n</code> adalah sebuah karakter spesial, jadi panjang dari string adalah <code>3</code>.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>length</code> adalah sebuah properti</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Orang dengan latar belakang di bahasa pemrograman lain kadang salah mengetik <code>str.length()</code> alih-alih <code>str.length</code>. Hal tersebut tidak bekerja.</p> 
+           <p>Perlu diingat bahwa <code>str.length</code> adalah properti numerik, bukan sebuah fungsi. Tidak perlu menambahkan kurung di belakangnya.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengakses-karakter-di-dalam-string" href="string.html#mengakses-karakter-di-dalam-string">Mengakses karakter di dalam string</a></h2> 
+         <p>Untuk mengakses karakter pada posisi <code>pos</code>, digunakan kurung kotak <code>[pos]</code> atau dengan method <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/charAt">str.charAt(pos)</a>. Karakter pertama dimulai dari posisi ke-0:</p> 
+         <div id="te1djkygh8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = `Hello`;
+
+// karakter pertama
+alert( str[0] ); // H
+alert( str.charAt(0) ); // H
+
+// karakter terakhir
+alert( str[str.length - 1] ); // o</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kurung kotak adalah cara modern untuk mengakses sebuah karakter, sementara <code>charAt</code> ada karena alasan historis.</p> 
+         <p>Perbedaan satu-satunya di antara mereka adalah apabila tidak ada karakter yang ditemukan, <code>[]</code> mengembalikan <code>undefined</code>, dan <code>charAt</code> mengembalikan string kosong:</p> 
+         <div id="l8dxxwbk9v" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = `Hello`;
+
+alert( str[1000] ); // undefined
+alert( str.charAt(1000) ); // '' (string kosong)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa mengakses karakter per karakter menggunakan sintaks <code>for..of</code>:</p> 
+         <div id="9iq4z60lkm" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>for (let char of "Hello") {
+  alert(char); // H,e,l,l,o (char bernilai "H", lalu "e", lalu "l", dan seterusnya)
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="string-bersifat-tidak-dapat-diubah" href="string.html#string-bersifat-tidak-dapat-diubah">String bersifat tidak dapat diubah</a></h2> 
+         <p>Nilai string tidak dapat diubah di Javascript. Tak mungkin mengubah sebuah karakter.</p> 
+         <p>Mari kita coba buktikan:</p> 
+         <div id="h6w6e3axdw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = 'Hi';
+
+str[0] = 'h'; // galat
+alert( str[0] ); // tidak bekerja</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Salah satu cara untuk mengatasi hal tersebut adalah untuk membuat string baru lalu memasukkan nilainya ke <code>str</code>.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="nl03j9f60f" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = 'Hi';
+
+str = 'h' + str[1]; // mengganti nilai string
+
+alert( str ); // hi</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di bab ini kita akan melihat contoh lebih banyak dari ini.</p> 
+         <h2><a class="main__anchor" name="mengganti-case" href="string.html#mengganti-case">Mengganti case</a></h2> 
+         <p>Metode <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase">toLowerCase()</a> dan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase">toUpperCase()</a> mengganti case:</p> 
+         <div id="m0dlox985t" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 'Interface'.toUpperCase() ); // INTERFACE
+alert( 'Interface'.toLowerCase() ); // interface</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Atau, apabila kita hanya ingin sebuah karakter yang diubah menjadi huruf kecil:</p> 
+         <div id="folvywrvnp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 'Interface'[0].toLowerCase() ); // 'i'</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mencari-substring" href="string.html#mencari-substring">Mencari substring</a></h2> 
+         <p>Ada banyak cara untuk mencari sebuah substring di dalam sebuah string.</p> 
+         <h3><a class="main__anchor" name="str-indexof" href="string.html#str-indexof">str.indexOf</a></h3> 
+         <p>Cara yang pertama yaitu <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf">str.indexOf(substr, pos)</a>.</p> 
+         <p>Method ini mencari <code>substr</code> di dalam <code>str</code>, mulai dari posisi <code>pos</code> yang diberikan, dan mengembalikan posisi dimana substring ditemukan atau <code>-1</code> jika tidak ditemukan.</p> 
+         <p>Misalnya:</p> 
+         <div id="ywsnwiymbl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = 'Widget with id';
+
+alert( str.indexOf('Widget') ); // 0, karena 'Widget' ditemukan di awal string
+alert( str.indexOf('widget') ); // -1, tidak ditemukan, karena pencarian bersifat case-sensitive
+
+alert( str.indexOf("id") ); // 1, "id" ditemukan pada posisi 1 (..idget with id)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Parameter kedua yang opsional memperbolehkan kita untuk mencari dari posisi yang ditentukan.</p> 
+         <p>Misalnya, kemunculan pertama <code>"id"</code> ada di posisi <code>1</code>. Untuk mencari kemunculan berikutnya, ayo kita mulai pencarian dari posisi <code>2</code>:</p> 
+         <div id="7b8hb25jad" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = 'Widget with id';
+
+alert( str.indexOf('id', 2) ) // 12</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita tertarik dengan semua kemunculan, kita bisa menjalankan <code>indexOf</code> di dalam loop. Setiap panggilan dibuat dengan posisi setelah kemunculan sebelumnya:</p> 
+         <div id="pekkcqvu77" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = 'As sly as a fox, as strong as an ox';
+
+let target = 'as'; // mari kita cari
+
+let pos = 0;
+while (true) {
+  let foundPos = str.indexOf(target, pos);
+  if (foundPos == -1) break;
+
+  alert( `Found at ${foundPos}` );
+  pos = foundPos + 1; // lanjutkan pencarian dari posisi berikutnya
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Algoritma yang sama dapat ditulis lebih pendek:</p> 
+         <div id="hoi8zv63pz" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "As sly as a fox, as strong as an ox";
+let target = "as";
+
+let pos = -1;
+while ((pos = str.indexOf(target, pos + 1)) != -1) {
+  alert( pos );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>str.lastIndexOf(substr, position)</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ada juga method yang hampir sama <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf">str.lastIndexOf(substr, position)</a> yang mencari dari akhir sebuah string sampai ke awalnya.</p> 
+           <p>Cara tersebut akan menemukan kemunculan dalam urutan yang terbalik.</p> 
+          </div> 
+         </div> 
+         <p>Ada sedikit kerepotan dalam menggunakan <code>indexOf</code> di dalam <code>if</code>. Kita tidak dapat menggunakannya seperti ini:</p> 
+         <div id="iozuzxzn3d" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "Widget with id";
+
+if (str.indexOf("Widget")) {
+    alert("We found it"); // tidak bekerja!
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Contoh di atas tidak bekerja karena <code>str.indexOf("Widget")</code> mengembalikan <code>0</code> (artinya kemunculan ditemukan di awal string). <code>if</code> menganggap <code>0</code> sebagai <code>false</code>.</p> 
+         <p>Jadi, kita harus mengecek dengan nilai <code>-1</code>, seperti ini:</p> 
+         <div id="60r2zxtva8" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "Widget with id";
+
+if (str.indexOf("Widget") != -1) {
+    alert("We found it"); // kalau sekarang berhasil!
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h4><a class="main__anchor" name="trik-bitwise-not" href="string.html#trik-bitwise-not">Trik bitwise NOT</a></h4> 
+         <p>Salah satu trik lama yang digunakan disini adalah operator <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#Bitwise_NOT">bitwise NOT</a> <code>~</code>. Operator ini mengubah angka menjadi integer 32-bit (menghilangkan bagian desimal jika ada) lalu menegasikan semua bit pada representasi binernya.</p> 
+         <p>Dalam praktik, hal tersebut berarti: untuk integer 32-bit <code>~n</code> sama dengan <code>-(n+1)</code>.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="ima8t1wb8c" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( ~2 ); // -3, sama dengan -(2+1)
+alert( ~1 ); // -2, sama dengan -(1+1)
+alert( ~0 ); // -1, sama dengan -(0+1)
+alert( ~-1 ); // 0, sama dengan -(-1+1)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang kita lihat, <code>~n</code> bernilai nol apabila <code>n == -1</code> (untuk semua signed integer <code>n</code>).</p> 
+         <p>Jadi, pengecekan di dalam <code>if ( ~str.indexOf("...") )</code> bernilai benar apabila hasil dari <code>indexOf</code> tidak bernilai <code>-1</code>. Dengan kata lain, jika kemunculan ditemukan.</p> 
+         <p>Orang-orang menggunakannya untuk memperpendek pengecekan <code>indexOf</code>:</p> 
+         <div id="w6rlnrpn6d" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = "Widget";
+
+if (~str.indexOf("Widget")) {
+  alert( 'Found it!' ); // bekerja
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Biasanya tidak direkomendasikan untuk menggunakan fitur bahasa dengan cara yang tidak jelas, tetapi trik ini biasa digunakan di kode yang kuno, jadi kita harus memahaminya.</p> 
+         <p>Ingat: <code>if (~str.indexOf(...))</code> dibaca sebagai ???if ditemukan???.</p> 
+         <p>Untuk lebih detail, karena bilangan yang besar dipotong menjadi 32-bit oleh operator <code>~</code>, ada angka lain yang memberikan hasil <code>0</code>, angka yang terkecil yaitu <code>~4294967295=0</code>. Hal tersebut menyebabkan trik ini benar apabila string yang dites tidak sepanjang itu.</p> 
+         <p>Kita dapat melihat bahwa trik ini hanya digunakan di kode yang kuno, karena Javascript modern menyediakan method <code>.includes</code> (lihat di bawah).</p> 
+         <h3><a class="main__anchor" name="includes-startswith-endswith" href="string.html#includes-startswith-endswith">includes, startsWith, endsWith</a></h3> 
+         <p>Method yang lebih modern <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/includes">str.includes(substr, pos)</a> mengembalikan <code>true/false</code> tergantung dengan apakah <code>str</code> mengandung <code>substr</code> di dalamnya.</p> 
+         <p>Ini adalah pilihan yang cocok apabila kita hanya perlu mengetes apakah <code>substr</code> ada, tetapi tidak memerlukan posisinya:</p> 
+         <div id="f37vnbdi42" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "Widget with id".includes("Widget") ); // true
+
+alert( "Hello".includes("Bye") ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Parameter opsinal kedua dari <code>str.includes</code> adalah posisi dimana pencarian mulai dilakukan:</p> 
+         <div id="uivbptr208" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "Widget".includes("id") ); // true
+alert( "Widget".includes("id", 3) ); // false, dari posisi 3 tidak ditemukan "id"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Method <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith">str.startsWith</a> dan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith">str.endsWith</a> melakukan fungsi seperti namanya:</p> 
+         <div id="kiemdknv6b" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "Widget".startsWith("Wid") ); // true, "Widget" diawali oleh "Wid"
+alert( "Widget".endsWith("get") ); // true, "Widget" diakhiri oleh "get"</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengambil-substring" href="string.html#mengambil-substring">Mengambil substring</a></h2> 
+         <p>Ada 3 cara untuk mengambil sebuah substring di Javascript: <code>substring</code>, <code>substr</code> dan <code>slice</code>.</p> 
+         <dl> 
+          <dt> 
+           <code>str.slice(start [, end])</code> 
+          </dt> 
+          <dd> 
+           <p>Mengembalikan bagian dari string dari <code>start</code> sampai (tapi tidak termasuk) <code>end</code>.</p> 
+           <p>Sebagai contoh:</p> 
+           <div id="z6v7r6z8cp" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "stringify";
+alert( str.slice(0, 5) ); // 'strin', substring dari posisi 0 sampai 5 (tidak termasuk 5)
+alert( str.slice(0, 1) ); // 's', dari 0 sampai 1, tetapi tidak termasuk 1, jadi hanya karakter pada posisi 0</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Jika tidak ada parameter kedua, maka <code>slice</code> akan mengambil semua bagian dari <code>start</code> sampai akhir string:</p> 
+           <div id="5k3hqwclyt" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:13,&quot;end&quot;:20}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "stringify";
+alert( str.slice(2) ); // ringify, dari posisi kedua sampai terakhir</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Nilai negatif untuk <code>start/end</code> juga bisa digunakan. Nilai negatif berarti posisinya dihitung dari akhir string:</p> 
+           <div id="a4s4q7x3un" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:16,&quot;end&quot;:19}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "stringify";
+
+// mulai dari posisi ke-4 dari kanan, berakhir di posisi pertama dari kanan
+alert( str.slice(-4, -1) ); // gif</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>str.substring(start [, end])</code> 
+          </dt> 
+          <dd> 
+           <p>Mengembalikan bagian dari string <em>di antara</em> <code>start</code> dan <code>end</code>.</p> 
+           <p>Method ini hampir sama dengan <code>slice</code>, tetapi nilai <code>start</code> boleh lebih besar daripada <code>end</code>.</p> 
+           <p>Sebagai contoh:</p> 
+           <div id="ehlk1iyy81" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:13,&quot;end&quot;:17}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "stringify";
+
+// kedua ini sama saja untuk substring
+alert( str.substring(2, 6) ); // "ring"
+alert( str.substring(6, 2) ); // "ring"
+
+// ...tetapi tidak untuk slice:
+alert( str.slice(2, 6) ); // "ring" (sama)
+alert( str.slice(6, 2) ); // "" (string kosong)</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Parameter negatif tidak didukung (tidak seperti slice), mereka dianggap sebagai <code>0</code>.</p> 
+          </dd> 
+          <dt> 
+           <code>str.substr(start [, length])</code> 
+          </dt> 
+          <dd> 
+           <p>Mengembalikan substring dari <code>start</code>, dengan panjang <code>length</code>.</p> 
+           <p>Dibandingkan dengan cara-cara sebelumnya, cara ini memperbolehkan kita untuk menyebutkan <code>length</code> alih-alih posisi akhir dari string:</p> 
+           <div id="tao81m08nk" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:13,&quot;end&quot;:17}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "stringify";
+alert( str.substr(2, 4) ); // ring, dari posisi ke-2 ambil 4 karakter</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Parameter pertama mungkin bernilai negatif, untuk menghitung dari akhir string:</p> 
+           <div id="veevmzjnse" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:16,&quot;end&quot;:18}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let str = "stringify";
+alert( str.substr(-4, 2) ); // gi, dari posisi ke-4 ambil 2 karakter</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+         </dl> 
+         <p>Mari kita review cara-cara tersebut untuk menghindari kebingungan:</p> 
+         <table> 
+          <thead> 
+           <tr> 
+            <th>method</th> 
+            <th>mengambil???</th> 
+            <th>negatives</th> 
+           </tr> 
+          </thead> 
+          <tbody> 
+           <tr> 
+            <td><code>slice(start, end)</code></td> 
+            <td>dari <code>start</code> sampai <code>end</code> (tidak termasuk <code>end</code>)</td> 
+            <td>nilai negatif diperbolehkan</td> 
+           </tr> 
+           <tr> 
+            <td><code>substring(start, end)</code></td> 
+            <td>antara <code>start</code> dan <code>end</code></td> 
+            <td>nilai negatif berarti mean <code>0</code></td> 
+           </tr> 
+           <tr> 
+            <td><code>substr(start, length)</code></td> 
+            <td>dari <code>start</code> ambil <code>length</code> karakter</td> 
+            <td><code>start</code> negatif diperbolehkan</td> 
+           </tr> 
+          </tbody> 
+         </table> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Cara mana yang harus kita gunakan?</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Semuanya dapat melakukan pekerjaannya. Secara formal, <code>substr</code> memiliki kekurangan: fungsi ini tidak tercantum di spesifikasi inti Javascript, tetapi di Annex B, yang mencakup hanya fitur browser yang ada karena alasan historis. Jadi, environment non-browser mungkin gagal untuk mendukungnya. Tetapi dalam praktik fungsi ini bekerja di mana saja.</p> 
+           <p>Dibandingkan dengan dua varian yang lain, <code>slice</code> lebih fleksibel, karena memperbolehkan parameter negatif dan lebih pendek untuk ditulis. Jadi, dari ketiga cara sudah cukup untuk mengingat <code>slice</code>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="membandingkan-string" href="string.html#membandingkan-string">Membandingkan string</a></h2> 
+         <p>Seperti yang kita tahu dari bab <a href="comparison.html">Perbandingan</a>, string dibandingkan karakter per karakter dengan urutan alfabet.</p> 
+         <p>Akan tetapi, ada beberapa pengecualian.</p> 
+         <ol> 
+          <li> <p>Huruf kecil selalu lebih besar dibanding huruf kapital:</p> 
+           <div id="hj2hjigior" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( 'a' &gt; 'Z' ); // true</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p>Karakter dengan tanda diakritik ???tidak sesuai urutan???:</p> 
+           <div id="ku4cil8hve" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( '??sterreich' &gt; 'Zealand' ); // true</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Hal ini dapat menyebabkan hasil yang aneh apabila kita mengurutkan nama-nama negara. Biasanya orang mengharapkan <code>Zealand</code> muncul setelah <code>??sterreich</code> di daftar.</p> </li> 
+         </ol> 
+         <p>Untuk memahami apa yang terjadi, mari kita review representasi internal string di Javascript.</p> 
+         <p>Semua string menggunakan encoding <a href="https://en.wikipedia.org/wiki/UTF-16">UTF-16</a>. Yaitu: setiap karakter memiliki masing-masing kode numerik. Ada method spesial yang memperbolehkan kita untuk mengambil karakter dari kode dan sebaliknya.</p> 
+         <dl> 
+          <dt> 
+           <code>str.codePointAt(pos)</code> 
+          </dt> 
+          <dd> 
+           <p>Mengembalikan kode untuk karakter pada posisi <code>pos</code>:</p> 
+           <div id="zyh8ztmyq1" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// karakter dengan case yang berbeda memiliki kode berbeda
+alert( "z".codePointAt(0) ); // 122
+alert( "Z".codePointAt(0) ); // 90</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+          <dt> 
+           <code>String.fromCodePoint(code)</code> 
+          </dt> 
+          <dd> 
+           <p>Membuat sebuah karakter berdasarkan <code>code</code> numeriknya</p> 
+           <div id="qdcu2awwqy" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>alert( String.fromCodePoint(90) ); // Z</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Kita juga dapat membuat karakter unicode dengan kode mereka menggunakan <code>\u</code> yang diikuti oleh kode heksadesimal:</p> 
+           <div id="r1l17w3nk8" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// 90 bernilai 5a di dalam sistem heksadesimal
+alert( '\u005a' ); // Z</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </dd> 
+         </dl> 
+         <p>Sekarang mari kita lihat karakter dengan kode di antara <code>65..220</code> (alfabet latin dan sedikit tambahan) dengan membuat string yang terdiri dari mereka:</p> 
+         <div id="7b29kzha7l" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let str = '';
+
+for (let i = 65; i &lt;= 220; i++) {
+  str += String.fromCodePoint(i);
+}
+alert( str );
+// ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~??????????
+// ????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kan? Huruf kapital muncul pertama, lalu beberapa karakter spesial, lalu huruf kecil, dan <code>??</code> berada di dekat akhir string.</p> 
+         <p>Sekarang terlihat jelas kenapa <code>a &gt; Z</code>.</p> 
+         <p>Karakter-karakter dibandingkan berdasarkan kode numeriknya. Kode yang lebih besar berarti karakter tersebut lebih besar. Kode untuk <code>a</code> (97) lebih besar dibandingkan dengan kode untuk <code>Z</code> (90).</p> 
+         <ul> 
+          <li>Semua huruf kecil muncul setelah huruf kapital karena kode mereka lebih besar.</li> 
+          <li>Beberapa karakter seperti <code>??</code> terpisah dari alfabet utama. Disini, kodenya lebih besar dibandingkan semua karakter dari <code>a</code> to <code>z</code>.</li> 
+         </ul> 
+         <h3><a class="main__anchor" name="perbandingan-yang-benar" href="string.html#perbandingan-yang-benar">Perbandingan yang benar</a></h3> 
+         <p>Algoritma yang ???benar??? untuk melakukan perbandingan string lebih kompleks dari kelihatannya, setiap bahasa memiliki alfabet mereka masing-masing.</p> 
+         <p>Jadi, browser harus tahu bahasa yang digunakan untuk perbandingan.</p> 
+         <p>Beruntungnya, semua browser modern (IE10- memerlukan library tambahan ) mendukung standar internasionalisasi <a href="http://www.ecma-international.org/ecma-402/1.0/ECMA-402.pdf">ECMA 402</a>.</p> 
+         <p>Hal tersebut menyediakan cara spesial untuk membandingkan stringi di berbeda bahasa, mengikuti peraturan mereka.</p> 
+         <p>Method <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare">str.localeCompare(str2)</a> mengembalikan sebuah interger yang menandakan apakah <code>str</code> lebih kecil, sama dengan atau lebih besar dari <code>str2</code> menurut peraturan-peraturan bahasa:</p> 
+         <ul> 
+          <li>Mengembalikan nilai negatif jika <code>str</code> lebih kecil dibandingkan <code>str2</code></li> 
+          <li>Mengembalikan nilai positif jika <code>str</code> lebih besar dibandingkan <code>str2</code></li> 
+          <li>Mengembalikan <code>0</code> apabila mereka sama.</li> 
+         </ul> 
+         <p>Seperti contoh:</p> 
+         <div id="6znqlxpgeh" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( '??sterreich'.localeCompare('Zealand') ); // -1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Method ini sebenarnya menerima 2 argumen tambahan yang disebutkan di <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare">dokumentasi</a>, yang memperbolehkan untuk menyebutkan bahasa (yang biasanya diambil dari environment, urutan huruf bergantung dari bahasa) dan menyebutkan peraturan-peraturan tambahan seperti case sensitivity atau apakah <code>"a"</code> and <code>"a??"</code> dianggap sama dan seterusnya.</p> 
+         <h2><a class="main__anchor" name="bagian-internal-dari-unicode" href="string.html#bagian-internal-dari-unicode">Bagian internal dari unicode</a></h2> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Pengetahuan lanjutan</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Bagian ini membahas lebih dalam tentang bagian internal string. Pengetahuan ini akan berguna apabila Anda akan berurusan dengan emoji, simbol matematika, hieroglif, atau simbol-simbol lain yang langka.</p> 
+           <p>Anda dapat melewati bagian ini jika tidak berurusan dengan mereka.</p> 
+          </div> 
+         </div> 
+         <h3><a class="main__anchor" name="surrogate-pairs" href="string.html#surrogate-pairs">Surrogate pairs</a></h3> 
+         <p>Semua karakter yang sering digunakan memiliki kode 2-byte. Huruf di kebanyakan negara eropa, angka, dan bahkan kebanyakan hieroglif, memiliki representasi 2-byte.</p> 
+         <p>Tetapi 2 byte hanya memperbolehkan 65536 kombinasi dan itu tidak cukup untuk semua kombinasi simbol. Jadi simbol-simbol yang langka menggunakan encoding dengan sepasang karakter 2-byte yang disebut ???surrogate pair???.</p> 
+         <p>Panjang dari simbol tersebut adalah <code>2</code>:</p> 
+         <div id="06ri37ypbd" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( '????'.length ); // 2, SIMBOL MATEMATIKA X BESAR
+alert( '????'.length ); // 2, MUKA DENGAN TANGISAN BAHAGIA
+alert( '????'.length ); // 2, karakter mandarin</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perlu diingat bahwa surrogate pair tidak ada pada saat Javascript dibuat, oleh karena itu fitur ini tidak diproses secara benar oleh bahasa ini!</p> 
+         <p>Kita sebenarnya memiliki sebuah simbol di setiap string di atas, tetapi <code>length</code> menunjukkan panjang <code>2</code>.</p> 
+         <p><code>String.fromCodePoint</code> dan <code>str.codePointAt</code> adalah beberapa method yang menangani surrogate pair dengan benar. Belum lama ini mereka muncul di bahasa ini. Sebelum mereka, hanya ada <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode">String.fromCharCode</a> dan <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt">str.charCodeAt</a>. Method-method tersebut sebenarnya sama saja dengan <code>fromCodePoint/codePointAt</code>, tetapi tidak bisa digunakan untuk surrogate pair.</p> 
+         <p>Mengambil sebuah simbol terkadang agak susah, karena surrogate pair diperlakukan sebagai dua karakter:</p> 
+         <div id="vydqplnkzk" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( '????'[0] ); // simbol aneh...
+alert( '????'[1] ); // ...bagian dari surrogate pair</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perlu diingat bahwa bagian dari surrogate pair tidak memiliki arti tanpa pasangan yang lain. Jadi contoh di atas menampilkan karakter aneh.</p> 
+         <p>Secara teknis, surrogate pair juga dapat dideteksi berdasarkan kode mereka, jika sebuah karakter memiliki kode di antara <code>0xd800..0xdbff</code>, maka karakter ini adalah bagian pertama dari surrogate pair. Karakter selanjutnya (bagian kedua) harus berada di antara <code>0xdc00..0xdfff</code>. Interval ini sudah dipesan secara khusus untuk surrogate pair oleh standar.</p> 
+         <p>Pada kasus diatas:</p> 
+         <div id="6wwjsmqmc2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// charCodeAt is not surrogate-pair aware, so it gives codes for parts
+
+alert( '????'.charCodeAt(0).toString(16) ); // d835, diantara 0xd800 dan 0xdbff
+alert( '????'.charCodeAt(1).toString(16) ); // dcb3, diantara 0xdc00 dan 0xdfff</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Anda akan menemukan cara lain untuk bertanganan dengan surrogate pair nanti di bab <a href="iterable.html">Iterables / Bisa di iterasi</a>. Mungkin juga ada library-library yang untuk hal tersebut, tetapi tidak ada yang cukup terkenal untuk disarankan di sini.</p> 
+         <h3><a class="main__anchor" name="tanda-diakritik-dan-normalisasi" href="string.html#tanda-diakritik-dan-normalisasi">Tanda diakritik dan normalisasi</a></h3> 
+         <p>Di banyak bahasa terdapat simbol-simbol yang terdiri dari huruf dasar dengan tanda di atas/bawahnya.</p> 
+         <p>Sebagai contoh, karakter <code>a</code> dapat menjadi huruf dasar untuk: <code>??????????????</code>. Kebanyakan karakter ???komposit??? memiliki kode mereka sendiri di tabel UTF-16. Hal tersebut tidak selalu terjadi, karena terlalu banyak kemungkinan kombinasi.</p> 
+         <p>Untuk mendukung komposisi yang fleksibel, UTF-16 memperbolehkan kita untuk menggunakan beberapa karakter unicode: sebuah huruf dasar yang diikuti oleh satu atau lebih karakter ???tanda??? yang ???menghiasinya???.</p> 
+         <p>Sebagai contoh, jika kita memiliki <code>S</code> diikuti dengan karakter spesial ???titik di atas??? (kode <code>\u0307</code>), maka akan ditampilkan S??.</p> 
+         <div id="re09ad0d4c" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 'S\u0307' ); // S??</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita memerlukan tanda tambahan di atas huruf (atau di bawahnya) ??? tidak masalah, tambahkan saja karakter tanda yang diperlukan.</p> 
+         <p>Sebagai contoh, jika kita tambahkan sebuah karakter ???titik di bawah??? (kode <code>\u0323</code>), maka kita akan mendapatkan ???S dengan titik di atas dan di bawah???: <code>S????</code>.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="vhfvtfn6fg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 'S\u0307\u0323' ); // S????</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hal tersebut memberikan banyak fleksibilitas, tetapi juga masalah yang menarik: dua karakter mungkin terlihat sama, tetapi dapat direpresentasikan dengan komposisi unicode yang berbeda.</p> 
+         <p>Sebagai contoh:</p> 
+         <div id="qw2gdnqeo5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let s1 = 'S\u0307\u0323'; // S????, S + titik di atas + titik di bawah
+let s2 = 'S\u0323\u0307'; // S????, S + titik di atas + titik di bawah
+
+alert( `s1: ${s1}, s2: ${s2}` );
+
+alert( s1 == s2 ); // false walaupun karakter terlihat sama (?!)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Untuk menyelesaikan masalah ini, terdapat sebuah algoritma ???normalisasi unicode??? yang membuat setiap string menjadi satu bentuk ???normal???.</p> 
+         <p>Algoritma tersebut diimplementasikan oleh <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String/normalize">str.normalize()</a>.</p> 
+         <div id="1qsp2s6csl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "S\u0307\u0323".normalize() == "S\u0323\u0307".normalize() ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Agak lucu bahwa di situasi kita <code>normalize()</code> menjadikan sekumpulan karakter dengan panjang 3 menjadi satu: <code>\u1e68</code> (S dengan dua titik).</p> 
+         <div id="sxiubn7fwo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( "S\u0307\u0323".normalize().length ); // 1
+
+alert( "S\u0307\u0323".normalize() == "\u1e68" ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada kenyataan, hal ini tidak selalu berlaku. Contoh diatas berlaku karena simbol <code>???</code> is ???cukup sering digunakan???, jadi pembuat UTF-16 memasukkannya di tabel utama dan memberinya sebuah kode.</p> 
+         <p>Jika Anda ingin belajar lebih lanjut tentang aturan normalisasi dan variasinya ??? mereka dideskripsikan di appendix Unicode standard: <a href="http://www.unicode.org/reports/tr15/">Unicode Normalization Forms</a>, tetapi untuk kebanyakan kasus informasi yang terdapat di bagian ini sudah cukup.</p> 
+         <h2><a class="main__anchor" name="kesimpulan" href="string.html#kesimpulan">Kesimpulan</a></h2> 
+         <ul> 
+          <li>Terdapat 3 jenis tanda petik. Backtick membolehkan string memiliki baris ganda dan menyisipkan expresi <code>${???}</code>.</li> 
+          <li>String di Javascript diencode menggunakan UTF-16.</li> 
+          <li>Kita bisa memakai karakter seperti <code>\n</code> dan memasukkan karakter berdasarkan unicode mereka menggunakan <code>\u...</code>.</li> 
+          <li>Untuk mendapatkan karakter, gunakan: <code>[]</code>.</li> 
+          <li>Untuk mendapatkan substring, gunakan: <code>slice</code> atau <code>substring</code>.</li> 
+          <li>Untuk mengubah case kecil/besar dari string, gunakan: <code>toLowerCase/toUpperCase</code>.</li> 
+          <li>Untuk mencari substring, gunakan: <code>indexOf</code>, atau <code>includes/startsWith/endsWith</code> untuk pengecekan sederhana.</li> 
+          <li>Untuk membandingkan string mengikuti bahasa, gunakan <code>localeCompare</code>, jika tidak mereka akan dibandingkan berdasarkan kode karakter.</li> 
+         </ul> 
+         <p>Ada beberapa metode string lain yang berguna:</p> 
+         <ul> 
+          <li><code>str.trim()</code> ??? menghilangkan (???memotong???) spasi dari awal dan akhir dari sebuah string.</li> 
+          <li><code>str.repeat(n)</code> ??? mengulang string sebanyak <code>n</code> kali.</li> 
+          <li>???dan masih banyak lagi yang dapat ditemukan di dalam <a href="https://developer.mozilla.org/id/docs/Web/JavaScript/Reference/Global_Objects/String">manual</a>.</li> 
+         </ul> 
+         <p>String juga memiliki method-method untuk mencari/mengganti dengan ekspresi reguler (regular expression). Tetapi itu adalah topik yang luas, jadi topik ini dibahas di bagiannya sendiri <a href="regular-expressions.html">Regular expressions</a>.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="string.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="string.html#buat-karakter-pertama-menjadi-besar" name="buat-karakter-pertama-menjadi-besar">Buat karakter pertama menjadi besar</a></h3> 
+           <a class="task__open-link" href="task/ucfirst.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulislah sebuah fungsi <code>ucFirst(str)</code> yang mengembalikan <code>str</code> dengan karakter pertama yang besar, sebagai contoh:</p> 
+            <div id="a7637ip0yr" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>ucFirst("john") == "John";</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/9o5di8WG3yaUx9hw?p=preview" target="_blank" data-plunk-id="9o5di8WG3yaUx9hw">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Kita tidak dapat ???mengganti??? karakter pertama, karena di Javascript string bersifat tidak dapat berubah.</p> 
+              <p>Tetapi kita dapat membuat sebuah string baru berdasarkan yang sudah ada, dengan karakter pertama yang besar:</p> 
+              <div id="apuudhtli2" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let newStr = str[0].toUpperCase() + str.slice(1);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Tetapi ada sedikit masalah. Jika <code>str</code> bernilai kosong, maka <code>str[0]</code> bernilai <code>undefined</code>, dan <code>undefined</code> tidak memiliki method <code>toUpperCase()</code>. Hal tersebut yang menyebabkan error.</p> 
+              <p>Ada dua cara di sini:</p> 
+              <ol> 
+               <li>Gunakan <code>str.charAt(0)</code>, karena method ini selalu mengembalikan string (mungkin kosong).</li> 
+               <li>Tambahkan pengecekan string kosong.</li> 
+              </ol> 
+              <p>Berikut adalah cara yang kedua:</p> 
+              <div id="xrqe2963g2" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function ucFirst(str) {
+  if (!str) return str;
+
+  return str[0].toUpperCase() + str.slice(1);
+}
+
+alert( ucFirst("john") ); // John</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/HVc0GpDjZdag4Bxi?p=preview" target="_blank" data-plunk-id="HVc0GpDjZdag4Bxi">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="string.html#mengecek-apakah-spam" name="mengecek-apakah-spam">Mengecek apakah spam</a></h3> 
+           <a class="task__open-link" href="task/check-spam.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulislah sebuah fungsi <code>checkSpam(str)</code> yang mengembalikan <code>true</code> apabila <code>str</code> mengandung ???viagra??? atau ???XXX???, jika tidak kembalikan <code>false</code>.</p> 
+            <p>Fungsi yang ditulis harus bersifat case-insensitive:</p> 
+            <div id="mogsh3o9q3" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>checkSpam('buy ViAgRA now') == true
+checkSpam('free xxxxx') == true
+checkSpam("innocent rabbit") == false</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/XE8NjEDfJ8iOzkbK?p=preview" target="_blank" data-plunk-id="XE8NjEDfJ8iOzkbK">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Untuk membuat pencarian bersifat case-insensitive, mari kita ubah string menjadi huruf kecil sebelum kita lakukan pencarian:</p> 
+              <div id="za4v4k28oj" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function checkSpam(str) {
+  let lowerStr = str.toLowerCase();
+
+  return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+}
+
+alert( checkSpam('buy ViAgRA now') );
+alert( checkSpam('free xxxxx') );
+alert( checkSpam("innocent rabbit") );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/H6U5yC3cZWGkep6w?p=preview" target="_blank" data-plunk-id="H6U5yC3cZWGkep6w">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="string.html#memotong-teks-menjadi-lebih-pendek" name="memotong-teks-menjadi-lebih-pendek">Memotong teks menjadi lebih pendek</a></h3> 
+           <a class="task__open-link" href="task/truncate.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buatlah sebuah fungsi <code>truncate(str, maxlength)</code> yang mengecek panjang dari <code>str</code> dan, apabila panjangnya melebihi <code>maxlength</code> ??? ganti akhir dari <code>str</code> menjadi karakter elipsis <code>"???"</code>, supaya panjangnya sama dengan <code>maxlength</code>.</p> 
+            <p>Hasil kembalian dari fungsi seharusnya string yang dipotong (jika diperlukan).</p> 
+            <p>Sebagai contoh:</p> 
+            <div id="ggb110ay9i" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>truncate("What I'd like to tell on this topic is:", 20) = "What I'd like to te???"
+
+truncate("Hi everyone!", 20) = "Hi everyone!"</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/gvMSo9SriphPQL8Q?p=preview" target="_blank" data-plunk-id="gvMSo9SriphPQL8Q">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Panjang maksimum adalah <code>maxlength</code>, jadi kita perlu memotongnya menjadi lebih pendek, untuk memberi tempat bagi elipsis.</p> 
+              <p>Perlu diperhatikan bahwa elipsis hanyalah sebuah karakter unicode, bukan tiga karakter titik.</p> 
+              <div id="s75cxdi9d1" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="string.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="string.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function truncate(str, maxlength) {
+  return (str.length &gt; maxlength) ?
+    str.slice(0, maxlength - 1) + '???' : str;
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/BjKcpF2dtqeZ9fmx?p=preview" target="_blank" data-plunk-id="BjKcpF2dtqeZ9fmx">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="string.html#ambil-uangnya" name="ambil-uangnya">Ambil uangnya</a></h3> 
+           <a class="task__open-link" href="task/extract-currency.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita memiliki uang dalam bentuk <code>"$120"</code>. Yaitu: tanda dolar muncul pertama, lalu diikuti oleh angka.</p> 
+            <p>Buatlah sebuah fungsi <code>extractCurrencyValue(str)</code> yang mengambil nilai dari bagian angka string tersebut dan mengembalikannya.</p> 
+            <p>Sebagai contoh:</p> 
+            <div id="amctp0cyrn" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( extractCurrencyValue('$120') === 120 ); // true</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/uH20bai3FBAUVVNX?p=preview" target="_blank" data-plunk-id="uH20bai3FBAUVVNX">Buka sandbox dengan tes.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="5ddcdu8xs5" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function extractCurrencyValue(str) {
+  return +str.slice(1);
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/3ZekYFocR8RDaIXf?p=preview" target="_blank" data-plunk-id="3ZekYFocR8RDaIXf">Buka solusi dengan tes di sandbox.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="number.html" data-tooltip="Angka"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="array.html" data-tooltip="*Array*"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fstring" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fstring" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="data-types.html">Tipe data</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#petik">Petik</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#karakter-spesial">Karakter spesial</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#panjang-string">Panjang string</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#mengakses-karakter-di-dalam-string">Mengakses karakter di dalam string</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#string-bersifat-tidak-dapat-diubah">String bersifat tidak dapat diubah</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#mengganti-case">Mengganti case</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#mencari-substring">Mencari substring</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#mengambil-substring">Mengambil substring</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#membandingkan-string">Membandingkan string</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#bagian-internal-dari-unicode">Bagian internal dari unicode</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#tasks">Tugas (4)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="string.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fstring" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fstring" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

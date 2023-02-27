@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "cn";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Expresi fungsi</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="function-expressions.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Expresi fungsi"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Expresi fungsi"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="function-basics.html"> 
+  <link rel="next" href="arrow-functions-basics.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Expresi fungsi"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffunction-expressions" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffunction-expressions" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="20" max="92" data-tooltip="Pelajaran 20 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="first-steps.html"><span>JavaScript Dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"JavaScript Dasar","item":"https://id.javascript.info/first-steps"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 10 Agustus 2020"> 
+          <div class="updated-at__content">
+            10 Agustus 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Expresi fungsi</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Expresi fungsi"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Di JavaScript, fungsi bukan ???struktur bahasa magis???, melaikan satu bentuk nilai spesial.</p> 
+         <p>Syntax yang kita gunakan sebelumnya disebut <em>Deklarasi Fungsi</em>:</p> 
+         <div id="hesohhwy3l" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi() {
+  alert( "Hello" );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ada syntax lain untuk membuat fungsi yang disebut <em>Expresi Fungsi</em>.</p> 
+         <p>Rupanya seperti ini:</p> 
+         <div id="o1whaou8sw" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function() {
+  alert( "Hello" );
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini, fungsi dibuat dan diisi variabel secara explisit, seperti nilai lain manapun. Tak peduli bagaimana fungsi didefinisi, ia hanya suatu nilai yang disimpan dalam variabel <code>sayHi</code>.</p> 
+         <p>Arti dari sampel kode ini sama: "buatlah fungs dan taruhlah di dalam variabel <code>sayHi</code>".</p> 
+         <p>Kita bahkan bisa mencetak nilai itu menggunakan <code>alert</code>:</p> 
+         <div id="i5bb8ch0tc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi() {
+  alert( "Hello" );
+}
+
+alert( sayHi ); // menampilkan kode fungsi</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tolong ingat bahwa baris terakhir tidak menjalankan fungsi, karena tak ada tanda kurung setelah <code>sayHi</code>. Ada bahasa pemrograman di mana satu penyebutan nama fungsi menyebabkan exekusi fungsi, tapi JavaScript tak seperti itu.</p> 
+         <p>Di JavaScript, fungsi adalah nilai, jadi kita bisa menghadapinya sebagai nilai. Kode di atas menunjukkan representasi stringnya, yang mana kode sumbernya.</p> 
+         <p>Pastinya, fungsi adalah nilai spesial, dengan anggapan bahwa kita bisa memanggilnya seperti <code>sayHi()</code>.</p> 
+         <p>Tapi ia tetaplah nilai. Jadi kita bisa memakainya seperti macam nilai lainnya.</p> 
+         <p>Kita bisa mengkopi fungsi ke variabel lain:</p> 
+         <div id="smorrfwiu9" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function sayHi() {   // (1) buat
+  alert( "Hello" );
+}
+
+let func = sayHi;    // (2) kopi
+
+func(); // Hello     // (3) jalankan kopinya (ia bekerja)!
+sayHi(); // Hello    //     ini juga masih bekerja (kenapa tidak)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Inilah yang terjadi di atas secara detil:</p> 
+         <ol> 
+          <li>Deklarasi Fungsi <code>(1)</code> membuat fungsi dan menaruhnya ke variabel bernama <code>sayHi</code>.</li> 
+          <li>Baris <code>(2)</code> mengkopinya ke variabel <code>func</code>. Tolong ingat lagi: tak ada tanda kurung setelah <code>sayHi</code>. Jika ada, maka <code>func = sayHi()</code> akan menulis <em>hasil panggilan</em> <code>sayHi()</code> ke <code>func</code>, bukan <em>fungsi</em> <code>sayHi</code> itu sendiri.</li> 
+          <li>Sekarang fungsi bisa dipanggil baik sebagai <code>sayHi()</code> maupun <code>func()</code>.</li> 
+         </ol> 
+         <p>Catat bahwa kita jusa bisa menggunakan Expresi Fungsi untuk mendeklarasi <code>sayHi</code>, di baris pertama:</p> 
+         <div id="6taamy7t2g" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let sayHi = function() {
+  alert( "Hello" );
+};
+
+let func = sayHi;
+// ...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Semua akan berjalan sama.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Kenapa ada semicolon di akhir?</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Kamu mungkin penasaran, kenapa Expresi Fungsi punya semicolon <code>;</code> di akhir, tapi Deklarasi Fungsi tidak:</p> 
+           <div id="pmvdg4sz1i" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;cols&quot;:[{&quot;start&quot;:1,&quot;end&quot;:2}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function sayHi() {
+  // ...
+}
+
+let sayHi = function() {
+  // ...
+};</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Jawabannya simpel:</p> 
+           <ul> 
+            <li><code>;</code> tidak dibutuhkan di akhir blok kode dan struktur syntax yang memakai mereka seperti <code>if { ... }</code>, <code>for { }</code>, <code>function f { }</code> dll.</li> 
+            <li>Expresi Fungsi digunakan di dalam pernyataan: <code>let sayHi = ...;</code>, sebagai nilai. Ia bukan blok kode, tapi lebih ke penetapan. Semicolon <code>;</code> disarankan di akhir pernyataan, tak peduli nilainya apa. Jadi semicolon di sini tak ada hubungannya dengan Expresi Fungsi itu sendiri, ia hanya menstop pernyataan.</li> 
+           </ul> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="fungsi-callback" href="function-expressions.html#fungsi-callback">Fungsi callback</a></h2> 
+         <p>Ayo kita lihat pada contoh lain mengoper fungsi sebagai nilai dan menggunakan expresi fungsi.</p> 
+         <p>Kita akan menulis fungsi <code>ask(question, yes, no)</code> dengan tiga parameter:</p> 
+         <dl> 
+          <dt> 
+           <code>question</code> 
+          </dt> 
+          <dd>
+            Teks pertanyaan 
+          </dd> 
+          <dt> 
+           <code>yes</code> 
+          </dt> 
+          <dd>
+            Fungsi yang berjalan jika jawabannya ???Yes??? 
+          </dd> 
+          <dt> 
+           <code>no</code> 
+          </dt> 
+          <dd>
+            Fungsi yang berjalan jika jawabannya ???No??? 
+          </dd> 
+         </dl> 
+         <p>Fungsinya akan menanyakan <code>question</code> dan, tergantung jawabannya pengguna, panggil <code>yes()</code> atau <code>no()</code>:</p> 
+         <div id="ce5qxrd0dd" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "You agreed." );
+}
+
+function showCancel() {
+  alert( "You canceled the execution." );
+}
+
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada praktiknya, fungsi macam ini agak berguna. Perbedaan besar antara <code>ask</code> kehidupan-nyata dan contoh di atas adalah fungsi kehidupan-nyata memakai cara komplex untuk berinteraksi dengan pengguna daripada sekedar <code>confirm</code>. Di peramban, fungsi macam ini biasanya menarik window pertanyaan menarik. Tapi itu cerita lain lagi.</p> 
+         <p><strong>Argumen <code>showOk</code> dan <code>showCancel</code> dari <code>ask</code> dipanggil <em>fungsi callback</em> atau hanya <em>callback</em>.</strong></p> 
+         <p>Idenya adalah kita mengoper fungsi dan berharap ia ???dipanggil kembali??? kemudian jika dibutuhkan. Pada kasus kita, <code>showOk</code> menjadi callback untuk jawaban ???yes???, dan <code>showCancel</code> untuk jawaban ???no???.</p> 
+         <p>Kita bisa memakai Expresi Fungsi untuk menulis fungsi yang sama lebih pendek:</p> 
+         <div id="jl14n5u3jc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:9}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di sini, fungsi dideklarasi tepat di dalam panggilan <code>ask(...)</code>. Mereka tak punya nama, jadinya disebut <em>anonymous</em>. Fungsi macam ini tak bisa diakses di luar <code>ask</code> (karena mereka tak diset ke variabel), tapi itulah yang kita mau di sini.</p> 
+         <p>Kode macam ini muncul di script kita secara sangat alamiah, ia ada di dalam semangat JavaScript.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Fungsi adalah nilai yang mewakili ???aksi???</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Nilai reguler seperti string atau angka mewakiliki <em>data</em>.</p> 
+           <p>Fungsi bisa dianggap sebagai <em>aksi</em>.</p> 
+           <p>Kita bisa mengopernya antara variabel dan menjalankannya kapanpun kita mau.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="expresi-fungsi-vs-deklarasi-fungsi" href="function-expressions.html#expresi-fungsi-vs-deklarasi-fungsi">Expresi Fungsi vs Deklarasi Fungsi</a></h2> 
+         <p>Mari kita rumuskan kunci perbedaan antara Deklarasi dan Expresi Fungsi.</p> 
+         <p>Pertama, syntax: bagaimana membedakan antara mereka dalam kode.</p> 
+         <ul> 
+          <li> <p><em>Deklarasi Fungsi:</em> fungsi, yang dideklarasi sebagai pernyataan terpisah, dalam aliran kode utama.</p> 
+           <div id="99zephb79k" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// Deklarasi Fungsi
+function sum(a, b) {
+  return a + b;
+}</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+          <li> <p><em>Expresi Fungsi:</em> fungsi, yang dibuat dalam expresi atau dalam konstruksi syntax lain. Di sini, fungsi dibuat pada sisi kanan dari ???expresi penetapan??? <code>=</code>:</p> 
+           <div id="m8z0j52z5z" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// Expresi Fungsi
+let sum = function(a, b) {
+  return a + b;
+};</code></pre> 
+             </div> 
+            </div> 
+           </div></li> 
+         </ul> 
+         <p>Perbedaan yang lebih halus ialah <em>ketika</em> fungsi dibuat oleh JavaScript engine.</p> 
+         <p><strong>Expresi Fungsi dibuat ketika exekusi mencapainya dan hanya dapat dipakai saat itu saja.</strong></p> 
+         <p>Sekali aliran exekusi melewati sisi kanan penetapan <code>let sum = function???</code> ??? di sinilah, fungsi dibuat dan bisa digunakan (diset, dipanggil, dll. ) dari sekarang.</p> 
+         <p>Deklarasi Fungsi berbeda.</p> 
+         <p><strong>Deklarasi Fungsi bisa dipanggil lebih cepat dari ia didefinisi.</strong></p> 
+         <p>Misalnya, Deklarasi Fungsi global terlihat di seluruh script, tak peduli di mana ia berada.</p> 
+         <p>Itu karena algoritma internal. Saat JavaScript siap menjalankan script, pertama ia melihat Deklarasi Fungsi global di dalam dan membuat fungsi. Kita bisa anggap itu sebagai ???tahap inisialisasi???.</p> 
+         <p>Dan setelah semua Deklarasi Fungsi diproses, kodenya diexekusi. Jadi ia punya akses ke fungsi-fungsi ini.</p> 
+         <p>Misalnya, ini berjalan:</p> 
+         <div id="ry7pz5jtbl" data-trusted="0" class="code-example" data-refresh="1" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>sayHi("John"); // Hello, John
+
+function sayHi(name) {
+  alert( `Hello, ${name}` );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Deklarasi Fungsi <code>sayHi</code> dibuat saat JavaScript siap memulai scriptnya dan terlihat di manapun di dalam.</p> 
+         <p>???Jika ia Expresi Fungsi, maka ia tak akan berjalan:</p> 
+         <div id="p38nobjgpp" data-trusted="0" class="code-example" data-refresh="1" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>sayHi("John"); // galat!
+
+let sayHi = function(name) {  // (*) tak ada magic lagi
+  alert( `Hello, ${name}` );
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Expresi Fungsi dibuat saat exekusi mencapainya. Itu hanya akan terjadi pada baris <code>(*)</code>. Sudah telat banget.</p> 
+         <p>Fitur spesial lain dari Deklarasi Fungsi ialah scope blok mereka.</p> 
+         <p><strong>Di mode ketat, ketika Deklarasi Fungsi berada di jangkauan blok kode, ia terlihat di manapun di dalam blok. Tapi tidak di luarnya.</strong></p> 
+         <p>Misalnya, bayangkan kita harus mendeklarasi fungsi <code>welcome()</code> tergantung variabel <code>age</code> yang kita dapat saat runtime. Lalu kita berencana akan menggunakannya kemudian.</p> 
+         <p>Jika kita memakai Deklarasi Fungsi, ia tak akan bekerja sesuai harapan:</p> 
+         <div id="3il2x3kgch" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:18,&quot;end&quot;:18}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let age = prompt("What is your age?", 18);
+
+// secara kondisional mendeklarasi fungsi
+if (age &lt; 18) {
+
+  function welcome() {
+    alert("Hello!");
+  }
+
+} else {
+
+  function welcome() {
+    alert("Greetings!");
+  }
+
+}
+
+// ...pakai ini kemudian
+welcome(); // Error: welcome is not defined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu karena Deklarasi Fungsi cuma terlihat di dalam blok kode yang ia tinggali.</p> 
+         <p>Ini contoh lainnya:</p> 
+         <div id="7887p9dw24" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:21,&quot;end&quot;:21},{&quot;start&quot;:9,&quot;end&quot;:9},{&quot;start&quot;:3,&quot;end&quot;:3}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let age = 16; // ambil 16 sebagai contoh
+
+if (age &lt; 18) {
+  welcome();               // \   (berjalan)
+                           //  |
+  function welcome() {     //  |
+    alert("Hello!");       //  |  Deklarasi Fungsi tersedia
+  }                        //  |  di manapun dalam blok kode tempat dia dideklarasi
+                           //  |
+  welcome();               // /   (berjalan)
+
+} else {
+
+  function welcome() {
+    alert("Greetings!");
+  }
+}
+
+// Di sini kita di luar kurung kurawal,
+// jadi kita tak bisa melihat Deklarasi Fungsi yang dibuat di dalamnya.
+
+welcome(); // Error: welcome is not defined</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Apa yang bisa kita lakukan supaya <code>welcome</code> terlihat di luar <code>if</code>?</p> 
+         <p>Pendekatan yang benar ialah menggunakan Expresi Fungsi dan menetapkan <code>welcome</code> ke variabel yang dideklarasi di luar <code>if</code> dan punya visibilitas yang cukup.</p> 
+         <p>Kode ini berjalan sesuai harapan:</p> 
+         <div id="fhqxbuu82u" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:18,&quot;end&quot;:18}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let age = prompt("What is your age?", 18);
+
+let welcome;
+
+if (age &lt; 18) {
+
+  welcome = function() {
+    alert("Hello!");
+  };
+
+} else {
+
+  welcome = function() {
+    alert("Greetings!");
+  };
+
+}
+
+welcome(); // sekarang ok</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Atau kita bisa menyederhanakannya lebih lanjut menggunakan operator tanda tanya <code>?</code>:</p> 
+         <div id="oburul2bc5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="function-expressions.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let age = prompt("What is your age?", 18);
+
+let welcome = (age &lt; 18) ?
+  function() { alert("Hello!"); } :
+  function() { alert("Greetings!"); };
+
+welcome(); // sekarang ok</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Kapan harus memilih Deklarasi Fungsi versus Expresi Fungsi?</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Sebagai aturan praktis, saat kita harus mendeklarasi fungsi, hal pertama yang kita pertimbangkan ialah syntax Deklarasi Fungsi. Ia memberi kebebasan lebih dalam bagaimana mengorganisir kode kita, karena kita bisa memanggil fungsi macam ini sebelum mereka dideklarasi.</p> 
+           <p>Itu juga untuk keterbacaan yang lebih baik, karena lebih mudah melihat <code>function f(???) {???}</code> dalam kode ketimbang <code>let f = function(???) {???}</code>. Deklarasi Fungsi lebih ???eye-catching???.</p> 
+           <p>???Tapi jika Deklarasi Fungsi tak cocok untuk beberapa alasan, atau kita butuh deklarasi kondisional (kita sudah lihat contohnya), maka Expresi Fungsi sebaiknya digunakan.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="kesimpulan" href="function-expressions.html#kesimpulan">Kesimpulan</a></h2> 
+         <ul> 
+          <li>Fungsi adalah nilai. Mereka bisa diset, dikopi atau dideklarasi di kode manapun.</li> 
+          <li>Jika fungsi dideklarasi sebagai pernyataan terpisah di aliran kode utama, ia disebut ???Deklarasi Fungsi???.</li> 
+          <li>Jika fungsi dibuat sebagai bagian expresi, ia disebut ???Expresi Fungsi???.</li> 
+          <li>Deklarasi Fungsi diproses sebelum blok kode diexekusi. Mereka terlihat di manapun dalam blok.</li> 
+          <li>Expresi Fungsi dibuat saat aliran exekusi mencapai mereka.</li> 
+         </ul> 
+         <p>Di banyak kasus saat kita harus mendeklarasi fungsi, Deklarasi Fungsi disenangi, karena ia terlihat sebelum deklarasi itu sendiri. Itu memberi kita flexibilitas lebih dalam organisasi kode, dan biasa lebih mudah terbaca.</p> 
+         <p>Jadi sebaiknya kita gunakan Expresi Fungsi hanya saat Deklarasi Fungsi tak cocok digunakan. Kita sudah melihat beberapa contoh itu di bab ini, dan kita akan melihat lebih banyak lagi nanti.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="function-basics.html" data-tooltip="Fungsi"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="arrow-functions-basics.html" data-tooltip="Dasar-dasar fungsi Arrow"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffunction-expressions" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Ffunction-expressions" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="first-steps.html">JavaScript Dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-expressions.html#fungsi-callback">Fungsi callback</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-expressions.html#expresi-fungsi-vs-deklarasi-fungsi">Expresi Fungsi vs Deklarasi Fungsi</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-expressions.html#kesimpulan">Kesimpulan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="function-expressions.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Ffunction-expressions" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Ffunction-expressions" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

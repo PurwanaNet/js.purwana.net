@@ -1,0 +1,1286 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Pengenalan ke peristiwa peramban (_browser events_)</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="introduction-browser-events.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Pengenalan ke peristiwa peramban (_browser events_)"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Pengenalan ke peristiwa peramban (_browser events_)"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="events.html"> 
+  <link rel="next" href="bubbling-and-capturing.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <style>
+/*
+.d0 { text-align:center;margin:auto; }
+.d1 p { margin: 0 }
+.d1 {
+margin:2em;
+background-color:green;
+width:13em;
+height:13em;
+text-align:center;
+}
+.d1 .number {
+  line-height: 2em;
+}
+.d2 {
+text-align:center;
+margin:auto;
+background-color:blue;
+width:9em;
+height:9em;
+}
+.d1 .d2 ,number {
+  line-height: 2em;
+}
+.d3 {
+text-align:center;
+margin:auto;
+background-color:red;
+width:5em;
+height:5em;
+}
+.d1 .d2 .d3 .number {
+  line-height: 5em;
+}
+.d1 .d2 .d2a {
+  color:white;
+  line-height: 2em;
+}
+*/
+</style> 
+  <script>
+/*
+function highlightMe(elem) {
+    elem.style.backgroundColor='yellow'
+    alert(elem.className)
+    elem.style.backgroundColor = ''
+}
+
+function highlightMe2(e) {
+    highlightMe(e.currentTarget);
+}
+*/
+</script> 
+  <meta property="og:title" content="Pengenalan ke peristiwa peramban (_browser events_)"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fintroduction-browser-events" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fintroduction-browser-events" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="12" max="32" data-tooltip="Pelajaran 12 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="events.html"><span>Pengenalan ke Peristiwa</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Pengenalan ke Peristiwa","item":"https://id.javascript.info/events"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Pengenalan ke peristiwa peramban (_browser events_)</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Pengenalan ke peristiwa peramban (_browser events_)"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p><em>Sebuah Peristiwa</em> adalah penanda bahwa sesuatu telah terjadi. Semua <em>DOM nodes</em> menghasilkan sebuah penanda (tapi peristiwa tidak hanya terbatas pada DOM).</p> 
+         <p>Berikut ini daftar peristiwa DOM yang paling berguna:</p> 
+         <p><strong>Peristiwa mouse (<em>Mouse events</em>):</strong></p> 
+         <ul> 
+          <li><code>click</code> ??? pada saat mouse mengklik sebuah elemen (perangkat layar sentuh menghasilkan peristiwa ini pada saat ditekan)</li> 
+          <li><code>contextmenu</code> ??? pada saat mouse mengklik kanan sebuah elemen.</li> 
+          <li><code>mouseover</code> / <code>mouseout</code> ??? pada saat kursor mouse menghampiri / meninggalkan sebuah elemen.</li> 
+          <li><code>mousedown</code> / <code>mouseup</code> ??? pada saat tombol mouse button ditekan / dilepaskan diatas sebuah elemen.</li> 
+          <li><code>mousemove</code> ??? pada saat mouse bergerak.</li> 
+         </ul> 
+         <p><strong>Peristiwa papan ketik (<em>Keyboard events</em>):</strong></p> 
+         <ul> 
+          <li><code>keydown</code> dan <code>keyup</code> ??? pada saat tombol papan ketik ditekan dan dilepaskan.</li> 
+         </ul> 
+         <p><strong>Peristiwa Elemen form (<em>Form element events</em>):</strong></p> 
+         <ul> 
+          <li><code>submit</code> ??? pada saat pengunjung memasukan sebuah <code>&lt;form&gt;</code>.</li> 
+          <li><code>focus</code> ??? pada saat pengunjung menekan/mengfokus pada sebuah elemen, contoh pada sebuah <code>&lt;input&gt;</code>.</li> 
+         </ul> 
+         <p><strong>Peristiwa dokumen (<em>Document events</em>):</strong></p> 
+         <ul> 
+          <li><code>DOMContentLoaded</code> ??? pada saat HTML telah dimuat dan diproses, DOM telah sepenuhnya dibuat.</li> 
+         </ul> 
+         <p><strong>Peristiwa CSS (<em>CSS events</em>):</strong></p> 
+         <ul> 
+          <li><code>transitionend</code> ??? pada saat animasi CSS selesai.</li> 
+         </ul> 
+         <p>Masih banyak lagi peristiwa lain. Kita akan membahas lebih detail tentang peristiwa tertentu pada bab selanjutnya.</p> 
+         <h2><a class="main__anchor" name="penangan-peristiwa-event-handlers" href="introduction-browser-events.html#penangan-peristiwa-event-handlers">Penangan peristiwa (<em>Event handlers</em>)</a></h2> 
+         <p>Untuk menanggapi sebuah perristiwa kita dapat membuat penangan ??? sebuah fungsi yang akan dijalankan pada saat peristiwa itu terjadi.</p> 
+         <p>penangan adalah sebuah cara untuk menjalankan kode Javascript pada saat pengguna melakukan sesuatu.</p> 
+         <p>Ada banyak cara untuk membuat sebuah handler. Mari kita pelajari, dimulai dari yang paling sederhana.</p> 
+         <h3><a class="main__anchor" name="atribut-html-html-attribute" href="introduction-browser-events.html#atribut-html-html-attribute">Atribut HTML (<em>HTML-attribute</em>)</a></h3> 
+         <p>Sebuah penangan bisa di atur pada HTML dengan menggunakan atribute <code>on&lt;event&gt;</code>.</p> 
+         <p>Contohnya, untuk mengatur sebuah penangan <code>klik</code> untuk <code>input</code>, kita bisa gunakan <code>onclick</code>, seperti ini:</p> 
+         <div id="5p78pa8nqy" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:25,&quot;end&quot;:49}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;input value="Klik saya" onclick="alert('Klik!')" type="button"&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada klik mouse, kode didalam <code>onclick</code> dijalankan.</p> 
+         <p>Harap di catat bahwa didalam <code>onclick</code> kita gunakan tanda kutipan tunggal (<em>single quotes</em>), karena atribute itu sendiri menggunakan tanda kutip ganda (<em>double quotes</em>). Jika lupa bahwa kode tersebut didalam atribut dan menggunakan tanda kutip ganda (<em>double quotes</em>), seperti ini: <code>onclick="alert("Klik!")"</code>, maka itu tidak akan bekerja dengan benar.</p> 
+         <p>Sebuah atribute-HTML bukan tempat yang cocok untuk menulis banyak kode, jadi kita buat sebuah fungsi Javascript dan memanggilnya disana.</p> 
+         <p>Sebuah kilk menjalankan sebuah fungsi <code>hitungKelinci()</code>:</p> 
+         <div id="xnc3s8n289" data-trusted="1" class="code-example" data-demo-height="50" data-highlight="[{&quot;start&quot;:8,&quot;cols&quot;:[{&quot;start&quot;:21,&quot;end&quot;:46}]}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;script&gt;
+  function hitungKelinci() {
+    for(let i=1; i&lt;=3; i++) {
+      alert("Kelinci nomor " + i);
+    }
+  }
+&lt;/script&gt;
+
+&lt;input type="button" onclick="hitungKelinci()" value="Hitung Kelinci!"&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-xnc3s8n289" style="height:50px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Seperti yang kita ketahui, atribut HTML tidak <em>case-sensitive</em>, jadi <code>ONCLICK</code>, <code>onClick</code> dan <code>onCLICK</code> bisa digunakan??? Tapi biasanya atribut menggunakan huruf kecil: <code>onclick</code>.</p> 
+         <h3><a class="main__anchor" name="properti-dom-dom-property" href="introduction-browser-events.html#properti-dom-dom-property">Properti DOM (<em>DOM property</em>)</a></h3> 
+         <p>Sebuah penangan bisa di atur menggunakan properti DOM<code>on&lt;event&gt;</code>.</p> 
+         <p>Contohnya, <code>elem.onclick</code>:</p> 
+         <div id="bylwchqigu" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:4}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;input id="elem" type="button" value="Klik saya"&gt;
+&lt;script&gt;
+  elem.onclick = function() {
+    alert('Terima Kasih');
+  };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-bylwchqigu" style="height:200px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Jika penangan di atur menggunakan atribut-HTML maka peramban membaca, membuat sebuah fungsi baru dari konten atribute dan menulisnya pada properti DOM.</p> 
+         <p>Jadi cara ini sebenarnya sama dengan yang sebelumnya.</p> 
+         <p>Kedua kode ini memiliki cara kerja yang sama:</p> 
+         <ol> 
+          <li> <p>Hanya HTML:</p> 
+           <div id="9ks1rspqwi" data-trusted="1" class="code-example" data-demo-height="50" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:21,&quot;end&quot;:45}]}]" data-autorun="true"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;input type="button" onclick="alert('Klik!')" value="Tombol"&gt;</code></pre> 
+             </div> 
+            </div> 
+            <div class="code-result code-example__result"> 
+             <iframe class="code-result__iframe" name="test-9ks1rspqwi" style="height:50px" src="about:blank"></iframe> 
+            </div> 
+           </div></li> 
+          <li> <p>HTML + JS:</p> 
+           <div id="5bou8mzd6g" data-trusted="1" class="code-example" data-demo-height="50" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:4}]" data-autorun="true"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;input type="button" id="button" value="Tombol"&gt;
+&lt;script&gt;
+  button.onclick = function() {
+    alert('Klik!');
+  };
+&lt;/script&gt;</code></pre> 
+             </div> 
+            </div> 
+            <div class="code-result code-example__result"> 
+             <iframe class="code-result__iframe" name="test-5bou8mzd6g" style="height:50px" src="about:blank"></iframe> 
+            </div> 
+           </div></li> 
+         </ol> 
+         <p>Pada contoh pertama, atribut HTML digunakan untuk menginisialisasikan <code>tombol.onclick</code>, sedangkan pada contoh kedua ??? <em>script</em>, dan hanya itu perbedaanya.</p> 
+         <p><strong>Karena hanya ada satu properti <code>onclick</code>, kita tidak bisa mengatur lebih dari satu penangan peristiwa.</strong></p> 
+         <p>Pada contoh dibawah menambah sebuah penangan menggunakan Javascript akan menimpa penangan yang sudah ada:</p> 
+         <div id="pyrrjurxpq" data-trusted="1" class="code-example" data-demo-height="50" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:4}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;input type="button" id="elem" onclick="alert('Sebelum')" value="Klik saya"&gt;
+&lt;script&gt;
+  elem.onclick = function() { // menimpa penangan yang sudah ada
+    alert('Sesudah'); // hanya ini yang akan ditunjukan
+  };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-pyrrjurxpq" style="height:50px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Untuk menghapus sebuah penangan ??? atur <code>elem.onclick = null</code></p> 
+         <h2><a class="main__anchor" name="mengakses-elemen-this" href="introduction-browser-events.html#mengakses-elemen-this">Mengakses elemen: this</a></h2> 
+         <p>nilai dari <code>this</code> didalam penangan adalah elemen tersebut. Elemen yang dimana penangan itu berada.</p> 
+         <p>Pada kode dibawah <code>button</code> menampilkan kontennya dengan menggunakan <code>this.innerHTML</code>:</p> 
+         <div id="umy7gtkq0p" data-trusted="1" class="code-example" data-demo-height="50" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button onclick="alert(this.innerHTML)"&gt;Klik saya&lt;/button&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-umy7gtkq0p" style="height:50px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="kemungkinan-kesalahan" href="introduction-browser-events.html#kemungkinan-kesalahan">Kemungkinan kesalahan</a></h2> 
+         <p>Jika kamu mulai bekerja dengan menggunakan peristiwa ??? harap perhatikan beberapa detail.</p> 
+         <p>Kita bisa mengatur sebuah fungsi yang telah ada sebagai penangan:</p> 
+         <div id="0fin5r38hz" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>function ucapkanTerimaKasih() {
+  alert('Terima Kasih!');
+}
+
+elem.onclick = ucapkanTerimaKasih;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Tetapi berhati-hatilah: fungsi harus di atur sebagai <code>ucapkanTerimaKasih</code>, bukan <code>ucapkanTerimaKasih()</code>.</p> 
+         <div id="4qhwtfgtpi" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// benar
+button.onclick = ucapkanTerimaKasih;
+
+// salah
+button.onclick = ucapkanTerimaKasih();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita tambahkan tanda kurung, maka <code>ucapkanTerimaKasih()</code> menjadi proses pemanggilan fungsi. Jadi baris terakhir akan mengambil <em>hasil</em> dari pengeksekusian fungsi, yang merupakan <code>tidak terdefinisi</code> (<em><code>undefined</code></em> ??? karena fungsi tidak mengembalikan apapun), dan mengatur nilai itu ke peristiwa <code>onclick</code>. Maka peristiwa tersebut tidak akan menjalankan apapun.</p> 
+         <p>???Namun, jika kita menambahkan secara langsung ke HTML, maka kita harus menambahkan tanda kurung:</p> 
+         <div id="eayl6s1aom" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;input type="button" id="button" onclick="ucapkanTerimaKasih()"&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Perbedaannya mudah untuk di jelaskan. Pada saat peramban membaca atribute, peramban akan membuat fungsi penangan yang didalamnya terdapat konten dari atribut tersebut.</p> 
+         <p>Jadi HTML akan menghasilkan properti ini:</p> 
+         <div id="a8k0c6qwm1" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>button.onclick = function() {
+  ucapkanTerimaKasih(); // &lt;-- konten dari atribut akan ditambahkan kesini
+};</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><strong>Jangan gunakna <code>setAttribute</code> untuk membuat penangan.</strong></p> 
+         <p>Penggunaan tersebut tidak akan berjalan:</p> 
+         <div id="lk9u1hi5ol" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// sebuah klik pada &lt;body&gt; akan menghasilakn eror
+// karena atribute akan selalu menjadi teks (string), dimana fungsi akan menjadi teks (string)
+document.body.setAttribute('onclick', function() { alert(1) });</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><strong>Properti DOM mementingkan kesamaan huruf.</strong></p> 
+         <p>Atur sebuah penangan ke <code>elem.onclick</code>, bukan <code>elem.ONCLICK</code>, karena properti DOM mementingkan kesamaan huruf (<em>case-sensitive</em>).</p> 
+         <h2><a class="main__anchor" name="tambahkanpendengarperistiwa-addeventlistener" href="introduction-browser-events.html#tambahkanpendengarperistiwa-addeventlistener">tambahkanPendengarPeristiwa (<em>addEventListener</em>)</a></h2> 
+         <p>Salah satu masalah mendasar pada cara mengatur pengedali sebelumnya ??? kita tidak bisa mengatur beberapa penangan pada sebuah peristiwa.</p> 
+         <p>Mari kata, sebuah bagian pada koded kita ingin menyoroti sebuah tombol pada saat diklik, dan satu lagi ingin menunjukan seubah pesan pada proses pengklikan tersebut.</p> 
+         <p>Kita ingin mengatur dua penangan peristiwa untuk hal tersebut. Tapi properti DOM yang baru akan menimpa properti DOM yang telah ada.</p> 
+         <div id="br446h34ew" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>input.onclick = function() { alert(1); }
+// ...
+input.onclick = function() { alert(2); } // menganti pengedali yang lama</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pengembang dari standar situs web paham sejak lama, dan menyarankan cara alternatif untuk mengelola penangan menggunakan metode khusus <code>addEventListener</code> dan <code>removeEventListener</code>. Kedua hal tersebut tidak memiliki permasalahan seperti itu.</p> 
+         <p>Sintaks (<em>syntax</em>) untuk menambahkan sebuah penangan:</p> 
+         <div id="jjxqm6v8fj" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>element.addEventListener(event, handler, [options]);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <dl> 
+          <dt> 
+           <code>peristiwa</code>/ 
+           <code>event</code> 
+          </dt> 
+          <dd>
+            nama Peristiwa, contoh 
+           <code>"click"</code>. 
+          </dd> 
+          <dt> 
+           <code>penangan</code>/ 
+           <code>handler</code> 
+          </dt> 
+          <dd>
+            penangan fungsi. 
+          </dd> 
+          <dt> 
+           <code>pilihan</code>/ 
+           <code>options</code> 
+          </dt> 
+          <dd>
+            sebuah objek pilihan tambahan dengan properti: 
+           <ul> 
+            <li><code>once</code>: jika <code>true</code>, maka pendengar akan secara otomatis dihapus setelah terpicu.</li> 
+            <li><code>capture</code>: fase dimana untuk menangani peristiwa, akan di bahas lebih lanjut pada bab <a href="bubbling-and-capturing.html">Menggelembung (_bubbling_) dan menangkap (_capturing_)</a>. untuk alasan sejarah, <code>options</code> bisa juga diatur <code>false/true</code>, sama halnya dengan <code>{capture: false/true}</code>.</li> 
+            <li><code>passive</code>: jika <code>true</code>, maka penangan tidak akan memanggil <code>preventDefault()</code>, kita akan membahas lebih lanjut pada bab <a href="default-browser-action.html">_Browser default actions_</a>.</li> 
+           </ul> 
+          </dd> 
+         </dl> 
+         <p>Untuk menghapus penangan, gunakan <code>removeEventListener</code>:</p> 
+         <div id="ieuvzltnyg" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>element.removeEventListener(event, handler, [options]);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Penghapusan membutuhkan fungsi yang sama</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Untuk menghapus sebuah penangan kita melewatkan fungsi yang sama dengan yang kita atur.</p> 
+           <p>Ini tidak akan berfungsi:</p> 
+           <div id="pd2beessub" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>elem.addEventListener( "click" , () =&gt; alert('Terima Kasih!'));
+// ....
+elem.removeEventListener( "click", () =&gt; alert('Terima Kasih!'));</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Pengedali tidak akan dihapus, karena <code>removeEventListener</code> mendapat sebuah fungsi lain ??? dengan kode yang sama, tetapi hal tersebut tidak penting, karena itu merupakan objek fungsi yang berbeda.</p> 
+           <p>Inilah cara yang benar:</p> 
+           <div id="vydmwoz7h2" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function handler() {
+  alert( 'Terima Kasih!' );
+}
+
+input.addEventListener("click", handler);
+// ....
+input.removeEventListener("click", handler);</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Harap dicatat ??? Jika kita tidak menyimpan fungsi tersebut kedalam variable, maka kita tidak bisa menghapusnya. Tidak ada cara untuk ???membaca kembali??? penangan yang di atur pada <code>addEventListener</code>.</p> 
+          </div> 
+         </div> 
+         <p>Beberapa pemanggilan ke <code>addEventListener</code> mengijinkan untuk menambahkan beberapa penangan, seperti ini:</p> 
+         <div id="16p6otjzi2" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:11,&quot;end&quot;:13}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;input id="elem" type="button" value="Klik saya"/&gt;
+
+&lt;script&gt;
+  function penangan1() {
+    alert('Terima Kasih!');
+  };
+
+  function penangan2() {
+    alert('Terima Kasih lagi!');
+  }
+
+  elem.onclick = () =&gt; alert("Halo");
+  elem.addEventListener("click", penangan1); // Terima Kasih!
+  elem.addEventListener("click", penangan2); // Terima Kasih lagi!
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang bisa kita lihat pada contoh di atas, kita bisa mengatur <em>kedua</em> penangan menggunakan properti DOM dan <code>addEventListener</code>. Tapi pada umumnya kita hanya akan menggunakan salah satu.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Untuk beberapa peristiwa, penangan bekerja hanya dengan <code>addEventListener</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ada beberapa peristiwa yang tidak dapat di atur menggunakan properti DOM. hanya dengan <code>addEventListener</code>.</p> 
+           <p>Contohnya, peristiwa <code>DOMContentLoaded</code>, yang akan terpicu pada saat dokumen telah berhasil di dimuat dan dibuat.</p> 
+           <div id="ovhw1m93hk" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// tidak akan perna berjalan
+document.onDOMContentLoaded = function() {
+  alert("DOM dibuat");
+};</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <div id="hlwdccf03f" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// akan berjalan dengan cara ini
+document.addEventListener("DOMContentLoaded", function() {
+  alert("DOM dibuat");
+});</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Jadi <code>addEventListener</code> lebih universal. Walaupun, aturan semacam itu merupakan sebuah pengecualian daripada aturan.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="objek-peristiwa-event-object" href="introduction-browser-events.html#objek-peristiwa-event-object">Objek peristiwa (Event object)</a></h2> 
+         <p>Untuk menangani peristiwa secara benar sebuah peristiwa kita mau tahu lebih tentang apa yang terjadi. Tidak hanya sebuah ???klik??? atau sebuah ???penekanan tombol???, tapi apa koordinat pointer? tombol mana yang di tekan? dan seterusnya.</p> 
+         <p>Pada saat sebuah peristiwa terjadi, peramban akan membuat <em>objek peristiwa</em>, memasukan detail kedalamnya dan meneruskan peristiwa tersebut ke penangan sebagai sebuah argumen.</p> 
+         <p>Ini merupakan contoh cara untuk mendapat koordinat pointer dari objek peristiwa:</p> 
+         <div id="u0u6b79jyv" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:26,&quot;end&quot;:35}]}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;input type="button" value="Klik saya" id="elem"&gt;
+
+&lt;script&gt;
+  elem.onclick = function(peristiwa) {
+    // tampilkan tipe peristiwa, elemen dan koordinat dari klik
+    alert(peristiwa.type + " pada " + peristiwa.currentTarget);
+    alert("Koordinat: " + peristiwa.clientX + ":" + peristiwa.clientY);
+  };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Beberapa properti dari objek <code>peristiwa</code>:</p> 
+         <dl> 
+          <dt> 
+           <code>peristiwa.type</code> 
+          </dt> 
+          <dd>
+            Tipe peristiwa, disini tipenya 
+           <code>"click"</code>. 
+          </dd> 
+          <dt> 
+           <code>peristiwa.currentTarget</code> 
+          </dt> 
+          <dd>
+            elemen yang ditangani oleh peristiwa. Sama persis dengan 
+           <code>this</code>, kecuali jika penangan merupakan fungsi anak panah (arrow function), atau 
+           <code>this</code> sudah di atur untuk hal lain, maka kita dapat menggunakan 
+           <code>peristiwa.currentTarget</code> untuk mendapati elemen. 
+          </dd> 
+          <dt> 
+           <code>peristiwa.clientX / peristiwa.clientY</code> 
+          </dt> 
+          <dd>
+            koordinat kursor relatif pada jendela (window), untuk peristwa pointer. 
+          </dd> 
+         </dl> 
+         <p>Masih banyak lagi properti. Banyak yang tergantung pada tipe peristiwa: peristiwa papan ketik memilik satu set properti, peristiwa pointer ??? memiliki set yang berbeda, kita nanti akan mempelajari mereka pada saat kita mendapati peristiwa lainnya secara detail.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Objek peristiwa juga ada pada penangan HTML</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Jika kita mengatur penangan pada HTML, kita bisa juga menggunakan objek peristiwa, seperti ini:</p> 
+           <div id="j941d7x5cm" data-trusted="1" class="code-example" data-demo-height="60" data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:30,&quot;end&quot;:47}]}]" data-autorun="true"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-markup"><code>&lt;input type="button" onclick="alert(event.type)" value="Tipe Peristiwa"&gt;</code></pre> 
+             </div> 
+            </div> 
+            <div class="code-result code-example__result"> 
+             <iframe class="code-result__iframe" name="test-j941d7x5cm" style="height:60px" src="about:blank"></iframe> 
+            </div> 
+           </div> 
+           <p>Ini terjadi karena pada saat peramban membaca atribut, itu membuat sebuah penangan seperti ini: <code>function(event) {alert(event.type) }</code>. yaitu: argumen pertamanya disebut dengan <code>"event"</code>, dan tubuhnya di ambil dari atribut.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="objek-penangan-handleevent" href="introduction-browser-events.html#objek-penangan-handleevent">Objek penangan: handleEvent</a></h2> 
+         <p>Kita bisa mengatur bukan hanya fungsi, tapi sebuah objek sebagai penangan peristiwa menggunakan <code>addEventListener</code>. Pada saat sebuah peristiwa terjadi, Itu memanggil metode <code>handleEvent</code>.</p> 
+         <p>Contohnya:</p> 
+         <div id="kobqribfim" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button id="elem"&gt;Klik saya&lt;/button&gt;
+
+&lt;script&gt;
+  let obj = {
+    handleEvent(event) {
+      alert(event.type + " pada " + event.currentTarget);
+    }
+  };
+
+  elem.addEventListener('click', obj);
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang bisa kita lihat, pada saat <code>addEventListener</code> menerima objek sebagai penangan, itu akan memanggil <code>obj.handleEvent(event)</code> jika sebuah peristiwa terjadi.</p> 
+         <p>Kita juga dapat menggunakan Kelas (<em>class</em>) untuk hal itu:</p> 
+         <div id="na5bajktr3" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:16,&quot;end&quot;:18}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button id="elem"&gt;Klik saya&lt;/button&gt;
+
+&lt;script&gt;
+  class Menu {
+    handleEvent(event) {
+      switch(event.type) {
+        case 'mousedown':
+          elem.innerHTML = "Tombol mouse ditekan";
+          break;
+        case 'mouseup':
+          elem.innerHTML += "...dan dilepas.";
+          break;
+      }
+    }
+  }
+
+  let menu = new Menu();
+  elem.addEventListener('mousedown', menu);
+  elem.addEventListener('mouseup', menu);
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Disini objek yang sama menanggani kedua peristiwa. Tolong di catat bahwa kita harus secara eksplisit mengatur peristiwa untuk mendengar menggunakan <code>addEventListener</code>. Objek <code>menu</code> hanya dapat menerima <code>mousedown</code> dan <code>mouseup</code> pada contoh diatas, bukan tipe peristiwa lainnya.</p> 
+         <p>Metode <code>handleEvent</code> tidak harus melakukan semua proses secara mandiri. Itu dapat memanggil metode lain yang menanggani peristiwa secara spesifik, seperti ini:</p> 
+         <div id="j7hpisdqon" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="introduction-browser-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;button id="elem"&gt;Klik saya&lt;/button&gt;
+
+&lt;script&gt;
+  class Menu {
+    handleEvent(event) {
+      // mousedown -&gt; onMousedown
+      let method = 'on' + event.type[0].toUpperCase() + event.type.slice(1);
+      this[method](event);
+    }
+
+    onMousedown() {
+      elem.innerHTML = "Tombol mouse ditekan";
+    }
+
+    onMouseup() {
+      elem.innerHTML += "...dan dilepas.";
+    }
+  }
+
+  let menu = new Menu();
+  elem.addEventListener('mousedown', menu);
+  elem.addEventListener('mouseup', menu);
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sekarang penangan peristiwa berbeda, dan memudahkan proses pendukungan.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="introduction-browser-events.html#ringkasan">Ringkasan</a></h2> 
+         <p>Ada 3 cara untuk mengatur penangan peristiwa:</p> 
+         <ol> 
+          <li>Atribute HTML: <code>onclick="..."</code></li> 
+          <li>Properti DOM: <code>elem.onclick = function</code>.</li> 
+          <li>Metode: <code>elem.addEventListener(event, handler[, phase])</code> untuk menambahkan, <code>removeEventListener</code> untuk menghapuskan.</li> 
+         </ol> 
+         <p>Atribute HTML digunakan untuk kasus tertentu, karena Javascript ditengah tag HTML akan kelihatan aneh. Dan juga akan sulit untuk menulis banyak kode di dalam tag HTML.</p> 
+         <p>Properti DOM boleh digunakan, tapi kita tidak dapat mengatur lebih dari 1 penangan untuk peristiwa tertentu. Namun tidak sering kita membutuhkan lebih dari 2 penangan.</p> 
+         <p>Cara terakhir lebih fleksible, tapi itu juga merupakan cara terpanjang untuk menulis. Ada beberapa peristiwa yang hanya akan bisa digunakan pada cara ini, seperti misalnya <code>transitionend</code> dan <code>DOMContentLoaded</code> (akan di bahas). Dan juga objek dapat digunakan sebagai penangan pada <code>addEventListener</code>. Pada kasus ini metode <code>handleEvent</code> akan dipanggil pada saat peristiwa terjadi.</p> 
+         <p>Tidak penting bagaimana kamu mengatur penangan ??? itu akan mendapat sebuah objek peristiwa sebagai argumen pertama. Objek itu memiliki detail tentang apa yang terjadi.</p> 
+         <p>Kita akan mempelajari lebih lanjut tentang peristiwa secara umum dan perbedaan tipe peristiwa di bab selanjutnya.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="introduction-browser-events.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="introduction-browser-events.html#klik-untuk-menyembunyikan" name="klik-untuk-menyembunyikan">Klik untuk menyembunyikan</a></h3> 
+           <a class="task__open-link" href="task/hide-other.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tambah Javascript ke <code>button</code> untuk membuat <code>&lt;div id="text"&gt;</code> hilang pada saat di klik.</p> 
+            <p>demo:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:80px" src="https://id.js.cx/task/hide-other/solution/"></iframe> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/zEuUbLuN4Vu7ItAC?p=preview" target="_blank" data-plunk-id="zEuUbLuN4Vu7ItAC">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p><a href="https://plnkr.co/edit/nzQ0eR1uWaY9qEwr?p=preview" target="_blank" data-plunk-id="nzQ0eR1uWaY9qEwr">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="introduction-browser-events.html#sembunyikan-diri" name="sembunyikan-diri">Sembunyikan diri</a></h3> 
+           <a class="task__open-link" href="task/hide-self-onclick.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah tombol yang menyembunyikan dirinya sendiri pada saat di klik.</p> 
+            <p>Seperti ini: <input type="button" onclick="this.hidden=true" value="Klik untuk sembunyi"></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Bisa gunakan <code>this</code> pada penangan (<em>handler</em>) untuk mereferensi ???elemen itu sendiri???:</p> 
+              <div id="uakx4n973o" data-trusted="1" class="code-example" data-demo-height="50"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="introduction-browser-events.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="introduction-browser-events.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-markup"><code>&lt;input type="button" onclick="this.hidden=true" value="Klik untuk menyembunyikan"&gt;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="introduction-browser-events.html#penangan-mana-yang-dijalankan" name="penangan-mana-yang-dijalankan">Penangan mana yang dijalankan?</a></h3> 
+           <a class="task__open-link" href="task/which-handlers-run.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ada sebuah tombol pada variable. Tidak ada pengedali di tombol tersebut.</p> 
+            <p>Manakah penangan yang dijalankan pada saat klik pada kode berikut ini? Manakah <code>alert</code> yang akan ditunjukan?</p> 
+            <div id="e2fqiqe8ep" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>button.addEventListener("click", () =&gt; alert("1"));
+
+button.removeEventListener("click", () =&gt; alert("1"));
+
+button.onclick = () =&gt; alert(2);</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya: <code>1</code> dan <code>2</code>.</p> 
+              <p>penangan pertama dijalankan, karena tidak di hapuskan oleh <code>removeEventListener</code>. Untuk menghapuskan penangan kita harus meneruskan secara tepat fungsi yang telah di atur. Dan pada kode sebuah fungsi baru di teruskan, terlihat sama, tapi berbeda fungsi.</p> 
+              <p>Untuk menghapuskan objek fungsi, kita harus menyimpan refensi ke fungsi tersebut, seperti ini:</p> 
+              <div id="w00q04qjxi" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>function handler() {
+  alert(1);
+}
+
+button.addEventListener("click", handler);
+button.removeEventListener("click", handler);</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>penangan <code>button.onclick</code> bekerja secara sendiri dan sebagai tambahan untuk <code>addEvenetListener</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="introduction-browser-events.html#pindahkan-bola-ke-seberang-lapangan" name="pindahkan-bola-ke-seberang-lapangan">Pindahkan bola ke seberang lapangan</a></h3> 
+           <a class="task__open-link" href="task/move-ball-field.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Pindahkan bola ke seberang lapangan pada saat di klik. Seperti ini:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="https://id.js.cx/task/move-ball-field/solution/" target="_blank" title="buka pada jendela baru" class="toolbar__button toolbar__button_external"></a> 
+              </div> 
+             </div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:260px" src="https://id.js.cx/task/move-ball-field/solution/"></iframe> 
+            </div> 
+            <p>Syarat-Syarat:</p> 
+            <ul> 
+             <li>Pusat bola harus berada tepat dibawah pointer pada saat di klik (jika memungkinkan tanpa melintasi ujung lapangan).</li> 
+             <li>Animasi CSS jika memungkinkan.</li> 
+             <li>Bola tidak boleh melintasi batas lapangan.</li> 
+             <li>Saat halaman di digulir, tidak ada yang rusak.</li> 
+            </ul> 
+            <p>Tambahan:</p> 
+            <ul> 
+             <li>Kode harus juga bekerja dengan bola yang berbeda dan berbagai ukuran lapangan, tidak hanya pada ukuran tertentu.</li> 
+             <li>Gunakan properti <code>event.clientX/event.clientY</code> untuk koordinat klik.</li> 
+            </ul> 
+            <p><a href="https://plnkr.co/edit/234NWJR246q3B67B?p=preview" target="_blank" data-plunk-id="234NWJR246q3B67B">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Pertama kita perlu memilih metode untuk memposisikan bola.</p> 
+              <p>Kita tidak dapat menggunakan <code>position:fixed</code> untuk itu, karena pada saat halaman digulir bola akan berpindah dari lapangan.</p> 
+              <p>Jadi kita sebaiknya menggunakan <code>position:absolute</code> dan, untuk membuat posisinya benar-benar tepat, buat lapangan(<em><code>field</code></em>) itu sendiri diposisikan.</p> 
+              <p>Kemudian bola akan diposisikan relatif terhadap lapangan(<em><code>field</code></em>):</p> 
+              <div id="qsqh0x9lv5" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-css"><code>#field {
+  width: 200px;
+  height: 150px;
+  position: relative;
+}
+
+#ball {
+  position: absolute;
+  left: 0; /* relatif ke posisi terdekat blok atas (lapangan) */
+  top: 0;
+  transition: 1s all; /* Animasi CSS untuk left/top untuk membuat bolanya terbang */
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Selanjutnya kita harus mengatur dengan benar <code>ball.style.left/top</code>. Mereka memiliki koordinat relatif ke lapangan(<em><code>field</code></em>) sekarang.</p> 
+              <p>Berikut ini gambarnya:</p> 
+              <figure> 
+               <div class="image" style="width:521px"> 
+                <div class="image__ratio" style="padding-top:63.339731285988485%"></div> 
+                <object type="image/svg+xml" data="task/move-ball-field/move-ball-coords.svg" width="521" height="330" class="image__image" data-use-theme> <img src="task/move-ball-field/move-ball-coords.svg" alt="" width="521" height="330"> </object> 
+               </div> 
+              </figure> 
+              <p>Kita memiliki <code>event.clientX/clientY</code> ??? koordinat relatif jendela (<em>window</em>) dari klik.</p> 
+              <p>Untuk mendapatkan koordinat kiri relatif terhadap lapangan(<em><code>field</code></em>), kita kurangkan dengan nilai dari ujung dan pembatas kiri lapangan:</p> 
+              <div id="pxk56tyrv" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let left = event.clientX - fieldCoords.left - field.clientLeft;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Biasanya, <code>ball.style.left</code> artinya ???ujung kiri dari elemen??? (bola). Jadi kita mengatur nilai <code>left</code>, kemudian ujung bola, bukan tengah, akan berada tepat dibawah kursor mouse.</p> 
+              <p>Kita perlu memindahkan bola setengah lebar kiri dan setengah tinggi atas untuk membuatnya di tengah.</p> 
+              <p>Jadi nilai terakhir <code>left</code> akan menjadi:</p> 
+              <div id="267mj5csik" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let left = event.clientX - fieldCoords.left - field.clientLeft - ball.offsetWidth/2;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Koordinat vertikal di ukur dengan menggunakan logika yang sama.</p> 
+              <p>Harap dicatat bahwa lebar/tinggi bola harus di ketahui pada saat kita mengakses <code>ball.offsetWidth</code>. Sebaiknya di atur pada HTML atau CSS.</p> 
+              <p><a href="https://plnkr.co/edit/im7zuxSSYNsqiKeK?p=preview" target="_blank" data-plunk-id="im7zuxSSYNsqiKeK">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="introduction-browser-events.html#buat-sebuah-menu-geser" name="buat-sebuah-menu-geser">Buat sebuah menu geser</a></h3> 
+           <a class="task__open-link" href="task/sliding-menu.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah menu yang terbuka/tertutup pada saat ditekan:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:100px" src="https://id.js.cx/task/sliding-menu/solution/"></iframe> 
+            </div> 
+            <p>Tambahan: HTML/CSS dari dokumen harus dimodifikasi.</p> 
+            <p><a href="https://plnkr.co/edit/POCMxIbK8BTa4zTP?p=preview" target="_blank" data-plunk-id="POCMxIbK8BTa4zTP">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">HTML/CSS</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">HTML/CSS</h4> 
+              <div class="formatted"> 
+               <p>Pertama buat HTML/CSS.</p> 
+               <p>Sebuah menu adalah komponen tersendiri pada halaman, jadi lebih baik untuk menaruhnya kedalam satu elemen DOM.</p> 
+               <p>Sebuah daftar dari item menu bisa dapat diatur kedalam daftar menggunakan <code>ul/li</code>.</p> 
+               <p>Ini contoh strukturnya:</p> 
+               <div id="xkxilka3hl" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-markup"><code>&lt;div class="menu"&gt;
+  &lt;span class="title"&gt;Manis-Manis (Tekan saya)!&lt;/span&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Kue&lt;/li&gt;
+    &lt;li&gt;Donat&lt;/li&gt;
+    &lt;li&gt;Madu&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>Kita dapat menggunakan <code>&lt;span&gt;</code> untuk judul, karena <code>&lt;div&gt;</code> memiliki <code>display:block</code>, dan akan memenuhi 100% horisontal lebar elemen.</p> 
+               <p>Seperti ini:</p> 
+               <div id="vr95xep5ap" data-trusted="1" class="code-example" data-demo-height="50" data-autorun="true"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-markup"><code>&lt;div style="border: solid red 1px" onclick="alert(1)"&gt;Manis-Manis (Tekan saya)!&lt;/div&gt;</code></pre> 
+                 </div> 
+                </div> 
+                <div class="code-result code-example__result"> 
+                 <iframe class="code-result__iframe" name="test-vr95xep5ap" style="height:50px" src="about:blank"></iframe> 
+                </div> 
+               </div> 
+               <p>Jadi jika kita mengatur <code>onclick</code> pada judul, maka itu akan menangkap klik diselah kanan teks.</p> 
+               <p>Sedangkan <code>&lt;span&gt;</code> memiliki <code>display:inline</code>, dan akan memenuhi ruang yang cukup sesuai dengan teks:</p> 
+               <div id="kp5xr0zer9" data-trusted="1" class="code-example" data-demo-height="50" data-autorun="true"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-markup"><code>&lt;span style="border: solid red 1px" onclick="alert(1)"&gt;Manis-Manis (Tekan saya)!&lt;/span&gt;</code></pre> 
+                 </div> 
+                </div> 
+                <div class="code-result code-example__result"> 
+                 <iframe class="code-result__iframe" name="test-kp5xr0zer9" style="height:50px" src="about:blank"></iframe> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <div class="task__step task__step_open"> 
+             <button class="task__step-show" type="button" onclick="showStep(this)">Membuka dan menutup menu</button> 
+             <div class="task__answer-content"> 
+              <h4 class="task__step-title">Membuka dan menutup menu</h4> 
+              <div class="formatted"> 
+               <p>Membuka dan menutup menu seharusnya menganti posisi anak panah dan menunjukan atau menyembunyikan daftar menu.</p> 
+               <p>Semua pergantian ini sangat sempurna untuk di tanggani oleh CSS. Pada Javascript kita harus memberi label pada kondisi menu saat ini dengan menambahkan/menghapuskan kelas(<em>class</em>) <code>.open</code>.</p> 
+               <p>Tanpanya, menu akan tetap tertutup:</p> 
+               <div id="14n6i897uk" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-css"><code>.menu ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 20px;
+  display: none;
+}
+
+.menu .title::before {
+  content: '??? ';
+  font-size: 80%;
+  color: green;
+}</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p>???Dan dengan <code>.open</code> anak panah akan berubah dan daftar akan kelihatan:</p> 
+               <div id="3g3rws0rb3" data-trusted="1" class="code-example"> 
+                <div class="codebox code-example__codebox"> 
+                 <div class="codebox__code" data-code="1"> 
+                  <pre class="line-numbers language-css"><code>.menu.open .title::before {
+  content: '??? ';
+}
+
+.menu.open ul {
+  display: block;
+}</code></pre> 
+                 </div> 
+                </div> 
+               </div> 
+               <p><a href="https://plnkr.co/edit/zGmMDvp9yKIsu5L2?p=preview" target="_blank" data-plunk-id="zGmMDvp9yKIsu5L2">Buka solusi di kotak pasir.</a></p> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="introduction-browser-events.html#tambahkan-tombol-untuk-menutup" name="tambahkan-tombol-untuk-menutup">Tambahkan tombol untuk menutup</a></h3> 
+           <a class="task__open-link" href="task/hide-message.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 5</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Ada sebuah daftar pesan.</p> 
+            <p>Gunakan Javascript untuk menambahkan tombol untuk menutup pada bagian pojok kanan atas setiap pesan.</p> 
+            <p>Hasil seharusnya seperti ini:</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:450px" src="https://id.js.cx/task/hide-message/solution/"></iframe> 
+            </div> 
+            <p><a href="https://plnkr.co/edit/vp3J1p2zvJG3V5Lm?p=preview" target="_blank" data-plunk-id="vp3J1p2zvJG3V5Lm">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Untuk Menambahkan tombol kita bisa menggunakan <code>position:absolute</code> (dan membuat pane <code>position:relative</code>) atau <code>float:right</code>. <code>float:right</code> memiliki keuntung dimana tombol tidak akan perna tumpang tindih dengan teks, tetapi <code>position:absolute</code> memberikan lebih banyak kebebasan. Jadi pilihannya pada kamu.</p> 
+              <p>Kemudian pada setiap <code>pane</code> kodenya akan seperti ini:</p> 
+              <div id="dp4daqvkwl" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>pane.insertAdjacentHTML("afterbegin", '&lt;button class="remove-button"&gt;[x]&lt;/button&gt;');</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Kemudian <code>&lt;button&gt;</code> menjadi <code>pane.firstChild</code>, jadi kita tambahkan sebuah penangan seperti ini:</p> 
+              <div id="sw27femv8u" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>pane.firstChild.onclick = () =&gt; pane.remove();</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p><a href="https://plnkr.co/edit/x1iw61I3w6r3SXXe?p=preview" target="_blank" data-plunk-id="x1iw61I3w6r3SXXe">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="introduction-browser-events.html#carousel" name="carousel">Carousel</a></h3> 
+           <a class="task__open-link" href="task/carousel.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"> 
+           <span class="task__importance" title="Seberapa penting tugas itu, dari 1 hingga 5">pentingnya: 4</span> 
+          </div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Buat sebuah Carousel ??? pita gambar yang dapat digulir dengan mengklik panah.</p> 
+            <div class="code-result"> 
+             <div class="code-result__toolbar toolbar"></div> 
+             <iframe class="code-result__iframe" data-trusted="1" style="height:200px" src="https://id.js.cx/task/carousel/solution/"></iframe> 
+            </div> 
+            <p>Nanti kita akan menambahkah lebih banyak fitur: pengguliran tanpa batas, pemuatan dinamis dan seterusnya.</p> 
+            <p>Tambahan: untuk tugas ini, struktur HTML/CSS merupakan 90% dari solusi.</p> 
+            <p><a href="https://plnkr.co/edit/1Fc8Q2Mr7U6wLKWA?p=preview" target="_blank" data-plunk-id="1Fc8Q2Mr7U6wLKWA">Buka sandbox untuk tugas tersebut.</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Pita gambar bisa di diwakili sebagai <code>ul/li</code> daftar dari gambar <code>&lt;img&gt;</code>.</p> 
+              <p>Biasanya, pita seperti itu sangat luas, tapi kita akan menambahkan ukuran tetap pada <code>&lt;div&gt;</code> untuk ???memotong??? pita, jadi hanya sebagian dari pita yang kelihatan:</p> 
+              <figure> 
+               <div class="image" style="width:488px"> 
+                <div class="image__ratio" style="padding-top:50.409836065573764%"></div> 
+                <object type="image/svg+xml" data="task/carousel/carousel1.svg" width="488" height="246" class="image__image" data-use-theme> <img src="task/carousel/carousel1.svg" alt="" width="488" height="246"> </object> 
+               </div> 
+              </figure> 
+              <p>Untuk menampilkan daftar secara horisontal kita perlu menambahkan properti CSS yang benar pada <code>&lt;li&gt;</code>, seperti <code>display: inline-block</code>.</p> 
+              <p>Untuk <code>&lt;img&gt;</code> kita sebaiknya juga mengatur <code>display</code>, karena bawaanya merupakan <code>inline</code>. Ada For <code>&lt;img&gt;</code> we should also adjust <code>display</code>, because by default it???s <code>inline</code>. Ada ruang ekstra yang disediakan di bawah elemen <code>inline</code> untuk ???ekor huruf???, jadi kita bisa menggunakan <code>display:block</code> untuk menghapusnya.</p> 
+              <p>Untuk membuat pengulirannya, kita bisa menggeser <code>&lt;ul&gt;</code>. Ada banyak cara untuk melakukannya, contohnya dengan menganti <code>margin-left</code> atau (performa lebih baik) gunakan <code>transform: translateX()</code>:</p> 
+              <figure> 
+               <div class="image" style="width:639px"> 
+                <div class="image__ratio" style="padding-top:38.497652582159624%"></div> 
+                <object type="image/svg+xml" data="task/carousel/carousel2.svg" width="639" height="246" class="image__image" data-use-theme> <img src="task/carousel/carousel2.svg" alt="" width="639" height="246"> </object> 
+               </div> 
+              </figure> 
+              <p><code>&lt;div&gt;</code> luar memiliki lebar tetap, jadi gambar ???ekstra??? dipotong.</p> 
+              <p>Keseluruhan carousel adalah ???komponen grafis??? mandiri pada halaman, jadi sebaiknya kita membungkusnya menjadi satu <code>&lt;div class="carousel"&gt;</code> dan menata elemen-elemen ke dalamnya.</p> 
+              <p><a href="https://plnkr.co/edit/f3D5oMbHAFV3dAVb?p=preview" target="_blank" data-plunk-id="f3D5oMbHAFV3dAVb">Buka solusi di kotak pasir.</a></p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="events.html" data-tooltip="Pengenalan ke Peristiwa"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="bubbling-and-capturing.html" data-tooltip="Menggelembung (_bubbling_) dan menangkap (_capturing_)"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fintroduction-browser-events" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fintroduction-browser-events" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="events.html">Pengenalan ke Peristiwa</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="introduction-browser-events.html#penangan-peristiwa-event-handlers">Penangan peristiwa (<em>Event handlers</em>)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="introduction-browser-events.html#mengakses-elemen-this">Mengakses elemen: this</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="introduction-browser-events.html#kemungkinan-kesalahan">Kemungkinan kesalahan</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="introduction-browser-events.html#tambahkanpendengarperistiwa-addeventlistener">tambahkanPendengarPeristiwa (<em>addEventListener</em>)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="introduction-browser-events.html#objek-peristiwa-event-object">Objek peristiwa (Event object)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="introduction-browser-events.html#objek-penangan-handleevent">Objek penangan: handleEvent</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="introduction-browser-events.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="introduction-browser-events.html#tasks">Tugas (7)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="introduction-browser-events.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fintroduction-browser-events" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fintroduction-browser-events" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

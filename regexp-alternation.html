@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Alternation (OR) |</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="regexp-alternation.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Alternation (OR) |"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Alternation (OR) |"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="regexp-backreferences.html"> 
+  <link rel="next" href="regexp-lookahead-lookbehind.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Alternation (OR) |"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-alternation" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-alternation" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="13" max="17" data-tooltip="Pelajaran 13 dari 17"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="regular-expressions.html"><span>Regular expressions</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Regular expressions","item":"https://id.javascript.info/regular-expressions"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 17 Januari 2021"> 
+          <div class="updated-at__content">
+            17 Januari 2021 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://ar.javascript.info/regexp-alternation">????????</a>, 
+          <a href="https://javascript.info/regexp-alternation">English</a>, 
+          <a href="https://es.javascript.info/regexp-alternation">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/regexp-alternation">Fran??ais</a>, 
+          <a href="https://it.javascript.info/regexp-alternation">Italiano</a>, 
+          <a href="https://ja.javascript.info/regexp-alternation">?????????</a>, 
+          <a href="https://learn.javascript.ru/regexp-alternation">??????????????</a>, 
+          <a href="https://uk.javascript.info/regexp-alternation">????????????????????</a>, 
+          <a href="https://zh.javascript.info/regexp-alternation">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Alternation (OR) |</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Alternation (OR) |"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Alternation is the term in regular expression that is actually a simple ???OR???.</p> 
+         <p>In a regular expression it is denoted with a vertical line character <code class="pattern">|</code>.</p> 
+         <p>For instance, we need to find programming languages: HTML, PHP, Java or JavaScript.</p> 
+         <p>The corresponding regexp: <code class="pattern">html|php|java(script)?</code>.</p> 
+         <p>A usage example:</p> 
+         <div id="o0f21gdu4y" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-alternation.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-alternation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let regexp = /html|php|css|java(script)?/gi;
+
+let str = "First HTML appeared, then CSS, then JavaScript";
+
+alert( str.match(regexp) ); // 'HTML', 'CSS', 'JavaScript'</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>We already saw a similar thing ??? square brackets. They allow to choose between multiple characters, for instance <code class="pattern">gr[ae]y</code> matches <code class="match">gray</code> or <code class="match">grey</code>.</p> 
+         <p>Square brackets allow only characters or character classes. Alternation allows any expressions. A regexp <code class="pattern">A|B|C</code> means one of expressions <code>A</code>, <code>B</code> or <code>C</code>.</p> 
+         <p>For instance:</p> 
+         <ul> 
+          <li><code class="pattern">gr(a|e)y</code> means exactly the same as <code class="pattern">gr[ae]y</code>.</li> 
+          <li><code class="pattern">gra|ey</code> means <code class="match">gra</code> or <code class="match">ey</code>.</li> 
+         </ul> 
+         <p>To apply alternation to a chosen part of the pattern, we can enclose it in parentheses:</p> 
+         <ul> 
+          <li><code class="pattern">I love HTML|CSS</code> matches <code class="match">I love HTML</code> or <code class="match">CSS</code>.</li> 
+          <li><code class="pattern">I love (HTML|CSS)</code> matches <code class="match">I love HTML</code> or <code class="match">I love CSS</code>.</li> 
+         </ul> 
+         <h2><a class="main__anchor" name="example-regexp-for-time" href="regexp-alternation.html#example-regexp-for-time">Example: regexp for time</a></h2> 
+         <p>In previous articles there was a task to build a regexp for searching time in the form <code>hh:mm</code>, for instance <code>12:00</code>. But a simple <code class="pattern">\d\d:\d\d</code> is too vague. It accepts <code>25:99</code> as the time (as 99 minutes match the pattern, but that time is invalid).</p> 
+         <p>How can we make a better pattern?</p> 
+         <p>We can use more careful matching. First, the hours:</p> 
+         <ul> 
+          <li>If the first digit is <code>0</code> or <code>1</code>, then the next digit can be any: <code class="pattern">[01]\d</code>.</li> 
+          <li>Otherwise, if the first digit is <code>2</code>, then the next must be <code class="pattern">[0-3]</code>.</li> 
+          <li>(no other first digit is allowed)</li> 
+         </ul> 
+         <p>We can write both variants in a regexp using alternation: <code class="pattern">[01]\d|2[0-3]</code>.</p> 
+         <p>Next, minutes must be from <code>00</code> to <code>59</code>. In the regular expression language that can be written as <code class="pattern">[0-5]\d</code>: the first digit <code>0-5</code>, and then any digit.</p> 
+         <p>If we glue hours and minutes together, we get the pattern: <code class="pattern">[01]\d|2[0-3]:[0-5]\d</code>.</p> 
+         <p>We???re almost done, but there???s a problem. The alternation <code class="pattern">|</code> now happens to be between <code class="pattern">[01]\d</code> and <code class="pattern">2[0-3]:[0-5]\d</code>.</p> 
+         <p>That is: minutes are added to the second alternation variant, here???s a clear picture:</p> 
+         <div id="arrjpu5s6z" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code>[01]\d  |  2[0-3]:[0-5]\d</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>That pattern looks for <code class="pattern">[01]\d</code> or <code class="pattern">2[0-3]:[0-5]\d</code>.</p> 
+         <p>But that???s wrong, the alternation should only be used in the ???hours??? part of the regular expression, to allow <code class="pattern">[01]\d</code> OR <code class="pattern">2[0-3]</code>. Let???s correct that by enclosing ???hours??? into parentheses: <code class="pattern">([01]\d|2[0-3]):[0-5]\d</code>.</p> 
+         <p>The final solution:</p> 
+         <div id="w6o4v3g76o" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-alternation.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="regexp-alternation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let regexp = /([01]\d|2[0-3]):[0-5]\d/g;
+
+alert("00:00 10:10 23:59 25:99 1:2".match(regexp)); // 00:00,10:10,23:59</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="regexp-alternation.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="regexp-alternation.html#find-programming-languages" name="find-programming-languages">Find programming languages</a></h3> 
+           <a class="task__open-link" href="task/find-programming-language.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>There are many programming languages, for instance Java, JavaScript, PHP, C, C++.</p> 
+            <p>Create a regexp that finds them in the string <code class="subject">Java JavaScript PHP C++ C</code>:</p> 
+            <div id="5sm6uar8hs" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let regexp = /your regexp/g;
+
+alert("Java JavaScript PHP C++ C".match(regexp)); // Java JavaScript PHP C++ C</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>The first idea can be to list the languages with <code>|</code> in-between.</p> 
+              <p>But that doesn???t work right:</p> 
+              <div id="ynqsicm0c2" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let regexp = /Java|JavaScript|PHP|C|C\+\+/g;
+
+let str = "Java, JavaScript, PHP, C, C++";
+
+alert( str.match(regexp) ); // Java,Java,PHP,C,C</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>The regular expression engine looks for alternations one-by-one. That is: first it checks if we have <code class="match">Java</code>, otherwise ??? looks for <code class="match">JavaScript</code> and so on.</p> 
+              <p>As a result, <code class="match">JavaScript</code> can never be found, just because <code class="match">Java</code> is checked first.</p> 
+              <p>The same with <code class="match">C</code> and <code class="match">C++</code>.</p> 
+              <p>There are two solutions for that problem:</p> 
+              <ol> 
+               <li>Change the order to check the longer match first: <code class="pattern">JavaScript|Java|C\+\+|C|PHP</code>.</li> 
+               <li>Merge variants with the same start: <code class="pattern">Java(Script)?|C(\+\+)?|PHP</code>.</li> 
+              </ol> 
+              <p>In action:</p> 
+              <div id="ohccrtoqad" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let regexp = /Java(Script)?|C(\+\+)?|PHP/g;
+
+let str = "Java, JavaScript, PHP, C, C++";
+
+alert( str.match(regexp) ); // Java,JavaScript,PHP,C,C++</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="regexp-alternation.html#find-bbtag-pairs" name="find-bbtag-pairs">Find bbtag pairs</a></h3> 
+           <a class="task__open-link" href="task/find-matching-bbtags.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>A ???bb-tag??? looks like <code>[tag]...[/tag]</code>, where <code>tag</code> is one of: <code>b</code>, <code>url</code> or <code>quote</code>.</p> 
+            <p>For instance:</p> 
+            <div id="u04prnycla" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-none"><code>[b]text[/b]
+[url]http://google.com[/url]</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>BB-tags can be nested. But a tag can???t be nested into itself, for instance:</p> 
+            <div id="nmge3utvct" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-none"><code>Normal:
+[url] [b]http://google.com[/b] [/url]
+[quote] [b]text[/b] [/quote]
+
+Can't happen:
+[b][b]text[/b][/b]</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Tags can contain line breaks, that???s normal:</p> 
+            <div id="d2s8e7tikd" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-none"><code>[quote]
+  [b]text[/b]
+[/quote]</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Create a regexp to find all BB-tags with their contents.</p> 
+            <p>For instance:</p> 
+            <div id="n33px6i60e" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let regexp = /your regexp/flags;
+
+let str = "..[url]http://google.com[/url]..";
+alert( str.match(regexp) ); // [url]http://google.com[/url]</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>If tags are nested, then we need the outer tag (if we want we can continue the search in its content):</p> 
+            <div id="9wsrhpvkgb" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let regexp = /your regexp/flags;
+
+let str = "..[url][b]http://google.com[/b][/url]..";
+alert( str.match(regexp) ); // [url][b]http://google.com[/b][/url]</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Opening tag is <code class="pattern">\[(b|url|quote)\]</code>.</p> 
+              <p>Then to find everything till the closing tag ??? let???s use the pattern <code class="pattern">.*?</code> with flag <code class="pattern">s</code> to match any character including the newline and then add a backreference to the closing tag.</p> 
+              <p>The full pattern: <code class="pattern">\[(b|url|quote)\].*?\[/\1\]</code>.</p> 
+              <p>In action:</p> 
+              <div id="fifre6g3tw" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let regexp = /\[(b|url|quote)\].*?\[\/\1\]/gs;
+
+let str = `
+  [b]hello![/b]
+  [quote]
+    [url]http://google.com[/url]
+  [/quote]
+`;
+
+alert( str.match(regexp) ); // [b]hello![/b],[quote][url]http://google.com[/url][/quote]</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Please note that besides escaping <code class="pattern">[</code> and <code class="pattern">]</code>, we had to escape a slash for the closing tag <code class="pattern">[\/\1]</code>, because normally the slash closes the pattern.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="regexp-alternation.html#find-quoted-strings" name="find-quoted-strings">Find quoted strings</a></h3> 
+           <a class="task__open-link" href="task/match-quoted-string.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Create a regexp to find strings in double quotes <code class="subject">"..."</code>.</p> 
+            <p>The strings should support escaping, the same way as JavaScript strings do. For instance, quotes can be inserted as <code class="subject">\"</code> a newline as <code class="subject">\n</code>, and the slash itself as <code class="subject">\\</code>.</p> 
+            <div id="y4sh4nqqxb" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let str = "Just like \"here\".";</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>Please note, in particular, that an escaped quote <code class="subject">\"</code> does not end a string.</p> 
+            <p>So we should search from one quote to the other ignoring escaped quotes on the way.</p> 
+            <p>That???s the essential part of the task, otherwise it would be trivial.</p> 
+            <p>Examples of strings to match:</p> 
+            <div id="pyh7zcoeef" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:3,&quot;end&quot;:10}]},{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:3,&quot;end&quot;:7}]},{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:3,&quot;end&quot;:19}]},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:3,&quot;end&quot;:12}]}]"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>.. "test me" ..
+.. "Say \"Hello\"!" ... (escaped quotes inside)
+.. "\\" ..  (double slash inside)
+.. "\\ \"" ..  (double slash and an escaped quote inside)</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>In JavaScript we need to double the slashes to pass them right into the string, like this:</p> 
+            <div id="u9nnwlw1z4" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="regexp-alternation.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="regexp-alternation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let str = ' .. "test me" .. "Say \\"Hello\\"!" .. "\\\\ \\"" .. ';
+
+// the in-memory string
+alert(str); //  .. "test me" .. "Say \"Hello\"!" .. "\\ \"" ..</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>The solution: <code class="pattern">/"(\\.|[^"\\])*"/g</code>.</p> 
+              <p>Step by step:</p> 
+              <ul> 
+               <li>First we look for an opening quote <code class="pattern">"</code></li> 
+               <li>Then if we have a backslash <code class="pattern">\\</code> (we have to double it in the pattern because it is a special character), then any character is fine after it (a dot).</li> 
+               <li>Otherwise we take any character except a quote (that would mean the end of the string) and a backslash (to prevent lonely backslashes, the backslash is only used with some other symbol after it): <code class="pattern">[^"\\]</code></li> 
+               <li>???And so on till the closing quote.</li> 
+              </ul> 
+              <p>In action:</p> 
+              <div id="6jcdgk7h54" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let regexp = /"(\\.|[^"\\])*"/g;
+let str = ' .. "test me" .. "Say \\"Hello\\"!" .. "\\\\ \\"" .. ';
+
+alert( str.match(regexp) ); // "test me","Say \"Hello\"!","\\ \""</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="regexp-alternation.html#find-the-full-tag" name="find-the-full-tag">Find the full tag</a></h3> 
+           <a class="task__open-link" href="task/match-exact-tag.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Write a regexp to find the tag <code>&lt;style...&gt;</code>. It should match the full tag: it may have no attributes <code>&lt;style&gt;</code> or have several of them <code>&lt;style type="..." id="..."&gt;</code>.</p> 
+            <p>???But the regexp should not match <code>&lt;styler&gt;</code>!</p> 
+            <p>For instance:</p> 
+            <div id="qn653lupe8" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>let regexp = /your regexp/g;
+
+alert( '&lt;style&gt; &lt;styler&gt; &lt;style test="..."&gt;'.match(regexp) ); // &lt;style&gt;, &lt;style test="..."&gt;</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>The pattern start is obvious: <code class="pattern">&lt;style</code>.</p> 
+              <p>???But then we can???t simply write <code class="pattern">&lt;style.*?&gt;</code>, because <code class="match">&lt;styler&gt;</code> would match it.</p> 
+              <p>We need either a space after <code class="match">&lt;style</code> and then optionally something else or the ending <code class="match">&gt;</code>.</p> 
+              <p>In the regexp language: <code class="pattern">&lt;style(&gt;|\s.*?&gt;)</code>.</p> 
+              <p>In action:</p> 
+              <div id="9zp7ckz4or" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="regexp-alternation.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let regexp = /&lt;style(&gt;|\s.*?&gt;)/g;
+
+alert( '&lt;style&gt; &lt;styler&gt; &lt;style test="..."&gt;'.match(regexp) ); // &lt;style&gt;, &lt;style test="..."&gt;</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="regexp-backreferences.html" data-tooltip="Backreferences in pattern: \N and \k<name>"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="regexp-lookahead-lookbehind.html" data-tooltip="Lookahead and lookbehind"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-alternation" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fregexp-alternation" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regular-expressions.html">Regular expressions</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-alternation.html#example-regexp-for-time">Example: regexp for time</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-alternation.html#tasks">Tugas (4)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="regexp-alternation.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fregexp-alternation" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fregexp-alternation" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

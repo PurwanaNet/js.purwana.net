@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "de";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Async/await</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="async-await.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Async/await"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Async/await"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="microtask-queue.html"> 
+  <link rel="next" href="generators-iterators.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <style>
+.promise-avatar-example {
+  border-radius: 50%;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}
+</style> 
+  <meta property="og:title" content="Async/await"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fasync-await" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fasync-await" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="82" max="92" data-tooltip="Pelajaran 82 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="async.html"><span>Promises, async/await</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"Promises, async/await","item":"https://id.javascript.info/async"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 1 September 2021"> 
+          <div class="updated-at__content">
+            1 September 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Async/await</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Async/await"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Ada sintaksis spesial untuk bekerja dengan promise dengan cara yang lebih nyaman, dipanggil ???async/await???. Ini sangat mudah dipahami dan digunakan.</p> 
+         <h2><a class="main__anchor" name="fungsi-async" href="async-await.html#fungsi-async">Fungsi Async</a></h2> 
+         <p>Mari mulai dengan keyword <code>async</code>. keyword ini dapat ditempatkan sebelum fungsi, seperti ini:</p> 
+         <div id="k2q4lakm6d" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function f() {
+  return 1;
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kata ???async??? sebelum fungsi berarti satu hal sederhana: fungsi tersebut selalu mengembalikkan promise. Value lain dibungkus didalam promise yang resolve secara otomatis.</p> 
+         <p>Sebagai contoh, fungsi ini mengembalikkan promise yang resolve dengan hasil <code>1</code>, mari kita uji:</p> 
+         <div id="nsd6r4ifag" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function f() {
+  return 1;
+}
+
+f().then(alert); // 1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Kita secara eksplisit dapat mengembalikkan promise, itu akan sama dengan:</p> 
+         <div id="d2qbz73e5m" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function f() {
+  return Promise.resolve(1);
+}
+
+f().then(alert); // 1</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jadi, <code>async</code> memastikan bahwa fungsi mengembalikkan promise, dan membungkus non-promise di dalamnya. Cukup mudah, bukan? Tapi tidak hanya itu. Ada keyword lain, <code>await</code>, yang hanya bekerja di dalam fungsi <code>async</code>, dan itu cukup keren.</p> 
+         <h2><a class="main__anchor" name="await" href="async-await.html#await">Await</a></h2> 
+         <p>Sintaksis:</p> 
+         <div id="r5w393wozu" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// bekerja hanya di dalam fungsi async
+let value = await promise;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Keyword <code>await</code> membuat JavaScript menunggu sampai promise tersebut selesai dan mengembalikkan hasilnya.</p> 
+         <p>Ini contoh dengan promise yang selesai dalam 1 detik:</p> 
+         <div id="qfokbwwtto" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:6,&quot;end&quot;:6}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function f() {
+
+  let promise = new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; resolve("done!"), 1000)
+  });
+
+  let result = await promise; // tunggu sampai promise selesai (*)
+
+  alert(result); // "done!"
+}
+
+f();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Eksekusi fungsi tersebut ???dipause??? pada baris <code>(*)</code> dan dilanjutkan ketika promise selesai, dengan <code>result</code> menjadi hasilnya. Jadi kode di atas menunjukkan ???done!??? dalam satu detik.</p> 
+         <p>Mari kita tekankan: <code>await</code> benar-benar membuat JavaScript menunggu sampai promise selesai, lalu lanjutkan dengan hasilnya. Hal tersebut tidak membebani <em>resource</em> CPU apapun, karena mesin dapat melakukan pekerjaan lain sementara itu: eksekusi script lain, menangani event dan lain-lain.</p> 
+         <p>Ini hanya sintaksis yang lebih elegan untuk mendapatkan hasil dari promise daripada <code>promise.then</code>, mudah untuk dibaca dan ditulis.</p> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Tidak dapat menggunakan <code>await</code>di dalam fungsi biasa</span> 
+          </div> 
+          <div class="important__content"> 
+           <div id="dpuhhoq4s8" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>function f() {
+  let promise = Promise.resolve(1);
+  let result = await promise; // Error sintaksis
+}</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Kita akan mendapatkan error ini jika kita tidak meletakkan <code>async</code> sebelum fungsi. Seperti yang dikatakan, <code>await</code> hanya bekerja di dalam sebuah <code>fungsi async</code>.</p> 
+          </div> 
+         </div> 
+         <p>Mari kita ambil contoh <code>showAvatar()</code> dari bab <a href="promise-chaining.html">Promises chaining</a> dan menulisnya ulang menggunakan <code>async/await</code>:</p> 
+         <ol> 
+          <li>Kita harus mengganti call <code>.then</code> dengan <code>await</code>.</li> 
+          <li>Juga kita harus membuat fungsi <code>async</code> agar mereka bekerja.</li> 
+         </ol> 
+         <div id="a6js3yfgp6" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function showAvatar() {
+
+  // baca JSON kita
+  let response = await fetch('/article/promise-chaining/user.json');
+  let user = await response.json();
+
+  // baca pengguna github
+  let githubResponse = await fetch(`https://api.github.com/users/${user.name}`);
+  let githubUser = await githubResponse.json();
+
+  // memunculkan avatar
+  let img = document.createElement('img');
+  img.src = githubUser.avatar_url;
+  img.className = "promise-avatar-example";
+  document.body.append(img);
+
+  // tunnggu 3 detik
+  await new Promise((resolve, reject) =&gt; setTimeout(resolve, 3000));
+
+  img.remove();
+
+  return githubUser;
+}
+
+showAvatar();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Cukup bersih dan mudah dibaca, bukan? Jauh lebih baik dari sebelumnya.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>await</code> tidak bekerja pada top-level code</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Orang yang baru mulai menggunakan <code>await</code> cenderung lupa faktanya bahwa kita tidak bisa menggunakan <code>await</code> pada top-level code. Sebagai contoh, ini tidak akan bekerja:</p> 
+           <div id="h944795j9j" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// error sintaksis pada top-level code
+let response = await fetch('/article/promise-chaining/user.json');
+let user = await response.json();</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Kita dapat membungkusnya kedalam fungsi async anonymous, seperti ini:</p> 
+           <div id="shm01o7sqb" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>(async () =&gt; {
+  let response = await fetch('/article/promise-chaining/user.json');
+  let user = await response.json();
+  ...
+})();</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>P.S. Fitur baru: mulai dari mesin V8 versi 8.9+, tingkat atas menunggu bekerja di [modul](info: modul).</p> 
+          </div> 
+         </div> 
+         <div id="cohvuuwwa5" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code>````smart header="`await`menerima \"thenables\"" Seperti`promise.then`, `await`memperbolehkan kita menggunakan objek thenable (mereka dengan method`then`callable). Idenya adalah objek 3rd-party mungkin bukan promise, tetapi promise-compatible: jika objek tersebut mendukung`.then`, itu cukup digunakan dengan `await`.
+
+Disini demo class `Thenable`, `await` di bawah menerima instances dari class:
+
+```js run
+class Thenable {
+  constructor(num) {
+    this.num = num;
+  }
+  then(resolve, reject) {
+    alert(resolve);
+    // resolve dengan this.num*2 setelah 1000ms
+    setTimeout(() =&gt; resolve(this.num * 2), 1000); // (*)
+  }
+}
+
+async function f() {
+  // tunggu selama 1 detik, kemudian result-nya menjadi 2
+  let result = await new Thenable(1);
+  alert(result);
+}
+
+f();
+```
+
+Jika `await` mendapatkan objek non-promise dengan `.then`, objek itu memanggil method yang menyediakan fungsi asli `resolve`, `reject` sebagai argumen. Kemudian `await` menunggu sampai salah satu argumen tersebut dipanggil (pada contoh di atas hal tersebut terjadi pada baris `(*)`) dan kemudian melanjutkan dengan hasilnya.</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Method class async </span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Untuk mendeklarasikan sebuah method class async, cukup tambahkan saja <code>async</code>:</p> 
+           <div id="60zoq7ghn4" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>class Waiter {
+  async wait() {
+    return await Promise.resolve(1);
+  }
+}
+
+new Waiter()
+  .wait()
+  .then(alert); // 1 (this is the same as (result =&gt; alert(result)))</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Artinya sama saja: itu memastikan bahwa value yang dikembalikkan adalah promise dan memungkinkan <code>await</code>.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="penanganan-error" href="async-await.html#penanganan-error">Penanganan error</a></h2> 
+         <p>Jika sebuah promise resolve secara normal, kemudian <code>await promise</code> mengembalikkan result. Tetapi dalam kasus rejection, <code>await promise</code> melempar error, seolah olah ada pernyataan <code>throw</code> pada baris tersebut.</p> 
+         <p>Kode ini:</p> 
+         <div id="vy50pg572f" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function f() {
+  await Promise.reject(new Error("Whoops!"));
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???Sama dengan ini:</p> 
+         <div id="wz5sj8oruh" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function f() {
+  throw new Error("Whoops!");
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di dalam situasi yang nyata, promise mungkin butuh waktu sebelum reject. Dalam hal ini akan terjadi penundaan sebelum <code>await</code> melemparkan sebuah error.</p> 
+         <p>Kita dapat catch error itu menggunakan <code>try..catch</code>, dengan cara yang sama seperti <code>throw</code> biasa:</p> 
+         <div id="wb63meu0ej" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function f() {
+
+  try {
+    let response = await fetch('http://no-such-url');
+  } catch(err) {
+    alert(err); // TypeError: failed to fetch (gagal mengambil resource)
+  }
+}
+
+f();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam kasus error, kontrolnya meloncat ke blok <code>catch</code>. kita juga dapat membungkus banyak baris:</p> 
+         <div id="1lxv3hft4r" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function f() {
+  try {
+    let response = await fetch("/no-user-here");
+    let user = await response.json();
+  } catch (err) {
+    // catch error baik di fetch dan response.json
+    alert(err);
+  }
+}
+
+f();</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita tidak punya <code>try..catch</code>, maka promise yang dihasilkan oleh pemanggilan fungsi async <code>f()</code> menjadi direject. Kita dapat menambahkan <code>.catch</code> untuk menanganinya:</p> 
+         <div id="vukfdoo5vv" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:5,&quot;end&quot;:5}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>async function f() {
+  let response = await fetch('http://no-such-url');
+}
+
+// f() menjadi sebuah promise yang direject
+f().catch(alert); // TypeError: failed to fetch (gagal mengambil resource) // (*)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika kita lupa menambahkan <code>.catch</code> di sana, maka kita mendapatkan sebuah error promise yang tak tertangani (dapat dilihat di console). Kita dapat catch errors seperti itu menggunakan handler event global seperti yang dijelaskan di bab <a href="promise-error-handling.html">Penanganan error dengan promise</a>.</p> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>async/await</code>dan<code>promise.then/catch</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Tetapi pada <em>top-level code</em>, saat kita berada di luar fungsi <code>async</code>, kita secara sintaks tidak dapat menggunakan <code>await</code>, jadi itu sebuah latihan normal untuk menambah <code>.then/catch</code> untuk menangani hasil akhir atau jika terjadi error.</p> 
+           <p>Seperti baris <code>(*)</code> contoh di atas.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type"><code>async/await</code> bekerja baik dengan <code>Promise.all</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Ketika kita perlu menunggu banyak promise, kita dapat membungkusnya di dalam <code>Promise.all</code> dan kemudian <code>await</code>:</p> 
+           <div id="d7v74nbx09" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>// tunggu untuk result dalam array
+let results = await Promise.all([
+  fetch(url1),
+  fetch(url2),
+  ...
+]);</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Pada kasus error, itu menyebar seperti biasa: dari promise yang gagal ke <code>Promise.all</code>, dan kemudian menjadi sebuah pengecualian yang bisa kita catch menggunakan <code>try..catch</code> di sekitar pemanggilan.</p> 
+         <div id="tui2bauxvz" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-none"><code>## Ringkasan
+
+Keyword `async` sebelum fungsi memiliki dua efek:
+
+1. Membuatnya selalu mengembalikkan sebuah promise.
+2. Memperbolehkan kita untuk menggunakan `await` di dalamnya.
+
+Keyword `await` sebelum promise membuat JavaScript menunggu sampai promise itu selesai, dan kemudian:
+
+1. Jika ada error, pengecualian dihasilkan, sama seperti jika `throw error` dipanggil di tempat itu.
+2. Sebaliknya, menghasilkan result.
+
+Bersama mereka menyediakan kerangka kerja yang bagus untuk menulis kode asynchronous yang mudah baik membaca dan menulis.
+
+Dengan `async/await` kita jarang menulis `promise.then/catch`, tetapi kita tetap tidak boleh lupa bahwa `async/await` berdasarkan promise, karena terkadang (misalnya di scope terluar) kita harus menggunakan method ini. Juga `Promise.all` adalah sesuatu yang bagus untuk menunggu banyak task secara bersamaan.</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="async-await.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="async-await.html#menulis-ulang-menggunakan-async-await" name="menulis-ulang-menggunakan-async-await">Menulis ulang menggunakan async/await</a></h3> 
+           <a class="task__open-link" href="task/rewrite-async.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis ulang salah satu contoh di bab ini <a href="promise-chaining.html">Promises chaining</a> menggunakan <code>async/await</code> daripada <code>.then/catch</code>:</p> 
+            <div id="bfuhz7ggjr" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>function loadJson(url) {
+  return fetch(url)
+    .then(response =&gt; {
+      if (response.status == 200) {
+        return response.json();
+      } else {
+        throw new Error(response.status);
+      }
+    });
+}
+
+loadJson('no-such-user.json')
+  .catch(alert); // Error: 404</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Catatannya ada di bawah kode:</p> 
+              <div id="uwotq2903y" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>async function loadJson(url) {
+  // (1)
+  let response = await fetch(url); // (2)
+
+  if (response.status == 200) {
+    let json = await response.json(); // (3)
+    return json;
+  }
+
+  throw new Error(response.status);
+}
+
+loadJson("no-such-user.json").catch(alert); // Error: 404 (4)</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Catatan:</p> 
+              <ol> 
+               <li> <p>Function <code>loadJson</code> menjadi <code>async</code>.</p> </li> 
+               <li> <p>Semua <code>.then</code> di dalamnya di ganti dengan <code>await</code>.</p> </li> 
+               <li> <p>Kita dapat <code>return response.json()</code> daripada menunggu untuk itu, seperti ini:</p> 
+                <div id="81343tnj6z" data-trusted="1" class="code-example"> 
+                 <div class="codebox code-example__codebox"> 
+                  <div class="codebox__code" data-code="1"> 
+                   <pre class="line-numbers language-javascript"><code>if (response.status == 200) {
+  return response.json(); // (3)
+}</code></pre> 
+                  </div> 
+                 </div> 
+                </div><p>Lalu kode terluar harus <code>await</code> untuk promise tersebut resolve. Dalam kasus kita, itu tidak masalah.</p> </li> 
+               <li> <p>Error yang dilempar dari <code>loadJson</code> ditangani oleh <code>.catch</code>. Kita tidak bisa menggunakan <code>await loadJson(???)</code> di sana, karena kita tidak berada di dalam function <code>async</code>.</p> </li> 
+              </ol> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="async-await.html#menulis-ulang-rethrow-dengan-async-await" name="menulis-ulang-rethrow-dengan-async-await">Menulis ulang "rethrow" dengan async/await</a></h3> 
+           <a class="task__open-link" href="task/rewrite-async-2.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Di bawah anda dapat menemukan contoh ???rethrow??? dari bab <a href="promise-chaining.html">Promises chaining</a>. Tulis ulang menggunakan <code>async/await</code> daripada <code>.then/catch</code>.</p> 
+            <p>Dan singkirkan rekursi yang mendukung masuk loop dalam <code>demoGithubUser</code>: dengan <code>async/await</code> itu menjadi mudah untuk dilakukan.</p> 
+            <div id="z5023ym13w" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="toolbar codebox__toolbar"> 
+               <div class="toolbar__tool"> 
+                <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+               </div> 
+               <div class="toolbar__tool"> 
+                <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+               </div> 
+              </div> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>class HttpError extends Error {
+  constructor(response) {
+    super(`${response.status} for ${response.url}`);
+    this.name = "HttpError";
+    this.response = response;
+  }
+}
+
+function loadJson(url) {
+  return fetch(url).then((response) =&gt; {
+    if (response.status == 200) {
+      return response.json();
+    } else {
+      throw new HttpError(response);
+    }
+  });
+}
+
+// Tanya nama pengguna sampai github mengembalikkan user yang valid
+function demoGithubUser() {
+  let name = prompt("Enter a name?", "iliakan");
+
+  return loadJson(`https://api.github.com/users/${name}`)
+    .then((user) =&gt; {
+      alert(`Full name: ${user.name}.`);
+      return user;
+    })
+    .catch((err) =&gt; {
+      if (err instanceof HttpError &amp;&amp; err.response.status == 404) {
+        alert("No such user, please reenter.");
+        return demoGithubUser();
+      } else {
+        throw err;
+      }
+    });
+}
+
+demoGithubUser();</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Tidak ada trik di sini. Hanya mengganti <code>.catch</code> dengan <code>try...catch</code> di dalam <code>demoGithubUser</code> dan menambahkan <code>async/await</code> ketika dibutuhkan:</p> 
+              <div id="dvao5uq1b3" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>class HttpError extends Error {
+  constructor(response) {
+    super(`${response.status} for ${response.url}`);
+    this.name = "HttpError";
+    this.response = response;
+  }
+}
+
+async function loadJson(url) {
+  let response = await fetch(url);
+  if (response.status == 200) {
+    return response.json();
+  } else {
+    throw new HttpError(response);
+  }
+}
+
+// Tanya nama pengguna sampai github mengembalikkan pengguna yang valid
+async function demoGithubUser() {
+  let user;
+  while (true) {
+    let name = prompt("Enter a name?", "iliakan");
+
+    try {
+      user = await loadJson(`https://api.github.com/users/${name}`);
+      break; // tidak ada error, keluar dari loop
+    } catch (err) {
+      if (err instanceof HttpError &amp;&amp; err.response.status == 404) {
+        // loop dilanjutkan setelah alert
+        alert("No such user, please reenter.");
+      } else {
+        // error yang tidak diketahui, rethrow
+        throw err;
+      }
+    }
+  }
+
+  alert(`Full name: ${user.name}.`);
+  return user;
+}
+
+demoGithubUser();</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="async-await.html#panggil-async-dari-non-async" name="panggil-async-dari-non-async">Panggil async dari non-async</a></h3> 
+           <a class="task__open-link" href="task/async-from-regular.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kita punya function ???reguler???. Bagaimana memanggil <code>async</code>dari function tersebut dan menggunakan hasilnya?</p> 
+            <div id="6d4euuw1tq" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>async function wait() {
+  await new Promise((resolve) =&gt; setTimeout(resolve, 1000));
+
+  return 10;
+}
+
+function f() {
+  // ...apa  yang ditulis di sini?
+  // kita harus memanggil async wait() dan tunggu sampai mendapatkan 10
+  // ingat, kita tidak bisa menggunakan "await"
+}</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+            <p>P.S. Task ini secara teknis sangat mudah, tetapi pertanyaan ini cukup umum bagi developer yang baru mengenal async/await.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Itulah yang terjadi ketika mengetahui cara kerjanya di dalam sangat membantu.</p> 
+              <p>Hanya perlakukan pemanggilan <code>async</code> sebagai promise dan lampirkan <code>.then</code> ke dalamnya:</p> 
+              <div id="xsq09mo906" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:8,&quot;end&quot;:8}]"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="async-await.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="async-await.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>async function wait() {
+  await new Promise(resolve =&gt; setTimeout(resolve, 1000));
+
+  return 10;
+}
+
+function f() {
+  // menunjukkan 10 setelah 1 detik
+  wait().then(result =&gt; alert(result));
+}
+
+f();</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="microtask-queue.html" data-tooltip="Microtasks"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="generators-iterators.html" data-tooltip="Generator, iterasi lanjutan"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fasync-await" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fasync-await" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async.html">Promises, async/await</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-await.html#fungsi-async">Fungsi Async</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-await.html#await">Await</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-await.html#penanganan-error">Penanganan error</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-await.html#tasks">Tugas (3)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="async-await.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fasync-await" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fasync-await" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "cn";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Mutation observer</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="mutation-observer.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Mutation observer"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Mutation observer"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="ui-misc.html"> 
+  <link rel="next" href="selection-range.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Mutation observer"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fmutation-observer" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fmutation-observer" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="30" max="32" data-tooltip="Pelajaran 30 dari 32"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="ui.html"><span>Browser: Document, Events, Interfaces</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="ui-misc.html"><span>Miscellaneous</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Browser: Document, Events, Interfaces","item":"https://id.javascript.info/ui"},{"@type":"ListItem","position":3,"name":"Miscellaneous","item":"https://id.javascript.info/ui-misc"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 13 September 2020"> 
+          <div class="updated-at__content">
+            13 September 2020 
+          </div> 
+         </div> 
+        </div> 
+        <div class="notification notification_message notification_warning notification_article"> 
+         <div class="notification__content">
+           Materi ini hanya tersedia dalam bahasa berikut: 
+          <a href="https://javascript.info/mutation-observer">English</a>, 
+          <a href="https://es.javascript.info/mutation-observer">Espa??ol</a>, 
+          <a href="https://fr.javascript.info/mutation-observer">Fran??ais</a>, 
+          <a href="https://it.javascript.info/mutation-observer">Italiano</a>, 
+          <a href="https://ja.javascript.info/mutation-observer">?????????</a>, 
+          <a href="https://learn.javascript.ru/mutation-observer">??????????????</a>, 
+          <a href="https://tr.javascript.info/mutation-observer">T??rk??e</a>, 
+          <a href="https://uk.javascript.info/mutation-observer">????????????????????</a>, 
+          <a href="https://zh.javascript.info/mutation-observer">????????????</a>. Tolong, menerjemahkan ke dalam 
+          <strong>Indonesia</strong>. 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Mutation observer</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Mutation observer"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p><code>MutationObserver</code> is a built-in object that observes a DOM element and fires a callback when it detects a change.</p> 
+         <p>We???ll first take a look at the syntax, and then explore a real-world use case, to see where such thing may be useful.</p> 
+         <h2><a class="main__anchor" name="syntax" href="mutation-observer.html#syntax">Syntax</a></h2> 
+         <p><code>MutationObserver</code> is easy to use.</p> 
+         <p>First, we create an observer with a callback-function:</p> 
+         <div id="trt1sexlcd" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let observer = new MutationObserver(callback);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>And then attach it to a DOM node:</p> 
+         <div id="6fzqstas1k" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>observer.observe(node, config);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p><code>config</code> is an object with boolean options ???what kind of changes to react on???:</p> 
+         <ul> 
+          <li><code>childList</code> ??? changes in the direct children of <code>node</code>,</li> 
+          <li><code>subtree</code> ??? in all descendants of <code>node</code>,</li> 
+          <li><code>attributes</code> ??? attributes of <code>node</code>,</li> 
+          <li><code>attributeFilter</code> ??? an array of attribute names, to observe only selected ones.</li> 
+          <li><code>characterData</code> ??? whether to observe <code>node.data</code> (text content),</li> 
+         </ul> 
+         <p>Few other options:</p> 
+         <ul> 
+          <li><code>attributeOldValue</code> ??? if <code>true</code>, pass both the old and the new value of attribute to callback (see below), otherwise only the new one (needs <code>attributes</code> option),</li> 
+          <li><code>characterDataOldValue</code> ??? if <code>true</code>, pass both the old and the new value of <code>node.data</code> to callback (see below), otherwise only the new one (needs <code>characterData</code> option).</li> 
+         </ul> 
+         <p>Then after any changes, the <code>callback</code> is executed: changes are passed in the first argument as a list of <a href="https://dom.spec.whatwg.org/#mutationrecord">MutationRecord</a> objects, and the observer itself as the second argument.</p> 
+         <p><a href="https://dom.spec.whatwg.org/#mutationrecord">MutationRecord</a> objects have properties:</p> 
+         <ul> 
+          <li><code>type</code> ??? mutation type, one of 
+           <ul> 
+            <li><code>"attributes"</code>: attribute modified</li> 
+            <li><code>"characterData"</code>: data modified, used for text nodes,</li> 
+            <li><code>"childList"</code>: child elements added/removed,</li> 
+           </ul> </li> 
+          <li><code>target</code> ??? where the change occurred: an element for <code>"attributes"</code>, or text node for <code>"characterData"</code>, or an element for a <code>"childList"</code> mutation,</li> 
+          <li><code>addedNodes/removedNodes</code> ??? nodes that were added/removed,</li> 
+          <li><code>previousSibling/nextSibling</code> ??? the previous and next sibling to added/removed nodes,</li> 
+          <li><code>attributeName/attributeNamespace</code> ??? the name/namespace (for XML) of the changed attribute,</li> 
+          <li><code>oldValue</code> ??? the previous value, only for attribute or text changes, if the corresponding option is set <code>attributeOldValue</code>/<code>characterDataOldValue</code>.</li> 
+         </ul> 
+         <p>For example, here???s a <code>&lt;div&gt;</code> with a <code>contentEditable</code> attribute. That attribute allows us to focus on it and edit.</p> 
+         <div id="hppo9l1qjk" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="mutation-observer.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="mutation-observer.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;div contentEditable id="elem"&gt;Click and &lt;b&gt;edit&lt;/b&gt;, please&lt;/div&gt;
+
+&lt;script&gt;
+let observer = new MutationObserver(mutationRecords =&gt; {
+  console.log(mutationRecords); // console.log(the changes)
+});
+
+// observe everything except attributes
+observer.observe(elem, {
+  childList: true, // observe direct children
+  subtree: true, // and lower descendants too
+  characterDataOldValue: true // pass old data to callback
+});
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If we run this code in the browser, then focus on the given <code>&lt;div&gt;</code> and change the text inside <code>&lt;b&gt;edit&lt;/b&gt;</code>, <code>console.log</code> will show one mutation:</p> 
+         <div id="glhhzpvsfo" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>mutationRecords = [{
+  type: "characterData",
+  oldValue: "edit",
+  target: &lt;text node&gt;,
+  // other properties empty
+}];</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>If we make more complex editing operations, e.g. remove the <code>&lt;b&gt;edit&lt;/b&gt;</code>, the mutation event may contain multiple mutation records:</p> 
+         <div id="idk3ixhmtk" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>mutationRecords = [{
+  type: "childList",
+  target: &lt;div#elem&gt;,
+  removedNodes: [&lt;b&gt;],
+  nextSibling: &lt;text node&gt;,
+  previousSibling: &lt;text node&gt;
+  // other properties empty
+}, {
+  type: "characterData"
+  target: &lt;text node&gt;
+  // ...mutation details depend on how the browser handles such removal
+  // it may coalesce two adjacent text nodes "edit " and ", please" into one node
+  // or it may leave them separate text nodes
+}];</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>So, <code>MutationObserver</code> allows to react on any changes within DOM subtree.</p> 
+         <h2><a class="main__anchor" name="usage-for-integration" href="mutation-observer.html#usage-for-integration">Usage for integration</a></h2> 
+         <p>When such thing may be useful?</p> 
+         <p>Imagine the situation when you need to add a third-party script that contains useful functionality, but also does something unwanted, e.g. shows ads <code>&lt;div class="ads"&gt;Unwanted ads&lt;/div&gt;</code>.</p> 
+         <p>Naturally, the third-party script provides no mechanisms to remove it.</p> 
+         <p>Using <code>MutationObserver</code>, we can detect when the unwanted element appears in our DOM and remove it.</p> 
+         <p>There are other situations when a third-party script adds something into our document, and we???d like to detect, when it happens, to adapt our page, dynamically resize something etc.</p> 
+         <p><code>MutationObserver</code> allows to implement this.</p> 
+         <h2><a class="main__anchor" name="usage-for-architecture" href="mutation-observer.html#usage-for-architecture">Usage for architecture</a></h2> 
+         <p>There are also situations when <code>MutationObserver</code> is good from architectural standpoint.</p> 
+         <p>Let???s say we???re making a website about programming. Naturally, articles and other materials may contain source code snippets.</p> 
+         <p>Such snippet in an HTML markup looks like this:</p> 
+         <div id="y3o1bkp9om" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>...
+&lt;pre class="language-javascript"&gt;&lt;code&gt;
+  // here's the code
+  let hello = "world";
+&lt;/code&gt;&lt;/pre&gt;
+...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>For better readability and at the same time, to beautify it, we???ll be using a JavaScript syntax highlighting library on our site, like <a href="https://prismjs.com/">Prism.js</a>. To get syntax highlighting for above snippet in Prism, <code>Prism.highlightElem(pre)</code> is called, which examines the contents of such <code>pre</code> elements and adds special tags and styles for colored syntax highlighting into those elements, similar to what you see in examples here, on this page.</p> 
+         <p>When exactly should we run that highlighting method? Well, we can do it on <code>DOMContentLoaded</code> event, or put the script at the bottom of the page. The moment our DOM is ready, we can search for elements <code>pre[class*="language"]</code> and call <code>Prism.highlightElem</code> on them:</p> 
+         <div id="hpqe7bqxb2" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// highlight all code snippets on the page
+document.querySelectorAll('pre[class*="language"]').forEach(Prism.highlightElem);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Everything???s simple so far, right? We find code snippets in HTML and highlight them.</p> 
+         <p>Now let???s go on. Let???s say we???re going to dynamically fetch materials from a server. We???ll study methods for that <a href="fetch.html">later in the tutorial</a>. For now it only matters that we fetch an HTML article from a webserver and display it on demand:</p> 
+         <div id="i4e0ttrl0z" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let article = /* fetch new content from server */
+articleElem.innerHTML = article;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>The new <code>article</code> HTML may contain code snippets. We need to call <code>Prism.highlightElem</code> on them, otherwise they won???t get highlighted.</p> 
+         <p><strong>Where and when to call <code>Prism.highlightElem</code> for a dynamically loaded article?</strong></p> 
+         <p>We could append that call to the code that loads an article, like this:</p> 
+         <div id="nyxc14xez5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:4}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let article = /* fetch new content from server */
+articleElem.innerHTML = article;
+
+let snippets = articleElem.querySelectorAll('pre[class*="language-"]');
+snippets.forEach(Prism.highlightElem);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>???But, imagine if we have many places in the code where we load our content ??? articles, quizzes, forum posts, etc. Do we need to put the highlighting call everywhere, to highlight the code in content after loading? That???s not very convenient.</p> 
+         <p>And what if the content is loaded by a third-party module? For example, we have a forum written by someone else, that loads content dynamically, and we???d like to add syntax highlighting to it. No one likes patching third-party scripts.</p> 
+         <p>Luckily, there???s another option.</p> 
+         <p>We can use <code>MutationObserver</code> to automatically detect when code snippets are inserted into the page and highlight them.</p> 
+         <p>So we???ll handle the highlighting functionality in one place, relieving us from the need to integrate it.</p> 
+         <h3><a class="main__anchor" name="dynamic-highlight-demo" href="mutation-observer.html#dynamic-highlight-demo">Dynamic highlight demo</a></h3> 
+         <p>Here???s the working example.</p> 
+         <p>If you run this code, it starts observing the element below and highlighting any code snippets that appear there:</p> 
+         <div id="aoqz9wozzn" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="mutation-observer.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="mutation-observer.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let observer = new MutationObserver(mutations =&gt; {
+
+  for(let mutation of mutations) {
+    // examine new nodes, is there anything to highlight?
+
+    for(let node of mutation.addedNodes) {
+      // we track only elements, skip other nodes (e.g. text nodes)
+      if (!(node instanceof HTMLElement)) continue;
+
+      // check the inserted element for being a code snippet
+      if (node.matches('pre[class*="language-"]')) {
+        Prism.highlightElement(node);
+      }
+
+      // or maybe there's a code snippet somewhere in its subtree?
+      for(let elem of node.querySelectorAll('pre[class*="language-"]')) {
+        Prism.highlightElement(elem);
+      }
+    }
+  }
+
+});
+
+let demoElem = document.getElementById('highlight-demo');
+
+observer.observe(demoElem, {childList: true, subtree: true});</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Here, below, there???s an HTML-element and JavaScript that dynamically fills it using <code>innerHTML</code>.</p> 
+         <p>Please run the previous code (above, observes that element), and then the code below. You???ll see how <code>MutationObserver</code> detects and highlights the snippet.</p> 
+         <p id="highlight-demo" style="border: 1px solid #ddd">A demo-element with <code>id="highlight-demo"</code>, run the code above to observe it.</p> 
+         <p>The following code populates its <code>innerHTML</code>, that causes the <code>MutationObserver</code> to react and highlight its contents:</p> 
+         <div id="umi40597gl" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="mutation-observer.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="mutation-observer.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let demoElem = document.getElementById('highlight-demo');
+
+// dynamically insert content with code snippets
+demoElem.innerHTML = `A code snippet is below:
+  &lt;pre class="language-javascript"&gt;&lt;code&gt; let hello = "world!"; &lt;/code&gt;&lt;/pre&gt;
+  &lt;div&gt;Another one:&lt;/div&gt;
+  &lt;div&gt;
+    &lt;pre class="language-css"&gt;&lt;code&gt;.class { margin: 5px; } &lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+`;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Now we have <code>MutationObserver</code> that can track all highlighting in observed elements or the whole <code>document</code>. We can add/remove code snippets in HTML without thinking about it.</p> 
+         <h2><a class="main__anchor" name="additional-methods" href="mutation-observer.html#additional-methods">Additional methods</a></h2> 
+         <p>There???s a method to stop observing the node:</p> 
+         <ul> 
+          <li><code>observer.disconnect()</code> ??? stops the observation.</li> 
+         </ul> 
+         <p>When we stop the observing, it might be possible that some changes were not yet processed by the observer. In such cases, we use</p> 
+         <ul> 
+          <li><code>observer.takeRecords()</code> ??? gets a list of unprocessed mutation records ??? those that happened, but the callback has not handled them.</li> 
+         </ul> 
+         <p>These methods can be used together, like this:</p> 
+         <div id="zoi4a5k8ng" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// get a list of unprocessed mutations
+// should be called before disconnecting,
+// if you care about possibly unhandled recent mutations
+let mutationRecords = observer.takeRecords();
+
+// stop tracking changes
+observer.disconnect();
+...</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Records returned by <code>observer.takeRecords()</code> are removed from the processing queue</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>The callback won???t be called for records, returned by <code>observer.takeRecords()</code>.</p> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Garbage collection interaction</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Observers use weak references to nodes internally. That is, if a node is removed from the DOM, and becomes unreachable, then it can be garbage collected.</p> 
+           <p>The mere fact that a DOM node is observed doesn???t prevent the garbage collection.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="summary" href="mutation-observer.html#summary">Summary</a></h2> 
+         <p><code>MutationObserver</code> can react to changes in DOM ??? attributes, text content and adding/removing elements.</p> 
+         <p>We can use it to track changes introduced by other parts of our code, as well as to integrate with third-party scripts.</p> 
+         <p><code>MutationObserver</code> can track any changes. The config ???what to observe??? options are used for optimizations, not to spend resources on unneeded callback invocations.</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="ui-misc.html" data-tooltip="Miscellaneous"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="selection-range.html" data-tooltip="Selection and Range"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fmutation-observer" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fmutation-observer" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="ui-misc.html">Miscellaneous</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="mutation-observer.html#syntax">Syntax</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="mutation-observer.html#usage-for-integration">Usage for integration</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="mutation-observer.html#usage-for-architecture">Usage for architecture</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="mutation-observer.html#additional-methods">Additional methods</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="mutation-observer.html#summary">Summary</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="mutation-observer.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fmutation-observer" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fmutation-observer" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

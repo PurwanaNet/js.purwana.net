@@ -1,0 +1,1103 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">Operator logika</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="logical-operators.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="Operator logika"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="Operator logika"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="ifelse.html"> 
+  <link rel="next" href="nullish-coalescing-operator.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="Operator logika"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Flogical-operators" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Flogical-operators" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="15" max="92" data-tooltip="Pelajaran 15 dari 92"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="js.html"><span>Bahasa JavaScript</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link" href="first-steps.html"><span>JavaScript Dasar</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Bahasa JavaScript","item":"https://id.javascript.info/js"},{"@type":"ListItem","position":3,"name":"JavaScript Dasar","item":"https://id.javascript.info/first-steps"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 15 Desember 2021"> 
+          <div class="updated-at__content">
+            15 Desember 2021 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">Operator logika</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="Operator logika"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Ada tiga operator logika di JavaScript: <code>||</code> (OR), <code>&amp;&amp;</code> (AND), <code>!</code> (NOT).</p> 
+         <p>Meski mereka dipanggil ???logika???, mereka bisa diaplikasikan ke nilai tipe apapun, bukan cuma boolean. Hasil mereka bisa juga tipe apapun.</p> 
+         <p>Mari kita lihat detilnya.</p> 
+         <h2><a class="main__anchor" name="or" href="logical-operators.html#or">|| (OR)</a></h2> 
+         <p>Operator ???OR??? diwakili dengan dua simbol garis vertical:</p> 
+         <div id="exq93dmv5z" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>result = a || b;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Di pemrograman klasik, logika OR gunanya cuma untuk memanipulasi nilai boolean. Jika argumennya ada yang <code>true</code>, ia mengembalikan <code>true</code>, tapi jika tidak, maka ia mengembalikan <code>false</code>.</p> 
+         <p>Di JavaScript, operator ini agak tricky dan lebih kuat. Tapi pertama-tama, ayo kita lihat apa yang terjadi pada nilai boolean.</p> 
+         <p>Ada empat kemungkinan kombinasi logika:</p> 
+         <div id="k8wi9zg41v" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( true || true );   // true
+alert( false || true );  // true
+alert( true || false );  // true
+alert( false || false ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seperti yang kita lihat, hasilnya selalu <code>true</code> kecuali jika kedua operand sama-sama <code>false</code>.</p> 
+         <p>Jika operand bukan boolean, ia dikonversi ke boolean untuk evaluasi.</p> 
+         <p>Misalnya, angka <code>1</code> diperlakukan sebagai <code>true</code>, angka <code>0</code> sebagai <code>false</code>:</p> 
+         <div id="goolr1lbev" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (1 || 0) { // bekerja seperti if( true || false )
+  alert( 'truthy!' );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Seringkali, OR <code>||</code> digunakan di pernyataan <code>if</code> untuk menguji apakah ada satu kondisi <em>manapun</em> yang <code>true</code>.</p> 
+         <p>Misalnya:</p> 
+         <div id="30v1b889og" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let hour = 9;
+
+if (hour &lt; 10 || hour &gt; 18) {
+  alert( 'The office is closed.' );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita bisa menyampaikan kondisi lebih:</p> 
+         <div id="iglkn00o2l" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let hour = 12;
+let isWeekend = true;
+
+if (hour &lt; 10 || hour &gt; 18 || isWeekend) {
+  alert( 'The office is closed.' ); // akhir minggu
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="or-finds-the-first-truthy-value" href="logical-operators.html#or-finds-the-first-truthy-value">OR "||" mencari nilai benar pertama</a></h2> 
+         <p>Logika di atas memang klasik. Sekarang, mari bawa fitur ???extra??? JavaScript.</p> 
+         <p>Algoritma luas bekerja seperti berikut.</p> 
+         <p>Untuk nilai yang diORkan:</p> 
+         <div id="56rcbwsh2f" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>result = value1 || value2 || value3;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Operator OR <code>||</code> melakukan hal berikut:</p> 
+         <ul> 
+          <li>Mengevaluasi operand dari kiri ke kanan.</li> 
+          <li>Untuk tiap operand, konversikan ia ke boolean. Jika hasilnya <code>true</code>, stop dan mengembalikan nilai original dari operand.</li> 
+          <li>Jika semua operand telah dievaluasi (misal semuanya <code>false</code>), mengembalikan operand terakhir.</li> 
+         </ul> 
+         <p>Nilai dikembalikan di bentuk originalnya, tanpa konversi.</p> 
+         <p>Dengan kata lain, rantai OR <code>"||"</code> mengembalikan nilai truthy pertama atau yang terakhir jika tak ada nilai benar.</p> 
+         <p>Misalnya:</p> 
+         <div id="9082wq6lun" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 1 || 0 ); // 1 (1 truthy)
+alert( true || 'no matter what' ); // (true ialah truthy)
+
+alert( null || 1 ); // 1 (1 ialah nilai truthy pertama)
+alert( null || 0 || 1 ); // 1 (nilai truthy pertama)
+alert( undefined || null || 0 ); // 0 (semua falsy, mengembalikan nilai terakhir)</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Hal ini menjadikan penggunaan yang menarik dibanding ???OR booleanpure, classical, boolean-only OR???.</p> 
+         <ol> 
+          <li> <p><strong>Dapatkan nilai truthy dari daftar variabel atau expresi.</strong></p> <p>Untuk contoh, kita punya variabel <code>firstName</code>, <code>lastName</code> dan <code>nickName</code>, semuanya bersifat opsional.</p> <p>Kita gunakan OR <code>||</code> untuk memilih satu-satunya yang memiliki data dan menampilkannya (atau <code>anonymous</code> jika belum ada yang ditentukan atau di set):</p> 
+           <div id="aqv24bezpz" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let firstName = "";
+let lastName = "";
+let nickName = "SuperCoder";
+
+alert( firstName || lastName || nickName || "Anonymous"); // SuperCoder</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Jika semua variabel bernilai falsy, <code>Anonymous</code> akan muncul.</p> </li> 
+          <li> <p><strong>Evaluasi Short-circuit.</strong></p> <p>Fitur lainnya dari operator OR <code>||</code> adalah evaluasi ???short-circuit???.</p> <p>Itu berarti bahwa <code>||</code> memproses argumennya sampai nilai pertama bersifat truthy tercapai, lalu nilainya dikembalikan langsung, bahkan tanpa menyentuh argumen lainnya.</p> <p>Pentingnya dari fitur ini menjadi jelas jika sebuah operan bukan hanya sebuah nilai, tapi sebuah ekspresi yang melakukan aksi, seperti assignment sebuah variabel atau sebuah pemanggilan fungsi.</p> <p>Didalam contoh dibawah, hanya pesan kedua yang di jalankan:</p> 
+           <div id="2b0jrmv1h1" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:5}]},{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:4}]}]"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>true || alert("not printed");
+false || alert("printed");</code></pre> 
+             </div> 
+            </div> 
+           </div><p>Di baris pertama, operator OR <code>||</code> langsung berhenti mengevaluasi karena nilai pertama bersifat <code>true</code>, jadi <code>alert</code>nya tidak berjalan.</p> <p>Terkadang, orang-orang menggunakan fitur ini untuk mengeksekusi perintah hanya jika kondisi di paling kiri bersifat falsy.</p> </li> 
+         </ol> 
+         <h2><a class="main__anchor" name="and" href="logical-operators.html#and">&amp;&amp; (AND)</a></h2> 
+         <p>Operator AND diwakili dua ampersand <code>&amp;&amp;</code>:</p> 
+         <div id="7e01wj06wr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>result = a &amp;&amp; b;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Dalam pemrograman klasik, AND mengembalikan <code>true</code> jika kedua operand sama-sama truthy dan <code>false</code> jika sebaliknya:</p> 
+         <div id="pochux2n28" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( true &amp;&amp; true );   // true
+alert( false &amp;&amp; true );  // false
+alert( true &amp;&amp; false );  // false
+alert( false &amp;&amp; false ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Contoh dengan <code>if</code>:</p> 
+         <div id="0l9zlub2sn" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let hour = 12;
+let minute = 30;
+
+if (hour == 12 &amp;&amp; minute == 30) {
+  alert( 'The time is 12:30' );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Sama seperti OR, nilai apapun boleh menjadi operand dari AND:</p> 
+         <div id="0fypvh3tj3" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>if (1 &amp;&amp; 0) { // dievaluasi sebagai true &amp;&amp; false
+  alert( "won't work, because the result is falsy" );
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="and-mencari-nilai-falsy-pertama" href="logical-operators.html#and-mencari-nilai-falsy-pertama">AND ???&amp;&amp;??? mencari nilai falsy pertama</a></h2> 
+         <p>Misal ada beberapa nilai di-AND-kan:</p> 
+         <div id="8d41e3b3p1" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>result = value1 &amp;&amp; value2 &amp;&amp; value3;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Yang dilakukan operator AND <code>&amp;&amp;</code> adalah sebagai berikut:</p> 
+         <ul> 
+          <li>Mengevaluasi operand dari kiri ke kanan.</li> 
+          <li>Untuk tiap operand, konversi ia ke boolean. Jika hasilnya <code>false</code>, stop dan kembalikan nilai original operand tersebut.</li> 
+          <li>Jika semua operand dievaluasi (i.e. semua truthy), mengembalikan operand terakhir.</li> 
+         </ul> 
+         <p>Dengan kata lain, AND mengembalikan nilai falsy pertama atau nilai terakhir jika tak ketemu satupun nilai falsy.</p> 
+         <p>Aturan di atas mirip dengan OR. Bedanya ialah AND mengembalikan niai <em>falsy</em> pertama sedangkan OR mengembalikan nilai <em>truthy</em> pertama.</p> 
+         <p>Misalnya:</p> 
+         <div id="v2bvo8q93x" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>// jika operand pertama truthy,
+// AND mengembalikan operand kedua:
+alert( 1 &amp;&amp; 0 ); // 0
+alert( 1 &amp;&amp; 5 ); // 5
+
+// jika operand pertama falsy,
+// AND mengembalikan itu. Operand kedua diabaikan
+alert( null &amp;&amp; 5 ); // null
+alert( 0 &amp;&amp; "no matter what" ); // 0</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Kita juga bisa mengoper beberapa nilai dalam satu barus. Lihat bagaimana nilai falsy pertama dikembalikan:</p> 
+         <div id="xeu9u1l14t" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 1 &amp;&amp; 2 &amp;&amp; null &amp;&amp; 3 ); // null</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Ketika semua nilai truthy, nilai terakhir dikembalikan:</p> 
+         <div id="mwhpp5melp" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( 1 &amp;&amp; 2 &amp;&amp; 3 ); // 3, the last one</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <div class="important important_smart"> 
+          <div class="important__header"> 
+           <span class="important__type">Precedence of AND <code>&amp;&amp;</code> is higher than OR <code>||</code></span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Presedensi operator AND <code>&amp;&amp;</code> lebih tinggi dari OR <code>||</code>.</p> 
+           <p>Jadi kode <code>a &amp;&amp; b || c &amp;&amp; d</code> esensinya sama dengan jika expresi <code>&amp;&amp;</code> dibungkus tanda kurung: <code>(a &amp;&amp; b) || (c &amp;&amp; d)</code>.</p> 
+          </div> 
+         </div> 
+         <div class="important important_warn"> 
+          <div class="important__header"> 
+           <span class="important__type">Jangan ganti <code>if</code> dengan || atau &amp;&amp;</span> 
+          </div> 
+          <div class="important__content"> 
+           <p>Terkadang, orang-orang menggunakan operator AND <code>&amp;&amp;</code> untuk "memperpendek instruksi <code>if</code>".</p> 
+           <p>Misalnya:</p> 
+           <div id="g4iezy8a60" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let x = 1;
+
+(x &gt; 0) &amp;&amp; alert( 'Greater than zero!' );</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Aksi di bagian kanan <code>&amp;&amp;</code> akan diexekusi hanya jika evaluasinya mencapai itu. Yaitu, hanya jika <code>(x &gt; 0)</code> true.</p> 
+           <p>Jadi pada dasarnya kita punya analogi untuk:</p> 
+           <div id="ayq3wjtc5e" data-trusted="1" class="code-example"> 
+            <div class="codebox code-example__codebox"> 
+             <div class="toolbar codebox__toolbar"> 
+              <div class="toolbar__tool"> 
+               <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+              </div> 
+              <div class="toolbar__tool"> 
+               <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+              </div> 
+             </div> 
+             <div class="codebox__code" data-code="1"> 
+              <pre class="line-numbers language-javascript"><code>let x = 1;
+
+if (x &gt; 0) alert( 'Greater than zero!' );</code></pre> 
+             </div> 
+            </div> 
+           </div> 
+           <p>Walaupun, versi dengan <code>&amp;&amp;</code> muncul lebih pendek, <code>if</code> menjadi jelas dan sedikit lebih mudah dibaca. Jadi kita merekomendasikan menggunakannya untuk setiap kebutuhan: gunakan <code>if</code> jika kita ingin if dan gunakan <code>&amp;&amp;</code> jika kita ingin AND.</p> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="not" href="logical-operators.html#not">! (NOT)</a></h2> 
+         <p>Operator boolean NOT diwakili dengan tanda exklamasi <code>!</code>.</p> 
+         <p>Syntaxnya cukup simpel:</p> 
+         <div id="kuvxiy8nw8" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>result = !value;</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Operator ini menerima argumen tunggal dan menjalankan hal berikut:</p> 
+         <ol> 
+          <li>Mengkonversi operand ke tipe boolean: <code>true/false</code>.</li> 
+          <li>Mengembalikan nilai kebalikan.</li> 
+         </ol> 
+         <p>Misalnya:</p> 
+         <div id="q2jcd1hk9u" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( !true ); // false
+alert( !0 ); // true</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>NOT ganda <code>!!</code> kadang dipakai untuk mengkonversi nilai ke tipe boolean:</p> 
+         <div id="migf6dgbqr" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( !!"non-empty string" ); // true
+alert( !!null ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Yaitu, NOT pertama mengkonversi nilai ke boolean dan mengembalikan kebalikannya, dan NOT kedua membaliknya lagi. Ujungnya, kita punya konversi nilai-ke-boolean biasa.</p> 
+         <p>Ada sedikit cara rewel untuk melakukan hal serupa ??? fungsi <code>Boolean</code> built-in:</p> 
+         <div id="npm3ov7xx9" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>alert( Boolean("non-empty string") ); // true
+alert( Boolean(null) ); // false</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Presedensi NOT <code>!</code> paling tinggi dari semua operator logika, jadi ia selalu jalan pertama, sebelum <code>&amp;&amp;</code> or <code>||</code>.</p> 
+        </div> 
+       </article> 
+       <div class="tasks formatted"> 
+        <h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="logical-operators.html#tasks">Tugas</a></h2> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="logical-operators.html#apa-hasil-dari-or" name="apa-hasil-dari-or">Apa hasil dari OR?</a></h3> 
+           <a class="task__open-link" href="task/alert-null-2-undefined.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apakah keluaran dari kode dibawah?</p> 
+            <div id="o8rw36orr5" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( null || 2 || undefined );</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya <code>2</code>, itu nilai truthy pertama.</p> 
+              <div id="5ka86shp52" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( null || 2 || undefined );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="logical-operators.html#apa-hasil-dari-alert-yang-di-or-kan" name="apa-hasil-dari-alert-yang-di-or-kan">Apa hasil dari alert yang di-OR-kan?</a></h3> 
+           <a class="task__open-link" href="task/alert-or.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Apa output kode di bawah?</p> 
+            <div id="4x8be8o1s" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( alert(1) || 2 || alert(3) );</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya: pertama <code>1</code>, lalu <code>2</code>.</p> 
+              <div id="g25kebjc30" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( alert(1) || 2 || alert(3) );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Panggilan <code>alert</code> tak mengembalikan nilai. Atau, dengan kata lain, ia mengembalikan <code>undefined</code>.</p> 
+              <ol> 
+               <li>Pertama OR <code>||</code> mengevaluasi operand kiri <code>alert(1)</code>. Ia menampilkan pesan pertama dengan <code>1</code>.</li> 
+               <li><code>alert</code> mengembalikan <code>undefined</code>, jadi OR jalan ke operand kedua mencari nilai truthy.</li> 
+               <li>Operand kedua <code>2</code> truthy, jadi eksekusinya disela, <code>2</code> dikembalikan dan ditampilkan oleh alert terluar.</li> 
+              </ol> 
+              <p>Tak akan ada <code>3</code>, karena evaluasinya tidak mencapai <code>alert(3)</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="logical-operators.html#apa-hasil-and" name="apa-hasil-and">Apa hasil AND?</a></h3> 
+           <a class="task__open-link" href="task/alert-1-null-2.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kode ini akan menampilkan apa?</p> 
+            <div id="o7k5kxorua" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( 1 &amp;&amp; null &amp;&amp; 2 );</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya: <code>null</code>, karena <code>null</code> adalah nilai falsy pertama yang ada di daftar.</p> 
+              <div id="0bopnkb558" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( 1 &amp;&amp; null &amp;&amp; 2 );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="logical-operators.html#apa-hasil-dari-alert-yang-di-and-kan" name="apa-hasil-dari-alert-yang-di-and-kan">Apa hasil dari alert yang di-AND-kan?</a></h3> 
+           <a class="task__open-link" href="task/alert-and.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Kode ini akan menampilkan apa?</p> 
+            <div id="stasiznjkl" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( alert(1) &amp;&amp; alert(2) );</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya: <code>1</code>, dan kemudian <code>undefined</code>.</p> 
+              <div id="o3tmsueqje" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( alert(1) &amp;&amp; alert(2) );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Panggilan <code>alert</code> mengembalikan <code>undefined</code> (ia cuma menampilkan pesan, jadi tak ada kembalian berarti).</p> 
+              <p>Karena itu, <code>&amp;&amp;</code> mengevaluasi operand kiri (output <code>1</code>), dan langsung berhenti, karena <code>undefined</code> adalah nilai falsy. Dan <code>&amp;&amp;</code> mencari nilai falsy dan mengembalikannya, jadi begitulah.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="logical-operators.html#hasil-dari-or-and-or" name="hasil-dari-or-and-or">Hasil dari OR AND OR</a></h3> 
+           <a class="task__open-link" href="task/alert-and-or.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Hasilnya akan jadi apa?</p> 
+            <div id="mbn1p53zke" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>alert( null || 2 &amp;&amp; 3 || 4 );</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya: <code>3</code>.</p> 
+              <div id="dqig3x34tb" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>alert( null || 2 &amp;&amp; 3 || 4 );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Presedensi AND <code>&amp;&amp;</code> lebih tinggi dari <code>||</code>, jadi ia jalan pertama.</p> 
+              <p>Hasil dari <code>2 &amp;&amp; 3 = 3</code>, jadi expresinya menjadi:</p> 
+              <div id="6mmxduw2vy" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-none"><code>null || 3 || 4</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Sekarang hasilnya jadi nilai truthy pertama: <code>3</code>.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="logical-operators.html#cek-kisaran-antara" name="cek-kisaran-antara">Cek kisaran antara</a></h3> 
+           <a class="task__open-link" href="task/check-if-in-range.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis satu kondisi ???if??? untuk mengecek bahwa <code>age</code> ada di antara <code>14</code> dan <code>90</code> secara inklusif.</p> 
+            <p>???Secara inklusif??? artinya bahwa <code>age</code> bisa mencapai <code>14</code> atau <code>90</code>.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="378aay97w9" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>if (age &gt;= 14 &amp;&amp; age &lt;= 90)</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="logical-operators.html#cek-kisaran-luar" name="cek-kisaran-luar">Cek kisaran luar</a></h3> 
+           <a class="task__open-link" href="task/check-if-out-range.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis satu kondisi <code>if</code> untuk mengecek bahwa <code>age</code> BUKAN di antara 14 dan 90 secara inklusif.</p> 
+            <p>Buat dua varian: pertama menggunakan NOT <code>!</code>, kedua ??? tanpaanya.</p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Varian pertama:</p> 
+              <div id="m6x84x26an" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>if (!(age &gt;= 14 &amp;&amp; age &lt;= 90))</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Varian kedua:</p> 
+              <div id="4fumz3ix5k" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>if (age &lt; 14 || age &gt; 90)</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="logical-operators.html#pertanyaan-tentang-if" name="pertanyaan-tentang-if">Pertanyaan tentang "if"</a></h3> 
+           <a class="task__open-link" href="task/if-question.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Mana dari <code>alert</code> berikut yang akan diexekusi?</p> 
+            <p>Hasil expresinya akan jadi seperti apa di dalam <code>if(...)</code>?</p> 
+            <div id="ivmznf1iz6" data-trusted="1" class="code-example"> 
+             <div class="codebox code-example__codebox"> 
+              <div class="codebox__code" data-code="1"> 
+               <pre class="line-numbers language-javascript"><code>if (-1 || 0) alert( 'first' );
+if (-1 &amp;&amp; 0) alert( 'second' );
+if (null || -1 &amp;&amp; 1) alert( 'third' );</code></pre> 
+              </div> 
+             </div> 
+            </div> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <p>Jawabannya: pertama dan ketiga akan diexekusi.</p> 
+              <p>Detil:</p> 
+              <div id="sltx74ra4r" data-trusted="1" class="code-example"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>// Berjalan.
+// Hasil dari -1 || 0 = -1, truthy
+if (-1 || 0) alert( 'first' );
+
+// Tidak berjalan
+// -1 &amp;&amp; 0 = 0, falsy
+if (-1 &amp;&amp; 0) alert( 'second' );
+
+// Eksekusi
+// Operator &amp;&amp; mempunyai hak yang lebih tinggi daripada ||
+// jadi -1 &amp;&amp; 1 dieksekusi pertama, dan memberikan rentetan:
+// null || -1 &amp;&amp; 1  -&gt;  null || 1  -&gt;  1
+if (null || -1 &amp;&amp; 1) alert( 'third' );</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="task tasks__task"> 
+         <div class="task__header"> 
+          <div class="task__title-wrap"> 
+           <h3 class="task__title"><a class="main__anchor" href="logical-operators.html#cek-login" name="cek-login">Cek login</a></h3> 
+           <a class="task__open-link" href="task/check-login.html" target="_blank"></a> 
+          </div> 
+          <div class="task__header-note"></div> 
+          <div class="task__content"> 
+           <div class="task__formatted"> 
+            <p>Tulis kode yang meminta login dengan <code>prompt</code>.</p> 
+            <p>Jika pengunjung menekan <code>"Admin"</code>, maka <code>prompt</code> untuk katasandi, jika inputannya beruba baris kosong atau <kbd class="shortcut">Esc</kbd> ??? tampilkan ???Canceled.???, jika string lain ??? maka tampilkan ???I don???t know you???.</p> 
+            <p>Katasandinya dicek sebagai berikut:</p> 
+            <ul> 
+             <li>Jika ia sama dengan ???TheMaster???, maka tampilkan ???Welcome!???,</li> 
+             <li>String lain ??? tampilkan ???Wrong password???,</li> 
+             <li>Untuk string kosong atau batal input, tampilkan ???Canceled.???</li> 
+            </ul> 
+            <p>Skemanya:</p> 
+            <figure> 
+             <div class="image" style="width:599px"> 
+              <div class="image__ratio" style="padding-top:82.30383973288815%"></div> 
+              <object type="image/svg+xml" data="task/check-login/ifelse_task.svg" width="599" height="493" class="image__image" data-use-theme> <img src="task/check-login/ifelse_task.svg" alt="" width="599" height="493"> </object> 
+             </div> 
+            </figure> 
+            <p>Silakan gunakan blok <code>if</code> bersarang. Abaikan kemudahan-baca seluruh kode.</p> 
+            <p>Petunjuk: mengoper inputan kosong ke prompt mengembalikan string kosong <code>''</code>. Menekan <kbd class="shortcut">ESC</kbd> saat prompt mengembalikan <code>null</code>.</p> 
+            <p><a href="logical-operators.html#" onclick="event.preventDefault(); runDemo(this)">jalankan demonya</a></p> 
+           </div> 
+           <button class="task__solution" type="button">solusi</button> 
+           <div class="task__answer"> 
+            <div class="task__answer-content"> 
+             <div class="formatted"> 
+              <div id="6ambz4i7rq" data-trusted="1" class="code-example" data-demo="1"> 
+               <div class="codebox code-example__codebox"> 
+                <div class="toolbar codebox__toolbar"> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+                 </div> 
+                 <div class="toolbar__tool"> 
+                  <a href="logical-operators.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+                 </div> 
+                </div> 
+                <div class="codebox__code" data-code="1"> 
+                 <pre class="line-numbers language-javascript"><code>let userName = prompt("Who's there?", '');
+
+if (userName === 'Admin') {
+
+  let pass = prompt('Password?', '');
+
+  if (pass === 'TheMaster') {
+    alert( 'Welcome!' );
+  } else if (pass === '' || pass === null) {
+    alert( 'Canceled' );
+  } else {
+    alert( 'Wrong password' );
+  }
+
+} else if (userName === '' || userName === null) {
+  alert( 'Canceled' );
+} else {
+  alert( "I don't know you" );
+}</code></pre> 
+                </div> 
+               </div> 
+              </div> 
+              <p>Perhatikan indent vertkal di dalam blok <code>if</code>. Mereka secara teknis tak dibutuhkan, tapi membuat kode lebih mudah dibaca.</p> 
+             </div> 
+            </div> 
+            <button class="close-button task__answer-close" type="button" title="tutup"></button> 
+           </div> 
+          </div> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="ifelse.html" data-tooltip="Kondisi bercabang: if, '?'"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="nullish-coalescing-operator.html" data-tooltip="Operator penggabungan nullish '??'"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Flogical-operators" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Flogical-operators" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="first-steps.html">JavaScript Dasar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="logical-operators.html#or">|| (OR)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="logical-operators.html#or-finds-the-first-truthy-value">OR "||" mencari nilai benar pertama</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="logical-operators.html#and">&amp;&amp; (AND)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="logical-operators.html#and-mencari-nilai-falsy-pertama">AND ???&amp;&amp;??? mencari nilai falsy pertama</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="logical-operators.html#not">! (NOT)</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="logical-operators.html#tasks">Tugas (9)</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="logical-operators.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Flogical-operators" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Flogical-operators" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>

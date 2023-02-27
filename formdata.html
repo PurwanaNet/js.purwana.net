@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="id" data-theme-enabled="1">
+ <head> 
+  <script>window.currentUser = null;</script> 
+  <script>window.shopCurrency = "EUR";</script> 
+  <script>window.localCurrency = "EUR";</script> 
+  <script>window.countryCode = "us";</script> 
+  <script>window.rateShopTo = {"EUR":1,"USD":1.0716494077529548,"AMD":417.60490643964846};</script> 
+  <title itemprop="name">FormData</title> 
+  <link href="pack/styles.a7ab594e74e7a233e3dd.css" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, minimum-scale=1.0"> 
+  <meta name="apple-mobile-web-app-capable" content="yes"> 
+  <!-- chrome autotranslate is enabled only for "en" main version--> 
+  <meta name="google" content="notranslate"> 
+  <script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script> 
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:bold,italic,bolditalic" rel="stylesheet"> 
+  <link rel="apple-touch-icon-precomposed" href="img/favicon/apple-touch-icon-precomposed.png"> 
+  <link rel="canonical" href="formdata.html"> 
+  <meta name="msapplication-TileColor" content="#222A2C"> 
+  <meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"> 
+  <link rel="icon" href="img/favicon/favicon.png"> 
+  <meta itemprop="image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <meta property="og:title" content="FormData"> 
+  <meta property="og:image" content="https://id.javascript.info/img/site_preview_en_1200x630.png"> 
+  <meta property="og:image:type" content="image/png"> 
+  <meta property="og:image:width" content="1200"> 
+  <meta property="og:image:height" content="630"> 
+  <meta property="fb:admins" content="100001562528165"> 
+  <meta name="twitter:card" content="summary"> 
+  <meta name="twitter:title" content="FormData"> 
+  <meta name="twitter:site" content="@iliakan"> 
+  <meta name="twitter:creator" content="@iliakan"> 
+  <meta name="twitter:image" content="https://id.javascript.info/img/site_preview_en_512x512.png"> 
+  <link rel="prev" href="fetch.html"> 
+  <link rel="next" href="fetch-progress.html"> 
+  <script>window.GA_ID = "UA-2056213-15";</script> 
+  <script>window.YANDEX_METRIKA_ID = 32184394;</script> 
+  <script>window.RECAPTCHA_ID = "6LfmLAEVAAAAAJMykMnf7aY8nkyTRmYi2ynx51R1";</script> 
+  <script src="pack/init.4910a4963629a5955eb6.js"></script> 
+  <script src="pack/head.ff7d075915f5367566f2.js" defer></script> 
+  <meta property="og:title" content="FormData"> 
+  <meta property="og:type" content="article"> 
+  <script src="pack/tutorial.f0717d796f690e0a6aaf.js" defer></script> 
+  <script src="pack/footer.5b1695b27f7207cacf2f.js" defer></script> 
+   
+   
+ </head> 
+ <body class="no-icons"> 
+  <script>window.fontTest();</script> 
+  <div class="page-wrapper page-wrapper_sidebar_on"> 
+   <!--[if IE]><div style="color:red;text-align:center">Maaf, Internet Explorer tidak didukung, harap gunakan browser yang lebih baru.</div><![endif]--> 
+   <div class="sitetoolbar sitetoolbar_tutorial"> 
+    <script>window.langs = [{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"bs","name":"Bosnian"},{"code":"ca","name":"Catalan"},{"code":"cs","name":"Czech"},{"code":"da","name":"Danish"},{"code":"de","name":"German"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fi","name":"Finnish"},{"code":"fr","name":"French"},{"code":"he","name":"Hebrew"},{"code":"hi","name":"Hindi"},{"code":"hr","name":"Croatian"},{"code":"hu","name":"Hungarian"},{"code":"hy","name":"Armenian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"kk","name":"Kazakh"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"ky","name":"Kyrgyz"},{"code":"lt","name":"Lithuanian"},{"code":"me","name":"Montenegrin"},{"code":"ml","name":"Malayalam"},{"code":"ms","name":"Malay"},{"code":"my","name":"Burmese"},{"code":"nl","name":"Dutch"},{"code":"no","name":"Norvegian"},{"code":"pa","name":"Punjabi"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"sk","name":"Slovak"},{"code":"sl","name":"Slovenian"},{"code":"sq","name":"Albanian"},{"code":"sr","name":"Serbian"},{"code":"ta","name":"Tamil"},{"code":"te","name":"Telugu"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tk","name":"Turkmen"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"ur","name":"Urdu"},{"code":"uz","name":"Uzbek"},{"code":"v2","name":"v2"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script> 
+    <script>window.lang = "id";</script> 
+    <div class="sitetoolbar__content"> 
+     <div class="sitetoolbar__logo-wrap"> 
+      <br> 
+      <a class="sitetoolbar__link sitetoolbar__link_logo" href="index.html"><h1>Teman Javascript</h1></a> 
+     </div> 
+     <div class="sitetoolbar__nav-toggle-wrap"> 
+      <button class="sitetoolbar__nav-toggle" type="button"></button> 
+     </div> 
+     <nav class="sitetoolbar__sections"> 
+      <ul class="sitetoolbar__sections-list"></ul> 
+     </nav> 
+     <div class="sitetoolbar__theme-switcher"> 
+      <div class="theme-changer"> 
+       <label class="theme-changer__label" for="theme-changer-input" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span></label> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="tablet-menu"> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="theme-changer theme-changer_tablet-menu theme-changer_has-label"> 
+        <label class="theme-changer__label" for="theme-changer-input-tablet" data-tooltip="Change theme"><input class="theme-changer__input" type="checkbox" id="theme-changer-input-tablet" data-theme-changer="data-theme-changer"><span class="theme-changer__icon theme-changer__icon_light-theme"></span><span class="theme-changer__icon theme-changer__icon_dark-theme"></span><span class="theme-changer__label-text theme-changer__label-text_light-theme">Light theme</span><span class="theme-changer__label-text theme-changer__label-text_dark-theme">Dark theme</span></label> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+       <div class="share-icons"> 
+        <span class="share-icons__title">Bagikan</span> 
+        <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fformdata" rel="nofollow"></a> 
+        <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fformdata" rel="nofollow"></a> 
+       </div> 
+      </div> 
+     </div> 
+     <div class="tablet-menu__line"> 
+      <div class="tablet-menu__content"> 
+      </div> 
+     </div> 
+    </div> 
+    <progress class="tutorial-progress" data-sticky value="2" max="12" data-tooltip="Pelajaran 2 dari 12"></progress> 
+   </div> 
+   <div class="page page_sidebar_on page_inner_padding"> 
+    <script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");let e=document.querySelector(".page-wrapper");e&&e.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")});</script> 
+    <div class="page__inner"> 
+     <main class="main main_width-limit"> 
+      <header class="main__header"> 
+       <div class="main__header-inner"> 
+        <div class="main__header-group"> 
+         <ol class="breadcrumbs"> 
+          <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="index.html"><span class="breadcrumbs__hidden-text">Tutorial</span></a></li> 
+          <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="network.html"><span>Network requests</span></a></li> 
+          <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tutorial","item":"https://id.javascript.info/"},{"@type":"ListItem","position":2,"name":"Network requests","item":"https://id.javascript.info/network"}]}</script> 
+         </ol> 
+         <div class="updated-at" data-tooltip="Terakhir diperbarui pada 3 Oktober 2020"> 
+          <div class="updated-at__content">
+            3 Oktober 2020 
+          </div> 
+         </div> 
+        </div> 
+        <h1 class="main__header-title">FormData</h1> 
+       </div> 
+      </header> 
+      <style>
+.gsc-control {
+    width: 100%;
+}
+</style> 
+      <script async src="https://cse.google.com/cse.js?cx=670735444dc5843cf"></script> 
+      <div class="gcse-search"></div> 
+      <div class="content"> 
+       <article class="formatted" itemscope itemtype="http://schema.org/TechArticle"> 
+        <meta itemprop="name" content="FormData"> 
+        <div itemprop="author" itemscope itemtype="http://schema.org/Person"> 
+         <meta itemprop="email" content="iliakan@gmail.com"> 
+         <meta itemprop="name" content="Ilya Kantor"> 
+        </div> 
+        <div itemprop="articleBody"> 
+         <p>Pada artikel ini akan membahas terkait pengiriman formulir HTML: dengan atau tanpa berkas, dengan ruas tambahan dan lainnya.</p> 
+         <p>Objek <a href="https://xhr.spec.whatwg.org/#interface-formdata">FormData</a> dapat membantu untuk melakukan hal tersebut. seperti yang Anda duga, <code>FormData</code> adalah sebuah objek yang merepresentasikan data formulir HTML.</p> 
+         <p>Konstruktornya adalah:</p> 
+         <div id="ev5zcadhak" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let formData = new FormData([form]);</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Jika elemen <code>form</code> HTML tersedia, maka secara otomatis ruas yang ada akan dicatat.</p> 
+         <p>Hal khusus tentang <code>FormData</code> adalah metode koneksinya. Seperti <code>fetch</code> yang dapat menerima objek <code>FormData</code> sebagai <em>request body</em> kemudian dikodekan dan dikirim dengan format <code>Content-Type: multipart/form-data</code>.</p> 
+         <p>Dari sudut pandang <em>server</em>, itu terlihat seperti pengiriman formulir biasa.</p> 
+         <h2><a class="main__anchor" name="mengirimkan-formulir-sederhana" href="formdata.html#mengirimkan-formulir-sederhana">Mengirimkan formulir sederhana</a></h2> 
+         <p>Mari kita kirim formulir sederhana terlebih dahulu.</p> 
+         <p>Seperti yang Anda lihat, itu hampir hanya satu baris:</p> 
+         <div id="whmoou92z6" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:12}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="formdata.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="formdata.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;form id="formElem"&gt;
+    &lt;input type="text" name="name" value="John" /&gt;
+    &lt;input type="text" name="surname" value="Smith" /&gt;
+    &lt;input type="submit" /&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+      formElem.onsubmit = async (e) =&gt; {
+        e.preventDefault();
+
+        let response = await fetch('/article/formdata/post/user', {
+          method: 'POST',
+          body: new FormData(formElem)
+        });
+
+        let result = await response.json();
+
+        alert(result.message);
+      };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-whmoou92z6" style="height:200px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Pada contoh ini, kode <em>server</em> tidak ditampilkan karena itu diluar dari cakupan pembahasan topik ini. <em>Server</em> menerima <em>request</em> POST dan memberikan balasan ???<em>User saved</em>???</p> 
+         <h2><a class="main__anchor" name="metode-formdata" href="formdata.html#metode-formdata">Metode FormData</a></h2> 
+         <p>Kita dapat memodifikasi ruas formulir di <code>FormData</code> dengan metode:</p> 
+         <ul> 
+          <li><code>formData.append(nama, nilai)</code> ??? menambakan sebuah ruas formulir dengan <code>nama</code> dan <code>nilai</code> yang diberikan,</li> 
+          <li><code>formData.append(nama, blob, namaBerkas)</code> ??? menambahkan sebuah ruas formulir seolah-olah itu adalah <code>&lt;input type="file"&gt;</code>, argumen ketiga <code>namaBerkas</code> digunakan untuk menetapkan nama berkas (bukan nama ruas formulir) seperti nama berkas yang ada di sistem berkas pengguna,</li> 
+          <li><code>formData.delete(nama)</code> ??? menghapus ruas formulir dengan <code>nama</code> yang diberikan,</li> 
+          <li><code>formData.get(nama)</code> ??? mendapatkan nilai dari ruas formulir dengan <code>nama</code> yang diberikan,</li> 
+          <li><code>formData.has(nama)</code> ??? jika pada formulir terdapat ruas yang memiliki <code>nama</code> yang diberikan maka akan mengembalikan nilai <code>true</code>, jika tidak maka <code>false</code>.</li> 
+         </ul> 
+         <p>Sebuah formulir secara teknis memperbolehkan memiliki banyak ruas formulir dengan nama yang sama, sehingga beberapa penggunaan <code>append</code> akan menambahkan lebih banyak ruas formulir dengan nama yang sama.</p> 
+         <p>Terdapat juga metode <code>set</code> dengan sintaks yang sama seperti <code>append</code>. Perbedaannya adalah <code>.set</code> menghapus semua ruas formulir dengan nama yang diberikan kemudian menambahkan ruas formulir baru. Jadi, itu memastikan bahwa hanya terdapat satu ruas formulir dengan nama itu, sisanya mirip seperti <code>append</code>:</p> 
+         <ul> 
+          <li><code>formData.set(nama, nilai)</code>,</li> 
+          <li><code>formData.set(nama, blob, namaBerkas)</code>.</li> 
+         </ul> 
+         <p>Kita juga bisa dapat melakukan perulangan atas ruas <em>formData</em> menggunakan <code>for ... of</code>:</p> 
+         <div id="nhhppn803s" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="formdata.html#" title="jalankan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="formdata.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>let formData = new FormData();
+formData.append('kunci1', 'nilai1');
+formData.append('kunci2', 'nilai2');
+
+// Daftar pasangan kunci/nilai
+for (let [name, value] of formData) {
+    alert(`${name} = ${value}`); // kunci1=nilai1, maka kunci2=nilai2
+}</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengirimkan-formulir-dengan-sebuah-berkas" href="formdata.html#mengirimkan-formulir-dengan-sebuah-berkas">Mengirimkan formulir dengan sebuah berkas</a></h2> 
+         <p>Formulir selalu mengirimkan data sebagai <code>Content-Type: multipart/form-data</code>, pengkodean ini memperbolehkan pengiriman sebuah berkas. Jadi, ruas <code>&lt;input type="file"&gt;</code> juga dapat dikirim, mirip seperti pengiriman formulir biasa.</p> 
+         <p>Berikut adalah contoh formulir tersebut:</p> 
+         <div id="xq5opfowir" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:12,&quot;end&quot;:12}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="formdata.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="formdata.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;form id="formElem"&gt;
+    &lt;input type="text" name="firstName" value="John" /&gt;
+    Picture: &lt;input type="file" name="picture" accept="image/*" /&gt;
+    &lt;input type="submit" /&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+      formElem.onsubmit = async (e) =&gt; {
+        e.preventDefault();
+
+        let response = await fetch('/article/formdata/post/user-avatar', {
+          method: 'POST',
+          body: new FormData(formElem)
+        });
+
+        let result = await response.json();
+
+        alert(result.message);
+      };
+&lt;/script&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-xq5opfowir" style="height:200px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <h2><a class="main__anchor" name="mengrimkan-sebuah-formulir-dengan-data-blob" href="formdata.html#mengrimkan-sebuah-formulir-dengan-data-blob">Mengrimkan sebuah formulir dengan data Blob</a></h2> 
+         <p>Seperti yang sudah kita lihat pada pembahasan <a href="fetch.html">Fetch</a>, dimana sangat mudah untuk mengirim data biner yang dihasilkan secara dinamis, misalnya sebuah gambar sebagai <code>Blob</code>. Kita dapat secara langsung menjadikannya sebagai parameter <code>body</code> <code>fetch</code>.</p> 
+         <p>Meskipun dalam praktinya, sering kali lebih mudah untuk mengirim gambar tidak secara terpisah tetapi sebagai bagian dari formulir dengan ruas tambahan seperti ???nama??? dan metadata lainnya.</p> 
+         <p>Selain itu, <em>server</em> biasanya lebih cocok untuk menerima formulir yang dikodekan dengan <code>Content-Type: multipart/form-data</code> daripada data biner mentah.</p> 
+         <p>Contoh di bawah ini mengirimkan gambar dari <code>&lt;canvas&gt;</code> bersama dengan ruas formulir lainnya menggunakan <code>FormData</code>:</p> 
+         <div id="jmv6mtbt9j" data-trusted="1" class="code-example" data-demo-height="90" data-highlight="[{&quot;start&quot;:15,&quot;end&quot;:17}]" data-autorun="true"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="toolbar codebox__toolbar"> 
+            <div class="toolbar__tool"> 
+             <a href="formdata.html#" title="tampilkan" data-action="run" class="toolbar__button toolbar__button_run"></a> 
+            </div> 
+            <div class="toolbar__tool"> 
+             <a href="formdata.html#" title="buka pada sandbox" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a> 
+            </div> 
+           </div> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-markup"><code>&lt;body style="margin:0"&gt;
+    &lt;canvas id="canvasElem" width="100" height="80" style="border:1px solid"&gt;&lt;/canvas&gt;
+
+    &lt;input type="button" value="Submit" onclick="submit()" /&gt;
+
+    &lt;script&gt;
+            canvasElem.onmousemove = function(e) {
+              let ctx = canvasElem.getContext('2d');
+              ctx.lineTo(e.clientX, e.clientY);
+              ctx.stroke();
+            };
+
+            async function submit() {
+              let imageBlob = await new Promise(resolve =&gt; canvasElem.toBlob(resolve, 'image/png'));
+
+              let formData = new FormData();
+              formData.append("firstName", "John");
+              formData.append("image", imageBlob, "image.png");
+
+              let response = await fetch('/article/formdata/post/image-form', {
+                method: 'POST',
+                body: formData
+              });
+              let result = await response.json();
+              alert(result.message);
+            }
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre> 
+           </div> 
+          </div> 
+          <div class="code-result code-example__result"> 
+           <iframe class="code-result__iframe" name="test-jmv6mtbt9j" style="height:90px" src="about:blank"></iframe> 
+          </div> 
+         </div> 
+         <p>Perhatikan bagaimana gambar <code>Blob</code> ditambahkan:</p> 
+         <div id="fq0f5crfii" data-trusted="1" class="code-example"> 
+          <div class="codebox code-example__codebox"> 
+           <div class="codebox__code" data-code="1"> 
+            <pre class="line-numbers language-javascript"><code>formData.append('image', imageBlob, 'image.png');</code></pre> 
+           </div> 
+          </div> 
+         </div> 
+         <p>Itu seolah-olah seperti terdapat <code>&lt;input type="file" name="image"&gt;</code> di dalam formulir kemudian pengunjung mengirimkan sebuah berkas dengan nama <code>"image.png"</code> (argumen ke-3) dengan data <code>"imageBlob"</code> (argumen ke-2) dari sistem berkasnya.</p> 
+         <p><em>Server</em> membaca data formulir dan berkas seolah-olah itu adalah pengajuan formulir biasa.</p> 
+         <h2><a class="main__anchor" name="ringkasan" href="formdata.html#ringkasan">Ringkasan</a></h2> 
+         <p>Objek <a href="https://xhr.spec.whatwg.org/#interface-formdata">FormData</a> digunakan untuk mendapatkan formulir HTML dan mengirimkannya menggunakan <code>fetch</code> atau metode jaringan lainnya.</p> 
+         <p>Kita dapat membuat <code>new FormData(form)</code> dari formulir HTML atau membuat sebuah objek <code>FormData</code> tanpa sebuah formulir HTML dan kemudian menambahkan ruas formulir dengan metode berikut:</p> 
+         <ul> 
+          <li><code>formData.append(nama, nilai)</code></li> 
+          <li><code>formData.append(nama, blob, namaBerkas)</code></li> 
+          <li><code>formData.set(nama, nilai)</code></li> 
+          <li><code>formData.set(nama, blob, namaBerkas)</code></li> 
+         </ul> 
+         <p>Coba perhatikan dua keunikan ini:</p> 
+         <ol> 
+          <li>Metode <code>set</code> menghapus ruas formulir dengan properti <code>name</code> yang sama tetapi <code>append</code> tidak. Itu adalah satu-satunya perbedaan diantara kedua metode tersebut.</li> 
+          <li>Untuk mengirimkan berkas, diperlukan sebanyak 3 sintaks argumen. Argumen terakhir adalah nama berkas yang normalnya didapatkan dari sistem berkas pengguna untuk <code>&lt;input type="file"&gt;</code>.</li> 
+         </ol> 
+         <p>Metode-metode lainnya adalah:</p> 
+         <ul> 
+          <li><code>formData.delete(name)</code></li> 
+          <li><code>formData.get(name)</code></li> 
+          <li><code>formData.has(name)</code></li> 
+         </ul> 
+         <p>Mantap, itu sudah semuanya!</p> 
+        </div> 
+       </article> 
+      </div> 
+      <div class="page__nav-wrap"> 
+       <a class="page__nav page__nav_prev" href="fetch.html" data-tooltip="Fetch"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran sebelumnya</span></a> 
+       <a class="page__nav page__nav_next" href="fetch-progress.html" data-tooltip="Fetch: Kemajuan Download"><span class="page__nav-text"><span class="page__nav-text-shortcut"></span></span><span class="page__nav-text-alternate">Pelajaran berikutnya</span></a> 
+      </div> 
+      <div class="article-tablet-foot tablet-only"> 
+       <div class="article-tablet-foot__layout"> 
+        <div class="share-icons"> 
+         <span class="share-icons__title">Bagikan</span> 
+         <a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fformdata" rel="nofollow"></a> 
+         <a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Fjs.purwana.net%2Fformdata" rel="nofollow"></a> 
+        </div> 
+        <div class="article-tablet-foot__map"> 
+         <a class="map" href="tutorial/map.html" data-action="tutorial-map"><span class="map__text">Peta tutorial</span></a> 
+        </div> 
+       </div> 
+      </div> 
+     </main> 
+    </div> 
+    <div class="sidebar page__sidebar sidebar sidebar_sticky-footer"> 
+     <button class="sidebar__toggle" data-sidebar-toggle></button> 
+     <div class="sidebar__inner"> 
+      <div class="sidebar__content"> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Bab</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="network.html">Network requests</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <h4 class="sidebar__section-title">Navigasi pelajaran</h4> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="formdata.html#mengirimkan-formulir-sederhana">Mengirimkan formulir sederhana</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="formdata.html#metode-formdata">Metode FormData</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="formdata.html#mengirimkan-formulir-dengan-sebuah-berkas">Mengirimkan formulir dengan sebuah berkas</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="formdata.html#mengrimkan-sebuah-formulir-dengan-data-blob">Mengrimkan sebuah formulir dengan data Blob</a></li> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="formdata.html#ringkasan">Ringkasan</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <nav class="sidebar__navigation"> 
+         <ul class="sidebar__navigation-links"> 
+          <li class="sidebar__navigation-link"><a class="sidebar__link" href="formdata.html#comments">komentar</a></li> 
+         </ul> 
+        </nav> 
+       </div> 
+       <div class="sidebar__section"> 
+        <div class="sidebar__section-title">
+          Bagikan 
+        </div> 
+        <a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Fjs.purwana.net%2Fformdata" rel="nofollow"></a> 
+        <a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Fjs.purwana.net%2Fformdata" rel="nofollow"></a> 
+       </div> 
+       <div class="sidebar__section"></div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <div class="page-footer"> 
+   <ul class="page-footer__list"> 
+    <li class="page-footer__item page-footer__item_copy">??&nbsp;2007???2023&nbsp; Teman JS</li> 
+    <li class="page-footer__item page-footer__item_about"><!--by <a href="https://wifi.purwana.net">klub wifi merdeka</a>--></li> 
+    <li class="page-footer__item page-footer__item_contact"><!--built with <a href="https://angga.purwana.net" target="_blank">angga purwana</a>--></li> 
+   </ul> 
+  </div>  
+ </body>
+</html>
